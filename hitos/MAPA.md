@@ -33,6 +33,10 @@ Este mapa solo indexa los hitos versionados de este workbench.
 - [20260615-archivo-ramas-historicas-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-archivo-ramas-historicas-v1/README.md)
 - [20260615-agentes-atomicos-algoritmicos-en-waves-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-agentes-atomicos-algoritmicos-en-waves-v1/README.md)
 - [20260615-cobertura-atomica-energetica-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cobertura-atomica-energetica-v1/README.md)
+- [20260615-projec-cdx-dataverse-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-projec-cdx-dataverse-v1/README.md)
+- [20260615-codex-cloud-scaffold-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-codex-cloud-scaffold-v1/README.md)
+- [20260615-politica-ramas-versionado-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-politica-ramas-versionado-v1/README.md)
+- [20260615-repos-surface-github-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-repos-surface-github-v1/README.md)
 
 ## Lectura
 
@@ -56,6 +60,10 @@ Este mapa solo indexa los hitos versionados de este workbench.
 - La version `20260615-archivo-ramas-historicas-v1` versiona el archivo historico de ramas y su matriz Excel compañera.
 - La version `20260615-agentes-atomicos-algoritmicos-en-waves-v1` versiona la delegacion por waves con agentes atomicos algoritmicos.
 - La version `20260615-cobertura-atomica-energetica-v1` introduce la cobertura atomica energetica como contrato visible.
+- La version `20260615-projec-cdx-dataverse-v1` versiona la segunda pasada de Dataverse en la mesa local.
+- La version `20260615-codex-cloud-scaffold-v1` versiona el scaffold local de Codex Cloud con UI seleccionable y runner Python.
+- La version `20260615-politica-ramas-versionado-v1` fija la politica local que absorbe el scaffold.
+- La version `20260615-repos-surface-github-v1` versiona la acta local de repos surface GitHub.
 
 ## Regla
 

@@ -29,6 +29,10 @@ Versiones:
 - [20260615-archivo-ramas-historicas-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-archivo-ramas-historicas-v1/README.md)
 - [20260615-agentes-atomicos-algoritmicos-en-waves-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-agentes-atomicos-algoritmicos-en-waves-v1/README.md)
 - [20260615-cobertura-atomica-energetica-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cobertura-atomica-energetica-v1/README.md)
+- [20260615-projec-cdx-dataverse-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-projec-cdx-dataverse-v1/README.md)
+- [20260615-codex-cloud-scaffold-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-codex-cloud-scaffold-v1/README.md)
+- [20260615-politica-ramas-versionado-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-politica-ramas-versionado-v1/README.md)
+- [20260615-repos-surface-github-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-repos-surface-github-v1/README.md)
 
 Regla:
 
