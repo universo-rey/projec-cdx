@@ -18,6 +18,9 @@ Definir una politica minima y estable para trabajar con ramas, worktrees y versi
 - No se reescribe historia compartida.
 - No se borra una rama historica sin orden explicita.
 - No se mezclan cambios de dos lanes en una misma rama.
+- Las tareas que requieren orquestacion, discovery o coordinacion de varios pasos se delegan a Codex Cloud cuando esta disponible.
+- Si Codex Cloud no esta configurado, no se inventan comandos ni bootstrap: se registra el gap y se sigue en modo local-only.
+- El script local de limpieza no reemplaza la configuracion de Codex Cloud; solo cubre ejecucion local cuando ya existe el contexto.
 
 ## Ciclo Operativo
 
@@ -58,3 +61,10 @@ Definir una politica minima y estable para trabajar con ramas, worktrees y versi
 ## Resultado
 
 El trabajo queda aislado, versionado y retomable sin perder la separacion entre lane mutable, cierre durable e historico.
+
+## Delegacion Codex Cloud
+
+- Usar Codex Cloud para tareas largas, repetibles o de coordinacion multi-lane.
+- Mantener la sesion local para definir el alcance, dejar evidencia y versionar el cierre.
+- No confundir un script de limpieza local con un bootstrap de entorno.
+- Si falta la configuracion de Codex Cloud, tratarlo como pendiente de infraestructura y no como una capacidad disponible.
