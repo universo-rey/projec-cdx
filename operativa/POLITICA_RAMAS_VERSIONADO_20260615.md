@@ -21,6 +21,7 @@ Definir una politica minima y estable para trabajar con ramas, worktrees y versi
 - Las tareas que requieren orquestacion, discovery o coordinacion de varios pasos se delegan a Codex Cloud cuando esta disponible.
 - Si Codex Cloud no esta configurado, no se inventan comandos ni bootstrap: se registra el gap y se sigue en modo local-only.
 - El script local de limpieza no reemplaza la configuracion de Codex Cloud; solo cubre ejecucion local cuando ya existe el contexto.
+- El scaffold local de Codex Cloud se versiona como hito propio antes de tratarlo como estable.
 
 ## Ciclo Operativo
 
@@ -68,3 +69,10 @@ El trabajo queda aislado, versionado y retomable sin perder la separacion entre 
 - Mantener la sesion local para definir el alcance, dejar evidencia y versionar el cierre.
 - No confundir un script de limpieza local con un bootstrap de entorno.
 - Si falta la configuracion de Codex Cloud, tratarlo como pendiente de infraestructura y no como una capacidad disponible.
+- Cuando el entorno y el runner ya estan declarados, cerrar primero el hito local y despues mover cualquier politica nueva al mismo canon.
+
+## Codex Cloud Scaffold
+
+- `hitos/20260615-codex-cloud-scaffold-v1` versiona la UI seleccionable, el setup/cleanup y el runner Python del carril local.
+- El scaffold queda en `metadata-only` hasta que exista orden explicita para live write.
+- La politica de ramas/versionado absorbe el scaffold como delta durable separado del acceso vivo.

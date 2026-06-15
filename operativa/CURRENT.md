@@ -184,3 +184,39 @@ Cierre local de completitud del workbench `PROJEC CDX` y estado final de limpiez
 - Mantener el carril local-only y no abrir live write.
 - Validacion local: PASS.
 - Evidencia: `recipes/limpieza-pc-local-segura.md`, `procesos/limpieza-pc-local-segura.md`, `dataverse/REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md`.
+
+## Ultimo Delta Cerrado 21
+
+- Convertir `.codex` y `.agents` en repos Git publicados y limpios.
+- Mantener los nombres remotos por ahora: `codex-root` y `agents-root`.
+- Siguiente superficie candidata: segunda pasada de Dataverse.
+- Evidencia: `operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md`.
+
+## Ultimo Delta Cerrado 22
+
+- Cerrar la segunda pasada de Dataverse en el workbook de control y en el validador.
+- Agregar estados Dataverse, ambiente, target exacto, gate live y postcheck a la mesa viva.
+- Validacion: PASS.
+- Evidencia: `operativa/ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md`.
+
+## Ultimo Delta Cerrado 23
+
+- Versionar la segunda pasada de Dataverse en un hito propio.
+- Mantener el carril gobernado sin live write por inferencia.
+- Evidencia: `hitos/20260615-projec-cdx-dataverse-v1`.
+
+## Ultimo Delta Cerrado 24
+
+- Versionar el scaffold completo de Codex Cloud, incluyendo entorno UI seleccionable y runner Python.
+- Mantener el gate en `metadata-only` y el humo local verificable.
+- Evidencia: `hitos/20260615-codex-cloud-scaffold-v1`.
+
+## Ultimo Delta Cerrado 25
+
+- Ajustar la politica de ramas y versionado para absorber el scaffold de Codex Cloud.
+- Mantener el scaffold separado del live y versionado como hito local propio.
+- Evidencia: `hitos/20260615-politica-ramas-versionado-v1`.
+
+## Regla
+
+Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

@@ -62,6 +62,30 @@ Cadena operativa de `PROJEC CDX`.
 - Cierre: la energia queda visible desde la entrada minima y se versiona como hito.
 - Hito: `hitos/20260615-cobertura-atomica-energetica-v1`.
 
+## Repos Git Codex Y Agents
+
+- Fuente: pedido de conectar `.codex` y `.agents` a GitHub y revisar si convenia renombrar los remotos.
+- Proceso: versionar cada superficie como repo propio, publicar `main` y validar que el borde quede limpio.
+- Salida: `operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md`.
+- Cierre: los nombres `codex-root` y `agents-root` se mantienen por ahora porque ya son precisos y no agregan ruido.
+- Siguiente candidata: `dataverse/PLAN_SEGUNDA_PASADA.md` para la segunda pasada de Dataverse.
+
+## Dataverse Segunda Pasada
+
+- Fuente: pedido de seguir en orden con la segunda pasada de Dataverse.
+- Proceso: extender workbook y validador para exponer `dataverse_estado`, `ambiente`, `target_exacto`, `gate_live` y `postcheck`, con alertas y stop conditions.
+- Salida: `operativa/ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md`.
+- Validacion: `PASS`.
+- Cierre: Dataverse queda visible por estado y gobernado por el gate local, sin live write por inferencia.
+- Siguiente paso: si se sigue la secuencia, versionar la segunda pasada en hito.
+
+## Dataverse Segunda Pasada Versionada
+
+- Fuente: confirmacion del usuario para seguir con DV5.
+- Proceso: crear el hito `20260615-projec-cdx-dataverse-v1` con README, manifest, indice, evidencia y readback.
+- Salida: `hitos/20260615-projec-cdx-dataverse-v1`.
+- Cierre: la segunda pasada queda versionada como hito local y lista para readback futuro.
+
 ## Ultimo Delta Cerrado
 
 - Fuente: `operativa/PLAN_COMPLETAR_ESTRUCTURA.md`.
@@ -232,6 +256,29 @@ Cadena operativa de `PROJEC CDX`.
 - Salida: `recipes/limpieza-pc-local-segura.md`, `procesos/limpieza-pc-local-segura.md`, `dataverse/REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md`.
 - Hito: `hitos/20260615-cierre-workbench-v1`.
 - Cierre: la limpieza queda reusable y registrada sin write live.
+
+## Codex UI Entorno
+
+- Fuente: pedido de dejar configurado el entorno en la UI de Codex y llevarlo a receta.
+- Proceso: espejar el entorno del carril en `.codex/config.toml` para el root canonico y el worktree activo, con `shell_environment_policy` y variables del runner.
+- Salida: `.codex/config.toml` en `C:\\Users\\enzo1\\PROJEC CDX` y en `C:\\Users\\enzo1\\.codex\\worktrees\\49ea\\PROJEC CDX`; el trust del worktree queda agregado en `~/.codex/config.toml`.
+- Cierre: el entorno visible queda alineado con el arranque atomico, sin secretos embebidos, y la receta reusable queda limpia.
+
+## Codex Cloud Scaffold
+
+- Fuente: pedido de no dejar solo el acceso vivo, sino espejar el resto del scaffold del runner.
+- Proceso: declarar el entorno seleccionable en `.codex/environments/environment.toml`, espejar setup y cleanup, y completar `pyproject.toml` mas `src/projec_cdx_cloud`.
+- Salida: `hitos/20260615-codex-cloud-scaffold-v1`.
+- Hito: `hitos/20260615-codex-cloud-scaffold-v1`.
+- Cierre: el runner, la UI y el contrato quedan versionados juntos como una sola unidad durable.
+
+## Politica Ramas Versionado
+
+- Fuente: pedido de cerrar la politica para que el scaffold no quedara suelto.
+- Proceso: incorporar el scaffold de Codex Cloud como delta durable dentro de `operativa/POLITICA_RAMAS_VERSIONADO_20260615.md`.
+- Salida: `hitos/20260615-politica-ramas-versionado-v1`.
+- Hito: `hitos/20260615-politica-ramas-versionado-v1`.
+- Cierre: la politica local absorbe el scaffold y deja el lane de versionado limpio.
 
 ## Regla
 

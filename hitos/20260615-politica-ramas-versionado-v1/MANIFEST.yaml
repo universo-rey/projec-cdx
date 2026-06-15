@@ -1,0 +1,22 @@
+id: 20260615-politica-ramas-versionado-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: politica_ramas_versionado
+estado: GREEN_LOCAL
+fuente:
+  - C:\Users\enzo1\PROJEC CDX\operativa\POLITICA_RAMAS_VERSIONADO_20260615.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-codex-cloud-scaffold-v1\
+  - C:\Users\enzo1\PROJEC CDX\operativa\TRACE.md
+  - C:\Users\enzo1\PROJEC CDX\operativa\CURRENT.md
+salida:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-politica-ramas-versionado-v1\
+rollback: revertir la nota de politica y eliminar el hito versionado
+postcheck:
+  - git diff --check
+guardrails:
+  - no_secret_read
+  - no_live_write
+  - policy_must_remain_local
+evidencia:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-politica-ramas-versionado-v1\EVIDENCIA.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-politica-ramas-versionado-v1\READBACK.md
