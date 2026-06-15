@@ -14,6 +14,8 @@ La receta de agentes atomicos algoritmicos en waves queda en [agentes-atomicos-a
 
 La receta de limpieza PC local segura queda en [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md).
 
+La receta de configuracion de entorno en la UI de Codex queda en [configuracion-entorno-codex-ui.md](C:/Users/enzo1/PROJEC%20CDX/recipes/configuracion-entorno-codex-ui.md).
+
 Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
 ## Origen
@@ -27,6 +29,7 @@ Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operati
 - [recipes/complementos-on-demand.md](C:/Users/enzo1/PROJEC%20CDX/recipes/complementos-on-demand.md)
 - [recipes/agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md)
 - [recipes/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md)
+- [recipes/configuracion-entorno-codex-ui.md](C:/Users/enzo1/PROJEC%20CDX/recipes/configuracion-entorno-codex-ui.md)
 
 ## Regla
 

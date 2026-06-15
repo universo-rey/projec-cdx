@@ -6,12 +6,35 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 
 - [README_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/README_CORTO.md)
 - [MAPA_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_CORTO.md)
+- [Arranque Codex Cloud](C:/Users/enzo1/PROJEC%20CDX/README_ARRANQUE_CODEX_CLOUD.md)
 
 ## Canon
 
 `PROJEC CDX` es el workbench local gobernado de Codex para organizar, versionar y navegar artefactos, mapas, inventarios, workbooks, paquetes, hitos y herramientas. Cada entrada visible debe ser accionable: corta, clara y lista para empujar el siguiente paso. En este workspace, lo atomico no es solo lo pequeño; es lo que concentra energia util para actuar. Estado ecosistemico visible: `GREEN_OPERABLE`.
 
 La cobertura atomica energetica queda introducida en [operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md) y se apoya en [Paquete atomico](C:/Users/enzo1/PROJEC%20CDX/atomic/README.md).
+
+Codex Cloud tiene un runner minimo en `main.py` y `src/projec_cdx_cloud/`:
+
+```powershell
+.\\.venv\\Scripts\\Activate.ps1
+.\\.venv\\Scripts\\python main.py --smoke
+.\\.venv\\Scripts\\python -m projec_cdx_cloud --smoke
+.\\.venv\\Scripts\\python main.py --json --smoke
+.\\.venv\\Scripts\\python main.py --prompt "Resume el contrato Codex Cloud con energia atomica."
+```
+
+Arranque vivo unico:
+
+```powershell
+pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
+```
+
+Si queres cambiar solo el texto de entrada:
+
+```powershell
+pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1" -Prompt "Tu prompt aca"
+```
 
 ## Entradas
 

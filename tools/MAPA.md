@@ -13,6 +13,9 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - `build_control_workbook.mjs`
 - `build_universe_relationship_audit.py`
 - `codex-control-total.ps1`
+- `codex-cloud-bootstrap.ps1`
+- `codex-cloud-maintenance.ps1`
+- `codex-cloud-live.ps1`
 - `normalize_codex_surfaces.ps1`
 - `rehome_codex_root_safe.ps1`
 - `test_codex_powershell_layout.ps1`
@@ -29,8 +32,17 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - `validate_proj_cdx_workbench.ps1` para validar mapas, archivos requeridos, links, workbooks y formulas.
 - `validate_proj_cdx_sync.ps1` para comprobar fuentes vivas, outputs, hitos y Dataverse local.
 - `validate_proj_cdx_operational_chain.ps1` para validar schema, estados y fronteras del indice puente.
+- `codex-cloud-bootstrap.ps1` para declarar el contrato y el registro local de Codex Cloud.
+- `codex-cloud-maintenance.ps1` para refrescar la bitacora y verificar la superficie metadata-only.
+- `codex-cloud-live.ps1` para abrir el carril vivo en un solo paso.
 - Los demas scripts para inventario, normalizacion o validacion puntual.
 
 ## Regla
 
 - Mantener esta carpeta como caja de herramientas, no como salida final.
+
+Arranque vivo unico:
+
+```powershell
+pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
+```
