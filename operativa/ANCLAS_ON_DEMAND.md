@@ -28,6 +28,8 @@ Capa minima para abrir solo la ancla que pide el delta real.
 - [Ancla agentes atomicos algoritmicos](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md) - solo si el delta se delega en agentes atómicos con retorno exacto.
 - [Receta agentes atomicos algoritmicos en waves](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md) - solo si la delegacion se parte en waves.
 - [Proceso agentes atomicos algoritmicos en waves](C:/Users/enzo1/PROJEC%20CDX/procesos/agentes-atomicos-algoritmicos-en-waves.md) - solo si hace falta ejecutar esa wave.
+- [Receta limpieza pc local segura](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md) - solo si el delta pide recorte de ruido local en Windows.
+- [Proceso limpieza pc local segura](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md) - solo si hace falta ejecutar esa limpieza con gate.
 - [Cobertura atomica energetica](C:/Users/enzo1/PROJEC%20CDX/operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md) - solo si el delta necesita declarar fase e impulso visibles.
 
 ## Uso

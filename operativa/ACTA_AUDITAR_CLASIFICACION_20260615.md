@@ -51,10 +51,10 @@ Cerrar la clasificacion fina de las entradas hijas de `Auditar` sin mover, borra
 
 ## Evidencia
 
-- `C:\Users\enzo1\PROJEC CDX\inventarios\AUDITAR_SURFACE_INDEX_20260615.csv`
-- `C:\Users\enzo1\PROJEC CDX\hitos\20260615-auditar-surface-chain-v1\READBACK.md`
-- `C:\Users\enzo1\PROJEC CDX\hitos\20260615-auditar-surface-chain-v1\README.md`
-- `C:\Users\enzo1\PROJEC CDX\operativa\TRACE.md`
+- `C:/Users/enzo1/PROJEC CDX/inventarios/AUDITAR_SURFACE_INDEX_20260615.csv`
+- `C:/Users/enzo1/PROJEC CDX/hitos/20260615-auditar-surface-chain-v1/READBACK.md`
+- `C:/Users/enzo1/PROJEC CDX/hitos/20260615-auditar-surface-chain-v1/README.md`
+- `C:/Users/enzo1/PROJEC CDX/operativa/TRACE.md`
 
 ## Cierre
 

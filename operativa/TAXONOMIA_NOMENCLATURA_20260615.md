@@ -37,7 +37,7 @@ Fecha: `2026-06-15`
 
 - `TGE`: `torre-gemela-escribania`
 - `TCU`: `tcu-agentic-runtime-control`
-- `PROJEC_CDX`: `C:\Users\enzo1\PROJEC CDX`
+- `PROJEC_CDX`: `C:/Users/enzo1/PROJEC CDX`
 - `05AO`: paquete historico TCU/TGE
 - `outputs/`: evidencia generada
 - `hitos/YYYYMMDD-frente-vN`: paquete versionado historico

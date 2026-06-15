@@ -17,6 +17,7 @@ El acceso on-demand a waves de cierre queda en [ANCLAS_ON_DEMAND.md](C:/Users/en
 - [READBACK_EXCEL_BLOCKER_FRONTIER.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md)
 - [ACTA_CORTE_EJECUTORA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/ACTA_CORTE_EJECUTORA_20260615.md)
 - [MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md)
+- [REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md)
 - [DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv](C:/Users/enzo1/PROJEC%20CDX/dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv)
 
 ## Regla
@@ -27,3 +28,4 @@ Para superficies de conexion y drift, usar `MAPA_CONEXIONES_DATAVERSE.md`.
 Para waves de cierre que tocan Dataverse, entrar por `operativa/ANCLAS_ON_DEMAND.md` y abrir `ANCLA_CIERRE_WAVE.md` solo despues del gate y solo si el delta toca Dataverse.
 La matriz fuente de cadena operativa vive en Dataverse como fuente funcional gobernada: `DATAVERSE_OPERATIONAL_CHAIN_MATRIX`. Su traduccion a logical surfaces reales esta en `DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv`.
 Cualquier CSV local es proyeccion/cache verificable.
+Para limpieza local de PC, el registro gobernado queda en `REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md` y no implica write live.

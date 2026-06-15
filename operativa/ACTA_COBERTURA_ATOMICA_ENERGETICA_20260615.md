@@ -6,7 +6,7 @@ HECHO_VERIFICADO: la cobertura atomica energetica quedo declarada en las superfi
 
 ## Alcance
 
-- `C:\Users\enzo1\PROJEC CDX` inicializado como repo Git local en `main`.
+- `C:/Users/enzo1/PROJEC CDX` inicializado como repo Git local en `main`.
 - `PROJEC CDX` recibió la wave de cobertura atomica energetica en sus entradas visibles.
 - `.codex` y `.agents` quedaron propagados en sus propias superficies visibles, fuera de este repo local.
 

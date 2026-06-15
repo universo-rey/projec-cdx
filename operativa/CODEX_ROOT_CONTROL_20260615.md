@@ -25,7 +25,7 @@
 ## Comando
 
 ```powershell
-pwsh -NoProfile -File "C:\Users\enzo1\PROJEC CDX\tools\codex-control-total.ps1" -ScanCodexRoot
+pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/codex-control-total.ps1" -ScanCodexRoot
 ```
 
 ## Generador

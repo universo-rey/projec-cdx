@@ -6,14 +6,14 @@ HECHO_VERIFICADO: `PROJEC CDX` queda como workbench operativo local, navegable, 
 
 ## Sistemas Tocados
 
-- `C:\Users\enzo1\PROJEC CDX\operativa`
-- `C:\Users\enzo1\PROJEC CDX\playbooks`
-- `C:\Users\enzo1\PROJEC CDX\tools`
-- `C:\Users\enzo1\PROJEC CDX\workbooks`
-- `C:\Users\enzo1\PROJEC CDX\outputs`
-- `C:\Users\enzo1\PROJEC CDX\hitos`
-- `C:\Users\enzo1\PROJEC CDX\README.md`
-- `C:\Users\enzo1\PROJEC CDX\MAPA_MAESTRO.md`
+- `C:/Users/enzo1/PROJEC CDX/operativa`
+- `C:/Users/enzo1/PROJEC CDX/playbooks`
+- `C:/Users/enzo1/PROJEC CDX/tools`
+- `C:/Users/enzo1/PROJEC CDX/workbooks`
+- `C:/Users/enzo1/PROJEC CDX/outputs`
+- `C:/Users/enzo1/PROJEC CDX/hitos`
+- `C:/Users/enzo1/PROJEC CDX/README.md`
+- `C:/Users/enzo1/PROJEC CDX/MAPA_MAESTRO.md`
 
 ## Sistemas No Tocados
 
@@ -53,7 +53,7 @@ HECHO_VERIFICADO: `PROJEC CDX` queda como workbench operativo local, navegable, 
 Comando esperado:
 
 ```powershell
-pwsh -NoProfile -File "C:\Users\enzo1\PROJEC CDX\tools\validate_proj_cdx_workbench.ps1"
+pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workbench.ps1"
 ```
 
 Resultado esperado: `PASS`.

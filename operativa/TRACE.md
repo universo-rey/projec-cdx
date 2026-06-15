@@ -83,7 +83,7 @@ Cadena operativa de `PROJEC CDX`.
 - Fuente: pedido del usuario de dejar lista la ultima limpieza con diagnostico registrado.
 - Proceso: medir la foto local, dejar evidencia y no tocar `Temp` sin gate explicito.
 - Salida: `operativa/ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md`.
-- Evidencia: `C:\Users\enzo1\CodexLocal\OPTIMIZACION_PC\OPT_PC_SKILL_20260615_091635`.
+- Evidencia: `C:/Users/enzo1/CodexLocal/OPTIMIZACION_PC/OPT_PC_SKILL_20260615_091635`.
 - Cierre: el equipo queda diagnosticado y el tramo de limpieza sigue bloqueado por falta de gate para ejecutar.
 
 ## Cierre Repos Git Main Only
@@ -187,7 +187,7 @@ Cadena operativa de `PROJEC CDX`.
 
 ## Cierre Cadena GitHub Auditar
 
-- Fuente: pedido de usar `CodexLocal` como base, reconocer repos en `Documents\GitHub` y agregar `Auditar` porque ya tiene indice.
+- Fuente: pedido de usar `CodexLocal` como base, reconocer repos en `Documents/GitHub` y agregar `Auditar` porque ya tiene indice.
 - Proceso: cruzar inventarios versionados, cadena operativa, hito GitHub y superficie `Auditar` sin abrir Git write ni live write.
 - Salida: `operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md`, `operativa/TODO_20260615.md`, `inventarios/GITHUB_REPOS_CANONICAL_20260615.csv`, `inventarios/AUDITAR_SURFACE_INDEX_20260615.csv`.
 - Hito: `hitos/20260615-cierre-cadena-github-auditar-v1`.
@@ -216,6 +216,22 @@ Cadena operativa de `PROJEC CDX`.
 - Salida: `hitos/20260615-pr-cierre-atomico-v1/README.md`, `hitos/20260615-pr-cierre-atomico-v1/INDICE.csv`, `hitos/20260615-pr-cierre-atomico-v1/ORDEN_PR-*.md`.
 - Hito: `hitos/20260615-pr-cierre-atomico-v1`.
 - Cierre: el cierre real queda gobernado por orden atomica, no por inference ni por estado visual suelto.
+
+## Limpieza Local PC
+
+- Fuente: pedido de revisar la computadora a fondo, recortar ruido y dejar el sistema gobernable desde esta sesion.
+- Proceso: inventario de procesos y servicios, deshabilitacion de auxiliares, recorte de superficie de busqueda y cierre de WebView/SearchHost visibles.
+- Salida: `operativa/INVENTARIO_FINAL_PC_20260615.md`, `operativa/CURRENT.md`, `operativa/NEXT.md`.
+- Hito: `hitos/20260615-cierre-workbench-v1`.
+- Cierre: la limpieza local quedo documentada, la superficie de busqueda del usuario quedo recortada y la base de Windows quedo intacta.
+
+## Skill Recipe Sync Limpieza Pc Local Segura
+
+- Fuente: pedido de convertir la limpieza local en piezas reutilizables y registrarla en Dataverse local.
+- Proceso: extraer receta, proceso y registro local, engancharlos al skill y mantener el carril local-only.
+- Salida: `recipes/limpieza-pc-local-segura.md`, `procesos/limpieza-pc-local-segura.md`, `dataverse/REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md`.
+- Hito: `hitos/20260615-cierre-workbench-v1`.
+- Cierre: la limpieza queda reusable y registrada sin write live.
 
 ## Regla
 
