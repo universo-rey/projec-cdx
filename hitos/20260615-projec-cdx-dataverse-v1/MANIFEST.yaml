@@ -1,0 +1,25 @@
+id: 20260615-projec-cdx-dataverse-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: dataverse_segunda_pasada
+estado: GREEN_LOCAL
+fuente:
+  - C:\Users\enzo1\PROJEC CDX\dataverse\PLAN_SEGUNDA_PASADA.md
+  - C:\Users\enzo1\PROJEC CDX\workbooks\control_operativo.xlsx
+  - C:\Users\enzo1\PROJEC CDX\outputs\control_operativo_20260615\
+  - C:\Users\enzo1\PROJEC CDX\tools\build_control_workbook.mjs
+  - C:\Users\enzo1\PROJEC CDX\tools\validate_proj_cdx_workbench.ps1
+  - C:\Users\enzo1\PROJEC CDX\operativa\ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md
+salida:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-projec-cdx-dataverse-v1\
+rollback: eliminar la carpeta versionada y revertir las referencias en operativa y dataverse
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+guardrails:
+  - no_secret_read
+  - no_live_write
+  - no_global_state_or_sqlite
+  - dataverse_gate_required_for_live
+evidencia:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-projec-cdx-dataverse-v1\EVIDENCIA.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-projec-cdx-dataverse-v1\READBACK.md

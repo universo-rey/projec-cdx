@@ -39,6 +39,7 @@ const sources = {
   liveRepoReview: await readText("outputs/live_repo_review_20260615/READBACK.md"),
   dataverseGate: await readText("dataverse/GATE.md"),
   dataverseRegister: await readText("dataverse/REGISTRO_BLOQUEOS.md"),
+  dataversePlan: await readText("dataverse/PLAN_SEGUNDA_PASADA.md"),
   hiloOrigen: await readText("hitos/20260615-hilo-origen-v1/README.md"),
   manifests: await readText("operativa/MANIFESTS.md"),
   retention: await readText("operativa/RETENCION.md"),
@@ -105,6 +106,11 @@ const deltas = [
     output: "dataverse/GATE.md y READBACK_EXCEL_BLOCKER_FRONTIER.md",
     milestone: "hitos/20260615-cierre-workbench-v1",
     notes: oneLine(sources.dataverseGate, "No autoriza live writes."),
+    dataverseEstado: "metadata_only",
+    ambiente: "local",
+    targetExacto: "NO_APLICA",
+    gateLive: "cerrado",
+    postcheck: "pendiente",
   },
   {
     id: "DELTA-006",
@@ -117,6 +123,11 @@ const deltas = [
     output: "dataverse/REGISTRO_BLOQUEOS.md y playbooks/07-dataverse-fronteras.md",
     milestone: "hitos/20260615-hilo-origen-v1",
     notes: oneLine(sources.dataverseRegister, "Dataverse se usa como registro de bloqueos y decisiones."),
+    dataverseEstado: "prepared_not_executed",
+    ambiente: "local",
+    targetExacto: "NO_APLICA",
+    gateLive: "cerrado",
+    postcheck: "pendiente",
   },
   {
     id: "DELTA-007",
@@ -196,6 +207,22 @@ const alertRows = [
     condition: "blocker_register_required",
     action: "Registrar bloqueos y decisiones en dataverse/REGISTRO_BLOQUEOS.md antes de inventariar de mas.",
     evidence: "dataverse/REGISTRO_BLOQUEOS.md",
+  },
+  {
+    id: "ALR-008",
+    severity: "Alta",
+    surface: "dataverse",
+    condition: "metadata_only_requires_postcheck",
+    action: "No cerrar metadata_only sin postcheck visible y evidencia local suficiente.",
+    evidence: "dataverse/PLAN_SEGUNDA_PASADA.md",
+  },
+  {
+    id: "ALR-009",
+    severity: "Alta",
+    surface: "dataverse",
+    condition: "prepared_not_executed_requires_owner",
+    action: "No dejar prepared_not_executed sin owner asignado y target no ambiguo.",
+    evidence: "dataverse/PLAN_SEGUNDA_PASADA.md",
   },
   {
     id: "ALR-006",
@@ -298,15 +325,15 @@ resumen.getRange("D6").values = [[
 stylePanel(resumen.getRange("D6:H12"));
 
 registro.showGridLines = false;
-registro.getRange("A1:J1").merge();
+registro.getRange("A1:O1").merge();
 registro.getRange("A1").values = [["Registro de deltas"]];
-styleTitle(registro.getRange("A1:J1"), "#155E75");
+styleTitle(registro.getRange("A1:O1"), "#155E75");
 
-registro.getRange("A3:J3").merge();
+registro.getRange("A3:O3").merge();
 registro.getRange("A3").values = [["Una fila por unidad atomica de trabajo."]];
-stylePanel(registro.getRange("A3:J3"));
+stylePanel(registro.getRange("A3:O3"));
 
-registro.getRange("A5:J5").values = [[
+registro.getRange("A5:O5").values = [[
   "Delta",
   "Fecha",
   "Superficie",
@@ -317,31 +344,57 @@ registro.getRange("A5:J5").values = [[
   "Salida",
   "Hito",
   "Notas",
+  "Dataverse estado",
+  "Ambiente",
+  "Target exacto",
+  "Gate live",
+  "Postcheck",
 ]];
-styleHeader(registro.getRange("A5:J5"));
+styleHeader(registro.getRange("A5:O5"));
 
 const registroRows = Array.from({ length: 60 }, (_, index) => {
   const row = deltas[index];
   return row
-    ? [row.id, row.date, row.surface, row.objective, row.playbook, row.status, row.owner, row.output, row.milestone, row.notes]
-    : [null, null, null, null, null, null, null, null, null, null];
+    ? [
+        row.id,
+        row.date,
+        row.surface,
+        row.objective,
+        row.playbook,
+        row.status,
+        row.owner,
+        row.output,
+        row.milestone,
+        row.notes,
+        row.dataverseEstado ?? "NO_APLICA",
+        row.ambiente ?? "NO_APLICA",
+        row.targetExacto ?? "NO_APLICA",
+        row.gateLive ?? "NO_APLICA",
+        row.postcheck ?? "NO_APLICA",
+      ]
+    : [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
 });
-registro.getRange("A6:J65").values = registroRows;
-styleBody(registro.getRange("A6:J65"));
-registro.tables.add("A5:J65", true, "DeltasTable");
+registro.getRange("A6:O65").values = registroRows;
+styleBody(registro.getRange("A6:O65"));
+registro.tables.add("A5:O65", true, "DeltasTable");
 registro.getRange("B6:B65").format.numberFormat = "yyyy-mm-dd";
 registro.dataValidations.add({ range: "C6:C65", rule: { type: "list", formula1: "Listas!$A$3:$A$15" } });
 registro.dataValidations.add({ range: "E6:E65", rule: { type: "list", formula1: "Listas!$B$3:$B$11" } });
 registro.dataValidations.add({ range: "F6:F65", rule: { type: "list", formula1: "Listas!$C$3:$C$8" } });
+registro.dataValidations.add({ range: "K6:K65", rule: { type: "list", formula1: "Listas!$E$3:$E$7" } });
+registro.dataValidations.add({ range: "L6:L65", rule: { type: "list", formula1: "Listas!$F$3:$F$6" } });
+registro.dataValidations.add({ range: "N6:N65", rule: { type: "list", formula1: "Listas!$G$3:$G$6" } });
+registro.dataValidations.add({ range: "O6:O65", rule: { type: "list", formula1: "Listas!$H$3:$H$6" } });
 registro.freezePanes.freezeRows(5);
 
-for (const col of ["A", "B", "C", "E", "F", "G"]) {
+for (const col of ["A", "B", "C", "E", "F", "G", "K", "L", "N", "O"]) {
   registro.getRange(`${col}:${col}`).format.columnWidthPx = 130;
 }
 registro.getRange("D:D").format.columnWidthPx = 300;
 registro.getRange("H:H").format.columnWidthPx = 300;
 registro.getRange("I:I").format.columnWidthPx = 240;
 registro.getRange("J:J").format.columnWidthPx = 300;
+registro.getRange("M:M").format.columnWidthPx = 220;
 
 alertas.showGridLines = false;
 alertas.getRange("A1:F1").merge();
@@ -372,8 +425,8 @@ listas.showGridLines = false;
 listas.getRange("A1:D1").merge();
 listas.getRange("A1").values = [["Listas"]];
 styleTitle(listas.getRange("A1:D1"), "#0F766E");
-listas.getRange("A2:D2").values = [["Superficies", "Playbooks", "Estados", "Severidades"]];
-styleHeader(listas.getRange("A2:D2"));
+listas.getRange("A2:H2").values = [["Superficies", "Playbooks", "Estados", "Severidades", "Dataverse estados", "Ambientes", "Gate live", "Postcheck"]];
+styleHeader(listas.getRange("A2:H2"));
 listas.getRange("A3:A15").values = [
   ["operativa"],
   ["playbooks"],
@@ -409,16 +462,41 @@ listas.getRange("C3:C8").values = [
   ["Versionado"],
 ];
 listas.getRange("D3:D6").values = [["Info"], ["Baja"], ["Media"], ["Alta"]];
-styleBody(listas.getRange("A3:D15"));
-for (const col of ["A", "B", "C", "D"]) {
+listas.getRange("E3:E7").values = [
+  ["local_evidence"],
+  ["metadata_only"],
+  ["prepared_not_executed"],
+  ["live_rows_confirmed"],
+  ["blocked"],
+];
+listas.getRange("F3:F6").values = [
+  ["local"],
+  ["metadata_only"],
+  ["live"],
+  ["NO_APLICA"],
+];
+listas.getRange("G3:G6").values = [
+  ["cerrado"],
+  ["abierto"],
+  ["n/a"],
+  ["NO_APLICA"],
+];
+listas.getRange("H3:H6").values = [
+  ["pendiente"],
+  ["ok"],
+  ["n/a"],
+  ["NO_APLICA"],
+];
+styleBody(listas.getRange("A3:H15"));
+for (const col of ["A", "B", "C", "D", "E", "F", "G", "H"]) {
   listas.getRange(`${col}:${col}`).format.columnWidthPx = 180;
 }
 
 const scans = [
   ["inspect_resumen.ndjson", "Resumen!A1:H14"],
-  ["inspect_registro.ndjson", "Registro!A1:J14"],
+  ["inspect_registro.ndjson", "Registro!A1:O14"],
   ["inspect_alertas.ndjson", "Alertas!A1:F14"],
-  ["inspect_listas.ndjson", "Listas!A1:D15"],
+  ["inspect_listas.ndjson", "Listas!A1:H15"],
 ];
 let combinedInspect = "";
 for (const [file, range] of scans) {
@@ -454,9 +532,13 @@ const manifest = {
     "operativa/TODO_20260615.md",
     "operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md",
     "operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md",
+    "operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md",
     "outputs/live_repo_review_20260615/READBACK.md",
     "dataverse/GATE.md",
     "dataverse/REGISTRO_BLOQUEOS.md",
+    "dataverse/PLAN_SEGUNDA_PASADA.md",
+    "dataverse/README.md",
+    "dataverse/MAPA.md",
     "playbooks/07-dataverse-fronteras.md",
     "hitos/20260615-hilo-origen-v1/README.md",
     "operativa/MANIFESTS.md",

@@ -56,6 +56,10 @@ Criterio de cierre:
 
 - El tablero muestra si Dataverse esta local, metadata-only, preparado, live confirmado o bloqueado.
 
+Estado:
+
+- Cumplida en `workbooks/control_operativo.xlsx` y `outputs/control_operativo_20260615/`.
+
 ## Fase DV4 - Validador
 
 Extender el validador del workbench.
@@ -73,6 +77,10 @@ Criterio de cierre:
 
 - PASS si Dataverse esta gobernado sin live; OBSERVED si falta evidencia; FAIL si se intenta escribir sin gate.
 
+Estado:
+
+- Cumplida en `tools/validate_proj_cdx_workbench.ps1` y la validacion local final de esta wave.
+
 ## Fase DV5 - Hito Dataverse
 
 Versionar la segunda pasada.
@@ -84,3 +92,7 @@ Archivo objetivo:
 Criterio de cierre:
 
 - Una nueva sesion entiende que Dataverse tiene carril propio, gate propio y no nace mezclado con outputs.
+
+Estado:
+
+- Cumplida en `hitos/20260615-projec-cdx-dataverse-v1`.

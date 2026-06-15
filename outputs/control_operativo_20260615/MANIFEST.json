@@ -1,6 +1,6 @@
 {
   "id": "control_operativo_20260615",
-  "generated_at": "2026-06-15T09:04:45.341Z",
+  "generated_at": "2026-06-15T14:52:56.136Z",
   "root": "C:\\Users\\enzo1\\PROJEC CDX",
   "source_files": [
     "operativa/CURRENT.md",
@@ -10,9 +10,13 @@
     "operativa/TODO_20260615.md",
     "operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md",
     "operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md",
+    "operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md",
     "outputs/live_repo_review_20260615/READBACK.md",
     "dataverse/GATE.md",
     "dataverse/REGISTRO_BLOQUEOS.md",
+    "dataverse/PLAN_SEGUNDA_PASADA.md",
+    "dataverse/README.md",
+    "dataverse/MAPA.md",
     "playbooks/07-dataverse-fronteras.md",
     "hitos/20260615-hilo-origen-v1/README.md",
     "operativa/MANIFESTS.md",

@@ -48,6 +48,7 @@ $requiredFiles = @(
   "operativa\TRACE.md",
   "operativa\MANIFESTS.md",
   "operativa\RETENCION.md",
+  "operativa\ACTA_REPOS_SURFACE_GITHUB_20260615.md",
   "playbooks\00-preflight-gobernado.md",
   "playbooks\01-iniciar-delta.md",
   "playbooks\02-ejecutar-delta.md",
@@ -56,6 +57,10 @@ $requiredFiles = @(
   "playbooks\05-promover-aprendizaje.md",
   "playbooks\06-dataverse-gobernado.md",
   "dataverse\GATE.md",
+  "dataverse\README.md",
+  "dataverse\MAPA.md",
+  "dataverse\PLAN_SEGUNDA_PASADA.md",
+  "outputs\dataverse_blocker_frontier_20260614\README.md",
   "workbooks\EXCEL_AL_FRENTE.md",
   "tools\validate_proj_cdx_workbench.ps1"
 )
@@ -134,6 +139,37 @@ foreach ($formula in $formulaFiles) {
     Add-Check "formula_errors:$($formula.Directory.Name)" "PASS" "Sin errores."
   } else {
     Add-Check "formula_errors:$($formula.Directory.Name)" "OBSERVED" "Archivo no vacio; revisar contenido."
+  }
+}
+
+$dataverseRequiredTerms = @("metadata_only", "rows_absent", "rollback_missing", "postcheck_missing", "secret_detected")
+$dataverseGateText = Get-Content -LiteralPath (Join-Path $Root "dataverse\GATE.md") -Raw
+foreach ($term in $dataverseRequiredTerms) {
+  if ($dataverseGateText -notmatch [regex]::Escape($term)) {
+    Add-Check "dataverse_gate_stop_condition:$term" "FAIL" "Falta stop condition Dataverse: $term"
+  }
+}
+
+$dataversePlanText = Get-Content -LiteralPath (Join-Path $Root "dataverse\PLAN_SEGUNDA_PASADA.md") -Raw
+foreach ($phase in @("DV3", "DV4")) {
+  if ($dataversePlanText -notmatch [regex]::Escape($phase)) {
+    Add-Check "dataverse_plan_second_pass:$phase" "FAIL" "Falta fase Dataverse: $phase"
+  }
+}
+
+$dataverseRequiredFiles = @(
+  "dataverse\README.md",
+  "dataverse\MAPA.md",
+  "dataverse\GATE.md",
+  "dataverse\PLAN_SEGUNDA_PASADA.md",
+  "outputs\dataverse_blocker_frontier_20260614\README.md"
+)
+foreach ($relative in $dataverseRequiredFiles) {
+  $path = Join-Path $Root $relative
+  if (Test-Path -LiteralPath $path -PathType Leaf) {
+    Add-Check "dataverse_required:$relative" "PASS" "OK"
+  } else {
+    Add-Check "dataverse_required:$relative" "FAIL" "Falta archivo requerido Dataverse."
   }
 }
 

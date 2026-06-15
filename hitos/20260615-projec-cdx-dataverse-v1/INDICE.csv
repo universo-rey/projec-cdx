@@ -1,0 +1,4 @@
+id,tipo,estado,evidencia
+H-001,dataverse_segunda_pasada,closed,dataverse/PLAN_SEGUNDA_PASADA.md
+H-002,workbook_control,closed,workbooks/control_operativo.xlsx
+H-003,validator_extension,closed,tools/validate_proj_cdx_workbench.ps1
