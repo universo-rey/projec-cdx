@@ -1,0 +1,27 @@
+# Indice Maestro de Hitos
+
+Mapa corto de los paquetes versionados en `PROJEC CDX/hitos`.
+
+| version | foco | estado | evidencia |
+| --- | --- | --- | --- |
+| `20260614-hilo-anterior-v1` | Hilo pesado continuado el 2026-06-14 | `GREEN_ARCHIVED` | `hitos/20260614-hilo-anterior-v1/HANDOFF_THREAD_HEAVY_20260614.md` |
+| `20260614-hitos-otros-repos-v1` | Repositorios restantes del universo visible | `GREEN_ARCHIVED` | `outputs/README.md`, `outputs/MAPA.md`, `outputs/universe_relationship_audit_20260614/UNIVERSE_RELATIONSHIP_AUDIT.md` |
+| `20260615-cierre-workbench-v1` | Cierre local de estructura operativa de PROJEC CDX | `GREEN_OPERABLE` | `hitos/20260615-cierre-workbench-v1/EVIDENCIA.md`, `outputs/control_operativo_20260615/MANIFEST.json`, `operativa/CONTROL_TOTAL_20260615.md` |
+| `20260615-patrones-procesos-v1` | Levantamiento inicial de patrones y procesos | `GREEN_LOCAL` | `hitos/20260615-patrones-procesos-v1/EVIDENCIA.md`, `patrones/INDICE_PATRONES.md`, `procesos/INDICE_PROCESOS.md` |
+| `20260615-sincronizacion-tiempo-real-v1` | Contrato de sincronizacion local y rehidratacion Dataverse | `GREEN_LOCAL` | `hitos/20260615-sincronizacion-tiempo-real-v1/EVIDENCIA.md`, `tools/validate_proj_cdx_sync.ps1`, `dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md` |
+| `20260615-hilo-origen-v1` | Hilo de origen consolidado en indice padre | `GREEN_LOCAL` | `hitos/20260615-hilo-origen-v1/EVIDENCIA.md`, `hitos/20260615-hilo-origen-v1/READBACK.md`, `operativa/TRACE.md` |
+| `20260615-dataverse-conexiones-drift-v1` | Conexiones Dataverse, gates y drift de semilla | `GREEN_LOCAL` | `hitos/20260615-dataverse-conexiones-drift-v1/EVIDENCIA.md`, `dataverse/MAPA_CONEXIONES_DATAVERSE.md`, `dataverse/README.md` |
+| `20260615-corte-ejecutora-vs-sdu-v1` | Corte ejecutora diferenciada del roster SDU | `GREEN_LOCAL` | `hitos/20260615-corte-ejecutora-vs-sdu-v1/EVIDENCIA.md`, `dataverse/ACTA_CORTE_EJECUTORA_20260615.md`, `dataverse/MAPA_AGENTES_SDU.md` |
+| `20260615-wave-revision-total-v1` | Revision total asistida de cobertura, taxonomia y cadena operativa | `GREEN_LOCAL` | `hitos/20260615-wave-revision-total-v1/EVIDENCIA.md`, `operativa/TAXONOMIA_NOMENCLATURA_20260615.md`, `operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md`, `Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/ACTA_PROJEC_CDX_WAVE_REVISION_TOTAL_20260615.md` |
+| `20260615-codexlocal-base-v1` | CodexLocal como base local de workspaces y split Cabina | `GREEN_REFERENCE_CLOSED` | `hitos/20260615-codexlocal-base-v1/EVIDENCIA.md`, `inventarios/CODEXLOCAL_SURFACE_MAP_20260615.csv`, `inventarios/CODEXLOCAL_SPLIT_CABINA_20260615.csv` |
+| `20260615-auditar-surface-chain-v1` | Auditar como carpeta agregadora no Git incorporada a cadena | `GREEN_LOCAL` | `hitos/20260615-auditar-surface-chain-v1/READBACK.md`, `inventarios/AUDITAR_SURFACE_INDEX_20260615.csv`, `inventarios/GITHUB_REPOS_CANONICAL_20260615.csv` |
+| `20260615-cierre-cadena-github-auditar-v1` | Cierre local de cadena CodexLocal GitHub Auditar | `GREEN_LOCAL` | `hitos/20260615-cierre-cadena-github-auditar-v1/READBACK.md`, `operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md`, `operativa/TODO_20260615.md`, `workbooks/control_operativo.xlsx` |
+| `20260615-semaforo-verde-historicos-v1` | Reclasificacion de amarillos historicos a verde gobernado | `GREEN_LOCAL` | `hitos/20260615-semaforo-verde-historicos-v1/READBACK.md`, `operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md`, `operativa/CONTROL_TOTAL_20260615.md` |
+| `20260615-pr-cierre-atomico-v1` | Ordenes atomicas por PR para cierre real de PRs abiertos | `GREEN_LOCAL` | `hitos/20260615-pr-cierre-atomico-v1/READBACK.md`, `hitos/20260615-pr-cierre-atomico-v1/INDICE.csv`, `outputs/live_repo_review_20260615/READBACK.md` |
+| `20260615-archivo-ramas-historicas-v1` | Archivo historico de ramas con matriz Excel compañera | `GREEN_LOCAL` | `hitos/20260615-archivo-ramas-historicas-v1/READBACK.md`, `operativa/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md`, `operativa/MATRIZ_RAMAS_HISTORICAS_20260615.xlsx` |
+| `20260615-agentes-atomicos-algoritmicos-en-waves-v1` | Delegacion por waves con agentes atomicos algoritmicos | `GREEN_LOCAL` | `hitos/20260615-agentes-atomicos-algoritmicos-en-waves-v1/READBACK.md`, `hitos/20260615-agentes-atomicos-algoritmicos-en-waves-v1/INDICE.csv`, `operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md` |
+| `20260615-cobertura-atomica-energetica-v1` | Cobertura atomica energetica como contrato visible | `GREEN_LOCAL` | `hitos/20260615-cobertura-atomica-energetica-v1/READBACK.md`, `hitos/20260615-cobertura-atomica-energetica-v1/INDICE.csv`, `operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md` |
+
+Regla:
+- El detalle vive en cada paquete versionado.
+- El indice maestro solo resume alcance, estado y evidencia.
