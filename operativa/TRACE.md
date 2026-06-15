@@ -280,6 +280,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260615-politica-ramas-versionado-v1`.
 - Cierre: la politica local absorbe el scaffold y deja el lane de versionado limpio.
 
+## Repos Surface GitHub
+
+- Fuente: pedido de documentar la wave que dejo `.codex` y `.agents` versionados en GitHub.
+- Proceso: absorber la acta local y dejar el cierre sin renombrar `codex-root` ni `agents-root`.
+- Salida: `hitos/20260615-repos-surface-github-v1`.
+- Hito: `hitos/20260615-repos-surface-github-v1`.
+- Cierre: la wave de repos surface queda cerrada como evidencia durable.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

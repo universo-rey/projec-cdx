@@ -217,6 +217,12 @@ Cierre local de completitud del workbench `PROJEC CDX` y estado final de limpiez
 - Mantener el scaffold separado del live y versionado como hito local propio.
 - Evidencia: `hitos/20260615-politica-ramas-versionado-v1`.
 
+## Ultimo Delta Cerrado 26
+
+- Versionar la acta local de repos surface GitHub como hito propio.
+- Mantener `codex-root` y `agents-root` sin renombre por ahora.
+- Evidencia: `hitos/20260615-repos-surface-github-v1`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.
