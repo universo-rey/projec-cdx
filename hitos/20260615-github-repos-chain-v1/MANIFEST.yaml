@@ -1,0 +1,26 @@
+id: 20260615-github-repos-chain-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: github_repos_operational_chain_delta
+estado: GREEN_LOCAL
+fuente:
+  - C:\Users\enzo1\Documents\GitHub\cabina-universal-d\.agents\codex\matrices\REPO_GOVERNANCE_ASSIGNMENT_MATRIX.csv
+  - C:\Users\enzo1\Documents\GitHub\microsoft-agents-governed-lab\AGENTS.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260614-hitos-otros-repos-v1\INDICE.csv
+salida:
+  - C:\Users\enzo1\Documents\Codex\2026-06-14\projec-cdx-handoff-20260614\outputs\PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv
+  - C:\Users\enzo1\PROJEC CDX\inventarios\GITHUB_REPOS_CANONICAL_20260615.csv
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-github-repos-chain-v1\
+rollback: retirar las dos filas agregadas y revertir chain_coverage a EXTRA_CANONICAL_REPO
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_operational_chain.ps1"
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_sync.ps1"
+guardrails:
+  - no_secret_read
+  - no_live_write
+  - no_git_destructive
+resultado:
+  operational_chain_rows: 42
+  extra_canonical_repos: 0
+  live_write: NO

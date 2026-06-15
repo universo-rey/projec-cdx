@@ -1,0 +1,22 @@
+id: 20260615-corte-ejecutora-vs-sdu-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: corte_ejecutora_vs_sdu
+estado: GREEN_LOCAL
+fuente:
+  - C:\Users\enzo1\PROJEC CDX\dataverse\ACTA_CORTE_EJECUTORA_20260615.md
+  - C:\Users\enzo1\PROJEC CDX\dataverse\MAPA_AGENTES_SDU.md
+  - C:\Users\enzo1\PROJEC CDX\dataverse\MAPA_COLA_TRABAJO_SDU.md
+salida:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-corte-ejecutora-vs-sdu-v1\
+rollback: eliminar la carpeta versionada y quitar referencias en indices maestros
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+guardrails:
+  - no_secret_read
+  - no_live_write
+  - no_global_state_or_sqlite
+  - dataverse_gate_required_for_live
+evidencia:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-corte-ejecutora-vs-sdu-v1\EVIDENCIA.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-corte-ejecutora-vs-sdu-v1\READBACK.md

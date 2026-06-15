@@ -1,0 +1,828 @@
+[
+  {
+    "name": "..codex-global-state.json.tmp-1777080419023-b626b4e8-4b42-4870-8168-f0d6c1656657",
+    "status": "DONE",
+    "reason": "Temporary global-state snapshot; better under tmp.",
+    "source": "C:\\Users\\enzo1\\.codex\\..codex-global-state.json.tmp-1777080419023-b626b4e8-4b42-4870-8168-f0d6c1656657",
+    "target": "C:\\Users\\enzo1\\.codex\\tmp\\global-state\\..codex-global-state.json.tmp-1777080419023-b626b4e8-4b42-4870-8168-f0d6c1656657"
+  },
+  {
+    "name": "..codex-global-state.json.tmp-1777383642748-3417c403-d343-4d95-97cb-5aeaceb9f6eb",
+    "status": "DONE",
+    "reason": "Temporary global-state snapshot; better under tmp.",
+    "source": "C:\\Users\\enzo1\\.codex\\..codex-global-state.json.tmp-1777383642748-3417c403-d343-4d95-97cb-5aeaceb9f6eb",
+    "target": "C:\\Users\\enzo1\\.codex\\tmp\\global-state\\..codex-global-state.json.tmp-1777383642748-3417c403-d343-4d95-97cb-5aeaceb9f6eb"
+  },
+  {
+    "name": "..codex-global-state.json.tmp-1778186519232-50371814-4ebe-4ab3-9b01-84bdc895275d",
+    "status": "DONE",
+    "reason": "Temporary global-state snapshot; better under tmp.",
+    "source": "C:\\Users\\enzo1\\.codex\\..codex-global-state.json.tmp-1778186519232-50371814-4ebe-4ab3-9b01-84bdc895275d",
+    "target": "C:\\Users\\enzo1\\.codex\\tmp\\global-state\\..codex-global-state.json.tmp-1778186519232-50371814-4ebe-4ab3-9b01-84bdc895275d"
+  },
+  {
+    "name": "..codex-global-state.json.tmp-1778957519587-6f9a65d2-eaf4-454b-ad56-dbf6e28df8ce",
+    "status": "DONE",
+    "reason": "Temporary global-state snapshot; better under tmp.",
+    "source": "C:\\Users\\enzo1\\.codex\\..codex-global-state.json.tmp-1778957519587-6f9a65d2-eaf4-454b-ad56-dbf6e28df8ce",
+    "target": "C:\\Users\\enzo1\\.codex\\tmp\\global-state\\..codex-global-state.json.tmp-1778957519587-6f9a65d2-eaf4-454b-ad56-dbf6e28df8ce"
+  },
+  {
+    "name": "..codex-global-state.json.tmp-1779314921175-eb65fd28-c5ff-475c-b830-09309f491091",
+    "status": "DONE",
+    "reason": "Temporary global-state snapshot; better under tmp.",
+    "source": "C:\\Users\\enzo1\\.codex\\..codex-global-state.json.tmp-1779314921175-eb65fd28-c5ff-475c-b830-09309f491091",
+    "target": "C:\\Users\\enzo1\\.codex\\tmp\\global-state\\..codex-global-state.json.tmp-1779314921175-eb65fd28-c5ff-475c-b830-09309f491091"
+  },
+  {
+    "name": "..codex-global-state.json.tmp-1779419719889-a4f249a8-b0bc-4bbb-9248-e2aea1cb00bb",
+    "status": "DONE",
+    "reason": "Temporary global-state snapshot; better under tmp.",
+    "source": "C:\\Users\\enzo1\\.codex\\..codex-global-state.json.tmp-1779419719889-a4f249a8-b0bc-4bbb-9248-e2aea1cb00bb",
+    "target": "C:\\Users\\enzo1\\.codex\\tmp\\global-state\\..codex-global-state.json.tmp-1779419719889-a4f249a8-b0bc-4bbb-9248-e2aea1cb00bb"
+  },
+  {
+    "name": "..codex-global-state.json.tmp-1779656940689-0e1ca4fe-da7c-4eb0-9317-03fb3f59262c",
+    "status": "DONE",
+    "reason": "Temporary global-state snapshot; better under tmp.",
+    "source": "C:\\Users\\enzo1\\.codex\\..codex-global-state.json.tmp-1779656940689-0e1ca4fe-da7c-4eb0-9317-03fb3f59262c",
+    "target": "C:\\Users\\enzo1\\.codex\\tmp\\global-state\\..codex-global-state.json.tmp-1779656940689-0e1ca4fe-da7c-4eb0-9317-03fb3f59262c"
+  },
+  {
+    "name": "..codex-global-state.json.tmp-1779850787667-9aac6b01-6ef4-40e8-94e5-235743c5d8df",
+    "status": "DONE",
+    "reason": "Temporary global-state snapshot; better under tmp.",
+    "source": "C:\\Users\\enzo1\\.codex\\..codex-global-state.json.tmp-1779850787667-9aac6b01-6ef4-40e8-94e5-235743c5d8df",
+    "target": "C:\\Users\\enzo1\\.codex\\tmp\\global-state\\..codex-global-state.json.tmp-1779850787667-9aac6b01-6ef4-40e8-94e5-235743c5d8df"
+  },
+  {
+    "name": "..codex-global-state.json.tmp-1780101898506-4bbe1a05-e6a3-4de1-b18a-5dde5898b426",
+    "status": "DONE",
+    "reason": "Temporary global-state snapshot; better under tmp.",
+    "source": "C:\\Users\\enzo1\\.codex\\..codex-global-state.json.tmp-1780101898506-4bbe1a05-e6a3-4de1-b18a-5dde5898b426",
+    "target": "C:\\Users\\enzo1\\.codex\\tmp\\global-state\\..codex-global-state.json.tmp-1780101898506-4bbe1a05-e6a3-4de1-b18a-5dde5898b426"
+  },
+  {
+    "name": ".codex-global-state.json.bak",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak"
+  },
+  {
+    "name": ".codex-global-state.json.bak-20260529-222948",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-20260529-222948",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-20260529-222948"
+  },
+  {
+    "name": ".codex-global-state.json.bak-aa80-normalize-20260530-014507",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-aa80-normalize-20260530-014507",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-aa80-normalize-20260530-014507"
+  },
+  {
+    "name": ".codex-global-state.json.bak-aa80-normalize-20260530-014616",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-aa80-normalize-20260530-014616",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-aa80-normalize-20260530-014616"
+  },
+  {
+    "name": ".codex-global-state.json.bak-anchor-after-exit-ready-20260530-120718",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-anchor-after-exit-ready-20260530-120718",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-anchor-after-exit-ready-20260530-120718"
+  },
+  {
+    "name": ".codex-global-state.json.bak-anchor-tge-worktree-20260530-120545",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-anchor-tge-worktree-20260530-120545",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-anchor-tge-worktree-20260530-120545"
+  },
+  {
+    "name": ".codex-global-state.json.bak-clear-stale-environment-20260530-000700",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-clear-stale-environment-20260530-000700",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-clear-stale-environment-20260530-000700"
+  },
+  {
+    "name": ".codex-global-state.json.bak-current-thread-d-repo-ui-20260601-105132",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-current-thread-d-repo-ui-20260601-105132",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-current-thread-d-repo-ui-20260601-105132"
+  },
+  {
+    "name": ".codex-global-state.json.bak-current-thread-d-repo-ui-refresh-20260601-105508",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-current-thread-d-repo-ui-refresh-20260601-105508",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-current-thread-d-repo-ui-refresh-20260601-105508"
+  },
+  {
+    "name": ".codex-global-state.json.bak-current-thread-d-repo-ui-restart-20260601-105717",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-current-thread-d-repo-ui-restart-20260601-105717",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-current-thread-d-repo-ui-restart-20260601-105717"
+  },
+  {
+    "name": ".codex-global-state.json.bak-current-thread-d-root-repo-20260601-111047",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-current-thread-d-root-repo-20260601-111047",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-current-thread-d-root-repo-20260601-111047"
+  },
+  {
+    "name": ".codex-global-state.json.bak-d-organizacion-codex-project-20260601-104456",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-d-organizacion-codex-project-20260601-104456",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-d-organizacion-codex-project-20260601-104456"
+  },
+  {
+    "name": ".codex-global-state.json.bak-final-worktree-thread-fix-20260529-232406",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-final-worktree-thread-fix-20260529-232406",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-final-worktree-thread-fix-20260529-232406"
+  },
+  {
+    "name": ".codex-global-state.json.bak-layout-move-20260529-225734",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-layout-move-20260529-225734",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-layout-move-20260529-225734"
+  },
+  {
+    "name": ".codex-global-state.json.bak-move-current-tge-thread-to-worktree-20260530-115323",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-move-current-tge-thread-to-worktree-20260530-115323",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-move-current-tge-thread-to-worktree-20260530-115323"
+  },
+  {
+    "name": ".codex-global-state.json.bak-move-current-thread-20260529-230525",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-move-current-thread-20260529-230525",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-move-current-thread-20260529-230525"
+  },
+  {
+    "name": ".codex-global-state.json.bak-normalize-organizacion-now-20260530-003808",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-normalize-organizacion-now-20260530-003808",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-normalize-organizacion-now-20260530-003808"
+  },
+  {
+    "name": ".codex-global-state.json.bak-normalize-organizacion-worktree-ui-20260530-002354",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-normalize-organizacion-worktree-ui-20260530-002354",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-normalize-organizacion-worktree-ui-20260530-002354"
+  },
+  {
+    "name": ".codex-global-state.json.bak-organizacion-on-exit-20260530-010631",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-organizacion-on-exit-20260530-010631",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-organizacion-on-exit-20260530-010631"
+  },
+  {
+    "name": ".codex-global-state.json.bak-organizacion-on-exit-20260530-011322",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-organizacion-on-exit-20260530-011322",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-organizacion-on-exit-20260530-011322"
+  },
+  {
+    "name": ".codex-global-state.json.bak-organizacion-on-exit-20260530-012118",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-organizacion-on-exit-20260530-012118",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-organizacion-on-exit-20260530-012118"
+  },
+  {
+    "name": ".codex-global-state.json.bak-organizacion-on-exit-20260530-015054",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-organizacion-on-exit-20260530-015054",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-organizacion-on-exit-20260530-015054"
+  },
+  {
+    "name": ".codex-global-state.json.bak-organizacion-on-exit-20260530-021206",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-organizacion-on-exit-20260530-021206",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-organizacion-on-exit-20260530-021206"
+  },
+  {
+    "name": ".codex-global-state.json.bak-organizacion-repair-20260530-004514",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-organizacion-repair-20260530-004514",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-organizacion-repair-20260530-004514"
+  },
+  {
+    "name": ".codex-global-state.json.bak-organizacion-source-ui-hot-20260530-021034",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-organizacion-source-ui-hot-20260530-021034",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-organizacion-source-ui-hot-20260530-021034"
+  },
+  {
+    "name": ".codex-global-state.json.bak-pending-20260529-223456",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-pending-20260529-223456",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-pending-20260529-223456"
+  },
+  {
+    "name": ".codex-global-state.json.bak-pending-fast-20260529-223710",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-pending-fast-20260529-223710",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-pending-fast-20260529-223710"
+  },
+  {
+    "name": ".codex-global-state.json.bak-tge-linked-worktree-rollout-20260530-121701",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-tge-linked-worktree-rollout-20260530-121701",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-tge-linked-worktree-rollout-20260530-121701"
+  },
+  {
+    "name": ".codex-global-state.json.bak-tge-source-linked-worktree-now-20260530-121224",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-tge-source-linked-worktree-now-20260530-121224",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-tge-source-linked-worktree-now-20260530-121224"
+  },
+  {
+    "name": ".codex-global-state.json.bak-tge-source-linked-worktree-on-exit-20260530-121314",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-tge-source-linked-worktree-on-exit-20260530-121314",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-tge-source-linked-worktree-on-exit-20260530-121314"
+  },
+  {
+    "name": ".codex-global-state.json.bak-ui-normalizer-20260529-225038",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-ui-normalizer-20260529-225038",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-ui-normalizer-20260529-225038"
+  },
+  {
+    "name": ".codex-global-state.json.bak-visual-org-20260518T153408Z",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-visual-org-20260518T153408Z",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-visual-org-20260518T153408Z"
+  },
+  {
+    "name": ".codex-global-state.json.bak-visual-org-after-exit-20260518T124106",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-visual-org-after-exit-20260518T124106",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-visual-org-after-exit-20260518T124106"
+  },
+  {
+    "name": ".codex-global-state.json.bak-worktree-fix-now-20260529-232238",
+    "status": "DONE",
+    "reason": "Global-state backup belongs under backups/global-state.",
+    "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak-worktree-fix-now-20260529-232238",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\global-state\\.codex-global-state.json.bak-worktree-fix-now-20260529-232238"
+  },
+  {
+    "name": "AGENTS.md.bak.20260612-000710",
+    "status": "DONE",
+    "reason": "AGENTS backup belongs under backups/agents.",
+    "source": "C:\\Users\\enzo1\\.codex\\AGENTS.md.bak.20260612-000710",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\agents\\AGENTS.md.bak.20260612-000710"
+  },
+  {
+    "name": "AGENTS.md.bak.20260612-002206",
+    "status": "DONE",
+    "reason": "AGENTS backup belongs under backups/agents.",
+    "source": "C:\\Users\\enzo1\\.codex\\AGENTS.md.bak.20260612-002206",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\agents\\AGENTS.md.bak.20260612-002206"
+  },
+  {
+    "name": "config.toml.bak-add-tge-worktree-trust-20260530-115532",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\config.toml.bak-add-tge-worktree-trust-20260530-115532",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\config.toml.bak-add-tge-worktree-trust-20260530-115532"
+  },
+  {
+    "name": "config.toml.bak-anchor-tge-worktree-20260530-120545",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\config.toml.bak-anchor-tge-worktree-20260530-120545",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\config.toml.bak-anchor-tge-worktree-20260530-120545"
+  },
+  {
+    "name": "config.toml.bak-d-drive-routing-20260601-071846",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\config.toml.bak-d-drive-routing-20260601-071846",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\config.toml.bak-d-drive-routing-20260601-071846"
+  },
+  {
+    "name": "config.toml.bak-final-worktree-thread-fix-20260529-232406",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\config.toml.bak-final-worktree-thread-fix-20260529-232406",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\config.toml.bak-final-worktree-thread-fix-20260529-232406"
+  },
+  {
+    "name": "config.toml.bak-layout-move-20260529-225734",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\config.toml.bak-layout-move-20260529-225734",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\config.toml.bak-layout-move-20260529-225734"
+  },
+  {
+    "name": "config.toml.bak-move-current-tge-thread-to-worktree-20260530-115323",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\config.toml.bak-move-current-tge-thread-to-worktree-20260530-115323",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\config.toml.bak-move-current-tge-thread-to-worktree-20260530-115323"
+  },
+  {
+    "name": "config.toml.bak-organizacion-source-ui-20260530-020935",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\config.toml.bak-organizacion-source-ui-20260530-020935",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\config.toml.bak-organizacion-source-ui-20260530-020935"
+  },
+  {
+    "name": "config.toml.bak-tge-linked-worktree-rollout-20260530-121701",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\config.toml.bak-tge-linked-worktree-rollout-20260530-121701",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\config.toml.bak-tge-linked-worktree-rollout-20260530-121701"
+  },
+  {
+    "name": "config.toml.bak-tge-source-linked-worktree-now-20260530-121224",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\config.toml.bak-tge-source-linked-worktree-now-20260530-121224",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\config.toml.bak-tge-source-linked-worktree-now-20260530-121224"
+  },
+  {
+    "name": "config.toml.bak-worktree-fix-now-20260529-232238",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\config.toml.bak-worktree-fix-now-20260529-232238",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\config.toml.bak-worktree-fix-now-20260529-232238"
+  },
+  {
+    "name": "pending-final-worktree-thread-fix-20260529-232405.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-final-worktree-thread-fix-20260529-232405.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-final-worktree-thread-fix-20260529-232405.log"
+  },
+  {
+    "name": "pending-final-worktree-thread-fix-20260529-232405.ps1",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-final-worktree-thread-fix-20260529-232405.ps1",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-final-worktree-thread-fix-20260529-232405.ps1"
+  },
+  {
+    "name": "pending-normalize-organizacion-worktree-ui-20260530-002354.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-normalize-organizacion-worktree-ui-20260530-002354.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-normalize-organizacion-worktree-ui-20260530-002354.log"
+  },
+  {
+    "name": "pending-normalize-organizacion-worktree-ui-20260530-002758.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-normalize-organizacion-worktree-ui-20260530-002758.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-normalize-organizacion-worktree-ui-20260530-002758.log"
+  },
+  {
+    "name": "pending-normalize-organizacion-worktree-ui-20260530.ps1",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-normalize-organizacion-worktree-ui-20260530.ps1",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-normalize-organizacion-worktree-ui-20260530.ps1"
+  },
+  {
+    "name": "pending-tge-thread-worktree-anchor-after-exit-20260530-120718.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-tge-thread-worktree-anchor-after-exit-20260530-120718.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-tge-thread-worktree-anchor-after-exit-20260530-120718.log"
+  },
+  {
+    "name": "pending-tge-thread-worktree-anchor-after-exit-20260530-120718.ps1",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-tge-thread-worktree-anchor-after-exit-20260530-120718.ps1",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-tge-thread-worktree-anchor-after-exit-20260530-120718.ps1"
+  },
+  {
+    "name": "pending-worktree-layout-move-20260529-225733.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-worktree-layout-move-20260529-225733.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-worktree-layout-move-20260529-225733.log"
+  },
+  {
+    "name": "pending-worktree-layout-move-20260529-225733.ps1",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-worktree-layout-move-20260529-225733.ps1",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-worktree-layout-move-20260529-225733.ps1"
+  },
+  {
+    "name": "pending-worktree-state-fix-20260529.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-worktree-state-fix-20260529.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-worktree-state-fix-20260529.log"
+  },
+  {
+    "name": "pending-worktree-ui-normalizer-20260529-225037.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-worktree-ui-normalizer-20260529-225037.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-worktree-ui-normalizer-20260529-225037.log"
+  },
+  {
+    "name": "pending-worktree-ui-normalizer-20260529-225037.ps1",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\pending-worktree-ui-normalizer-20260529-225037.ps1",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\pending-worktree-ui-normalizer-20260529-225037.ps1"
+  },
+  {
+    "name": "repair-current-thread-d-repo-ui-20260601.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\repair-current-thread-d-repo-ui-20260601.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\repair-current-thread-d-repo-ui-20260601.log"
+  },
+  {
+    "name": "repair-current-thread-d-repo-ui-20260601.ps1",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\repair-current-thread-d-repo-ui-20260601.ps1",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\repair-current-thread-d-repo-ui-20260601.ps1"
+  },
+  {
+    "name": "repair-organizacion-codex-ui-on-exit-20260530.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\repair-organizacion-codex-ui-on-exit-20260530.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\repair-organizacion-codex-ui-on-exit-20260530.log"
+  },
+  {
+    "name": "repair-organizacion-codex-ui-on-exit-20260530.ps1",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\repair-organizacion-codex-ui-on-exit-20260530.ps1",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\repair-organizacion-codex-ui-on-exit-20260530.ps1"
+  },
+  {
+    "name": "repair-tge-codex-ui-on-exit-20260530-121224.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\repair-tge-codex-ui-on-exit-20260530-121224.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\repair-tge-codex-ui-on-exit-20260530-121224.log"
+  },
+  {
+    "name": "repair-tge-codex-ui-on-exit-20260530-121224.ps1",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\repair-tge-codex-ui-on-exit-20260530-121224.ps1",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\repair-tge-codex-ui-on-exit-20260530-121224.ps1"
+  },
+  {
+    "name": "repair-tge-source-linked-worktree-on-exit-20260530-121610.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\repair-tge-source-linked-worktree-on-exit-20260530-121610.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\repair-tge-source-linked-worktree-on-exit-20260530-121610.log"
+  },
+  {
+    "name": "repair-tge-source-linked-worktree-on-exit-20260530-121610.ps1",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\repair-tge-source-linked-worktree-on-exit-20260530-121610.ps1",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\repair-tge-source-linked-worktree-on-exit-20260530-121610.ps1"
+  },
+  {
+    "name": "restart-current-thread-d-repo-ui-20260601.log",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\restart-current-thread-d-repo-ui-20260601.log",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\restart-current-thread-d-repo-ui-20260601.log"
+  },
+  {
+    "name": "restart-current-thread-d-repo-ui-20260601.ps1",
+    "status": "DONE",
+    "reason": "Historical maintenance scripts/logs fit workpapers/maintenance.",
+    "source": "C:\\Users\\enzo1\\.codex\\restart-current-thread-d-repo-ui-20260601.ps1",
+    "target": "C:\\Users\\enzo1\\.codex\\workpapers\\maintenance\\restart-current-thread-d-repo-ui-20260601.ps1"
+  },
+  {
+    "name": "sandbox.2026-06-12.log",
+    "status": "DONE",
+    "reason": "Sandbox logs belong under log/sandbox.",
+    "source": "C:\\Users\\enzo1\\.codex\\sandbox.2026-06-12.log",
+    "target": "C:\\Users\\enzo1\\.codex\\log\\sandbox\\sandbox.2026-06-12.log"
+  },
+  {
+    "name": "sandbox.log",
+    "status": "DONE",
+    "reason": "Sandbox logs belong under log/sandbox.",
+    "source": "C:\\Users\\enzo1\\.codex\\sandbox.log",
+    "target": "C:\\Users\\enzo1\\.codex\\log\\sandbox\\sandbox.log"
+  },
+  {
+    "name": "state_5.sqlite.bak-aa80-normalize-20260530-014507",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-aa80-normalize-20260530-014507",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-aa80-normalize-20260530-014507"
+  },
+  {
+    "name": "state_5.sqlite.bak-anchor-after-exit-ready-20260530-120718",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-anchor-after-exit-ready-20260530-120718",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-anchor-after-exit-ready-20260530-120718"
+  },
+  {
+    "name": "state_5.sqlite.bak-anchor-tge-worktree-20260530-120545",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-anchor-tge-worktree-20260530-120545",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-anchor-tge-worktree-20260530-120545"
+  },
+  {
+    "name": "state_5.sqlite.bak-anchor-tge-worktree-20260530-120605",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-anchor-tge-worktree-20260530-120605",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-anchor-tge-worktree-20260530-120605"
+  },
+  {
+    "name": "state_5.sqlite.bak-anchor-tge-worktree-20260530-120636",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-anchor-tge-worktree-20260530-120636",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-anchor-tge-worktree-20260530-120636"
+  },
+  {
+    "name": "state_5.sqlite.bak-archive-stale-org-threads-20260529-232943",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-archive-stale-org-threads-20260529-232943",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-archive-stale-org-threads-20260529-232943"
+  },
+  {
+    "name": "state_5.sqlite.bak-archive-stale-org-threads-20260529-232943-shm",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-archive-stale-org-threads-20260529-232943-shm",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-archive-stale-org-threads-20260529-232943-shm"
+  },
+  {
+    "name": "state_5.sqlite.bak-archive-stale-org-threads-20260529-232943-wal",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-archive-stale-org-threads-20260529-232943-wal",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-archive-stale-org-threads-20260529-232943-wal"
+  },
+  {
+    "name": "state_5.sqlite.bak-current-thread-d-repo-ui-20260601-105132",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-current-thread-d-repo-ui-20260601-105132",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-current-thread-d-repo-ui-20260601-105132"
+  },
+  {
+    "name": "state_5.sqlite.bak-current-thread-d-repo-ui-refresh-20260601-105508",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-current-thread-d-repo-ui-refresh-20260601-105508",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-current-thread-d-repo-ui-refresh-20260601-105508"
+  },
+  {
+    "name": "state_5.sqlite.bak-current-thread-d-repo-ui-restart-20260601-105717",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-current-thread-d-repo-ui-restart-20260601-105717",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-current-thread-d-repo-ui-restart-20260601-105717"
+  },
+  {
+    "name": "state_5.sqlite.bak-current-thread-d-root-repo-20260601-111047",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-current-thread-d-root-repo-20260601-111047",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-current-thread-d-root-repo-20260601-111047"
+  },
+  {
+    "name": "state_5.sqlite.bak-final-worktree-thread-fix-20260529-232406",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-final-worktree-thread-fix-20260529-232406",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-final-worktree-thread-fix-20260529-232406"
+  },
+  {
+    "name": "state_5.sqlite.bak-final-worktree-thread-fix-20260529-232406-shm",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-final-worktree-thread-fix-20260529-232406-shm",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-final-worktree-thread-fix-20260529-232406-shm"
+  },
+  {
+    "name": "state_5.sqlite.bak-final-worktree-thread-fix-20260529-232406-wal",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-final-worktree-thread-fix-20260529-232406-wal",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-final-worktree-thread-fix-20260529-232406-wal"
+  },
+  {
+    "name": "state_5.sqlite.bak-layout-move-20260529-225734",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-layout-move-20260529-225734",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-layout-move-20260529-225734"
+  },
+  {
+    "name": "state_5.sqlite.bak-layout-move-20260529-225734-shm",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-layout-move-20260529-225734-shm",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-layout-move-20260529-225734-shm"
+  },
+  {
+    "name": "state_5.sqlite.bak-layout-move-20260529-225734-wal",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-layout-move-20260529-225734-wal",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-layout-move-20260529-225734-wal"
+  },
+  {
+    "name": "state_5.sqlite.bak-move-current-tge-thread-to-worktree-20260530-115323",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-move-current-tge-thread-to-worktree-20260530-115323",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-move-current-tge-thread-to-worktree-20260530-115323"
+  },
+  {
+    "name": "state_5.sqlite.bak-move-current-thread-20260529-230525",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-move-current-thread-20260529-230525",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-move-current-thread-20260529-230525"
+  },
+  {
+    "name": "state_5.sqlite.bak-organizacion-on-exit-20260530-011322",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-organizacion-on-exit-20260530-011322",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-organizacion-on-exit-20260530-011322"
+  },
+  {
+    "name": "state_5.sqlite.bak-organizacion-on-exit-20260530-011322-shm",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-organizacion-on-exit-20260530-011322-shm",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-organizacion-on-exit-20260530-011322-shm"
+  },
+  {
+    "name": "state_5.sqlite.bak-organizacion-on-exit-20260530-011322-wal",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-organizacion-on-exit-20260530-011322-wal",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-organizacion-on-exit-20260530-011322-wal"
+  },
+  {
+    "name": "state_5.sqlite.bak-organizacion-on-exit-20260530-012118",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-organizacion-on-exit-20260530-012118",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-organizacion-on-exit-20260530-012118"
+  },
+  {
+    "name": "state_5.sqlite.bak-organizacion-on-exit-20260530-012118-shm",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-organizacion-on-exit-20260530-012118-shm",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-organizacion-on-exit-20260530-012118-shm"
+  },
+  {
+    "name": "state_5.sqlite.bak-organizacion-on-exit-20260530-012118-wal",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-organizacion-on-exit-20260530-012118-wal",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-organizacion-on-exit-20260530-012118-wal"
+  },
+  {
+    "name": "state_5.sqlite.bak-organizacion-on-exit-20260530-015054",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-organizacion-on-exit-20260530-015054",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-organizacion-on-exit-20260530-015054"
+  },
+  {
+    "name": "state_5.sqlite.bak-organizacion-on-exit-20260530-021206",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-organizacion-on-exit-20260530-021206",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-organizacion-on-exit-20260530-021206"
+  },
+  {
+    "name": "state_5.sqlite.bak-tge-linked-worktree-rollout-20260530-121611",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-tge-linked-worktree-rollout-20260530-121611",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-tge-linked-worktree-rollout-20260530-121611"
+  },
+  {
+    "name": "state_5.sqlite.bak-tge-linked-worktree-rollout-20260530-121701",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-tge-linked-worktree-rollout-20260530-121701",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-tge-linked-worktree-rollout-20260530-121701"
+  },
+  {
+    "name": "state_5.sqlite.bak-tge-source-linked-worktree-now-20260530-121224",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-tge-source-linked-worktree-now-20260530-121224",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-tge-source-linked-worktree-now-20260530-121224"
+  },
+  {
+    "name": "state_5.sqlite.bak-tge-source-linked-worktree-on-exit-20260530-121314",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-tge-source-linked-worktree-on-exit-20260530-121314",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-tge-source-linked-worktree-on-exit-20260530-121314"
+  },
+  {
+    "name": "state_5.sqlite.bak-worktree-fix-now-20260529-232238",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-worktree-fix-now-20260529-232238",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-worktree-fix-now-20260529-232238"
+  },
+  {
+    "name": "state_5.sqlite.bak-worktree-fix-sqlite-20260529-232258",
+    "status": "DONE",
+    "reason": "SQLite backups belong under backups/sqlite.",
+    "source": "C:\\Users\\enzo1\\.codex\\state_5.sqlite.bak-worktree-fix-sqlite-20260529-232258",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\sqlite\\state_5.sqlite.bak-worktree-fix-sqlite-20260529-232258"
+  },
+  {
+    "name": "tge.config.toml.bak-anchor-tge-worktree-20260530-120545",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\tge.config.toml.bak-anchor-tge-worktree-20260530-120545",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\tge.config.toml.bak-anchor-tge-worktree-20260530-120545"
+  },
+  {
+    "name": "tge.config.toml.bak-d-drive-routing-20260601-071846",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\tge.config.toml.bak-d-drive-routing-20260601-071846",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\tge.config.toml.bak-d-drive-routing-20260601-071846"
+  },
+  {
+    "name": "tge.config.toml.bak-move-current-tge-thread-to-worktree-20260530-115323",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\tge.config.toml.bak-move-current-tge-thread-to-worktree-20260530-115323",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\tge.config.toml.bak-move-current-tge-thread-to-worktree-20260530-115323"
+  },
+  {
+    "name": "tge.config.toml.bak-tge-linked-worktree-rollout-20260530-121701",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\tge.config.toml.bak-tge-linked-worktree-rollout-20260530-121701",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\tge.config.toml.bak-tge-linked-worktree-rollout-20260530-121701"
+  },
+  {
+    "name": "tge.config.toml.bak-tge-source-linked-worktree-now-20260530-121224",
+    "status": "DONE",
+    "reason": "Config backups belong under backups/config.",
+    "source": "C:\\Users\\enzo1\\.codex\\tge.config.toml.bak-tge-source-linked-worktree-now-20260530-121224",
+    "target": "C:\\Users\\enzo1\\.codex\\backups\\config\\tge.config.toml.bak-tge-source-linked-worktree-now-20260530-121224"
+  }
+]

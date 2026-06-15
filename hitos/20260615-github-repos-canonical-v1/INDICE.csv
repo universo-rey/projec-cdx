@@ -1,0 +1,5 @@
+item,tipo,ruta,estado,nota
+DocumentsGitHub,repo_root,C:/Users/enzo1/Documents/GitHub,CANONICAL,raiz local canonica de repos
+GITHUB_REPOS_CANONICAL_20260615.csv,inventario,C:/Users/enzo1/PROJEC CDX/inventarios/GITHUB_REPOS_CANONICAL_20260615.csv,CREATED,inventario de repos canonicos locales
+CodexLocal,workspace_support,C:/Users/enzo1/CodexLocal,REFERENCE_ONLY,evidencia espejo split soporte local
+operational_chain,coverage_check,C:/Users/enzo1/Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv,PASS,todos los repos de cadena existen en GitHub local

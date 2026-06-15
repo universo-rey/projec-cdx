@@ -1,0 +1,11 @@
+orden,tipo,estado,evidencia
+1,handoff_pesado,closed,"hitos/20260614-hilo-anterior-v1/README.md; hitos/20260614-hilo-anterior-v1/HANDOFF_THREAD_HEAVY_20260614.md"
+2,repos_vivos,closed,"hitos/20260614-hitos-otros-repos-v1/README.md"
+3,workbench_local,closed,"hitos/20260615-cierre-workbench-v1/EVIDENCIA.md; operativa/CONTROL_TOTAL_20260615.md"
+4,patrones_procesos,closed,"hitos/20260615-patrones-procesos-v1/EVIDENCIA.md; patrones/INDICE_PATRONES.md; procesos/INDICE_PROCESOS.md"
+5,sincronizacion_dataverse,closed,"hitos/20260615-sincronizacion-tiempo-real-v1/EVIDENCIA.md; dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md"
+6,dataverse_live,closed,"pac auth list; pac env who; pac solution list; pac env fetch"
+7,excel_dataverse,closed,"outputs/dataverse_blocker_frontier_20260614/README.md; outputs/dataverse_blocker_frontier_20260614/dataverse_blocker_frontier.xlsx"
+8,indices_maestros,closed,"hitos/README.md; hitos/MAPA.md; hitos/INDICE_MAESTRO.md; hitos/INDICE_MAESTRO.csv; operativa/TRACE.md"
+9,dataverse_conexiones_drift,closed,"hitos/20260615-dataverse-conexiones-drift-v1/README.md"
+10,corte_ejecutora_vs_sdu,closed,"hitos/20260615-corte-ejecutora-vs-sdu-v1/README.md"

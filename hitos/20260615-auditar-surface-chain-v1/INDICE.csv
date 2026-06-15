@@ -1,0 +1,5 @@
+item,tipo,ruta,estado,nota
+Auditar,folder_non_git,C:/Users/enzo1/Documents/GitHub/Auditar,OK_GOVERNED,carpeta agregadora no Git
+AUDITAR_SURFACE_INDEX_20260615.csv,inventario,C:/Users/enzo1/PROJEC CDX/inventarios/AUDITAR_SURFACE_INDEX_20260615.csv,CREATED,indice local de superficie Auditar
+GITHUB_REPOS_CANONICAL_20260615.csv,inventario,C:/Users/enzo1/PROJEC CDX/inventarios/GITHUB_REPOS_CANONICAL_20260615.csv,UPDATED,Auditar pasa a IN_OPERATIONAL_CHAIN
+PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv,cadena,C:/Users/enzo1/Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv,UPDATED,fila Auditar agregada

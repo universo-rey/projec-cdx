@@ -1,0 +1,29 @@
+{
+  "root": "C:\\Users\\enzo1\\.codex",
+  "generated_at": "2026-06-14T18:34:24",
+  "operating_note": "Only a second exact copy in cache/ or backups/ counts as a live duplicate; backups/ is historical and versioned; models_cache.json stays canonical in root as the live runtime cache; auth.json and cap_sid remain sensitive and blocked from cleanup without explicit review.",
+  "move_safe": [],
+  "blocked_review": [
+    {
+      "name": ".codex-global-state.json.bak",
+      "source": "C:\\Users\\enzo1\\.codex\\.codex-global-state.json.bak",
+      "destination": "backups\\global-state",
+      "surface_role": "backup-state",
+      "reason": "A backup with the same name already exists in backups/global-state; compare generations before moving or overwriting."
+    },
+    {
+      "name": "auth.json",
+      "source": "C:\\Users\\enzo1\\.codex\\auth.json",
+      "destination": "secrets",
+      "surface_role": "secret-or-credential",
+      "reason": "Sensitive/auth material needs explicit confirmation before moving."
+    },
+    {
+      "name": "cap_sid",
+      "source": "C:\\Users\\enzo1\\.codex\\cap_sid",
+      "destination": "secrets",
+      "surface_role": "secret-or-credential",
+      "reason": "Sensitive/auth material needs explicit confirmation before moving."
+    }
+  ]
+}

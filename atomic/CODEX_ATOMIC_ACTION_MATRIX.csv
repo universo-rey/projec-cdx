@@ -1,0 +1,23 @@
+action_type,purpose,target_surface,mutating,requires_lock,rollback_or_compensation,validation_focus,default_terminal_state,notes
+ATOMIC_READ,Read the current state without mutation,filesystem|git|api|tenant|connector|runtime|artifact,false,false,No rollback needed,State presence and integrity,NOOP,Use for inspection only
+ATOMIC_DISCOVER,Locate real capabilities or surfaces,filesystem|registry|catalog|tenant|api,false,false,No rollback needed,Discovery completeness and identity,NOOP,Use before acting on uncertain surfaces
+ATOMIC_CLASSIFY,Assign canonical family or state,docs|indexes|registry,false,false,No rollback needed,Classification consistency,NOOP,Use for routing and taxonomy
+ATOMIC_PATCH_PLAN,Design a bounded execution plan,docs|matrix|ledger,false,false,No rollback needed,Plan completeness and stop condition,NOOP,Plan only, no execution
+ATOMIC_FILE_WRITE,Write a file artifact,filesystem,true,true,Direct rollback or compensating write,File content, path, checksum,DONE,Must declare exact path and overwrite policy
+ATOMIC_DOC_WRITE,Write a document artifact,filesystem|documents,true,true,Direct rollback or compensating write,Document structure and renderability,DONE,Use for markdown/docx/report content
+ATOMIC_CONFIG_WRITE,Write configuration safely,filesystem|config|runtime,true,true,Rollback config snapshot or restore prior state,Config parse and effect,DONE,Prefer minimal scoped changes
+ATOMIC_MATRIX_WRITE,Write a matrix or registry file,filesystem|docs|csv,true,true,Replace with previous snapshot,Row count and field completeness,DONE,Use for inventories and routing matrices
+ATOMIC_SCRIPT_EXECUTION,Run a local script,filesystem|runtime|tooling,true,false,Undo via script-specific rollback if defined,Exit code and post-state,DONE,Should declare exact command and output
+ATOMIC_RUNTIME_EXECUTION,Run a runtime task,runtime|service|container,true,true,Compensate or stop runtime,Observed runtime effect and logs,DONE,Use for controlled runtime actions
+ATOMIC_CONNECTOR_CALL,Invoke a connector,connector|api,true,true,Compensating call or no-op if read-only,Response contract and side effects,DONE,Must state connector identity
+ATOMIC_API_TRANSACTION,Perform an API transaction,api|tenant|service,true,true,Compensation or rollback endpoint,Status code and server-side delta,DONE,Use only with explicit target and idempotency key when available
+ATOMIC_TENANT_OPERATION,Operate on tenant resources,tenant|admin|cloud,true,true,Explicit revert path or gated compensation,Policy/permission/resource state,DONE,High-risk; requires strong precheck
+ATOMIC_GIT_BRANCH,Create or update a branch,git,true,true,Delete branch or reset ref if needed,Branch ref and working tree state,DONE,Must not overwrite silently
+ATOMIC_GIT_COMMIT,Create a git commit,git,true,true,Amend/revert strategy if explicitly allowed,Diff, tree hash, commit message,DONE,Commit only after verification
+ATOMIC_GIT_PUSH,Push refs remotely,git|remote,true,true,Force push only if explicitly approved,Remote ref and push result,DONE,Requires remote coordination
+ATOMIC_VALIDATION,Validate a result,filesystem|docs|runtime|api|git,false,false,No rollback needed,Expected vs actual delta,NOOP,Required before promotion
+ATOMIC_EVIDENCE_WRITE,Write evidence or readback,filesystem|docs|ledger,true,false,Append-only or compensating evidence note,Traceability and provenance,DONE,Must never contain secrets
+ATOMIC_ROLLBACK,Revert a prior change,filesystem|git|runtime|tenant|api,true,true,Rollback is the action itself,Restoration of prior state,REVERTED,Should reference prior action_id
+ATOMIC_COMPENSATION,Apply a compensating action,filesystem|git|runtime|tenant|api,true,true,Compensation is the action itself,Functional equivalence after reversal,DONE,Use when direct rollback is impossible
+ATOMIC_PROMOTION,Promote a validated artifact or state,artifact|runtime|tenant|git,true,true,Rollback or deny promotion if invalid,Promotion criteria and target state,DONE,Only after evidence and validation
+ATOMIC_READBACK,Record final state and outcome,docs|ledger|filesystem,false,false,No rollback needed,Terminal state and residual risk,DONE,Final closeout should be explicit

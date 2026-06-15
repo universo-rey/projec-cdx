@@ -1,0 +1,122 @@
+{
+  "schema_name": "Codex Atomic Transaction Ledger",
+  "schema_version": "1.0",
+  "gate": "GATE_CODEX_ATOMIC_OPERATING_MACHINE_V2",
+  "final_state": "CODEX_ATOMIC_OPERATING_MACHINE_READY",
+  "terminal_states": [
+    "DONE",
+    "NOOP",
+    "BLOCKED",
+    "REVERTED",
+    "ESCALATED",
+    "FAILED_SAFE"
+  ],
+  "transaction": {
+    "transaction_id": "TX-0001",
+    "objective": "Single bounded operational objective",
+    "target_surface": "Explicit surface or set of surfaces",
+    "status": "PLANNED",
+    "requires_lock": false,
+    "lock_scope": "",
+    "conflict_detection_rule": "",
+    "retry_rule": "",
+    "escalation_rule": "",
+    "actions": [
+      {
+        "action_id": "ACT-0001",
+        "type": "ATOMIC_READ",
+        "objective": "Minimal action intent",
+        "target_surface": "filesystem|git|api|tenant|connector|runtime|artifact",
+        "input": "Declared input payload or selector",
+        "expected_output": "Declared expected output",
+        "preconditions": [
+          "Surface is reachable",
+          "Identity is known"
+        ],
+        "validation": [
+          "State matches expectation"
+        ],
+        "evidence": [
+          "Command output",
+          "Artifact checksum"
+        ],
+        "rollback_or_compensation": "None required for read-only actions",
+        "idempotency_rule": "Re-running must not mutate state",
+        "requires_lock": false,
+        "lock_scope": "",
+        "stop_condition": "Stop if surface cannot be verified",
+        "status": "PLANNED"
+      }
+    ],
+    "precheck": {
+      "surface_verified": false,
+      "permissions_verified": false,
+      "dependencies_verified": false,
+      "concurrency_verified": false,
+      "minimum_viability_verified": false
+    },
+    "plan": {
+      "declared": true,
+      "expected_delta": "",
+      "rollback_or_compensation": "",
+      "idempotency_rule": "",
+      "stop_condition": ""
+    },
+    "verify": {
+      "actual_state": "",
+      "delta": "",
+      "integrity_check": "",
+      "idempotency_check": "",
+      "conflict_check": ""
+    },
+    "record": {
+      "evidence": [],
+      "residual_risks": [],
+      "references": []
+    },
+    "commit_decision": {
+      "terminal_state": "PLANNED",
+      "next_step": "",
+      "blocked_reason": ""
+    }
+  },
+  "agent": {
+    "agent_id": "codex.atomic_operating_machine",
+    "atomic_scope": "One declared transaction or a bounded subset of related actions",
+    "owned_surfaces": [],
+    "allowed_surfaces": [],
+    "max_mutation_per_action": 1,
+    "requires_lock": false,
+    "can_write_directly": true,
+    "requires_staging": true,
+    "rollback_required": true,
+    "idempotency_required": true,
+    "validation_mode": "self-validated",
+    "promotion_scope": "Validated and evidenced only",
+    "partial_state_policy": "Freeze, record residuals, rollback or compensate, then escalate if unsafe"
+  },
+  "action_types": [
+    "ATOMIC_READ",
+    "ATOMIC_DISCOVER",
+    "ATOMIC_CLASSIFY",
+    "ATOMIC_PATCH_PLAN",
+    "ATOMIC_FILE_WRITE",
+    "ATOMIC_DOC_WRITE",
+    "ATOMIC_CONFIG_WRITE",
+    "ATOMIC_MATRIX_WRITE",
+    "ATOMIC_SCRIPT_EXECUTION",
+    "ATOMIC_RUNTIME_EXECUTION",
+    "ATOMIC_CONNECTOR_CALL",
+    "ATOMIC_API_TRANSACTION",
+    "ATOMIC_TENANT_OPERATION",
+    "ATOMIC_GIT_BRANCH",
+    "ATOMIC_GIT_COMMIT",
+    "ATOMIC_GIT_PUSH",
+    "ATOMIC_VALIDATION",
+    "ATOMIC_EVIDENCE_WRITE",
+    "ATOMIC_ROLLBACK",
+    "ATOMIC_COMPENSATION",
+    "ATOMIC_PROMOTION",
+    "ATOMIC_READBACK"
+  ]
+}

@@ -1,0 +1,75 @@
+Name,Kind,CurrentPath,SurfaceRole,Status,SuggestedDestination,Risk,Reason,LastWriteTime,Size
+.sandbox,folder,C:\Users\enzo1\.codex\.sandbox,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T22:31:43,
+.sandbox-bin,folder,C:\Users\enzo1\.codex\.sandbox-bin,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T05:01:11,
+.sandbox-secrets,folder,C:\Users\enzo1\.codex\.sandbox-secrets,sandbox-sensitive-surface,KEEP,,high,Sandbox sensitive surface; keep as a dedicated sensitive bucket.,2026-06-11T05:01:11,
+.tmp,folder,C:\Users\enzo1\.codex\.tmp,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-10T04:17:00,
+ambient-suggestions,folder,C:\Users\enzo1\.codex\ambient-suggestions,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T04:32:01,
+app-server-local,folder,C:\Users\enzo1\.codex\app-server-local,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T04:35:39,
+archived_sessions,folder,C:\Users\enzo1\.codex\archived_sessions,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-12T01:54:02,
+attachments,folder,C:\Users\enzo1\.codex\attachments,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-14T06:13:36,
+automations,folder,C:\Users\enzo1\.codex\automations,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T04:35:39,
+backups,folder,C:\Users\enzo1\.codex\backups,historical-backup-surface,KEEP,,low,Historical and versioned backup surface; compare generations before any cleanup. Not canonical.,2026-06-13T23:53:59,
+browser,folder,C:\Users\enzo1\.codex\browser,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-14T17:47:52,
+cache,folder,C:\Users\enzo1\.codex\cache,support-cache-surface,KEEP,,low,Support cache surface; live runtime cache stays canonical at root while runtime refreshes it.,2026-06-14T18:19:38,
+computer-use,folder,C:\Users\enzo1\.codex\computer-use,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T19:14:48,
+computer-use-turn-ended,folder,C:\Users\enzo1\.codex\computer-use-turn-ended,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T05:00:09,
+environment,folder,C:\Users\enzo1\.codex\environment,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T20:10:48,
+generated_images,folder,C:\Users\enzo1\.codex\generated_images,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-12T09:02:27,
+log,folder,C:\Users\enzo1\.codex\log,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T23:52:46,
+matrices,folder,C:\Users\enzo1\.codex\matrices,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T21:03:51,
+memories,folder,C:\Users\enzo1\.codex\memories,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-14T04:59:07,
+memories_extensions,folder,C:\Users\enzo1\.codex\memories_extensions,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T05:00:09,
+node_repl,folder,C:\Users\enzo1\.codex\node_repl,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-05-08T19:22:14,
+packages,folder,C:\Users\enzo1\.codex\packages,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T23:38:35,
+pets,folder,C:\Users\enzo1\.codex\pets,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T05:02:34,
+plugins,folder,C:\Users\enzo1\.codex\plugins,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T20:18:42,
+private,folder,C:\Users\enzo1\.codex\private,private-sensitive-surface,KEEP,,high,Private reserved surface; do not treat as cleanup or canon candidate.,2026-06-11T04:35:39,
+process_manager,folder,C:\Users\enzo1\.codex\process_manager,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T04:35:39,
+profiles,folder,C:\Users\enzo1\.codex\profiles,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T19:24:43,
+readbacks,folder,C:\Users\enzo1\.codex\readbacks,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T17:53:26,
+rules,folder,C:\Users\enzo1\.codex\rules,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T04:12:34,
+secrets,folder,C:\Users\enzo1\.codex\secrets,sensitive-secrets-surface,KEEP,,high,Canonical sensitive surface; only names and structure are inventoried here.,2026-06-11T15:50:20,
+sessions,folder,C:\Users\enzo1\.codex\sessions,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T04:14:28,
+skills,folder,C:\Users\enzo1\.codex\skills,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T20:21:01,
+skills_archived,folder,C:\Users\enzo1\.codex\skills_archived,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-12T06:39:44,
+skills_backups,folder,C:\Users\enzo1\.codex\skills_backups,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-12T06:39:44,
+sqlite,folder,C:\Users\enzo1\.codex\sqlite,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-14T18:10:01,
+tmp,folder,C:\Users\enzo1\.codex\tmp,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T23:52:46,
+tmp-appserver-schema,folder,C:\Users\enzo1\.codex\tmp-appserver-schema,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T05:01:11,
+vendor_imports,folder,C:\Users\enzo1\.codex\vendor_imports,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T04:35:40,
+workpapers,folder,C:\Users\enzo1\.codex\workpapers,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T23:52:46,
+worktree-archives,folder,C:\Users\enzo1\.codex\worktree-archives,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T05:01:11,
+worktrees,folder,C:\Users\enzo1\.codex\worktrees,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-13T20:19:44,
+worktrees-disabled,folder,C:\Users\enzo1\.codex\worktrees-disabled,top-level-surface,KEEP,,low,Surface root already exposed by README/map structure.,2026-06-11T05:01:11,
+.codex-global-state.json,file,C:\Users\enzo1\.codex\.codex-global-state.json,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-14T18:31:34,1571473
+.codex-global-state.json.bak,file,C:\Users\enzo1\.codex\.codex-global-state.json.bak,backup-state,BLOCKED_REVIEW,backups\global-state,medium,A backup with the same name already exists in backups/global-state; compare generations before moving or overwriting.,2026-06-14T18:31:34,1571473
+.personality_migration,file,C:\Users\enzo1\.codex\.personality_migration,runtime-core,KEEP,,medium,Root-owned document or runtime anchor.,2026-03-20T14:32:47,3
+AGENTS.md,file,C:\Users\enzo1\.codex\AGENTS.md,visible-entry,KEEP,,low,Root-owned document or runtime anchor.,2026-06-14T05:05:58,990
+AGENTS.reference.md,file,C:\Users\enzo1\.codex\AGENTS.reference.md,map-or-reference,KEEP,,low,Root-owned document or runtime anchor.,2026-06-13T20:03:12,2642
+auth.json,file,C:\Users\enzo1\.codex\auth.json,secret-or-credential,BLOCKED_REVIEW,secrets,high,Sensitive/auth material needs explicit confirmation before moving.,2026-06-14T12:59:00,4622
+cap_sid,file,C:\Users\enzo1\.codex\cap_sid,secret-or-credential,BLOCKED_REVIEW,secrets,high,Sensitive/auth material needs explicit confirmation before moving.,2026-06-13T22:54:59,8087
+CARTOGRAFIA_COMPLETA.md,file,C:\Users\enzo1\.codex\CARTOGRAFIA_COMPLETA.md,map-or-reference,KEEP,,low,Root-owned document or runtime anchor.,2026-06-14T18:34:16,14059
+CODEX_ATOMIC_RUNTIME_MACHINE_V2_1.md,file,C:\Users\enzo1\.codex\CODEX_ATOMIC_RUNTIME_MACHINE_V2_1.md,map-or-reference,KEEP,,low,Root-owned document or runtime anchor.,2026-06-14T00:29:29,5986
+config.toml,file,C:\Users\enzo1\.codex\config.toml,runtime-core,KEEP,,medium,Root-owned document or runtime anchor.,2026-06-13T19:14:45,7194
+goals_1.sqlite,file,C:\Users\enzo1\.codex\goals_1.sqlite,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T22:54:14,24576
+goals_1.sqlite-shm,file,C:\Users\enzo1\.codex\goals_1.sqlite-shm,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T22:55:08,32768
+goals_1.sqlite-wal,file,C:\Users\enzo1\.codex\goals_1.sqlite-wal,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T22:55:08,4152
+history.jsonl,file,C:\Users\enzo1\.codex\history.jsonl,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T00:24:11,6625
+installation_id,file,C:\Users\enzo1\.codex\installation_id,runtime-core,KEEP,,medium,Root-owned document or runtime anchor.,2026-04-16T21:47:10,36
+logs_2.sqlite,file,C:\Users\enzo1\.codex\logs_2.sqlite,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T22:56:08,2028380160
+logs_2.sqlite-shm,file,C:\Users\enzo1\.codex\logs_2.sqlite-shm,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T20:57:29,98304
+logs_2.sqlite-wal,file,C:\Users\enzo1\.codex\logs_2.sqlite-wal,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T22:56:37,47433592
+MAPA_MAESTRO.md,file,C:\Users\enzo1\.codex\MAPA_MAESTRO.md,map-or-reference,KEEP,,low,Root-owned document or runtime anchor.,2026-06-14T00:46:15,635
+memories_1.sqlite,file,C:\Users\enzo1\.codex\memories_1.sqlite,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T21:45:46,778240
+memories_1.sqlite-shm,file,C:\Users\enzo1\.codex\memories_1.sqlite-shm,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T22:18:17,32768
+memories_1.sqlite-wal,file,C:\Users\enzo1\.codex\memories_1.sqlite-wal,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T22:54:18,32992
+models_cache.json,file,C:\Users\enzo1\.codex\models_cache.json,live-runtime-cache,KEEP,,medium,Live Codex model cache refreshed by runtime; keep in root as the canonical working cache.,2026-06-14T18:34:16,177963
+README.md,file,C:\Users\enzo1\.codex\README.md,visible-entry,KEEP,,low,Root-owned document or runtime anchor.,2026-06-14T00:43:51,630
+README.reference.md,file,C:\Users\enzo1\.codex\README.reference.md,map-or-reference,KEEP,,low,Root-owned document or runtime anchor.,2026-06-14T18:25:49,10248
+session_index.jsonl,file,C:\Users\enzo1\.codex\session_index.jsonl,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-13T16:36:55,130834
+state_5.sqlite,file,C:\Users\enzo1\.codex\state_5.sqlite,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T22:54:25,12857344
+state_5.sqlite-shm,file,C:\Users\enzo1\.codex\state_5.sqlite-shm,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T13:05:34,32768
+state_5.sqlite-wal,file,C:\Users\enzo1\.codex\state_5.sqlite-wal,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-06-12T22:56:10,4251872
+tge.config.toml,file,C:\Users\enzo1\.codex\tge.config.toml,runtime-core,KEEP,,medium,Root-owned document or runtime anchor.,2026-06-01T07:19:33,941
+transcription-history.jsonl,file,C:\Users\enzo1\.codex\transcription-history.jsonl,runtime-state,KEEP,,medium,Live runtime/state artifact; do not move without exact dependency validation.,2026-05-08T11:39:23,15184
+version.json,file,C:\Users\enzo1\.codex\version.json,runtime-core,KEEP,,medium,Root-owned document or runtime anchor.,2026-06-11T23:17:31,105

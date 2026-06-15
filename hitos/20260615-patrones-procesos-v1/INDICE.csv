@@ -1,0 +1,5 @@
+id,tipo,estado,evidencia
+H-001,superficie_patrones,closed,"patrones/README.md; patrones/MAPA.md; patrones/INDICE_PATRONES.md; patrones/PATRONES_OPERATIVOS.md"
+H-002,superficie_procesos,closed,"procesos/README.md; procesos/MAPA.md; procesos/INDICE_PROCESOS.md; procesos/PROCESOS_OPERATIVOS.md"
+H-003,fichas_invocables,closed,"patrones/*.md; procesos/*.md"
+H-004,enlaces_gobierno,closed,"README.md; MAPA_MAESTRO.md; operativa/CONTROL.md; operativa/TRACE.md"

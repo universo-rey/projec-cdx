@@ -1,0 +1,26 @@
+id: 20260615-auditar-surface-chain-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: auditar_surface_operational_chain_delta
+estado: GREEN_LOCAL
+fuente:
+  - C:\Users\enzo1\Documents\GitHub\Auditar
+  - C:\Users\enzo1\Documents\GitHub\Auditar\maquina-de-trabajo\99_INDICES\INDICE_MAESTRO.md
+salida:
+  - C:\Users\enzo1\PROJEC CDX\inventarios\AUDITAR_SURFACE_INDEX_20260615.csv
+  - C:\Users\enzo1\PROJEC CDX\inventarios\GITHUB_REPOS_CANONICAL_20260615.csv
+  - C:\Users\enzo1\Documents\Codex\2026-06-14\projec-cdx-handoff-20260614\outputs\PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-auditar-surface-chain-v1\
+rollback: retirar fila Auditar, restaurar chain_coverage OUT_OF_CHAIN y eliminar indice Auditar local
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_operational_chain.ps1"
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_sync.ps1"
+guardrails:
+  - no_secret_read
+  - no_live_write
+  - no_git_destructive
+resultado:
+  operational_chain_rows: 43
+  auditar_status: OK_GOVERNED
+  live_write: NO

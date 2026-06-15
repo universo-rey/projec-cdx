@@ -1,0 +1,34 @@
+id: 20260615-hilo-origen-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: hilo_origen_completo
+estado: GREEN_LOCAL
+fuente:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260614-hilo-anterior-v1\README.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260614-hitos-otros-repos-v1\README.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-cierre-workbench-v1\README.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-patrones-procesos-v1\README.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-sincronizacion-tiempo-real-v1\README.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-dataverse-conexiones-drift-v1\README.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-corte-ejecutora-vs-sdu-v1\README.md
+  - C:\Users\enzo1\PROJEC CDX\dataverse\GATE.md
+  - C:\Users\enzo1\PROJEC CDX\dataverse\READBACK_EXCEL_BLOCKER_FRONTIER.md
+  - C:\Users\enzo1\PROJEC CDX\outputs\dataverse_blocker_frontier_20260614\README.md
+  - C:\Users\enzo1\PROJEC CDX\outputs\control_operativo_20260615\README.md
+  - C:\Users\enzo1\PROJEC CDX\operativa\TRACE.md
+salida:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-hilo-origen-v1\
+rollback: eliminar la carpeta versionada y quitar referencias en indices maestros
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_sync.ps1"
+guardrails:
+  - no_secret_read
+  - no_live_write
+  - no_global_state_or_sqlite
+  - dataverse_gate_required_for_live
+evidencia:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-hilo-origen-v1\EVIDENCIA.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-hilo-origen-v1\READBACK.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-dataverse-conexiones-drift-v1\README.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-corte-ejecutora-vs-sdu-v1\README.md

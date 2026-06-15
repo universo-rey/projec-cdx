@@ -1,0 +1,25 @@
+id: 20260615-github-repos-canonical-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: github_repos_canonical_root
+estado: GREEN_LOCAL
+fuente:
+  - C:\Users\enzo1\Documents\GitHub
+salida:
+  - C:\Users\enzo1\PROJEC CDX\inventarios\GITHUB_REPOS_CANONICAL_20260615.csv
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-github-repos-canonical-v1\
+rollback: retirar hito y referencia al inventario GitHub canonical
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_sync.ps1"
+guardrails:
+  - no_secret_read
+  - no_live_write
+  - no_git_destructive
+resultado:
+  github_git_repos: 13
+  github_non_git_folders: 1
+  chain_repos_missing_in_github: 0
+  extra_github_repos_initial: cabina-universal-d;microsoft-agents-governed-lab
+  extra_github_repos_current: 0
+  resolved_by: 20260615-github-repos-chain-v1

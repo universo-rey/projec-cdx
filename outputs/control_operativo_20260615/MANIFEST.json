@@ -1,0 +1,31 @@
+{
+  "id": "control_operativo_20260615",
+  "generated_at": "2026-06-15T09:04:45.341Z",
+  "root": "C:\\Users\\enzo1\\PROJEC CDX",
+  "source_files": [
+    "operativa/CURRENT.md",
+    "operativa/NEXT.md",
+    "operativa/BLOCKERS.md",
+    "operativa/TRACE.md",
+    "operativa/TODO_20260615.md",
+    "operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md",
+    "operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md",
+    "outputs/live_repo_review_20260615/READBACK.md",
+    "dataverse/GATE.md",
+    "dataverse/REGISTRO_BLOQUEOS.md",
+    "playbooks/07-dataverse-fronteras.md",
+    "hitos/20260615-hilo-origen-v1/README.md",
+    "operativa/MANIFESTS.md",
+    "operativa/RETENCION.md"
+  ],
+  "outputs": [
+    "workbooks/control_operativo.xlsx",
+    "outputs/control_operativo_20260615/control_operativo.xlsx",
+    "outputs/control_operativo_20260615/resumen.png",
+    "outputs/control_operativo_20260615/registro.png",
+    "outputs/control_operativo_20260615/alertas.png",
+    "outputs/control_operativo_20260615/listas.png"
+  ],
+  "status": "verified_local_generation",
+  "live_writes": false
+}

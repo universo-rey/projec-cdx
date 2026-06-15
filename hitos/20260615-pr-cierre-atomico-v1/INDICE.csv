@@ -1,0 +1,5 @@
+pr,repo,title,base,head,head_oid,merge_state,mergeable,draft,estado,order_file
+155,cabina-universal-d,Normalize workpaper references to local codex root,main,codex/cabina-universal-d-coordination-20260611,703de63b2b9cbce057dc0b52ac7aca9fa15c9064,DIRTY,CONFLICTING,false,PENDIENTE_GOBERNADO,ORDEN_PR-155_cabina-universal-d.md
+11,microsoft-agents-governed-lab,Bump the npm-all group across 8 directories with 13 updates,main,dependabot/npm_and_yarn/npm-all-e7555ea673,c596e0582c2d37a6f2ba314757c22edcd47d2823,UNSTABLE,MERGEABLE,false,PENDIENTE_GOBERNADO,ORDEN_PR-11_microsoft-agents-governed-lab.md
+12,microsoft-agents-governed-lab,Bump the nuget-all group with 10 updates,main,dependabot/nuget/samples/dotnet/Agent-Framework/nuget-all-659385cc98,25fff81a754286d72af41a92f6c084aa7e30890d,CLEAN,MERGEABLE,false,PREPARADO,ORDEN_PR-12_microsoft-agents-governed-lab.md
+43,organizacion,docs: add SDU-CN documental service design,main,codex/service-design-documental-20260605,fa5e5f6979e3d9dee2c69caa7ef4b8fd2e0bc300,CLEAN,MERGEABLE,true,PENDIENTE_GOBERNADO,ORDEN_PR-43_organizacion.md

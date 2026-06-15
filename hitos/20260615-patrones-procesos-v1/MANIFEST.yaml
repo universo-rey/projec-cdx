@@ -1,0 +1,34 @@
+id: 20260615-patrones-procesos-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: patrones_procesos
+estado: GREEN_LOCAL
+fuente:
+  - README.md
+  - MAPA_MAESTRO.md
+  - operativa/CONTROL.md
+  - operativa/TRACE.md
+  - operativa/READBACK_CIERRE_20260615.md
+  - playbooks/
+  - dataverse/GATE.md
+salida:
+  - patrones/README.md
+  - patrones/MAPA.md
+  - patrones/INDICE_PATRONES.md
+  - patrones/PATRONES_OPERATIVOS.md
+  - procesos/README.md
+  - procesos/MAPA.md
+  - procesos/INDICE_PROCESOS.md
+  - procesos/PROCESOS_OPERATIVOS.md
+rollback: revertir archivos del delta local o retirar enlaces agregados
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+guardrails:
+  - no_secret_read
+  - no_live_write
+  - no_global_state_or_sqlite
+  - no_auth_json
+  - no_cap_sid
+evidencia:
+  - hitos/20260615-patrones-procesos-v1/EVIDENCIA.md
+  - hitos/20260615-patrones-procesos-v1/READBACK.md

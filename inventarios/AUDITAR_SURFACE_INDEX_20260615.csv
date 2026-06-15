@@ -1,0 +1,30 @@
+item,path,kind,index_files,status,nota
+_archives,C:/Users/enzo1/Documents/GitHub/Auditar/_archives,support_folder,,REFERENCE_ONLY,archivo historico
+_local_backups,C:/Users/enzo1/Documents/GitHub/Auditar/_local_backups,support_folder,,REFERENCE_ONLY,backups locales
+_worktrees,C:/Users/enzo1/Documents/GitHub/Auditar/_worktrees,support_folder,,REFERENCE_ONLY,worktrees historicos
+_worktrees-disabled,C:/Users/enzo1/Documents/GitHub/Auditar/_worktrees-disabled,support_folder,,REFERENCE_ONLY,worktrees deshabilitados
+agent-governance-toolkit,C:/Users/enzo1/Documents/GitHub/Auditar/agent-governance-toolkit,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,toolkit de gobierno de agentes
+Agent365-devTools,C:/Users/enzo1/Documents/GitHub/Auditar/Agent365-devTools,nested_repo_or_folder,README.md,INDEXED,devtools Agent365
+cabina-universal-d-sdu-cn-canonical-20260604,C:/Users/enzo1/Documents/GitHub/Auditar/cabina-universal-d-sdu-cn-canonical-20260604,nested_repo_or_folder,AGENTS.md;MANIFEST.yaml;MAPA_HUMANO.md;README.md,INDEXED,canon historico SDU CN Cabina
+cdf-soluciones,C:/Users/enzo1/Documents/GitHub/Auditar/cdf-soluciones,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo CDF
+gobierno-maquina-trabajo,C:/Users/enzo1/Documents/GitHub/Auditar/gobierno-maquina-trabajo,nested_repo_or_folder,README.md,INDEXED,gobierno maquina de trabajo
+jara-consultores,C:/Users/enzo1/Documents/GitHub/Auditar/jara-consultores,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo Jara
+maquina-de-trabajo,C:/Users/enzo1/Documents/GitHub/Auditar/maquina-de-trabajo,nested_repo_or_folder,AGENTS.md;MAPA_DE_PROCESOS.md;MAPA_FRENTES_Y_CABINAS.md;README.md;99_INDICES/INDICE_MAESTRO.md,INDEXED,indice maestro y mapas de procesos
+modo-on-foundation,C:/Users/enzo1/Documents/GitHub/Auditar/modo-on-foundation,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo Modo ON foundation
+modoon-canon,C:/Users/enzo1/Documents/GitHub/Auditar/modoon-canon,nested_repo_or_folder,README.md,INDEXED,canon Modo ON historico
+modoon-foundation,C:/Users/enzo1/Documents/GitHub/Auditar/modoon-foundation,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,foundation historico
+modoon-sistema-declarativo,C:/Users/enzo1/Documents/GitHub/Auditar/modoon-sistema-declarativo,nested_repo_or_folder,README.md,INDEXED,sistema declarativo historico
+organizacion,C:/Users/enzo1/Documents/GitHub/Auditar/organizacion,nested_repo_or_folder,AGENTS.md;MANIFEST.sha256;README.md,INDEXED,espejo organizacion
+PowerToys,C:/Users/enzo1/Documents/GitHub/Auditar/PowerToys,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,referencia tecnica PowerToys
+sdu-canon,C:/Users/enzo1/Documents/GitHub/Auditar/sdu-canon,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo SDU Canon
+semantic-kernel,C:/Users/enzo1/Documents/GitHub/Auditar/semantic-kernel,nested_repo_or_folder,README.md,INDEXED,referencia Semantic Kernel
+Sgin,C:/Users/enzo1/Documents/GitHub/Auditar/Sgin,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo Sgin
+SGIN_Canonico_Puro,C:/Users/enzo1/Documents/GitHub/Auditar/SGIN_Canonico_Puro,nested_repo_or_folder,README.md,INDEXED,canon puro SGIN
+sgin-canonico,C:/Users/enzo1/Documents/GitHub/Auditar/sgin-canonico,nested_repo_or_folder,README.md,INDEXED,canonico SGIN
+sgin-cloud,C:/Users/enzo1/Documents/GitHub/Auditar/sgin-cloud,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,SGIN cloud
+sgin-cumplimiento,C:/Users/enzo1/Documents/GitHub/Auditar/sgin-cumplimiento,nested_repo_or_folder,README.md,INDEXED,espejo cumplimiento
+tcu-agentic-runtime-control,C:/Users/enzo1/Documents/GitHub/Auditar/tcu-agentic-runtime-control,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo TCU runtime
+tcu-control-plane,C:/Users/enzo1/Documents/GitHub/Auditar/tcu-control-plane,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,control plane historico
+tge-agentic-runtime-control-escribania,C:/Users/enzo1/Documents/GitHub/Auditar/tge-agentic-runtime-control-escribania,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo TGE runtime
+torre-gemela-escribania,C:/Users/enzo1/Documents/GitHub/Auditar/torre-gemela-escribania,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo Torre Gemela Escribania
+vender,C:/Users/enzo1/Documents/GitHub/Auditar/vender,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,frente vender

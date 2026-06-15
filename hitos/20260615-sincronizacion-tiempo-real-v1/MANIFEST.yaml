@@ -1,0 +1,36 @@
+id: 20260615-sincronizacion-tiempo-real-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: sincronizacion_tiempo_real
+estado: GREEN_LOCAL
+fuente:
+  - README.md
+  - MAPA_MAESTRO.md
+  - workbooks/EXCEL_AL_FRENTE.md
+  - dataverse/GATE.md
+  - dataverse/README.md
+  - dataverse/MAPA.md
+  - dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md
+  - operativa/CONTROL.md
+  - operativa/TRACE.md
+  - patrones/sincronizacion-tiempo-real.md
+  - procesos/sincronizacion-tiempo-real.md
+  - tools/validate_proj_cdx_sync.ps1
+salida:
+  - workbooks/tracker.xlsx
+  - outputs/tracker_general_20260613/
+  - outputs/tracker_workbook_20260613/
+  - outputs/control_operativo_20260615/
+  - outputs/dataverse_blocker_frontier_20260614/
+  - hitos/20260615-sincronizacion-tiempo-real-v1/
+rollback: revertir enlaces y archivos del delta local o restaurar el readback anterior
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_sync.ps1"
+guardrails:
+  - no_secret_read
+  - no_live_write
+  - no_global_state_or_sqlite
+  - dataverse_gate_required_for_live
+evidencia:
+  - hitos/20260615-sincronizacion-tiempo-real-v1/EVIDENCIA.md
+  - hitos/20260615-sincronizacion-tiempo-real-v1/READBACK.md

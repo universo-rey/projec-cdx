@@ -1,0 +1,32 @@
+id: 20260615-cierre-workbench-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: cierre_workbench
+estado: GREEN_LOCAL
+fuente:
+  - operativa/PLAN_COMPLETAR_ESTRUCTURA.md
+  - operativa/CONTROL.md
+  - dataverse/GATE.md
+salida:
+  - operativa/START_HERE.md
+  - operativa/PROMPT_NUEVO_HILO.md
+  - playbooks/00-preflight-gobernado.md
+  - playbooks/04-validar-delta.md
+  - playbooks/05-promover-aprendizaje.md
+  - tools/validate_proj_cdx_workbench.ps1
+  - workbooks/control_operativo.xlsx
+  - outputs/control_operativo_20260615/MANIFEST.json
+  - operativa/READBACK_CIERRE_20260615.md
+  - operativa/CONTROL_TOTAL_20260615.md
+rollback: revertir archivos del delta local o restaurar desde hito anterior
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+guardrails:
+  - no_secret_read
+  - no_auth_json
+  - no_cap_sid
+  - no_global_state_or_sqlite
+  - no_live_write
+evidencia:
+  - hitos/20260615-cierre-workbench-v1/EVIDENCIA.md
+  - outputs/control_operativo_20260615/formula_errors.ndjson

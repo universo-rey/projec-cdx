@@ -1,0 +1,12 @@
+surface,path,kind,index_state,git_state,operational_role,status,next_action
+CodexLocal,C:/Users/enzo1/CodexLocal,workspace_root,README_AGENTS_MAP_INDEX,NO_GIT,base local de evidencias workspaces y soportes,ACTIVE,usar como base antes de bajar paquetes hijos
+cabina-universal-d-agents-sdk-runner-20260604,C:/Users/enzo1/CodexLocal/cabina-universal-d-agents-sdk-runner-20260604,git_worktree,README,branch codex/agents-sdk-runner-activation-20260604 behind_32 dirty,runner y baseline Agents SDK SDU,ACTIVE_DELTA,comparar con main y decidir promocion o archivo
+cabina-universal-d-canon-textual-pr78-clean-20260604,C:/Users/enzo1/CodexLocal/cabina-universal-d-canon-textual-pr78-clean-20260604,git_repo,README,main clean,canon textual limpio PR78,REFERENCE_CLEAN,usar como referencia textual limpia
+cabina-universal-d-split-20260604,C:/Users/enzo1/CodexLocal/cabina-universal-d-split-20260604,split_workspace,VISIBLE_INDEX,NO_GIT_ROOT,frentes derivados de cabina con cinco worktrees,ACTIVE_DELTA,leer paquetes hijos y cruzar contra index_only
+OPTIMIZACION_PC,C:/Users/enzo1/CodexLocal/OPTIMIZACION_PC,support_folder,NO_LOCAL_INDEX,NO_GIT,diagnostico y optimizacion PC,SUPPORT,crear mapa corto si vuelve a entrar en flujo
+RECUPERO_C_ROOT,C:/Users/enzo1/CodexLocal/RECUPERO_C_ROOT,support_folder,NO_LOCAL_INDEX,NO_GIT,recupero de raiz C,SUPPORT,crear mapa corto si se reabre recupero
+REY_LOCAL,C:/Users/enzo1/CodexLocal/REY_LOCAL,governance_workspace,NO_LOCAL_INDEX,NO_GIT,gobierno local Rey,SUPPORT,crear mapa corto si se usa como autoridad
+sharepoint_backups,C:/Users/enzo1/CodexLocal/sharepoint_backups,backup_folder,NO_LOCAL_INDEX,NO_GIT,respaldos locales SharePoint,SUPPORT,no tocar sin orden de backup/restore
+sharepoint_work,C:/Users/enzo1/CodexLocal/sharepoint_work,work_folder,NO_LOCAL_INDEX,NO_GIT,trabajo local SharePoint,SUPPORT,no confundir con lista/live SharePoint
+TCU_LOCAL,C:/Users/enzo1/CodexLocal/TCU_LOCAL,tcu_workspace,NO_LOCAL_INDEX,NO_GIT,workspace local TCU,SUPPORT,crear mapa corto si vuelve a TCU
+TCU_REY_MODO_SYS_WORKSPACE,C:/Users/enzo1/CodexLocal/TCU_REY_MODO_SYS_WORKSPACE,workspace,README,NO_GIT,workspace TCU ReyModo SYS local no live,ACTIVE_REFERENCE,usar para carriles TCU/ReyModo/SYS

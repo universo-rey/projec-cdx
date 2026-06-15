@@ -1,0 +1,5 @@
+item,tipo,ruta,estado,nota
+cabina-universal-d,repo,C:/Users/enzo1/Documents/GitHub/cabina-universal-d,OK_GOVERNED,raiz transversal de Cabina incorporada a cadena
+microsoft-agents-governed-lab,repo,C:/Users/enzo1/Documents/GitHub/microsoft-agents-governed-lab,OK_GOVERNED,lab SDK gobernado TGE incorporado a cadena
+PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv,cadena,C:/Users/enzo1/Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv,UPDATED,dos filas agregadas
+GITHUB_REPOS_CANONICAL_20260615.csv,inventario,C:/Users/enzo1/PROJEC CDX/inventarios/GITHUB_REPOS_CANONICAL_20260615.csv,UPDATED,coverage alineada

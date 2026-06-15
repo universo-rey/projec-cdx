@@ -1,0 +1,34 @@
+folder,bucket,action,reason
+workpapers,frente,keep,continuidad operativa
+matrices,frente,keep,gobierno visible
+skills,frente,keep,capacidad reutilizable
+hitos,frente,keep,cronologia versionada
+catalogo-local,frente,keep,indice local canonico
+packages,frente,keep,artefactos empaquetados
+operativa,frente,keep,control y readbacks
+environment,frente,keep,accesos y herramientas
+profiles,frente,keep,configuracion util
+generated_images,frente,keep,evidencia visual
+plugins,soporte,relegate,capacidad instalada
+vendor_imports,soporte,relegate,dependencias importadas
+attachments,soporte,relegate,adjuntos no frontales
+backups,soporte,relegate,recuperacion
+memories,soporte,relegate,contexto historico
+browser,soporte,relegate,surfaces de inspeccion
+log,soporte,relegate,telemetria y trazas
+cache,compactacion,move,estado temporal grande
+worktrees,compactacion,move,ramas de trabajo historicas
+.tmp,compactacion,move,temporal masivo
+sessions,compactacion,move,sesiones acumuladas
+archived_sessions,compactacion,move,archivo historico
+computer-use-turn-ended,compactacion,move,estado de turnos
+tmp-appserver-schema,compactacion,move,esquemas temporales
+tmp,compactacion,move,temporal local
+worktree-archives,compactacion,move,archivos de worktree
+worktrees-disabled,compactacion,move,worktrees inactivos
+secrets,sensible,hold,no tocar
+private,sensible,hold,no tocar
+.sandbox*,sensible,hold,no tocar
+sqlite,sensible,hold,no tocar
+auth.json,sensible,hold,no tocar
+cap_sid,sensible,hold,no tocar

@@ -1,0 +1,4 @@
+orden,tipo,estado,evidencia
+1,corte_ejecutora,closed,"dataverse/ACTA_CORTE_EJECUTORA_20260615.md"
+2,roster_sdu,closed,"dataverse/MAPA_AGENTES_SDU.md"
+3,cola_sdu,closed,"dataverse/MAPA_COLA_TRABAJO_SDU.md"

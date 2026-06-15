@@ -1,0 +1,8 @@
+item,tipo,estado,evidencia
+acta,readback,GREEN_LOCAL,operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md
+todo,control,GREEN_LOCAL,operativa/TODO_20260615.md
+control_operativo,workbook,GREEN_LOCAL,workbooks/control_operativo.xlsx
+codexlocal,inventario,GREEN_LOCAL,inventarios/CODEXLOCAL_SURFACE_MAP_20260615.csv
+github_repos,inventario,GREEN_LOCAL,inventarios/GITHUB_REPOS_CANONICAL_20260615.csv
+auditar,inventario,GREEN_LOCAL,inventarios/AUDITAR_SURFACE_INDEX_20260615.csv
+cadena_operativa,indice,GREEN_LOCAL,Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv

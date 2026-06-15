@@ -1,0 +1,15 @@
+repo,path,kind,branch,working_tree,last_write,chain_coverage,nota
+Auditar,C:/Users/enzo1/Documents/GitHub/Auditar,folder_non_git,NO_GIT,NO_GIT,2026-06-05 03:47:58,IN_OPERATIONAL_CHAIN,carpeta agregadora no Git con indice de superficie
+cabina-universal-d,C:/Users/enzo1/Documents/GitHub/cabina-universal-d,git_repo,main,CLEAN,2026-06-14 04:05:36,IN_OPERATIONAL_CHAIN,repo cabina raiz canonica local incorporado a cadena
+cdf-soluciones,C:/Users/enzo1/Documents/GitHub/cdf-soluciones,git_repo,main,CLEAN,2026-06-05 04:12:20,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa
+jara-consultores,C:/Users/enzo1/Documents/GitHub/jara-consultores,git_repo,main,CLEAN,2026-06-05 04:12:23,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa
+microsoft-agents-governed-lab,C:/Users/enzo1/Documents/GitHub/microsoft-agents-governed-lab,git_repo,main,CLEAN,2026-06-14 07:10:55,IN_OPERATIONAL_CHAIN,repo lab SDK gobernado incorporado a cadena
+modo-on-foundation,C:/Users/enzo1/Documents/GitHub/modo-on-foundation,git_repo,main,CLEAN,2026-06-05 04:12:27,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa
+organizacion,C:/Users/enzo1/Documents/GitHub/organizacion,git_repo,main,CLEAN,2026-06-05 08:08:54,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa en main
+sdu-canon,C:/Users/enzo1/Documents/GitHub/sdu-canon,git_repo,main,CLEAN,2026-06-05 04:12:30,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa
+seshat-bootstrap-sdu-cn,C:/Users/enzo1/Documents/GitHub/seshat-bootstrap-sdu-cn,git_repo,main,CLEAN,2026-06-11 09:24:05,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa
+Sgin,C:/Users/enzo1/Documents/GitHub/Sgin,git_repo,main,CLEAN,2026-06-05 04:12:37,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa
+sgin-cumplimiento,C:/Users/enzo1/Documents/GitHub/sgin-cumplimiento,git_repo,main,CLEAN,2026-06-14 02:12:03,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa
+tcu-agentic-runtime-control,C:/Users/enzo1/Documents/GitHub/tcu-agentic-runtime-control,git_repo,main,CLEAN,2026-06-14 02:12:07,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa
+tge-agentic-runtime-control-escribania,C:/Users/enzo1/Documents/GitHub/tge-agentic-runtime-control-escribania,git_repo,main,CLEAN,2026-06-14 02:12:07,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa
+torre-gemela-escribania,C:/Users/enzo1/Documents/GitHub/torre-gemela-escribania,git_repo,main,CLEAN,2026-06-14 07:08:49,IN_OPERATIONAL_CHAIN,repo cubierto por cadena operativa
