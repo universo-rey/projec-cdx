@@ -12,6 +12,8 @@ La receta de complementos on-demand queda en [complementos-on-demand.md](C:/User
 
 La receta de agentes atomicos algoritmicos en waves queda en [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md).
 
+La receta de limpieza PC local segura queda en [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md).
+
 Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
 ## Visible
@@ -24,6 +26,7 @@ Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operati
 - [procedencia-layout-on-demand.md](C:/Users/enzo1/PROJEC%20CDX/recipes/procedencia-layout-on-demand.md)
 - [complementos-on-demand.md](C:/Users/enzo1/PROJEC%20CDX/recipes/complementos-on-demand.md)
 - [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md)
+- [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md)
 
 ## Soporte
 
@@ -39,3 +42,4 @@ Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operati
 - `procedencia-layout-on-demand.md` reduce repeticion en ajustes de procedencia, layout visible y anclas on-demand.
 - `complementos-on-demand.md` reduce repeticion cuando hay que abrir o listar complementos activos sin inventarlos.
 - `agentes-atomicos-algoritmicos-en-waves.md` reduce repeticion cuando la delegacion se parte en waves con fan-in claro.
+- `limpieza-pc-local-segura.md` reduce repeticion cuando la optimizacion local de Windows necesita inventario, limpieza y evidencia.

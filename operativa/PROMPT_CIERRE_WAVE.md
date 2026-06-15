@@ -6,9 +6,9 @@ Usarlo junto con `operativa/ANCLAS_ON_DEMAND.md` cuando haga falta abrir una sup
 
 ```text
 Continuar desde:
-C:\Users\enzo1\PROJEC CDX\operativa\START_HERE.md
-C:\Users\enzo1\PROJEC CDX\operativa\READBACK_CIERRE_20260615.md
-C:\Users\enzo1\PROJEC CDX\operativa\TRACE.md
+C:/Users/enzo1/PROJEC CDX/operativa/START_HERE.md
+C:/Users/enzo1/PROJEC CDX/operativa/READBACK_CIERRE_20260615.md
+C:/Users/enzo1/PROJEC CDX/operativa/TRACE.md
 
 Estado:
 - PROJEC CDX ya está versionado, navegable y GREEN_OPERABLE.

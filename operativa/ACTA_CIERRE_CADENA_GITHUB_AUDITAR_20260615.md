@@ -2,7 +2,7 @@
 
 ## Estado
 
-GREEN_LOCAL: cierre local de la cadena `CodexLocal -> Documents\GitHub -> Auditar`.
+GREEN_LOCAL: cierre local de la cadena `CodexLocal -> Documents/GitHub -> Auditar`.
 
 ## Agente
 
@@ -18,8 +18,8 @@ Registrar todos los hitos de la ronda, actualizar TODOs visibles y dejar la cade
 ## Superficie
 
 - `PROJEC CDX` local.
-- `C:\Users\enzo1\Documents\Codex\2026-06-14\projec-cdx-handoff-20260614\outputs`.
-- Inventarios locales de `CodexLocal`, `Documents\GitHub` y `Auditar`.
+- `C:/Users/enzo1/Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs`.
+- Inventarios locales de `CodexLocal`, `Documents/GitHub` y `Auditar`.
 
 ## Skill
 
@@ -83,7 +83,7 @@ Registrar todos los hitos de la ronda, actualizar TODOs visibles y dejar la cade
 - `hitos/20260615-auditar-surface-chain-v1/READBACK.md`.
 - `workbooks/control_operativo.xlsx`.
 - `outputs/control_operativo_20260615/MANIFEST.json`.
-- `C:\Users\enzo1\Documents\Codex\2026-06-14\projec-cdx-handoff-20260614\outputs\PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv`.
+- `C:/Users/enzo1/Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv`.
 
 ## Validador
 

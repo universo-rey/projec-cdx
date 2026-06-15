@@ -12,6 +12,8 @@ El proceso de complementos on-demand queda en [complementos-on-demand.md](C:/Use
 
 El proceso de agentes atomicos algoritmicos en waves queda en [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/procesos/agentes-atomicos-algoritmicos-en-waves.md).
 
+El proceso de limpieza PC local segura queda en [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md).
+
 Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
 ## Piezas
@@ -33,6 +35,7 @@ Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operati
 - [procedencia-layout-on-demand.md](C:/Users/enzo1/PROJEC%20CDX/procesos/procedencia-layout-on-demand.md)
 - [complementos-on-demand.md](C:/Users/enzo1/PROJEC%20CDX/procesos/complementos-on-demand.md)
 - [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/procesos/agentes-atomicos-algoritmicos-en-waves.md)
+- [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md)
 
 ## Relacion
 
@@ -45,3 +48,4 @@ Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operati
 - `procedencia-layout-on-demand.md` gobierna la separacion entre procedencia tecnica, lectura visible y apertura on-demand.
 - `complementos-on-demand.md` gobierna la apertura de complementos activos sin inventar disponibilidad.
 - `agentes-atomicos-algoritmicos-en-waves.md` gobierna la delegacion por waves con retorno exacto y fan-in claro.
+- `limpieza-pc-local-segura.md` gobierna la limpieza local con inventario, gate y evidencia antes de tocar ruido.

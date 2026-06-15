@@ -46,7 +46,7 @@ Bajar los amarillos historicos para dejar semaforo global verde con lectura remo
 - `20260614-hitos-otros-repos-v1`: `GREEN_ARCHIVED`, absorbido por GitHub canonical y cadena repos.
 - `20260615-cierre-workbench-v1`: `GREEN_OPERABLE`, guardrails activos sin bloqueo rojo.
 - `20260615-wave-revision-total-v1`: `GREEN_LOCAL`, cadena operativa cerrada con 43 filas y sin `INDEX_ONLY`.
-- `20260615-codexlocal-base-v1`: `GREEN_REFERENCE_CLOSED`, `CodexLocal` queda como evidencia, espejo, split o soporte; `Documents\GitHub` manda para repos.
+- `20260615-codexlocal-base-v1`: `GREEN_REFERENCE_CLOSED`, `CodexLocal` queda como evidencia, espejo, split o soporte; `Documents/GitHub` manda para repos.
 
 ## Sistemas Tocados
 

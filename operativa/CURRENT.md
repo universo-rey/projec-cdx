@@ -4,13 +4,19 @@ Estado actual del trabajo de `PROJEC CDX`.
 
 ## Activo
 
-Cierre local de completitud del workbench `PROJEC CDX`.
+Cierre local de completitud del workbench `PROJEC CDX` y estado final de limpieza de la PC.
 
 ## Por Que Importa
 
 `PROJEC CDX` ya no debe funcionar solo como archivo ordenado. Debe operar como mesa viva: cada frente visible tiene entrada, mapa y una pieza siguiente accionable.
 
 ## Cierre De Esta Ronda
+
+- Inventario final de la PC guardado en `operativa/INVENTARIO_FINAL_PC_20260615.md`.
+- Superficie de busqueda del usuario recortada: `DisableSearchBoxSuggestions`, `BingSearchEnabled`, `CortanaConsent` y `ShowSearchHighlights`.
+- Servicios auxiliares deshabilitados: Adobe, AnyDesk, Google Updaters, HP, McAfee, PAD/UIFlow, WAPC, GlobalSecureAccess, OneDrive updater, Omen, Edge update.
+- Borrado/paro de ruido visible: `SearchHost`, `msedgewebview2`, `WSearch` y `Spooler` quedaron fuera de la superficie activa de trabajo.
+- Infraestructura base de Windows dejada intacta: `BrokerInfrastructure`, `DcomLaunch`, `PlugPlay`, `Power` y `SystemEventsBroker`.
 
 - Raiz visible: `README.md`, `AGENTS.md`, `MAPA_MAESTRO.md`.
 - Carriles normalizados: `atomic`, `docs`, `hitos`, `inventarios`, `operativa`, `outputs`, `packages`, `tools`, `workbooks`.
@@ -26,6 +32,13 @@ Cierre local de completitud del workbench `PROJEC CDX`.
 - Workbook: `workbooks/control_operativo.xlsx` regenerado desde `operativa/` con hoja `Alertas`.
 - Hito: `hitos/20260615-cierre-workbench-v1`.
 - Proxima regla: todo nuevo trabajo entra primero por `operativa/NEXT.md`, valida con `playbooks/04-validar-delta.md` y cierra contra `operativa/TRACE.md`.
+
+## Ultimo Delta Cerrado 19
+
+- Guardar el inventario final de la PC y dejar el cierre local de limpieza documentado.
+- Mantener la base de Windows intacta y solo recortar superficie auxiliar y de busqueda.
+- Validacion local: `PASS`.
+- Evidencia: `operativa/INVENTARIO_FINAL_PC_20260615.md`.
 
 ## Ultimo Delta Cerrado
 
@@ -81,7 +94,7 @@ Cierre local de completitud del workbench `PROJEC CDX`.
 
 ## Ultimo Delta Cerrado 8
 
-- Incorporar `CodexLocal` como base local de lectura y `Documents\GitHub` como fuente canonica de repos.
+- Incorporar `CodexLocal` como base local de lectura y `Documents/GitHub` como fuente canonica de repos.
 - Incorporar `Auditar` como carpeta agregadora no Git con indice propio.
 - Registrar acta de cierre de cadena y TODO visible.
 - Validacion local: PASS.
@@ -97,7 +110,7 @@ Cierre local de completitud del workbench `PROJEC CDX`.
 ## Ultimo Delta Cerrado 10
 
 - Cerrar la cadena GitHub Auditar y dejar TODO visible en la ronda.
-- Mantener `Documents\GitHub` como fuente canonica de repos y `Auditar` como superficie agregadora.
+- Mantener `Documents/GitHub` como fuente canonica de repos y `Auditar` como superficie agregadora.
 - Validacion local: PASS.
 - Hito: `hitos/20260615-cierre-cadena-github-auditar-v1`.
 
@@ -157,3 +170,17 @@ Cierre local de completitud del workbench `PROJEC CDX`.
 - Declarar fase, impulso y stop condition desde la primera entrada visible minima.
 - Validacion local: PASS.
 - Hito: `hitos/20260615-cobertura-atomica-energetica-v1`.
+
+## Ultimo Delta Cerrado 19
+
+- Guardar el inventario final de la PC y dejar el cierre local de limpieza documentado.
+- Mantener la base de Windows intacta y solo recortar superficie auxiliar y de busqueda.
+- Validacion local: PASS.
+- Evidencia: `operativa/INVENTARIO_FINAL_PC_20260615.md`.
+
+## Ultimo Delta Cerrado 20
+
+- Convertir la limpieza local de PC en skill, receta, proceso y registro local de Dataverse.
+- Mantener el carril local-only y no abrir live write.
+- Validacion local: PASS.
+- Evidencia: `recipes/limpieza-pc-local-segura.md`, `procesos/limpieza-pc-local-segura.md`, `dataverse/REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md`.

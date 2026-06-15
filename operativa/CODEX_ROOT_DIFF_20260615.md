@@ -1,6 +1,6 @@
 # Diff De `.codex`
 
-Comparacion corta entre el filesystem vivo de `C:\Users\enzo1\.codex` y su layer visible.
+Comparacion corta entre el filesystem vivo de `C:/Users/enzo1/.codex` y su layer visible.
 
 ## Estado
 
@@ -46,4 +46,4 @@ Estas superficies existen en filesystem pero no se promueven como entradas visib
 ## Cierre
 
 - `codex-surface-map` sigue siendo la skill correcta para este carril.
-- `C:\Users\enzo1\.codex\.tmp` queda documentada y no requiere accion adicional por ahora.
+- `C:/Users/enzo1/.codex/.tmp` queda documentada y no requiere accion adicional por ahora.

@@ -21,6 +21,7 @@
 | PR-017 | Procedencia layout on-demand | Configuracion interna, ancla o nota visible compacta | [procedencia-layout-on-demand.md](C:/Users/enzo1/PROJEC%20CDX/procesos/procedencia-layout-on-demand.md) |
 | PR-018 | Complementos on-demand | Complemento, plugin o MCP directo pedido por demanda | [complementos-on-demand.md](C:/Users/enzo1/PROJEC%20CDX/procesos/complementos-on-demand.md) |
 | PR-019 | Agentes atomicos algoritmicos en waves | Delegacion por waves con lanes disjuntas | [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/procesos/agentes-atomicos-algoritmicos-en-waves.md) |
+| PR-020 | Limpieza PC local segura | Limpieza y recorte de ruido local | [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md) |
 
 ## Regla
 
