@@ -25,6 +25,7 @@ Capa minima para abrir solo la ancla que pide el delta real.
 - [Proceso procedencia layout on-demand](C:/Users/enzo1/PROJEC%20CDX/procesos/procedencia-layout-on-demand.md) - solo si el delta pide ejecutar esa separacion.
 - [Receta complementos on-demand](C:/Users/enzo1/PROJEC%20CDX/recipes/complementos-on-demand.md) - solo si el pedido es abrir o listar complementos.
 - [Proceso complementos on-demand](C:/Users/enzo1/PROJEC%20CDX/procesos/complementos-on-demand.md) - solo si el pedido requiere ejecutar esa apertura.
+- [Receta configuracion entorno Codex UI](C:/Users/enzo1/PROJEC%20CDX/recipes/configuracion-entorno-codex-ui.md) - solo si falta alinear la UI con la config local del proyecto o reabrir el carril correcto.
 - [Ancla agentes atomicos algoritmicos](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md) - solo si el delta se delega en agentes atómicos con retorno exacto.
 - [Receta agentes atomicos algoritmicos en waves](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md) - solo si la delegacion se parte en waves.
 - [Proceso agentes atomicos algoritmicos en waves](C:/Users/enzo1/PROJEC%20CDX/procesos/agentes-atomicos-algoritmicos-en-waves.md) - solo si hace falta ejecutar esa wave.
