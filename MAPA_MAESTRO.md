@@ -32,6 +32,7 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 - [operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md)
 - [operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md)
 - [operativa/CONTROL_TOTAL_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONTROL_TOTAL_20260615.md)
+- [operativa/POLITICA_RAMAS_VERSIONADO_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/POLITICA_RAMAS_VERSIONADO_20260615.md)
 - [recipes/README.md](C:/Users/enzo1/PROJEC%20CDX/recipes/README.md)
 - [recipes/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/recipes/MAPA.md)
 - [playbooks/README.md](C:/Users/enzo1/PROJEC%20CDX/playbooks/README.md)
