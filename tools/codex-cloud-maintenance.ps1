@@ -5,7 +5,7 @@ param(
   [string]$ContractPath,
   [string]$RegistryPath,
   [string]$MaintenanceLogPath,
-  [switch]$RefreshRegistry = $true
+  [bool]$RefreshRegistry = $true
 )
 
 $ErrorActionPreference = 'Stop'
@@ -150,7 +150,7 @@ $registryRefresh = @'
 '@
 
 $mode = [Environment]::GetEnvironmentVariable('CODEX_CLOUD_MODE')
-if ([string]::IsNullOrWhiteSpace($mode)) { $mode = 'hybrid' }
+if ([string]::IsNullOrWhiteSpace($mode)) { $mode = 'cloud' }
 $gate = [Environment]::GetEnvironmentVariable('CODEX_CLOUD_GATE')
 if ([string]::IsNullOrWhiteSpace($gate)) { $gate = 'metadata-only' }
 

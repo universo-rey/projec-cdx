@@ -11,22 +11,22 @@ Codex Cloud se usa para delegacion, orquestacion y trabajo repetible de varios p
 ## Current Context
 
 - repo root: C:\Users\enzo1\PROJEC CDX
-- branch: codex/revisar-procesos-del-equipo
+- branch: main
 - remote: https://github.com/universo-rey/projec-cdx.git
-- workspace root: C:\Users\enzo1\.codex\worktrees\49ea\PROJEC CDX
-- mode: hybrid
+- workspace root: C:\Users\enzo1\PROJEC CDX
+- mode: cloud
 - gate: metadata-only
-- generated at: 2026-06-15T19:50:01.8169575-03:00
+- generated at: 2026-06-16T07:06:46.4472407-03:00
 
 ## Variables
 
 - `CODEX_CLOUD_ENABLED` | default: `1` | Master switch for delegated cloud work.
-- `CODEX_CLOUD_MODE` | default: `hybrid` | Execution mode: local, cloud, or hybrid.
+- `CODEX_CLOUD_MODE` | default: `cloud` | Execution mode: local, cloud, or hybrid.
 - `CODEX_CLOUD_GATE` | default: `metadata-only` | Gate contract for metadata-only or higher.
 - `CODEX_CLOUD_PROFILE` | default: `projec-cdx` | Project profile name.
 - `CODEX_CLOUD_REPO_ROOT` | default: `C:\Users\enzo1\PROJEC CDX` | Canonical repo root.
-- `CODEX_CLOUD_WORKTREE` | default: `C:\Users\enzo1\.codex\worktrees\49ea\PROJEC CDX` | Current isolated workspace path.
-- `CODEX_CLOUD_BRANCH` | default: `codex/revisar-procesos-del-equipo` | Current branch for the lane.
+- `CODEX_CLOUD_WORKTREE` | default: `C:\Users\enzo1\PROJEC CDX` | Current isolated workspace path.
+- `CODEX_CLOUD_BRANCH` | default: `main` | Current branch for the lane.
 - `CODEX_CLOUD_CONTRACT` | default: `C:\Users\enzo1\PROJEC CDX\operativa\CODEX_CLOUD_CONTRACT_20260615.md` | Contract document path.
 - `CODEX_CLOUD_MAINTENANCE_LOG` | default: `C:\Users\enzo1\PROJEC CDX\operativa\CODEX_CLOUD_MAINTENANCE_20260615.md` | Maintenance log path.
 - `CODEX_CLOUD_DATAVERSE_REGISTRY` | default: `C:\Users\enzo1\PROJEC CDX\dataverse\REGISTRO_CODEX_CLOUD_20260615.md` | Metadata-only Dataverse registry path.

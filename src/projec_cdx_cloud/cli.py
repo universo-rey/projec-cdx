@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 from typing import Iterable
 
-from .agent import DEFAULT_MODEL, run_agent, smoke_report
+from .agent import DEFAULT_MODEL, build_sdu_agents, run_agent, smoke_report
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -54,6 +54,11 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Emit JSON instead of plain text.",
     )
+    parser.add_argument(
+        "--activate-sdu",
+        action="store_true",
+        help="Build the six SDK-SDU agents and report them as active in the local runtime.",
+    )
     return parser
 
 
@@ -73,6 +78,25 @@ def main(argv: Iterable[str] | None = None) -> int:
         else:
             for key, value in report.items():
                 print(f"{key}: {value}")
+        return 0
+
+    if args.activate_sdu:
+        agents = build_sdu_agents(model=args.model)
+        payload = {
+            "status": "activated",
+            "model": args.model,
+            "count": len(agents),
+            "agents": list(agents.keys()),
+            "gate": os.environ.get("CODEX_CLOUD_GATE", "metadata-only"),
+        }
+        if args.json:
+            _print_json(payload)
+        else:
+            print(f"status: {payload['status']}")
+            print(f"model: {payload['model']}")
+            print(f"count: {payload['count']}")
+            print(f"agents: {', '.join(payload['agents'])}")
+            print(f"gate: {payload['gate']}")
         return 0
 
     result = asyncio.run(run_agent(args.prompt, model=args.model))

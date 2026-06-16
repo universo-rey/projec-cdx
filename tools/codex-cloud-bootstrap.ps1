@@ -5,7 +5,7 @@ param(
   [string]$ContractPath,
   [string]$RegistryPath,
   [string]$MaintenanceLogPath,
-  [string]$Mode = 'hybrid',
+  [string]$Mode = 'cloud',
   [string]$Gate = 'metadata-only'
 )
 
