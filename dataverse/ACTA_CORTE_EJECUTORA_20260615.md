@@ -57,6 +57,7 @@ Canal Dataverse activado como carril gobernado local. No implica live write ni r
 - El roster SDU es la capa operativa de agentes postcheckeados en `HUBDesarrollo`.
 - La cola de trabajo SDU es la superficie de ejecucion; no define la corte.
 - `MAPA_AGENTES_SDU.md` y `MAPA_COLA_TRABAJO_SDU.md` describen operacion; esta acta describe autoridad y continuidad.
+- Separacion canonica: `SDU Dataverse` nombra la superficie operativa; `corte ejecutora` nombra la capa de autoridad y continuidad. No son equivalentes.
 
 ## Cola De Trabajo
 

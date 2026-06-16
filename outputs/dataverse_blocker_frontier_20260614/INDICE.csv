@@ -1,0 +1,6 @@
+item,tipo,ruta,estado,nota
+README.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/dataverse_blocker_frontier_20260614/README.md,ACTIVE,portada de la corrida
+MAPA.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/dataverse_blocker_frontier_20260614/MAPA.md,ACTIVE,mapa de la corrida
+dataverse_blocker_frontier.xlsx,workbook,C:/Users/enzo1/PROJEC%20CDX/outputs/dataverse_blocker_frontier_20260614/dataverse_blocker_frontier.xlsx,ACTIVE,workbook principal
+READBACK.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/dataverse_blocker_frontier_20260614/READBACK.md,ACTIVE,readback de frontera
+build_dataverse_blocker_frontier.py,script,C:/Users/enzo1/PROJEC%20CDX/outputs/dataverse_blocker_frontier_20260614/build_dataverse_blocker_frontier.py,ACTIVE,script de generacion
