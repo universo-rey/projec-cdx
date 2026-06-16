@@ -8,6 +8,11 @@ Si queres reanudar una wave de cierre, entrar por [ANCLAS_ON_DEMAND.md](C:/Users
 - [INDICE_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md)
 - [INDICE_MAESTRO.csv](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.csv)
 
+Archivo:
+
+- [README del archivo](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/README.md)
+- [Mapa del archivo](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/MAPA.md)
+
 Versiones:
 
 - [20260614-hilo-anterior-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260614-hilo-anterior-v1/README.md)
@@ -33,8 +38,30 @@ Versiones:
 - [20260615-codex-cloud-scaffold-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-codex-cloud-scaffold-v1/README.md)
 - [20260615-politica-ramas-versionado-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-politica-ramas-versionado-v1/README.md)
 - [20260615-repos-surface-github-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-repos-surface-github-v1/README.md)
+- [20260616-wave-atomica-documentos-conocimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-conocimiento-v1/README.md)
+- [20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1/README.md)
+- [20260616-wave-mapas-uniformes-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-mapas-uniformes-v1/README.md)
+
+Paquetes nuevos 20260616:
+
+- [20260616-normalizacion-perfil-windows-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-normalizacion-perfil-windows-v1/README.md)
+- [20260616-perfil-windows-canon-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-perfil-windows-canon-v1/README.md)
+- [20260616-limpieza-pc-local-canon-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-limpieza-pc-local-canon-v1/README.md)
+- [20260616-wave-atomica-repos-lane-b-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-repos-lane-b-v1/README.md)
+- [20260616-wave-atomica-repos-lane-c-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-repos-lane-c-v1/README.md)
+- [20260616-wave-atomica-repos-lane-c-organizacion-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-repos-lane-c-organizacion-v1/README.md)
+- [20260616-wave-atomica-repos-lane-c-cdf-soluciones-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-repos-lane-c-cdf-soluciones-v1/README.md)
+- [20260616-wave-atomica-repos-lane-c-jara-consultores-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-repos-lane-c-jara-consultores-v1/README.md)
+- [20260616-wave-atomica-documentos-conocimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-conocimiento-v1/README.md)
+- [20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1/README.md)
+- [20260616-wave-mapas-uniformes-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-mapas-uniformes-v1/README.md)
+
+La clasificacion fina completa vive en [INDICE_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md) y [INDICE_MAESTRO.csv](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.csv).
 
 Regla:
 
 - Cada nuevo hito entra como carpeta nueva.
-- El detalle queda en el paquete versionado y en el indice maestro.
+- La forma ideal de un hito consolidado es `README.md` + `MANIFEST.yaml` + `INDICE.csv` + evidencia o readback.
+- Algunas versiones compactas conservan solo lo necesario para no duplicar material ya absorbido por otro hito.
+- La clasificacion fina de compactos y absorciones vive en `INDICE_MAESTRO.md` y ya cubre todos los paquetes.
+- `20260615-semaforo-verde-historicos-v1` se conserva como hito propio de reclasificacion gobernada.

@@ -13,6 +13,8 @@ Politica corta para mantener `PROJEC CDX` compacto y auditable.
 - `hitos/20260615-hilo-origen-v1`
 - `hitos/20260615-dataverse-conexiones-drift-v1`
 - `hitos/20260615-corte-ejecutora-vs-sdu-v1`
+- `hitos/20260616-wave-atomica-documentos-conocimiento-v1`
+- `hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1`
 
 ## Mantener Como Evidencia
 
@@ -38,3 +40,10 @@ Requiere orden explicita y registrar:
 - Backup o rollback.
 - Postcheck.
 - Evidencia final.
+
+## Reglas De Mantenimiento
+
+- Diario: cada artefacto nuevo se clasifica como `canonical`, `mirror`, `transient` o `discardable`.
+- Semanal: reindexar las superficies visibles y detectar deriva de superficie duplicada.
+- Mensual: medir los roots pesados, refrescar retencion y refrescar el mapa de mantenimiento.
+- Gates de movimiento: ninguna mudanza sin `source`, `target`, `rollback`, `evidence`, `postcheck` y `validator`.

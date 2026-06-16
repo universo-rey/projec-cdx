@@ -1,4 +1,4 @@
-# Mapa De Packages
+# Mapa de Packages
 
 Vista unica de los paquetes comprimidos de soporte de `PROJEC CDX`.
 

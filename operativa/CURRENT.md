@@ -4,7 +4,12 @@ Estado actual del trabajo de `PROJEC CDX`.
 
 ## Activo
 
-Cierre local de completitud del workbench `PROJEC CDX` y estado final de limpieza de la PC.
+Cierre local de completitud del workbench `PROJEC CDX` y wave atomica documental ya versionada, registrada y validada.
+
+## Wave Siguiente
+
+La siguiente preparacion visible solo se abre si aparece nueva superficie documental o un nuevo delta operativo.
+La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md) y el packet versionado en [hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1/README.md).
 
 ## Por Que Importa
 

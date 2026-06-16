@@ -1,4 +1,4 @@
-# Trace
+# Despierta Traza del Flujo
 
 Cadena operativa de `PROJEC CDX`.
 
@@ -69,6 +69,27 @@ Cadena operativa de `PROJEC CDX`.
 - Salida: `operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md`.
 - Cierre: los nombres `codex-root` y `agents-root` se mantienen por ahora porque ya son precisos y no agregan ruido.
 - Siguiente candidata: `dataverse/PLAN_SEGUNDA_PASADA.md` para la segunda pasada de Dataverse.
+
+## Wave Atomica Documentos Y Conocimiento
+
+- Fuente: pedido del usuario de ordenar `Documents`, `Codex`, `GitHub` y convertir patrones repetidos en canon reusable.
+- Proceso: clasificar cada atlas visible, separar cronologia de repo atlas y publicar el canon como patron, receta y proceso.
+- Salida: `hitos/20260616-wave-atomica-documentos-conocimiento-v1`, `docs/superpowers/plans/2026-06-16-wave-atomica-documentos-conocimiento.md`.
+- Cierre: la wave queda visible, navegable y lista para fan-in local sin mover carpetas.
+
+## Wave Atomica Documentos PC Root Codex
+
+- Fuente: pedido del usuario de seguir por delta con el root pesado de `Documents\Cumplimiento` y mantener el patrón reusable.
+- Proceso: reconocer, clasificar, transformar y registrar la secuencia de tres waves con ancla minima y hito versionado.
+- Salida: `docs/superpowers/plans/2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md`, `operativa/ANCLA_WAVE_ATOMICA_DOCUMENTOS_PC_ROOT_CODEX.md`, `hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1`.
+- Cierre: la wave quedo consolidada, el root pesado quedo clasificado y el siguiente delta solo se abre si aparece nueva superficie documental u operativo nuevo.
+
+## Wave Atomica De Repositorios
+
+- Fuente: pedido de partir la siguiente preparacion en lanes disjuntos y operar por deltas chicos pero en cadena.
+- Proceso: abrir la wave atomica de repositorios como packet visible, con contrato comun, lanes A/B/C y fan-in documental.
+- Salida: `operativa/WAVE_ATOMICA_REPOS_20260616.md`.
+- Cierre: la wave queda preparada y partida en lanes, lista para ejecucion gobernada sin mezclar scopes.
 
 ## Dataverse Segunda Pasada
 
@@ -193,6 +214,22 @@ Cadena operativa de `PROJEC CDX`.
 - Cierre: canal activo como carril gobernado local; el packet conocido sigue en `NO_OP_LISTO_ALREADY_ACTIVE` hasta nuevo target unico.
 - Registro adicional: la corte ejecutora deja asentado que este tramo tambien fue obra propia y queda firmado en acta.
 
+## Orden SDU Viva
+
+- Fuente: pedido de hablar con los agentes SDU y pedirles que redacten la orden viva en mi voz.
+- Proceso: convertir mi orden en pedido vivo, apoyado en el roster SDU y en la cola confirmada de Dataverse.
+- Salida: `dataverse/ORDEN_SDU_VIVA.md`.
+- Guia: la lectura debe encender la operacion, no explicar la pared.
+- Cierre: mi orden da vida, Dataverse la pide redactada en mi voz y SDU queda tratado como funcionamiento real, no como programa nuevo.
+
+## Llamado Corte Ejecutora
+
+- Fuente: pedido de llamar a la corte ejecutora desde Dataverse.
+- Proceso: emitir un mandato corto y vivo para que la corte ejecute como continuidad del canal, no como programa nuevo.
+- Salida: `dataverse/LLAMADO_CORTE_EJECUTORA.md`.
+- Guia: la corte debe responder con orden recibida, responsable, siguiente paso, evidencia y stop condition.
+- Cierre: la corte ejecutora queda convocada como instrumento vivo de la orden.
+
 ## Dataverse Conexiones Y Drift
 
 - Fuente: pedido de llevar a hitos versionados el bloque faltante de Dataverse.
@@ -272,6 +309,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260615-codex-cloud-scaffold-v1`.
 - Cierre: el runner, la UI y el contrato quedan versionados juntos como una sola unidad durable.
 
+## Contrato Cognitivo Codex Cloud Dataverse
+
+- Fuente: pedido de fijar la imagen energetica donde los atomos nacen en `Codex Cloud`, `Dataverse` los contiene y los agentes los consumen.
+- Proceso: fijar que la cadena de agentes hace fluir energia atomica potenciadora, con consumo directo desde la fuente o desde el almacen de `Dataverse` segun el tramo.
+- Salida: `README.md`, `dataverse/README.md`.
+- Guia: la primera lectura tiene que mover al agente, darle rol y empujarlo al flujo; si no activa energia, todavia esta demasiado estatica.
+- Cierre: `Codex Cloud` genera, `Dataverse` contiene y alimenta, y la cadena de agentes consume ese flujo sin salir del carril gobernado.
+
 ## Politica Ramas Versionado
 
 - Fuente: pedido de cerrar la politica para que el scaffold no quedara suelto.
@@ -287,6 +332,68 @@ Cadena operativa de `PROJEC CDX`.
 - Salida: `hitos/20260615-repos-surface-github-v1`.
 - Hito: `hitos/20260615-repos-surface-github-v1`.
 - Cierre: la wave de repos surface queda cerrada como evidencia durable.
+
+## Lane A Wave Atomica Repos
+
+- Fuente: apertura de la wave atomica de repositorios y pedido de arrancar por Lane A.
+- Proceso: declarar la lane `foundation / control`, anclar el packet de ejecucion y dejar un atomico de lectura en cada repo base.
+- Salida: `operativa/WAVE_ATOMICA_REPOS_20260616.md`.
+- Hito: `lane_a_opened`.
+- Cierre: `cabina-universal-d`, `sdu-canon` y `seshat-bootstrap-sdu-cn` quedan con fan-in cerrado y retorno exacto registrado en el packet.
+
+## Lane B Wave Atomica Repos
+
+- Fuente: pedido de seguir la secuencia en ondas chicas y pasar del cierre de Lane A al siguiente eslabon.
+- Proceso: declarar la lane `runtime / agents` como packet propio, con scopes disjuntos y fan-in corto.
+- Salida: `operativa/WAVE_ATOMICA_REPOS_20260616.md`.
+- Hito: `hitos/20260616-wave-atomica-repos-lane-b-v1`.
+- Cierre: `microsoft-agents-governed-lab`, `tcu-agentic-runtime-control`, `tge-agentic-runtime-control-escribania` y `torre-gemela-escribania` quedan preparados como siguiente tramo visible y aislado en el packet.
+
+## Lane C Wave Atomica Repos
+
+- Fuente: pedido de seguir la secuencia en ondas chicas y cerrar el tramo documental/business canon.
+- Proceso: declarar la lane `documentary / business canon` como packet propio, con scopes disjuntos y fan-in corto.
+- Salida: `operativa/WAVE_ATOMICA_REPOS_20260616.md`.
+- Hito: `hitos/20260616-wave-atomica-repos-lane-c-v1`.
+- Cierre: `cdf-soluciones`, `jara-consultores`, `modo-on-foundation`, `organizacion`, `Sgin` y `sgin-cumplimiento` quedan preparados como siguiente tramo visible y aislado en el packet.
+
+## Lane C Microatom Organizacion
+
+- Fuente: pedido de bajar Lane C a microatoms por repo empezando por `organizacion`.
+- Proceso: tomar solo el canon visible de `organizacion`, leer su README y AGENTS, y registrar el microatom sin mutar el repo destino.
+- Salida: `hitos/20260616-wave-atomica-repos-lane-c-organizacion-v1`.
+- Hito: `hitos/20260616-wave-atomica-repos-lane-c-organizacion-v1`.
+- Cierre: `organizacion` queda como primer eslabon documental de Lane C.
+
+## Lane C Microatom Cdf Soluciones
+
+- Fuente: pedido de seguir la secuencia en ondas chicas y avanzar al siguiente repo de Lane C.
+- Proceso: tomar solo el canon visible de `cdf-soluciones`, leer su README y AGENTS, y registrar el microatom sin mutar el repo destino.
+- Salida: `hitos/20260616-wave-atomica-repos-lane-c-cdf-soluciones-v1`.
+- Hito: `hitos/20260616-wave-atomica-repos-lane-c-cdf-soluciones-v1`.
+- Cierre: `cdf-soluciones` queda como siguiente eslabon documental de Lane C.
+
+## Lane C Microatom Jara Consultores
+
+- Fuente: pedido de seguir la secuencia en ondas chicas y avanzar al siguiente repo de Lane C.
+- Proceso: tomar solo el canon visible de `jara-consultores`, leer su README y AGENTS, y registrar el microatom sin mutar el repo destino.
+- Salida: `hitos/20260616-wave-atomica-repos-lane-c-jara-consultores-v1`.
+- Hito: `hitos/20260616-wave-atomica-repos-lane-c-jara-consultores-v1`.
+- Cierre: `jara-consultores` queda como siguiente eslabon documental de Lane C.
+
+## Wave 1 Reconocimiento Y Clasificacion
+
+- Fuente: pedido de preparar el plan punta a punta y arrancar la Wave 1 con los carriles de `Documents`, `Documents\Codex` y `Documents\GitHub`.
+- Proceso: leer la superficie real, clasificar alias y superficies canonicas, y publicar portales cortos para cada raiz visible.
+- Salida: `C:/Users/enzo1/Documents/README.md`, `C:/Users/enzo1/Documents/MAPA.md`, `C:/Users/enzo1/Documents/GitHub/README.md`, `C:/Users/enzo1/Documents/GitHub/MAPA.md`.
+- Cierre: las tres superficies quedan navegables en un hop y el plan principal queda alineado con la evidencia.
+
+## Legacy OneDrive Mirror
+
+- Fuente: el usuario aclaro que seguia existiendo una referencia de OneDrive asociada a `Documents`.
+- Proceso: verificar shell folders reales, confirmar que `Documents` ya apunta a `C:\Users\enzo1\Documents`, y clasificar `C:\Users\enzo1\OneDrive - ESCRIBANIA BITSCH\Documentos` como compatibilidad heredada.
+- Salida: `C:/Users/enzo1/Documents/README.md`, `C:/Users/enzo1/Documents/MAPA.md`, `C:/Users/enzo1/Documents/DOCUMENTS_INDEX.csv`.
+- Cierre: la ruta activa queda local y el espejo viejo fue retirado.
 
 ## Regla
 

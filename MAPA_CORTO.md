@@ -2,6 +2,14 @@
 
 Vista compacta de acceso a `PROJEC CDX`.
 
+## Al Frente
+
+- [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md)
+- [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
+- [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
+- [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md)
+- [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
+
 ## Arranque
 
 - [README_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/README_CORTO.md)
@@ -19,6 +27,7 @@ Vista compacta de acceso a `PROJEC CDX`.
 - [tools/README.md](C:/Users/enzo1/PROJEC%20CDX/tools/README.md)
 - [dataverse/README.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/README.md)
 - [atomic/README.md](C:/Users/enzo1/PROJEC%20CDX/atomic/README.md)
+- [src/README.md](C:/Users/enzo1/PROJEC%20CDX/src/README.md)
 
 ## Evidencia
 

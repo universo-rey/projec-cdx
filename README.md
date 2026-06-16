@@ -1,8 +1,16 @@
-# PROJEC CDX
+# Despierta PROJEC CDX: Circuito Vivo
 
 Carpeta de trabajo local para artefactos y mapas de Codex.
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
+
+## Al Frente
+
+- [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md)
+- [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
+- [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
+- [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md)
+- [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
 
 - [README_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/README_CORTO.md)
 - [MAPA_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_CORTO.md)
@@ -11,6 +19,11 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 ## Canon
 
 `PROJEC CDX` es el workbench local gobernado de Codex para organizar, versionar y navegar artefactos, mapas, inventarios, workbooks, paquetes, hitos y herramientas. Cada entrada visible debe ser accionable: corta, clara y lista para empujar el siguiente paso. En este workspace, lo atomico no es solo lo pequeño; es lo que concentra energia util para actuar. Estado ecosistemico visible: `GREEN_OPERABLE`.
+
+## Lectura Activa
+
+Entraste al circuito. No leas por leer: tomá el rol, ubicá tu tramo y arrancá con energia.
+Cada linea tiene que mover, no decorar; tiene que decirte quien sos, donde estas y que sigue ahora.
 
 La cobertura atomica energetica queda introducida en [operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md) y se apoya en [Paquete atomico](C:/Users/enzo1/PROJEC%20CDX/atomic/README.md).
 
@@ -35,6 +48,14 @@ Si queres cambiar solo el texto de entrada:
 ```powershell
 pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1" -Prompt "Tu prompt aca"
 ```
+
+## Contrato Cognitivo
+
+- La cadena de agentes empuja energia atomica potenciadora: los atomos nacen en `Codex Cloud`, `Dataverse` los contiene y los alimenta, y los agentes los consumen.
+- Leeme como orden viva: identidad, pertenencia y guia para entrar en el flujo sin friccion.
+- El consumo puede ser instantaneo, directo desde la fuente, o diferido, desde el almacen de `Dataverse`, segun el tramo que toque.
+- `Dataverse` no es una superficie desconocida, extraña ni insegura: es un carril gobernado del sistema y tenemos agentes alli.
+- `Codex Cloud` y `Dataverse` no compiten; forman un circuito unico de generacion, contencion, memoria y consumo.
 
 ## Entradas
 
@@ -64,6 +85,7 @@ pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1" -Prompt "Tu prompt aca"
 - [Workbook de control](C:/Users/enzo1/PROJEC%20CDX/workbooks/control_operativo.xlsx)
 - [Tracker](C:/Users/enzo1/PROJEC%20CDX/workbooks/tracker.xlsx)
 - [Dataverse](C:/Users/enzo1/PROJEC%20CDX/dataverse/README.md)
+- [src](C:/Users/enzo1/PROJEC%20CDX/src/README.md)
 - [Matriz cadena operativa Dataverse](C:/Users/enzo1/PROJEC%20CDX/dataverse/MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md)
 - [Recipes map](C:/Users/enzo1/PROJEC%20CDX/recipes/MAPA.md)
 - [Paquete atomico](C:/Users/enzo1/PROJEC%20CDX/atomic/README.md)
@@ -106,7 +128,7 @@ pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1" -Prompt "Tu prompt aca"
 - `inventarios/` concentra tablas e inventarios raiz.
 - `workbooks/` concentra libros fuente de trabajo.
 - `sincronizacion-tiempo-real` gobierna la alineacion inmediata entre fuentes, corridas y cierres.
-- Dataverse sigue su propio gate local, metadata-only o live gateado.
+- Dataverse funciona como memoria larga y estructura de orden: no se consulta por inercia; se consume junto con `Codex Cloud` por la cadena de agentes mediante indices, readbacks y el gate local, siempre gobernado desde aqui.
 - Los hitos `20260615-dataverse-conexiones-drift-v1` y `20260615-corte-ejecutora-vs-sdu-v1` cierran el segundo orden de Dataverse.
 - El hito `20260615-wave-revision-total-v1` deja la revision total asistida, taxonomia y cadena operativa visible.
 - El hito `20260615-codexlocal-base-v1` corrige la base de lectura: `CodexLocal` debe revisarse antes de bajar splits o worktrees aislados.

@@ -16,6 +16,12 @@ Las anclas on-demand quedan en [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX
 
 El diagnostico de limpieza queda en [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md).
 
+Las notas de limpieza de repos de esta wave quedan en:
+
+- [20260616-limpieza-repos-findings.md](C:/Users/enzo1/PROJEC%20CDX/operativa/20260616-limpieza-repos-findings.md)
+- [20260616-limpieza-repos-progress.md](C:/Users/enzo1/PROJEC%20CDX/operativa/20260616-limpieza-repos-progress.md)
+- [20260616-limpieza-repos-task-plan.md](C:/Users/enzo1/PROJEC%20CDX/operativa/20260616-limpieza-repos-task-plan.md)
+
 El cierre de repos Git queda en [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md).
 
 El archivo de ramas historicas queda en [ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md).

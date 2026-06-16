@@ -1,14 +1,20 @@
-# Mapa De Dataverse
+# Mapa de Dataverse
 
 Vista unica del carril Dataverse de `PROJEC CDX`.
 
 La wave visible mas reciente queda absorbida en [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
+
+El indice operativo corto queda en [INDICE_DATAVERSE.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/INDICE_DATAVERSE.md).
+
+La rehidratacion corta del carril queda en [ANCLA_REHIDRATACION.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/ANCLA_REHIDRATACION.md).
 
 El acceso on-demand a waves de cierre queda en [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
 ## Piezas
 
 - `README.md`
+- `INDICE_DATAVERSE.md`
+- `ANCLA_REHIDRATACION.md`
 - `GATE.md`
 - `MAPA_AGENTES.md`
 - `MAPA_AGENTES_SDU.md`
@@ -26,6 +32,8 @@ El acceso on-demand a waves de cierre queda en [ANCLAS_ON_DEMAND.md](C:/Users/en
 ## Evidencia Local Actual
 
 - [Dataverse Blocker Frontier](C:/Users/enzo1/PROJEC%20CDX/outputs/dataverse_blocker_frontier_20260614/README.md)
+- [Indice Dataverse](C:/Users/enzo1/PROJEC%20CDX/dataverse/INDICE_DATAVERSE.md)
+- [Ancla rehidratacion Dataverse](C:/Users/enzo1/PROJEC%20CDX/dataverse/ANCLA_REHIDRATACION.md)
 - [Mapa de agentes Dataverse](C:/Users/enzo1/PROJEC%20CDX/dataverse/MAPA_AGENTES.md)
 - [Mapa de agentes SDU](C:/Users/enzo1/PROJEC%20CDX/dataverse/MAPA_AGENTES_SDU.md)
 - [Mapa de cola de trabajo SDU](C:/Users/enzo1/PROJEC%20CDX/dataverse/MAPA_COLA_TRABAJO_SDU.md)

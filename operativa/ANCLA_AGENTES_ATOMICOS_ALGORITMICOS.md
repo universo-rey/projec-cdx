@@ -1,6 +1,7 @@
 # Ancla Agentes Atomicos Algoritmicos
 
 Ancla minima para usar agentes delegados cuando el trabajo conviene partirse en unidades pequenas, disjuntas y verificables.
+Tambien se usa para entrenar a los agentes en trabajo por waves atomicas: una wave, un scope, un fan-in, un retorno exacto.
 
 Se abre solo desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md) cuando el delta necesita delegacion.
 
@@ -40,3 +41,7 @@ Se abre solo desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/A
 - Falta retorno exacto.
 - Falta evidencia o validador.
 - Se intenta delegar sin cierre claro de fan-in.
+
+## Entrenamiento Aplicado
+
+- Para normalizacion de perfil Windows, usar `operativa/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md` como guia corta de inspeccion, compatibilidad y stop conditions.

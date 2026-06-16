@@ -1,0 +1,8 @@
+name: wave-mapas-uniformes-v1
+status: GREEN_LOCAL
+summary: Pasada de uniformidad visual de la capa de mapas de PROJEC CDX para alinear titulos y rótulos clave sin cambiar la estructura base.
+artifacts:
+  - README.md
+  - READBACK.md
+  - INDICE.csv
+  - MANIFEST.yaml

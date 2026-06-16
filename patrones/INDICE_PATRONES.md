@@ -1,20 +1,36 @@
 # Indice De Patrones
 
-| id | patron | uso | destino |
-| --- | --- | --- | --- |
-| P-001 | Delta gobernado | Convertir pedido en unidad reversible | `playbooks/`, `operativa/` |
-| P-002 | Mapa visible corto | Evitar raices largas y archivos huerfanos | `README.md`, `MAPA_MAESTRO.md` |
-| P-003 | Fuente-proceso-salida-hito-cierre | Cerrar sin depender de conversacion | [trazabilidad-5-campos.md](C:/Users/enzo1/PROJEC%20CDX/patrones/trazabilidad-5-campos.md) |
-| P-004 | Gate antes de live | Separar local, metadata-only y live | `dataverse/GATE.md` |
-| P-005 | Workbook al frente | Volver seguimiento documental en tablero | `workbooks/`, `outputs/` |
-| P-006 | Hito versionado | Congelar cierres durables | `hitos/YYYYMMDD-nombre-vN/` |
-| P-007 | Retencion gobernada | No limpiar evidencia a ciegas | `operativa/RETENCION.md`, `outputs/RETENCION.md` |
-| P-008 | Validador antes de cierre | No declarar verde sin postcheck | `tools/validate_proj_cdx_workbench.ps1` |
-| P-009 | Agente revisor read-only | Encontrar huecos sin mezclar escrituras | `operativa/READBACK_*` |
-| P-010 | Amarillo guardrail | Distinguir riesgo gobernado de bloqueo real | `operativa/CONTROL_TOTAL_*.md` |
-| P-011 | Workbench atomico accionable | Mantener entradas breves y energeticas | [workbench-atomico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/workbench-atomico.md) |
-| P-012 | No confundir estados | Evitar inferir live o ejecucion desde evidencia parcial | [no-confundir-estados.md](C:/Users/enzo1/PROJEC%20CDX/patrones/no-confundir-estados.md) |
-| P-013 | Sincronizacion tiempo real | Alinear fuentes, corridas y cierres inmediatamente | [sincronizacion-tiempo-real.md](C:/Users/enzo1/PROJEC%20CDX/patrones/sincronizacion-tiempo-real.md) |
+## Al Frente
+
+- [documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/documentos-canon-atomico.md)
+- [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/patrones/dataverse-rehidratacion.md)
+- [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/patrones/normalizacion-perfil-windows.md)
+- [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
+
+| id | patron | uso | destino | proceso | receta |
+| --- | --- | --- | --- | --- | --- |
+| P-001 | Delta gobernado | Convertir pedido en unidad reversible | `playbooks/`, `operativa/` | [procesos/delta-gobernado.md](C:/Users/enzo1/PROJEC%20CDX/procesos/delta-gobernado.md) | - |
+| P-002 | Mapa visible corto | Evitar raices largas y archivos huerfanos | `README.md`, `MAPA_MAESTRO.md` | - | - |
+| P-003 | Fuente-proceso-salida-hito-cierre | Cerrar sin depender de conversacion | [trazabilidad-5-campos.md](C:/Users/enzo1/PROJEC%20CDX/patrones/trazabilidad-5-campos.md) | [procesos/canon-documental.md](C:/Users/enzo1/PROJEC%20CDX/procesos/canon-documental.md) | [recipes/canon-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/canon-documental.md) |
+| P-004 | Gate antes de live | Separar local, metadata-only y live | `dataverse/GATE.md` | [procesos/dataverse-gobernado.md](C:/Users/enzo1/PROJEC%20CDX/procesos/dataverse-gobernado.md) | - |
+| P-005 | Workbook al frente | Volver seguimiento documental en tablero | `workbooks/`, `outputs/` | - | - |
+| P-006 | Hito versionado | Congelar cierres durables | `hitos/YYYYMMDD-nombre-vN/` | [procesos/hito-versionado.md](C:/Users/enzo1/PROJEC%20CDX/procesos/hito-versionado.md) | [recipes/cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md) |
+| P-007 | Retencion gobernada | No limpiar evidencia a ciegas | `operativa/RETENCION.md`, `outputs/RETENCION.md` | [procesos/retencion-gobernada.md](C:/Users/enzo1/PROJEC%20CDX/procesos/retencion-gobernada.md) | [recipes/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md) |
+| P-008 | Validador antes de cierre | No declarar verde sin postcheck | `tools/validate_proj_cdx_workbench.ps1` | [procesos/postcheck-local.md](C:/Users/enzo1/PROJEC%20CDX/procesos/postcheck-local.md) | - |
+| P-009 | Agente revisor read-only | Encontrar huecos sin mezclar escrituras | `operativa/READBACK_*` | - | - |
+| P-010 | Amarillo guardrail | Distinguir riesgo gobernado de bloqueo real | `operativa/CONTROL_TOTAL_*.md` | - | - |
+| P-011 | Workbench atomico accionable | Mantener entradas breves y energeticas | [workbench-atomico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/workbench-atomico.md) | - | - |
+| P-012 | No confundir estados | Evitar inferir live o ejecucion desde evidencia parcial | [no-confundir-estados.md](C:/Users/enzo1/PROJEC%20CDX/patrones/no-confundir-estados.md) | [procesos/procedencia-layout-on-demand.md](C:/Users/enzo1/PROJEC%20CDX/procesos/procedencia-layout-on-demand.md) | [recipes/procedencia-layout-on-demand.md](C:/Users/enzo1/PROJEC%20CDX/recipes/procedencia-layout-on-demand.md) |
+| P-013 | Sincronizacion tiempo real | Alinear fuentes, corridas y cierres inmediatamente | [sincronizacion-tiempo-real.md](C:/Users/enzo1/PROJEC%20CDX/patrones/sincronizacion-tiempo-real.md) | [procesos/sincronizacion-tiempo-real.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sincronizacion-tiempo-real.md) | - |
+| P-014 | Canon documental | Convertir docs y hilos en canon navegable | [canon-documental.md](C:/Users/enzo1/PROJEC%20CDX/patrones/canon-documental.md) | [procesos/canon-documental.md](C:/Users/enzo1/PROJEC%20CDX/procesos/canon-documental.md) | [recipes/canon-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/canon-documental.md) |
+| P-015 | Dataverse rehidratacion | Volver a una base Dataverse verificable sin perder el hilo | [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/patrones/dataverse-rehidratacion.md) | [procesos/dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/procesos/dataverse-rehidratacion.md) | [recipes/dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md) |
+| P-016 | Normalizacion perfil Windows | Reconciliar perfil local, OneDrive y junctions sin romper compatibilidad | [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/patrones/normalizacion-perfil-windows.md) | [procesos/normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/procesos/normalizacion-perfil-windows.md) | [recipes/normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md) |
+| P-017 | Junctions y compatibilidad | Resolver rutas heredadas sin confundir compatibilidad con superficie editable | [perfil-windows-junctions-compatibilidad.md](C:/Users/enzo1/PROJEC%20CDX/patrones/perfil-windows-junctions-compatibilidad.md) | - | [recipes/normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md) |
+| P-018 | Snapshots y GMT | Separar instantaneas historicas de la superficie activa | [perfil-windows-snapshots-gmt.md](C:/Users/enzo1/PROJEC%20CDX/patrones/perfil-windows-snapshots-gmt.md) | - | [recipes/normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md) |
+| P-019 | Limpieza PC local inventario y gate | Separar base Windows de ruido auxiliar antes de tocar nada | [limpieza-pc-local-inventario-y-gate.md](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-inventario-y-gate.md) | [procesos/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md) | [recipes/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md) |
+| P-020 | Limpieza PC local auxiliares y temporales | Recortar caches y auxiliares aprobados sin tocar estructura | [limpieza-pc-local-auxiliares-y-temporales.md](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-auxiliares-y-temporales.md) | [procesos/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md) | [recipes/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md) |
+| P-021 | Limpieza PC local evidencia y rollback | Cerrar recortes locales con evidencia y un unico siguiente gate | [limpieza-pc-local-evidencia-y-rollback.md](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-evidencia-y-rollback.md) | [procesos/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md) | [recipes/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md) |
+| P-022 | Canon documental atomico | Convertir atlas documentales en una sola taxonomia visible | [documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/documentos-canon-atomico.md) | [procesos/documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/procesos/documentos-canon-atomico.md) | [recipes/documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/recipes/documentos-canon-atomico.md) |
 
 ## Regla
 

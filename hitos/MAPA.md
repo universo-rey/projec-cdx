@@ -1,4 +1,4 @@
-# Mapa De Hitos
+# Mapa de Hitos
 
 Vista unica del archivo versionado de hitos operativos de `PROJEC CDX`.
 
@@ -11,6 +11,11 @@ Este mapa solo indexa los hitos versionados de este workbench.
 
 - `INDICE_MAESTRO.md`
 - `INDICE_MAESTRO.csv`
+
+## Archivo
+
+- [README del archivo](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/README.md)
+- [Mapa del archivo](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/MAPA.md)
 
 ## Versiones
 
@@ -37,11 +42,12 @@ Este mapa solo indexa los hitos versionados de este workbench.
 - [20260615-codex-cloud-scaffold-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-codex-cloud-scaffold-v1/README.md)
 - [20260615-politica-ramas-versionado-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-politica-ramas-versionado-v1/README.md)
 - [20260615-repos-surface-github-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-repos-surface-github-v1/README.md)
+- [20260616-wave-mapas-uniformes-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-mapas-uniformes-v1/README.md)
 
 ## Lectura
 
 - Cada version vive en una carpeta fechada y versionada.
-- Cada version conserva su README, manifiesto, indice y registro.
+- Cada version consolida su README y, cuando aplica, manifiesto, indice, registro y readback.
 - La version del hilo anterior añade evidencia y el handoff pesado versionado.
 - La version `20260615-cierre-workbench-v1` cierra la estructura operativa local.
 - La version `20260615-patrones-procesos-v1` levanta catalogos reutilizables.
@@ -64,6 +70,8 @@ Este mapa solo indexa los hitos versionados de este workbench.
 - La version `20260615-codex-cloud-scaffold-v1` versiona el scaffold local de Codex Cloud con UI seleccionable y runner Python.
 - La version `20260615-politica-ramas-versionado-v1` fija la politica local que absorbe el scaffold.
 - La version `20260615-repos-surface-github-v1` versiona la acta local de repos surface GitHub.
+- La version `20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1` agrega reconocimiento, transformacion y registro punta a punta como secuencia reusable.
+- La clasificacion fina total vive en `INDICE_MAESTRO.md`; `20260615-semaforo-verde-historicos-v1` queda como hito propio y no se absorbe.
 
 ## Regla
 

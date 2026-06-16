@@ -4,6 +4,14 @@ Vista rapida de `PROJEC CDX` por niveles de uso.
 
 La wave visible mas reciente es [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
 
+## Al Frente
+
+- [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md)
+- [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
+- [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
+- [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md)
+- [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
+
 ## Capa 0: Entrada
 
 - [README.md](C:/Users/enzo1/PROJEC%20CDX/README.md)
@@ -37,6 +45,8 @@ La wave visible mas reciente es [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/P
 - [atomic/README.md](C:/Users/enzo1/PROJEC%20CDX/atomic/README.md)
 - [tools/README.md](C:/Users/enzo1/PROJEC%20CDX/tools/README.md)
 - [tools/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/tools/MAPA.md)
+- [src/README.md](C:/Users/enzo1/PROJEC%20CDX/src/README.md)
+- [src/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/src/MAPA.md)
 
 ## Capa 3: Evidencia Y Derivados
 

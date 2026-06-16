@@ -25,7 +25,58 @@ Mapa corto de los paquetes versionados en `PROJEC CDX/hitos`.
 | `20260615-codex-cloud-scaffold-v1` | Scaffold local de Codex Cloud con UI seleccionable y runner Python | `GREEN_LOCAL` | `hitos/20260615-codex-cloud-scaffold-v1/READBACK.md`, `README_ARRANQUE_CODEX_CLOUD.md`, `operativa/SETUP_APERTURA_CODEX_UI.md` |
 | `20260615-politica-ramas-versionado-v1` | Politica local de ramas y versionado que absorbe el scaffold | `GREEN_LOCAL` | `hitos/20260615-politica-ramas-versionado-v1/READBACK.md`, `operativa/POLITICA_RAMAS_VERSIONADO_20260615.md` |
 | `20260615-repos-surface-github-v1` | Acta local de repos surface GitHub | `GREEN_LOCAL` | `hitos/20260615-repos-surface-github-v1/READBACK.md`, `operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md` |
+| `20260616-wave-mapas-uniformes-v1` | Uniformidad visual de las capas de mapas | `GREEN_LOCAL` | `hitos/20260616-wave-mapas-uniformes-v1/READBACK.md`, `hitos/20260616-wave-mapas-uniformes-v1/INDICE.csv`, `MAPA_MAESTRO.md`, `MAPA_CORTO.md`, `MAPA_CAPAS.md` |
 
 Regla:
 - El detalle vive en cada paquete versionado.
 - El indice maestro solo resume alcance, estado y evidencia.
+
+## Archivo
+
+- Los paquetes absorbidos o cerrados por canon superior viven en `hitos/_archivo/`.
+- Las rutas historicas quedan como stubs de continuidad para no romper enlaces.
+
+## Clasificacion fina de compactos
+
+### Ya absorbidos o cerrados por canon superior
+
+- `20260614-hilo-anterior-v1` -> `20260615-hilo-origen-v1`
+- `20260614-hitos-otros-repos-v1` -> `20260615-github-repos-canonical-v1`, `20260615-github-repos-chain-v1` y `20260615-semaforo-verde-historicos-v1`
+- `20260615-codexlocal-base-v1` -> `20260615-github-repos-canonical-v1`
+- `20260615-codex-cloud-scaffold-v1` -> `20260615-politica-ramas-versionado-v1`
+- `20260615-repos-surface-github-v1` -> `20260615-cierre-cadena-github-auditar-v1`
+
+### Se conservan como hito propio
+
+- `20260615-cierre-workbench-v1`
+- `20260615-patrones-procesos-v1`
+- `20260615-sincronizacion-tiempo-real-v1`
+- `20260615-hilo-origen-v1`
+- `20260615-dataverse-conexiones-drift-v1`
+- `20260615-corte-ejecutora-vs-sdu-v1`
+- `20260615-wave-revision-total-v1`
+- `20260615-github-repos-canonical-v1`
+- `20260615-github-repos-chain-v1`
+- `20260615-auditar-surface-chain-v1`
+- `20260615-cierre-cadena-github-auditar-v1`
+- `20260615-semaforo-verde-historicos-v1`
+- `20260615-pr-cierre-atomico-v1`
+- `20260615-archivo-ramas-historicas-v1`
+- `20260615-agentes-atomicos-algoritmicos-en-waves-v1`
+- `20260615-cobertura-atomica-energetica-v1`
+- `20260615-projec-cdx-dataverse-v1`
+- `20260615-politica-ramas-versionado-v1`
+- `20260616-normalizacion-perfil-windows-v1`
+- `20260616-perfil-windows-canon-v1`
+- `20260616-limpieza-pc-local-canon-v1`
+- `20260616-wave-atomica-repos-lane-b-v1`
+- `20260616-wave-atomica-repos-lane-c-v1`
+- `20260616-wave-atomica-repos-lane-c-organizacion-v1`
+- `20260616-wave-atomica-repos-lane-c-cdf-soluciones-v1`
+- `20260616-wave-atomica-repos-lane-c-jara-consultores-v1`
+- `20260616-wave-atomica-documentos-conocimiento-v1`
+- `20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1`
+- `20260616-wave-mapas-uniformes-v1`
+
+Nota:
+- `20260615-semaforo-verde-historicos-v1` no se absorbe; se conserva como hito propio de reclasificacion gobernada.

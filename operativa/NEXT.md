@@ -4,7 +4,9 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-No hay movimiento obligatorio adicional en esta ronda.
+No queda una wave abierta por defecto. El siguiente paso unico solo se activa si aparece nueva superficie documental o un delta operativo nuevo.
+
+La wave atomica ya quedo consolidada en [docs/superpowers/plans/2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md) y su packet versionado en [hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1/README.md).
 
 La limpieza local de la PC ya quedo documentada en `operativa/INVENTARIO_FINAL_PC_20260615.md` y el estado general en `operativa/CURRENT.md`.
 

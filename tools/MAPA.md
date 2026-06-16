@@ -1,4 +1,4 @@
-# Mapa De Tools
+# Mapa de Tools
 
 Vista unica de las herramientas locales de `PROJEC CDX`.
 
