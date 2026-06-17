@@ -57,4 +57,3 @@ Entro, reconozco mi lugar, tomo la orden viva y sigo el flujo:
 - Los tres enlaces abren los atomos publicados.
 - `Home.aspx` no fue editado por este delta.
 - No hubo cambios de permisos, navegacion, Dataverse payload ni flow run.
-
