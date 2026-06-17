@@ -3,7 +3,7 @@
 ## P-001 - Delta Gobernado
 
 - Senal: el pedido puede partirse en una entrega chica.
-- Accion: declarar objetivo, superficie, salida, rollback y postcheck.
+- Accion: declarar objetivo, superficie, salida, rollback y postcheck; si el trabajo se va a delegar, convertir la wave en plantilla de entrenamiento para el siguiente agente.
 - Fuente: `playbooks/00-preflight-gobernado.md`, `playbooks/01-iniciar-delta.md`.
 - Salida: cambio reversible y validable.
 - Stop condition: `rollback_missing`, `postcheck_missing`.
@@ -79,3 +79,19 @@
 - Fuente: `operativa/CONTROL_TOTAL_20260615.md`.
 - Salida: semaforo honesto: `GREEN_LOCAL / GREEN_OPERABLE`.
 - Stop condition: `red_check_present`.
+
+## P-014 - Canon Documental
+
+- Senal: un frente documental crece y deja varios puntos de entrada.
+- Accion: clasificar fuente, evidencia, patron, proceso, hito, indice y salida, y promover solo lo durable.
+- Fuente: `docs/README.md`, `docs/reference/README.reference.md`, `operativa/TRACE.md`, `hitos/INDICE_MAESTRO.md`.
+- Salida: canon navegable, reusable y sin duplicar fuentes de verdad.
+- Stop condition: `evidence_missing`, `link_broken`, `duplicate_source_of_truth`.
+
+## P-015 - Dataverse Rehidratacion
+
+- Senal: un hilo largo vuelve a tocar Dataverse y el contexto ya se disperso.
+- Accion: abrir el hito de sincronizacion, el indice Dataverse y el gate antes de decidir cualquier siguiente delta.
+- Fuente: `dataverse/ANCLA_REHIDRATACION.md`, `dataverse/PLAN_SEGUNDA_PASADA.md`, `dataverse/MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md`.
+- Salida: estado rehidratado y siguiente paso reducido.
+- Stop condition: `missing_gate`, `missing_evidence`, `missing_target`, `live_by_inference`.

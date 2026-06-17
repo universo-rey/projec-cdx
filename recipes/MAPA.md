@@ -8,6 +8,8 @@ Entrada rapida de la capa de recetas de `PROJEC CDX`.
 - [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
 - [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
 - [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md)
+- [microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/recipes/microsoft-live-read-preliminar.md)
+- [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/recipes/sdu-dataverse-metadata-wave.md)
 - [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
 
 La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
@@ -27,6 +29,10 @@ La receta de configuracion de entorno en la UI de Codex queda en [configuracion-
 La receta de rehidratacion Dataverse queda en [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md).
 
 La receta de normalizacion de perfil Windows queda en [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md).
+
+La receta de Microsoft live read preliminar queda en [microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/recipes/microsoft-live-read-preliminar.md).
+
+La receta SDU Dataverse metadata wave queda en [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/recipes/sdu-dataverse-metadata-wave.md).
 
 La skill formal de atlas documental queda en [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md).
 
@@ -49,6 +55,8 @@ Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operati
 - [documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/recipes/documentos-canon-atomico.md)
 - [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
 - [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
+- [microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/recipes/microsoft-live-read-preliminar.md)
+- [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/recipes/sdu-dataverse-metadata-wave.md)
 
 ## Soporte
 
@@ -66,3 +74,5 @@ Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operati
 - `agentes-atomicos-algoritmicos-en-waves.md` reduce repeticion cuando la delegacion se parte en waves con fan-in claro.
 - `limpieza-pc-local-segura.md` reduce repeticion cuando la optimizacion local de Windows necesita inventario, limpieza y evidencia.
 - `normalizacion-perfil-windows.md` reduce repeticion cuando el perfil Windows se desalineo entre local, OneDrive y junctions.
+- `microsoft-live-read-preliminar.md` reduce riesgo cuando Microsoft se revisa en vivo con lectura minima, sin writes y con agentes alineados.
+- `sdu-dataverse-metadata-wave.md` reduce riesgo cuando evidencia Dataverse/SDU debe volverse metadata atomica sin apply.

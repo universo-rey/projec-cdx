@@ -4,6 +4,9 @@
 
 - [documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/documentos-canon-atomico.md)
 - [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/patrones/dataverse-rehidratacion.md)
+- [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/patrones/sdu-dataverse-metadata-wave.md)
+- [huella-atomica-owner-approved.md](C:/Users/enzo1/PROJEC%20CDX/patrones/huella-atomica-owner-approved.md)
+- [seshat-home-canonico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/seshat-home-canonico.md)
 - [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/patrones/normalizacion-perfil-windows.md)
 - [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
 
@@ -31,6 +34,9 @@
 | P-020 | Limpieza PC local auxiliares y temporales | Recortar caches y auxiliares aprobados sin tocar estructura | [limpieza-pc-local-auxiliares-y-temporales.md](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-auxiliares-y-temporales.md) | [procesos/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md) | [recipes/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md) |
 | P-021 | Limpieza PC local evidencia y rollback | Cerrar recortes locales con evidencia y un unico siguiente gate | [limpieza-pc-local-evidencia-y-rollback.md](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-evidencia-y-rollback.md) | [procesos/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md) | [recipes/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md) |
 | P-022 | Canon documental atomico | Convertir atlas documentales en una sola taxonomia visible | [documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/documentos-canon-atomico.md) | [procesos/documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/procesos/documentos-canon-atomico.md) | [recipes/documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/recipes/documentos-canon-atomico.md) |
+| P-023 | SDU Dataverse metadata wave | Convertir observacion viva en metadata atomica reusable | [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/patrones/sdu-dataverse-metadata-wave.md) | [procesos/sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md) | [recipes/sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/recipes/sdu-dataverse-metadata-wave.md) |
+| P-024 | Huella atomica owner-approved | Transformar manifiesto aprobado en energia trazable para tenant, Dataverse y agentes | [huella-atomica-owner-approved.md](C:/Users/enzo1/PROJEC%20CDX/patrones/huella-atomica-owner-approved.md) | [procesos/promocion-huella-tenant-dataverse.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-huella-tenant-dataverse.md) | [recipes/promocion-huella-tenant-dataverse.md](C:/Users/enzo1/PROJEC%20CDX/recipes/promocion-huella-tenant-dataverse.md) |
+| P-025 | Seshat Home canonico | Publicar la huella visible en SeshatHubRegistroN.8 y registrar delta de binding Home.aspx | [seshat-home-canonico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/seshat-home-canonico.md) | [procesos/promocion-seshat-home-sharepoint.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-seshat-home-sharepoint.md) | [recipes/promocion-seshat-home-sharepoint.md](C:/Users/enzo1/PROJEC%20CDX/recipes/promocion-seshat-home-sharepoint.md) |
 
 ## Regla
 

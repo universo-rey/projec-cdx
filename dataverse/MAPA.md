@@ -20,6 +20,7 @@ El acceso on-demand a waves de cierre queda en [ANCLAS_ON_DEMAND.md](C:/Users/en
 - `MAPA_AGENTES_SDU.md`
 - `MAPA_COLA_TRABAJO_SDU.md`
 - `MAPA_CONEXIONES_DATAVERSE.md`
+- `HUELLA_ATOMICA_SDU_OWNER_APPROVED_20260616.md`
 - `REGISTRO_BLOQUEOS.md`
 - `PLAN_SEGUNDA_PASADA.md`
 - `READBACK_EXCEL_BLOCKER_FRONTIER.md`
@@ -39,6 +40,8 @@ El acceso on-demand a waves de cierre queda en [ANCLAS_ON_DEMAND.md](C:/Users/en
 - [Mapa de cola de trabajo SDU](C:/Users/enzo1/PROJEC%20CDX/dataverse/MAPA_COLA_TRABAJO_SDU.md)
 - [Mapa de conexiones Dataverse](C:/Users/enzo1/PROJEC%20CDX/dataverse/MAPA_CONEXIONES_DATAVERSE.md)
 - [Readback Excel Blocker Frontier](C:/Users/enzo1/PROJEC%20CDX/dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md)
+- [Huella atomica SDU owner approved](C:/Users/enzo1/PROJEC%20CDX/dataverse/HUELLA_ATOMICA_SDU_OWNER_APPROVED_20260616.md)
+- [Promocion live metadata pointer](C:/Users/enzo1/PROJEC%20CDX/operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json)
 - [Acta corte ejecutora Dataverse](C:/Users/enzo1/PROJEC%20CDX/dataverse/ACTA_CORTE_EJECUTORA_20260615.md)
 - [Matriz cadena operativa Dataverse](C:/Users/enzo1/PROJEC%20CDX/dataverse/MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md)
 - [Registro limpieza PC local segura](C:/Users/enzo1/PROJEC%20CDX/dataverse/REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md)
@@ -53,18 +56,21 @@ El acceso on-demand a waves de cierre queda en [ANCLAS_ON_DEMAND.md](C:/Users/en
 
 - `local_evidence`
 - `metadata_only`
+- `live_metadata_pointer_write`
 - `prepared_not_executed`
+- `delta_gobernado`
 - `live_rows_confirmed`
 - `target_ambiguous`
-- `blocked`
+- `human_blocked`
 
 ## Regla
 
 Metadata no equivale a live rows. Preparado no equivale a ejecutado.
-Las filas de Dataverse valen mas cuando registran bloqueos y decisiones que cuando intentan duplicar inventarios ya presentes en repos o workbooks.
+Las filas de Dataverse valen mas cuando registran deltas, decisiones y escaladas humanas que cuando intentan duplicar inventarios ya presentes en repos o workbooks.
 La corte ejecutora de Dataverse reutiliza el packet ya activo del apply worker hasta que exista un target nuevo y unico.
 Las conexiones, gates y evidencia de semilla viven en `MAPA_CONEXIONES_DATAVERSE.md`.
 El acceso a waves de cierre que toquen Dataverse vive en `operativa/ANCLAS_ON_DEMAND.md`; desde alli se abre `ANCLA_CIERRE_WAVE.md` solo cuando el delta lo pide.
 La cadena operativa se gobierna desde Dataverse. `DATAVERSE_OPERATIONAL_CHAIN_MATRIX` es el nombre funcional canonico; su superficie viva actual es compuesta y mapeada a `mon_sdu_*`, `workqueue` y `workqueueitem`.
+La huella atomica owner-approved deja `stop_condition` tecnico como delta gobernado y proximo paso; `human_blocked` queda reservado para bloqueo humano expreso.
 La copia local solo proyecta estado para validacion, versionado y trabajo de cabina.
 La limpieza local de PC queda registrada como metadata en `REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md` y no abre write live.

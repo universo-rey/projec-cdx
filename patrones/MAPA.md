@@ -8,6 +8,7 @@ Vista unica de patrones operativos reutilizables.
 - [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/patrones/dataverse-rehidratacion.md)
 - [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/patrones/normalizacion-perfil-windows.md)
 - [limpieza-pc-local-inventario-y-gate.md](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-inventario-y-gate.md)
+- [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/patrones/sdu-dataverse-metadata-wave.md)
 - [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
 
 La wave visible mas reciente queda absorbida en [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
@@ -32,6 +33,7 @@ Los patrones heredan fase, impulso y estado terminal desde la cobertura atomica 
 - [limpieza-pc-local-inventario-y-gate.md](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-inventario-y-gate.md)
 - [limpieza-pc-local-auxiliares-y-temporales.md](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-auxiliares-y-temporales.md)
 - [limpieza-pc-local-evidencia-y-rollback.md](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-evidencia-y-rollback.md)
+- [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/patrones/sdu-dataverse-metadata-wave.md)
 
 La skill formal asociada queda en [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md).
 
@@ -41,6 +43,7 @@ La skill formal asociada queda en [documentos-canon-atomico](C:/Users/enzo1/.cod
 - `PATRONES_OPERATIVOS.md` trae el detalle accionable.
 - Las fichas individuales permiten invocar un patron sin leer todo el catalogo.
 - `sincronizacion-tiempo-real.md` fija el contrato de alineacion inmediata entre fuentes, corridas y cierres.
+- `sdu-dataverse-metadata-wave.md` fija el contrato para convertir observacion viva en metadata atomica reusable.
 
 ## Regla
 

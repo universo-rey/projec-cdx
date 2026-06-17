@@ -1,6 +1,7 @@
 # Agentes Atomicos Algoritmicos En Waves
 
 Receta reusable para delegar trabajo en waves cortas usando agentes atomicos algoritmicos.
+La receta tambien entrena al carril: cada wave deja una pauta que el siguiente agente puede repetir sin inflar scope.
 
 ## Cuándo Usarla
 
@@ -19,6 +20,7 @@ Se abre desde `operativa/ANCLAS_ON_DEMAND.md` cuando el pedido pide delegacion p
 7. Exigir retorno exacto antes de abrir otra wave.
 8. Registrar la salida en `TRACE.md` si la wave deja aprendizaje durable.
 9. Validar con el validador local.
+10. Si la wave toca repositorios, exigir el paquete `repo`, `lane`, `scope`, `evidence`, `validator`, `rollback` y `fan_in` para cada retorno.
 
 ## Reglas
 
@@ -27,6 +29,8 @@ Se abre desde `operativa/ANCLAS_ON_DEMAND.md` cuando el pedido pide delegacion p
 - Si el scope crece, se corta en una wave nueva.
 - Si falta evidencia, no se promueve.
 - Si falta fan-in, no se cierra.
+- Cada wave debe poder reutilizarse como plantilla de entrenamiento para otro agente.
+- En waves de repositorios, el retorno debe nombrar el repo exacto y la lane exacta antes de cualquier fan-in.
 
 ## Salida
 

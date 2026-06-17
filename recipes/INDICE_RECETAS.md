@@ -7,6 +7,10 @@
 - [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md)
 - [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
 - [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md)
+- [microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/recipes/microsoft-live-read-preliminar.md)
+- [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/recipes/sdu-dataverse-metadata-wave.md)
+- [promocion-huella-tenant-dataverse.md](C:/Users/enzo1/PROJEC%20CDX/recipes/promocion-huella-tenant-dataverse.md)
+- [promocion-seshat-home-sharepoint.md](C:/Users/enzo1/PROJEC%20CDX/recipes/promocion-seshat-home-sharepoint.md)
 - [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
 
 | id | receta | cuando usar | deja | proceso | patron |
@@ -21,6 +25,10 @@
 | R-008 | Dataverse rehidratacion | Un hilo largo necesita volver al carril Dataverse sin perder la base | Contexto recuperado, carril reducido y siguiente delta visible | [procesos/dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/procesos/dataverse-rehidratacion.md) | P-015 |
 | R-009 | Normalizacion perfil Windows | El perfil local y OneDrive quedaron desalineados o rotos | Perfil normalizado, compatibilidad preservada y rutas conocidas coherentes | [procesos/normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/procesos/normalizacion-perfil-windows.md) | P-016 |
 | R-010 | Canon documental atomico | Los atlas documentales visibles necesitan una sola taxonomia | Atlas raiz, cronologia atomica, repo atlas y canon reusable visibles | [procesos/documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/procesos/documentos-canon-atomico.md) | P-022 |
+| R-011 | Microsoft live read preliminar | Una wave necesita revisar Microsoft en vivo sin escribir ni ampliar alcance | Plan read-only, tools permitidas/en espera de cierre, agentes alineados y condiciones de pausa | [procesos/microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/procesos/microsoft-live-read-preliminar.md) | - |
+| R-012 | SDU Dataverse metadata wave | Una wave necesita hidratar Dataverse con metadata atomica sin ejecutar writes | Hito metadata-only, matriz de hidratacion, skill, validador y proximo delta | [procesos/sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md) | [patrones/sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/patrones/sdu-dataverse-metadata-wave.md) |
+| R-013 | Promocion huella tenant Dataverse | El owner aprueba una huella canonica que debe despertar tenant, Dataverse y agentes | Puntero live metadata-only, evidencia, hito y deltas sin bloqueo autonomo | [procesos/promocion-huella-tenant-dataverse.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-huella-tenant-dataverse.md) | [patrones/huella-atomica-owner-approved.md](C:/Users/enzo1/PROJEC%20CDX/patrones/huella-atomica-owner-approved.md) |
+| R-014 | Promocion Seshat Home SharePoint | El canon de Seshat debe quedar visible en SeshatHubRegistroN.8/Home.aspx | Archivo canonico publicado, Dataverse hidratado y delta tecnico de binding | [procesos/promocion-seshat-home-sharepoint.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-seshat-home-sharepoint.md) | [patrones/seshat-home-canonico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/seshat-home-canonico.md) |
 
 ## Regla
 

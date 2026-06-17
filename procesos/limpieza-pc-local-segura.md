@@ -4,17 +4,19 @@
 
 Pedido de limpiar y ordenar una PC Windows local sin perder control.
 
+## Subpatrones
+
+- [Inventario y gate](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-inventario-y-gate.md)
+- [Auxiliares y temporales](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-auxiliares-y-temporales.md)
+- [Evidencia y rollback](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-evidencia-y-rollback.md)
+
 ## Pasos
 
-1. Leer `operativa/CURRENT.md`, `operativa/TRACE.md` y `operativa/ANCLAS_ON_DEMAND.md`.
-2. Confirmar gate local y, si hace falta, sesion elevada.
-3. Inventariar procesos, servicios, startup, PATH y superficie de busqueda.
-4. Separar ruido auxiliar de infraestructura base.
-5. Limpiar solo temporales autorizados y activos de usuario aprobados.
-6. Deshabilitar solo auxiliares aprobados por nombre exacto.
-7. Verificar que la base de Windows sigue intacta.
-8. Guardar evidencia, rollback y registro en Dataverse local.
-9. Cerrar con un unico siguiente paso.
+1. Confirmar gate local y leer el inventario antes de tocar nada.
+2. Separar base Windows de ruido auxiliar por nombre exacto, ruta exacta y efecto observable.
+3. Limpiar solo temporales y auxiliares ya aprobados.
+4. Verificar que la base de Windows sigue intacta.
+5. Guardar evidencia, rollback y un unico siguiente gate.
 
 ## Salida
 
@@ -23,11 +25,10 @@ Inventario final, recorte de ruido y registro local navegable.
 ## Validador
 
 - inventario guardado;
-- no live write;
-- no base windows touched;
+- base Windows intacta;
 - rollback anotado;
 - next gate unico.
 
 ## Stop Condition
 
-`no_evidence`, `no_elevation`, `base_windows_at_risk`, `target_ambiguous`, `live_write_by_inference`
+`no_evidence`, `base_windows_at_risk`, `target_ambiguous`, `next_gate_plural`

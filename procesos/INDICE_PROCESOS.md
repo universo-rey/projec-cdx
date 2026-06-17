@@ -6,6 +6,10 @@
 - [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/procesos/dataverse-rehidratacion.md)
 - [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/procesos/normalizacion-perfil-windows.md)
 - [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/procesos/agentes-atomicos-algoritmicos-en-waves.md)
+- [microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/procesos/microsoft-live-read-preliminar.md)
+- [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md)
+- [promocion-huella-tenant-dataverse.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-huella-tenant-dataverse.md)
+- [promocion-seshat-home-sharepoint.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-seshat-home-sharepoint.md)
 - [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
 
 | id | proceso | entrada | salida | receta | patron |
@@ -33,6 +37,10 @@
 | PR-021 | Canon documental | Convertir hilos y docs en canon navegable | [canon-documental.md](C:/Users/enzo1/PROJEC%20CDX/procesos/canon-documental.md) | [recipes/canon-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/canon-documental.md) | P-014 |
 | PR-022 | Dataverse rehidratacion | Volver a una base Dataverse verificable sin confundir contexto con live | [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/procesos/dataverse-rehidratacion.md) | [recipes/dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md) | P-015 |
 | PR-023 | Canon documental atomico | Atlas documentales visibles con una sola taxonomia | [documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/procesos/documentos-canon-atomico.md) | [recipes/documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/recipes/documentos-canon-atomico.md) | P-022 |
+| PR-024 | Microsoft live read preliminar | Pasada Microsoft preliminar con target exacto y no escritura | [microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/procesos/microsoft-live-read-preliminar.md) | [recipes/microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/recipes/microsoft-live-read-preliminar.md) | - |
+| PR-025 | SDU Dataverse metadata wave | Evidencia tenant-scoped que debe volverse metadata atomica reusable | [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md) | [recipes/sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/recipes/sdu-dataverse-metadata-wave.md) | [patrones/sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/patrones/sdu-dataverse-metadata-wave.md) |
+| PR-026 | Promocion huella tenant Dataverse | Manifiesto o canon aprobado por owner debe quedar visible para tenant, Dataverse y agentes | [promocion-huella-tenant-dataverse.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-huella-tenant-dataverse.md) | [recipes/promocion-huella-tenant-dataverse.md](C:/Users/enzo1/PROJEC%20CDX/recipes/promocion-huella-tenant-dataverse.md) | [patrones/huella-atomica-owner-approved.md](C:/Users/enzo1/PROJEC%20CDX/patrones/huella-atomica-owner-approved.md) |
+| PR-027 | Promocion Seshat Home SharePoint | SeshatHubRegistroN.8/Home.aspx debe consumir la huella atomica como canon visible | [promocion-seshat-home-sharepoint.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-seshat-home-sharepoint.md) | [recipes/promocion-seshat-home-sharepoint.md](C:/Users/enzo1/PROJEC%20CDX/recipes/promocion-seshat-home-sharepoint.md) | [patrones/seshat-home-canonico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/seshat-home-canonico.md) |
 
 ## Regla
 
