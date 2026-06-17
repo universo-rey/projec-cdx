@@ -4,15 +4,15 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `THREADS_OPENED_FAN_IN_PARTIAL`.
+Etapa actual: `THREADS_OPENED_FAN_IN_FINAL_DECISION_READY`.
 
-Movimiento unico actual: `delta_collect_thread_f_final_and_decide_repo_mutations_5_plus_1`.
+Movimiento unico actual: `delta_e_cdf_split_context_evidence`.
 
 La revision de Corte del plan maestro quedo integrada y W1 ya clasifico los `13` repos dirty en `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`.
 
 El owner acepto preparar y abrir el modelo no lineal recomendado. Quedaron abiertos seis hilos reales desde los paquetes `5+1` en `operativa/thread-packets-20260617/`.
 
-La siguiente accion no es limpiar todo ni crear mapas masivos. Es esperar/recolectar el contrato final de `HILO_F_CLOUD_DATAVERSE_READY`, consolidar fan-in definitivo y recien despues decidir mutaciones atomicas por repo/superficie.
+La siguiente accion no es limpiar todo ni crear mapas masivos. Es resolver primero `HILO_E_CDF_SOLUCIONES` con split scoped entre contexto y evidencia, sin tocar otras superficies.
 
 Modo requerido: read-only/diff review primero, sin staging, sin revert, sin move y sin live write.
 

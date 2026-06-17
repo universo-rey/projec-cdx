@@ -16,7 +16,7 @@
 - C: completo.
 - D: completo.
 - E: completo.
-- F: en progreso, evidencia parcial positiva.
+- F: completo; smoke PASS y cloud-bridge PASS.
 
 ## Validacion De Limites
 

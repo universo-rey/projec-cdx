@@ -6,8 +6,10 @@ Se abrieron y fijaron seis hilos reales para ejecutar la arquitectura no lineal 
 
 El control tower mantiene la autoridad de integracion. Los hilos solo devuelven contratos de retorno.
 
-Fan-in parcial integrado: A, B, C, D y E completos. F sigue en progreso con preflight positivo parcial.
+Fan-in final integrado: A, B, C, D, E y F completos.
+
+Decision preparada: primero `delta_e_cdf_split_context_evidence`.
 
 No se autorizaron mutaciones ni live writes.
 
-Proximo delta: `delta_collect_thread_f_final_and_decide_repo_mutations_5_plus_1`.
+Proximo delta: `delta_e_cdf_split_context_evidence`.

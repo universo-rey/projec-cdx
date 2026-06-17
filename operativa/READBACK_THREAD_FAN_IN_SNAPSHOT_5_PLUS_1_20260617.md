@@ -1,6 +1,6 @@
 # Readback Thread Fan-In Snapshot 5 Plus 1 20260617
 
-Estado: `THREADS_OPENED_FAN_IN_PARTIAL`
+Estado: `THREADS_OPENED_FAN_IN_FINAL_DECISION_READY`
 Fecha: `2026-06-17`
 
 ## Fuente
@@ -9,11 +9,9 @@ Se leyeron los hilos creados en `delta_open_thread_packets_5_plus_1`.
 
 ## Resultado
 
-Cinco hilos devolvieron contrato completo.
+Los seis hilos devolvieron contrato completo.
 
-Un hilo permanece en progreso:
-
-- `HILO_F_CLOUD_DATAVERSE_READY`: en curso, con evidencia parcial positiva. Declaro workspace limpio, branch correcto y smoke/bridge locales pasando en modo metadata-only, pero todavia no emitio contrato final.
+`HILO_F_CLOUD_DATAVERSE_READY` cerro como `READ_ONLY_PREFLIGHT`, con smoke PASS y cloud-bridge PASS.
 
 ## Sintesis Por Carril
 
@@ -22,7 +20,7 @@ Un hilo permanece en progreso:
 - `HILO_C_RUNTIME_README_BATCH`: README-only bajo riesgo; recomendado cerrar como lote unico.
 - `HILO_D_SESHAT_SGIN_EVIDENCE`: Seshat mantiene piezas ambiguas; SGIN trae paquete operativo/evidencia; requiere lectura de contenido solo si el owner lo autoriza.
 - `HILO_E_CDF_SOLUCIONES`: overlap contexto/evidencia confirmado; requiere split scoped antes de cualquier mutacion.
-- `HILO_F_CLOUD_DATAVERSE_READY`: preflight positivo parcial; esperar contrato final.
+- `HILO_F_CLOUD_DATAVERSE_READY`: preflight completo; mantener listo sin crear Cloud task ni live write.
 
 ## Limites Confirmados
 
@@ -42,6 +40,6 @@ Un hilo permanece en progreso:
 
 ## Proximo Delta Unico
 
-`delta_collect_thread_f_final_and_decide_repo_mutations_5_plus_1`
+`delta_e_cdf_split_context_evidence`
 
-Esperar contrato final de F y luego decidir, bajo orden humana, si se ejecutan mutaciones atomicas por carril.
+Ejecutar primero el split scoped de `cdf-soluciones`, sin tocar otras superficies.

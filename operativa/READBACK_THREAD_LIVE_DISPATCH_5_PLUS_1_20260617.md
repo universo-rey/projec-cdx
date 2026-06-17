@@ -37,6 +37,8 @@ No se habilito mutacion sobre repos, Microsoft, SharePoint, Dataverse, Power Aut
 
 - Registro: `operativa/THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.csv`
 - Fan-in snapshot: `operativa/THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.csv`
+- Fan-in final: `operativa/THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.csv`
+- Matriz de decision: `operativa/MATRIZ_DECISION_MUTACIONES_5_PLUS_1_20260617.csv`
 - Paquetes fuente: `operativa/thread-packets-20260617/`
 - Arquitectura fuente: `operativa/THREAD_ARCHITECTURE_5_PLUS_1_20260617.md`
 
@@ -55,6 +57,6 @@ No se habilito mutacion sobre repos, Microsoft, SharePoint, Dataverse, Power Aut
 
 ## Proximo Delta Unico
 
-`delta_collect_thread_f_final_and_decide_repo_mutations_5_plus_1`
+`delta_e_cdf_split_context_evidence`
 
-Cinco contratos ya fueron recolectados. Falta contrato final de `HILO_F_CLOUD_DATAVERSE_READY`; luego consolidar fan-in definitivo y decidir mutaciones por repo/superficie.
+Se recolectaron los seis contratos. La decision de mutacion queda preparada: primero resolver split scoped de `cdf-soluciones`.

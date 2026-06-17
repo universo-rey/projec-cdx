@@ -1,6 +1,6 @@
 id: 20260617-thread-live-dispatch-5-plus-1-v1
 title: Thread Live Dispatch 5 Plus 1
-status: THREADS_OPENED_READ_ONLY
+status: THREADS_OPENED_FAN_IN_FINAL_DECISION_READY
 date: 2026-06-17
 owner: Enzo Figueroa
 control_tower: PROJEC CDX
@@ -14,7 +14,10 @@ outputs:
   - operativa/READBACK_THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.md
   - operativa/THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.csv
   - operativa/READBACK_THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.md
+  - operativa/THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.csv
+  - operativa/MATRIZ_DECISION_MUTACIONES_5_PLUS_1_20260617.csv
+  - operativa/READBACK_THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.md
   - hitos/20260617-thread-live-dispatch-5-plus-1-v1/
-next_delta: delta_collect_thread_f_final_and_decide_repo_mutations_5_plus_1
+next_delta: delta_e_cdf_split_context_evidence
 live_writes_executed: false
 mutations_in_dirty_repos_executed: false

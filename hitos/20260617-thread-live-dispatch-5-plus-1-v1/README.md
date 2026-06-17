@@ -10,10 +10,13 @@ Se abrieron seis hilos reales desde la arquitectura `5+1` ya versionada.
 - `operativa/READBACK_THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.md`
 - `operativa/THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.csv`
 - `operativa/READBACK_THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.md`
+- `operativa/THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.csv`
+- `operativa/MATRIZ_DECISION_MUTACIONES_5_PLUS_1_20260617.csv`
+- `operativa/READBACK_THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.md`
 - `operativa/thread-packets-20260617/`
 
 ## Cierre
 
-Despacho ejecutado. Fan-in parcial integrado: cinco contratos completos y F preflight en curso.
+Despacho ejecutado. Fan-in final integrado: seis contratos completos y decision de mutaciones preparada.
 
-Proximo delta: `delta_collect_thread_f_final_and_decide_repo_mutations_5_plus_1`.
+Proximo delta: `delta_e_cdf_split_context_evidence`.
