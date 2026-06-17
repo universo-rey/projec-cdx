@@ -599,6 +599,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1`.
 - Cierre: `PLAN_PREPARADO_VERSIONABLE`; no ejecuta live write; proximo delta unico `delta_repo_dirty_worktree_triage_by_surface`.
 
+## Revision Corte Plan Maestro Atomico
+
+- Fuente: pedido del owner de usar la Corte para revisar primero el plan antes de avanzar.
+- Proceso: despacho read-only de Seshat, Thot, Anubis, Maat, Horus y Narrador; integracion de hallazgos sobre canon, arquitectura, gates, custodia, riesgo y closeout.
+- Salida: `operativa/READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md`; matriz ampliada con postcheck, custodia humana y gates; plan ajustado con `CORTE_EJECUTORA_GOVERNED`.
+- Hito: `hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1`.
+- Cierre: `OBSERVED_APTO_PARA_W1_READ_ONLY`; no live write; proximo delta unico `delta_repo_dirty_worktree_triage_by_surface`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

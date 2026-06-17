@@ -8,11 +8,13 @@
 - `operativa/READBACK_FAN_IN_CORTE_WORKBENCH_COMPLETION_20260617.md`
 - `operativa/READBACK_DATAVERSE_POWER_PLATFORM_TENANT_ESCRIBANIA_BITSCH_20260616.md`
 - `operativa/READBACK_CODEX_CLOUD_BRIDGE_20260617.md`
+- Revision read-only de Corte sobre el plan maestro.
 
 ## Salidas
 
 - `operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md`
 - `operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617.csv`
+- `operativa/READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md`
 - `hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1`
 
 ## Validacion Esperada
@@ -27,6 +29,29 @@
 - `tools/validate_proj_cdx_workbench.ps1`: `STATUS: OBSERVED`; observaciones limitadas a carpetas tecnicas conocidas `.cache`, `.codex`, `.git`, `.venv`.
 - `python -m projec_cdx_cloud --cloud-bridge`: `PASS`; `remote_branch_found=True`, `context_ok=True`, `sdu_agents_defined=True`.
 
+## Validacion Revision Corte
+
+- `git diff --check`: `PASS` sin errores; solo advertencias esperadas LF/CRLF.
+- `tools/validate_proj_cdx_workbench.ps1`: `STATUS: OBSERVED`; observaciones limitadas a carpetas tecnicas conocidas.
+- `tools/validate_proj_cdx_sync.ps1`: `STATUS: PASS`.
+- `tools/validate_proj_cdx_operational_chain.ps1`: `STATUS: PASS`.
+- `python -m projec_cdx_cloud --cloud-bridge`: `PASS`; `remote_branch_found=True`, `context_ok=True`, `sdu_agents_defined=True`.
+
 ## Live
 
 No se ejecuto live write. Este hito prepara la orden y conserva los gates.
+
+## Revision Corte
+
+Resultado: `OBSERVED_APTO_PARA_W1_READ_ONLY`.
+
+Agentes revisores:
+
+- `Seshat`
+- `Thot`
+- `Anubis`
+- `Maat`
+- `Horus`
+- `Narrador`
+
+No se ejecutaron cambios externos ni live writes durante la revision.

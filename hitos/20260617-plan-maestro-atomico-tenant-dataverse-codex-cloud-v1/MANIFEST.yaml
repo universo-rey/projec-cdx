@@ -11,9 +11,10 @@ mode: metadata-only/read-only/local-first
 artifacts:
   - operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md
   - operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617.csv
+  - operativa/READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md
   - hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1/READBACK.md
   - hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1/INDICE.csv
   - hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1/EVIDENCIA.md
 live_execution: false
+review_status: OBSERVED_APTO_PARA_W1_READ_ONLY
 next_delta: delta_repo_dirty_worktree_triage_by_surface
-

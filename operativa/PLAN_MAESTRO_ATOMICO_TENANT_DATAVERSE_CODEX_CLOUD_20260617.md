@@ -9,6 +9,7 @@ Dataverse principal observado: `HUBDesarrollo`
 Dataverse URL: `https://org084965d9.crm.dynamics.com`
 Codex Cloud branch: `codex/dataverse-corte-ejecutora-v1`
 Modo base: `metadata-only / read-only / local-first`
+Modo Corte: `CORTE_EJECUTORA_GOVERNED`
 
 ## Formula Operativa
 
@@ -18,6 +19,14 @@ Dataverse contiene memoria estructural de largo plazo.
 Los agentes consumen, corrigen, hidratan y devuelven evidencia.
 El tenant es superficie gobernada, no territorio desconocido.
 Cada delta nace atomico, idempotente, trazable, reversible y versionable.
+
+## Frontera Canon Workbench
+
+`.codex` es infraestructura local de runtime, memoria operativa y canon global promovido.
+`PROJEC CDX` es workbench, espejo operativo versionable y plano de preparacion.
+`Documents/GitHub` es la raiz canonica de repos.
+
+Ningun hito local se considera promovido a canon global hasta que una wave lo declare en su evidencia, postcheck y cierre.
 
 ## Objetivo
 
@@ -51,7 +60,8 @@ Foto actual:
 - Repos Git: `17`.
 - Carpetas no repo: `2`.
 - Repos con worktree dirty: `13`.
-- Gap `missing_mapa_md`: `18`.
+- Gap `github_repos_missing_mapa`: `17`.
+- Gap `workbench_root_missing_mapa`: `1`.
 - Gap `dirty_worktree`: `13`.
 - Gap `not_git_repo`: `2`.
 - Codex Cloud bridge local: `PASS`.
@@ -69,6 +79,8 @@ Foto actual:
 8. Solo autoridad humana establece o deroga bloqueos institucionales.
 9. Ningun agente se aprueba a si mismo en live, permisos, costo, produccion o borrado.
 10. Los repos canonicos viven en `Documents/GitHub`; `PROJEC CDX` es workbench y plano de gobierno.
+11. Toda wave tiene `audit_status` separado del estado operativo.
+12. Toda live gate exige owner humano, target exacto, candidate count, permission scope, rollback, postcheck, validator y evidence sink.
 
 ## Corte Y Agentes
 
@@ -92,6 +104,19 @@ La mesa tecnica devolvio tres ajustes que quedan incorporados:
 - Faraday: toda integracion tenant/Dataverse/Codex Cloud debe separar `local_evidence`, `metadata_only`, `prepared_not_executed`, `observed_read_only` y `live_requires_gate`.
 - Ramanujan: resolver primero repos de mayor impacto canonico y runtime; dejar repos complejos con evidencia nueva para paquete propio; no crear `MAPA.md` por reflejo.
 
+## Fan-In De Revision De Corte
+
+La Corte reviso el plan en modo read-only y devolvio veredicto integrado `OBSERVED_APTO_PARA_W1_READ_ONLY`.
+
+- Seshat: pidio explicitar `CORTE_EJECUTORA_GOVERNED`, frontera `.codex`/workbench y checkpoint de identidad.
+- Thot: pidio `postcheck`, validadores de cadena y separar Codex Cloud local pass de Cloud task pendiente.
+- Anubis: pidio candidate count, acciones permitidas/bloqueadas, permission scope y rollback no destructivo para Dataverse.
+- Maat: pidio owner humano por wave, decision humana auditable, evidence sink y custodia.
+- Horus: pidio separar metricas de mapas, declarar snapshot Dataverse y no avanzar a W4/W5/W6 sin cerrar W1.
+- Narrador: pidio readback W0 antes de W1 y mantener el proximo delta unico.
+
+Evidencia: `operativa/READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md`.
+
 ## Waves Encadenadas
 
 ### W0 - Preflight De Mesa
@@ -104,7 +129,8 @@ Objetivo: congelar la foto de arranque sin congelar la operacion.
 - Write scope: solo plan, matriz, readback e hito en `PROJEC CDX`.
 - Lock key: `plan-maestro-20260617`
 - Evidencia: este plan y matriz `operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617.csv`.
-- Validador: `git diff --check`; `tools/validate_proj_cdx_workbench.ps1`.
+- Validador: `git diff --check`; `tools/validate_proj_cdx_workbench.ps1`; `tools/validate_proj_cdx_sync.ps1`; `tools/validate_proj_cdx_operational_chain.ps1`.
+- Postcheck: readback W0 versionado, matriz ampliada, git limpio o diff acotado, sin live writes.
 - Rollback: revertir este paquete de plan y la entrada de indice.
 - Stop condition: `plan_without_validator`.
 - Estado esperado: `PLAN_PREPARADO_VERSIONABLE`.
@@ -120,6 +146,7 @@ Objetivo: clasificar los `13` repos dirty sin staging ciego.
 - Lock key: `repo-dirty-triage-by-surface`
 - Evidencia: matriz de diffs por repo, owner, tipo de cambio, accion propuesta.
 - Validador: `git status --short --branch` por repo; si existe, validador propio del repo.
+- Postcheck: matriz read-only de los `13` dirty con recomendacion `commit/archive/pending` y sin staged changes.
 - Rollback: no aplica en scouting; en ejecucion, commit reversible o branch dedicada.
 - Stop condition: `repo_diff_unclassified`.
 - Estado esperado: `OBSERVED_READ_ONLY`.
@@ -148,6 +175,7 @@ Objetivo: resolver `missing_mapa_md=18` sin fabricar mapas ruidosos.
 - Lock key: `repo-map-minimal-canon`
 - Evidencia: decision por repo con `map_required`, `map_created`, `map_deferred`.
 - Validador: links relativos validos y `git diff --check`.
+- Postcheck: `identity_drift_check` y decision `MAPA.md` vs `README+AGENTS_SUFFICIENT` por repo.
 - Rollback: remover el mapa creado o volver a README/AGENTS como unica superficie.
 - Stop condition: `map_would_duplicate_readme`.
 - Estado esperado: `DELTA_APLICADO` o `NO_OP_LISTO`.
@@ -163,6 +191,7 @@ Objetivo: clasificar `Auditar` y `cdf_gate68_solution_clone`.
 - Lock key: `nongit-folder-classification`
 - Evidencia: `archive_reference`, `promote_to_repo`, `move_to_archive`, o `keep_as_external_surface`.
 - Validador: existencia antes/despues, ruta absoluta y razon.
+- Postcheck: ninguna carpeta movida sin destino, owner y comando inverso.
 - Rollback: si se mueve, manifestar origen/destino y comando inverso.
 - Stop condition: `folder_identity_ambiguous`.
 - Estado esperado: `OBSERVED_READ_ONLY`.
@@ -178,7 +207,8 @@ Objetivo: preparar metadata estructurada para Dataverse sin duplicar punteros ni
 - Lock key: `dataverse-metadata-hydration`
 - Evidencia: manifest YAML, matriz CSV y readback por wave.
 - Validador: `tools/validate_sdu_dataverse_metadata_wave.ps1` si existe; si no, `candidate_count=1` y conteo `source/evidence`.
-- Rollback: borrar/reemplazar puntero por `canonical_id` bajo orden humana; nunca bulk delete.
+- Postcheck: `candidate_count=1`, `allowed_action` compatible con gate y `blocked_action` no ejecutada.
+- Rollback: supersede/disable pointer por `canonical_id` bajo orden humana; borrado solo con gate destructivo separado.
 - Stop condition: `candidate_count_not_one`.
 - Estado esperado: `METADATA_ONLY_PREPARED`.
 
@@ -212,6 +242,7 @@ Objetivo: mantener tenant, Power Platform, colas, bots, Teams, Planner y SharePo
 - Lock key: `tenant-readback-no-payload`
 - Evidencia: conteos, ids, URLs, candidate count, sin payload sensible.
 - Validador: tenant id coincide con `858a0852-44a1-413e-a0fe-f053949797d6`.
+- Postcheck: evidencia marcada como snapshot si no se refresca antes de hidratar.
 - Rollback: no aplica en read-only; retirar readback si se detecta tenant mismatch.
 - Stop condition: `tenant_mismatch`.
 - Estado esperado: `OBSERVED_READ_ONLY`.
@@ -229,7 +260,7 @@ Objetivo: dejar Codex Cloud como centro de ejecucion rapida sin depender de memo
 - Validador: `python -m projec_cdx_cloud --smoke`; `python -m projec_cdx_cloud --cloud-bridge`.
 - Rollback: revertir cambios del runner; resetear cache Cloud si la UI conserva ruta vieja.
 - Stop condition: `cloud_workspace_path_windows`.
-- Estado esperado: `PASS` local y `READY_FOR_CODEX_CLOUD_UI`.
+- Estado esperado: `LOCAL_PASS` y `CLOUD_TASK_PENDING`.
 
 Contrato Codex Cloud:
 
@@ -238,6 +269,7 @@ Contrato Codex Cloud:
 - No variable con guion como `EATOMIC-ON`.
 - No imprimir `OPENAI_API_KEY`.
 - Smoke responde PASS/OBSERVED/FAIL con evidencia.
+- El commit probado en Cloud debe declararse; si difiere de la rama local, estado `context_drift`.
 
 ### W7 - Integracion De Skills, Recetas, Tools E Indices
 
@@ -250,6 +282,7 @@ Objetivo: promover aprendizaje estable a canon reusable.
 - Lock key: `canon-recipe-skill-sync`
 - Evidencia: matriz skill/recipe/tool/patron con source readback.
 - Validador: `git diff --check`; validador especifico si existe.
+- Postcheck: aprendizaje promovido a skill/recipe/tool/patron o declarado `NO_OP_LISTO`.
 - Rollback: revertir archivo nuevo o retirar entrada de indice.
 - Stop condition: `knowledge_left_only_in_chat`.
 - Estado esperado: `DELTA_APLICADO`.
@@ -264,7 +297,8 @@ Objetivo: convertir cada wave aplicada en hito auditable y cierre legible.
 - Write scope: `hitos/<wave-id>`, `hitos/INDICE_MAESTRO.csv`, `operativa/TRACE.md`, `operativa/NEXT.md`.
 - Lock key: `hito-closeout-atomic`
 - Evidencia: README, MANIFEST, INDICE, READBACK, EVIDENCIA.
-- Validador: `tools/validate_proj_cdx_workbench.ps1`.
+- Validador: `git diff --check`; `tools/validate_proj_cdx_workbench.ps1`; `tools/validate_proj_cdx_sync.ps1`; `tools/validate_proj_cdx_operational_chain.ps1`.
+- Postcheck: hito contiene README, MANIFEST, INDICE, READBACK, EVIDENCIA y entrada de `TRACE`.
 - Rollback: retirar hito y entradas de indice/trace.
 - Stop condition: `evidence_missing`.
 - Estado esperado: `DELTA_APLICADO` o `EN_ESPERA_DE_CIERRE`.
@@ -281,19 +315,36 @@ Objetivo: convertir cada wave aplicada en hito auditable y cierre legible.
 | Codex Cloud | `READY_FOR_CODEX_CLOUD_UI` | Runner local PASS; Cloud UI/task requiere ejecucion separada. |
 | Skills/recetas/tools | `DELTA_PREPARADO` | Promover aprendizaje estable por wave. |
 
+## Semaforo De Revision De Corte
+
+| Agente | Estado | Lectura |
+| --- | --- | --- |
+| Seshat | `OBSERVED` | Plan despierta accion; pide frontera canon/workbench y modo Corte. |
+| Thot | `OBSERVED` | Arquitectura apta; pide postcheck y validadores de cadena. |
+| Anubis | `OBSERVED` | Gates correctos; pide candidate count, permission scope y rollback no destructivo. |
+| Maat | `OBSERVED` | Plan gobernable; pide custodia humana auditable por wave. |
+| Horus | `OBSERVED` | Secuencia correcta; pide W1 antes de mapas, Dataverse o Cloud. |
+| Narrador | `OBSERVED` | Cadena clara; pide readback W0 antes de ejecutar W1. |
+
 ## Packet Para Agente
 
 Cada agente que tome un carril debe devolver:
 
 ```yaml
 agente:
+modo_corte:
 orden:
 surface:
 read_scope:
 write_scope:
 lock_key:
 status:
+audit_status:
+owner_humano:
+decision_humana_required:
+decision_id:
 evidence:
+evidence_sink:
 validator:
 rollback:
 postcheck:
