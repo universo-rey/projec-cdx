@@ -679,6 +679,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-root-repos-agents-codex-review-v1`.
 - Cierre: `ROOT_REPOS_REVIEWED_AGENTS_PR_READY`; `codex-root` limpio en main, `agents-root` PR #1 listo, cuenta operativa corregida a 15 repos mas `PROJEC CDX`.
 
+## Codex Cloud SDK Launch
+
+- Fuente: pedido del owner de resolver el delta `delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread`.
+- Proceso: ejecutar smoke local, bridge deterministico, readback actualizado y lanzamiento por Agents SDK usando `--agentic-cloud-bridge`, sin inventar API de Codex Cloud ni ejecutar writes Microsoft/SharePoint/Dataverse/Power Automate.
+- Salida: `operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md`, `operativa/CODEX_CLOUD_SDK_LAUNCH_20260617.csv`, `operativa/READBACK_CODEX_CLOUD_BRIDGE_20260617.md`.
+- Hito: `hitos/20260617-codex-cloud-sdk-launch-v1`.
+- Cierre: `SDK_LOCAL_LAUNCH_OBSERVED_CLOUD_UI_FRONTIER`; el carril SDK local queda resuelto, `inspect_cloud_bridge=PASS`, y la UI de Codex Cloud queda como frontera externa opcional. Proximo delta unico `delta_capture_codex_cloud_ui_smoke_result_if_owner_runs_external_task` solo si el owner ejecuta la task desde la UI.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

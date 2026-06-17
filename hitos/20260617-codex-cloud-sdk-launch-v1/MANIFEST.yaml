@@ -1,0 +1,27 @@
+version: 20260617-codex-cloud-sdk-launch-v1
+status: SDK_LOCAL_LAUNCH_OBSERVED_CLOUD_UI_FRONTIER
+control_tower: PROJEC CDX
+delta_resolved: delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread
+resolved_by: codex_sdk_local_thread
+branch: codex/dataverse-corte-ejecutora-v1
+remote_head: 93dd19aa503ac7135552a8f28be2ef80b5e29f6d
+agentic_run:
+  status: ok
+  model: gpt-5.4-mini
+  final_output: OBSERVED
+  tool_result: inspect_cloud_bridge PASS
+gate: metadata-only
+validation:
+  - smoke_context_ok_true
+  - smoke_context_drift_empty
+  - cloud_bridge_pass
+  - agents_sdk_installed
+  - sdu_sdk_agents_defined_6
+systems_not_touched:
+  - codex_cloud_task_create_api
+  - microsoft_write
+  - sharepoint_write
+  - dataverse_write
+  - power_automate_run
+  - secrets_output
+next_delta: delta_capture_codex_cloud_ui_smoke_result_if_owner_runs_external_task

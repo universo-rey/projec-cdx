@@ -10,7 +10,7 @@ Se preparo y verifico el puente local para lanzar el smoke gobernado en Codex Cl
 
 - Rama local: `codex/dataverse-corte-ejecutora-v1`
 - Rama objetivo: `codex/dataverse-corte-ejecutora-v1`
-- HEAD remoto: `4b07b17cb936248a38e0dd8424db2f29d38ce0c1`
+- HEAD remoto: `93dd19aa503ac7135552a8f28be2ef80b5e29f6d`
 - Task file: `C:\Users\enzo1\PROJEC CDX\operativa\CODEX_CLOUD_SMOKE_TASK_20260617.md`
 - context_ok: `True`
 - context_drift: `[]`
