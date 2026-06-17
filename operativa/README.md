@@ -4,6 +4,14 @@ Carril vivo para organizar el trabajo punta a punta de `PROJEC CDX`.
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
+## Vigencia 20260617
+
+- Estado vigente: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
+- Movimiento unico: `delta_select_next_consumer_from_dataverse_live_rows`.
+- No crear nuevos paquetes: revisar primero [PENDIENTES_HOY_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PENDIENTES_HOY_20260617.md) y [INDICE_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md).
+- SGIN ya fue leido/paquetizado; `Sgin/torres` es paquete local preparado, no runtime activo.
+- `Home.aspx`, Cloud UI y carriles metadata quedan como espera gobernada, no bloqueo humano.
+
 La cobertura atomica energetica queda en [COBERTURA_ATOMICA_ENERGETICA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md).
 
 La matriz corta de skills, tools y recetas queda en [MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md).

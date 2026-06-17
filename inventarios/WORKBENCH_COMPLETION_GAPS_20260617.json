@@ -182,38 +182,38 @@
   {
     "surface": "Sgin__wt_dictamen_n2",
     "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Sgin__wt_dictamen_n2",
-    "gap": "missing_mapa_md",
-    "severity": "DELTA",
-    "owner_agent": "seshat-normativa",
-    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
-    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+    "gap": "broken_worktree_reference",
+    "severity": "OBSERVED",
+    "owner_agent": "thot-tecnico",
+    "next_delta": "do_not_consume_as_live_repo",
+    "evidence": "gitdir apunta a ruta OneDrive antigua; conservar solo como referencia historica"
   },
   {
     "surface": "Sgin__wt_dictamen_n3_skills",
     "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Sgin__wt_dictamen_n3_skills",
-    "gap": "missing_mapa_md",
-    "severity": "DELTA",
-    "owner_agent": "seshat-normativa",
-    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
-    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+    "gap": "broken_worktree_reference",
+    "severity": "OBSERVED",
+    "owner_agent": "thot-tecnico",
+    "next_delta": "do_not_consume_as_live_repo",
+    "evidence": "gitdir apunta a ruta OneDrive antigua; conservar solo como referencia historica"
   },
   {
     "surface": "Sgin__wt_memory_hygiene",
     "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Sgin__wt_memory_hygiene",
-    "gap": "missing_mapa_md",
-    "severity": "DELTA",
-    "owner_agent": "seshat-normativa",
-    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
-    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+    "gap": "broken_worktree_reference",
+    "severity": "OBSERVED",
+    "owner_agent": "thot-tecnico",
+    "next_delta": "do_not_consume_as_live_repo",
+    "evidence": "gitdir apunta a ruta OneDrive antigua; conservar solo como referencia historica"
   },
   {
     "surface": "Sgin__wt_tge_staging",
     "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Sgin__wt_tge_staging",
-    "gap": "missing_mapa_md",
-    "severity": "DELTA",
-    "owner_agent": "seshat-normativa",
-    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
-    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+    "gap": "broken_worktree_reference",
+    "severity": "OBSERVED",
+    "owner_agent": "thot-tecnico",
+    "next_delta": "do_not_consume_as_live_repo",
+    "evidence": "gitdir apunta a ruta OneDrive antigua; conservar solo como referencia historica"
   },
   {
     "surface": "sgin-cumplimiento",
@@ -227,11 +227,11 @@
   {
     "surface": "sgin-cumplimiento",
     "path": "C:\\Users\\enzo1\\Documents\\GitHub\\sgin-cumplimiento",
-    "gap": "dirty_worktree",
-    "severity": "DELTA",
+    "gap": "clean_on_branch",
+    "severity": "OBSERVED",
     "owner_agent": "anubis-gate",
-    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
-    "evidence": " M README.md"
+    "next_delta": "no_dirty_delta",
+    "evidence": "codex/readme-lane-atomica-20260617 HEAD ed506d9 limpio"
   },
   {
     "surface": "tcu-agentic-runtime-control",

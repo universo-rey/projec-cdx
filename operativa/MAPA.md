@@ -4,6 +4,15 @@ Mesa viva para el trabajo punta a punta de `PROJEC CDX`.
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
+## Vigencia 20260617
+
+- [CURRENT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md): estado vigente y cadena de deltas.
+- [NEXT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md): unico proximo movimiento.
+- [PENDIENTES_HOY_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PENDIENTES_HOY_20260617.md): carriles vivos, supersedidos y ruido identificado.
+- [READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md): Dataverse live read confirmado.
+- [READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md): revision de paquetes preparados.
+- [READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md): SGIN ya leido y paquetizado.
+
 La matriz corta de skills, tools y recetas queda en [MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md).
 
 La orden preliminar para Microsoft live read queda en [ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md) y el plan en [PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md).

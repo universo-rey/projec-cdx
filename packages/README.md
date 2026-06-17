@@ -2,17 +2,21 @@
 
 Paquetes comprimidos de soporte de `PROJEC CDX`.
 
-La wave visible mas reciente queda absorbida en [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
-
-La cobertura atomica energetica se conserva tambien en el paquete fuente y de activacion.
-
 - [MAPA.md](C:/Users/enzo1/PROJEC%20CDX/packages/MAPA.md)
 
 ## Contenido
 
-- [codex_evolutionary_blueprint_package.zip](C:/Users/enzo1/PROJEC%20CDX/packages/codex_evolutionary_blueprint_package.zip)
-- [codex_evolutionary_runtime_activation_v2.zip](C:/Users/enzo1/PROJEC%20CDX/packages/codex_evolutionary_runtime_activation_v2.zip)
+- [codex_evolutionary_blueprint_package.zip](C:/Users/enzo1/PROJEC%20CDX/packages/codex_evolutionary_blueprint_package.zip): paquete fuente/base.
+- [codex_evolutionary_runtime_activation_v2.zip](C:/Users/enzo1/PROJEC%20CDX/packages/codex_evolutionary_runtime_activation_v2.zip): paquete de activacion, no runtime activo.
 
-## Nota
+## Canon Y Espejo
 
-Se conservan como paquetes fuente y de activacion, no como salidas generadas.
+- Canon visible: `C:/Users/enzo1/PROJEC CDX/packages`.
+- Espejo exacto de archivo: `C:/Users/enzo1/.codex/workpapers/codex_evolutionary/99_archive/source_zips`.
+- Los pares fueron verificados por SHA-256 y coinciden byte a byte.
+
+## Regla
+
+- No crear nuevos paquetes si el delta ya esta cubierto por `hitos/INDICE_MAESTRO.md`.
+- No extraer ZIPs para inspeccion base; leer indice interno y hash primero.
+- Si cambia un paquete fuente, actualizar este README y [MAPA.md](C:/Users/enzo1/PROJEC%20CDX/packages/MAPA.md).

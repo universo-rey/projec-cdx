@@ -2,6 +2,13 @@
 
 Estado actual del trabajo de `PROJEC CDX`.
 
+## Regla Anti-Ruido
+
+- El unico estado vigente esta en el primer bloque `Vigente 2026-06-17`.
+- Los bloques `Vigente Previo` y `Historial De Delta` son evidencia conservada, no trabajo activo.
+- No crear nuevos paquetes si ya existe hito, readback, indice o paquete vigente.
+- SGIN ya fue leido y paquetizado; no reabrir lectura ni paquete por inercia.
+
 ## Vigente 2026-06-17
 
 Etapa vigente: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
@@ -325,7 +332,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Mantener `codex-root` y `agents-root` sin renombre por ahora.
 - Evidencia: `hitos/20260615-repos-surface-github-v1`.
 
-## Delta Abierto 27
+## Historial De Delta 27
 
 - Preparar una pasada Microsoft live read preliminar con seis agentes.
 - Estado: `OBSERVED_READ_ONLY`.
@@ -334,7 +341,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Confirmado: tenant `escribaniabitsch`, 6 equipos Teams, 24 planes Planner, OneDrive delegado, 2 sitios SharePoint y 37 bibliotecas documentales.
 - Proximo movimiento unico: wave `SGIN` para resolver sitio/path documental real y cruzarlo con Teams/Planner.
 
-## Delta Abierto 28
+## Historial De Delta 28
 
 - Rehidratar Dataverse/Power Platform y Microsoft 365 solo dentro del tenant `Escribania Bitsch`.
 - Estado: `OBSERVED_READ_ONLY`.
@@ -344,7 +351,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Confirmado: `HUBDesarrollo`, 817 soluciones, 9 unmanaged, 36 bots/copilots, 1165 workflows, 8 colas SDU, 373 queue items backlog, 24 planes Planner y 2630 tareas agregadas sin titulos.
 - Proximo movimiento unico: resolver `SGIN` por group/team/site/drive/plan read-only, sin abrir contenido sensible.
 
-## Delta Abierto 29
+## Historial De Delta 29
 
 - Resolver `SGIN` dentro del tenant `Escribania Bitsch`.
 - Estado: `OBSERVED_READ_ONLY`.
@@ -352,7 +359,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Confirmado: `SGIN` tiene group/team id `2c52551d-e68a-4496-bf65-eadc3b976ebe`, site real `https://escribaniabitsch.sharepoint.com/sites/sistema`, drive `Documentos compartidos`, 41 listas/bibliotecas por metadata y 10 items de raiz contados sin reproducir nombres.
 - Proximo movimiento unico: cruzar `SGIN` con Dataverse/Power Platform por metadata, sin abrir documentos ni ejecutar flows.
 
-## Delta Abierto 30
+## Historial De Delta 30
 
 - Cruzar `SGIN` con Dataverse/Power Platform por metadata local viva.
 - Estado: `OBSERVED_READ_ONLY`.
@@ -360,7 +367,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Confirmado: 12 matches en soluciones, 17 en workflows y 8 en workqueues; bots sin match directo. Se registra como `metadata_match`, no como prueba de ejecucion.
 - Proximo movimiento unico: resolver vinculo exacto `SGIN site/drive -> SPGovernanceModel/SDU` por componentes/metadata estructurada, sin payloads ni flow run.
 
-## Delta Abierto 31
+## Historial De Delta 31
 
 - Preparar wave atomica `SDU Dataverse Metadata Wave`.
 - Estado: `METADATA_ONLY_PREPARED`.
@@ -368,7 +375,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Confirmado: matriz de 65 filas metadata-only, Planner saneado sin `plan_title`, skill local creada y fan-in de seis agentes integrado.
 - Proximo movimiento unico: candidate count estructurado para `SGIN site/drive -> SPGovernanceModel/SDU`, sin apply.
 
-## Delta Abierto 32
+## Historial De Delta 32
 
 - Resolver candidate count estructurado para `SGIN site/drive -> SPGovernanceModel/SDU`.
 - Estado: `OBSERVED_READ_ONLY`.
@@ -376,7 +383,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Confirmado: `SPGovernanceModel` tiene `candidate_count_one` como solucion; SDU/SharePoint/site siguen con `candidate_count_many`; no hay apply.
 - Proximo movimiento unico: tabla de desambiguacion `SPGovernanceModel` por `componenttype` seguro.
 
-## Delta Abierto 33
+## Historial De Delta 33
 
 - Desambiguar `SPGovernanceModel` por componentes y variable de site.
 - Estado: `OBSERVED_READ_ONLY`.
@@ -384,7 +391,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Confirmado: `SPGovernanceModel` apunta a `https://escribaniabitsch.sharepoint.com/sites/soporte`, no a SGIN `/sites/sistema`.
 - Proximo movimiento unico: buscar vinculo propio de SGIN por variables no secretas, componentes y workflow metadata.
 
-## Delta Abierto 34
+## Historial De Delta 34
 
 - Buscar vinculo propio de SGIN por variables no secretas y metadata de soluciones/workflows/bots.
 - Estado: `OBSERVED_READ_ONLY`.
@@ -392,7 +399,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Confirmado: no hay modelo `SPGovernanceModel` directo visible para SGIN; SGIN queda como site documental confirmado y `SPGovernanceModel` como modelo de `/sites/soporte`.
 - Proximo movimiento unico: consolidar mapa de wave SGIN/SPGovernance/SDU/Dataverse hydration.
 
-## Delta Abierto 35
+## Historial De Delta 35
 
 - Consolidar mapa de wave SGIN/SPGovernance/SDU/Dataverse hydration.
 - Estado: `OBSERVED_READ_ONLY / METADATA_ONLY_PREPARED`.
@@ -400,7 +407,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Confirmado: cuatro carriles separados sin redundancia semantica: SGIN documental, SPGovernance soporte, SDU runtime y Dataverse hydration.
 - Proximo movimiento unico: elegir carril de profundizacion metadata-only.
 
-## Delta Abierto 36
+## Historial De Delta 36
 
 - Despachar todos los carriles a agentes para propagar huella atomica.
 - Estado: `FAN_IN_INTEGRATED`.
@@ -408,7 +415,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Carriles: canon semantico, mapas e indices, idempotencia y gates, cumplimiento y saneamiento, riesgo e inferencias, identidad energetica.
 - Proximo movimiento unico: crear derivados sanitized promocionables o elegir carril de profundizacion metadata_only.
 
-## Delta Abierto 37
+## Historial De Delta 37
 
 - Preparar primer borrador rector del Manifiesto SDU de Escribania Bitsch.
 - Estado: `BORRADOR_V1_FAN_IN_INTEGRATED_SUPERSEDED_BY_DELTA_38`.
@@ -418,7 +425,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Confirmado: fan-in de Seshat, Thot, Anubis, Maat, Horus y Narrador integrado; Enzo queda expresado como owner operativo del SDU sin desplazar autoridad institucional/notarial; IA queda como capacidad instrumental.
 - Proximo movimiento unico: supersedido por Delta 38 owner-approved.
 
-## Delta Abierto 38
+## Historial De Delta 38
 
 - Promover la huella atomica SDU owner-approved al tenant y, mas fuerte aun, a Dataverse.
 - Estado: `DELTA_APLICADO`.
@@ -429,7 +436,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Regla nueva: `stop_condition` tecnico se transforma en `delta_gobernado`, proximo paso y postcheck; bloqueo real solo por autoridad humana expresa.
 - Proximo movimiento unico: elegir la siguiente superficie exacta que debe consumir la huella, con candidate count uno antes de cualquier write adicional.
 
-## Delta Abierto 39
+## Historial De Delta 39
 
 - Promover la huella atomica a `SeshatHubRegistroN.8/Home.aspx` como canon visible de Seshat, Corte y proposito.
 - Estado: `DELTA_APLICADO_CON_DELTA_TECNICO_PAGE_BINDING`.
@@ -444,7 +451,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Owner approval posterior: binding visible aprobado.
 - Proximo movimiento unico: ejecutar `operativa/BINDING_HOME_SESHAT_UI_READY_20260616.md` por UI o sesion PnP/M365 autenticada y postcheckear Home.aspx.
 
-## Delta Abierto 40
+## Historial De Delta 40
 
 - Promover el resto de la Corte y el proposito como canon visible complementario de `SeshatHubRegistroN.8`.
 - Estado: `DELTA_APLICADO`.
@@ -456,7 +463,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Evidencia local: `operativa/READBACK_PROMOCION_CORTE_PROPOSITO_SHAREPOINT_20260616.md`, `operativa/SHAREPOINT_CORTE_PROPOSITO_PROMOTION_20260616.json`, `hitos/20260616-corte-proposito-sharepoint-canon-v1`.
 - Proximo movimiento unico: actualizar el binding de `Home.aspx` para enlazar los dos atomos visibles: Seshat Home y Corte/Proposito.
 
-## Delta Abierto 41
+## Historial De Delta 41
 
 - Delegar el resto de la wave Seshat/Corte en agentes de `cdf-soluciones`.
 - Estado: `GENERATED_READY_FOR_AGENT_LOCAL_DOCUMENTAL`.
@@ -467,7 +474,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Live Microsoft/SharePoint/Dataverse desde CDF: `NO_EJECUTADO`.
 - Proximo movimiento unico: aplicar primero el binding autenticado de `Home.aspx` o elegir target UI/surface para `LANE_B_CORTE_AGENT_INDEX`.
 
-## Delta Abierto 42
+## Historial De Delta 42
 
 - Elegir target UI/surface para `LANE_B_CORTE_AGENT_INDEX`, dejando `Home.aspx` en espera gobernada.
 - Estado: `TARGET_SELECTED_LOCAL_DOCUMENTAL`.
@@ -477,7 +484,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Live Microsoft/SharePoint/Dataverse desde CDF: `NO_EJECUTADO`.
 - Proximo movimiento unico: publicar `INDICE_CORTE_AGENTES_20260617.md` como atomo documental SharePoint con gate de document publish, o mantenerlo local si no hay owner/gate.
 
-## Delta Abierto 43
+## Historial De Delta 43
 
 - Publicar `INDICE_CORTE_AGENTES_20260617.md` como atomo documental SharePoint.
 - Estado: `LIVE_SHAREPOINT_DOCUMENT_WRITE`.
@@ -489,7 +496,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - No ejecutado: `Home.aspx` edit, page publish, permisos, navegacion, Power Platform, Dataverse mutation from CDF.
 - Proximo movimiento unico: decidir `Home link` o `Dataverse pointer` para el nuevo atomo.
 
-## Delta Abierto 44
+## Historial De Delta 44
 
 - Registrar `INDICE_CORTE_AGENTES_20260617.md` como puntero metadata-only en Dataverse.
 - Estado: `DELTA_APLICADO`.
@@ -504,7 +511,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - No ejecutado: contenido documental en Dataverse, `Home.aspx` edit, page publish, permisos, navegacion, flow run.
 - Proximo movimiento unico: elegir binding UI/surface posterior para enlazar el indice ya publicado y registrado.
 
-## Delta Abierto 45
+## Historial De Delta 45
 
 - Publicar binding UI/surface alternativo para enlazar los tres atomos vivos de SeshatHub.
 - Estado: `LIVE_SHAREPOINT_DOCUMENT_WRITE`.
@@ -516,7 +523,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - No ejecutado: `Home.aspx` edit, page publish, permisos, navegacion, Dataverse payload, flow run.
 - Proximo movimiento unico: registrar el nuevo binding como puntero metadata-only en Dataverse si se decide mantener simetria de memoria larga.
 
-## Delta Abierto 46
+## Historial De Delta 46
 
 - Registrar `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md` como puntero metadata-only en Dataverse.
 - Estado: `DELTA_APLICADO`.

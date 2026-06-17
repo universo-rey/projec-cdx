@@ -2,6 +2,12 @@
 
 Siguiente movimiento unico para `PROJEC CDX`.
 
+## Regla Anti-Ruido
+
+- Solo el bloque `Paso Siguiente` declara el movimiento actual.
+- Todo lo que aparece como historial esta supersedido o cerrado como evidencia.
+- No crear paquetes nuevos, no releer SGIN y no rehidratar Dataverse otra vez salvo orden explicita.
+
 ## Paso Siguiente
 
 Etapa actual: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
@@ -56,7 +62,7 @@ Cloud. Evidencia:
 
 ## Historial Supersedido
 
-Movimiento unico actual: `delta_select_next_metadata_lane_after_max_state_fan_in`.
+Movimiento historico supersedido: `delta_select_next_metadata_lane_after_max_state_fan_in`.
 
 El fan-in de seis agentes ya fijo el maximo estado real alcanzado en todas las superficies. Evidencia: `operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md`, `operativa/MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.csv`, `operativa/FAN_IN_AGENTES_MAXIMO_ESTADO_REAL_20260617.csv` y `hitos/20260617-maximo-estado-real-superficies-v1`.
 
@@ -98,13 +104,13 @@ El delta `delta_e_cdf_split_context_evidence` quedo cerrado en `cdf-soluciones` 
 
 Precondicion antes de cualquier PR sobre `seshat-bootstrap-sdu-cn`: resolver de forma gobernada el hallazgo local `.env.local` con `OPENAI_API_KEY=` detectado por el validador, sin imprimir ni mover secretos sin orden explicita.
 
-La siguiente accion no es mergear PRs ni ejecutar live writes. Es elegir un unico carril de lanzamiento: pegar prompt en Codex Cloud UI o ejecutar un thread SDK local metadata-only.
+Accion historica supersedida: elegir un carril de lanzamiento Cloud UI o SDK local metadata-only.
 
 La revision de Corte del plan maestro quedo integrada y W1 ya clasifico los `13` repos dirty en `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`.
 
 El owner acepto preparar y abrir el modelo no lineal recomendado. Quedaron abiertos seis hilos reales desde los paquetes `5+1` en `operativa/thread-packets-20260617/`.
 
-La siguiente accion no es limpiar todo ni crear mapas masivos. Es lanzar un unico prompt/carril de consumo, manteniendo gate `metadata-only` hasta nueva orden explicita.
+Accion historica supersedida: lanzar un unico prompt/carril de consumo con gate `metadata-only`.
 
 Modo requerido: read-only/diff review primero; cualquier mutacion posterior debe tener target exacto, owner, rollback, postcheck y evidencia.
 
@@ -113,7 +119,7 @@ No declarar cierre total todavia. La mesa de seis agentes dejo el fan-in prelimi
 El paquete preliminar quedo versionado en `hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1`.
 La matriz CSV ya quedo clasificada por `paquete`, `estado`, `owner`, `accion_propuesta`, `riesgo` y `stop_condition`.
 
-Movimiento unico actual: actualizar el binding de `SeshatHubRegistroN.8/SitePages/Home.aspx` para enlazar los dos atomos visibles ya publicados: Seshat Home y Corte/Proposito.
+Movimiento historico supersedido: actualizar el binding de `SeshatHubRegistroN.8/SitePages/Home.aspx` para enlazar los dos atomos visibles ya publicados: Seshat Home y Corte/Proposito.
 
 La wave Dataverse/Power Platform queda rehidratada como `OBSERVED_READ_ONLY` y `TENANT_ONLY`: `HUBDesarrollo`, soluciones, bots/copilots, workflows, colas SDU, Planner agregado y Teams visibles ya tienen evidencia local en `operativa/READBACK_DATAVERSE_POWER_PLATFORM_TENANT_ESCRIBANIA_BITSCH_20260616.md`.
 

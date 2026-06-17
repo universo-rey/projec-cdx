@@ -8,12 +8,16 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 - Cierre total: `NO_DECLARADO`.
 - Etapa: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
 - Riesgo principal: mezclar binding UI, cierre documental, Dataverse y cambios Git en un solo paquete.
+- Regla de ruido: no crear paquetes nuevos si el delta ya esta cubierto por hito, readback, indice o paquete existente.
 
 ## Revision Paquetes Router Agents Codex Cloud
 
 - Estado: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
 - Paquetes preparados: `thread-packets-20260617`, hito root repos, hito Cloud
   preflight, hito SDK launch, prompt Cloud UI y zips historicos.
+- Vigencia: `thread-packets-20260617` ya fue consumido por live dispatch/fan-in; no reabrirlo como pendiente de creacion.
+- Zips historicos: `packages/` es canon visible; `.codex/workpapers/.../source_zips` es espejo exacto verificado por SHA-256.
+- Ruido identificado sin borrado: `hitos/20260617-ajuste-sgin-ya-leido-v1` es carpeta vacia y queda `EMPTY_SUPERSEDED_NO_CANON`.
 - `router`: superficie distribuida; no se encontro repo independiente.
 - `codex-root`: limpio en `main`, sin PR abierto.
 - `agents-root`: limpio en rama y PR draft #1 abierto.

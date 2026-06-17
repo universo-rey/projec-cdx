@@ -5,6 +5,14 @@ Para una lectura rapida por niveles, usar [MAPA_CAPAS.md](C:/Users/enzo1/PROJEC%
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
+## Vigencia 20260617
+
+- [Estado actual](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md): `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
+- [Siguiente movimiento](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md): `delta_select_next_consumer_from_dataverse_live_rows`.
+- [Pendientes normalizados](C:/Users/enzo1/PROJEC%20CDX/operativa/PENDIENTES_HOY_20260617.md): carriles vivos, supersedidos y ruido.
+- [Maximo estado real](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md): fan-in de superficies.
+- [Indice maestro de hitos](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md): fuente unica de paquetes versionados.
+
 ## Al Frente
 
 - [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md)
