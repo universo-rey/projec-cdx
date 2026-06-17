@@ -1,0 +1,26 @@
+id: 20260616-perfil-windows-canon-v1
+fecha: 2026-06-16
+superficie: PROJEC CDX
+tipo: perfil_windows_canon_bundle
+estado: GREEN_LOCAL
+fuente:
+  - patrones/normalizacion-perfil-windows.md
+  - patrones/perfil-windows-junctions-compatibilidad.md
+  - patrones/perfil-windows-snapshots-gmt.md
+  - operativa/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md
+salida:
+  - hitos/20260616-perfil-windows-canon-v1/
+rollback: remover la carpeta versionada del bundle
+postcheck:
+  - verificar existencia de README.md, READBACK.md, MANIFEST.yaml e INDICE.csv
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - no_pattern_edits
+  - no_recipe_edits
+  - no_process_edits
+evidencia:
+  - hitos/20260616-perfil-windows-canon-v1/README.md
+  - hitos/20260616-perfil-windows-canon-v1/READBACK.md
+  - hitos/20260616-perfil-windows-canon-v1/MANIFEST.yaml
+  - hitos/20260616-perfil-windows-canon-v1/INDICE.csv

@@ -1,0 +1,9 @@
+item,tipo,ruta,estado,nota
+README.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/cabina_relationship_audit_20260614/README.md,ACTIVE,portada de la corrida
+MAPA.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/cabina_relationship_audit_20260614/MAPA.md,ACTIVE,mapa de la corrida
+CABINA_RELATIONSHIP_AUDIT_EXECUTIVE.xlsx,workbook,C:/Users/enzo1/PROJEC%20CDX/outputs/cabina_relationship_audit_20260614/CABINA_RELATIONSHIP_AUDIT_EXECUTIVE.xlsx,ACTIVE,tablero ejecutivo
+CABINA_RELATIONSHIP_AUDIT_EXECUTIVE.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/cabina_relationship_audit_20260614/CABINA_RELATIONSHIP_AUDIT_EXECUTIVE.md,ACTIVE,resumen ejecutivo
+CABINA_RELATIONSHIP_AUDIT_EXECUTIVE.csv,data,C:/Users/enzo1/PROJEC%20CDX/outputs/cabina_relationship_audit_20260614/CABINA_RELATIONSHIP_AUDIT_EXECUTIVE.csv,ACTIVE,export tabular
+CABINA_RELATIONSHIP_AUDIT_DEEP.xlsx,workbook,C:/Users/enzo1/PROJEC%20CDX/outputs/cabina_relationship_audit_20260614/CABINA_RELATIONSHIP_AUDIT_DEEP.xlsx,ACTIVE,tablero profundo
+CABINA_RELATIONSHIP_AUDIT_DEEP.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/cabina_relationship_audit_20260614/CABINA_RELATIONSHIP_AUDIT_DEEP.md,ACTIVE,resumen profundo
+CABINA_RELATIONSHIP_AUDIT_DEEP.csv,data,C:/Users/enzo1/PROJEC%20CDX/outputs/cabina_relationship_audit_20260614/CABINA_RELATIONSHIP_AUDIT_DEEP.csv,ACTIVE,export tabular

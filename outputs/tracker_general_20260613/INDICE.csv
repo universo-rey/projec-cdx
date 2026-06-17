@@ -1,0 +1,6 @@
+item,tipo,ruta,estado,nota
+README.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/tracker_general_20260613/README.md,ACTIVE,portada de la corrida
+MAPA.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/tracker_general_20260613/MAPA.md,ACTIVE,mapa de la corrida
+tracker.xlsx,workbook,C:/Users/enzo1/PROJEC%20CDX/outputs/tracker_general_20260613/tracker.xlsx,ACTIVE,workbook principal
+build_tracker_general.mjs,script,C:/Users/enzo1/PROJEC%20CDX/outputs/tracker_general_20260613/build_tracker_general.mjs,ACTIVE,script de generacion
+formula_errors.ndjson,data,C:/Users/enzo1/PROJEC%20CDX/outputs/tracker_general_20260613/formula_errors.ndjson,ACTIVE,chequeo de formulas

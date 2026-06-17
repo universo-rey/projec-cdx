@@ -1,0 +1,8 @@
+id: 20260616-wave-atomica-repos-lane-c-cdf-soluciones-v1
+type: wave_atomica_repos_lane_c_cdf_soluciones
+status: prepared
+repo: cdf-soluciones
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - no_repo_mutation

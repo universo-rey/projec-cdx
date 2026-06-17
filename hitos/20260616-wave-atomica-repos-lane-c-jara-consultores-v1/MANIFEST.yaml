@@ -1,0 +1,8 @@
+id: 20260616-wave-atomica-repos-lane-c-jara-consultores-v1
+type: wave_atomica_repos_lane_c_jara_consultores
+status: prepared
+repo: jara-consultores
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - no_repo_mutation

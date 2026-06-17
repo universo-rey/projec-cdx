@@ -1,0 +1,28 @@
+wave_id: 20260617-lane-b-corte-agent-index-dataverse-pointer-v1
+scope: lane_b_corte_agent_index_dataverse_pointer
+tenant_name: Escribania Bitsch
+tenant_id: 858a0852-44a1-413e-a0fe-f053949797d6
+environment_name: HUBDesarrollo
+environment_id: 7f65fc04-c27a-ea0d-bd2d-266aa9203c1e
+environment_url: https://org084965d9.crm.dynamics.com
+mode: metadata_only
+status: DELTA_APLICADO
+agents_fan_in:
+  - cdf.project_manager_delegador
+  - cdf.prompt_router
+  - cdf.connection_control_guard
+  - cdf.microsoft_graph_guard
+  - cdf.evidence_validator
+  - cdf.solution_architect
+evidence:
+  - operativa/READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md
+  - operativa/READBACK_DATAVERSE_POINTER_INDICE_CORTE_AGENTES_20260617.md
+  - operativa/DATAVERSE_PROMOTION_INDICE_CORTE_AGENTES_20260617.json
+  - C:/Users/enzo1/Documents/GitHub/cdf-soluciones/03_OPERACION/SESHAT_RESTO_CORTE_DELEGATION/INDICE_CORTE_AGENTES_20260617.md
+rollback: hitos/20260617-lane-b-corte-agent-index-dataverse-pointer-v1/ROLLBACK.md
+postcheck: hitos/20260617-lane-b-corte-agent-index-dataverse-pointer-v1/POSTCHECK.md
+validator:
+  - tools/validate_sdu_dataverse_metadata_wave.ps1 -WaveId 20260617-lane-b-corte-agent-index-dataverse-pointer-v1
+  - tools/promote_lane_b_corte_agent_index_dataverse.ps1
+stop_condition: en_espera_de_cierre_home_link_or_dataverse_pointer_postcheck
+next_delta: delta_lane_b_home_link_or_ui_surface_binding_after_pointer

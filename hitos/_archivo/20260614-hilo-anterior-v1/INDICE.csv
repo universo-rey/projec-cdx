@@ -1,0 +1,19 @@
+orden,frente,hito,evidencia
+1,entorno,Continuidad en hilo fresco con estado verificado,HANDOFF_THREAD_HEAVY_20260614.md
+2,entorno,Reglas de secretos y runtime sensible reafirmadas,HANDOFF_THREAD_HEAVY_20260614.md
+3,powershell,Terminal integrada alineada a pwsh,HANDOFF_THREAD_HEAVY_20260614.md
+4,powershell,pwsh disponible en version 7.6.2,HANDOFF_THREAD_HEAVY_20260614.md
+5,powershell,Perfil Codex validado con LAYOUT_OK,tools\test_codex_powershell_layout.ps1
+6,control,total rapido ejecutado con YELLOW 15 green 6 yellow 0 red,tools\codex-control-total.ps1
+7,repos,Repos principales limpios en main y rama protegida,tools\codex-control-total.ps1
+8,codex-root,Inventario de root generado,CODEX_ROOT_INVENTORY.csv
+9,codex-root,Plan de movimiento generado,CODEX_ROOT_MOVE_PLAN.json
+10,codex-root,118 movimientos historicos registrados como DONE,CODEX_ROOT_MOVE_RESULTS.json
+11,outputs,Mapa de corridas visibles consolidado,outputs\MAPA.md
+12,cabina,Auditoria de relaciones de cabina generada,outputs\cabina_relationship_audit_20260614
+13,workbook,Workbook base generado,outputs\workbook_base_20260613
+14,tracker,Tracker general generado,outputs\tracker_general_20260613
+15,tracker,Tracker workbook generado,outputs\tracker_workbook_20260613
+16,inicio,Inicio workbook generado,outputs\inicio_workbook_20260613
+17,dataverse,Dataverse blocker frontier generado,outputs\dataverse_blocker_frontier_20260614
+18,handoff,Handoff de hilo pesado creado,HANDOFF_THREAD_HEAVY_20260614.md

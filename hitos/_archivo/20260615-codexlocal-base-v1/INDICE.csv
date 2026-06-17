@@ -1,0 +1,7 @@
+item,tipo,ruta,estado,nota
+CodexLocal,workspace_root,C:/Users/enzo1/Documents/CodexLocal,ACTIVE,base local a leer primero
+CODEXLOCAL_SURFACE_MAP_20260615.csv,inventario,C:/Users/enzo1/PROJEC CDX/inventarios/CODEXLOCAL_SURFACE_MAP_20260615.csv,CREATED,mapa raiz de CodexLocal
+CODEXLOCAL_SPLIT_CABINA_20260615.csv,inventario,C:/Users/enzo1/PROJEC CDX/inventarios/CODEXLOCAL_SPLIT_CABINA_20260615.csv,CREATED,mapa del split cabina
+CODEXLOCAL_INDEX_ONLY_CROSSWALK_20260615.csv,inventario,C:/Users/enzo1/PROJEC CDX/inventarios/CODEXLOCAL_INDEX_ONLY_CROSSWALK_20260615.csv,CREATED,cruce de filas index-only contra CodexLocal
+cabina-universal-d-split-20260604,split_workspace,C:/Users/enzo1/Documents/CodexLocal/cabina-universal-d-split-20260604,ACTIVE_DELTA,contiene cinco paquetes/worktrees
+work-dispatch-sdk-gates,git_worktree,C:/Users/enzo1/Documents/CodexLocal/cabina-universal-d-split-20260604/work-dispatch-sdk-gates,ACTIVE_DELTA,paquete principal para runtime Dataverse Power Platform Teams

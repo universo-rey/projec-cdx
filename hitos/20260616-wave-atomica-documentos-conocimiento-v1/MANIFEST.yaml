@@ -1,0 +1,30 @@
+id: 20260616-wave-atomica-documentos-conocimiento-v1
+fecha: 2026-06-16
+superficie: PROJEC CDX
+tipo: wave_atomica_documentos_conocimiento
+estado: GREEN_LOCAL
+fuente:
+  - docs/superpowers/plans/2026-06-16-wave-atomica-documentos-conocimiento.md
+  - C:/Users/enzo1/Documents/README.md
+  - C:/Users/enzo1/Documents/Codex/README.md
+  - C:/Users/enzo1/Documents/GitHub/README.md
+  - patrones/documentos-canon-atomico.md
+  - recipes/documentos-canon-atomico.md
+  - procesos/documentos-canon-atomico.md
+salida:
+  - hitos/20260616-wave-atomica-documentos-conocimiento-v1/
+rollback: remover la carpeta versionada y revertir las referencias documentales nuevas
+postcheck:
+  - root Documents index visible
+  - Codex chronology visible
+  - GitHub atlas clasificado
+  - canon reusable enlazado
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - no_folder_moves
+evidencia:
+  - README.md
+  - READBACK.md
+  - MANIFEST.yaml
+  - INDICE.csv

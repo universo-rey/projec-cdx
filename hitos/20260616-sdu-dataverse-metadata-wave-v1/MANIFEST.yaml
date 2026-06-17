@@ -1,0 +1,43 @@
+package_id: SDU-DV-METADATA-WAVE-20260616-01
+package_version: v1
+status: METADATA_ONLY_PREPARED
+created_at_local: 2026-06-16T18:15:00-03:00
+tenant_scope: Escribania Bitsch
+tenant_id: 858a0852-44a1-413e-a0fe-f053949797d6
+environment_name: HUBDesarrollo
+environment_url: https://org084965d9.crm.dynamics.com
+environment_id: 7f65fc04-c27a-ea0d-bd2d-266aa9203c1e
+allowed_mode: metadata_only
+blocked_modes:
+  - dataverse_write
+  - flow_run
+  - flow_activation
+  - sharepoint_document_open
+  - planner_title_dump
+  - teams_message_preview
+  - workqueue_payload_read
+inputs:
+  - inventarios/SGIN_DATAVERSE_POWER_PLATFORM_METADATA_CROSSWALK_20260616.csv
+  - inventarios/DATAVERSE_SDU_SGIN_SOLUTIONCOMPONENTS_20260616.csv
+outputs:
+  - hitos/20260616-sdu-dataverse-metadata-wave-v1/METADATA_HYDRATION_MATRIX.csv
+  - hitos/20260616-sdu-dataverse-metadata-wave-v1/METADATA_HYDRATION_MATRIX.json
+skill:
+  - C:/Users/enzo1/.codex/skills/sdu-dataverse-metadata-wave/SKILL.md
+recipe:
+  - recipes/sdu-dataverse-metadata-wave.md
+process:
+  - procesos/sdu-dataverse-metadata-wave.md
+pattern:
+  - patrones/sdu-dataverse-metadata-wave.md
+validator:
+  - tools/validate_sdu_dataverse_metadata_wave.ps1
+rollback_required: true
+postcheck_required: true
+stop_conditions:
+  - target_identity_ambiguous
+  - candidate_count_not_one
+  - secret_detected
+  - payload_or_document_required
+  - rollback_missing
+  - postcheck_missing

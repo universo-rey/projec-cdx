@@ -1,0 +1,6 @@
+item,tipo,ruta,estado,nota
+README.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/workbook_base_20260613/README.md,ACTIVE,portada de la corrida
+MAPA.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/workbook_base_20260613/MAPA.md,ACTIVE,mapa de la corrida
+workbook_base.xlsx,workbook,C:/Users/enzo1/PROJEC%20CDX/outputs/workbook_base_20260613/workbook_base.xlsx,ACTIVE,workbook principal
+build_workbook.mjs,script,C:/Users/enzo1/PROJEC%20CDX/outputs/workbook_base_20260613/build_workbook.mjs,ACTIVE,script de generacion
+formula_errors.ndjson,data,C:/Users/enzo1/PROJEC%20CDX/outputs/workbook_base_20260613/formula_errors.ndjson,ACTIVE,chequeo de formulas

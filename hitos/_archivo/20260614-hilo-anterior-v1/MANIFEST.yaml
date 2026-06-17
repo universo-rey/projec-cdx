@@ -1,0 +1,37 @@
+id: hitos-20260614-hilo-anterior-v1
+version: v1
+fecha: 2026-06-14
+raiz: C:\Users\enzo1\PROJEC CDX
+estado: versionado
+semaforo: GREEN_ARCHIVED
+control_total:
+  checks: 21
+  green: 15
+  yellow: 6
+  red: 0
+fuentes:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260614-hilo-anterior-v1\HANDOFF_THREAD_HEAVY_20260614.md
+  - C:\Users\enzo1\PROJEC CDX\outputs\README.md
+  - C:\Users\enzo1\PROJEC CDX\outputs\MAPA.md
+  - C:\Users\enzo1\PROJEC CDX\CODEX_ROOT_INVENTORY.csv
+  - C:\Users\enzo1\PROJEC CDX\CODEX_ROOT_MOVE_PLAN.json
+  - C:\Users\enzo1\PROJEC CDX\CODEX_ROOT_MOVE_RESULTS.json
+restricciones:
+  - No leer secretos.
+  - No tocar auth.json ni cap_sid.
+  - No editar global-state ni SQLite sin orden explicita.
+  - Abrir rama o artefacto separado antes de tocar repos.
+  - Mantener respuestas cortas y operativas.
+resumen:
+  hitos_registrados: 73
+  corridas_outputs_visibles: 6
+  movimientos_codex_root_done: 118
+  destinos_movimientos:
+    backups: 85
+    workpapers: 22
+    tmp: 9
+    log: 2
+cierre_posterior:
+  estado: GREEN_ARCHIVED
+  absorbido_por: 20260615-hilo-origen-v1
+  reclasificado_por: 20260615-semaforo-verde-historicos-v1

@@ -1,0 +1,12 @@
+id: 20260616-wave-atomica-repos-lane-b-v1
+type: wave_atomica_repos_lane_b
+status: prepared
+scope:
+  - microsoft-agents-governed-lab
+  - tcu-agentic-runtime-control
+  - tge-agentic-runtime-control-escribania
+  - torre-gemela-escribania
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - no_lane_overlap

@@ -1,0 +1,21 @@
+name: pre-cierre-constitutivo-corte-agentes-v1
+status: PRELIMINARES
+closure_total: NO_DECLARADO
+summary: Versiona la revision preliminar de cierre constitutivo de la corte de agentes sin declarar cierre total ni live validado.
+artifacts:
+  - README.md
+  - READBACK.md
+  - INDICE.csv
+  - MANIFEST.yaml
+sources:
+  - operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md
+  - operativa/PLAN_CIERRE_UNIVERSAL_20260616.md
+  - operativa/INFORME_CRONOLOGICO_CIERRE_20260615_20260616.md
+  - operativa/PRELIMINARES_CIERRE_TOTAL_20260616.md
+  - operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md
+  - operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv
+gates:
+  - metadata-only
+  - no-live-write
+  - no-total-closeout
+  - no-secrets

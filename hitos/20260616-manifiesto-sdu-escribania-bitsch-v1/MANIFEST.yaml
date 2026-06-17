@@ -1,0 +1,33 @@
+version: 20260616-manifiesto-sdu-escribania-bitsch-v1
+status: BORRADOR_V1_FAN_IN_INTEGRATED
+date: 2026-06-16
+surface: LOCAL_DOCUMENTAL
+live_microsoft_dataverse: NO_EJECUTADO
+owner_operativo_sdu: Enzo Figueroa
+authority_boundary:
+  institutional_authority:
+    - Escribana Titular
+    - Escribano Adscripto
+    - resoluciones internas vigentes
+    - marco normativo aplicable
+  openai_role: medio_de_ejecucion_no_fuente_de_autoridad
+  ai_role: capacidad_instrumental_no_sustitutiva
+inputs:
+  - voluntad_rectora_owner_20260616
+outputs:
+  - operativa/ORDEN_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md
+  - operativa/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md
+  - operativa/READBACK_FAN_IN_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md
+  - operativa/MATRIZ_HUELLA_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.csv
+validator:
+  command: pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workbench.ps1"
+  status: PASS_OBSERVED
+rollback: eliminar archivos nuevos de esta wave local
+postcheck: borrador distingue owner operativo, autoridad institucional, IA instrumental y cierre por evidencia
+stop_condition:
+  - authority_confusion
+  - live_write_requested_without_order
+  - ia_substitutes_notarial_decision
+  - bypass_de_control
+  - fan_in_missing
+next_delta: someter borrador a revision del owner y preparar version firmable si se aprueba

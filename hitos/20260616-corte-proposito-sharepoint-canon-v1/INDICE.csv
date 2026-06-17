@@ -1,0 +1,6 @@
+tipo,ruta,estado
+readback,hitos/20260616-corte-proposito-sharepoint-canon-v1/READBACK.md,DELTA_APLICADO
+evidencia,hitos/20260616-corte-proposito-sharepoint-canon-v1/EVIDENCIA.md,DELTA_APLICADO
+manifest,hitos/20260616-corte-proposito-sharepoint-canon-v1/MANIFEST.yaml,DELTA_APLICADO
+huella,operativa/HUELLA_ATOMICA_CORTE_PROPOSITO_20260616.md,LIVE_SHAREPOINT_FILE_WRITE
+json,operativa/SHAREPOINT_CORTE_PROPOSITO_PROMOTION_20260616.json,POSTCHECK

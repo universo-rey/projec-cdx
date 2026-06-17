@@ -1,0 +1,29 @@
+id: 20260616-limpieza-pc-local-canon-v1
+fecha: 2026-06-16
+superficie: PROJEC CDX
+tipo: limpieza_pc_local_canon_bundle
+estado: GREEN_LOCAL
+fuente:
+  - recipes/limpieza-pc-local-segura.md
+  - procesos/limpieza-pc-local-segura.md
+  - patrones/INDICE_PATRONES.md
+subpatrones:
+  - P-007 retencion gobernada
+  - P-008 validador antes de cierre
+  - P-012 no confundir estados
+salida:
+  - hitos/20260616-limpieza-pc-local-canon-v1/
+rollback: remover la carpeta versionada del bundle
+postcheck:
+  - verificar existencia de README.md, READBACK.md, MANIFEST.yaml e INDICE.csv
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - no_pattern_edits
+  - no_recipe_edits
+  - no_process_edits
+evidencia:
+  - hitos/20260616-limpieza-pc-local-canon-v1/README.md
+  - hitos/20260616-limpieza-pc-local-canon-v1/READBACK.md
+  - hitos/20260616-limpieza-pc-local-canon-v1/MANIFEST.yaml
+  - hitos/20260616-limpieza-pc-local-canon-v1/INDICE.csv
