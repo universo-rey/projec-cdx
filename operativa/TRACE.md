@@ -671,6 +671,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-cloud-dataverse-preflight-v1`.
 - Cierre: `CLOUD_DATAVERSE_PREFLIGHT_READY`; `context_ok=True`, `context_drift=[]`, cloud bridge `PASS`, sin task Cloud, sin Dataverse write y sin Microsoft live write. Proximo delta unico `delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread`.
 
+## Root Repos Agents Codex Review
+
+- Fuente: el owner marco que faltaban `agents-root` y `codex-root` en la cuenta operativa.
+- Proceso: verificar `C:/Users/enzo1/.codex` y `C:/Users/enzo1/.agents`, corregir en `agents-root` la frontera de versionado de `recipes/` y `codex/`, stagear explicitamente, commitear, push y PR draft.
+- Salida: `operativa/READBACK_ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.md`, `operativa/ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.csv`.
+- Hito: `hitos/20260617-root-repos-agents-codex-review-v1`.
+- Cierre: `ROOT_REPOS_REVIEWED_AGENTS_PR_READY`; `codex-root` limpio en main, `agents-root` PR #1 listo, cuenta operativa corregida a 15 repos mas `PROJEC CDX`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

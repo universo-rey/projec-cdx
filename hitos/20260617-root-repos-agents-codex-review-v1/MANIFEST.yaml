@@ -1,0 +1,20 @@
+version: 20260617-root-repos-agents-codex-review-v1
+status: ROOT_REPOS_REVIEWED_AGENTS_PR_READY
+control_tower: PROJEC CDX
+repos:
+  - codex-root
+  - agents-root
+agents_root:
+  branch: codex/agents-root-codex-cleanup-skills-20260617
+  head: 6b82f5e
+  pr: https://github.com/universo-rey/agents-root/pull/1
+codex_root:
+  branch: main
+  head: eed6262
+  status: clean
+validation:
+  - agents_index_paths_exist
+  - no_actual_secret_pattern_hits
+  - agents_root_clean
+  - codex_root_clean
+next_delta: delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread
