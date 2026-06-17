@@ -4,21 +4,32 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`.
+Etapa actual: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
 
 Movimiento unico actual:
-`delta_dataverse_rehidratacion_desde_paquetes_existentes`.
+`delta_select_next_consumer_from_dataverse_live_rows`.
 
-SGIN ya fue leido y paquetizado. Dataverse debe rehidratar la mesa desde la
-memoria larga y desde paquetes existentes. Evidencia:
+SGIN ya fue leido y paquetizado. Dataverse ya fue leido live en
+`HUBDesarrollo` y confirma las filas source/evidence escritas. Evidencia:
 `operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`,
 `operativa/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv`,
-`dataverse/ANCLA_REHIDRATACION.md` y `dataverse/GATE.md`.
+`operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`,
+`tools/read_dataverse_rehydration_live.ps1`, `dataverse/ANCLA_REHIDRATACION.md`
+y `dataverse/GATE.md`.
 
-El siguiente movimiento no es re-leer SGIN ni reempaquetarlo. Es rehidratar
-Dataverse desde anclas y paquetes existentes, clasificar el estado como
-`local_evidence`, `metadata_only`, `prepared_not_executed`,
-`live_rows_confirmed` o `blocked`, y devolver un unico delta gobernado.
+El siguiente movimiento no es re-leer SGIN, reempaquetarlo ni rehidratar
+Dataverse otra vez. Es elegir un unico consumidor de las filas Dataverse vivas
+confirmadas y abrirlo con target, owner, rollback, postcheck y evidencia.
+
+## Paso Siguiente Previo 0
+
+Etapa previa: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`.
+
+Movimiento previo:
+`delta_dataverse_rehidratacion_desde_paquetes_existentes`.
+
+Quedo corregido por live read: Dataverse ya contenia `5/5` parejas
+source/evidence con conteo `1/1`.
 
 ## Paso Siguiente Previo
 
@@ -150,9 +161,10 @@ pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workben
 
 ## Resultado Esperado
 
-Ejecutar o preparar `delta_dataverse_rehidratacion_desde_paquetes_existentes`
-con retorno PASS/OBSERVED/FAIL, sin nueva lectura live, sin Dataverse write, sin
-Microsoft live write, sin flow run y sin task Cloud.
+Ejecutar o preparar `delta_select_next_consumer_from_dataverse_live_rows` con
+retorno PASS/OBSERVED/FAIL, sin Dataverse write, sin Microsoft live write, sin
+flow run y sin task Cloud. La lectura live ya fue ejecutada y confirmada; no
+repetirla salvo que el owner pida refresco.
 
 ## Criterio De Cierre
 

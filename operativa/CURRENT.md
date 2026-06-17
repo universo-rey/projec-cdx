@@ -4,20 +4,31 @@ Estado actual del trabajo de `PROJEC CDX`.
 
 ## Vigente 2026-06-17
 
-Etapa vigente: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`.
+Etapa vigente: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
 
-El owner corrigio el siguiente carril: SGIN ya fue leido y tambien
-paquetizado. La siguiente accion no es releer ni empaquetar otra vez; es
-rehidratar desde Dataverse usando los paquetes existentes.
+El owner corrigio el carril: Dataverse ya estaba escrito y no correspondia
+dejarlo atrasado como metadata-only. Se ejecuto live read solo-GET en
+`HUBDesarrollo` y quedaron confirmadas `5/5` parejas source/evidence con
+conteo `1/1` en `mon_sdu_source_artifacts` y `mon_sdu_evidences`.
 
 Evidencia: `operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`,
-`operativa/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv` y
+`operativa/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv`,
+`operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json` y
 `hitos/20260617-rehidratacion-dataverse-desde-paquetes-v1`.
 
 Siguiente delta unico:
-`delta_dataverse_rehidratacion_desde_paquetes_existentes`.
+`delta_select_next_consumer_from_dataverse_live_rows`.
 
 ## Vigente Previo 2026-06-17
+
+Etapa previa: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`.
+
+El owner corrigio el siguiente carril: SGIN ya fue leido y tambien
+paquetizado. La siguiente accion no era releer ni empaquetar otra vez; era
+rehidratar desde Dataverse usando los paquetes existentes. Ese paso quedo
+supersedido por live read confirmado porque Dataverse ya contenia las filas.
+
+## Vigente Previo 2 2026-06-17
 
 Etapa previa: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`.
 
@@ -32,7 +43,7 @@ Evidencia: `operativa/READBACK_NORMALIZACION_PENDIENTES_POST_PAQUETES_ROUTER_CLO
 Siguiente delta unico:
 `delta_sgin_documental_lists_metadata_read_only_preflight` quedo supersedido por correccion del owner: SGIN ya fue leido y paquetizado.
 
-## Vigente Previo 2 2026-06-17
+## Vigente Previo 3 2026-06-17
 
 Etapa previa: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
 
@@ -48,7 +59,7 @@ Evidencia: `operativa/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md`,
 Siguiente delta unico:
 `delta_normalize_pending_after_packages_router_cloud_review`.
 
-## Vigente Previo 3 2026-06-17
+## Vigente Previo 4 2026-06-17
 
 Etapa previa: `MAX_STATE_FAN_IN_VERIFIED`.
 
@@ -65,7 +76,7 @@ metadata pointer writes. Cierre total: `NO_DECLARADO`.
 Siguiente delta unico:
 `delta_select_next_metadata_lane_after_max_state_fan_in`.
 
-## Vigente Previo 4 2026-06-17
+## Vigente Previo 5 2026-06-17
 
 Etapa previa: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
 

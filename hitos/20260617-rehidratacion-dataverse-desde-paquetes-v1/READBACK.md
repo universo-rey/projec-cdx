@@ -1,10 +1,11 @@
 # Readback
 
-Estado: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`.
+Estado: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
 
-SGIN ya fue leido y paquetizado. La cola queda corregida hacia rehidratacion
-Dataverse desde paquetes existentes.
+SGIN ya fue leido y paquetizado. La cola queda corregida hacia Dataverse vivo:
+las filas source/evidence ya escritas fueron leidas en `HUBDesarrollo` y
+confirmadas con conteo `1/1`.
 
 Siguiente delta:
 
-`delta_dataverse_rehidratacion_desde_paquetes_existentes`
+`delta_select_next_consumer_from_dataverse_live_rows`

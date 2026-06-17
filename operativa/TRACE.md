@@ -741,7 +741,15 @@ Cadena operativa de `PROJEC CDX`.
 - Proceso: aplicar `dataverse-rehidratacion`, releer anclas Dataverse, clasificar SGIN como fuente cerrada consumible y fijar el siguiente delta desde memoria larga/paquetes existentes.
 - Salida: `operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`, `operativa/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv`.
 - Hito: `hitos/20260617-rehidratacion-dataverse-desde-paquetes-v1`.
-- Cierre: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`; siguiente delta unico `delta_dataverse_rehidratacion_desde_paquetes_existentes`.
+- Cierre original: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`; supersedido por live read confirmado en la seccion siguiente.
+
+## Dataverse Rehidratacion Live Read
+
+- Fuente: correccion del owner: Dataverse ya estaba escrito y el estado local estaba atrasado.
+- Proceso: ejecutar live read solo-GET contra `HUBDesarrollo` sobre `mon_sdu_source_artifacts` y `mon_sdu_evidences`, usando canonical ids ya registrados; sin `POST`, `PATCH`, imports, flows ni task Cloud.
+- Salida: `operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`, `tools/read_dataverse_rehydration_live.ps1`, readback y matriz de rehidratacion actualizados.
+- Hito: `hitos/20260617-rehidratacion-dataverse-desde-paquetes-v1`.
+- Cierre: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`; `5/5` parejas source/evidence con conteo `1/1`; siguiente delta unico `delta_select_next_consumer_from_dataverse_live_rows`.
 
 ## Regla
 

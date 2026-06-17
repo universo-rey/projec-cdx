@@ -21,6 +21,7 @@ Entrada corta para volver al carril Dataverse sin recorrer toda la superficie.
 - `ORDEN_LECTURA_CORTE_EJECUTORA_20260616.md`
 - `HUELLA_ATOMICA_SDU_OWNER_APPROVED_20260616.md`
 - `operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`
+- `operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`
 - `DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv`
 - `ANCLA_CIERRE_WAVE.md`
 - `hitos/20260616-sdu-dataverse-metadata-wave-v1`
@@ -33,3 +34,4 @@ Entrada corta para volver al carril Dataverse sin recorrer toda la superficie.
 - Las condiciones tecnicas de pausa son `delta_gobernado` y proximo paso, no bloqueo autonomo.
 - Si solo hace falta evidencia local, quedarse en `README.md` y `MAPA.md`.
 - Si hay que hidratar Dataverse con metadata atomica, usar `sdu-dataverse-metadata-wave` y cerrar en hito metadata-only antes de cualquier apply.
+- Si la fila ya fue escrita y el owner pide verdad actual, ejecutar live read solo-GET y clasificar como `live_rows_confirmed` cuando el conteo source/evidence sea `1/1`.

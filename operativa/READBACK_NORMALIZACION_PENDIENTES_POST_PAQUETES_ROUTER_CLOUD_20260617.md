@@ -1,7 +1,7 @@
 # Readback Normalizacion Pendientes Post Paquetes Router Cloud 20260617
 
-Estado: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`.
-Modo: `LOCAL_DOCUMENTAL`.
+Estado: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD_WITH_DATAVERSE_LIVE_READ`.
+Modo: `LOCAL_DOCUMENTAL_WITH_LIVE_READ_POSTCHECK`.
 Fecha: `2026-06-17`.
 Control tower: `PROJEC CDX`.
 Live writes ejecutados: `NO`.
@@ -21,6 +21,7 @@ supersedidos.
 
 Carriles vivos normalizados:
 
+- `Dataverse_live_rows_confirmed`
 - `SGIN_documental_lists_metadata`
 - `SPGovernance_soporte_metadata`
 - `SDU_runtime_queue_priorities`
@@ -40,11 +41,12 @@ Carriles cerrados/supersedidos:
 
 El siguiente movimiento unico recomendado queda:
 
-`delta_dataverse_rehidratacion_desde_paquetes_existentes`
+`delta_select_next_consumer_from_dataverse_live_rows`
 
-Motivo: SGIN ya fue leido y paquetizado. El siguiente movimiento debe
-rehidratar Dataverse desde paquetes existentes sin nueva lectura live, sin
-escribir en Microsoft, SharePoint, Dataverse ni Power Automate.
+Motivo: SGIN ya fue leido y paquetizado. Dataverse fue rehidratado con lectura
+live y confirmo `5/5` parejas source/evidence con conteo `1/1`. El siguiente
+movimiento debe elegir la superficie consumidora exacta, sin escribir en
+Microsoft, SharePoint, Dataverse ni Power Automate por inferencia.
 
 ## No Ejecutado
 
@@ -52,6 +54,7 @@ escribir en Microsoft, SharePoint, Dataverse ni Power Automate.
 - No se creo task Codex Cloud.
 - No se ejecuto flow.
 - No se escribio en Dataverse.
+- Si se ejecuto live read Dataverse solo-GET.
 - No se hizo merge de PRs.
 - No se toco ningun secreto.
 

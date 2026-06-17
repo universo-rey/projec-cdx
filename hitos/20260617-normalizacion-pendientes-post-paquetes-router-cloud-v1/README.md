@@ -1,6 +1,6 @@
 # Normalizacion Pendientes Post Paquetes Router Cloud v1
 
-Estado: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`.
+Estado: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD_WITH_DATAVERSE_LIVE_READ`.
 
 Hito documental para limpiar la cola operativa despues de revisar paquetes,
 router, agents-root, codex-root y Codex Cloud.
@@ -11,7 +11,8 @@ router, agents-root, codex-root y Codex Cloud.
 - `operativa/PENDIENTES_NORMALIZADOS_POST_PAQUETES_ROUTER_CLOUD_20260617.csv`
 - `operativa/PENDIENTES_HOY_20260617.md`
 - `operativa/NEXT.md`
+- `operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`
 
 ## Siguiente
 
-`delta_dataverse_rehidratacion_desde_paquetes_existentes`
+`delta_select_next_consumer_from_dataverse_live_rows`

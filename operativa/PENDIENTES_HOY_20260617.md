@@ -6,7 +6,7 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 - Bloqueos reales activos: `NINGUNO`.
 - Cierre total: `NO_DECLARADO`.
-- Etapa: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`.
+- Etapa: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
 - Riesgo principal: mezclar binding UI, cierre documental, Dataverse y cambios Git en un solo paquete.
 
 ## Revision Paquetes Router Agents Codex Cloud
@@ -30,10 +30,10 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 ## Carriles Vivos Normalizados
 
 1. `Dataverse_rehidratacion_desde_paquetes`.
-   - Estado: `ACTIVE_NEXT_RECOMMENDED`.
-   - Modo: local evidence / metadata-only; no nueva lectura live.
-   - Evidencia base: `dataverse/ANCLA_REHIDRATACION.md`, `dataverse/GATE.md`, `operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`.
-   - Siguiente accion: `delta_dataverse_rehidratacion_desde_paquetes_existentes`.
+   - Estado: `CLOSED_LIVE_READ_CONFIRMED`.
+   - Modo: live read-only confirmado; no write.
+   - Evidencia base: `dataverse/ANCLA_REHIDRATACION.md`, `dataverse/GATE.md`, `operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`, `operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`.
+   - Resultado: `5/5` parejas source/evidence con conteo `1/1`.
 
 2. `SGIN_documental_lists_metadata`.
    - Estado: `CLOSED_READ_AND_PACKAGED`.
@@ -85,10 +85,11 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 ## Proximo Movimiento Unico Recomendado
 
-`delta_dataverse_rehidratacion_desde_paquetes_existentes`.
+`delta_select_next_consumer_from_dataverse_live_rows`.
 
-Motivo: SGIN ya fue leido y paquetizado. El paso seguro ahora es rehidratar
-Dataverse desde paquetes existentes sin nueva lectura live ni writes.
+Motivo: SGIN ya fue leido y paquetizado, y Dataverse ya fue confirmado live.
+El paso seguro ahora es elegir la superficie consumidora exacta de esas filas
+vivas sin ejecutar writes por inferencia.
 
 ## Validadores Asociados
 
