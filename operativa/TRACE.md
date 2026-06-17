@@ -567,6 +567,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-cronologia-maestra-v1`.
 - Cierre: `CONSOLIDADO_OPERATIVO`; no declara cierre total, solo ordena la secuencia y fija el proximo delta `delta_home_binding_or_ui_surface_for_three_atoms`.
 
+## Codex Cloud Smoke Task
+
+- Fuente: rama `codex/dataverse-corte-ejecutora-v1` publicada para que Codex Cloud pueda consumir los ultimos ajustes.
+- Proceso: preparar prompt exacto de smoke cloud, con reglas de no secretos, no writes live y retorno PASS/OBSERVED/FAIL.
+- Salida: `operativa/CODEX_CLOUD_SMOKE_TASK_20260617.md`.
+- Hito: pendiente si el smoke cloud se ejecuta y devuelve evidencia.
+- Cierre: `READY_FOR_CODEX_CLOUD_UI`; el smoke local ya dio `context_ok=True`, falta correrlo en Cloud.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.
