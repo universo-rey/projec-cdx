@@ -6,7 +6,7 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 - Bloqueos reales activos: `NINGUNO`.
 - Cierre total: `NO_DECLARADO`.
-- Etapa: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
+- Etapa: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`.
 - Riesgo principal: mezclar binding UI, cierre documental, Dataverse y cambios Git en un solo paquete.
 
 ## Revision Paquetes Router Agents Codex Cloud
@@ -27,38 +27,42 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 - Maximo vivo historico: `LIVE_SHAREPOINT_DOCUMENT_WRITE` y `LIVE_METADATA_POINTER_WRITE`.
 - Evidencia: `operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md`, `operativa/MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.csv`, `operativa/FAN_IN_AGENTES_MAXIMO_ESTADO_REAL_20260617.csv`.
 
-## Pendientes Ejecutables Hoy
+## Carriles Vivos Normalizados
 
-1. Binding visible de SeshatHub `Home.aspx`.
-   - Target: `https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/SitePages/Home.aspx`.
-   - Objetivo minimo: enlazar atomos ya publicados: `HUELLA_ATOMICA_SESHAT_HOME_20260616.md`, `HUELLA_ATOMICA_CORTE_PROPOSITO_20260616.md` e `INDICE_CORTE_AGENTES_20260617.md`.
-   - Estado: superficie UI alternativa publicada; `Home.aspx` queda pendiente solo si hay UI/PnP/page API con permiso suficiente.
-   - Evidencia lista: `operativa/BINDING_HOME_SESHAT_UI_READY_20260616.md`.
-   - Evidencia ejecutada: `operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`.
+1. `SGIN_documental_lists_metadata`.
+   - Estado: `ACTIVE_NEXT_RECOMMENDED`.
+   - Modo: read-only preflight, metadata-only.
+   - Evidencia base: `operativa/READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md` y `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`.
+   - Siguiente accion: `delta_sgin_documental_lists_metadata_read_only_preflight`.
 
-2. Binding UI/surface posterior para `INDICE_CORTE_AGENTES_20260617.md`.
-   - Estado: SharePoint publicado, Dataverse registrado, binding UI alternativo publicado y puntero metadata-only del binding aplicado.
-   - Source Dataverse: `sharepoint:corte-agent-index:20260617:v1`.
-   - Evidence Dataverse: `evidence:sharepoint:corte-agent-index:20260617:v1`.
-   - Binding source Dataverse: `sharepoint:binding-ui-seshat-home-atomos:20260617:v1`.
-   - Binding evidence Dataverse: `evidence:sharepoint:binding-ui-seshat-home-atomos:20260617:v1`.
-   - Siguiente accion: `Home.aspx` solo cuando exista UI/PnP/page API con permiso suficiente; no es bloqueo humano.
+2. `SPGovernance_soporte_metadata`.
+   - Estado: `ACTIVE_CANDIDATE`.
+   - Modo: read-only preflight, metadata-only.
+   - Evidencia base: `operativa/READBACK_SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.md`.
 
-3. Consolidar hitos pendientes de la wave Microsoft/SGIN.
-   - Pendientes con hito aun no empaquetado: Microsoft live read, Dataverse tenant read, SGIN observed, SGIN crosswalk, candidate count, SPGovernance disambiguation, SGIN own governance link, mapa SGIN/SPGovernance/SDU.
-   - Estado: `CERRADO_COMO_MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
-   - Evidencia: `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`, `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv`, `hitos/20260617-microsoft-sgin-hitos-documental-v1`.
-   - Modo: documental/local; sin nueva lectura live.
+3. `SDU_runtime_queue_priorities`.
+   - Estado: `ACTIVE_CANDIDATE`.
+   - Modo: read-only preflight, metadata-only.
+   - Evidencia base: `operativa/READBACK_DATAVERSE_POWER_PLATFORM_TENANT_ESCRIBANIA_BITSCH_20260616.md`.
 
-4. Separar paquete Git de cierre preliminar.
-   - PROJEC CDX tiene muchos cambios locales y untracked ya clasificados.
-   - Accion de hoy: separar en paquetes: `cloud_runtime`, `hitos_canon`, `canon_recetas_patrones`, `dataverse_sharepoint_atoms`.
-   - Stop condition: no stagear ni cerrar sin revisar diff por paquete.
+4. `Home_aspx_page_binding`.
+   - Estado: `WAITING_TECHNICAL_CONTEXT`.
+   - No es bloqueo humano; espera UI/PnP/page API suficiente.
+   - Evidencia base: `operativa/BINDING_HOME_SESHAT_UI_READY_20260616.md` y `operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`.
 
-5. CDF `seshat/resto-corte`.
-   - Repo: `C:/Users/enzo1/Documents/GitHub/cdf-soluciones`.
-   - Estado: paquetes locales/documentales creados; cambios sin commitear.
-   - Accion de hoy: revisar y versionar paquete CDF separado, sin tocar `README.md` preexistente si no corresponde.
+5. `Codex_Cloud_UI_smoke_capture`.
+   - Estado: `WAITING_OWNER_EXTERNAL_TASK`.
+   - No es bloqueo local; espera que el owner ejecute el prompt en UI Cloud y traiga el resultado.
+   - Evidencia base: `operativa/CODEX_CLOUD_SMOKE_TASK_20260617.md` y `operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md`.
+
+## Supersedidos Cerrados
+
+- Consolidar hitos Microsoft/SGIN: `SUPERSEDED_CLOSED` por `20260617-microsoft-sgin-hitos-documental-v1`.
+- Separar paquete Git generico: `SUPERSEDED_CLOSED` por paquetes scoped, root repos review y max-state fan-in.
+- CDF `seshat/resto-corte`: `SUPERSEDED_CLOSED` por PR draft #28 y readback CDF split.
+- Paquetes `5+1`: `SUPERSEDED_CLOSED` por live dispatch y fan-in final.
+- Buscar repo `router`: `SUPERSEDED_CLOSED`; router es superficie distribuida, no repo independiente observado.
+- Setup Codex Cloud base: `SUPERSEDED_CLOSED`; local smoke/bridge PASS y Cloud UI queda externa.
 
 ## Pendientes En Espera Gobernada
 
@@ -76,11 +80,10 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 ## Proximo Movimiento Unico Recomendado
 
-Normalizar pendientes historicos/supersedidos despues de la revision de
-paquetes/router/agents/Cloud y dejar solo carriles vivos: SGIN
-listas/bibliotecas, SPGovernance soporte, SDU runtime queues, Home.aspx cuando
-exista permiso UI/PnP/page API suficiente, o captura de smoke Codex Cloud UI si
-el owner ejecuta la task externa.
+`delta_sgin_documental_lists_metadata_read_only_preflight`.
+
+Motivo: es el carril vivo mas seguro, no depende de UI externa y debe empezar
+en lectura/metadata-only.
 
 ## Validadores Asociados
 

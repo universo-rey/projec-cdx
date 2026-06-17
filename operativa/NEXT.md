@@ -4,9 +4,26 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
+Etapa actual: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`.
 
 Movimiento unico actual:
+`delta_sgin_documental_lists_metadata_read_only_preflight`.
+
+La cola fue normalizada: quedan separados carriles vivos, espera tecnica,
+espera externa y cierres supersedidos. Evidencia:
+`operativa/READBACK_NORMALIZACION_PENDIENTES_POST_PAQUETES_ROUTER_CLOUD_20260617.md`,
+`operativa/PENDIENTES_NORMALIZADOS_POST_PAQUETES_ROUTER_CLOUD_20260617.csv` y
+`hitos/20260617-normalizacion-pendientes-post-paquetes-router-cloud-v1`.
+
+El siguiente movimiento no es reabrir mapa ni limpiar historicos. Es tomar el
+carril vivo recomendado: `SGIN_documental_lists_metadata`, en modo read-only
+preflight y metadata-only, sin abrir documentos sensibles ni ejecutar flows.
+
+## Paso Siguiente Previo
+
+Etapa previa: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
+
+Movimiento previo:
 `delta_normalize_pending_after_packages_router_cloud_review`.
 
 Ya quedo revisado si habia paquetes preparados, la superficie `router`, los
@@ -16,16 +33,7 @@ Cloud. Evidencia:
 `operativa/PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.csv` y
 `hitos/20260617-paquetes-router-agents-codex-cloud-review-v1`.
 
-El siguiente movimiento no es relevar mas. Es normalizar pendientes
-historicos/supersedidos y dejar solo carriles vivos:
-`SGIN_documental_lists_metadata`, `SPGovernance_soporte_metadata`,
-`SDU_runtime_queue_priorities`, `Home_aspx_page_binding` si existe contexto
-UI/PnP/page API suficiente, o `Codex_Cloud_UI_smoke_capture` si el owner corre
-el prompt externo.
-
-## Paso Siguiente Previo
-
-Etapa previa: `MAX_STATE_FAN_IN_VERIFIED`.
+## Historial Supersedido
 
 Movimiento unico actual: `delta_select_next_metadata_lane_after_max_state_fan_in`.
 
@@ -132,7 +140,9 @@ pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workben
 
 ## Resultado Esperado
 
-Ejecutar o preparar `delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread` con retorno PASS/OBSERVED/FAIL, sin Dataverse write, sin Microsoft live write y sin task Cloud si no hay herramienta real disponible.
+Ejecutar o preparar `delta_sgin_documental_lists_metadata_read_only_preflight`
+con retorno PASS/OBSERVED/FAIL, sin Dataverse write, sin Microsoft live write,
+sin flow run y sin task Cloud.
 
 ## Criterio De Cierre
 

@@ -727,6 +727,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-paquetes-router-agents-codex-cloud-review-v1`.
 - Cierre: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`; `codex-root` limpio, `agents-root` PR #1 draft, router como superficie distribuida, Codex Cloud `LOCAL_PASS/CLOUD_UI_EXTERNAL`. Proximo delta unico `delta_normalize_pending_after_packages_router_cloud_review`.
 
+## Normalizacion Pendientes Post Paquetes Router Cloud
+
+- Fuente: orden del owner de normalizar la cola despues de revisar paquetes, router, agents-root, codex-root y Codex Cloud.
+- Proceso: separar carriles vivos, espera tecnica, espera externa y cierres supersedidos; actualizar `CURRENT`, `NEXT`, `PENDIENTES_HOY` e indices sin ejecutar live writes.
+- Salida: `operativa/READBACK_NORMALIZACION_PENDIENTES_POST_PAQUETES_ROUTER_CLOUD_20260617.md`, `operativa/PENDIENTES_NORMALIZADOS_POST_PAQUETES_ROUTER_CLOUD_20260617.csv`.
+- Hito: `hitos/20260617-normalizacion-pendientes-post-paquetes-router-cloud-v1`.
+- Cierre: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`; siguiente delta unico `delta_sgin_documental_lists_metadata_read_only_preflight`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

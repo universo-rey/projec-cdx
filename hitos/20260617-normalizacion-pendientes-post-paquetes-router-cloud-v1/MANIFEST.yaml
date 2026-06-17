@@ -1,0 +1,12 @@
+id: 20260617-normalizacion-pendientes-post-paquetes-router-cloud-v1
+title: Normalizacion Pendientes Post Paquetes Router Cloud v1
+status: PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD
+date: 2026-06-17
+mode: LOCAL_DOCUMENTAL
+sources:
+  - operativa/READBACK_NORMALIZACION_PENDIENTES_POST_PAQUETES_ROUTER_CLOUD_20260617.md
+  - operativa/PENDIENTES_NORMALIZADOS_POST_PAQUETES_ROUTER_CLOUD_20260617.csv
+  - operativa/PENDIENTES_HOY_20260617.md
+external_writes: false
+cloud_task_created: false
+next_delta: delta_sgin_documental_lists_metadata_read_only_preflight

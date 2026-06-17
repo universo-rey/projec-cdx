@@ -4,7 +4,22 @@ Estado actual del trabajo de `PROJEC CDX`.
 
 ## Vigente 2026-06-17
 
-Etapa vigente: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
+Etapa vigente: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`.
+
+La cola operativa quedo normalizada despues de revisar paquetes, router,
+agents-root, codex-root y Codex Cloud. Los pendientes cerrados/supersedidos ya
+no quedan como ejecutables de hoy.
+
+Evidencia: `operativa/READBACK_NORMALIZACION_PENDIENTES_POST_PAQUETES_ROUTER_CLOUD_20260617.md`,
+`operativa/PENDIENTES_NORMALIZADOS_POST_PAQUETES_ROUTER_CLOUD_20260617.csv` y
+`hitos/20260617-normalizacion-pendientes-post-paquetes-router-cloud-v1`.
+
+Siguiente delta unico:
+`delta_sgin_documental_lists_metadata_read_only_preflight`.
+
+## Vigente Previo 2026-06-17
+
+Etapa previa: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
 
 Se revisaron paquetes preparados, superficies `router`, repos `agents-root` y
 `codex-root`, repos agents/runtime, `Sgin`, `sgin-cloud` y el carril Codex
@@ -18,7 +33,7 @@ Evidencia: `operativa/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md`,
 Siguiente delta unico:
 `delta_normalize_pending_after_packages_router_cloud_review`.
 
-## Vigente Previo 2026-06-17
+## Vigente Previo 2 2026-06-17
 
 Etapa previa: `MAX_STATE_FAN_IN_VERIFIED`.
 
@@ -35,7 +50,7 @@ metadata pointer writes. Cierre total: `NO_DECLARADO`.
 Siguiente delta unico:
 `delta_select_next_metadata_lane_after_max_state_fan_in`.
 
-## Vigente Previo 2 2026-06-17
+## Vigente Previo 3 2026-06-17
 
 Etapa previa: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
 
