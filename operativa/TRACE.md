@@ -575,6 +575,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: pendiente si el smoke cloud se ejecuta y devuelve evidencia.
 - Cierre: `READY_FOR_CODEX_CLOUD_UI`; el smoke local ya dio `context_ok=True`, falta correrlo en Cloud.
 
+## Codex Cloud Bridge Agents SDK
+
+- Fuente: pedido del usuario de crear el puente o usar el Agents SDK para no depender solo de la UI.
+- Proceso: agregar `src/projec_cdx_cloud/cloud_bridge.py`, comandos `--cloud-bridge` y `--agentic-cloud-bridge`, con herramienta SDK `inspect_cloud_bridge`.
+- Salida: `operativa/READBACK_CODEX_CLOUD_BRIDGE_20260617.md`.
+- Hito: pendiente si se decide empaquetar el puente como hito propio.
+- Cierre: `PASS`; puente deterministico y agente SDK verificaron task file, rama remota, smoke local, gate metadata-only y 6 agentes SDU. No se creo task Cloud por API porque no consta endpoint/tool disponible en esta sesion.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.
