@@ -695,6 +695,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-binding-ui-seshat-home-atomos-v1`.
 - Cierre: `LIVE_SHAREPOINT_DOCUMENT_WRITE`; SharePoint item `017KTOXDC3JY4I65TK2NHYNU7FHHS3AZC7`; no `Home.aspx` edit, no permisos, no navegacion, no Dataverse payload y no flow run. Proximo delta unico `delta_dataverse_pointer_binding_ui_seshat_home_atomos_metadata_only`.
 
+## Dataverse Pointer Binding UI Seshat Home Atomos
+
+- Fuente: aprobacion del owner para avanzar el puntero metadata-only del binding UI publicado.
+- Proceso: normalizar el mismo archivo SharePoint al contenido local sin linea final extra, preparar hito metadata-only, validar wave, ejecutar `tools/promote_binding_ui_seshat_home_atomos_dataverse.ps1` con canonical ids exactos y postcheckear conteo `1/1`.
+- Salida: `operativa/DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json`, `operativa/READBACK_DATAVERSE_POINTER_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`, `tools/promote_binding_ui_seshat_home_atomos_dataverse.ps1`.
+- Hito: `hitos/20260617-binding-ui-seshat-home-atomos-dataverse-pointer-v1`.
+- Cierre: `DELTA_APLICADO`; source id `8b5d03ca-976a-f111-ab0e-00224805f8f9`, evidence id `5dda6cc7-976a-f111-ab0e-00224805fc91`; no payload, no secretos, no `Home.aspx`, no flow run. Proximo delta natural del carril: `delta_home_aspx_page_binding_when_ui_or_pnp_context_available`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

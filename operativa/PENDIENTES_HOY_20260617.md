@@ -19,10 +19,12 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
    - Evidencia ejecutada: `operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`.
 
 2. Binding UI/surface posterior para `INDICE_CORTE_AGENTES_20260617.md`.
-   - Estado: SharePoint publicado, Dataverse registrado y binding UI alternativo publicado.
+   - Estado: SharePoint publicado, Dataverse registrado, binding UI alternativo publicado y puntero metadata-only del binding aplicado.
    - Source Dataverse: `sharepoint:corte-agent-index:20260617:v1`.
    - Evidence Dataverse: `evidence:sharepoint:corte-agent-index:20260617:v1`.
-   - Siguiente accion: registrar `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md` como puntero metadata-only en Dataverse si se desea simetria de memoria larga.
+   - Binding source Dataverse: `sharepoint:binding-ui-seshat-home-atomos:20260617:v1`.
+   - Binding evidence Dataverse: `evidence:sharepoint:binding-ui-seshat-home-atomos:20260617:v1`.
+   - Siguiente accion: `Home.aspx` solo cuando exista UI/PnP/page API con permiso suficiente; no es bloqueo humano.
 
 3. Consolidar hitos pendientes de la wave Microsoft/SGIN.
    - Pendientes con hito aun no empaquetado: Microsoft live read, Dataverse tenant read, SGIN observed, SGIN crosswalk, candidate count, SPGovernance disambiguation, SGIN own governance link, mapa SGIN/SPGovernance/SDU.
@@ -54,7 +56,7 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 ## Proximo Movimiento Unico Recomendado
 
-Registrar `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md` como puntero metadata-only en Dataverse, o mantenerlo solo como SharePoint atom hasta orden expresa.
+Consolidar hitos pendientes de la wave Microsoft/SGIN en paquete documental/local, sin nueva lectura live salvo orden expresa.
 
 ## Validadores Asociados
 

@@ -4,9 +4,15 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `BINDING_UI_SURFACE_PUBLISHED`.
+Etapa actual: `BINDING_UI_DATAVERSE_POINTER_APPLIED`.
 
-Movimiento unico actual: `delta_dataverse_pointer_binding_ui_seshat_home_atomos_metadata_only`.
+Movimiento unico actual: `delta_consolidate_microsoft_sgin_hitos_documental`.
+
+El delta `delta_dataverse_pointer_binding_ui_seshat_home_atomos_metadata_only` quedo aplicado: Dataverse contiene source/evidence metadata-only para `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`, con conteo `1/1`.
+
+Evidencia PROJEC: `operativa/READBACK_DATAVERSE_POINTER_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`, `operativa/DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json` y `hitos/20260617-binding-ui-seshat-home-atomos-dataverse-pointer-v1`.
+
+`Home.aspx` queda como siguiente delta natural del carril solo cuando exista UI/PnP/page API con permiso suficiente. No es bloqueo humano ni detiene el resto de la mesa.
 
 El delta `delta_lane_b_home_link_or_ui_surface_binding_after_pointer` quedo resuelto por superficie UI alternativa: `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md` fue publicado en `SeshatHubRegistroN.8 / Documentos compartidos` y enlaza los tres atomos vivos de Seshat. `Home.aspx` no fue editado.
 

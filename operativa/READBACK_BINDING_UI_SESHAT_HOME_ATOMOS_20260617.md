@@ -32,8 +32,9 @@ No se edito `Home.aspx`. No se publicaron paginas. No se tocaron permisos, naveg
 - Upload conflict behavior: `fail`
 - Upload accepted: `PASSED`
 - Listed after upload: `PASSED`
-- Remote size: `2353`
-- Local source SHA256: `75915E4C00B253FB402F51D0B55E164876799F11C30E4E2148C9B44C88529B0D`
+- Remote size: `2352`
+- Local source SHA256: `10754EF29B3F509D77B5FE2B8B1544AE9A3B504B1D584748AE314D33CB051B82`
+- Remote normalized after local whitespace correction: `PASSED`
 
 ## Sistemas No Tocados
 

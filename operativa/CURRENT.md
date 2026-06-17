@@ -428,6 +428,21 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - No ejecutado: `Home.aspx` edit, page publish, permisos, navegacion, Dataverse payload, flow run.
 - Proximo movimiento unico: registrar el nuevo binding como puntero metadata-only en Dataverse si se decide mantener simetria de memoria larga.
 
+## Delta Abierto 46
+
+- Registrar `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md` como puntero metadata-only en Dataverse.
+- Estado: `DELTA_APLICADO`.
+- Live: `LIVE_METADATA_POINTER_WRITE`.
+- Superficie: Dataverse `HUBDesarrollo`, tablas `mon_sdu_source_artifacts` y `mon_sdu_evidences`.
+- Source canonical id: `sharepoint:binding-ui-seshat-home-atomos:20260617:v1`.
+- Evidence canonical id: `evidence:sharepoint:binding-ui-seshat-home-atomos:20260617:v1`.
+- Dataverse source id: `8b5d03ca-976a-f111-ab0e-00224805f8f9`.
+- Dataverse evidence id: `5dda6cc7-976a-f111-ab0e-00224805fc91`.
+- Postcheck: `source_count=1`, `evidence_count=1`.
+- Evidencia PROJEC: `operativa/READBACK_DATAVERSE_POINTER_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`, `operativa/DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json`, `hitos/20260617-binding-ui-seshat-home-atomos-dataverse-pointer-v1`.
+- No ejecutado: contenido documental en Dataverse, `Home.aspx` edit, page publish, permisos, navegacion, flow run.
+- Proximo movimiento natural del carril: `Home.aspx` page binding cuando exista UI/PnP/page API con permiso suficiente.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.
