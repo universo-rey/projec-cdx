@@ -4,7 +4,24 @@ Estado actual del trabajo de `PROJEC CDX`.
 
 ## Vigente 2026-06-17
 
-Etapa vigente: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
+Etapa vigente: `MAX_STATE_FAN_IN_VERIFIED`.
+
+El fan-in de seis agentes ya fijo el maximo estado real alcanzado por
+superficie. Evidencia: `operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md`,
+`operativa/MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.csv`,
+`operativa/FAN_IN_AGENTES_MAXIMO_ESTADO_REAL_20260617.csv` y
+`hitos/20260617-maximo-estado-real-superficies-v1`.
+
+Maximo vigente del control tower: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
+Maximo vivo historico documentado: SharePoint document writes y Dataverse
+metadata pointer writes. Cierre total: `NO_DECLARADO`.
+
+Siguiente delta unico:
+`delta_select_next_metadata_lane_after_max_state_fan_in`.
+
+## Vigente Previo 2026-06-17
+
+Etapa previa: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
 
 El delta `delta_consolidate_microsoft_sgin_hitos_documental` quedo cerrado como
 consolidacion local/documental. No hubo refresco live, writes Microsoft,
@@ -15,9 +32,6 @@ Evidencia vigente:
 - `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`
 - `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv`
 - `hitos/20260617-microsoft-sgin-hitos-documental-v1`
-
-Siguiente delta unico:
-`delta_select_next_metadata_lane_after_microsoft_sgin_consolidation`.
 
 ## Activo
 

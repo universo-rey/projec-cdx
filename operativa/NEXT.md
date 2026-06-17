@@ -4,9 +4,13 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
+Etapa actual: `MAX_STATE_FAN_IN_VERIFIED`.
 
-Movimiento unico actual: `delta_select_next_metadata_lane_after_microsoft_sgin_consolidation`.
+Movimiento unico actual: `delta_select_next_metadata_lane_after_max_state_fan_in`.
+
+El fan-in de seis agentes ya fijo el maximo estado real alcanzado en todas las superficies. Evidencia: `operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md`, `operativa/MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.csv`, `operativa/FAN_IN_AGENTES_MAXIMO_ESTADO_REAL_20260617.csv` y `hitos/20260617-maximo-estado-real-superficies-v1`.
+
+El siguiente carril debe elegir una sola opcion: `SGIN_documental_lists_metadata`, `SPGovernance_soporte_metadata`, `SDU_runtime_queue_priorities` o `Home_aspx_page_binding` solo si existe UI/PnP/page API suficiente.
 
 El delta `delta_consolidate_microsoft_sgin_hitos_documental` quedo cerrado como paquete local/documental. Evidencia: `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`, `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv` y `hitos/20260617-microsoft-sgin-hitos-documental-v1`.
 

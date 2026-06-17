@@ -1,0 +1,36 @@
+version: 20260617-maximo-estado-real-superficies-v1
+status: MAX_STATE_FAN_IN_VERIFIED
+control_tower: PROJEC CDX
+source_delta: delta_find_max_real_state_all_surfaces_with_agents
+branch: codex/dataverse-corte-ejecutora-v1
+head_at_fan_in: d6d1d30
+mode: READ_ONLY_FAN_IN
+agents:
+  - Seshat
+  - Thot
+  - Anubis
+  - Maat
+  - Horus
+  - Narrador
+live_refresh: false
+writes_executed:
+  microsoft: false
+  sharepoint: false
+  dataverse: false
+  power_platform: false
+  codex_cloud: false
+  git_external_repos: false
+max_current_state: MICROSOFT_SGIN_HITOS_CONSOLIDATED
+max_historical_live_states:
+  - LIVE_SHAREPOINT_DOCUMENT_WRITE
+  - LIVE_SHAREPOINT_FILE_WRITE_AND_DATAVERSE_POINTER_WRITE
+  - LIVE_METADATA_POINTER_WRITE
+  - CLOUD_DATAVERSE_PREFLIGHT_READY
+  - SDK_LOCAL_LAUNCH_OBSERVED_CLOUD_UI_FRONTIER
+not_confirmed:
+  - cierre_total
+  - Home_aspx_page_publish
+  - Codex_Cloud_task_created_by_API
+  - current_authenticated_GitHub_PR_status
+  - live_refresh_20260617_for_Microsoft_Dataverse_PowerPlatform
+next_delta: delta_select_next_metadata_lane_after_max_state_fan_in

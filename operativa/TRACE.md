@@ -711,6 +711,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-microsoft-sgin-hitos-documental-v1`.
 - Cierre: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`; no live refresh, no documentos abiertos, no Dataverse write, no page publish, no flow run. Proximo delta unico `delta_select_next_metadata_lane_after_microsoft_sgin_consolidation`.
 
+## Maximo Estado Real Superficies
+
+- Fuente: orden del owner de usar agentes para buscar el maximo estado real alcanzado en todas las superficies.
+- Proceso: despachar seis agentes read-only, cruzar retornos con readbacks locales, separar maximo vivo historico, estado vigente, snapshot, frontera tecnica y no confirmado.
+- Salida: `operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md`, `operativa/MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.csv`, `operativa/FAN_IN_AGENTES_MAXIMO_ESTADO_REAL_20260617.csv`.
+- Hito: `hitos/20260617-maximo-estado-real-superficies-v1`.
+- Cierre: `MAX_STATE_FAN_IN_VERIFIED`; no live refresh, no writes, no merge, no task Cloud. Proximo delta unico `delta_select_next_metadata_lane_after_max_state_fan_in`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

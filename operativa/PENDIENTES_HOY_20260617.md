@@ -6,8 +6,15 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 - Bloqueos reales activos: `NINGUNO`.
 - Cierre total: `NO_DECLARADO`.
-- Etapa: `PRELIMINARES_CIERRE_TOTAL`.
+- Etapa: `MAX_STATE_FAN_IN_VERIFIED`.
 - Riesgo principal: mezclar binding UI, cierre documental, Dataverse y cambios Git en un solo paquete.
+
+## Maximo Estado Real Alcanzado
+
+- Estado vigente: `MAX_STATE_FAN_IN_VERIFIED`.
+- Maximo control tower: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
+- Maximo vivo historico: `LIVE_SHAREPOINT_DOCUMENT_WRITE` y `LIVE_METADATA_POINTER_WRITE`.
+- Evidencia: `operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md`, `operativa/MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.csv`, `operativa/FAN_IN_AGENTES_MAXIMO_ESTADO_REAL_20260617.csv`.
 
 ## Pendientes Ejecutables Hoy
 
@@ -58,7 +65,7 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 ## Proximo Movimiento Unico Recomendado
 
-Elegir un solo carril metadata-only posterior a la consolidacion Microsoft/SGIN: SGIN listas/bibliotecas, SPGovernance soporte, SDU runtime queues o Home.aspx cuando exista permiso UI/PnP/page API suficiente.
+Elegir un solo carril metadata-only posterior al fan-in de estado real: SGIN listas/bibliotecas, SPGovernance soporte, SDU runtime queues o Home.aspx cuando exista permiso UI/PnP/page API suficiente.
 
 ## Validadores Asociados
 
