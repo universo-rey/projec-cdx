@@ -607,6 +607,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1`.
 - Cierre: `OBSERVED_APTO_PARA_W1_READ_ONLY`; no live write; proximo delta unico `delta_repo_dirty_worktree_triage_by_surface`.
 
+## W1 Repos Dirty Triage
+
+- Fuente: aprobacion del owner para avanzar tras revision de Corte del plan maestro.
+- Proceso: pasada read-only sobre repos Git de `C:/Users/enzo1/Documents/GitHub`, registrando branch, HEAD, upstream, remoto, status, archivos y clasificacion.
+- Salida: `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`, `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.json`, `operativa/READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md`.
+- Hito: `hitos/20260617-w1-repos-dirty-triage-v1`.
+- Cierre: `OBSERVED_READ_ONLY`; 13 repos dirty clasificados; sin staging, revert, move, commit ni live write. Proximo delta unico `delta_cabina_universal_d_canon_context_package`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

@@ -4,7 +4,15 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `PRELIMINARES_CIERRE_TOTAL`.
+Etapa actual: `W1_REPOS_DIRTY_TRIAGE_COMPLETED`.
+
+Movimiento unico actual: `delta_cabina_universal_d_canon_context_package`.
+
+La revision de Corte del plan maestro quedo integrada y W1 ya clasifico los `13` repos dirty en `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`.
+
+La siguiente accion no es limpiar todo ni crear mapas masivos. Es abrir el primer paquete: `cabina-universal-d`, clasificacion `CANON_OR_CONTEXT`, riesgo `HIGH`, archivos `02_AUTHORITY_CANON/CURRENT_STATE.md` y `02_AUTHORITY_CANON/REPO_OPERATING_CONTRACT_CABINA_UNIVERSAL_D_20260604.md`.
+
+Modo requerido: read-only/diff review primero, sin staging, sin revert, sin move y sin live write.
 
 No declarar cierre total todavia. La mesa de seis agentes dejo el fan-in preliminar en `operativa/PRELIMINARES_CIERRE_TOTAL_20260616.md` y la superficie Git quedo clasificada inicialmente en `operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md` mas su CSV de detalle.
 
