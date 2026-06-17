@@ -615,6 +615,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-w1-repos-dirty-triage-v1`.
 - Cierre: `OBSERVED_READ_ONLY`; 13 repos dirty clasificados; sin staging, revert, move, commit ni live write. Proximo delta unico `delta_cabina_universal_d_canon_context_package`.
 
+## Thread Architecture 5 Plus 1
+
+- Fuente: el owner acepto la recomendacion de abandonar trabajo lineal y preparar hilos por frente.
+- Proceso: disenar arquitectura `hub-and-spokes`, separar cinco hilos activos-ready y un preflight Cloud/Dataverse en espera; preparar prompts y cola sin abrir hilos reales.
+- Salida: `docs/superpowers/specs/2026-06-17-nonlinear-thread-architecture-design.md`, `operativa/THREAD_ARCHITECTURE_5_PLUS_1_20260617.md`, `operativa/THREAD_CREATION_QUEUE_5_PLUS_1_20260617.csv`, `operativa/thread-packets-20260617/`, `operativa/READBACK_THREAD_ARCHITECTURE_5_PLUS_1_20260617.md`.
+- Hito: `hitos/20260617-thread-architecture-5-plus-1-v1`.
+- Cierre: `THREAD_PACKETS_PREPARED_NOT_CREATED`; no se crearon hilos ni se tocaron repos dirty. Proximo delta unico `delta_open_thread_packets_5_plus_1`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

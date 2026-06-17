@@ -4,13 +4,15 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `W1_REPOS_DIRTY_TRIAGE_COMPLETED`.
+Etapa actual: `THREAD_PACKETS_PREPARED_NOT_CREATED`.
 
-Movimiento unico actual: `delta_cabina_universal_d_canon_context_package`.
+Movimiento unico actual: `delta_open_thread_packets_5_plus_1`.
 
 La revision de Corte del plan maestro quedo integrada y W1 ya clasifico los `13` repos dirty en `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`.
 
-La siguiente accion no es limpiar todo ni crear mapas masivos. Es abrir el primer paquete: `cabina-universal-d`, clasificacion `CANON_OR_CONTEXT`, riesgo `HIGH`, archivos `02_AUTHORITY_CANON/CURRENT_STATE.md` y `02_AUTHORITY_CANON/REPO_OPERATING_CONTRACT_CABINA_UNIVERSAL_D_20260604.md`.
+El owner acepto preparar el modelo no lineal recomendado. Quedaron listos los paquetes `5+1` en `operativa/thread-packets-20260617/`.
+
+La siguiente accion no es limpiar todo ni crear mapas masivos. Es abrir hilos solo si el owner da orden explicita de apertura. Si se abren, el primer frente activo es `HILO_A_CABINA_CANON`; el frente `HILO_F_CLOUD_DATAVERSE_READY` queda en espera.
 
 Modo requerido: read-only/diff review primero, sin staging, sin revert, sin move y sin live write.
 

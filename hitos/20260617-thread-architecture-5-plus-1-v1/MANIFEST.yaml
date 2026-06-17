@@ -1,0 +1,21 @@
+id: 20260617-thread-architecture-5-plus-1-v1
+title: Thread Architecture 5 Plus 1 v1
+status: THREAD_PACKETS_PREPARED_NOT_CREATED
+date: 2026-06-17
+surface: C:/Users/enzo1/PROJEC CDX
+mode: local-documental
+artifacts:
+  - docs/superpowers/specs/2026-06-17-nonlinear-thread-architecture-design.md
+  - operativa/THREAD_ARCHITECTURE_5_PLUS_1_20260617.md
+  - operativa/THREAD_CREATION_QUEUE_5_PLUS_1_20260617.csv
+  - operativa/thread-packets-20260617/00_CONTROL_TOWER_README.md
+  - operativa/thread-packets-20260617/HILO_A_CABINA_CANON.md
+  - operativa/thread-packets-20260617/HILO_B_SDU_CANON.md
+  - operativa/thread-packets-20260617/HILO_C_RUNTIME_README_BATCH.md
+  - operativa/thread-packets-20260617/HILO_D_SESHAT_SGIN_EVIDENCE.md
+  - operativa/thread-packets-20260617/HILO_E_CDF_SOLUCIONES.md
+  - operativa/thread-packets-20260617/HILO_F_CLOUD_DATAVERSE_READY.md
+  - operativa/READBACK_THREAD_ARCHITECTURE_5_PLUS_1_20260617.md
+thread_creation_executed: false
+live_execution: false
+next_delta: delta_open_thread_packets_5_plus_1
