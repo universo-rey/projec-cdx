@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 from typing import Iterable
 
-from .agent import DEFAULT_MODEL, build_sdu_agents, run_agent, smoke_report
+from .agent import DEFAULT_MODEL, align_runtime_context, build_sdu_agents, run_agent, smoke_report
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -68,6 +68,7 @@ def _print_json(payload: dict[str, object]) -> None:
 
 def main(argv: Iterable[str] | None = None) -> int:
     load_local_env()
+    align_runtime_context()
     parser = build_parser()
     args = parser.parse_args(list(argv) if argv is not None else None)
 

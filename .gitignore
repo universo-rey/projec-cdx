@@ -1,3 +1,9 @@
 node_modules/
 __pycache__/
 *.log
+.env.local
+.venv/
+*.egg-info/
+.cache/
+operativa/PAC_*_HUBDESARROLLO_*.txt
+operativa/backup-*.reg

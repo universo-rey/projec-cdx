@@ -30,6 +30,8 @@ pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
 .\.venv\Scripts\python main.py --smoke
 ```
 
+El humo debe cerrar con `context_ok=True`. Si aparece `prepared_with_context_drift`, el Git real ya esta identificado pero la sesion o la UI siguen inyectando variables viejas; reiniciar el entorno antes de activar el siguiente turno.
+
 ## Notas
 
 - El arranque usa la `.venv` del root cuando existe.
