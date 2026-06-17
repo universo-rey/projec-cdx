@@ -631,6 +631,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-thread-live-dispatch-5-plus-1-v1`.
 - Cierre: `THREADS_OPENED_FAN_IN_FINAL_DECISION_READY`; no mutaciones ni live writes. Proximo delta unico `delta_e_cdf_split_context_evidence`.
 
+## CDF Context Evidence Split
+
+- Fuente: fan-in final `5+1`, siguiente delta `delta_e_cdf_split_context_evidence`.
+- Proceso: separar contexto, paquetes de operacion/evidencia y validadores idempotentes en `C:/Users/enzo1/Documents/GitHub/cdf-soluciones`.
+- Salida: rama `codex/cdf-seshat-context-evidence-split-20260617`, HEAD `2ccd77d`, PR borrador `https://github.com/SeshatSgin/cdf-soluciones/pull/28`, `operativa/READBACK_CDF_CONTEXT_EVIDENCE_SPLIT_20260617.md`.
+- Hito: `hitos/20260617-cdf-context-evidence-split-v1`.
+- Cierre: `CDF_SPLIT_SCOPED_PR_READY`; validacion CDF `73/73 PASS`, sin live write ni merge. Proximo delta unico `delta_d_seshat_ambiguous_content_read_only`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

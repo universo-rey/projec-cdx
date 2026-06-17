@@ -4,15 +4,21 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `THREADS_OPENED_FAN_IN_FINAL_DECISION_READY`.
+Etapa actual: `CDF_SPLIT_SCOPED_PR_READY`.
 
-Movimiento unico actual: `delta_e_cdf_split_context_evidence`.
+Movimiento unico actual: `delta_d_seshat_ambiguous_content_read_only`.
+
+El delta `delta_e_cdf_split_context_evidence` quedo cerrado en `cdf-soluciones` con rama `codex/cdf-seshat-context-evidence-split-20260617`, HEAD `2ccd77d`, PR borrador `https://github.com/SeshatSgin/cdf-soluciones/pull/28` y barrida CDF `73/73 PASS`.
+
+Evidencia PROJEC: `operativa/READBACK_CDF_CONTEXT_EVIDENCE_SPLIT_20260617.md` y `hitos/20260617-cdf-context-evidence-split-v1`.
+
+La siguiente accion no es mergear ni ejecutar live writes. Es resolver `HILO_D_SESHAT_SGIN_EVIDENCE` con lectura read-only de piezas ambiguas de Seshat/SGIN antes de clasificar o mutar.
 
 La revision de Corte del plan maestro quedo integrada y W1 ya clasifico los `13` repos dirty en `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`.
 
 El owner acepto preparar y abrir el modelo no lineal recomendado. Quedaron abiertos seis hilos reales desde los paquetes `5+1` en `operativa/thread-packets-20260617/`.
 
-La siguiente accion no es limpiar todo ni crear mapas masivos. Es resolver primero `HILO_E_CDF_SOLUCIONES` con split scoped entre contexto y evidencia, sin tocar otras superficies.
+La siguiente accion no es limpiar todo ni crear mapas masivos. Es resolver primero `HILO_D_SESHAT_SGIN_EVIDENCE` con lectura read-only, sin tocar otras superficies.
 
 Modo requerido: read-only/diff review primero, sin staging, sin revert, sin move y sin live write.
 
