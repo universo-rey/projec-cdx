@@ -1,0 +1,20 @@
+version: 20260617-ab-canon-context-close-decision-v1
+status: CANONIZACION_MINIMA_PR_READY
+control_tower: PROJEC CDX
+source_delta: delta_ab_canon_context_close_decision
+decision: CANONIZAR_MINIMO
+threads:
+  - HILO_A_CABINA_CANON
+  - HILO_B_SDU_CANON
+pull_requests:
+  - https://github.com/universo-rey/cabina-universal-d/pull/158
+  - https://github.com/SeshatSgin/sdu-canon/pull/22
+validation:
+  - cabina validators PASS
+  - sdu validator modes PASS
+  - git diff --cached --check PASS in both repositories
+non_execution:
+  - no_live_writes
+  - no_merge
+  - no_secret_print
+next_delta: delta_f_cloud_dataverse_preflight_read_only

@@ -655,6 +655,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-runtime-readme-batch-v1`.
 - Cierre: `RUNTIME_README_BATCH_PR_READY`; ocho PRs draft abiertos, sin live writes, sin secretos y sin merge. Proximo delta unico `delta_ab_canon_context_close_decision`.
 
+## A/B Canon Context Close Decision
+
+- Fuente: decision posterior al runtime README batch para resolver `HILO_A_CABINA_CANON` y `HILO_B_SDU_CANON`.
+- Proceso: releer contratos vivos A/B, clasificar decision `CANONIZAR_MINIMO`, crear una rama por repo, stagear solo archivos de contexto/canon, validar, commitear, push y abrir PR draft.
+- Salida: `operativa/READBACK_AB_CANON_CONTEXT_CLOSE_DECISION_20260617.md`, `operativa/AB_CANON_CONTEXT_PR_MATRIX_20260617.csv`.
+- Hito: `hitos/20260617-ab-canon-context-close-decision-v1`.
+- Cierre: `CANONIZACION_MINIMA_PR_READY`; Cabina PR #158 y SDU Canon PR #22 abiertos como draft, sin live writes, sin secretos y sin merge. Proximo delta unico `delta_f_cloud_dataverse_preflight_read_only`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

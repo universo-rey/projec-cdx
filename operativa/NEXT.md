@@ -4,9 +4,13 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `RUNTIME_README_BATCH_PR_READY`.
+Etapa actual: `CANONIZACION_MINIMA_PR_READY`.
 
-Movimiento unico actual: `delta_ab_canon_context_close_decision`.
+Movimiento unico actual: `delta_f_cloud_dataverse_preflight_read_only`.
+
+El delta `delta_ab_canon_context_close_decision` quedo cerrado con decision `CANONIZAR_MINIMO`: Cabina y SDU Canon tienen PRs draft separados, sin live writes y sin merge.
+
+Evidencia PROJEC: `operativa/READBACK_AB_CANON_CONTEXT_CLOSE_DECISION_20260617.md`, `operativa/AB_CANON_CONTEXT_PR_MATRIX_20260617.csv` y `hitos/20260617-ab-canon-context-close-decision-v1`.
 
 El delta `delta_c_runtime_readme_batch_low_risk` quedo cerrado como batch README-only con ocho ramas `codex/readme-lane-atomica-20260617`, ocho commits documentales y ocho PRs draft abiertos.
 
@@ -18,13 +22,13 @@ El delta `delta_e_cdf_split_context_evidence` quedo cerrado en `cdf-soluciones` 
 
 Precondicion antes de cualquier PR sobre `seshat-bootstrap-sdu-cn`: resolver de forma gobernada el hallazgo local `.env.local` con `OPENAI_API_KEY=` detectado por el validador, sin imprimir ni mover secretos sin orden explicita.
 
-La siguiente accion no es mergear los PRs README-only ni ejecutar live writes. Es resolver `HILO_A_CABINA_CANON` y `HILO_B_SDU_CANON` como decision de cierre: canonizar lo estrictamente faltante o cerrar sin mutacion si ya esta absorbido por evidencia previa.
+La siguiente accion no es mergear PRs ni ejecutar live writes. Es releer `HILO_F_CLOUD_DATAVERSE_READY` y convertirlo en preflight Cloud/Dataverse read-only, con decision explicita de que no se crean tasks Cloud ni se escribe Dataverse sin nueva orden.
 
 La revision de Corte del plan maestro quedo integrada y W1 ya clasifico los `13` repos dirty en `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`.
 
 El owner acepto preparar y abrir el modelo no lineal recomendado. Quedaron abiertos seis hilos reales desde los paquetes `5+1` en `operativa/thread-packets-20260617/`.
 
-La siguiente accion no es limpiar todo ni crear mapas masivos. Es decidir el cierre A/B con lectura y matriz minima, sin tocar superficies fuera del delta.
+La siguiente accion no es limpiar todo ni crear mapas masivos. Es preparar el carril F como preflight read-only, sin tocar tenant ni runners live.
 
 Modo requerido: read-only/diff review primero; cualquier mutacion posterior debe tener target exacto, owner, rollback, postcheck y evidencia.
 
@@ -81,7 +85,7 @@ pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workben
 
 ## Resultado Esperado
 
-Decidir el cierre A/B: `CANONIZAR_MINIMO` si hay brecha real en cabina/SDU canon, o `CERRAR_SIN_MUTACION` si los paquetes ya estan absorbidos por CDF, Seshat/SGIN y runtime README batch.
+Preparar `delta_f_cloud_dataverse_preflight_read_only` con contrato claro: estado Codex Cloud, Dataverse, repo/projec bridge, gates, evidencia y siguiente accion unica sin apply.
 
 ## Criterio De Cierre
 
