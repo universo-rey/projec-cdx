@@ -45,6 +45,7 @@ Este mapa solo indexa los hitos versionados de este workbench.
 - [20260616-wave-mapas-uniformes-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-mapas-uniformes-v1/README.md)
 - [20260616-pre-cierre-constitutivo-corte-agentes-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1/README.md)
 - [20260616-sdu-dataverse-metadata-wave-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-sdu-dataverse-metadata-wave-v1/README.md)
+- [20260617-microsoft-sgin-hitos-documental-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260617-microsoft-sgin-hitos-documental-v1/README.md)
 
 ## Lectura
 
@@ -75,6 +76,7 @@ Este mapa solo indexa los hitos versionados de este workbench.
 - La version `20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1` agrega reconocimiento, transformacion y registro punta a punta como secuencia reusable.
 - La version `20260616-pre-cierre-constitutivo-corte-agentes-v1` registra el fan-in preliminar de cierre constitutivo y NO declara cierre total.
 - La version `20260616-sdu-dataverse-metadata-wave-v1` prepara hidratacion Dataverse/SDU como metadata_only con fan-in, matriz, rollback y postcheck.
+- La version `20260617-microsoft-sgin-hitos-documental-v1` consolida la wave Microsoft/SGIN/Dataverse/Power Platform sin nueva lectura live.
 - La clasificacion fina total vive en `INDICE_MAESTRO.md`; `20260615-semaforo-verde-historicos-v1` queda como hito propio y no se absorbe.
 
 ## Regla

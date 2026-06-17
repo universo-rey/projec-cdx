@@ -28,7 +28,9 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 3. Consolidar hitos pendientes de la wave Microsoft/SGIN.
    - Pendientes con hito aun no empaquetado: Microsoft live read, Dataverse tenant read, SGIN observed, SGIN crosswalk, candidate count, SPGovernance disambiguation, SGIN own governance link, mapa SGIN/SPGovernance/SDU.
-   - Modo: documental/local; sin nueva lectura live salvo que se pida refresco.
+   - Estado: `CERRADO_COMO_MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
+   - Evidencia: `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`, `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv`, `hitos/20260617-microsoft-sgin-hitos-documental-v1`.
+   - Modo: documental/local; sin nueva lectura live.
 
 4. Separar paquete Git de cierre preliminar.
    - PROJEC CDX tiene muchos cambios locales y untracked ya clasificados.
@@ -56,7 +58,7 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 ## Proximo Movimiento Unico Recomendado
 
-Consolidar hitos pendientes de la wave Microsoft/SGIN en paquete documental/local, sin nueva lectura live salvo orden expresa.
+Elegir un solo carril metadata-only posterior a la consolidacion Microsoft/SGIN: SGIN listas/bibliotecas, SPGovernance soporte, SDU runtime queues o Home.aspx cuando exista permiso UI/PnP/page API suficiente.
 
 ## Validadores Asociados
 

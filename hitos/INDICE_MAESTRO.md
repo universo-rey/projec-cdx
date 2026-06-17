@@ -32,6 +32,12 @@ Mapa corto de los paquetes versionados en `PROJEC CDX/hitos`.
 | `20260616-seshat-home-sharepoint-canon-v1` | Promocion de Seshat Home SharePoint como canon visible | `DELTA_APLICADO_CON_DELTA_TECNICO_PAGE_BINDING` | `hitos/20260616-seshat-home-sharepoint-canon-v1/READBACK.md`, `operativa/HUELLA_ATOMICA_SESHAT_HOME_20260616.md`, `operativa/SHAREPOINT_SESHAT_HOME_PROMOTION_20260616.json` |
 | `20260616-corte-proposito-sharepoint-canon-v1` | Promocion de Corte y Proposito como canon visible SharePoint | `DELTA_APLICADO` | `hitos/20260616-corte-proposito-sharepoint-canon-v1/READBACK.md`, `operativa/HUELLA_ATOMICA_CORTE_PROPOSITO_20260616.md`, `operativa/SHAREPOINT_CORTE_PROPOSITO_PROMOTION_20260616.json` |
 
+## Paquetes 20260617
+
+| Hito | Alcance | Estado | Evidencia |
+| --- | --- | --- | --- |
+| `20260617-microsoft-sgin-hitos-documental-v1` | Consolidacion documental Microsoft SGIN Dataverse Power Platform | `MICROSOFT_SGIN_HITOS_CONSOLIDATED` | `hitos/20260617-microsoft-sgin-hitos-documental-v1/READBACK.md`, `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`, `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv` |
+
 Regla:
 - El detalle vive en cada paquete versionado.
 - El indice maestro solo resume alcance, estado y evidencia.

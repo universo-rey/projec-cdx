@@ -4,9 +4,13 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `BINDING_UI_DATAVERSE_POINTER_APPLIED`.
+Etapa actual: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
 
-Movimiento unico actual: `delta_consolidate_microsoft_sgin_hitos_documental`.
+Movimiento unico actual: `delta_select_next_metadata_lane_after_microsoft_sgin_consolidation`.
+
+El delta `delta_consolidate_microsoft_sgin_hitos_documental` quedo cerrado como paquete local/documental. Evidencia: `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`, `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv` y `hitos/20260617-microsoft-sgin-hitos-documental-v1`.
+
+El siguiente carril debe elegir una sola opcion metadata-only: `SGIN_documental_lists_metadata`, `SPGovernance_soporte_metadata`, `SDU_runtime_queue_priorities` o `Home_aspx_page_binding` si existe UI/PnP/page API suficiente.
 
 El delta `delta_dataverse_pointer_binding_ui_seshat_home_atomos_metadata_only` quedo aplicado: Dataverse contiene source/evidence metadata-only para `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`, con conteo `1/1`.
 

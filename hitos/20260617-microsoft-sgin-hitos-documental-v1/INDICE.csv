@@ -1,0 +1,7 @@
+item,type,status,path
+readback,hito_file,MICROSOFT_SGIN_HITOS_CONSOLIDATED,hitos/20260617-microsoft-sgin-hitos-documental-v1/READBACK.md
+manifest,hito_file,MICROSOFT_SGIN_HITOS_CONSOLIDATED,hitos/20260617-microsoft-sgin-hitos-documental-v1/MANIFEST.yaml
+evidencia,hito_file,MICROSOFT_SGIN_HITOS_CONSOLIDATED,hitos/20260617-microsoft-sgin-hitos-documental-v1/EVIDENCIA.md
+consolidacion,hito_file,MICROSOFT_SGIN_HITOS_CONSOLIDATED,hitos/20260617-microsoft-sgin-hitos-documental-v1/CONSOLIDACION.csv
+readback_operativo,operativa_file,MICROSOFT_SGIN_HITOS_CONSOLIDATED,operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md
+matriz_operativa,operativa_file,MICROSOFT_SGIN_HITOS_CONSOLIDATED,operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv

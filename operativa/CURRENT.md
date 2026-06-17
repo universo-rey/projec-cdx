@@ -2,6 +2,23 @@
 
 Estado actual del trabajo de `PROJEC CDX`.
 
+## Vigente 2026-06-17
+
+Etapa vigente: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
+
+El delta `delta_consolidate_microsoft_sgin_hitos_documental` quedo cerrado como
+consolidacion local/documental. No hubo refresco live, writes Microsoft,
+Dataverse, Power Platform, SharePoint, Codex Cloud ni ejecucion de flows.
+
+Evidencia vigente:
+
+- `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`
+- `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv`
+- `hitos/20260617-microsoft-sgin-hitos-documental-v1`
+
+Siguiente delta unico:
+`delta_select_next_metadata_lane_after_microsoft_sgin_consolidation`.
+
 ## Activo
 
 Etapa `PRELIMINARES_CIERRE_TOTAL`: el pre-cierre constitutivo de corte y agentes quedo versionado, pero el cierre total sigue `NO_DECLARADO`.

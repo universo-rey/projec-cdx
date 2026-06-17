@@ -1,0 +1,37 @@
+version: 20260617-microsoft-sgin-hitos-documental-v1
+status: MICROSOFT_SGIN_HITOS_CONSOLIDATED
+control_tower: PROJEC CDX
+source_delta: delta_consolidate_microsoft_sgin_hitos_documental
+branch: codex/dataverse-corte-ejecutora-v1
+mode: LOCAL_DOCUMENTAL
+live_refresh: false
+writes_executed:
+  microsoft: false
+  sharepoint: false
+  dataverse: false
+  power_platform: false
+  codex_cloud: false
+tenant:
+  name: Escribania Bitsch
+  id: 858a0852-44a1-413e-a0fe-f053949797d6
+dataverse:
+  environment: HUBDesarrollo
+  url: https://org084965d9.crm.dynamics.com
+classification:
+  sgin: site_documental_confirmado
+  spgovernance: confirmado_apunta_soporte_no_sgin
+  sdu_runtime: metadata_confirmada
+  dataverse_hydration: metadata_only_or_hitos_propios
+evidence:
+  - operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md
+  - operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv
+  - operativa/MAPA_SGIN_SPGOVERNANCE_SDU_DATAVERSE_WAVE_20260616.md
+non_execution:
+  - no_live_refresh
+  - no_document_open
+  - no_flow_run
+  - no_dataverse_write
+  - no_page_publish
+  - no_permission_change
+  - no_secret_print
+next_delta: delta_select_next_metadata_lane_after_microsoft_sgin_consolidation

@@ -703,6 +703,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-binding-ui-seshat-home-atomos-dataverse-pointer-v1`.
 - Cierre: `DELTA_APLICADO`; source id `8b5d03ca-976a-f111-ab0e-00224805f8f9`, evidence id `5dda6cc7-976a-f111-ab0e-00224805fc91`; no payload, no secretos, no `Home.aspx`, no flow run. Proximo delta natural del carril: `delta_home_aspx_page_binding_when_ui_or_pnp_context_available`.
 
+## Microsoft SGIN Hitos Documental
+
+- Fuente: pausa de estado actual y decision de consolidar `delta_consolidate_microsoft_sgin_hitos_documental`.
+- Proceso: revisar evidencia local ya existente de Microsoft, Dataverse/Power Platform, SGIN, SPGovernanceModel y mapa SGIN/SDU; separar confirmado, no confirmado y siguiente carril sin refresco live.
+- Salida: `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`, `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv`.
+- Hito: `hitos/20260617-microsoft-sgin-hitos-documental-v1`.
+- Cierre: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`; no live refresh, no documentos abiertos, no Dataverse write, no page publish, no flow run. Proximo delta unico `delta_select_next_metadata_lane_after_microsoft_sgin_consolidation`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.
