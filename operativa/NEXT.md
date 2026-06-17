@@ -4,22 +4,32 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`.
+Etapa actual: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`.
 
 Movimiento unico actual:
-`delta_sgin_documental_lists_metadata_read_only_preflight`.
+`delta_dataverse_rehidratacion_desde_paquetes_existentes`.
 
-La cola fue normalizada: quedan separados carriles vivos, espera tecnica,
-espera externa y cierres supersedidos. Evidencia:
-`operativa/READBACK_NORMALIZACION_PENDIENTES_POST_PAQUETES_ROUTER_CLOUD_20260617.md`,
-`operativa/PENDIENTES_NORMALIZADOS_POST_PAQUETES_ROUTER_CLOUD_20260617.csv` y
-`hitos/20260617-normalizacion-pendientes-post-paquetes-router-cloud-v1`.
+SGIN ya fue leido y paquetizado. Dataverse debe rehidratar la mesa desde la
+memoria larga y desde paquetes existentes. Evidencia:
+`operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`,
+`operativa/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv`,
+`dataverse/ANCLA_REHIDRATACION.md` y `dataverse/GATE.md`.
 
-El siguiente movimiento no es reabrir mapa ni limpiar historicos. Es tomar el
-carril vivo recomendado: `SGIN_documental_lists_metadata`, en modo read-only
-preflight y metadata-only, sin abrir documentos sensibles ni ejecutar flows.
+El siguiente movimiento no es re-leer SGIN ni reempaquetarlo. Es rehidratar
+Dataverse desde anclas y paquetes existentes, clasificar el estado como
+`local_evidence`, `metadata_only`, `prepared_not_executed`,
+`live_rows_confirmed` o `blocked`, y devolver un unico delta gobernado.
 
 ## Paso Siguiente Previo
+
+Etapa previa: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`.
+
+Movimiento previo:
+`delta_sgin_documental_lists_metadata_read_only_preflight`.
+
+Quedo corregido por orden del owner porque SGIN ya fue leido y paquetizado.
+
+## Historial Supersedido 2
 
 Etapa previa: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
 
@@ -140,9 +150,9 @@ pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workben
 
 ## Resultado Esperado
 
-Ejecutar o preparar `delta_sgin_documental_lists_metadata_read_only_preflight`
-con retorno PASS/OBSERVED/FAIL, sin Dataverse write, sin Microsoft live write,
-sin flow run y sin task Cloud.
+Ejecutar o preparar `delta_dataverse_rehidratacion_desde_paquetes_existentes`
+con retorno PASS/OBSERVED/FAIL, sin nueva lectura live, sin Dataverse write, sin
+Microsoft live write, sin flow run y sin task Cloud.
 
 ## Criterio De Cierre
 

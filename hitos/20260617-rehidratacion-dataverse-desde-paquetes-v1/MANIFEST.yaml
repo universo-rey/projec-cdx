@@ -1,0 +1,12 @@
+id: 20260617-rehidratacion-dataverse-desde-paquetes-v1
+title: Rehidratacion Dataverse Desde Paquetes v1
+status: DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES
+date: 2026-06-17
+mode: LOCAL_EVIDENCE_METADATA_ONLY
+sources:
+  - operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md
+  - operativa/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv
+  - dataverse/ANCLA_REHIDRATACION.md
+external_writes: false
+live_read_executed: false
+next_delta: delta_dataverse_rehidratacion_desde_paquetes_existentes

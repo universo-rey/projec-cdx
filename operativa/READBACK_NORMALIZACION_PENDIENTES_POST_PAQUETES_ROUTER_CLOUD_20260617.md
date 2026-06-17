@@ -40,11 +40,11 @@ Carriles cerrados/supersedidos:
 
 El siguiente movimiento unico recomendado queda:
 
-`delta_sgin_documental_lists_metadata_read_only_preflight`
+`delta_dataverse_rehidratacion_desde_paquetes_existentes`
 
-Motivo: es metadata-only, no depende de UI externa, no requiere merge y consume
-el mapa SGIN ya observado sin escribir en Microsoft, SharePoint, Dataverse ni
-Power Automate.
+Motivo: SGIN ya fue leido y paquetizado. El siguiente movimiento debe
+rehidratar Dataverse desde paquetes existentes sin nueva lectura live, sin
+escribir en Microsoft, SharePoint, Dataverse ni Power Automate.
 
 ## No Ejecutado
 

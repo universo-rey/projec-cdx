@@ -9,4 +9,4 @@ sources:
   - operativa/PENDIENTES_HOY_20260617.md
 external_writes: false
 cloud_task_created: false
-next_delta: delta_sgin_documental_lists_metadata_read_only_preflight
+next_delta: delta_dataverse_rehidratacion_desde_paquetes_existentes

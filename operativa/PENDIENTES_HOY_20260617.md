@@ -6,7 +6,7 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 - Bloqueos reales activos: `NINGUNO`.
 - Cierre total: `NO_DECLARADO`.
-- Etapa: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`.
+- Etapa: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`.
 - Riesgo principal: mezclar binding UI, cierre documental, Dataverse y cambios Git en un solo paquete.
 
 ## Revision Paquetes Router Agents Codex Cloud
@@ -29,28 +29,33 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 ## Carriles Vivos Normalizados
 
-1. `SGIN_documental_lists_metadata`.
+1. `Dataverse_rehidratacion_desde_paquetes`.
    - Estado: `ACTIVE_NEXT_RECOMMENDED`.
-   - Modo: read-only preflight, metadata-only.
-   - Evidencia base: `operativa/READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md` y `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`.
-   - Siguiente accion: `delta_sgin_documental_lists_metadata_read_only_preflight`.
+   - Modo: local evidence / metadata-only; no nueva lectura live.
+   - Evidencia base: `dataverse/ANCLA_REHIDRATACION.md`, `dataverse/GATE.md`, `operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`.
+   - Siguiente accion: `delta_dataverse_rehidratacion_desde_paquetes_existentes`.
 
-2. `SPGovernance_soporte_metadata`.
+2. `SGIN_documental_lists_metadata`.
+   - Estado: `CLOSED_READ_AND_PACKAGED`.
+   - Modo: consumible como fuente para Dataverse; no reabrir lectura ni paquete.
+   - Evidencia base: `operativa/READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md`, `inventarios/SGIN_SHAREPOINT_LISTS_LIVE_20260616.csv` y `hitos/20260617-microsoft-sgin-hitos-documental-v1`.
+
+3. `SPGovernance_soporte_metadata`.
    - Estado: `ACTIVE_CANDIDATE`.
    - Modo: read-only preflight, metadata-only.
    - Evidencia base: `operativa/READBACK_SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.md`.
 
-3. `SDU_runtime_queue_priorities`.
+4. `SDU_runtime_queue_priorities`.
    - Estado: `ACTIVE_CANDIDATE`.
    - Modo: read-only preflight, metadata-only.
    - Evidencia base: `operativa/READBACK_DATAVERSE_POWER_PLATFORM_TENANT_ESCRIBANIA_BITSCH_20260616.md`.
 
-4. `Home_aspx_page_binding`.
+5. `Home_aspx_page_binding`.
    - Estado: `WAITING_TECHNICAL_CONTEXT`.
    - No es bloqueo humano; espera UI/PnP/page API suficiente.
    - Evidencia base: `operativa/BINDING_HOME_SESHAT_UI_READY_20260616.md` y `operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`.
 
-5. `Codex_Cloud_UI_smoke_capture`.
+6. `Codex_Cloud_UI_smoke_capture`.
    - Estado: `WAITING_OWNER_EXTERNAL_TASK`.
    - No es bloqueo local; espera que el owner ejecute el prompt en UI Cloud y traiga el resultado.
    - Evidencia base: `operativa/CODEX_CLOUD_SMOKE_TASK_20260617.md` y `operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md`.
@@ -80,10 +85,10 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 ## Proximo Movimiento Unico Recomendado
 
-`delta_sgin_documental_lists_metadata_read_only_preflight`.
+`delta_dataverse_rehidratacion_desde_paquetes_existentes`.
 
-Motivo: es el carril vivo mas seguro, no depende de UI externa y debe empezar
-en lectura/metadata-only.
+Motivo: SGIN ya fue leido y paquetizado. El paso seguro ahora es rehidratar
+Dataverse desde paquetes existentes sin nueva lectura live ni writes.
 
 ## Validadores Asociados
 

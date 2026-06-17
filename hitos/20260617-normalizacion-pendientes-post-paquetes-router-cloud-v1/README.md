@@ -14,4 +14,4 @@ router, agents-root, codex-root y Codex Cloud.
 
 ## Siguiente
 
-`delta_sgin_documental_lists_metadata_read_only_preflight`
+`delta_dataverse_rehidratacion_desde_paquetes_existentes`

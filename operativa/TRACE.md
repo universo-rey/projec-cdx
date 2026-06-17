@@ -735,6 +735,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-normalizacion-pendientes-post-paquetes-router-cloud-v1`.
 - Cierre: `PENDING_NORMALIZED_AFTER_PACKAGES_ROUTER_CLOUD`; siguiente delta unico `delta_sgin_documental_lists_metadata_read_only_preflight`.
 
+## Rehidratacion Dataverse Desde Paquetes
+
+- Fuente: correccion del owner: SGIN ya fue leido y paquetizado; rehidratar desde Dataverse.
+- Proceso: aplicar `dataverse-rehidratacion`, releer anclas Dataverse, clasificar SGIN como fuente cerrada consumible y fijar el siguiente delta desde memoria larga/paquetes existentes.
+- Salida: `operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`, `operativa/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv`.
+- Hito: `hitos/20260617-rehidratacion-dataverse-desde-paquetes-v1`.
+- Cierre: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`; siguiente delta unico `delta_dataverse_rehidratacion_desde_paquetes_existentes`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.
