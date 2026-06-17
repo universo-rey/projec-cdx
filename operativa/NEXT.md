@@ -4,7 +4,48 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-No queda una wave abierta por defecto. El siguiente paso unico solo se activa si aparece nueva superficie documental o un delta operativo nuevo.
+Etapa actual: `PRELIMINARES_CIERRE_TOTAL`.
+
+No declarar cierre total todavia. La mesa de seis agentes dejo el fan-in preliminar en `operativa/PRELIMINARES_CIERRE_TOTAL_20260616.md` y la superficie Git quedo clasificada inicialmente en `operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md` mas su CSV de detalle.
+
+El paquete preliminar quedo versionado en `hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1`.
+La matriz CSV ya quedo clasificada por `paquete`, `estado`, `owner`, `accion_propuesta`, `riesgo` y `stop_condition`.
+
+Movimiento unico actual: actualizar el binding de `SeshatHubRegistroN.8/SitePages/Home.aspx` para enlazar los dos atomos visibles ya publicados: Seshat Home y Corte/Proposito.
+
+La wave Dataverse/Power Platform queda rehidratada como `OBSERVED_READ_ONLY` y `TENANT_ONLY`: `HUBDesarrollo`, soluciones, bots/copilots, workflows, colas SDU, Planner agregado y Teams visibles ya tienen evidencia local en `operativa/READBACK_DATAVERSE_POWER_PLATFORM_TENANT_ESCRIBANIA_BITSCH_20260616.md`.
+
+La wave `SGIN` resolvio el sitio real: `https://escribaniabitsch.sharepoint.com/sites/sistema`, drive `Documentos compartidos`, 41 listas/bibliotecas por metadata y 10 items de raiz contados sin reproducir nombres. Evidencia principal: `operativa/READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md`.
+
+El cruce SGIN/Dataverse ya detecto metadata matches en soluciones, workflows y colas SDU. Evidencia principal: `operativa/READBACK_SGIN_DATAVERSE_POWER_PLATFORM_CROSSWALK_20260616.md`.
+
+La wave atomica de hidratacion metadata-only quedo preparada en `hitos/20260616-sdu-dataverse-metadata-wave-v1`, con skill reusable `C:/Users/enzo1/.codex/skills/sdu-dataverse-metadata-wave/SKILL.md` y validador `tools/validate_sdu_dataverse_metadata_wave.ps1`.
+
+El candidate count estructurado ya dejo `SPGovernanceModel` como solucion unica y SDU/SharePoint como familias con multiples candidatos. Evidencia: `operativa/READBACK_SGIN_COMPONENT_CANDIDATE_COUNT_20260616.md`.
+
+La desambiguacion de `SPGovernanceModel` confirmo que su `cr3c_SharePointSiteUrl` apunta a `/sites/soporte`, no a SGIN `/sites/sistema`. Evidencia: `operativa/READBACK_SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.md`.
+
+La busqueda propia de SGIN no encontro modelo SPGovernance directo visible; SGIN queda como site documental confirmado. Evidencia: `operativa/READBACK_SGIN_OWN_GOVERNANCE_LINK_20260616.md`.
+
+El mapa consolidado ya separa `SGIN documental`, `SPGovernanceModel /sites/soporte`, `SDU runtime` y `Dataverse hydration`. Evidencia: `operativa/MAPA_SGIN_SPGOVERNANCE_SDU_DATAVERSE_WAVE_20260616.md`.
+
+El fan-in de seis agentes quedo integrado en `operativa/READBACK_FAN_IN_AGENTES_WAVE_ATOMICA_METADATA_20260616.md`. Canon semantico: `operativa/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md`. Matriz de huella: `operativa/MATRIZ_HUELLA_AGENTES_WAVE_ATOMICA_METADATA_20260616.csv`.
+
+El primer borrador rector del Manifiesto SDU de Escribania Bitsch quedo preparado con fan-in integrado de Seshat, Thot, Anubis, Maat, Horus y Narrador en `operativa/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md`. Paquete versionado: `hitos/20260616-manifiesto-sdu-escribania-bitsch-v1`.
+
+La huella atomica owner-approved ya fue promovida a Dataverse como puntero metadata-only live. Source artifact: `03293284-d269-f111-ab0e-00224805fc91`. Evidence: `9dc73696-d269-f111-ab0e-00224805f9dd`. Postcheck: `source_count=1`, `evidence_count=1`. Evidencia local: `operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json` y `hitos/20260616-huella-atomica-sdu-tenant-dataverse-v1`.
+
+La superficie consumidora siguiente ya fue ejecutada en carril seguro: `SeshatHubRegistroN.8/Home.aspx` queda como superficie primaria, el archivo canonico quedo publicado en SharePoint y Dataverse quedo hidratado con `sharepoint:seshat-home:20260616:v1`. Evidencia: `operativa/READBACK_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md` y `hitos/20260616-seshat-home-sharepoint-canon-v1`.
+
+El owner aprobo el binding visible posterior. El bloque listo para pegar, pasos UI, rollback y postcheck estan en `operativa/BINDING_HOME_SESHAT_UI_READY_20260616.md`.
+
+El resto de la Corte y el proposito ya quedaron publicados como segundo atomo visible y registrados en Dataverse. Evidencia: `operativa/READBACK_PROMOCION_CORTE_PROPOSITO_SHAREPOINT_20260616.md` y `hitos/20260616-corte-proposito-sharepoint-canon-v1`.
+
+El resto operativo de Seshat/Corte ya fue delegado en agentes de `cdf-soluciones` como wave local/documental encadenada. Evidencia PROJEC: `operativa/READBACK_CDF_SESHAT_RESTO_CORTE_DELEGATION_20260616.md`. Evidencia CDF: `C:/Users/enzo1/Documents/GitHub/cdf-soluciones/03_OPERACION/SESHAT_RESTO_CORTE_DELEGATION` y `C:/Users/enzo1/Documents/GitHub/cdf-soluciones/08_EVIDENCIA/2026-06-16_CDF_SESHAT_RESTO_CORTE_DELEGATION`.
+
+El target UI/surface para `LANE_B_CORTE_AGENT_INDEX` ya quedo elegido, publicado como atomo documental SharePoint y registrado como puntero metadata-only en Dataverse: `SeshatHubRegistroN.8 / Documentos compartidos / INDICE_CORTE_AGENTES_20260617.md`. Evidencia: `operativa/READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md`, `operativa/READBACK_DATAVERSE_POINTER_INDICE_CORTE_AGENTES_20260617.md` y `operativa/DATAVERSE_PROMOTION_INDICE_CORTE_AGENTES_20260617.json`.
+
+La wave Microsoft preliminar paso a `OBSERVED_READ_ONLY`: hay tenant, Teams, Planner, OneDrive y SharePoint confirmados. Lo que sigue no es desbloquear; es resolver naming y profundidad de `SGIN`.
 
 La wave atomica ya quedo consolidada en [docs/superpowers/plans/2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md) y su packet versionado en [hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1/README.md).
 
@@ -18,10 +59,10 @@ pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workben
 
 ## Resultado Esperado
 
-Una nueva entrada versionada solo si aparece una superficie nueva o un cambio operativo que realmente mueva el estado.
+Elegir binding UI/surface posterior para el indice ya publicado y registrado: enlazarlo desde `Home.aspx` cuando exista contexto autenticado de page edit, o preparar una superficie visible alternativa si se mantiene `Home.aspx` en espera.
 
 ## Criterio De Cierre
 
 - `TRACE.md` registra fuente, proceso, salida, hito y cierre.
-- `BLOCKERS.md` queda sin bloqueo activo o con bloqueo real nombrado.
+- `BLOCKERS.md` queda sin condicion pendiente activa o con condicion real nombrada.
 - `validate_proj_cdx_workbench.ps1` devuelve `PASS`.

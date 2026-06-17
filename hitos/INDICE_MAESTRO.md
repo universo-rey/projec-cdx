@@ -26,6 +26,11 @@ Mapa corto de los paquetes versionados en `PROJEC CDX/hitos`.
 | `20260615-politica-ramas-versionado-v1` | Politica local de ramas y versionado que absorbe el scaffold | `GREEN_LOCAL` | `hitos/20260615-politica-ramas-versionado-v1/READBACK.md`, `operativa/POLITICA_RAMAS_VERSIONADO_20260615.md` |
 | `20260615-repos-surface-github-v1` | Acta local de repos surface GitHub | `GREEN_LOCAL` | `hitos/20260615-repos-surface-github-v1/READBACK.md`, `operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md` |
 | `20260616-wave-mapas-uniformes-v1` | Uniformidad visual de las capas de mapas | `GREEN_LOCAL` | `hitos/20260616-wave-mapas-uniformes-v1/READBACK.md`, `hitos/20260616-wave-mapas-uniformes-v1/INDICE.csv`, `MAPA_MAESTRO.md`, `MAPA_CORTO.md`, `MAPA_CAPAS.md` |
+| `20260616-pre-cierre-constitutivo-corte-agentes-v1` | Fan-in preliminar de cierre constitutivo de corte y agentes | `PRELIMINARES` | `hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1/READBACK.md`, `operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md`, `operativa/PRELIMINARES_CIERRE_TOTAL_20260616.md`, `operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv` |
+| `20260616-manifiesto-sdu-escribania-bitsch-v1` | Primer borrador rector del Manifiesto SDU de Escribania Bitsch | `BORRADOR_V1_FAN_IN_INTEGRATED` | `hitos/20260616-manifiesto-sdu-escribania-bitsch-v1/READBACK.md`, `operativa/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md`, `operativa/READBACK_FAN_IN_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md` |
+| `20260616-huella-atomica-sdu-tenant-dataverse-v1` | Promocion owner-approved de huella atomica SDU a tenant y Dataverse | `DELTA_APLICADO` | `hitos/20260616-huella-atomica-sdu-tenant-dataverse-v1/READBACK.md`, `dataverse/HUELLA_ATOMICA_SDU_OWNER_APPROVED_20260616.md`, `operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json` |
+| `20260616-seshat-home-sharepoint-canon-v1` | Promocion de Seshat Home SharePoint como canon visible | `DELTA_APLICADO_CON_DELTA_TECNICO_PAGE_BINDING` | `hitos/20260616-seshat-home-sharepoint-canon-v1/READBACK.md`, `operativa/HUELLA_ATOMICA_SESHAT_HOME_20260616.md`, `operativa/SHAREPOINT_SESHAT_HOME_PROMOTION_20260616.json` |
+| `20260616-corte-proposito-sharepoint-canon-v1` | Promocion de Corte y Proposito como canon visible SharePoint | `DELTA_APLICADO` | `hitos/20260616-corte-proposito-sharepoint-canon-v1/READBACK.md`, `operativa/HUELLA_ATOMICA_CORTE_PROPOSITO_20260616.md`, `operativa/SHAREPOINT_CORTE_PROPOSITO_PROMOTION_20260616.json` |
 
 Regla:
 - El detalle vive en cada paquete versionado.
@@ -77,6 +82,11 @@ Regla:
 - `20260616-wave-atomica-documentos-conocimiento-v1`
 - `20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1`
 - `20260616-wave-mapas-uniformes-v1`
+- `20260616-pre-cierre-constitutivo-corte-agentes-v1`
+- `20260616-manifiesto-sdu-escribania-bitsch-v1`
+- `20260616-huella-atomica-sdu-tenant-dataverse-v1`
+- `20260616-seshat-home-sharepoint-canon-v1`
+- `20260616-corte-proposito-sharepoint-canon-v1`
 
 Nota:
 - `20260615-semaforo-verde-historicos-v1` no se absorbe; se conserva como hito propio de reclasificacion gobernada.

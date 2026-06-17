@@ -1,0 +1,149 @@
+{
+  "captured_at_local": "2026-06-16T17:58:28-03:00",
+  "scope": "TENANT_ONLY",
+  "tenant_name": "Escribania Bitsch",
+  "tenant_id": "858a0852-44a1-413e-a0fe-f053949797d6",
+  "environment_name": "HUBDesarrollo",
+  "environment_url": "https://org084965d9.crm.dynamics.com",
+  "environment_id": "7f65fc04-c27a-ea0d-bd2d-266aa9203c1e",
+  "profile": "SDU-HUB",
+  "solutions_count": 817,
+  "unmanaged_solutions_count": 9,
+  "managed_solutions_count": 808,
+  "custom_or_operational_solutions": [
+    {
+      "solution_unique_name": "Active",
+      "friendly_name": "Solución activa",
+      "solution_id": "fd140aae-4df4-11dd-bd17-0019b9312238",
+      "is_managed": "False",
+      "version": "1.0"
+    },
+    {
+      "solution_unique_name": "Basic",
+      "friendly_name": "Solución básica",
+      "solution_id": "25a01723-9f63-4449-a3e0-046cc23a2902",
+      "is_managed": "False",
+      "version": "1.0"
+    },
+    {
+      "solution_unique_name": "Cr54a74",
+      "friendly_name": "Common Data Services Default Solution",
+      "solution_id": "00000001-0000-0000-0001-00000000009b",
+      "is_managed": "False",
+      "version": "1.0.0.0"
+    },
+    {
+      "solution_unique_name": "Default",
+      "friendly_name": "Solución predeterminada",
+      "solution_id": "fd140aaf-4df4-11dd-bd17-0019b9312238",
+      "is_managed": "False",
+      "version": "1.0"
+    },
+    {
+      "solution_unique_name": "GestordeCopilotos",
+      "friendly_name": "Gestor de Copilotos",
+      "solution_id": "ff454097-10e4-f011-8406-00224802e86d",
+      "is_managed": "False",
+      "version": "1.0.0.0"
+    },
+    {
+      "solution_unique_name": "MDE",
+      "friendly_name": "MDE",
+      "solution_id": "f594c7be-5fe4-f011-8406-00224802e86d",
+      "is_managed": "False",
+      "version": "1.0.0.0"
+    },
+    {
+      "solution_unique_name": "sdu_runtime_control_plane",
+      "friendly_name": "SDU Runtime Control Plane",
+      "solution_id": "6f6acd76-5467-f111-ab0d-00224805f8f9",
+      "is_managed": "False",
+      "version": "1.0.1.0"
+    },
+    {
+      "solution_unique_name": "SDUCapabilityControlPlane",
+      "friendly_name": "SDU Capability Control Plane",
+      "solution_id": "f427dbab-2e5f-f111-a826-00224805f8f9",
+      "is_managed": "False",
+      "version": "0.1.0.0"
+    },
+    {
+      "solution_unique_name": "SPGovernanceModel",
+      "friendly_name": "SP Governance Model ",
+      "solution_id": "9e0ad08a-ac24-f111-88b3-000d3a34016d",
+      "is_managed": "False",
+      "version": "1.0.0.0"
+    }
+  ],
+  "workflows_count": 1165,
+  "bots_count": 36,
+  "sdu_table_count_rows": [
+    {
+      "captured_at_local": "2026-06-16T17:57:17-03:00",
+      "entity_set": "mon_sdu_source_artifacts",
+      "live_status": "query_error",
+      "row_count": "",
+      "classification": "observed_with_query_limit",
+      "source": "dataverse_webapi_count"
+    },
+    {
+      "captured_at_local": "2026-06-16T17:57:17-03:00",
+      "entity_set": "mon_sdu_validation_gates",
+      "live_status": "query_error",
+      "row_count": "",
+      "classification": "observed_with_query_limit",
+      "source": "dataverse_webapi_count"
+    },
+    {
+      "captured_at_local": "2026-06-16T17:57:17-03:00",
+      "entity_set": "mon_sdu_stop_conditions",
+      "live_status": "query_error",
+      "row_count": "",
+      "classification": "observed_with_query_limit",
+      "source": "dataverse_webapi_count"
+    },
+    {
+      "captured_at_local": "2026-06-16T17:57:17-03:00",
+      "entity_set": "mon_sdu_evidences",
+      "live_status": "query_error",
+      "row_count": "",
+      "classification": "observed_with_query_limit",
+      "source": "dataverse_webapi_count"
+    },
+    {
+      "captured_at_local": "2026-06-16T17:57:17-03:00",
+      "entity_set": "mon_sdu_apply_logs",
+      "live_status": "query_error",
+      "row_count": "",
+      "classification": "observed_with_query_limit",
+      "source": "dataverse_webapi_count"
+    },
+    {
+      "captured_at_local": "2026-06-16T17:57:17-03:00",
+      "entity_set": "mon_sdu_agent_connection_mappings",
+      "live_status": "query_error",
+      "row_count": "",
+      "classification": "observed_with_query_limit",
+      "source": "dataverse_webapi_count"
+    }
+  ],
+  "sdu_queue_count": 8,
+  "sdu_backlog_total": 373.0,
+  "files": {
+    "sdu_tables": "C:\\Users\\enzo1\\PROJEC CDX\\inventarios\\DATAVERSE_SDU_TABLE_COUNTS_LIVE_20260616.csv",
+    "workflows": "C:\\Users\\enzo1\\PROJEC CDX\\inventarios\\DATAVERSE_WORKFLOWS_LIVE_20260616.csv",
+    "planner_counts": "C:\\Users\\enzo1\\PROJEC CDX\\inventarios\\PLANNER_TASKS_SANITIZED_COUNTS_20260616.csv",
+    "bots": "C:\\Users\\enzo1\\PROJEC CDX\\inventarios\\DATAVERSE_BOTS_LIVE_20260616.csv",
+    "solutions": "C:\\Users\\enzo1\\PROJEC CDX\\inventarios\\DATAVERSE_SOLUTIONS_LIVE_20260616.csv",
+    "workqueues": "C:\\Users\\enzo1\\PROJEC CDX\\inventarios\\DATAVERSE_WORKQUEUES_LIVE_20260616.csv",
+    "pac_solution": "C:\\Users\\enzo1\\PROJEC CDX\\operativa\\PAC_SOLUTION_LIST_HUBDESARROLLO_20260616.txt",
+    "pac_copilot": "C:\\Users\\enzo1\\PROJEC CDX\\operativa\\PAC_COPILOT_LIST_HUBDESARROLLO_20260616.txt"
+  },
+  "safety": {
+    "planner_payload_persisted": false,
+    "secrets_printed": false,
+    "teams_messages_persisted": false,
+    "writes_executed": false,
+    "permission_changes": false
+  }
+}

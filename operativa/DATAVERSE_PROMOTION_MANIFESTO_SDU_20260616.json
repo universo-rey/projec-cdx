@@ -1,0 +1,34 @@
+{
+  "promoted_at_local": "2026-06-16T19:28:15",
+  "environment_url": "https://org084965d9.crm.dynamics.com",
+  "environment_id": "7f65fc04-c27a-ea0d-bd2d-266aa9203c1e",
+  "tenant_id": "858a0852-44a1-413e-a0fe-f053949797d6",
+  "mode": "LIVE_METADATA_POINTER_WRITE",
+  "source_count": 1,
+  "evidence_count": 1,
+  "source": [
+    {
+      "@odata.etag": "W/\"24161610\"",
+      "mon_sdu_source_artifactid": "03293284-d269-f111-ab0e-00224805fc91",
+      "mon_environment_id": "7f65fc04-c27a-ea0d-bd2d-266aa9203c1e",
+      "mon_display_name": "Manifiesto SDU Escribania Bitsch - Huella atomica owner approved v1",
+      "mon_status": "Completed",
+      "mon_stop_condition": "delta_governed_by_human_authority; live_requires_exact_target_for_mutation",
+      "mon_canonical_id": "sdu:manifesto:escribania-bitsch:20260616:v1",
+      "mon_owner": "Enzo Figueroa / SDU Owner Operativo"
+    }
+  ],
+  "evidence": [
+    {
+      "@odata.etag": "W/\"24161613\"",
+      "mon_stop_condition": "delta_governed_by_human_authority; postcheck_required",
+      "mon_display_name": "Evidencia promocion Manifiesto SDU - owner approved v1",
+      "mon_status": "Completed",
+      "mon_canonical_id": "evidence:sdu:manifesto:escribania-bitsch:20260616:v1",
+      "mon_sdu_evidenceid": "9dc73696-d269-f111-ab0e-00224805f9dd",
+      "mon_evidence_type": "metadata_pointer_only"
+    }
+  ],
+  "rollback": "Patch exact canonical ids to Pending/retired or delete exact ids if owner orders reversal",
+  "postcheck": "source_count=1 and evidence_count=1; no payload or secrets written"
+}

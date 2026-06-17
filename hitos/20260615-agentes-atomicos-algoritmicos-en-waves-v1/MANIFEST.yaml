@@ -1,0 +1,21 @@
+id: 20260615-agentes-atomicos-algoritmicos-en-waves-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: agentes_atomicos_algoritmicos_en_waves
+estado: GREEN_LOCAL
+fuente:
+  - operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md
+  - recipes/agentes-atomicos-algoritmicos-en-waves.md
+  - procesos/agentes-atomicos-algoritmicos-en-waves.md
+salida:
+  - hitos/20260615-agentes-atomicos-algoritmicos-en-waves-v1/
+rollback: eliminar la carpeta versionada y revertir la referencia de entrenamiento
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - one_wave_one_scope
+evidencia:
+  - hitos/20260615-agentes-atomicos-algoritmicos-en-waves-v1/EVIDENCIA.md
+  - hitos/20260615-agentes-atomicos-algoritmicos-en-waves-v1/READBACK.md

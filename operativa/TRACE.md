@@ -395,6 +395,178 @@ Cadena operativa de `PROJEC CDX`.
 - Salida: `C:/Users/enzo1/Documents/README.md`, `C:/Users/enzo1/Documents/MAPA.md`, `C:/Users/enzo1/Documents/DOCUMENTS_INDEX.csv`.
 - Cierre: la ruta activa queda local y el espejo viejo fue retirado.
 
+## Pre-Cierre Constitutivo Corte Agentes
+
+- Fuente: previa borrador de cierre, mesa de seis agentes y fan-in preliminar para cierre total.
+- Proceso: ampliar y versionar el acta constitutiva, el plan, el informe cronologico y la matriz preliminar sin declarar cierre total.
+- Salida: `hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1`, `operativa/PRELIMINARES_CIERRE_TOTAL_20260616.md`, `operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md`, `operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv`.
+- Hito: `hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1`.
+- Cierre: queda versionado como `PRELIMINARES`; cierre total sigue `NO_DECLARADO`.
+
+## Microsoft Live Read Preliminar
+
+- Fuente: pedido de preparar una pasada live por Microsoft, preliminar, revisando primero lo ya disponible y entregando recetas, skills y tools a los agentes.
+- Proceso: consultar la mesa de seis agentes, separar read-only de write, fijar gate, tools permitidas/en espera de cierre, condiciones de pausa y proximo target exacto.
+- Salida: `operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md`, `operativa/ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md`, `recipes/microsoft-live-read-preliminar.md`, `procesos/microsoft-live-read-preliminar.md`.
+- Hito: pendiente; no se ejecuta live en esta pasada.
+- Cierre: `PREPARED_ONLY / NO_LIVE_EXECUTION`; la mesa queda alineada y el proximo movimiento unico exige target exacto.
+
+## Microsoft Universo Live Read
+
+- Fuente: pedido de entrar al tenant y relevar el universo con evidencia previa como base suficiente.
+- Proceso: ejecutar probes read-only de OneDrive/SharePoint, Teams, Planner y chats como contenedores, sanitizando previews y sin abrir contenidos profundos.
+- Salida: `operativa/READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md`.
+- Hito: pendiente; lectura viva queda en operativa hasta decidir wave `SGIN`.
+- Cierre: `OBSERVED_READ_ONLY`; confirmado tenant `escribaniabitsch`, 6 equipos Teams, 24 planes Planner, 2 sitios SharePoint y 37 bibliotecas documentales.
+
+## Dataverse Power Platform Tenant Escribania Bitsch
+
+- Fuente: el usuario fijo la frontera viva: solo tenant `Escribania Bitsch`, con agentes SDU rehidratados por Dataverse y sin expansion a otros tenants.
+- Proceso: realinear los seis agentes, ejecutar inventarios read-only sanitizados de Dataverse/Power Platform, Planner agregado y Teams visibles, y separar `confirmada`, `observada`, `inferida` y `fuera_de_alcance_actual`.
+- Salida: `operativa/READBACK_DATAVERSE_POWER_PLATFORM_TENANT_ESCRIBANIA_BITSCH_20260616.md`, `operativa/DATAVERSE_POWER_PLATFORM_LIVE_SUMMARY_20260616.json`, `inventarios/DATAVERSE_SOLUTIONS_LIVE_20260616.csv`, `inventarios/DATAVERSE_WORKFLOWS_LIVE_20260616.csv`, `inventarios/DATAVERSE_BOTS_LIVE_20260616.csv`, `inventarios/DATAVERSE_WORKQUEUES_LIVE_20260616.csv`, `inventarios/PLANNER_TASKS_SANITIZED_COUNTS_20260616.csv`, `inventarios/TEAMS_LIVE_20260616.csv`.
+- Hito: pendiente; queda en operativa hasta cerrar la wave `SGIN` o empaquetar hito tenant.
+- Cierre: `OBSERVED_READ_ONLY / TENANT_ONLY`; confirmado `HUBDesarrollo`, 817 soluciones, 36 bots/copilots, 1165 workflows, 8 colas SDU, 373 queue items backlog, 24 planes Planner y 2630 tareas agregadas sin titulos.
+
+## SGIN Observed Read Only
+
+- Fuente: proximo delta unico de la wave Microsoft/Dataverse: resolver sitio/path documental real de `SGIN` dentro del tenant `Escribania Bitsch`.
+- Proceso: consultar Graph read-only por group/team/site/drive/planner, contar listas y raiz de drive sin reproducir nombres de documentos.
+- Salida: `operativa/READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md`, `inventarios/SGIN_GROUP_SITE_DRIVE_PLAN_PROBES_20260616.csv`, `operativa/SGIN_GROUP_SITE_DRIVE_PLAN_PROBES_20260616.json`, `inventarios/SGIN_SHAREPOINT_LISTS_LIVE_20260616.csv`, `operativa/SGIN_DRIVE_ROOT_CHILDREN_SUMMARY_20260616.json`.
+- Hito: pendiente; queda en operativa hasta cruzar con Dataverse/Power Platform.
+- Cierre: `OBSERVED_READ_ONLY`; confirmado site real `https://escribaniabitsch.sharepoint.com/sites/sistema`, drive `Documentos compartidos`, 41 listas/bibliotecas por metadata y 10 items de raiz contados sin nombres.
+
+## SGIN Dataverse Power Platform Crosswalk
+
+- Fuente: siguiente delta unico de `SGIN`: cruzar site/drive ya confirmado con inventarios vivos Dataverse/Power Platform.
+- Proceso: buscar patrones SGIN/sistema/SDU/SharePoint/SPGovernance en CSV vivos de soluciones, workflows, bots y workqueues, sin llamar Microsoft ni ejecutar flows.
+- Salida: `operativa/READBACK_SGIN_DATAVERSE_POWER_PLATFORM_CROSSWALK_20260616.md`, `inventarios/SGIN_DATAVERSE_POWER_PLATFORM_METADATA_CROSSWALK_20260616.csv`.
+- Hito: pendiente; queda en operativa hasta resolver componentes estructurados.
+- Cierre: `OBSERVED_READ_ONLY`; 12 matches en soluciones, 17 en workflows y 8 en workqueues, clasificados como `metadata_match`.
+
+## SDU Dataverse Metadata Wave
+
+- Fuente: aprobacion de avanzar con recetas, skills, fan-in, cola SDU, rehidratacion Dataverse e hidratacion metadata-only.
+- Proceso: despachar seis agentes, crear skill local, generar matriz metadata-only, sanear Planner, agregar receta/proceso/patron/tool y versionar hito.
+- Salida: `hitos/20260616-sdu-dataverse-metadata-wave-v1`, `tools/validate_sdu_dataverse_metadata_wave.ps1`, `recipes/sdu-dataverse-metadata-wave.md`, `procesos/sdu-dataverse-metadata-wave.md`, `patrones/sdu-dataverse-metadata-wave.md`, `C:/Users/enzo1/.codex/skills/sdu-dataverse-metadata-wave/SKILL.md`.
+- Hito: `hitos/20260616-sdu-dataverse-metadata-wave-v1`.
+- Cierre: `METADATA_ONLY_PREPARED`; matriz de 65 filas, skill validable, Planner saneado y siguiente delta unico candidate count estructurado.
+
+## SGIN Component Candidate Count
+
+- Fuente: siguiente delta unico tras wave metadata-only: determinar si `SGIN site/drive -> SPGovernanceModel/SDU` tiene candidato exacto.
+- Proceso: buscar tokens exactos y familias en inventarios locales sanitizados, sin payloads ni llamadas de write.
+- Salida: `operativa/READBACK_SGIN_COMPONENT_CANDIDATE_COUNT_20260616.md`, `inventarios/SGIN_COMPONENT_CANDIDATE_COUNTS_20260616.csv`.
+- Hito: pendiente; se absorbe en siguiente desambiguacion o hito consolidado.
+- Cierre: `OBSERVED_READ_ONLY`; `SPGovernanceModel` queda con `candidate_count_one` como solucion, SDU/SharePoint quedan `candidate_count_many`.
+
+## SPGovernance Component Disambiguation
+
+- Fuente: candidate count estructurado pidio resolver `SPGovernanceModel` por componentes seguros.
+- Proceso: agrupar solutioncomponents, resolver entidades/workflows/variables no secretas, y leer puntualmente `cr3c_SharePointSiteUrl` por ser texto no secreto.
+- Salida: `operativa/READBACK_SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.md`, `inventarios/SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.csv`, `inventarios/SPGOVERNANCE_SHAREPOINT_SITEURL_VALUE_20260616.csv`.
+- Hito: pendiente; se absorbe en siguiente cierre SGIN.
+- Cierre: `OBSERVED_READ_ONLY`; `SPGovernanceModel` apunta a `/sites/soporte`, no a SGIN `/sites/sistema`.
+
+## SGIN Own Governance Link
+
+- Fuente: la desambiguacion de `SPGovernanceModel` dejo pendiente saber si SGIN tenia modelo propio.
+- Proceso: buscar tokens SGIN/site en variables no secretas y en inventarios locales de soluciones, workflows y bots.
+- Salida: `operativa/READBACK_SGIN_OWN_GOVERNANCE_LINK_20260616.md`, `inventarios/SGIN_OWN_GOVERNANCE_LINK_SEARCH_20260616.csv`.
+- Hito: pendiente; se absorbe en mapa consolidado de wave.
+- Cierre: `OBSERVED_READ_ONLY`; no hay modelo SPGovernance directo visible para SGIN por este carril metadata-only.
+
+## Wave Map SGIN SPGovernance SDU Dataverse
+
+- Fuente: cierre de la wave pidio eliminar redundancia semantica y dejar caminos atomicos para agentes.
+- Proceso: consolidar carriles, evidencia y proximos deltas en mapa unico.
+- Salida: `operativa/MAPA_SGIN_SPGOVERNANCE_SDU_DATAVERSE_WAVE_20260616.md`, `operativa/MAPA_SGIN_SPGOVERNANCE_SDU_DATAVERSE_WAVE_20260616.csv`.
+- Hito: pendiente; mapa operativo queda listo para elegir carril.
+- Cierre: `OBSERVED_READ_ONLY / METADATA_ONLY_PREPARED`; cuatro carriles separados y sin apply.
+
+## Despacho Agentes Wave Atomica Metadata
+
+- Fuente: pedido de despachar todos los carriles para distribuir huella atomica, idempotente, encadenada, trazable, versionable y energetica.
+- Proceso: aplicar `cabina-agent-delegation`, `parallel-order-governance`, `matrix-recipe-skill-sync` y `sdu-dataverse-metadata-wave`; declarar seis carriles con locks disjuntos y retorno exacto.
+- Salida: `operativa/ORDEN_DESPACHO_AGENTES_WAVE_ATOMICA_METADATA_20260616.md`, `operativa/READBACK_FAN_IN_AGENTES_WAVE_ATOMICA_METADATA_20260616.md`, `operativa/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md`, `operativa/MATRIZ_HUELLA_AGENTES_WAVE_ATOMICA_METADATA_20260616.csv`.
+- Hito: pendiente; integrado en operativa y mapas visibles.
+- Cierre: `FAN_IN_INTEGRATED`.
+
+## Manifiesto SDU Escribania Bitsch
+
+- Fuente: voluntad rectora entregada por el owner del SDU para preparar primer borrador del Manifiesto SDU de Escribania Bitsch, tomando criterio del texto fuente sin copiarlo literal.
+- Proceso: aplicar `cabina-agent-delegation`, `parallel-order-governance`, `canon-documental` y `sdu-dataverse-metadata-wave`; despachar seis agentes en carriles read-only; integrar fan-in en borrador local; mantener Microsoft/Dataverse live en `NO_EJECUTADO`.
+- Salida: `operativa/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md`, `operativa/ORDEN_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md`, `operativa/READBACK_FAN_IN_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md`, `operativa/MATRIZ_HUELLA_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.csv`.
+- Hito: `hitos/20260616-manifiesto-sdu-escribania-bitsch-v1`.
+- Cierre: `BORRADOR_V1_FAN_IN_INTEGRATED`; pendiente revision del owner antes de version firmable/aprobable.
+
+## Promocion Huella Atomica Tenant Dataverse
+
+- Fuente: aprobacion del owner para que la huella atomica del Manifiesto SDU se promueva a todo el tenant y mas aun a Dataverse.
+- Proceso: fan-in de seis agentes, target exacto `HUBDesarrollo`, escritura live metadata-only en `mon_sdu_source_artifacts` y `mon_sdu_evidences`, rollback y postcheck registrados.
+- Salida: `dataverse/HUELLA_ATOMICA_SDU_OWNER_APPROVED_20260616.md`, `operativa/READBACK_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md`, `operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`, `tools/promote_sdu_manifesto_dataverse.ps1`.
+- Hito: `hitos/20260616-huella-atomica-sdu-tenant-dataverse-v1`.
+- Cierre: `LIVE_METADATA_POINTER_WRITE`; source artifact `03293284-d269-f111-ab0e-00224805fc91`, evidence `9dc73696-d269-f111-ab0e-00224805f9dd`, `source_count=1`, `evidence_count=1`, sin payload sensible.
+- Regla: `stop_condition` tecnico pasa a `delta_gobernado`; bloqueo real solo por autoridad humana expresa.
+
+## Promocion Seshat Home SharePoint
+
+- Fuente: aprobacion del owner para que `SeshatHubRegistroN.8/SitePages/Home.aspx` sea la superficie consumidora siguiente, canon visible de Seshat, la Corte y el proposito.
+- Proceso: confirmar sitio, preparar huella de lectura viva, intentar carril de pagina moderna, publicar archivo canonico por conector SharePoint y registrar punteros Dataverse.
+- Salida: `operativa/HUELLA_ATOMICA_SESHAT_HOME_20260616.md`, `operativa/READBACK_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md`, `operativa/SHAREPOINT_SESHAT_HOME_PROMOTION_20260616.json`.
+- Hito: `hitos/20260616-seshat-home-sharepoint-canon-v1`.
+- Cierre: `LIVE_SHAREPOINT_FILE_WRITE_AND_DATAVERSE_POINTER_WRITE`; SharePoint item `017KTOXDDRQOWBVL74BBAIEB2ZL7CHHTWJ`; Dataverse source `b540e1ee-d569-f111-ab0e-00224805f9dd`; evidence `f18df1f4-d569-f111-ab0e-00224805f9dd`.
+- Delta: `Home.aspx` directo por Graph Pages API devolvio `403`; queda binding de pagina como `delta_gobernado`, no bloqueo real.
+- Aprobacion posterior: owner aprobo el binding visible; `operativa/BINDING_HOME_SESHAT_UI_READY_20260616.md` deja bloque, pasos UI, rollback y postcheck.
+
+## Promocion Corte Proposito SharePoint
+
+- Fuente: pedido del owner de pasar al siguiente eslabon tras Seshat Home: el resto de la Corte y proposito.
+- Proceso: preparar huella viva de Corte, publicar archivo canonico en SharePoint y registrar punteros metadata-only en Dataverse.
+- Salida: `operativa/HUELLA_ATOMICA_CORTE_PROPOSITO_20260616.md`, `operativa/READBACK_PROMOCION_CORTE_PROPOSITO_SHAREPOINT_20260616.md`, `operativa/SHAREPOINT_CORTE_PROPOSITO_PROMOTION_20260616.json`.
+- Hito: `hitos/20260616-corte-proposito-sharepoint-canon-v1`.
+- Cierre: `LIVE_SHAREPOINT_FILE_WRITE_AND_DATAVERSE_POINTER_WRITE`; SharePoint item `017KTOXDEDZ54ZDQQVAJGJYWIO2V325DR5`; Dataverse source `b332bc16-d969-f111-ab0e-00224805f8f9`; evidence `f77f4619-d969-f111-ab0e-00224805fc91`.
+- Proximo: binding conjunto desde `Home.aspx` para Seshat Home y Corte/Proposito.
+
+## CDF Seshat Resto Corte Delegation
+
+- Fuente: pedido de continuar con el resto y delegarlo en agentes de `cdf-soluciones`.
+- Proceso: aplicar `cabina-agent-delegation` y `parallel-order-governance`, usando fallback CDF porque las matrices `.agents` paralelas no existen en ese repo; crear wave con lanes atomicas, fan-in y validacion local.
+- Salida: `C:/Users/enzo1/Documents/GitHub/cdf-soluciones/03_OPERACION/SESHAT_RESTO_CORTE_DELEGATION` y `operativa/READBACK_CDF_SESHAT_RESTO_CORTE_DELEGATION_20260616.md`.
+- Hito: pendiente; queda en CDF como paquete local/documental validado.
+- Cierre: `GENERATED_READY_FOR_AGENT_LOCAL_DOCUMENTAL`; sin live write desde CDF; validadores CDF principales `PASSED`.
+
+## CDF Lane B Corte Agent Index Target
+
+- Fuente: decision del owner de dejar `Home.aspx` en espera y avanzar el siguiente delta: elegir target UI/surface para `LANE_B_CORTE_AGENT_INDEX`.
+- Proceso: seleccionar superficie atomica documental enlazable, actualizar packet CDF, lanes, readback y estado visible sin ejecutar live write.
+- Salida: `operativa/READBACK_CDF_LANE_B_CORTE_AGENT_INDEX_TARGET_20260617.md` y `C:/Users/enzo1/Documents/GitHub/cdf-soluciones/03_OPERACION/SESHAT_RESTO_CORTE_DELEGATION/CDF_LANE_B_CORTE_AGENT_INDEX_TARGET_DECISION.md`.
+- Hito: pendiente; queda como delta local/documental validado.
+- Cierre: `TARGET_SELECTED_LOCAL_DOCUMENTAL`; proximo delta `delta_corte_index_target_selected_requires_sharepoint_document_publish_gate`.
+
+## Publicacion Indice Corte Agentes SharePoint
+
+- Fuente: aprobacion del owner para avanzar tras elegir target UI/surface de `LANE_B_CORTE_AGENT_INDEX`.
+- Proceso: publicar un unico Markdown en `SeshatHubRegistroN.8 / Documentos compartidos`, sin editar Home, permisos, navegacion ni Dataverse desde CDF; postcheck por metadata remota y fuente local.
+- Salida: `operativa/READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md`.
+- Hito: pendiente; queda como delta live SharePoint document write.
+- Cierre: `LIVE_SHAREPOINT_DOCUMENT_WRITE`; SharePoint item `017KTOXDE5ATYNJCFLPRC2HEWRFQJMJKEM`; proximo delta `delta_lane_b_published_requires_home_link_or_dataverse_pointer_decision`.
+
+## Dataverse Pointer Indice Corte Agentes
+
+- Fuente: el atomo `INDICE_CORTE_AGENTES_20260617.md` ya estaba publicado en SharePoint y el siguiente delta pedia `Home link` o `Dataverse pointer`.
+- Proceso: aplicar `sdu-dataverse-metadata-wave` y `dataverse-metadata-only-provisioning`; preparar hito metadata-only, validar matriz, ejecutar puntero live idempotente en Dataverse y corregir el script para interpolacion segura de `${EntitySet}`.
+- Salida: `operativa/READBACK_DATAVERSE_POINTER_INDICE_CORTE_AGENTES_20260617.md`, `operativa/DATAVERSE_PROMOTION_INDICE_CORTE_AGENTES_20260617.json`, `tools/promote_lane_b_corte_agent_index_dataverse.ps1`.
+- Hito: `hitos/20260617-lane-b-corte-agent-index-dataverse-pointer-v1`.
+- Cierre: `LIVE_METADATA_POINTER_WRITE`; source `sharepoint:corte-agent-index:20260617:v1` id `4e61a882-786a-f111-ab0e-00224805fc91`, evidence `evidence:sharepoint:corte-agent-index:20260617:v1` id `ecd5578a-786a-f111-ab0e-00224805f8f9`, `source_count=1`, `evidence_count=1`, sin payload documental, secretos, Home edit, permisos ni flow run.
+
+## Cronologia Maestra
+
+- Fuente: pedido del usuario de consolidar la cronologia distribuida.
+- Proceso: integrar `TRACE`, informe cronologico, acta constitutiva, busqueda de Corte, pendientes del dia y readbacks SharePoint/Dataverse 20260617 en una puerta unica de lectura.
+- Salida: `operativa/CRONOLOGIA_MAESTRA_20260617.md`.
+- Hito: `hitos/20260617-cronologia-maestra-v1`.
+- Cierre: `CONSOLIDADO_OPERATIVO`; no declara cierre total, solo ordena la secuencia y fija el proximo delta `delta_home_binding_or_ui_surface_for_three_atoms`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

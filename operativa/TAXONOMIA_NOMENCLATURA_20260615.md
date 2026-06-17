@@ -42,6 +42,33 @@ Fecha: `2026-06-15`
 - `outputs/`: evidencia generada
 - `hitos/YYYYMMDD-frente-vN`: paquete versionado historico
 
+## Taxonomia De Agentes
+
+| clase | estado | lectura |
+| --- | --- | --- |
+| `SDK-SDU` | `ACTIVO` | Agentes definidos en el SDK y gobernados por la taxonomia local del proyecto. |
+| `Dataverse real` | `CONFIRMADO_SEPARADO` | Entidades, colas, flujos y filas materializadas en `HUBDesarrollo`. |
+| `Homonimo local` | `CONFIRMADO` | Mismo nombre que otro agente o rol, pero distinta superficie o runtime. |
+| `Puente documental` | `ACTIVO` | Mapeo entre nombres locales, runtime SDK y superficies Dataverse. |
+
+### Agentes SDK-SDU Activos
+
+Estos seis nombres quedan activos como `SDK-SDU` en la taxonomia local:
+
+- `seshat-normativa`
+- `thot-tecnico`
+- `anubis-gate`
+- `maat-cumplimiento`
+- `horus-riesgo`
+- `narrador-normativo`
+
+### Regla De Separacion
+
+- Que un nombre exista en la taxonomia local no prueba que exista como agente Dataverse.
+- Que un agente exista en Dataverse no prueba que sea el mismo runtime del SDK local.
+- Si hay homonimia, se etiqueta como `homonimo local` hasta confirmar equivalencia.
+- Si la equivalencia no se confirma, no se promociona a `Dataverse real`.
+
 ## Regla De Gobierno
 
 - Los nombres historicos se conservan.

@@ -1,0 +1,21 @@
+id: 20260615-cobertura-atomica-energetica-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: cobertura_atomica_energetica
+estado: GREEN_LOCAL
+fuente:
+  - operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md
+  - operativa/ACTA_COBERTURA_ATOMICA_ENERGETICA_20260615.md
+  - atomic/README.md
+salida:
+  - hitos/20260615-cobertura-atomica-energetica-v1/
+rollback: restaurar la carpeta versionada y sus indices
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+guardrails:
+  - no_live_write
+  - no_secret_read
+evidencia:
+  - hitos/20260615-cobertura-atomica-energetica-v1/README.md
+  - hitos/20260615-cobertura-atomica-energetica-v1/READBACK.md
+  - hitos/20260615-cobertura-atomica-energetica-v1/INDICE.csv

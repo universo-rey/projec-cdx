@@ -1,0 +1,96 @@
+[
+  {
+    "agente": "court.seshat_evidence",
+    "pendiente_real": false,
+    "evidencia": [
+      "LOCAL_GOVERNED_WORKPAPERS_ACTIVE",
+      "Open item: keep repo native matrices synchronized",
+      "Stop condition: PENDING_TARGET_ONLY"
+    ],
+    "historia_minima": "2026-06-01: workpapers versioned and routing map recorded; no live execution.",
+    "riesgo": "bajo; frontera de gobernanza repetida",
+    "rollback": "revert workpaper folder and matrix rows",
+    "stop_condition": "microsoft_live_requested_without_governed_order",
+    "siguiente_paso": "mantener evidencias locales y no escribir fuera de orden",
+    "agente_visible": "seshat-normativa"
+  },
+  {
+    "agente": "court.thot_schema",
+    "pendiente_real": false,
+    "evidencia": [
+      "LOCAL_GOVERNED_WORKPAPERS_ACTIVE",
+      "OPEN item pide sincronizar matrices nativas",
+      "DECISION_LOG: agent has versioned workpapers and routing map",
+      "EVIDENCE_LOG: prepared_pending_fan_in_validation, no live execution"
+    ],
+    "historia_minima": "EVD-court.thot_schema-WORKPAPERS-20260601: workpapers preparados en D:\\.agents\\codex\\workpapers\\court.thot_schema",
+    "riesgo": "bajo; frontera de gobernanza repetida, sin ejecución viva",
+    "rollback": "revert workpaper folder and matrix rows",
+    "stop_condition": "workpaper_missing_for_agent",
+    "siguiente_paso": "mantener sincronización local y validar fan-in con tool.local_validate_agent_workpapers",
+    "agente_visible": "thot-tecnico"
+  },
+  {
+    "agente": "court.sdu_gate",
+    "pendiente_real": false,
+    "evidencia": [
+      "OPEN_ITEMS: keep repo native matrices synchronized",
+      "stop_condition: microsoft_live_requested_without_governed_order",
+      "DECISION_LOG: revert workpaper folder and matrix rows"
+    ],
+    "historia_minima": "2026-06-01: workpapers versioned and routing map prepared; no live execution.",
+    "riesgo": "bajo; frontera de gobernanza repetida, sin pendiente material nuevo",
+    "rollback": "revert workpaper folder and matrix rows",
+    "stop_condition": "microsoft_live_requested_without_governed_order",
+    "siguiente_paso": "mantener monitoreo local y no ejecutar escritura live",
+    "agente_visible": "anubis-gate"
+  },
+  {
+    "agente": "rey.control_plane_orchestrator",
+    "pendiente_real": false,
+    "evidencia": [
+      "LOCAL_GOVERNED_WORKPAPERS_ACTIVE",
+      "Primary surface: D:\\AGENTS.md",
+      "OPEN item: keep repo native matrices synchronized",
+      "Decision: agent has versioned workpapers and routing map"
+    ],
+    "historia_minima": "EVD 2026-06-01: workpapers preparados en D:\\.agents\\codex\\workpapers\\rey.control_plane_orchestrator, sin ejecución live.",
+    "riesgo": "bajo; frontera gobernada repetida, sin write live.",
+    "rollback": "revert workpaper folder and matrix rows.",
+    "stop_condition": "workpaper_missing_for_agent o boundary_unclear.",
+    "siguiente_paso": "mantener sincronía local y no expandir superficies live hasta que el registry sea medible end-to-end.",
+    "agente_visible": "maat-cumplimiento"
+  },
+  {
+    "agente": "rey.frontier_guardian",
+    "pendiente_real": false,
+    "evidencia": [
+      "LOCAL_GOVERNED_WORKPAPERS_ACTIVE",
+      "workpapers and routing map present",
+      "no live execution",
+      "open item is sync/governance only"
+    ],
+    "historia_minima": "2026-06-01: evidence log shows workpapers prepared pending fan-in validation in D:\\.agents\\codex\\workpapers\\rey.frontier_guardian.",
+    "riesgo": "bajo; frontera de gobernanza local repetida",
+    "rollback": "revert workpaper folder and matrix rows",
+    "stop_condition": "workpaper_missing_for_agent",
+    "siguiente_paso": "mantener matrices nativas sincronizadas y esperar validación local",
+    "agente_visible": "horus-riesgo"
+  },
+  {
+    "agente": "court.openai_dispatcher",
+    "pendiente_real": false,
+    "evidencia": [
+      "LOCAL_GOVERNED_WORKPAPERS_ACTIVE",
+      "OPEN_ITEMS: keep repo native matrices synchronized",
+      "EVIDENCE_LOG: prepared_pending_fan_in_validation",
+      "DECISION_LOG: agent has versioned workpapers and routing map"
+    ],
+    "historia_minima": "EVD 2026-06-01: workpapers preparados en D:\\.agents\\codex\\workpapers\\court.openai_dispatcher, sin ejecución live.",
+    "riesgo": "bajo; frontera gobernada repetida, no hay escritura live.",
+    "rollback": "revert workpaper folder and matrix rows.",
+    "stop_condition": "workpaper_missing_for_agent o boundary_unclear.",
+    "siguiente_paso": "Mantener sincronía local y esperar validación/fan-in.",
+    "agente_visible": "narrador-normativo"
+  }
+]

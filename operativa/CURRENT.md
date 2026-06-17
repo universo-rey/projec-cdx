@@ -4,12 +4,21 @@ Estado actual del trabajo de `PROJEC CDX`.
 
 ## Activo
 
-Cierre local de completitud del workbench `PROJEC CDX` y wave atomica documental ya versionada, registrada y validada.
+Etapa `PRELIMINARES_CIERRE_TOTAL`: el pre-cierre constitutivo de corte y agentes quedo versionado, pero el cierre total sigue `NO_DECLARADO`.
+
+Hito activo de referencia: [hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1/README.md).
 
 ## Wave Siguiente
 
-La siguiente preparacion visible solo se abre si aparece nueva superficie documental o un nuevo delta operativo.
+La siguiente preparacion visible es elegir la superficie exacta que debe consumir la huella atomica owner-approved, con candidate count uno antes de cualquier write adicional.
 La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md) y el packet versionado en [hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1/README.md).
+
+## Delta Preliminar Versionado
+
+- Versionar la previa borrador de cierre como hito de pre-cierre constitutivo.
+- Mantener `CIERRE_TOTAL=NO_DECLARADO`.
+- Evidencia: `hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1`.
+- Matriz clasificada: `44` deltas trackeados, `85` entradas no versionadas, `129` entradas totales, con paquetes y owners asignados.
 
 ## Por Que Importa
 
@@ -69,7 +78,7 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 ## Ultimo Delta Cerrado 4
 
 - Convertir el workbook de Dataverse fronteras en un playbook corto.
-- Declarar Dataverse como registro de bloqueos, decisiones y escaladas humanas.
+- Declarar Dataverse como registro de deltas, decisiones y escaladas humanas.
 - Derivar frontera a resolucion minima antes de cualquier live.
 - Validacion local: PASS.
 - Hito: `hitos/20260615-hilo-origen-v1` como indice padre donde queda absorbida la frontera.
@@ -227,6 +236,185 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - Versionar la acta local de repos surface GitHub como hito propio.
 - Mantener `codex-root` y `agents-root` sin renombre por ahora.
 - Evidencia: `hitos/20260615-repos-surface-github-v1`.
+
+## Delta Abierto 27
+
+- Preparar una pasada Microsoft live read preliminar con seis agentes.
+- Estado: `OBSERVED_READ_ONLY`.
+- Semaforo: `VERDE_READ_ONLY`.
+- Evidencia: `operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md`, `operativa/ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md`, `operativa/READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md`, `recipes/microsoft-live-read-preliminar.md`, `procesos/microsoft-live-read-preliminar.md`.
+- Confirmado: tenant `escribaniabitsch`, 6 equipos Teams, 24 planes Planner, OneDrive delegado, 2 sitios SharePoint y 37 bibliotecas documentales.
+- Proximo movimiento unico: wave `SGIN` para resolver sitio/path documental real y cruzarlo con Teams/Planner.
+
+## Delta Abierto 28
+
+- Rehidratar Dataverse/Power Platform y Microsoft 365 solo dentro del tenant `Escribania Bitsch`.
+- Estado: `OBSERVED_READ_ONLY`.
+- Frontera: `TENANT_ONLY`.
+- Tenant ID: `858a0852-44a1-413e-a0fe-f053949797d6`.
+- Evidencia: `operativa/READBACK_DATAVERSE_POWER_PLATFORM_TENANT_ESCRIBANIA_BITSCH_20260616.md`, `operativa/DATAVERSE_POWER_PLATFORM_LIVE_SUMMARY_20260616.json`, `inventarios/DATAVERSE_SOLUTIONS_LIVE_20260616.csv`, `inventarios/DATAVERSE_WORKFLOWS_LIVE_20260616.csv`, `inventarios/DATAVERSE_BOTS_LIVE_20260616.csv`, `inventarios/DATAVERSE_WORKQUEUES_LIVE_20260616.csv`, `inventarios/PLANNER_TASKS_SANITIZED_COUNTS_20260616.csv`, `inventarios/TEAMS_LIVE_20260616.csv`.
+- Confirmado: `HUBDesarrollo`, 817 soluciones, 9 unmanaged, 36 bots/copilots, 1165 workflows, 8 colas SDU, 373 queue items backlog, 24 planes Planner y 2630 tareas agregadas sin titulos.
+- Proximo movimiento unico: resolver `SGIN` por group/team/site/drive/plan read-only, sin abrir contenido sensible.
+
+## Delta Abierto 29
+
+- Resolver `SGIN` dentro del tenant `Escribania Bitsch`.
+- Estado: `OBSERVED_READ_ONLY`.
+- Evidencia: `operativa/READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md`, `inventarios/SGIN_GROUP_SITE_DRIVE_PLAN_PROBES_20260616.csv`, `operativa/SGIN_GROUP_SITE_DRIVE_PLAN_PROBES_20260616.json`, `inventarios/SGIN_SHAREPOINT_LISTS_LIVE_20260616.csv`, `operativa/SGIN_DRIVE_ROOT_CHILDREN_SUMMARY_20260616.json`.
+- Confirmado: `SGIN` tiene group/team id `2c52551d-e68a-4496-bf65-eadc3b976ebe`, site real `https://escribaniabitsch.sharepoint.com/sites/sistema`, drive `Documentos compartidos`, 41 listas/bibliotecas por metadata y 10 items de raiz contados sin reproducir nombres.
+- Proximo movimiento unico: cruzar `SGIN` con Dataverse/Power Platform por metadata, sin abrir documentos ni ejecutar flows.
+
+## Delta Abierto 30
+
+- Cruzar `SGIN` con Dataverse/Power Platform por metadata local viva.
+- Estado: `OBSERVED_READ_ONLY`.
+- Evidencia: `operativa/READBACK_SGIN_DATAVERSE_POWER_PLATFORM_CROSSWALK_20260616.md`, `inventarios/SGIN_DATAVERSE_POWER_PLATFORM_METADATA_CROSSWALK_20260616.csv`.
+- Confirmado: 12 matches en soluciones, 17 en workflows y 8 en workqueues; bots sin match directo. Se registra como `metadata_match`, no como prueba de ejecucion.
+- Proximo movimiento unico: resolver vinculo exacto `SGIN site/drive -> SPGovernanceModel/SDU` por componentes/metadata estructurada, sin payloads ni flow run.
+
+## Delta Abierto 31
+
+- Preparar wave atomica `SDU Dataverse Metadata Wave`.
+- Estado: `METADATA_ONLY_PREPARED`.
+- Evidencia: `hitos/20260616-sdu-dataverse-metadata-wave-v1`, `tools/validate_sdu_dataverse_metadata_wave.ps1`, `recipes/sdu-dataverse-metadata-wave.md`, `procesos/sdu-dataverse-metadata-wave.md`, `patrones/sdu-dataverse-metadata-wave.md`, `C:/Users/enzo1/.codex/skills/sdu-dataverse-metadata-wave/SKILL.md`.
+- Confirmado: matriz de 65 filas metadata-only, Planner saneado sin `plan_title`, skill local creada y fan-in de seis agentes integrado.
+- Proximo movimiento unico: candidate count estructurado para `SGIN site/drive -> SPGovernanceModel/SDU`, sin apply.
+
+## Delta Abierto 32
+
+- Resolver candidate count estructurado para `SGIN site/drive -> SPGovernanceModel/SDU`.
+- Estado: `OBSERVED_READ_ONLY`.
+- Evidencia: `operativa/READBACK_SGIN_COMPONENT_CANDIDATE_COUNT_20260616.md`, `inventarios/SGIN_COMPONENT_CANDIDATE_COUNTS_20260616.csv`.
+- Confirmado: `SPGovernanceModel` tiene `candidate_count_one` como solucion; SDU/SharePoint/site siguen con `candidate_count_many`; no hay apply.
+- Proximo movimiento unico: tabla de desambiguacion `SPGovernanceModel` por `componenttype` seguro.
+
+## Delta Abierto 33
+
+- Desambiguar `SPGovernanceModel` por componentes y variable de site.
+- Estado: `OBSERVED_READ_ONLY`.
+- Evidencia: `operativa/READBACK_SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.md`, `inventarios/SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.csv`, `inventarios/SPGOVERNANCE_SHAREPOINT_SITEURL_VALUE_20260616.csv`.
+- Confirmado: `SPGovernanceModel` apunta a `https://escribaniabitsch.sharepoint.com/sites/soporte`, no a SGIN `/sites/sistema`.
+- Proximo movimiento unico: buscar vinculo propio de SGIN por variables no secretas, componentes y workflow metadata.
+
+## Delta Abierto 34
+
+- Buscar vinculo propio de SGIN por variables no secretas y metadata de soluciones/workflows/bots.
+- Estado: `OBSERVED_READ_ONLY`.
+- Evidencia: `operativa/READBACK_SGIN_OWN_GOVERNANCE_LINK_20260616.md`, `inventarios/SGIN_OWN_GOVERNANCE_LINK_SEARCH_20260616.csv`.
+- Confirmado: no hay modelo `SPGovernanceModel` directo visible para SGIN; SGIN queda como site documental confirmado y `SPGovernanceModel` como modelo de `/sites/soporte`.
+- Proximo movimiento unico: consolidar mapa de wave SGIN/SPGovernance/SDU/Dataverse hydration.
+
+## Delta Abierto 35
+
+- Consolidar mapa de wave SGIN/SPGovernance/SDU/Dataverse hydration.
+- Estado: `OBSERVED_READ_ONLY / METADATA_ONLY_PREPARED`.
+- Evidencia: `operativa/MAPA_SGIN_SPGOVERNANCE_SDU_DATAVERSE_WAVE_20260616.md`, `operativa/MAPA_SGIN_SPGOVERNANCE_SDU_DATAVERSE_WAVE_20260616.csv`.
+- Confirmado: cuatro carriles separados sin redundancia semantica: SGIN documental, SPGovernance soporte, SDU runtime y Dataverse hydration.
+- Proximo movimiento unico: elegir carril de profundizacion metadata-only.
+
+## Delta Abierto 36
+
+- Despachar todos los carriles a agentes para propagar huella atomica.
+- Estado: `FAN_IN_INTEGRATED`.
+- Evidencia: `operativa/ORDEN_DESPACHO_AGENTES_WAVE_ATOMICA_METADATA_20260616.md`, `operativa/READBACK_FAN_IN_AGENTES_WAVE_ATOMICA_METADATA_20260616.md`, `operativa/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md`, `operativa/MATRIZ_HUELLA_AGENTES_WAVE_ATOMICA_METADATA_20260616.csv`.
+- Carriles: canon semantico, mapas e indices, idempotencia y gates, cumplimiento y saneamiento, riesgo e inferencias, identidad energetica.
+- Proximo movimiento unico: crear derivados sanitized promocionables o elegir carril de profundizacion metadata_only.
+
+## Delta Abierto 37
+
+- Preparar primer borrador rector del Manifiesto SDU de Escribania Bitsch.
+- Estado: `BORRADOR_V1_FAN_IN_INTEGRATED_SUPERSEDED_BY_DELTA_38`.
+- Superficie: `LOCAL_DOCUMENTAL`.
+- Live Microsoft/Dataverse: `NO_EJECUTADO_EN_DELTA_37`; promocion ejecutada despues en Delta 38.
+- Evidencia: `operativa/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md`, `operativa/ORDEN_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md`, `operativa/READBACK_FAN_IN_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md`, `operativa/MATRIZ_HUELLA_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.csv`, `hitos/20260616-manifiesto-sdu-escribania-bitsch-v1`.
+- Confirmado: fan-in de Seshat, Thot, Anubis, Maat, Horus y Narrador integrado; Enzo queda expresado como owner operativo del SDU sin desplazar autoridad institucional/notarial; IA queda como capacidad instrumental.
+- Proximo movimiento unico: supersedido por Delta 38 owner-approved.
+
+## Delta Abierto 38
+
+- Promover la huella atomica SDU owner-approved al tenant y, mas fuerte aun, a Dataverse.
+- Estado: `DELTA_APLICADO`.
+- Live: `LIVE_METADATA_POINTER_WRITE`.
+- Superficie: tenant `Escribania Bitsch`, Dataverse `HUBDesarrollo`, tabla `mon_sdu_source_artifacts` y tabla `mon_sdu_evidences`.
+- Evidencia local: `dataverse/HUELLA_ATOMICA_SDU_OWNER_APPROVED_20260616.md`, `operativa/READBACK_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md`, `operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`, `hitos/20260616-huella-atomica-sdu-tenant-dataverse-v1`.
+- Confirmado: source artifact `03293284-d269-f111-ab0e-00224805fc91` con canonical id `sdu:manifesto:escribania-bitsch:20260616:v1`; evidence `9dc73696-d269-f111-ab0e-00224805f9dd` con canonical id `evidence:sdu:manifesto:escribania-bitsch:20260616:v1`.
+- Regla nueva: `stop_condition` tecnico se transforma en `delta_gobernado`, proximo paso y postcheck; bloqueo real solo por autoridad humana expresa.
+- Proximo movimiento unico: elegir la siguiente superficie exacta que debe consumir la huella, con candidate count uno antes de cualquier write adicional.
+
+## Delta Abierto 39
+
+- Promover la huella atomica a `SeshatHubRegistroN.8/Home.aspx` como canon visible de Seshat, Corte y proposito.
+- Estado: `DELTA_APLICADO_CON_DELTA_TECNICO_PAGE_BINDING`.
+- Live: `LIVE_SHAREPOINT_FILE_WRITE_AND_DATAVERSE_POINTER_WRITE`.
+- Superficie primaria: `https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/SitePages/Home.aspx`.
+- Archivo publicado: `https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/HUELLA_ATOMICA_SESHAT_HOME_20260616.md`.
+- SharePoint item id: `017KTOXDDRQOWBVL74BBAIEB2ZL7CHHTWJ`.
+- Dataverse source: `sharepoint:seshat-home:20260616:v1`, id `b540e1ee-d569-f111-ab0e-00224805f9dd`.
+- Dataverse evidence: `evidence:sharepoint:seshat-home:20260616:v1`, id `f18df1f4-d569-f111-ab0e-00224805f9dd`.
+- Evidencia local: `operativa/READBACK_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md`, `operativa/SHAREPOINT_SESHAT_HOME_PROMOTION_20260616.json`, `hitos/20260616-seshat-home-sharepoint-canon-v1`.
+- Delta tecnico: edicion directa de `Home.aspx` por Graph Pages API devolvio `403`; queda como binding por UI o page API con permiso suficiente, no como bloqueo humano.
+- Owner approval posterior: binding visible aprobado.
+- Proximo movimiento unico: ejecutar `operativa/BINDING_HOME_SESHAT_UI_READY_20260616.md` por UI o sesion PnP/M365 autenticada y postcheckear Home.aspx.
+
+## Delta Abierto 40
+
+- Promover el resto de la Corte y el proposito como canon visible complementario de `SeshatHubRegistroN.8`.
+- Estado: `DELTA_APLICADO`.
+- Live: `LIVE_SHAREPOINT_FILE_WRITE_AND_DATAVERSE_POINTER_WRITE`.
+- Archivo publicado: `https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/HUELLA_ATOMICA_CORTE_PROPOSITO_20260616.md`.
+- SharePoint item id: `017KTOXDEDZ54ZDQQVAJGJYWIO2V325DR5`.
+- Dataverse source: `sharepoint:corte-proposito:20260616:v1`, id `b332bc16-d969-f111-ab0e-00224805f8f9`.
+- Dataverse evidence: `evidence:sharepoint:corte-proposito:20260616:v1`, id `f77f4619-d969-f111-ab0e-00224805fc91`.
+- Evidencia local: `operativa/READBACK_PROMOCION_CORTE_PROPOSITO_SHAREPOINT_20260616.md`, `operativa/SHAREPOINT_CORTE_PROPOSITO_PROMOTION_20260616.json`, `hitos/20260616-corte-proposito-sharepoint-canon-v1`.
+- Proximo movimiento unico: actualizar el binding de `Home.aspx` para enlazar los dos atomos visibles: Seshat Home y Corte/Proposito.
+
+## Delta Abierto 41
+
+- Delegar el resto de la wave Seshat/Corte en agentes de `cdf-soluciones`.
+- Estado: `GENERATED_READY_FOR_AGENT_LOCAL_DOCUMENTAL`.
+- Superficie: repo `C:/Users/enzo1/Documents/GitHub/cdf-soluciones`.
+- Evidencia local PROJEC: `operativa/READBACK_CDF_SESHAT_RESTO_CORTE_DELEGATION_20260616.md`.
+- Evidencia CDF: `03_OPERACION/SESHAT_RESTO_CORTE_DELEGATION` y `08_EVIDENCIA/2026-06-16_CDF_SESHAT_RESTO_CORTE_DELEGATION`.
+- Carriles: Home binding, Corte agent index, evidence/readback, Dataverse/SGIN bridge, adoption/live reading.
+- Live Microsoft/SharePoint/Dataverse desde CDF: `NO_EJECUTADO`.
+- Proximo movimiento unico: aplicar primero el binding autenticado de `Home.aspx` o elegir target UI/surface para `LANE_B_CORTE_AGENT_INDEX`.
+
+## Delta Abierto 42
+
+- Elegir target UI/surface para `LANE_B_CORTE_AGENT_INDEX`, dejando `Home.aspx` en espera gobernada.
+- Estado: `TARGET_SELECTED_LOCAL_DOCUMENTAL`.
+- Target seleccionado: `SeshatHubRegistroN.8 / Documentos compartidos / INDICE_CORTE_AGENTES_20260617.md`.
+- Evidencia PROJEC: `operativa/READBACK_CDF_LANE_B_CORTE_AGENT_INDEX_TARGET_20260617.md`.
+- Evidencia CDF: `03_OPERACION/SESHAT_RESTO_CORTE_DELEGATION/CDF_LANE_B_CORTE_AGENT_INDEX_TARGET_DECISION.md`, `CDF_LANE_B_CORTE_AGENT_INDEX_TARGET_MATRIX.csv`, `CDF_LANE_B_CORTE_AGENT_INDEX_UI_READY.md`.
+- Live Microsoft/SharePoint/Dataverse desde CDF: `NO_EJECUTADO`.
+- Proximo movimiento unico: publicar `INDICE_CORTE_AGENTES_20260617.md` como atomo documental SharePoint con gate de document publish, o mantenerlo local si no hay owner/gate.
+
+## Delta Abierto 43
+
+- Publicar `INDICE_CORTE_AGENTES_20260617.md` como atomo documental SharePoint.
+- Estado: `LIVE_SHAREPOINT_DOCUMENT_WRITE`.
+- Superficie: `SeshatHubRegistroN.8 / Documentos compartidos`.
+- URL: `https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/INDICE_CORTE_AGENTES_20260617.md`.
+- SharePoint item id: `017KTOXDE5ATYNJCFLPRC2HEWRFQJMJKEM`.
+- Evidencia PROJEC: `operativa/READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md`.
+- Evidencia CDF: `08_EVIDENCIA/2026-06-16_CDF_SESHAT_RESTO_CORTE_DELEGATION/CDF_LANE_B_CORTE_AGENT_INDEX_SHAREPOINT_PUBLISH_READBACK.md`.
+- No ejecutado: `Home.aspx` edit, page publish, permisos, navegacion, Power Platform, Dataverse mutation from CDF.
+- Proximo movimiento unico: decidir `Home link` o `Dataverse pointer` para el nuevo atomo.
+
+## Delta Abierto 44
+
+- Registrar `INDICE_CORTE_AGENTES_20260617.md` como puntero metadata-only en Dataverse.
+- Estado: `DELTA_APLICADO`.
+- Live: `LIVE_METADATA_POINTER_WRITE`.
+- Superficie: Dataverse `HUBDesarrollo`, tablas `mon_sdu_source_artifacts` y `mon_sdu_evidences`.
+- Source canonical id: `sharepoint:corte-agent-index:20260617:v1`.
+- Evidence canonical id: `evidence:sharepoint:corte-agent-index:20260617:v1`.
+- Dataverse source id: `4e61a882-786a-f111-ab0e-00224805fc91`.
+- Dataverse evidence id: `ecd5578a-786a-f111-ab0e-00224805f8f9`.
+- Postcheck: `source_count=1`, `evidence_count=1`.
+- Evidencia PROJEC: `operativa/READBACK_DATAVERSE_POINTER_INDICE_CORTE_AGENTES_20260617.md`, `operativa/DATAVERSE_PROMOTION_INDICE_CORTE_AGENTES_20260617.json`, `hitos/20260617-lane-b-corte-agent-index-dataverse-pointer-v1`.
+- No ejecutado: contenido documental en Dataverse, `Home.aspx` edit, page publish, permisos, navegacion, flow run.
+- Proximo movimiento unico: elegir binding UI/surface posterior para enlazar el indice ya publicado y registrado.
 
 ## Regla
 

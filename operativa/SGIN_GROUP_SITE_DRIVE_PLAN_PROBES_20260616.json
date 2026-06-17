@@ -1,0 +1,89 @@
+{
+  "group": {
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,mail,mailNickname,createdDateTime,visibility,resourceProvisioningOptions)/$entity",
+    "id": "2c52551d-e68a-4496-bf65-eadc3b976ebe",
+    "displayName": "SGIN",
+    "mail": "sistema@registronotarial8tdf.com.ar",
+    "mailNickname": "sistema",
+    "createdDateTime": "2026-03-15T22:16:27Z",
+    "visibility": "Public",
+    "resourceProvisioningOptions": [
+      "Team"
+    ]
+  },
+  "team": {
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#teams/$entity",
+    "id": "2c52551d-e68a-4496-bf65-eadc3b976ebe",
+    "createdDateTime": "2026-03-15T22:16:33.73Z",
+    "displayName": "SGIN",
+    "description": "SGIN",
+    "internalId": "19:eUFK-EDyy7klcR4mJV4xtwkarEgdC940CRqNQu2nNb41@thread.tacv2",
+    "classification": null,
+    "specialization": "none",
+    "visibility": "public",
+    "webUrl": "https://teams.microsoft.com/l/team/19%3aeUFK-EDyy7klcR4mJV4xtwkarEgdC940CRqNQu2nNb41%40thread.tacv2/conversations?groupId=2c52551d-e68a-4496-bf65-eadc3b976ebe&tenantId=858a0852-44a1-413e-a0fe-f053949797d6",
+    "isArchived": false,
+    "isMembershipLimitedToOwners": false,
+    "discoverySettings": {
+      "showInTeamsSearchAndSuggestions": true
+    },
+    "tagSettings": null,
+    "memberSettings": {
+      "allowCreateUpdateChannels": true,
+      "allowCreatePrivateChannels": true,
+      "allowDeleteChannels": true,
+      "allowAddRemoveApps": true,
+      "allowCreateUpdateRemoveTabs": true,
+      "allowCreateUpdateRemoveConnectors": true
+    },
+    "guestSettings": {
+      "allowCreateUpdateChannels": false,
+      "allowDeleteChannels": false
+    },
+    "messagingSettings": {
+      "allowUserEditMessages": true,
+      "allowUserDeleteMessages": true,
+      "allowOwnerDeleteMessages": true,
+      "allowTeamMentions": true,
+      "allowChannelMentions": true
+    },
+    "funSettings": {
+      "allowGiphy": true,
+      "giphyContentRating": "moderate",
+      "allowStickersAndMemes": true,
+      "allowCustomMemes": true
+    },
+    "summary": {
+      "ownersCount": 3,
+      "membersCount": 8,
+      "guestsCount": 0
+    }
+  },
+  "channels": {
+    "error": "Response status code does not indicate success: 400 (Bad Request).",
+    "url": "https://graph.microsoft.com/v1.0/teams/2c52551d-e68a-4496-bf65-eadc3b976ebe/channels?$select=id,displayName,membershipType,createdDateTime&$top=100"
+  },
+  "drive": {
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#drives(id,name,driveType,webUrl,createdDateTime,lastModifiedDateTime)/$entity",
+    "createdDateTime": "2026-03-01T06:14:07Z",
+    "id": "b!KzopqTDf7UW4DdcahnOBQ2PXeOaHHV1JmjsMLutWxtP47FnBUV8yR4Z5qyAwMTV3",
+    "lastModifiedDateTime": "2026-06-12T13:57:03Z",
+    "name": "Documentos",
+    "webUrl": "https://escribaniabitsch.sharepoint.com/sites/sistema/Documentos%20compartidos",
+    "driveType": "documentLibrary"
+  },
+  "sites_root": {
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#sites(id,displayName,name,webUrl,createdDateTime,lastModifiedDateTime)/$entity",
+    "createdDateTime": "2026-03-15T22:16:30.893Z",
+    "id": "escribaniabitsch.sharepoint.com,a9293a2b-df30-45ed-b80d-d71a86738143,e678d763-1d87-495d-9a3b-0c2eeb56c6d3",
+    "lastModifiedDateTime": "2026-06-16T19:54:15Z",
+    "name": "sistema",
+    "webUrl": "https://escribaniabitsch.sharepoint.com/sites/sistema",
+    "displayName": "SGIN"
+  },
+  "planner_plans": {
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#Collection(microsoft.graph.plannerPlan)",
+    "@odata.count": 0,
+    "value": []
+  }
+}

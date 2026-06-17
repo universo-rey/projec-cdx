@@ -1,0 +1,19 @@
+id: 20260615-archivo-ramas-historicas-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: archivo_ramas_historicas
+estado: GREEN_LOCAL
+fuente:
+  - operativa/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md
+  - operativa/MATRIZ_RAMAS_HISTORICAS_20260615.xlsx
+salida:
+  - hitos/20260615-archivo-ramas-historicas-v1/
+rollback: restaurar la carpeta versionada y su registro
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+guardrails:
+  - no_live_write
+  - no_secret_read
+evidencia:
+  - hitos/20260615-archivo-ramas-historicas-v1/EVIDENCIA.md
+  - hitos/20260615-archivo-ramas-historicas-v1/READBACK.md

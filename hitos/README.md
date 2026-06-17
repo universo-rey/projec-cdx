@@ -55,6 +55,7 @@ Paquetes nuevos 20260616:
 - [20260616-wave-atomica-documentos-conocimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-conocimiento-v1/README.md)
 - [20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1/README.md)
 - [20260616-wave-mapas-uniformes-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-mapas-uniformes-v1/README.md)
+- [20260616-pre-cierre-constitutivo-corte-agentes-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1/README.md)
 
 La clasificacion fina completa vive en [INDICE_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md) y [INDICE_MAESTRO.csv](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.csv).
 
