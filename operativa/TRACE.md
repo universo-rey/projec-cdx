@@ -639,6 +639,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-cdf-context-evidence-split-v1`.
 - Cierre: `CDF_SPLIT_SCOPED_PR_READY`; validacion CDF `73/73 PASS`, sin live write ni merge. Proximo delta unico `delta_d_seshat_ambiguous_content_read_only`.
 
+## Seshat SGIN Ambiguous Content Readonly
+
+- Fuente: aprobacion del owner para ejecutar `delta_d_seshat_ambiguous_content_read_only`.
+- Proceso: leer el contrato del hilo D, inspeccionar estados Git, diffs permitidos, contenido ambiguo de Seshat y encabezados/estados de `Sgin/torres`, sin escribir en repos target.
+- Salida: `operativa/READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md`, `operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv`.
+- Hito: `hitos/20260617-seshat-sgin-ambiguous-content-readonly-v1`.
+- Cierre: `SESHAT_SGIN_AMBIGUOUS_CONTENT_RESOLVED_READ_ONLY`; SGIN validator `PASS`, Seshat complete-read order `PASS`, Seshat repo validator `OBSERVED` por `.env.local` con `OPENAI_API_KEY=` sin imprimir secreto. Proximo delta unico `delta_c_runtime_readme_batch_low_risk`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

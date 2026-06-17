@@ -4,9 +4,15 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `CDF_SPLIT_SCOPED_PR_READY`.
+Etapa actual: `SESHAT_SGIN_AMBIGUOUS_CONTENT_RESOLVED_READ_ONLY`.
 
-Movimiento unico actual: `delta_d_seshat_ambiguous_content_read_only`.
+Movimiento unico actual: `delta_c_runtime_readme_batch_low_risk`.
+
+El delta `delta_d_seshat_ambiguous_content_read_only` quedo cerrado en modo read-only. La ambiguedad `evidence_identity_ambiguous` se resolvio: Seshat contiene prompt canon preparado y borradores de mesa SDU-CN, SGIN `torres/` contiene paquetes locales de evidencia/runbook/modelos, y `sgin-cumplimiento` contiene un README de indice/canon.
+
+Evidencia PROJEC: `operativa/READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md` y `hitos/20260617-seshat-sgin-ambiguous-content-readonly-v1`.
+
+Precondicion antes de cualquier PR sobre `seshat-bootstrap-sdu-cn`: resolver de forma gobernada el hallazgo local `.env.local` con `OPENAI_API_KEY=` detectado por el validador, sin imprimir ni mover secretos sin orden explicita.
 
 El delta `delta_e_cdf_split_context_evidence` quedo cerrado en `cdf-soluciones` con rama `codex/cdf-seshat-context-evidence-split-20260617`, HEAD `2ccd77d`, PR borrador `https://github.com/SeshatSgin/cdf-soluciones/pull/28` y barrida CDF `73/73 PASS`.
 
@@ -18,7 +24,7 @@ La revision de Corte del plan maestro quedo integrada y W1 ya clasifico los `13`
 
 El owner acepto preparar y abrir el modelo no lineal recomendado. Quedaron abiertos seis hilos reales desde los paquetes `5+1` en `operativa/thread-packets-20260617/`.
 
-La siguiente accion no es limpiar todo ni crear mapas masivos. Es resolver primero `HILO_D_SESHAT_SGIN_EVIDENCE` con lectura read-only, sin tocar otras superficies.
+La siguiente accion no es limpiar todo ni crear mapas masivos. Es resolver `HILO_C_RUNTIME_README_BATCH` como lote bajo riesgo, sin tocar otras superficies.
 
 Modo requerido: read-only/diff review primero, sin staging, sin revert, sin move y sin live write.
 
