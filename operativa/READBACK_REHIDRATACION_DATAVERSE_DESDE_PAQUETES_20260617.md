@@ -47,8 +47,19 @@ Environment ID: `7f65fc04-c27a-ea0d-bd2d-266aa9203c1e`.
 
 Lectura ejecutada con `tools/read_dataverse_rehydration_live.ps1`.
 
-Resultado: `5/5` parejas source/evidence confirmadas con conteo exacto `1/1`
-en `mon_sdu_source_artifacts` y `mon_sdu_evidences`.
+Resultado: `5/5` parejas `source_artifact_registry/evidence_registry`
+confirmadas con conteo exacto `1/1`.
+
+## Nomenclatura Viva Confirmada
+
+| Rol SDU | LogicalName | EntitySetName | PrimaryIdAttribute | PrimaryNameAttribute |
+| --- | --- | --- | --- | --- |
+| `source_artifact_registry` | `mon_sdu_source_artifact` | `mon_sdu_source_artifacts` | `mon_sdu_source_artifactid` | `mon_display_name` |
+| `evidence_registry` | `mon_sdu_evidence` | `mon_sdu_evidences` | `mon_sdu_evidenceid` | `mon_display_name` |
+
+`Completed` corresponde a `mon_status`, columna string del modelo SDU. El
+estado nativo Dataverse queda separado: `statecode=0` / `statuscode=1`, ambos
+con etiqueta `Activo`.
 
 Canonical ids confirmados:
 

@@ -9,7 +9,7 @@ resueltos dejan de aparecer como ejecutables de hoy.
 
 Correccion posterior: `delta_dataverse_rehidratacion_desde_paquetes_existentes`
 quedo ejecutado con live read solo-GET. Dataverse confirmo `5/5` parejas
-source/evidence con conteo `1/1`.
+`source_artifact_registry/evidence_registry` con conteo `1/1`.
 
 ## Siguiente Movimiento
 

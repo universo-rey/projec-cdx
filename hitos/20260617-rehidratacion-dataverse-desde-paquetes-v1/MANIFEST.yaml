@@ -11,5 +11,5 @@ sources:
   - dataverse/ANCLA_REHIDRATACION.md
 external_writes: false
 live_read_executed: true
-postcheck: 5_source_evidence_pairs_count_1_1
+postcheck: 5_source_artifact_evidence_registry_pairs_count_1_1
 next_delta: delta_select_next_consumer_from_dataverse_live_rows

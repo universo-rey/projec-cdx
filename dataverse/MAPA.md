@@ -73,6 +73,13 @@ Las conexiones, gates y evidencia de semilla viven en `MAPA_CONEXIONES_DATAVERSE
 El acceso a waves de cierre que toquen Dataverse vive en `operativa/ANCLAS_ON_DEMAND.md`; desde alli se abre `ANCLA_CIERRE_WAVE.md` solo cuando el delta lo pide.
 La cadena operativa se gobierna desde Dataverse. `DATAVERSE_OPERATIONAL_CHAIN_MATRIX` es el nombre funcional canonico; su superficie viva actual es compuesta y mapeada a `mon_sdu_*`, `workqueue` y `workqueueitem`.
 La huella atomica owner-approved deja `stop_condition` tecnico como delta gobernado y proximo paso; `human_blocked` queda reservado para bloqueo humano expreso.
-La rehidratacion live read del 2026-06-17 confirma `5/5` parejas source/evidence ya escritas en `HUBDesarrollo`; para esos atomos el estado operativo es `live_rows_confirmed`, no `metadata_only`.
+La rehidratacion live read del 2026-06-17 confirma `5/5` parejas
+`source_artifact_registry/evidence_registry` ya escritas en `HUBDesarrollo`;
+para esos atomos el estado operativo es `live_rows_confirmed`, no
+`metadata_only`.
+Nomenclatura viva confirmada: `mon_sdu_source_artifact` usa endpoint
+`mon_sdu_source_artifacts`; `mon_sdu_evidence` usa endpoint
+`mon_sdu_evidences`. `mon_status=Completed` es estado SDU; `Activo` es estado
+nativo Dataverse (`statecode/statuscode`).
 La copia local solo proyecta estado para validacion, versionado y trabajo de cabina.
 La limpieza local de PC queda registrada como metadata en `REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md` y no abre write live.

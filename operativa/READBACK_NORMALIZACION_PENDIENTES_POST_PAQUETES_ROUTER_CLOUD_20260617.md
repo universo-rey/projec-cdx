@@ -44,9 +44,10 @@ El siguiente movimiento unico recomendado queda:
 `delta_select_next_consumer_from_dataverse_live_rows`
 
 Motivo: SGIN ya fue leido y paquetizado. Dataverse fue rehidratado con lectura
-live y confirmo `5/5` parejas source/evidence con conteo `1/1`. El siguiente
-movimiento debe elegir la superficie consumidora exacta, sin escribir en
-Microsoft, SharePoint, Dataverse ni Power Automate por inferencia.
+live y confirmo `5/5` parejas `source_artifact_registry/evidence_registry`
+con conteo `1/1`. El siguiente movimiento debe elegir la superficie consumidora
+exacta, sin escribir en Microsoft, SharePoint, Dataverse ni Power Automate por
+inferencia.
 
 ## No Ejecutado
 

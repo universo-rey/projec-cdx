@@ -26,10 +26,21 @@ function Invoke-DataverseGet {
         Accept             = "application/json"
         "OData-MaxVersion" = "4.0"
         "OData-Version"    = "4.0"
+        Prefer             = 'odata.include-annotations="OData.Community.Display.V1.FormattedValue"'
     }
 
     $uri = "$EnvironmentUrl/api/data/v9.2/$RelativeUrl"
     return Invoke-RestMethod -Method GET -Uri $uri -Headers $headers -ErrorAction Stop
+}
+
+function Get-EntityMetadata {
+    param(
+        [string]$LogicalName,
+        [string]$Token
+    )
+
+    $select = "LogicalName,SchemaName,EntitySetName,PrimaryIdAttribute,PrimaryNameAttribute,ObjectTypeCode,OwnershipType"
+    return Invoke-DataverseGet -RelativeUrl "EntityDefinitions(LogicalName='$LogicalName')?`$select=$select" -Token $Token
 }
 
 function Get-ByCanonicalId {
@@ -42,7 +53,7 @@ function Get-ByCanonicalId {
 
     $escaped = $CanonicalId.Replace("'", "''")
     $filter = [System.Uri]::EscapeDataString("mon_canonical_id eq '$escaped'")
-    $select = "$IdColumn,mon_canonical_id,mon_display_name,mon_status,mon_stop_condition,createdon,modifiedon"
+    $select = "$IdColumn,mon_canonical_id,mon_display_name,mon_status,statecode,statuscode,mon_stop_condition,createdon,modifiedon"
     return Invoke-DataverseGet -RelativeUrl "${EntitySet}?`$select=$select&`$filter=$filter" -Token $Token
 }
 
@@ -75,6 +86,30 @@ $pairs = @(
 )
 
 $token = Get-Token
+$sourceMetadata = Get-EntityMetadata -LogicalName "mon_sdu_source_artifact" -Token $token
+$evidenceMetadata = Get-EntityMetadata -LogicalName "mon_sdu_evidence" -Token $token
+$nomenclature = @(
+    [pscustomobject]@{
+        role                   = "source_artifact_registry"
+        logical_name           = $sourceMetadata.LogicalName
+        schema_name            = $sourceMetadata.SchemaName
+        entity_set_name        = $sourceMetadata.EntitySetName
+        primary_id_attribute   = $sourceMetadata.PrimaryIdAttribute
+        primary_name_attribute = $sourceMetadata.PrimaryNameAttribute
+        object_type_code       = $sourceMetadata.ObjectTypeCode
+        ownership_type         = $sourceMetadata.OwnershipType
+    },
+    [pscustomobject]@{
+        role                   = "evidence_registry"
+        logical_name           = $evidenceMetadata.LogicalName
+        schema_name            = $evidenceMetadata.SchemaName
+        entity_set_name        = $evidenceMetadata.EntitySetName
+        primary_id_attribute   = $evidenceMetadata.PrimaryIdAttribute
+        primary_name_attribute = $evidenceMetadata.PrimaryNameAttribute
+        object_type_code       = $evidenceMetadata.ObjectTypeCode
+        ownership_type         = $evidenceMetadata.OwnershipType
+    }
+)
 $results = @()
 
 foreach ($pair in $pairs) {
@@ -87,13 +122,25 @@ foreach ($pair in $pairs) {
     $results += [pscustomobject]@{
         label              = $pair.label
         source_canonical   = $pair.source_canonical
+        source_entity_logical_name = $sourceMetadata.LogicalName
+        source_entity_set_name = $sourceMetadata.EntitySetName
         source_count       = $sourceRows.Count
         source_id          = if ($sourceRows.Count -eq 1) { $sourceRows[0].mon_sdu_source_artifactid } else { $null }
-        source_status      = if ($sourceRows.Count -eq 1) { $sourceRows[0].mon_status } else { $null }
+        source_mon_status  = if ($sourceRows.Count -eq 1) { $sourceRows[0].mon_status } else { $null }
+        source_statecode   = if ($sourceRows.Count -eq 1) { $sourceRows[0].statecode } else { $null }
+        source_statecode_label = if ($sourceRows.Count -eq 1) { $sourceRows[0].'statecode@OData.Community.Display.V1.FormattedValue' } else { $null }
+        source_statuscode  = if ($sourceRows.Count -eq 1) { $sourceRows[0].statuscode } else { $null }
+        source_statuscode_label = if ($sourceRows.Count -eq 1) { $sourceRows[0].'statuscode@OData.Community.Display.V1.FormattedValue' } else { $null }
         evidence_canonical = $pair.evidence_canonical
+        evidence_entity_logical_name = $evidenceMetadata.LogicalName
+        evidence_entity_set_name = $evidenceMetadata.EntitySetName
         evidence_count     = $evidenceRows.Count
         evidence_id        = if ($evidenceRows.Count -eq 1) { $evidenceRows[0].mon_sdu_evidenceid } else { $null }
-        evidence_status    = if ($evidenceRows.Count -eq 1) { $evidenceRows[0].mon_status } else { $null }
+        evidence_mon_status = if ($evidenceRows.Count -eq 1) { $evidenceRows[0].mon_status } else { $null }
+        evidence_statecode = if ($evidenceRows.Count -eq 1) { $evidenceRows[0].statecode } else { $null }
+        evidence_statecode_label = if ($evidenceRows.Count -eq 1) { $evidenceRows[0].'statecode@OData.Community.Display.V1.FormattedValue' } else { $null }
+        evidence_statuscode = if ($evidenceRows.Count -eq 1) { $evidenceRows[0].statuscode } else { $null }
+        evidence_statuscode_label = if ($evidenceRows.Count -eq 1) { $evidenceRows[0].'statuscode@OData.Community.Display.V1.FormattedValue' } else { $null }
     }
 }
 
@@ -105,7 +152,8 @@ $result = [pscustomobject]@{
     environment_url     = $EnvironmentUrl
     environment_id      = $EnvironmentId
     tenant_id           = $TenantId
-    entity_sets         = @("mon_sdu_source_artifacts", "mon_sdu_evidences")
+    nomenclature        = $nomenclature
+    entity_sets         = @($sourceMetadata.EntitySetName, $evidenceMetadata.EntitySetName)
     pair_count          = $results.Count
     all_pairs_confirmed = $allConfirmed
     live_state          = if ($allConfirmed) { "live_rows_confirmed" } else { "target_ambiguous" }
@@ -113,7 +161,7 @@ $result = [pscustomobject]@{
     writes_executed     = $false
     flows_executed      = $false
     secrets_printed     = $false
-    postcheck           = "Each source/evidence canonical id must return exactly one Dataverse row."
+    postcheck           = "Each source_artifact/evidence_registry canonical id must return exactly one Dataverse row; mon_status and native statecode/statuscode are reported separately."
 }
 
 $outFullPath = if ([System.IO.Path]::IsPathRooted($OutputPath)) { $OutputPath } else { Join-Path $PWD $OutputPath }

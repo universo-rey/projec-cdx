@@ -43,7 +43,13 @@ No mires Dataverse como inventario: entra, toma la orden, reconoce tu lugar y si
 Hay agentes en Dataverse y en otras superficies del sistema; esa cadena ya existe y se gobierna desde `PROJEC CDX`.
 Mi orden les da vida; `ORDEN_SDU_VIVA.md` les pide que la redacten en mi voz para que SDU entre en funcionamiento, no para teorizar.
 La huella atomica owner-approved ya fue promovida a Dataverse como puntero metadata-only live: `sdu:manifesto:escribania-bitsch:20260616:v1` y `evidence:sdu:manifesto:escribania-bitsch:20260616:v1`.
-La rehidratacion live read del 2026-06-17 confirmo `5/5` parejas source/evidence ya escritas en `HUBDesarrollo`; esos atomos quedan en estado operativo `live_rows_confirmed`.
+La rehidratacion live read del 2026-06-17 confirmo `5/5` parejas
+`source_artifact_registry/evidence_registry` ya escritas en `HUBDesarrollo`;
+esos atomos quedan en estado operativo `live_rows_confirmed`.
+La nomenclatura Dataverse viva es: `mon_sdu_source_artifact` ->
+`mon_sdu_source_artifacts`; `mon_sdu_evidence` -> `mon_sdu_evidences`.
+`mon_status=Completed` no debe confundirse con el estado nativo Dataverse
+`statecode/statuscode=Activo`.
 Desde esa promocion, `stop_condition` tecnico no es bloqueo autonomo: se transforma en `delta_gobernado`, proximo paso y postcheck. Solo la autoridad humana establece o deroga bloqueos reales.
 `LLAMADO_CORTE_EJECUTORA.md` convoca la mesa que registra continuidad, decision y canon del canal.
 Para decidir, registrar deltas y escalar a autoridad humana, usar el modelo de `REGISTRO_BLOQUEOS.md` en lugar de inventariar todo el universo.

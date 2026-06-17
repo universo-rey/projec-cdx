@@ -34,4 +34,8 @@ Entrada corta para volver al carril Dataverse sin recorrer toda la superficie.
 - Las condiciones tecnicas de pausa son `delta_gobernado` y proximo paso, no bloqueo autonomo.
 - Si solo hace falta evidencia local, quedarse en `README.md` y `MAPA.md`.
 - Si hay que hidratar Dataverse con metadata atomica, usar `sdu-dataverse-metadata-wave` y cerrar en hito metadata-only antes de cualquier apply.
-- Si la fila ya fue escrita y el owner pide verdad actual, ejecutar live read solo-GET y clasificar como `live_rows_confirmed` cuando el conteo source/evidence sea `1/1`.
+- Si la fila ya fue escrita y el owner pide verdad actual, ejecutar live read
+  solo-GET y clasificar como `live_rows_confirmed` cuando el conteo
+  `source_artifact_registry/evidence_registry` sea `1/1`.
+- Nomenclatura viva confirmada: `mon_sdu_source_artifact` ->
+  `mon_sdu_source_artifacts`; `mon_sdu_evidence` -> `mon_sdu_evidences`.
