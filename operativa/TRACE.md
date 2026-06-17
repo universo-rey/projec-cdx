@@ -687,6 +687,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-codex-cloud-sdk-launch-v1`.
 - Cierre: `SDK_LOCAL_LAUNCH_OBSERVED_CLOUD_UI_FRONTIER`; el carril SDK local queda resuelto, `inspect_cloud_bridge=PASS`, y la UI de Codex Cloud queda como frontera externa opcional. Proximo delta unico `delta_capture_codex_cloud_ui_smoke_result_if_owner_runs_external_task` solo si el owner ejecuta la task desde la UI.
 
+## Binding UI Seshat Home Atomos
+
+- Fuente: avance del delta `delta_lane_b_home_link_or_ui_surface_binding_after_pointer` despues de publicar y registrar `INDICE_CORTE_AGENTES_20260617.md`.
+- Proceso: confirmar sitio `SeshatHubRegistroN.8`, listar raiz de `Documentos compartidos`, verificar que el archivo no existia, crear `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`, subirlo a SharePoint con conflicto `fail` y postcheckear listado remoto.
+- Salida: `operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`, `operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`, `operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json`.
+- Hito: `hitos/20260617-binding-ui-seshat-home-atomos-v1`.
+- Cierre: `LIVE_SHAREPOINT_DOCUMENT_WRITE`; SharePoint item `017KTOXDC3JY4I65TK2NHYNU7FHHS3AZC7`; no `Home.aspx` edit, no permisos, no navegacion, no Dataverse payload y no flow run. Proximo delta unico `delta_dataverse_pointer_binding_ui_seshat_home_atomos_metadata_only`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

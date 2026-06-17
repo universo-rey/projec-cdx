@@ -14,14 +14,15 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 1. Binding visible de SeshatHub `Home.aspx`.
    - Target: `https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/SitePages/Home.aspx`.
    - Objetivo minimo: enlazar atomos ya publicados: `HUELLA_ATOMICA_SESHAT_HOME_20260616.md`, `HUELLA_ATOMICA_CORTE_PROPOSITO_20260616.md` e `INDICE_CORTE_AGENTES_20260617.md`.
-   - Estado: en espera de contexto autenticado de page edit o superficie UI alternativa.
+   - Estado: superficie UI alternativa publicada; `Home.aspx` queda pendiente solo si hay UI/PnP/page API con permiso suficiente.
    - Evidencia lista: `operativa/BINDING_HOME_SESHAT_UI_READY_20260616.md`.
+   - Evidencia ejecutada: `operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`.
 
 2. Binding UI/surface posterior para `INDICE_CORTE_AGENTES_20260617.md`.
-   - Estado: SharePoint publicado y Dataverse registrado.
+   - Estado: SharePoint publicado, Dataverse registrado y binding UI alternativo publicado.
    - Source Dataverse: `sharepoint:corte-agent-index:20260617:v1`.
    - Evidence Dataverse: `evidence:sharepoint:corte-agent-index:20260617:v1`.
-   - Siguiente accion: decidir si entra en `Home.aspx` o en una superficie visible alternativa mientras `Home.aspx` siga en espera.
+   - Siguiente accion: registrar `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md` como puntero metadata-only en Dataverse si se desea simetria de memoria larga.
 
 3. Consolidar hitos pendientes de la wave Microsoft/SGIN.
    - Pendientes con hito aun no empaquetado: Microsoft live read, Dataverse tenant read, SGIN observed, SGIN crosswalk, candidate count, SPGovernance disambiguation, SGIN own governance link, mapa SGIN/SPGovernance/SDU.
@@ -53,7 +54,7 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 ## Proximo Movimiento Unico Recomendado
 
-Preparar y ejecutar el paquete de binding visible para `SeshatHubRegistroN.8/Home.aspx` o, si sigue sin contexto autenticado, crear la superficie UI alternativa para enlazar los tres atomos ya vivos.
+Registrar `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md` como puntero metadata-only en Dataverse, o mantenerlo solo como SharePoint atom hasta orden expresa.
 
 ## Validadores Asociados
 

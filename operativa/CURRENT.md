@@ -416,6 +416,18 @@ La wave atomica actual ya quedo consolidada en [docs/superpowers/plans/2026-06-1
 - No ejecutado: contenido documental en Dataverse, `Home.aspx` edit, page publish, permisos, navegacion, flow run.
 - Proximo movimiento unico: elegir binding UI/surface posterior para enlazar el indice ya publicado y registrado.
 
+## Delta Abierto 45
+
+- Publicar binding UI/surface alternativo para enlazar los tres atomos vivos de SeshatHub.
+- Estado: `LIVE_SHAREPOINT_DOCUMENT_WRITE`.
+- Superficie: `SeshatHubRegistroN.8 / Documentos compartidos`.
+- Archivo: `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`.
+- URL: `https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`.
+- SharePoint item id: `017KTOXDC3JY4I65TK2NHYNU7FHHS3AZC7`.
+- Evidencia PROJEC: `operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`, `operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json`, `hitos/20260617-binding-ui-seshat-home-atomos-v1`.
+- No ejecutado: `Home.aspx` edit, page publish, permisos, navegacion, Dataverse payload, flow run.
+- Proximo movimiento unico: registrar el nuevo binding como puntero metadata-only en Dataverse si se decide mantener simetria de memoria larga.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

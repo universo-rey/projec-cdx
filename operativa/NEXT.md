@@ -4,9 +4,17 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `CLOUD_DATAVERSE_PREFLIGHT_READY`.
+Etapa actual: `BINDING_UI_SURFACE_PUBLISHED`.
 
-Movimiento unico actual: `delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread`.
+Movimiento unico actual: `delta_dataverse_pointer_binding_ui_seshat_home_atomos_metadata_only`.
+
+El delta `delta_lane_b_home_link_or_ui_surface_binding_after_pointer` quedo resuelto por superficie UI alternativa: `BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md` fue publicado en `SeshatHubRegistroN.8 / Documentos compartidos` y enlaza los tres atomos vivos de Seshat. `Home.aspx` no fue editado.
+
+Evidencia PROJEC: `operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`, `operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json` y `hitos/20260617-binding-ui-seshat-home-atomos-v1`.
+
+El delta `delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread` quedo cerrado por carril SDK local. La UI de Codex Cloud queda como frontera externa opcional, no como bloqueo.
+
+Evidencia PROJEC: `operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md`, `operativa/CODEX_CLOUD_SDK_LAUNCH_20260617.csv` y `hitos/20260617-codex-cloud-sdk-launch-v1`.
 
 El delta `delta_f_cloud_dataverse_preflight_read_only` quedo cerrado sobre HEAD `c8c92cf`: smoke `prepared`, `context_ok=True`, `context_drift=[]`, cloud bridge `PASS` y rama remota encontrada.
 
