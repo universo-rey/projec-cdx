@@ -719,6 +719,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-maximo-estado-real-superficies-v1`.
 - Cierre: `MAX_STATE_FAN_IN_VERIFIED`; no live refresh, no writes, no merge, no task Cloud. Proximo delta unico `delta_select_next_metadata_lane_after_max_state_fan_in`.
 
+## Paquetes Router Agents Codex Cloud Review
+
+- Fuente: pedido del owner de revisar paquetes ya preparados, ultimos repos/superficies `router` y `agents`, y entornos Codex Cloud.
+- Proceso: inventario read-only de paquetes, root repos, router distribuido, PRs GitHub live y evidencia Codex Cloud local, sin ejecutar task Cloud ni writes externos.
+- Salida: `operativa/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md`, `operativa/PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.csv`.
+- Hito: `hitos/20260617-paquetes-router-agents-codex-cloud-review-v1`.
+- Cierre: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`; `codex-root` limpio, `agents-root` PR #1 draft, router como superficie distribuida, Codex Cloud `LOCAL_PASS/CLOUD_UI_EXTERNAL`. Proximo delta unico `delta_normalize_pending_after_packages_router_cloud_review`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

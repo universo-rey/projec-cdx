@@ -38,6 +38,7 @@ Mapa corto de los paquetes versionados en `PROJEC CDX/hitos`.
 | --- | --- | --- | --- |
 | `20260617-microsoft-sgin-hitos-documental-v1` | Consolidacion documental Microsoft SGIN Dataverse Power Platform | `MICROSOFT_SGIN_HITOS_CONSOLIDATED` | `hitos/20260617-microsoft-sgin-hitos-documental-v1/READBACK.md`, `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`, `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv` |
 | `20260617-maximo-estado-real-superficies-v1` | Fan-in de agentes para maximo estado real por superficie | `MAX_STATE_FAN_IN_VERIFIED` | `hitos/20260617-maximo-estado-real-superficies-v1/READBACK.md`, `operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md`, `operativa/MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.csv` |
+| `20260617-paquetes-router-agents-codex-cloud-review-v1` | Revision de paquetes preparados, router, agents-root y Codex Cloud | `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED` | `hitos/20260617-paquetes-router-agents-codex-cloud-review-v1/READBACK.md`, `operativa/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md`, `operativa/PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.csv` |
 
 Regla:
 - El detalle vive en cada paquete versionado.

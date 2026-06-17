@@ -4,7 +4,28 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `MAX_STATE_FAN_IN_VERIFIED`.
+Etapa actual: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
+
+Movimiento unico actual:
+`delta_normalize_pending_after_packages_router_cloud_review`.
+
+Ya quedo revisado si habia paquetes preparados, la superficie `router`, los
+repos `agents-root` y `codex-root`, los repos agents/runtime y el carril Codex
+Cloud. Evidencia:
+`operativa/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md`,
+`operativa/PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.csv` y
+`hitos/20260617-paquetes-router-agents-codex-cloud-review-v1`.
+
+El siguiente movimiento no es relevar mas. Es normalizar pendientes
+historicos/supersedidos y dejar solo carriles vivos:
+`SGIN_documental_lists_metadata`, `SPGovernance_soporte_metadata`,
+`SDU_runtime_queue_priorities`, `Home_aspx_page_binding` si existe contexto
+UI/PnP/page API suficiente, o `Codex_Cloud_UI_smoke_capture` si el owner corre
+el prompt externo.
+
+## Paso Siguiente Previo
+
+Etapa previa: `MAX_STATE_FAN_IN_VERIFIED`.
 
 Movimiento unico actual: `delta_select_next_metadata_lane_after_max_state_fan_in`.
 

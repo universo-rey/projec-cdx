@@ -6,8 +6,19 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 - Bloqueos reales activos: `NINGUNO`.
 - Cierre total: `NO_DECLARADO`.
-- Etapa: `MAX_STATE_FAN_IN_VERIFIED`.
+- Etapa: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
 - Riesgo principal: mezclar binding UI, cierre documental, Dataverse y cambios Git en un solo paquete.
+
+## Revision Paquetes Router Agents Codex Cloud
+
+- Estado: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
+- Paquetes preparados: `thread-packets-20260617`, hito root repos, hito Cloud
+  preflight, hito SDK launch, prompt Cloud UI y zips historicos.
+- `router`: superficie distribuida; no se encontro repo independiente.
+- `codex-root`: limpio en `main`, sin PR abierto.
+- `agents-root`: limpio en rama y PR draft #1 abierto.
+- Codex Cloud: smoke local y bridge `PASS`; UI Cloud queda externa/pending.
+- Evidencia: `operativa/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md`.
 
 ## Maximo Estado Real Alcanzado
 
@@ -65,7 +76,11 @@ Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`,
 
 ## Proximo Movimiento Unico Recomendado
 
-Elegir un solo carril metadata-only posterior al fan-in de estado real: SGIN listas/bibliotecas, SPGovernance soporte, SDU runtime queues o Home.aspx cuando exista permiso UI/PnP/page API suficiente.
+Normalizar pendientes historicos/supersedidos despues de la revision de
+paquetes/router/agents/Cloud y dejar solo carriles vivos: SGIN
+listas/bibliotecas, SPGovernance soporte, SDU runtime queues, Home.aspx cuando
+exista permiso UI/PnP/page API suficiente, o captura de smoke Codex Cloud UI si
+el owner ejecuta la task externa.
 
 ## Validadores Asociados
 

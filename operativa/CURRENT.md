@@ -4,7 +4,23 @@ Estado actual del trabajo de `PROJEC CDX`.
 
 ## Vigente 2026-06-17
 
-Etapa vigente: `MAX_STATE_FAN_IN_VERIFIED`.
+Etapa vigente: `PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED`.
+
+Se revisaron paquetes preparados, superficies `router`, repos `agents-root` y
+`codex-root`, repos agents/runtime, `Sgin`, `sgin-cloud` y el carril Codex
+Cloud desde evidencia local mas lectura GitHub PR. No hubo writes externos, no
+task Cloud y no merge.
+
+Evidencia: `operativa/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md`,
+`operativa/PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.csv` y
+`hitos/20260617-paquetes-router-agents-codex-cloud-review-v1`.
+
+Siguiente delta unico:
+`delta_normalize_pending_after_packages_router_cloud_review`.
+
+## Vigente Previo 2026-06-17
+
+Etapa previa: `MAX_STATE_FAN_IN_VERIFIED`.
 
 El fan-in de seis agentes ya fijo el maximo estado real alcanzado por
 superficie. Evidencia: `operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md`,
@@ -19,7 +35,7 @@ metadata pointer writes. Cierre total: `NO_DECLARADO`.
 Siguiente delta unico:
 `delta_select_next_metadata_lane_after_max_state_fan_in`.
 
-## Vigente Previo 2026-06-17
+## Vigente Previo 2 2026-06-17
 
 Etapa previa: `MICROSOFT_SGIN_HITOS_CONSOLIDATED`.
 
