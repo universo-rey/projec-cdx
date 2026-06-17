@@ -4,29 +4,29 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `SESHAT_SGIN_AMBIGUOUS_CONTENT_RESOLVED_READ_ONLY`.
+Etapa actual: `RUNTIME_README_BATCH_PR_READY`.
 
-Movimiento unico actual: `delta_c_runtime_readme_batch_low_risk`.
+Movimiento unico actual: `delta_ab_canon_context_close_decision`.
+
+El delta `delta_c_runtime_readme_batch_low_risk` quedo cerrado como batch README-only con ocho ramas `codex/readme-lane-atomica-20260617`, ocho commits documentales y ocho PRs draft abiertos.
+
+Evidencia PROJEC: `operativa/READBACK_RUNTIME_README_BATCH_20260617.md`, `operativa/RUNTIME_README_BATCH_PR_MATRIX_20260617.csv` y `hitos/20260617-runtime-readme-batch-v1`.
 
 El delta `delta_d_seshat_ambiguous_content_read_only` quedo cerrado en modo read-only. La ambiguedad `evidence_identity_ambiguous` se resolvio: Seshat contiene prompt canon preparado y borradores de mesa SDU-CN, SGIN `torres/` contiene paquetes locales de evidencia/runbook/modelos, y `sgin-cumplimiento` contiene un README de indice/canon.
 
-Evidencia PROJEC: `operativa/READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md` y `hitos/20260617-seshat-sgin-ambiguous-content-readonly-v1`.
+El delta `delta_e_cdf_split_context_evidence` quedo cerrado en `cdf-soluciones` con rama `codex/cdf-seshat-context-evidence-split-20260617`, HEAD `2ccd77d`, PR borrador `https://github.com/SeshatSgin/cdf-soluciones/pull/28` y barrida CDF `73/73 PASS`.
 
 Precondicion antes de cualquier PR sobre `seshat-bootstrap-sdu-cn`: resolver de forma gobernada el hallazgo local `.env.local` con `OPENAI_API_KEY=` detectado por el validador, sin imprimir ni mover secretos sin orden explicita.
 
-El delta `delta_e_cdf_split_context_evidence` quedo cerrado en `cdf-soluciones` con rama `codex/cdf-seshat-context-evidence-split-20260617`, HEAD `2ccd77d`, PR borrador `https://github.com/SeshatSgin/cdf-soluciones/pull/28` y barrida CDF `73/73 PASS`.
-
-Evidencia PROJEC: `operativa/READBACK_CDF_CONTEXT_EVIDENCE_SPLIT_20260617.md` y `hitos/20260617-cdf-context-evidence-split-v1`.
-
-La siguiente accion no es mergear ni ejecutar live writes. Es resolver `HILO_D_SESHAT_SGIN_EVIDENCE` con lectura read-only de piezas ambiguas de Seshat/SGIN antes de clasificar o mutar.
+La siguiente accion no es mergear los PRs README-only ni ejecutar live writes. Es resolver `HILO_A_CABINA_CANON` y `HILO_B_SDU_CANON` como decision de cierre: canonizar lo estrictamente faltante o cerrar sin mutacion si ya esta absorbido por evidencia previa.
 
 La revision de Corte del plan maestro quedo integrada y W1 ya clasifico los `13` repos dirty en `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`.
 
 El owner acepto preparar y abrir el modelo no lineal recomendado. Quedaron abiertos seis hilos reales desde los paquetes `5+1` en `operativa/thread-packets-20260617/`.
 
-La siguiente accion no es limpiar todo ni crear mapas masivos. Es resolver `HILO_C_RUNTIME_README_BATCH` como lote bajo riesgo, sin tocar otras superficies.
+La siguiente accion no es limpiar todo ni crear mapas masivos. Es decidir el cierre A/B con lectura y matriz minima, sin tocar superficies fuera del delta.
 
-Modo requerido: read-only/diff review primero, sin staging, sin revert, sin move y sin live write.
+Modo requerido: read-only/diff review primero; cualquier mutacion posterior debe tener target exacto, owner, rollback, postcheck y evidencia.
 
 No declarar cierre total todavia. La mesa de seis agentes dejo el fan-in preliminar en `operativa/PRELIMINARES_CIERRE_TOTAL_20260616.md` y la superficie Git quedo clasificada inicialmente en `operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md` mas su CSV de detalle.
 
@@ -81,7 +81,7 @@ pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workben
 
 ## Resultado Esperado
 
-Elegir binding UI/surface posterior para el indice ya publicado y registrado: enlazarlo desde `Home.aspx` cuando exista contexto autenticado de page edit, o preparar una superficie visible alternativa si se mantiene `Home.aspx` en espera.
+Decidir el cierre A/B: `CANONIZAR_MINIMO` si hay brecha real en cabina/SDU canon, o `CERRAR_SIN_MUTACION` si los paquetes ya estan absorbidos por CDF, Seshat/SGIN y runtime README batch.
 
 ## Criterio De Cierre
 

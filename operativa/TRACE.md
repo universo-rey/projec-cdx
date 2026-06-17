@@ -647,6 +647,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-seshat-sgin-ambiguous-content-readonly-v1`.
 - Cierre: `SESHAT_SGIN_AMBIGUOUS_CONTENT_RESOLVED_READ_ONLY`; SGIN validator `PASS`, Seshat complete-read order `PASS`, Seshat repo validator `OBSERVED` por `.env.local` con `OPENAI_API_KEY=` sin imprimir secreto. Proximo delta unico `delta_c_runtime_readme_batch_low_risk`.
 
+## Runtime README Batch
+
+- Fuente: aprobacion del owner para ejecutar `delta_c_runtime_readme_batch_low_risk`.
+- Proceso: tomar el contrato del hilo C, confirmar batch README-only, crear rama `codex/readme-lane-atomica-20260617` por repo, stagear solo `README.md`, validar diff limpio, commitear, push y abrir PR draft.
+- Salida: `operativa/READBACK_RUNTIME_README_BATCH_20260617.md`, `operativa/RUNTIME_README_BATCH_PR_MATRIX_20260617.csv`.
+- Hito: `hitos/20260617-runtime-readme-batch-v1`.
+- Cierre: `RUNTIME_README_BATCH_PR_READY`; ocho PRs draft abiertos, sin live writes, sin secretos y sin merge. Proximo delta unico `delta_ab_canon_context_close_decision`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

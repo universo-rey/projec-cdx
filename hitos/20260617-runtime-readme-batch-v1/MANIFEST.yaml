@@ -1,0 +1,17 @@
+version: 20260617-runtime-readme-batch-v1
+status: RUNTIME_README_BATCH_PR_READY
+control_tower: PROJEC CDX
+source_delta: delta_c_runtime_readme_batch_low_risk
+branch: codex/readme-lane-atomica-20260617
+scope:
+  - README-only
+  - eight_repositories
+  - draft_pull_requests
+validation:
+  - git diff --cached --check PASS in all repositories
+  - only README.md staged per repository
+non_execution:
+  - no_live_writes
+  - no_merge
+  - no_secret_print
+next_delta: delta_ab_canon_context_close_decision
