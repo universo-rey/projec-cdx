@@ -1,0 +1,8 @@
+"artifact","kind","path","status"
+"dispatch_register","csv","operativa/THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.csv","THREADS_OPENED_READ_ONLY"
+"readback","markdown","operativa/READBACK_THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.md","THREADS_OPENED_READ_ONLY"
+"fan_in_snapshot","csv","operativa/THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.csv","THREADS_OPENED_FAN_IN_PARTIAL"
+"fan_in_readback","markdown","operativa/READBACK_THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.md","THREADS_OPENED_FAN_IN_PARTIAL"
+"source_packets","folder","operativa/thread-packets-20260617/","USED"
+"hito_readme","markdown","hitos/20260617-thread-live-dispatch-5-plus-1-v1/README.md","CREATED"
+"manifest","yaml","hitos/20260617-thread-live-dispatch-5-plus-1-v1/MANIFEST.yaml","CREATED"

@@ -623,6 +623,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-thread-architecture-5-plus-1-v1`.
 - Cierre: `THREAD_PACKETS_PREPARED_NOT_CREATED`; no se crearon hilos ni se tocaron repos dirty. Proximo delta unico `delta_open_thread_packets_5_plus_1`.
 
+## Thread Live Dispatch 5 Plus 1
+
+- Fuente: aprobacion del owner para ejecutar `delta_open_thread_packets_5_plus_1`.
+- Proceso: crear seis hilos reales desde paquetes versionados, titularlos, fijarlos, mantener limites read-only/preflight y leer cinco contratos completos mas F parcial.
+- Salida: `operativa/THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.csv`, `operativa/READBACK_THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.md`, `operativa/THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.csv`, `operativa/READBACK_THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.md`.
+- Hito: `hitos/20260617-thread-live-dispatch-5-plus-1-v1`.
+- Cierre: `THREADS_OPENED_FAN_IN_PARTIAL`; no mutaciones ni live writes. Proximo delta unico `delta_collect_thread_f_final_and_decide_repo_mutations_5_plus_1`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.
