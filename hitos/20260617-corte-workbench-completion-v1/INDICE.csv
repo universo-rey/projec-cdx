@@ -1,0 +1,8 @@
+"artifact","path","status","notes"
+"README","hitos/20260617-corte-workbench-completion-v1/README.md","FAN_IN_INTEGRATED_METADATA_ONLY","Entrada del hito."
+"MANIFEST","hitos/20260617-corte-workbench-completion-v1/MANIFEST.yaml","FAN_IN_INTEGRATED_METADATA_ONLY","Contrato del hito."
+"READBACK","hitos/20260617-corte-workbench-completion-v1/READBACK.md","FAN_IN_INTEGRATED_METADATA_ONLY","Cierre y siguiente delta."
+"EVIDENCIA","hitos/20260617-corte-workbench-completion-v1/EVIDENCIA.md","FAN_IN_INTEGRATED_METADATA_ONLY","Fuentes y validacion."
+"REPOS","inventarios/WORKBENCH_COMPLETION_REPOS_20260617.csv","OBSERVED","Inventario repos."
+"ENVIRONMENTS","inventarios/WORKBENCH_COMPLETION_ENVIRONMENTS_20260617.csv","OBSERVED","Inventario entornos."
+"GAPS","inventarios/WORKBENCH_COMPLETION_GAPS_20260617.csv","OBSERVED","Gaps convertidos en deltas."

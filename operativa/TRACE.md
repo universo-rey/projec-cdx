@@ -583,6 +583,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: pendiente si se decide empaquetar el puente como hito propio.
 - Cierre: `PASS`; puente deterministico y agente SDK verificaron task file, rama remota, smoke local, gate metadata-only y 6 agentes SDU. No se creo task Cloud por API porque no consta endpoint/tool disponible en esta sesion.
 
+## Corte Workbench Completion
+
+- Fuente: pedido del usuario de activar la Corte, recorrer todos los repos y entornos, y traer lo necesario para completar el workbench.
+- Proceso: activar los 6 agentes SDK-SDU, relevar `Documents/GitHub`, entornos locales y gaps, y ejecutar fan-in saneado sin writes externos.
+- Salida: `operativa/ORDEN_CORTE_WORKBENCH_COMPLETION_20260617.md`, `operativa/READBACK_FAN_IN_CORTE_WORKBENCH_COMPLETION_20260617.md`, `inventarios/WORKBENCH_COMPLETION_*_20260617.*`.
+- Hito: pendiente si se decide empaquetar como hito propio.
+- Cierre: `FAN_IN_INTEGRATED_METADATA_ONLY`; 19 superficies GitHub, 17 repos, 2 carpetas no repo, 13 repos dirty y gaps convertidos en deltas. Proximo delta unico: `delta_repo_dirty_worktree_triage_by_surface`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

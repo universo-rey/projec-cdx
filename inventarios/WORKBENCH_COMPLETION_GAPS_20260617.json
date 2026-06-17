@@ -1,0 +1,299 @@
+[
+  {
+    "surface": "Auditar",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Auditar",
+    "gap": "not_git_repo",
+    "severity": "OBSERVED",
+    "owner_agent": "thot-tecnico",
+    "next_delta": "classify_folder_as_archive_reference_or_promote_to_repo",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "cabina-universal-d",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\cabina-universal-d",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "cabina-universal-d",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\cabina-universal-d",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M 02_AUTHORITY_CANON/CURRENT_STATE.md |  M 02_AUTHORITY_CANON/REPO_OPERATING_CONTRACT_CABINA_UNIVERSAL_D_20260604.md"
+  },
+  {
+    "surface": "cdf_gate68_solution_clone",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\cdf_gate68_solution_clone",
+    "gap": "not_git_repo",
+    "severity": "OBSERVED",
+    "owner_agent": "thot-tecnico",
+    "next_delta": "classify_folder_as_archive_reference_or_promote_to_repo",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "cdf-soluciones",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\cdf-soluciones",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "cdf-soluciones",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\cdf-soluciones",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M 00_CONTEXT/CURRENT_STATE.md |  M 00_CONTEXT/START_HERE.md |  M README.md | ?? 03_OPERACION/SESHAT_HOME_BINDING_DELEGATION/ | ?? 03_OPERACION/SESHAT_RESTO_CORTE_DELEGATION/ | ?? 08_EVIDENCIA/2026-06-16_CDF_SESHAT_HOME_BINDING_DELEGATION/"
+  },
+  {
+    "surface": "jara-consultores",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\jara-consultores",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "jara-consultores",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\jara-consultores",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M README.md"
+  },
+  {
+    "surface": "microsoft-agents-governed-lab",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\microsoft-agents-governed-lab",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "microsoft-agents-governed-lab",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\microsoft-agents-governed-lab",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M README.md"
+  },
+  {
+    "surface": "modo-on-foundation",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\modo-on-foundation",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "modo-on-foundation",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\modo-on-foundation",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M README.md"
+  },
+  {
+    "surface": "organizacion",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\organizacion",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "organizacion",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\organizacion",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M README.md"
+  },
+  {
+    "surface": "sdu-canon",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\sdu-canon",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "sdu-canon",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\sdu-canon",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M 00_CONTEXT/CURRENT_STATE.md"
+  },
+  {
+    "surface": "seshat-bootstrap-sdu-cn",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\seshat-bootstrap-sdu-cn",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "seshat-bootstrap-sdu-cn",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\seshat-bootstrap-sdu-cn",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M README.md |  M workspace/README.md |  M workspace/documents/drafts/README.md | ?? agents/sdu_cn/SDU_CN_CANON_COPILOT_PROMPT.md | ?? workspace/documents/drafts/ACTA_MESA_TRABAJO_CORTE_EJECUTORA_20260616.md | ?? workspace/documents/drafts/APERTURA_MESA_TRABAJO_CORTE_EJECUTORA_20260616.md"
+  },
+  {
+    "surface": "Sgin",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Sgin",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "Sgin",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Sgin",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M README.md | ?? torres/"
+  },
+  {
+    "surface": "Sgin__wt_dictamen_n2",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Sgin__wt_dictamen_n2",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "Sgin__wt_dictamen_n3_skills",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Sgin__wt_dictamen_n3_skills",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "Sgin__wt_memory_hygiene",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Sgin__wt_memory_hygiene",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "Sgin__wt_tge_staging",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\Sgin__wt_tge_staging",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "sgin-cumplimiento",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\sgin-cumplimiento",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "sgin-cumplimiento",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\sgin-cumplimiento",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M README.md"
+  },
+  {
+    "surface": "tcu-agentic-runtime-control",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\tcu-agentic-runtime-control",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "tcu-agentic-runtime-control",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\tcu-agentic-runtime-control",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M README.md"
+  },
+  {
+    "surface": "tge-agentic-runtime-control-escribania",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\tge-agentic-runtime-control-escribania",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "tge-agentic-runtime-control-escribania",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\tge-agentic-runtime-control-escribania",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M README.md"
+  },
+  {
+    "surface": "torre-gemela-escribania",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\torre-gemela-escribania",
+    "gap": "missing_mapa_md",
+    "severity": "DELTA",
+    "owner_agent": "seshat-normativa",
+    "next_delta": "decide_if_repo_needs_mapa_or_use_readme_agents_only",
+    "evidence": "WORKBENCH_COMPLETION_REPOS_20260617.csv"
+  },
+  {
+    "surface": "torre-gemela-escribania",
+    "path": "C:\\Users\\enzo1\\Documents\\GitHub\\torre-gemela-escribania",
+    "gap": "dirty_worktree",
+    "severity": "DELTA",
+    "owner_agent": "anubis-gate",
+    "next_delta": "inspect_repo_diff_and_package_commit_or_archive",
+    "evidence": " M README.md"
+  },
+  {
+    "surface": "PROJEC_CDX_ROOT",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX",
+    "gap": "missing_mapa_md",
+    "severity": "OBSERVED",
+    "owner_agent": "maat-cumplimiento",
+    "next_delta": "decide_if_surface_requires_map",
+    "evidence": "WORKBENCH_COMPLETION_ENVIRONMENTS_20260617.csv"
+  }
+]

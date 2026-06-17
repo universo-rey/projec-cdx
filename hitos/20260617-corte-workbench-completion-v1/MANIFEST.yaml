@@ -1,0 +1,14 @@
+id: 20260617-corte-workbench-completion-v1
+title: Corte Workbench Completion v1
+status: FAN_IN_INTEGRATED_METADATA_ONLY
+date: 2026-06-17
+surface: C:/Users/enzo1/PROJEC CDX
+mode: metadata-only
+artifacts:
+  - operativa/ORDEN_CORTE_WORKBENCH_COMPLETION_20260617.md
+  - operativa/READBACK_FAN_IN_CORTE_WORKBENCH_COMPLETION_20260617.md
+  - inventarios/WORKBENCH_COMPLETION_REPOS_20260617.csv
+  - inventarios/WORKBENCH_COMPLETION_ENVIRONMENTS_20260617.csv
+  - inventarios/WORKBENCH_COMPLETION_GAPS_20260617.csv
+live_execution: false
+next_delta: delta_repo_dirty_worktree_triage_by_surface
