@@ -1,0 +1,19 @@
+id: 20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1
+title: Plan Maestro Atomico Tenant Dataverse Codex Cloud v1
+status: PLAN_PREPARADO_VERSIONABLE
+date: 2026-06-17
+surface: C:/Users/enzo1/PROJEC CDX
+tenant_name: Escribania Bitsch
+tenant_id: 858a0852-44a1-413e-a0fe-f053949797d6
+environment_name: HUBDesarrollo
+environment_url: https://org084965d9.crm.dynamics.com
+mode: metadata-only/read-only/local-first
+artifacts:
+  - operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md
+  - operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617.csv
+  - hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1/READBACK.md
+  - hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1/INDICE.csv
+  - hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1/EVIDENCIA.md
+live_execution: false
+next_delta: delta_repo_dirty_worktree_triage_by_surface
+

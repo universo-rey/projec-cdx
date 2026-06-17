@@ -591,6 +591,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: pendiente si se decide empaquetar como hito propio.
 - Cierre: `FAN_IN_INTEGRATED_METADATA_ONLY`; 19 superficies GitHub, 17 repos, 2 carpetas no repo, 13 repos dirty y gaps convertidos en deltas. Proximo delta unico: `delta_repo_dirty_worktree_triage_by_surface`.
 
+## Plan Maestro Atomico Tenant Dataverse Codex Cloud
+
+- Fuente: pedido del owner de preparar el plan con todos los agentes para ordenar, corregir, asegurar atomicidad, idempotencia e integracion total con tenant, Dataverse y Codex Cloud.
+- Proceso: aplicar `tcu-redactor-planes-operativos`, `parallel-order-governance`, `cabina-agent-delegation`, `sdu-dataverse-metadata-wave` y `rey-modo-carril-codex-cloud-api`; fijar waves atomicas con owner, reviewer, lock, evidencia, rollback, postcheck y stop condition.
+- Salida: `operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md`, `operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617.csv`.
+- Hito: `hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1`.
+- Cierre: `PLAN_PREPARADO_VERSIONABLE`; no ejecuta live write; proximo delta unico `delta_repo_dirty_worktree_triage_by_surface`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

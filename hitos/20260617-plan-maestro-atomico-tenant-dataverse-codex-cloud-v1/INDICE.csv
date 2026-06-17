@@ -1,0 +1,6 @@
+"id","artifact","status","notes"
+"PLAN","operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md","PLAN_PREPARADO_VERSIONABLE","Plan maestro con waves atomicas."
+"MATRIX","operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617.csv","PLAN_PREPARADO_VERSIONABLE","Matriz owner/reviewer/gates por wave."
+"READBACK","hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1/READBACK.md","PLAN_PREPARADO_VERSIONABLE","Lectura de cierre."
+"EVIDENCIA","hitos/20260617-plan-maestro-atomico-tenant-dataverse-codex-cloud-v1/EVIDENCIA.md","PLAN_PREPARADO_VERSIONABLE","Evidencia y validacion."
+
