@@ -663,6 +663,14 @@ Cadena operativa de `PROJEC CDX`.
 - Hito: `hitos/20260617-ab-canon-context-close-decision-v1`.
 - Cierre: `CANONIZACION_MINIMA_PR_READY`; Cabina PR #158 y SDU Canon PR #22 abiertos como draft, sin live writes, sin secretos y sin merge. Proximo delta unico `delta_f_cloud_dataverse_preflight_read_only`.
 
+## Cloud Dataverse Preflight
+
+- Fuente: siguiente carril F tras cerrar E, D, C y A/B de la mesa `5+1`.
+- Proceso: releer `HILO_F_CLOUD_DATAVERSE_READY`, confirmar branch/HEAD actual, ejecutar smoke local y bridge local permitidos, sin crear task Cloud ni ejecutar writes live.
+- Salida: `operativa/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md`, `operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617.csv`.
+- Hito: `hitos/20260617-cloud-dataverse-preflight-v1`.
+- Cierre: `CLOUD_DATAVERSE_PREFLIGHT_READY`; `context_ok=True`, `context_drift=[]`, cloud bridge `PASS`, sin task Cloud, sin Dataverse write y sin Microsoft live write. Proximo delta unico `delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread`.
+
 ## Regla
 
 Toda nueva entrega debe poder leerse como `fuente -> proceso -> salida -> hito -> cierre`.

@@ -4,9 +4,13 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `CANONIZACION_MINIMA_PR_READY`.
+Etapa actual: `CLOUD_DATAVERSE_PREFLIGHT_READY`.
 
-Movimiento unico actual: `delta_f_cloud_dataverse_preflight_read_only`.
+Movimiento unico actual: `delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread`.
+
+El delta `delta_f_cloud_dataverse_preflight_read_only` quedo cerrado sobre HEAD `c8c92cf`: smoke `prepared`, `context_ok=True`, `context_drift=[]`, cloud bridge `PASS` y rama remota encontrada.
+
+Evidencia PROJEC: `operativa/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md`, `operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617.csv` y `hitos/20260617-cloud-dataverse-preflight-v1`.
 
 El delta `delta_ab_canon_context_close_decision` quedo cerrado con decision `CANONIZAR_MINIMO`: Cabina y SDU Canon tienen PRs draft separados, sin live writes y sin merge.
 
@@ -22,13 +26,13 @@ El delta `delta_e_cdf_split_context_evidence` quedo cerrado en `cdf-soluciones` 
 
 Precondicion antes de cualquier PR sobre `seshat-bootstrap-sdu-cn`: resolver de forma gobernada el hallazgo local `.env.local` con `OPENAI_API_KEY=` detectado por el validador, sin imprimir ni mover secretos sin orden explicita.
 
-La siguiente accion no es mergear PRs ni ejecutar live writes. Es releer `HILO_F_CLOUD_DATAVERSE_READY` y convertirlo en preflight Cloud/Dataverse read-only, con decision explicita de que no se crean tasks Cloud ni se escribe Dataverse sin nueva orden.
+La siguiente accion no es mergear PRs ni ejecutar live writes. Es elegir un unico carril de lanzamiento: pegar prompt en Codex Cloud UI o ejecutar un thread SDK local metadata-only.
 
 La revision de Corte del plan maestro quedo integrada y W1 ya clasifico los `13` repos dirty en `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`.
 
 El owner acepto preparar y abrir el modelo no lineal recomendado. Quedaron abiertos seis hilos reales desde los paquetes `5+1` en `operativa/thread-packets-20260617/`.
 
-La siguiente accion no es limpiar todo ni crear mapas masivos. Es preparar el carril F como preflight read-only, sin tocar tenant ni runners live.
+La siguiente accion no es limpiar todo ni crear mapas masivos. Es lanzar un unico prompt/carril de consumo, manteniendo gate `metadata-only` hasta nueva orden explicita.
 
 Modo requerido: read-only/diff review primero; cualquier mutacion posterior debe tener target exacto, owner, rollback, postcheck y evidencia.
 
@@ -85,7 +89,7 @@ pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workben
 
 ## Resultado Esperado
 
-Preparar `delta_f_cloud_dataverse_preflight_read_only` con contrato claro: estado Codex Cloud, Dataverse, repo/projec bridge, gates, evidencia y siguiente accion unica sin apply.
+Ejecutar o preparar `delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread` con retorno PASS/OBSERVED/FAIL, sin Dataverse write, sin Microsoft live write y sin task Cloud si no hay herramienta real disponible.
 
 ## Criterio De Cierre
 

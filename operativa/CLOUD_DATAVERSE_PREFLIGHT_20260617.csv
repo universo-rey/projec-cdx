@@ -1,0 +1,27 @@
+key,value
+status,CLOUD_DATAVERSE_PREFLIGHT_READY
+date,2026-06-17
+workbench,C:/Users/enzo1/PROJEC CDX
+branch,codex/dataverse-corte-ejecutora-v1
+head,c8c92cf
+tenant,Escribania Bitsch
+dataverse_environment,HUBDesarrollo
+dataverse_url,https://org084965d9.crm.dynamics.com
+smoke_status,prepared
+context_ok,True
+context_drift,[]
+openai_api_key_present,True
+agents_sdk_installed,True
+agents_sdk_version,0.17.0
+gate,metadata-only
+mode,cloud
+sdu_sdk_agents_defined,6
+cloud_bridge_status,PASS
+remote_branch_found,True
+sdu_agents_defined,True
+next_delta,launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread
+cloud_task_created,false
+dataverse_write_executed,false
+microsoft_live_write_executed,false
+power_automate_flow_executed,false
+secrets_printed,false
