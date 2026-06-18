@@ -1191,6 +1191,28 @@ def discover_dataverse_source_rows() -> list[list]:
                 ]
             )
 
+    for selection_path in sorted((ROOT / "operativa").glob("DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED_*.csv")):
+        for row in read_csv_dicts(selection_path):
+            rows.append(
+                [
+                    "DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED",
+                    row.get("decision_id"),
+                    row.get("consumer"),
+                    "workbook",
+                    row.get("target"),
+                    row.get("estado"),
+                    row.get("evidence"),
+                    row.get("source"),
+                    row.get("postcheck"),
+                    (
+                        f"owner={row.get('owner')} next_delta={row.get('next_delta')} "
+                        f"live_writes={row.get('dataverse_write_executed')}/"
+                        f"{row.get('microsoft_live_write_executed')}"
+                    ),
+                    str(selection_path),
+                ]
+            )
+
     summary_path = ROOT / "operativa" / "DATAVERSE_POWER_PLATFORM_LIVE_SUMMARY_20260616.json"
     if summary_path.exists():
         try:

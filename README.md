@@ -4,10 +4,10 @@ Carpeta de trabajo local para artefactos y mapas de Codex.
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
-## Vigencia 20260617
+## Vigencia 20260618
 
-- Estado vigente: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
-- Movimiento unico actual: `delta_select_next_consumer_from_dataverse_live_rows`.
+- Estado vigente: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
+- Movimiento unico actual: `delta_commit_dataverse_workbook_binding_branch`.
 - Paquetes: no crear mas si ya existe hito, readback, indice o paquete vigente.
 - SGIN: ya fue leido y paquetizado; no reabrir lectura ni crear paquete nuevo por inercia.
 - Navegacion de vigencia: [PENDIENTES_HOY_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PENDIENTES_HOY_20260617.md), [CURRENT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md), [NEXT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md) y [INDICE_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md).

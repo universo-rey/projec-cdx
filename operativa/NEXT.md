@@ -15,24 +15,61 @@ Siguiente movimiento unico para `PROJEC CDX`.
 
 ## Paso Siguiente
 
-Etapa actual: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
+Etapa actual: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
 
 Movimiento unico actual:
-`delta_select_next_consumer_from_dataverse_live_rows`.
+`delta_commit_dataverse_workbook_binding_branch`.
 
-SGIN ya fue leido y paquetizado. Dataverse ya fue leido live en
-`HUBDesarrollo` y confirma las filas source/evidence escritas. Evidencia:
-`operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`,
-`operativa/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv`,
-`operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`,
-`tools/read_dataverse_rehydration_live.ps1`, `dataverse/ANCLA_REHIDRATACION.md`
-y `dataverse/GATE.md`.
+Consumidor aplicado:
+`workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`.
 
-El siguiente movimiento no es re-leer SGIN, reempaquetarlo ni rehidratar
-Dataverse otra vez. Es elegir un unico consumidor de las filas Dataverse vivas
-confirmadas y abrirlo con target, owner, rollback, postcheck y evidencia.
+Binding aplicado:
+`tools/update_codex_config_workbook.py` ya absorbe
+`operativa/DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED_20260618.csv` en la hoja
+`Dataverse Fuentes`.
+
+Owner: `Enzo / Corte SDU-CN`. Agente ejecutor local: `Narrador`.
+
+Rollback: restaurar el backup
+`workbooks/_backups/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617_before_update_20260618_000609.xlsx`
+o revertir el delta documental si el binding queda desalineado.
+
+Postcheck ejecutado: el workbook abre como XLSX valido, la hoja
+`Dataverse Fuentes` contiene la fila `DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED`,
+la corrida no reporto errores de formula y el validador local devuelve `PASS`.
+
+Evidencia de binding:
+`operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md` y
+`operativa/DATAVERSE_WORKBOOK_BINDING_20260618.csv`.
+
+El siguiente movimiento no es re-leer SGIN, rehidratar Dataverse ni crear otro
+paquete. Es cerrar el tramo versionable de la rama con commit gobernado.
 
 ## Paso Siguiente Previo 0
+
+Etapa previa: `DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED`.
+
+Movimiento previo:
+`delta_bind_dataverse_live_rows_to_codex_global_state_workbook`.
+
+Quedo resuelto: `tools/update_codex_config_workbook.py` incorpora la decision de
+consumidor y el workbook fue regenerado. `127.0.0.1:8787` no estaba escuchando
+durante el postcheck, asi que la superficie browser queda como observacion
+externa opcional, no como bloqueo.
+
+## Paso Siguiente Previo 1
+
+Etapa previa: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
+
+Movimiento previo:
+`delta_select_next_consumer_from_dataverse_live_rows`.
+
+Quedo resuelto por decision gobernada: el consumidor es
+`workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`, porque ya existe,
+ya esta al frente de `workbooks/`, tiene builder vigente y puede consumir la
+evidencia JSON local sin tocar superficies live.
+
+## Paso Siguiente Previo 2
 
 Etapa previa: `DATAVERSE_REHYDRATION_READY_FROM_EXISTING_PACKAGES`.
 

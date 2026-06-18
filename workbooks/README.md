@@ -20,4 +20,5 @@ La cobertura atomica energetica entra cuando el workbook representa una superfic
 ## Nota
 
 `CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx` es el workbook de configuracion vigente: consolida global state, agentes, entornos, colas, conexiones y fuentes Dataverse.
+Desde `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`, este workbook contiene la decision `DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED` en la hoja `Dataverse Fuentes`.
 `control_operativo.xlsx` se regenera desde `tools/build_control_workbook.mjs` leyendo `operativa/`, `dataverse/GATE.md`, `dataverse/REGISTRO_BLOQUEOS.md`, `playbooks/07-dataverse-fronteras.md`, `hitos/20260615-hilo-origen-v1/README.md`, `operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md` y `outputs/live_repo_review_20260615/READBACK.md`. Los artefactos generados equivalentes viven en `outputs/` por fecha y corrida.

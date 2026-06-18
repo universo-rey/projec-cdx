@@ -14,7 +14,7 @@ Este mapa solo indexa los hitos versionados de este workbench.
 
 ## Vigencia
 
-- Estado vigente: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
+- Estado vigente: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
 - Cantidad actual: `62` hitos activos mas `_archivo`.
 - Paquetes `20260617`: `22` carpetas; el detalle completo vive en `INDICE_MAESTRO`.
 - Paquete vacio/ruido: `20260617-ajuste-sgin-ya-leido-v1`, registrado como `EMPTY_SUPERSEDED_NO_CANON`.

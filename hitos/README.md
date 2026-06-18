@@ -10,7 +10,7 @@ Si queres reanudar una wave de cierre, entrar por [ANCLAS_ON_DEMAND.md](C:/Users
 
 ## Estado De Vigencia
 
-- Estado vigente: `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
+- Estado vigente: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
 - Hitos activos: `62` carpetas versionadas, mas `_archivo`.
 - Indice maestro: fuente unica para vigencia, absorciones y evidencia.
 - Ruido identificado: `20260617-ajuste-sgin-ya-leido-v1` es carpeta vacia, sin canon propio; queda registrada como `EMPTY_SUPERSEDED_NO_CANON`.
