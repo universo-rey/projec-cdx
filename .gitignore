@@ -5,5 +5,6 @@ __pycache__/
 .venv/
 *.egg-info/
 .cache/
+workbooks/_backups/
 operativa/PAC_*_HUBDESARROLLO_*.txt
 operativa/backup-*.reg
