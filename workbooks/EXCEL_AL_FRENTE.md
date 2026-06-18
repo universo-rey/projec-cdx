@@ -14,10 +14,15 @@ Indice visible de los libros Excel principales de `PROJEC CDX`.
 - [tracker_workbook.xlsx](C:/Users/enzo1/PROJEC%20CDX/outputs/tracker_workbook_20260613/tracker_workbook.xlsx) - variante tracker workbook, distinta por diseno.
 
 ## Estado Dataverse
-- Estado: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
+- Estado: `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`.
 - Hoja: `Dataverse Fuentes`.
 - Fila viva: `DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED`.
 - Evidencia: `operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md`.
+
+## Estado Workspace Y Superficies
+- Hoja: `Workspace Actual`.
+- Hoja: `Superficies Locales`.
+- Evidencia: `operativa/READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md`.
 
 ## Regla
 - `workbooks/` contiene fuentes vivas o libros de uso operativo.
