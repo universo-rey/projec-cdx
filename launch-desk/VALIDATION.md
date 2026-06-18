@@ -1,5 +1,14 @@
 # Launch Desk validation checklist
 
+## Integrated smoke 2026-06-18
+
+- [x] Main branch smoke returned `status: prepared`.
+- [x] `OPENAI_API_KEY` is present locally without exposing the secret value.
+- [x] Agents SDK is installed as `openai-agents` version `0.17.5`.
+- [x] SDK surface reports 6 SDU agents defined.
+- [x] Launch Desk CLI is available with `backend`, `frontend`, and `dev` commands.
+- [x] Gate remains `local-only`.
+
 ## Agent behavior
 
 - [ ] The agent uses the brief, audience, launch date, constraints, and assets as inputs.
