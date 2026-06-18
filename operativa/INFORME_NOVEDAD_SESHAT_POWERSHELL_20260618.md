@@ -4,6 +4,8 @@ Fecha: 2026-06-18
 Origen: Acta Seshat de erradicacion PowerShell  
 Estado: resuelto
 
+Nota: este informe cubre solo el cierre PowerShell. La novedad completa del dia quedo consolidada en `operativa/INFORME_NOVEDAD_SESHAT_CRONOLOGIA_COMPLETA_20260618.md`.
+
 ## Resumen para compartir
 
 Hoy se resolvio un problema que estaba generando ruido cada vez que se abria o se usaba PowerShell en la cabina local.
