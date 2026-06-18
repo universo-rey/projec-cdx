@@ -1,18 +1,23 @@
 param(
-    [string]$WorkspaceRoot = $PSScriptRoot
+    [string]$WorkspaceRoot = (Split-Path -Parent $PSScriptRoot)
 )
 
 $ErrorActionPreference = 'Stop'
 
-$codexSkillsRoot = 'C:\Users\enzo1\.codex\skills'
-$agentsSkillsRoot = 'C:\Users\enzo1\.agents\skills'
-$agentsPluginManifest = 'C:\Users\enzo1\.agents\plugins\marketplace.json'
+$codexSkillsRoot = 'C:/Users/enzo1/.codex/skills'
+$agentsSkillsRoot = 'C:/Users/enzo1/.agents/skills'
+$agentsPluginManifest = 'C:/Users/enzo1/.agents/plugins/marketplace.json'
 $codexStackPath = Join-Path $codexSkillsRoot 'STACK.md'
 $codexIndexPath = Join-Path $codexSkillsRoot 'SKILLS_INDEX.csv'
 $agentsRegistryPath = Join-Path $agentsSkillsRoot 'REY_MODO_SKILLS_REGISTRY_V1.md'
 
-$outputCsv = Join-Path $WorkspaceRoot 'SKILLS_UNIFIED_TABLE.csv'
-$outputMd = Join-Path $WorkspaceRoot 'SKILLS_UNIFIED_TABLE.md'
+$inventoryRoot = Join-Path $WorkspaceRoot 'inventarios'
+$outputCsv = Join-Path $inventoryRoot 'SKILLS_UNIFIED_TABLE.csv'
+$outputMd = Join-Path $inventoryRoot 'SKILLS_UNIFIED_TABLE.md'
+
+if (-not (Test-Path -LiteralPath $inventoryRoot)) {
+    New-Item -ItemType Directory -Path $inventoryRoot | Out-Null
+}
 
 function Normalize-Text {
     param([string]$Text)
@@ -270,4 +275,3 @@ Set-Content -LiteralPath $outputMd -Value ($lines -join [Environment]::NewLine) 
 
 Write-Host "Wrote: $outputMd"
 Write-Host "Wrote: $outputCsv"
-

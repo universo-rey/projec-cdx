@@ -1,5 +1,38 @@
-# Project-scoped Codex local environment for the canonical root.
+# Project-scoped Codex local environment: CEO root is C:/; PROJEC CDX is only a project shortcut.
+# Default runtime surface is local desktop. Cloud metadata paths remain declared
+# for governed handoffs, but they are not the active local identity.
 
 [shell_environment_policy]
 inherit = "core"
-set = { OPENAI_MODEL = "gpt-5.4-mini", CODEX_CLOUD_ENABLED = "1", CODEX_CLOUD_MODE = "cloud", CODEX_CLOUD_GATE = "metadata-only", CODEX_CLOUD_PROFILE = "projec-cdx", CODEX_CLOUD_REPO_ROOT = "C:\\Users\\enzo1\\PROJEC CDX", CODEX_CLOUD_WORKTREE = "C:\\Users\\enzo1\\PROJEC CDX", CODEX_CLOUD_BRANCH = "codex/dataverse-corte-ejecutora-v1", CODEX_CLOUD_CONTRACT = "C:\\Users\\enzo1\\PROJEC CDX\\operativa\\CODEX_CLOUD_CONTRACT_20260615.md", CODEX_CLOUD_MAINTENANCE_LOG = "C:\\Users\\enzo1\\PROJEC CDX\\operativa\\CODEX_CLOUD_MAINTENANCE_20260615.md", CODEX_CLOUD_DATAVERSE_REGISTRY = "C:\\Users\\enzo1\\PROJEC CDX\\dataverse\\REGISTRO_CODEX_CLOUD_20260615.md", CODEX_CLOUD_DATAVERSE_GATE = "C:\\Users\\enzo1\\PROJEC CDX\\dataverse\\GATE.md", CODEX_CLOUD_DATAVERSE_BLOCKERS = "C:\\Users\\enzo1\\PROJEC CDX\\dataverse\\REGISTRO_BLOQUEOS.md", CODEX_CLOUD_DATAVERSE_SOURCE_MAP = "C:\\Users\\enzo1\\PROJEC CDX\\dataverse\\MAPA_CONEXIONES_DATAVERSE.md", CODEX_CLOUD_DATAVERSE_PLAN = "C:\\Users\\enzo1\\PROJEC CDX\\dataverse\\PLAN_SEGUNDA_PASADA.md", CODEX_SOURCE_TREE_PATH = "C:\\Users\\enzo1\\PROJEC CDX", CODEX_WORKTREE_PATH = "C:\\Users\\enzo1\\PROJEC CDX" }
+
+[shell_environment_policy.set]
+PATH = "C:/Users/enzo1/AppData/Local/Microsoft/WindowsApps;C:/WINDOWS/system32;C:/WINDOWS;C:/WINDOWS/System32/Wbem;C:/WINDOWS/System32/WindowsPowerShell/v1.0/;C:/WINDOWS/System32/OpenSSH/;C:/Program Files/Git/cmd"
+OPENAI_MODEL = "gpt-5.5"
+CODEX_RUNTIME_SURFACE = "local-desktop"
+CODEX_CLOUD_ENABLED = "0"
+CODEX_CLOUD_MODE = "local"
+CODEX_CLOUD_GATE = "local-only"
+CODEX_CLOUD_PROFILE = "projec-cdx"
+CODEX_REPOS_ROOT = "C:/Users/enzo1/Documents/GitHub"
+CODEX_CABINA_REPO_ROOT = "C:/Users/enzo1/Documents/GitHub/cabina-universal-d"
+CODEX_START_ROOT = "C:/"
+CODEX_WORKBENCH_ROOT = "C:/"
+CODEX_METADATA_ROOT = "C:/"
+CODEX_PROJECT_ROOT = "C:/Users/enzo1/PROJEC CDX"
+CODEX_CLOUD_REPO_ROOT = "C:/Users/enzo1/Documents/GitHub/cabina-universal-d"
+CODEX_CLOUD_METADATA_ROOT = "C:/"
+CODEX_CLOUD_WORKTREE = "C:/"
+CODEX_CLOUD_BRANCH = "codex/consume-bound-workbook-next-delta"
+CODEX_CLOUD_CONTRACT = "C:/Users/enzo1/PROJEC CDX/operativa/CODEX_CLOUD_CONTRACT_20260615.md"
+CODEX_CLOUD_MAINTENANCE_LOG = "C:/Users/enzo1/PROJEC CDX/operativa/CODEX_CLOUD_MAINTENANCE_20260615.md"
+CODEX_CLOUD_DATAVERSE_REGISTRY = "C:/Users/enzo1/PROJEC CDX/dataverse/REGISTRO_CODEX_CLOUD_20260615.md"
+CODEX_CLOUD_DATAVERSE_GATE = "C:/Users/enzo1/PROJEC CDX/dataverse/GATE.md"
+CODEX_CLOUD_DATAVERSE_BLOCKERS = "C:/Users/enzo1/PROJEC CDX/dataverse/REGISTRO_BLOQUEOS.md"
+CODEX_CLOUD_DATAVERSE_SOURCE_MAP = "C:/Users/enzo1/PROJEC CDX/dataverse/MAPA_CONEXIONES_DATAVERSE.md"
+CODEX_CLOUD_DATAVERSE_PLAN = "C:/Users/enzo1/PROJEC CDX/dataverse/PLAN_SEGUNDA_PASADA.md"
+CODEX_SOURCE_TREE_PATH = "C:/"
+CODEX_WORKTREE_PATH = "C:/"
+CODEX_POWERSHELL_PROFILE = "C:/Users/enzo1/.codex/profiles/powershell/CodexProfile.ps1"
+CODEX_PWSH_PATH = "C:/Users/enzo1/AppData/Local/Microsoft/WindowsApps/pwsh.exe"
+CODEX_GIT_CMD = "C:/Program Files/Git/cmd/git.exe"
+CODEX_PYTHON_CMD = "C:/Users/enzo1/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe"

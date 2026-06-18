@@ -46,5 +46,5 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 Arranque vivo unico:
 
 ```powershell
-pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
+pwsh -NoProfile -File "./tools/codex-cloud-live.ps1"
 ```

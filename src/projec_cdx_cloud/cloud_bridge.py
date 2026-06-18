@@ -11,7 +11,7 @@ from typing import Any
 from .agent import DEFAULT_MODEL, git_context
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_BRANCH = "codex/dataverse-corte-ejecutora-v1"
+DEFAULT_BRANCH = "codex/consume-bound-workbook-next-delta"
 TASK_PATH = ROOT / "operativa" / "CODEX_CLOUD_SMOKE_TASK_20260617.md"
 
 

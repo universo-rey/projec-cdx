@@ -1,12 +1,14 @@
 [CmdletBinding()]
 param(
-  [string]$RepoRoot = 'C:\Users\enzo1\PROJEC CDX',
+  [string]$RepoRoot = 'C:/Users/enzo1/Documents/GitHub/cabina-universal-d',
+  [string]$MetadataRoot = 'C:/Users/enzo1/PROJEC CDX',
   [string]$WorkspaceRoot = (Get-Location).Path,
   [string]$ContractPath,
   [string]$RegistryPath,
   [string]$MaintenanceLogPath,
   [string]$Mode = 'cloud',
-  [string]$Gate = 'metadata-only'
+  [string]$Gate = 'metadata-only',
+  [string]$GitCommand = 'C:/Program Files/Git/cmd/git.exe'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -39,20 +41,33 @@ function Get-GitValue {
     [Parameter(Mandatory = $true)][string[]]$Args
   )
 
-  $value = & git -C $WorkspaceRoot @Args 2>$null
+  $value = & $GitCommand -C $WorkspaceRoot @Args 2>$null
   if ($null -eq $value) { return '' }
   return (($value | Out-String).Trim())
 }
 
-$repoRoot = (Resolve-Path -LiteralPath $RepoRoot).Path
-$workspaceRoot = (Resolve-Path -LiteralPath $WorkspaceRoot).Path
-if (-not $ContractPath) { $ContractPath = Join-Path $repoRoot 'operativa\CODEX_CLOUD_CONTRACT_20260615.md' }
-if (-not $RegistryPath) { $RegistryPath = Join-Path $repoRoot 'dataverse\REGISTRO_CODEX_CLOUD_20260615.md' }
-if (-not $MaintenanceLogPath) { $MaintenanceLogPath = Join-Path $repoRoot 'operativa\CODEX_CLOUD_MAINTENANCE_20260615.md' }
+function ConvertTo-PortableWindowsPath {
+  param([Parameter(Mandatory = $true)][string]$Path)
+  return $Path.Replace('\', '/')
+}
 
-$gitBranch = (git -C $workspaceRoot branch --show-current 2>$null | Out-String).Trim()
+$repoRoot = (Resolve-Path -LiteralPath $RepoRoot).Path
+$metadataRoot = (Resolve-Path -LiteralPath $MetadataRoot).Path
+$workspaceRoot = (Resolve-Path -LiteralPath $WorkspaceRoot).Path
+if (-not $ContractPath) { $ContractPath = Join-Path $metadataRoot 'operativa/CODEX_CLOUD_CONTRACT_20260615.md' }
+if (-not $RegistryPath) { $RegistryPath = Join-Path $metadataRoot 'dataverse/REGISTRO_CODEX_CLOUD_20260615.md' }
+if (-not $MaintenanceLogPath) { $MaintenanceLogPath = Join-Path $metadataRoot 'operativa/CODEX_CLOUD_MAINTENANCE_20260615.md' }
+
+$repoRootDisplay = ConvertTo-PortableWindowsPath -Path $repoRoot
+$metadataRootDisplay = ConvertTo-PortableWindowsPath -Path $metadataRoot
+$workspaceRootDisplay = ConvertTo-PortableWindowsPath -Path $workspaceRoot
+$contractPathDisplay = ConvertTo-PortableWindowsPath -Path $ContractPath
+$registryPathDisplay = ConvertTo-PortableWindowsPath -Path $RegistryPath
+$maintenanceLogPathDisplay = ConvertTo-PortableWindowsPath -Path $MaintenanceLogPath
+
+$gitBranch = (& $GitCommand -C $workspaceRoot branch --show-current 2>$null | Out-String).Trim()
 if ([string]::IsNullOrWhiteSpace($gitBranch)) { $gitBranch = 'DETACHED' }
-$gitRemote = (git -C $workspaceRoot remote get-url origin 2>$null | Out-String).Trim()
+$gitRemote = (& $GitCommand -C $workspaceRoot remote get-url origin 2>$null | Out-String).Trim()
 if ([string]::IsNullOrWhiteSpace($gitRemote)) { $gitRemote = 'NO_REMOTE' }
 
 $variables = @(
@@ -60,17 +75,21 @@ $variables = @(
   [pscustomobject]@{ Name = 'CODEX_CLOUD_MODE'; Default = $Mode; Meaning = 'Execution mode: local, cloud, or hybrid.' },
   [pscustomobject]@{ Name = 'CODEX_CLOUD_GATE'; Default = $Gate; Meaning = 'Gate contract for metadata-only or higher.' },
   [pscustomobject]@{ Name = 'CODEX_CLOUD_PROFILE'; Default = 'projec-cdx'; Meaning = 'Project profile name.' },
-  [pscustomobject]@{ Name = 'CODEX_CLOUD_REPO_ROOT'; Default = $repoRoot; Meaning = 'Canonical repo root.' },
-  [pscustomobject]@{ Name = 'CODEX_CLOUD_WORKTREE'; Default = $workspaceRoot; Meaning = 'Current isolated workspace path.' },
+  [pscustomobject]@{ Name = 'CODEX_REPOS_ROOT'; Default = 'C:/Users/enzo1/Documents/GitHub'; Meaning = 'Canonical local repositories root.' },
+  [pscustomobject]@{ Name = 'CODEX_CABINA_REPO_ROOT'; Default = $repoRootDisplay; Meaning = 'Canonical Cabina repository root.' },
+  [pscustomobject]@{ Name = 'CODEX_WORKBENCH_ROOT'; Default = $metadataRootDisplay; Meaning = 'PROJEC CDX workbench and metadata root.' },
+  [pscustomobject]@{ Name = 'CODEX_CLOUD_REPO_ROOT'; Default = $repoRootDisplay; Meaning = 'Canonical repo root for delegated cloud work.' },
+  [pscustomobject]@{ Name = 'CODEX_CLOUD_METADATA_ROOT'; Default = $metadataRootDisplay; Meaning = 'Local contract, registry, and Dataverse metadata root.' },
+  [pscustomobject]@{ Name = 'CODEX_CLOUD_WORKTREE'; Default = $workspaceRootDisplay; Meaning = 'Current isolated workspace path.' },
   [pscustomobject]@{ Name = 'CODEX_CLOUD_BRANCH'; Default = $gitBranch; Meaning = 'Current branch for the lane.' },
-  [pscustomobject]@{ Name = 'CODEX_CLOUD_CONTRACT'; Default = $ContractPath; Meaning = 'Contract document path.' },
-  [pscustomobject]@{ Name = 'CODEX_CLOUD_MAINTENANCE_LOG'; Default = $MaintenanceLogPath; Meaning = 'Maintenance log path.' },
-  [pscustomobject]@{ Name = 'CODEX_CLOUD_DATAVERSE_REGISTRY'; Default = $RegistryPath; Meaning = 'Metadata-only Dataverse registry path.' },
-  [pscustomobject]@{ Name = 'CODEX_CLOUD_DATAVERSE_GATE'; Default = (Join-Path $repoRoot 'dataverse\GATE.md'); Meaning = 'Dataverse gate file.' },
-  [pscustomobject]@{ Name = 'CODEX_CLOUD_DATAVERSE_BLOCKERS'; Default = (Join-Path $repoRoot 'dataverse\REGISTRO_BLOQUEOS.md'); Meaning = 'Dataverse blocker registry.' },
-  [pscustomobject]@{ Name = 'CODEX_CLOUD_DATAVERSE_SOURCE_MAP'; Default = (Join-Path $repoRoot 'dataverse\MAPA_CONEXIONES_DATAVERSE.md'); Meaning = 'Dataverse connection and drift map.' },
-  [pscustomobject]@{ Name = 'CODEX_CLOUD_DATAVERSE_PLAN'; Default = (Join-Path $repoRoot 'dataverse\PLAN_SEGUNDA_PASADA.md'); Meaning = 'Dataverse second-pass plan.' },
-  [pscustomobject]@{ Name = 'OPENAI_MODEL'; Default = 'gpt-5.4-mini'; Meaning = 'Optional fallback model when API mode is used.' }
+  [pscustomobject]@{ Name = 'CODEX_CLOUD_CONTRACT'; Default = $contractPathDisplay; Meaning = 'Contract document path.' },
+  [pscustomobject]@{ Name = 'CODEX_CLOUD_MAINTENANCE_LOG'; Default = $maintenanceLogPathDisplay; Meaning = 'Maintenance log path.' },
+  [pscustomobject]@{ Name = 'CODEX_CLOUD_DATAVERSE_REGISTRY'; Default = $registryPathDisplay; Meaning = 'Metadata-only Dataverse registry path.' },
+  [pscustomobject]@{ Name = 'CODEX_CLOUD_DATAVERSE_GATE'; Default = (ConvertTo-PortableWindowsPath -Path (Join-Path $metadataRoot 'dataverse/GATE.md')); Meaning = 'Dataverse gate file.' },
+  [pscustomobject]@{ Name = 'CODEX_CLOUD_DATAVERSE_BLOCKERS'; Default = (ConvertTo-PortableWindowsPath -Path (Join-Path $metadataRoot 'dataverse/REGISTRO_BLOQUEOS.md')); Meaning = 'Dataverse blocker registry.' },
+  [pscustomobject]@{ Name = 'CODEX_CLOUD_DATAVERSE_SOURCE_MAP'; Default = (ConvertTo-PortableWindowsPath -Path (Join-Path $metadataRoot 'dataverse/MAPA_CONEXIONES_DATAVERSE.md')); Meaning = 'Dataverse connection and drift map.' },
+  [pscustomobject]@{ Name = 'CODEX_CLOUD_DATAVERSE_PLAN'; Default = (ConvertTo-PortableWindowsPath -Path (Join-Path $metadataRoot 'dataverse/PLAN_SEGUNDA_PASADA.md')); Meaning = 'Dataverse second-pass plan.' },
+  [pscustomobject]@{ Name = 'OPENAI_MODEL'; Default = 'gpt-5.5'; Meaning = 'Optional fallback model when API mode is used.' }
 )
 
 $variableLines = ($variables | ForEach-Object {
@@ -90,7 +109,8 @@ Codex Cloud se usa para delegacion, orquestacion y trabajo repetible de varios p
 
 ## Current Context
 
-- repo root: __REPO_ROOT__
+- canonical repo root: __REPO_ROOT__
+- metadata/workbench root: __METADATA_ROOT__
 - branch: __BRANCH__
 - remote: __REMOTE__
 - workspace root: __WORKTREE__
@@ -139,10 +159,11 @@ __VARIABLES__
 La configuracion queda declarada, portable y auditable. La activacion real sigue separada del contrato.
 '@
 
-$contractText = $contractTemplate.Replace('__REPO_ROOT__', $repoRoot).
+$contractText = $contractTemplate.Replace('__REPO_ROOT__', $repoRootDisplay).
+  Replace('__METADATA_ROOT__', $metadataRootDisplay).
   Replace('__BRANCH__', $gitBranch).
   Replace('__REMOTE__', $gitRemote).
-  Replace('__WORKTREE__', $workspaceRoot).
+  Replace('__WORKTREE__', $workspaceRootDisplay).
   Replace('__MODE__', $Mode).
   Replace('__GATE__', $Gate).
   Replace('__TIMESTAMP__', (Get-Date).ToString('o')).
@@ -196,6 +217,8 @@ Write-AtomicTextFile -Path $RegistryPath -Content $registryText
 [pscustomobject]@{
   ContractPath = $ContractPath
   RegistryPath = $RegistryPath
+  MetadataRoot = $metadataRoot
+  RepoRoot = $repoRoot
   WorkspaceRoot = $workspaceRoot
   Branch = $gitBranch
   Mode = $Mode

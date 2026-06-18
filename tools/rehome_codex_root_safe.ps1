@@ -1,8 +1,8 @@
 [CmdletBinding(SupportsShouldProcess = $true)]
 param(
     [string]$Root = 'C:\Users\enzo1\.codex',
-    [string]$PlanPath = 'C:\Users\enzo1\PROJEC CDX\CODEX_ROOT_MOVE_PLAN.json',
-    [string]$ResultsPath = 'C:\Users\enzo1\PROJEC CDX\CODEX_ROOT_MOVE_RESULTS.json'
+    [string]$PlanPath = 'C:/Users/enzo1/PROJEC CDX/CODEX_ROOT_MOVE_PLAN.json',
+    [string]$ResultsPath = 'C:/Users/enzo1/PROJEC CDX/CODEX_ROOT_MOVE_RESULTS.json'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -60,4 +60,3 @@ foreach ($item in $plan.move_safe) {
 
 $results | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $ResultsPath -Encoding utf8
 Write-Host "Wrote: $ResultsPath"
-

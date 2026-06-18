@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-  [string]$RepoRoot = 'C:\Users\enzo1\PROJEC CDX',
+  [string]$RepoRoot = 'C:/Users/enzo1/PROJEC CDX',
   [string]$WorkspaceRoot = (Get-Location).Path,
   [string]$ContractPath,
   [string]$RegistryPath,
@@ -45,9 +45,9 @@ function Get-GitValue {
 
 $repoRoot = (Resolve-Path -LiteralPath $RepoRoot).Path
 $workspaceRoot = (Resolve-Path -LiteralPath $WorkspaceRoot).Path
-if (-not $ContractPath) { $ContractPath = Join-Path $repoRoot 'operativa\CODEX_CLOUD_CONTRACT_20260615.md' }
-if (-not $RegistryPath) { $RegistryPath = Join-Path $repoRoot 'dataverse\REGISTRO_CODEX_CLOUD_20260615.md' }
-if (-not $MaintenanceLogPath) { $MaintenanceLogPath = Join-Path $repoRoot 'operativa\CODEX_CLOUD_MAINTENANCE_20260615.md' }
+if (-not $ContractPath) { $ContractPath = Join-Path $repoRoot 'operativa/CODEX_CLOUD_CONTRACT_20260615.md' }
+if (-not $RegistryPath) { $RegistryPath = Join-Path $repoRoot 'dataverse/REGISTRO_CODEX_CLOUD_20260615.md' }
+if (-not $MaintenanceLogPath) { $MaintenanceLogPath = Join-Path $repoRoot 'operativa/CODEX_CLOUD_MAINTENANCE_20260615.md' }
 
 $gitBranch = (git -C $workspaceRoot branch --show-current 2>$null | Out-String).Trim()
 if ([string]::IsNullOrWhiteSpace($gitBranch)) { $gitBranch = 'DETACHED' }
@@ -55,10 +55,10 @@ $gitRemote = (git -C $workspaceRoot remote get-url origin 2>$null | Out-String).
 if ([string]::IsNullOrWhiteSpace($gitRemote)) { $gitRemote = 'NO_REMOTE' }
 $gitStatus = (git -C $workspaceRoot status --short --branch 2>$null | Out-String).TrimEnd()
 
-$gatePath = Join-Path $repoRoot 'dataverse\GATE.md'
-$blockerPath = Join-Path $repoRoot 'dataverse\REGISTRO_BLOQUEOS.md'
-$sourceMapPath = Join-Path $repoRoot 'dataverse\MAPA_CONEXIONES_DATAVERSE.md'
-$planPath = Join-Path $repoRoot 'dataverse\PLAN_SEGUNDA_PASADA.md'
+$gatePath = Join-Path $repoRoot 'dataverse/GATE.md'
+$blockerPath = Join-Path $repoRoot 'dataverse/REGISTRO_BLOQUEOS.md'
+$sourceMapPath = Join-Path $repoRoot 'dataverse/MAPA_CONEXIONES_DATAVERSE.md'
+$planPath = Join-Path $repoRoot 'dataverse/PLAN_SEGUNDA_PASADA.md'
 
 $checks = @(
   [pscustomobject]@{ Name = 'contract'; Path = $ContractPath; Required = $true },

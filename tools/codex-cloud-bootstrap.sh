@@ -56,7 +56,7 @@ Codex Cloud se usa para delegacion, orquestacion y trabajo repetible de varios p
 - \`CODEX_CLOUD_DATAVERSE_BLOCKERS\` | default: \`$repo_root/dataverse/REGISTRO_BLOQUEOS.md\` | Dataverse blocker registry.
 - \`CODEX_CLOUD_DATAVERSE_SOURCE_MAP\` | default: \`$repo_root/dataverse/MAPA_CONEXIONES_DATAVERSE.md\` | Dataverse connection and drift map.
 - \`CODEX_CLOUD_DATAVERSE_PLAN\` | default: \`$repo_root/dataverse/PLAN_SEGUNDA_PASADA.md\` | Dataverse second-pass plan.
-- \`OPENAI_MODEL\` | default: \`gpt-5.4-mini\` | Optional fallback model when API mode is used.
+- \`OPENAI_MODEL\` | default: \`gpt-5.5\` | Optional fallback model when API mode is used.
 
 \`OPENAI_API_KEY\` queda fuera del repo. Solo se usa si existe un carril API de respaldo.
 
