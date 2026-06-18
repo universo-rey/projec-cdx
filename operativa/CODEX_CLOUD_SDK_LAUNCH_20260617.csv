@@ -1,0 +1,6 @@
+surface,action,status,evidence,next_delta,external_write
+codex_sdk_local_thread,agentic_cloud_bridge_run,SDK_LOCAL_LAUNCH_OBSERVED_CLOUD_UI_FRONTIER,"Agents SDK status ok; final_output OBSERVED; inspect_cloud_bridge PASS; gate metadata-only","delta_capture_codex_cloud_ui_smoke_result_if_owner_runs_external_task",false
+cloud_bridge,deterministic_postcheck,PASS,"remote branch found; local smoke ok; context_ok true; sdu_agents_defined true; gate metadata-only","delta_capture_codex_cloud_ui_smoke_result_if_owner_runs_external_task",false
+codex_cloud_ui,external_frontier,WAITING_EXTERNAL_UI_RESULT,"No Codex Cloud task create API exposed in this carril; prompt remains ready in CODEX_CLOUD_SMOKE_TASK_20260617.md","delta_capture_codex_cloud_ui_smoke_result_if_owner_runs_external_task",false
+dataverse,guardrail,NOT_TOUCHED,"No Dataverse write, import, update, delete or flow run","none",false
+sharepoint_microsoft,guardrail,NOT_TOUCHED,"No Microsoft, SharePoint or Power Automate live write","none",false

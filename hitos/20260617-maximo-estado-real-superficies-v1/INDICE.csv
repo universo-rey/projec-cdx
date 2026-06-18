@@ -1,0 +1,7 @@
+item,type,status,path
+readback,hito_file,MAX_STATE_FAN_IN_VERIFIED,hitos/20260617-maximo-estado-real-superficies-v1/READBACK.md
+manifest,hito_file,MAX_STATE_FAN_IN_VERIFIED,hitos/20260617-maximo-estado-real-superficies-v1/MANIFEST.yaml
+evidencia,hito_file,MAX_STATE_FAN_IN_VERIFIED,hitos/20260617-maximo-estado-real-superficies-v1/EVIDENCIA.md
+readback_operativo,operativa_file,MAX_STATE_FAN_IN_VERIFIED,operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md
+matriz_superficies,operativa_file,MAX_STATE_FAN_IN_VERIFIED,operativa/MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.csv
+fan_in_agentes,operativa_file,MAX_STATE_FAN_IN_VERIFIED,operativa/FAN_IN_AGENTES_MAXIMO_ESTADO_REAL_20260617.csv

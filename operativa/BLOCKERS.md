@@ -21,3 +21,4 @@ Ningun bloqueo operativo activo.
 ## Desbloqueo
 
 Si aparece un bloqueo, registrar target exacto, impacto, rollback, postcheck y evidencia minima antes de avanzar.
+Desde la promocion owner-approved del Manifiesto SDU, una condicion tecnica de pausa se registra como `delta_gobernado`, proximo paso y evidencia requerida. Bloqueo real solo existe por decision humana expresa o por falta de autoridad humana para un write concreto.

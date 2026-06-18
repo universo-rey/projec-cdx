@@ -1,0 +1,38 @@
+id: hitos-20260614-hitos-otros-repos-v1
+version: v1
+fecha: 2026-06-14
+raiz: C:\Users\enzo1\PROJEC CDX
+estado: versionado
+semaforo: GREEN_ARCHIVED
+repos_registrados: 13
+fuentes:
+  - C:\Users\enzo1\PROJEC CDX\outputs\README.md
+  - C:\Users\enzo1\PROJEC CDX\outputs\MAPA.md
+  - C:\Users\enzo1\PROJEC CDX\outputs\universe_relationship_audit_20260614\UNIVERSE_RELATIONSHIP_AUDIT.md
+  - C:\Users\enzo1\PROJEC CDX\outputs\universe_relationship_audit_20260614\UNIVERSE_RELATIONSHIP_AUDIT.csv
+  - C:\Users\enzo1\Documents\GitHub\cabina-universal-d\README.md
+  - C:\Users\enzo1\Documents\GitHub\cdf-soluciones\README.md
+  - C:\Users\enzo1\Documents\GitHub\jara-consultores\README.md
+  - C:\Users\enzo1\Documents\GitHub\microsoft-agents-governed-lab\README.md
+  - C:\Users\enzo1\Documents\GitHub\modo-on-foundation\README.md
+  - C:\Users\enzo1\Documents\GitHub\organizacion\README.md
+  - C:\Users\enzo1\Documents\GitHub\sdu-canon\README.md
+  - C:\Users\enzo1\Documents\GitHub\seshat-bootstrap-sdu-cn\README.md
+  - C:\Users\enzo1\Documents\GitHub\Sgin\README.md
+  - C:\Users\enzo1\Documents\GitHub\sgin-cumplimiento\README.md
+  - C:\Users\enzo1\Documents\GitHub\tcu-agentic-runtime-control\README.md
+  - C:\Users\enzo1\Documents\GitHub\tge-agentic-runtime-control-escribania\README.md
+  - C:\Users\enzo1\Documents\GitHub\torre-gemela-escribania\README.md
+restricciones:
+  - No leer secretos.
+  - No tocar auth.json ni cap_sid.
+  - No editar global-state ni SQLite sin orden explicita.
+  - No tocar los repos Git desde este paquete.
+resumen:
+  repos: 13
+  governance_present: 13
+  special_docs_present: 7
+cierre_posterior:
+  estado: GREEN_ARCHIVED
+  absorbido_por: 20260615-github-repos-canonical-v1
+  reclasificado_por: 20260615-semaforo-verde-historicos-v1

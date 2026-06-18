@@ -1,43 +1,46 @@
 # READBACK_CIERRE_PESO_REDUCIDO_20260617
 
-## agente
+## Agente
 Codex
 
-## orden
-Reducir el peso visible dejando un set minimo de superficies activas.
+## Orden
+Reducir el peso visible dejando un set minimo de superficies activas y evidencia reutilizable.
 
-## superficie
+## Superficie
 `workbooks/` y `operativa/`
 
-## skill
+## Skill
 `delta-gobernado` + `governed-readback-closeout`
 
-## receta
-Recorte seguro de reconstruibles y mantenimiento de solo evidencia viva.
+## Receta
+Recorte seguro de reconstruibles, mantenimiento de evidencia viva y continuidad por cronologia maestra.
 
-## tool
+## Tool
 `git`, `Get-ChildItem`, `Remove-Item`
 
-## estado
+## Estado
 HECHO_VERIFICADO
 
-## evidencia
-- Workbook vigente: `workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`
-- Evidencia viva: `operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`
-- Resumen corto: esta misma nota
+## Evidencia
+- Workbook vigente: `workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`.
+- Evidencia viva: `operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`.
+- Evidencia de binding: `operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md`.
+- Cronologia consolidada: `operativa/CRONOLOGIA_MAESTRA_20260617.md`.
+- Backup vigente de workbook conservado en `workbooks/_backups/`.
 
-## validador
+## Validador
 - `git status --short --branch`
 - `git diff --shortstat origin/main...HEAD`
+- `tools/validate_proj_cdx_workbench.ps1`
 
-## riesgo
-Bajo.
+## Riesgo
+Bajo. Se redujo historico visible, pero el workbook vigente, el backup y la cronologia maestra permanecen disponibles.
 
-## rollback
-Volver a `codex/dataverse-corte-ejecutora-v1` o restablecer desde Git history.
+## Rollback
+Restaurar desde Git history o desde el backup vigente en `workbooks/_backups/`.
 
-## stop_condition
-No arrastrar historico pesado a la rama liviana.
+## Stop Condition
+No arrastrar historico pesado a superficies livianas ni borrar evidencia si no existe fuente reconstruible.
 
-## proximos_carriles
-`delta_select_next_consumer_from_dataverse_live_rows`
+## Proximos Carriles
+`delta_consume_bound_workbook_for_next_governed_decision`

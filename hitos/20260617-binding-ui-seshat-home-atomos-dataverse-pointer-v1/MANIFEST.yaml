@@ -1,0 +1,29 @@
+wave_id: 20260617-binding-ui-seshat-home-atomos-dataverse-pointer-v1
+scope: binding_ui_seshat_home_atomos_dataverse_pointer
+tenant_name: Escribania Bitsch
+tenant_id: 858a0852-44a1-413e-a0fe-f053949797d6
+environment_name: HUBDesarrollo
+environment_id: 7f65fc04-c27a-ea0d-bd2d-266aa9203c1e
+environment_url: https://org084965d9.crm.dynamics.com
+mode: metadata_only
+status: DELTA_APLICADO
+agents_fan_in:
+  - seshat-normativa
+  - thot-tecnico
+  - anubis-gate
+  - maat-cumplimiento
+  - horus-riesgo
+  - narrador-normativo
+evidence:
+  - operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md
+  - operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md
+  - operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json
+  - operativa/DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json
+  - operativa/READBACK_DATAVERSE_POINTER_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md
+rollback: hitos/20260617-binding-ui-seshat-home-atomos-dataverse-pointer-v1/ROLLBACK.md
+postcheck: hitos/20260617-binding-ui-seshat-home-atomos-dataverse-pointer-v1/POSTCHECK.md
+validator:
+  - tools/validate_sdu_dataverse_metadata_wave.ps1 -WaveId 20260617-binding-ui-seshat-home-atomos-dataverse-pointer-v1
+  - tools/promote_binding_ui_seshat_home_atomos_dataverse.ps1
+stop_condition: home_aspx_page_binding_waiting
+next_delta: delta_home_aspx_page_binding_when_ui_or_pnp_context_available

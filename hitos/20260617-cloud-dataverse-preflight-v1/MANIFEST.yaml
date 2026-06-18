@@ -1,0 +1,17 @@
+version: 20260617-cloud-dataverse-preflight-v1
+status: CLOUD_DATAVERSE_PREFLIGHT_READY
+control_tower: PROJEC CDX
+source_delta: delta_f_cloud_dataverse_preflight_read_only
+branch: codex/dataverse-corte-ejecutora-v1
+head: c8c92cf
+tenant: Escribania Bitsch
+dataverse_environment: HUBDesarrollo
+validation:
+  - projec_cdx_cloud smoke prepared
+  - cloud_bridge PASS
+non_execution:
+  - no_cloud_task_created
+  - no_dataverse_write
+  - no_microsoft_live_write
+  - no_secret_print
+next_delta: delta_launch_prompt_in_codex_cloud_ui_or_codex_sdk_local_thread

@@ -1,6 +1,17 @@
-# Mapa De Procesos
+# Mapa de Procesos
 
 Vista unica de procesos accionables.
+
+## Al Frente
+
+- [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/procesos/cierre-wave-documental.md)
+- [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/procesos/dataverse-rehidratacion.md)
+- [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/procesos/normalizacion-perfil-windows.md)
+- [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/procesos/agentes-atomicos-algoritmicos-en-waves.md)
+- [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md)
+- [microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/procesos/microsoft-live-read-preliminar.md)
+- [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md)
+- [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
 
 La wave visible mas reciente queda absorbida en [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
 
@@ -13,6 +24,12 @@ El proceso de complementos on-demand queda en [complementos-on-demand.md](C:/Use
 El proceso de agentes atomicos algoritmicos en waves queda en [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/procesos/agentes-atomicos-algoritmicos-en-waves.md).
 
 El proceso de limpieza PC local segura queda en [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md).
+
+El proceso de rehidratacion Dataverse queda en [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/procesos/dataverse-rehidratacion.md).
+
+El proceso de Microsoft live read preliminar queda en [microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/procesos/microsoft-live-read-preliminar.md).
+
+El proceso SDU Dataverse metadata wave queda en [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md).
 
 Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
@@ -36,6 +53,13 @@ Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operati
 - [complementos-on-demand.md](C:/Users/enzo1/PROJEC%20CDX/procesos/complementos-on-demand.md)
 - [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/procesos/agentes-atomicos-algoritmicos-en-waves.md)
 - [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md)
+- [canon-documental.md](C:/Users/enzo1/PROJEC%20CDX/procesos/canon-documental.md)
+- [documentos-canon-atomico.md](C:/Users/enzo1/PROJEC%20CDX/procesos/documentos-canon-atomico.md)
+- [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/procesos/dataverse-rehidratacion.md)
+- [microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/procesos/microsoft-live-read-preliminar.md)
+- [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md)
+
+La skill formal asociada queda en [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md).
 
 ## Relacion
 
@@ -49,3 +73,5 @@ Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operati
 - `complementos-on-demand.md` gobierna la apertura de complementos activos sin inventar disponibilidad.
 - `agentes-atomicos-algoritmicos-en-waves.md` gobierna la delegacion por waves con retorno exacto y fan-in claro.
 - `limpieza-pc-local-segura.md` gobierna la limpieza local con inventario, gate y evidencia antes de tocar ruido.
+- `microsoft-live-read-preliminar.md` gobierna la lectura Microsoft acotada, con tools read-only y stop conditions antes de cualquier live.
+- `sdu-dataverse-metadata-wave.md` gobierna la hidratacion metadata_only con fan-in, matriz, rollback y postcheck.

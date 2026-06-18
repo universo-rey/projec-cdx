@@ -5,6 +5,22 @@ Para una lectura rapida por niveles, usar [MAPA_CAPAS.md](C:/Users/enzo1/PROJEC%
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
+## Vigencia 20260617
+
+- [Estado actual](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md): `DATAVERSE_REHYDRATION_LIVE_READ_CONFIRMED`.
+- [Siguiente movimiento](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md): `delta_select_next_consumer_from_dataverse_live_rows`.
+- [Pendientes normalizados](C:/Users/enzo1/PROJEC%20CDX/operativa/PENDIENTES_HOY_20260617.md): carriles vivos, supersedidos y ruido.
+- [Maximo estado real](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md): fan-in de superficies.
+- [Indice maestro de hitos](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md): fuente unica de paquetes versionados.
+
+## Al Frente
+
+- [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md)
+- [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
+- [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
+- [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md)
+- [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
+
 ## Raiz
 
 - [README.md](C:/Users/enzo1/PROJEC%20CDX/README.md)
@@ -38,7 +54,7 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 - [playbooks/README.md](C:/Users/enzo1/PROJEC%20CDX/playbooks/README.md)
 - [playbooks/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/playbooks/MAPA.md)
 - [inventarios/CODEXLOCAL_INDEX_ONLY_CROSSWALK_20260615.csv](C:/Users/enzo1/PROJEC%20CDX/inventarios/CODEXLOCAL_INDEX_ONLY_CROSSWALK_20260615.csv)
-- [recipes/SKILLS_UNIFIED_TABLE.csv](C:/Users/enzo1/PROJEC%20CDX/inventarios/SKILLS_UNIFIED_TABLE.csv)
+- [Tabla unificada de skills](C:/Users/enzo1/PROJEC%20CDX/inventarios/SKILLS_UNIFIED_TABLE.csv)
 - [patrones/README.md](C:/Users/enzo1/PROJEC%20CDX/patrones/README.md)
 - [patrones/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/patrones/MAPA.md)
 - [patrones/INDICE_PATRONES.md](C:/Users/enzo1/PROJEC%20CDX/patrones/INDICE_PATRONES.md)
@@ -64,6 +80,8 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 - [packages/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/packages/MAPA.md)
 - [tools/README.md](C:/Users/enzo1/PROJEC%20CDX/tools/README.md)
 - [tools/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/tools/MAPA.md)
+- [src/README.md](C:/Users/enzo1/PROJEC%20CDX/src/README.md)
+- [src/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/src/MAPA.md)
 - [tools/validate_proj_cdx_workbench.ps1](C:/Users/enzo1/PROJEC%20CDX/tools/validate_proj_cdx_workbench.ps1)
 - [tools/validate_proj_cdx_sync.ps1](C:/Users/enzo1/PROJEC%20CDX/tools/validate_proj_cdx_sync.ps1)
 - [tools/validate_proj_cdx_operational_chain.ps1](C:/Users/enzo1/PROJEC%20CDX/tools/validate_proj_cdx_operational_chain.ps1)

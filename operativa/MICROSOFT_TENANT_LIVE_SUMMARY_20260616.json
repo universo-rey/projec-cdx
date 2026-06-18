@@ -1,0 +1,22 @@
+{
+  "captured_at_local": "2026-06-16T18:01:15-03:00",
+  "scope": "TENANT_ONLY",
+  "tenant_name": "Escribania Bitsch",
+  "tenant_id": "858a0852-44a1-413e-a0fe-f053949797d6",
+  "teams_visible_count": 6,
+  "channels_current_graph_count": 0,
+  "channels_prior_readback_count": 14,
+  "sharepoint_sites_current_graph_count": 0,
+  "sharepoint_sites_prior_readback_count": 2,
+  "sharepoint_libraries_prior_readback_count": 37,
+  "planner_plans_count": 24,
+  "planner_tasks_total": 2630.0,
+  "planner_open_total": 418.0,
+  "planner_in_progress_total": 243.0,
+  "planner_completed_total": 1969.0,
+  "classification": "observed_read_only_sanitized",
+  "limitation": "Graph current route did not return Teams channels or SharePoint sites; prior readback remains evidence, not absence.",
+  "writes_executed": false,
+  "payload_messages_persisted": false,
+  "planner_titles_persisted": false
+}

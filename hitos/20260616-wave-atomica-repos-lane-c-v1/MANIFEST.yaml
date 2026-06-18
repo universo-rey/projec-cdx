@@ -1,0 +1,14 @@
+id: 20260616-wave-atomica-repos-lane-c-v1
+type: wave_atomica_repos_lane_c
+status: prepared
+scope:
+  - cdf-soluciones
+  - jara-consultores
+  - modo-on-foundation
+  - organizacion
+  - Sgin
+  - sgin-cumplimiento
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - no_lane_overlap

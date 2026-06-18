@@ -1,0 +1,5 @@
+"id","artifact","status","notes"
+"READBACK","operativa/READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md","OBSERVED_READ_ONLY","Readback de W1."
+"CSV","inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv","OBSERVED_READ_ONLY","Matriz read-only de repos dirty."
+"JSON","inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.json","OBSERVED_READ_ONLY","Snapshot JSON de la matriz."
+"EVIDENCIA","hitos/20260617-w1-repos-dirty-triage-v1/EVIDENCIA.md","OBSERVED_READ_ONLY","Evidencia y validacion."

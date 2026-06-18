@@ -1,14 +1,2 @@
-orden,repo,titulo,governance,docs_especiales,evidencia
-1,cabina-universal-d,Cabina Universal Del Rey,si,,Documents\GitHub\cabina-universal-d\README.md
-2,cdf-soluciones,CDF Soluciones,si,CHAT_CONTEXT,Documents\GitHub\cdf-soluciones\README.md
-3,jara-consultores,Jara Consultores,si,CHAT_CONTEXT,Documents\GitHub\jara-consultores\README.md
-4,microsoft-agents-governed-lab,Microsoft 365 Agents SDK,si,AgentErrorCodes,Documents\GitHub\microsoft-agents-governed-lab\README.md
-5,modo-on-foundation,Moda ON Foundation,si,CANON,Documents\GitHub\modo-on-foundation\README.md
-6,organizacion,ControlPlane Organización — universo-rey v3,si,,Documents\GitHub\organizacion\README.md
-7,sdu-canon,SDU Canon,si,CANON,Documents\GitHub\sdu-canon\README.md
-8,seshat-bootstrap-sdu-cn,Seshat Bootstrap SDU-CN,si,,Documents\GitHub\seshat-bootstrap-sdu-cn\README.md
-9,Sgin,Seshat Model,si,,Documents\GitHub\Sgin\README.md
-10,sgin-cumplimiento,Frente Cumplimiento,si,CANON;CHAT_CONTEXT,Documents\GitHub\sgin-cumplimiento\README.md
-11,tcu-agentic-runtime-control,TCU Agentic Runtime Control,si,,Documents\GitHub\tcu-agentic-runtime-control\README.md
-12,tge-agentic-runtime-control-escribania,TGE Agentic Runtime Control Escribania,si,,Documents\GitHub\tge-agentic-runtime-control-escribania\README.md
-13,torre-gemela-escribania,TORRE_GEMELA_ESCRIBANIA,si,CHAT_CONTEXT,Documents\GitHub\torre-gemela-escribania\README.md
+id,tipo,ruta,estado,nota
+redirect,stub,C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/20260614-hitos-otros-repos-v1,ARCHIVED,Movido al archivo de hitos

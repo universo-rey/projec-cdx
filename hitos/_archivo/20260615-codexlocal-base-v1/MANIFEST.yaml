@@ -1,0 +1,47 @@
+id: 20260615-codexlocal-base-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: codexlocal_base_surface_map
+estado: GREEN_REFERENCE_CLOSED
+fuente:
+  - C:\Users\enzo1\CodexLocal\README.md
+  - C:\Users\enzo1\CodexLocal\MAPA_MAESTRO.md
+  - C:\Users\enzo1\CodexLocal\CODEXLOCAL_INDEX.csv
+  - C:\Users\enzo1\CodexLocal\AGENTS.md
+  - C:\Users\enzo1\CodexLocal\cabina-universal-d-split-20260604\VISIBLE_INDEX.md
+  - C:\Users\enzo1\CodexLocal\cabina-universal-d-split-20260604\work-dispatch-sdk-gates\README.md
+  - C:\Users\enzo1\CodexLocal\cabina-universal-d-split-20260604\work-dispatch-sdk-gates\02_AUTHORITY_CANON\CURRENT_STATE.md
+  - C:\Users\enzo1\CodexLocal\cabina-universal-d-split-20260604\work-dispatch-sdk-gates\docs\powerautomate\WORK_QUEUE_FLOW_OPERATING_DESIGN.md
+  - C:\Users\enzo1\CodexLocal\cabina-universal-d-split-20260604\work-dispatch-sdk-gates\docs\dataverse\DATAVERSE_TARGET_ARCHITECTURE.md
+  - C:\Users\enzo1\CodexLocal\cabina-universal-d-split-20260604\work-dispatch-sdk-gates\apps\sdu-agent-runtime\README.md
+  - C:\Users\enzo1\CodexLocal\cabina-universal-d-split-20260604\work-dispatch-sdk-gates\powerplatform\README.md
+  - C:\Users\enzo1\CodexLocal\cabina-universal-d-split-20260604\work-dispatch-sdk-gates\docs\connections\CONNECTION_RECONCILIATION_README.md
+salida:
+  - C:\Users\enzo1\PROJEC CDX\inventarios\CODEXLOCAL_SURFACE_MAP_20260615.csv
+  - C:\Users\enzo1\PROJEC CDX\inventarios\CODEXLOCAL_SPLIT_CABINA_20260615.csv
+  - C:\Users\enzo1\PROJEC CDX\inventarios\CODEXLOCAL_INDEX_ONLY_CROSSWALK_20260615.csv
+  - C:\Users\enzo1\Documents\Codex\2026-06-14\projec-cdx-handoff-20260614\outputs\PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-codexlocal-base-v1\
+rollback: eliminar carpeta versionada y retirar referencias a CodexLocal en indices maestros
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_sync.ps1"
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_operational_chain.ps1"
+guardrails:
+  - no_secret_read
+  - no_live_write
+  - no_global_state_or_sqlite
+  - no_git_destructive
+evidencia:
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-codexlocal-base-v1\EVIDENCIA.md
+  - C:\Users\enzo1\PROJEC CDX\hitos\20260615-codexlocal-base-v1\READBACK.md
+resultado:
+  workbench: PASS
+  sync: PASS
+  operational_chain: PASS
+  index_only_rows: 0
+  promocion_live: NO
+cierre_posterior:
+  estado: GREEN_REFERENCE_CLOSED
+  cerrado_por: 20260615-github-repos-canonical-v1
+  reclasificado_por: 20260615-semaforo-verde-historicos-v1

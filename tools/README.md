@@ -16,7 +16,10 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - `build_universe_relationship_audit.py`
 - `codex-control-total.ps1`
 - `codex-cloud-bootstrap.ps1`
+- `codex-cloud-setup.sh`
+- `codex-cloud-bootstrap.sh`
 - `codex-cloud-maintenance.ps1`
+- `codex-cloud-maintenance.sh`
 - `codex-cloud-live.ps1`
 - `normalize_codex_surfaces.ps1`
 - `rehome_codex_root_safe.ps1`
@@ -36,7 +39,10 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - Ejecutar `validate_proj_cdx_sync.ps1` cuando el cambio toque fuentes vivas, outputs, hitos o Dataverse.
 - Ejecutar `validate_proj_cdx_operational_chain.ps1` cuando cambie el indice puente repo-agente-skill-receta-tool-evidencia.
 - Ejecutar `codex-cloud-bootstrap.ps1` para dejar declarado el contrato local de Codex Cloud y el registro metadata-only.
+- Ejecutar `codex-cloud-setup.sh` como wrapper minimo y portable para Codex Cloud.
+- Ejecutar `codex-cloud-bootstrap.sh` si queres invocarlo directo sin el wrapper.
 - Ejecutar `codex-cloud-maintenance.ps1` para validar la superficie declarada, refrescar el registro y escribir la bitacora local.
+- Ejecutar `codex-cloud-maintenance.sh` si el entorno no tiene `pwsh`.
 - Ejecutar `codex-cloud-live.ps1` para lanzar el carril vivo con un solo comando sobre la `.venv` local.
 - Mantener esta carpeta como zona de herramientas, no como salida final.
 

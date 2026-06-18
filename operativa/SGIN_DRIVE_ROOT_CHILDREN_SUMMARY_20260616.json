@@ -1,0 +1,13 @@
+{
+  "captured_at_local": "2026-06-16T18:04:28-03:00",
+  "tenant_id": "858a0852-44a1-413e-a0fe-f053949797d6",
+  "surface": "SGIN",
+  "drive_id": "b!KzopqTDf7UW4DdcahnOBQ2PXeOaHHV1JmjsMLutWxtP47FnBUV8yR4Z5qyAwMTV3",
+  "drive_url": "https://escribaniabitsch.sharepoint.com/sites/sistema/Documentos%20compartidos",
+  "root_children_count": 10,
+  "folder_count": 8,
+  "file_count": 2,
+  "package_count": 0,
+  "classification": "confirmada_sanitized_counts",
+  "source": "graph_drive_root_children_counts"
+}

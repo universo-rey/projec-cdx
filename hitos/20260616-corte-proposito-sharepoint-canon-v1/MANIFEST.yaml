@@ -1,0 +1,10 @@
+id: 20260616-corte-proposito-sharepoint-canon-v1
+estado: DELTA_APLICADO
+fecha: 2026-06-16
+owner: Enzo Figueroa / SDU Owner Operativo
+archivo_sharepoint: https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/HUELLA_ATOMICA_CORTE_PROPOSITO_20260616.md
+sharepoint_item_id: 017KTOXDEDZ54ZDQQVAJGJYWIO2V325DR5
+dataverse_source_id: b332bc16-d969-f111-ab0e-00224805f8f9
+dataverse_evidence_id: f77f4619-d969-f111-ab0e-00224805fc91
+rollback: retirar o reemplazar item_id 017KTOXDEDZ54ZDQQVAJGJYWIO2V325DR5 y retirar punteros Dataverse si el owner lo ordena
+postcheck: SharePoint metadata confirmada y Dataverse 1/1 por canonical id

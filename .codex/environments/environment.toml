@@ -3,17 +3,24 @@ version = 1
 name = "PROJEC CDX"
 
 [setup]
-script = 'pwsh -NoProfile -File ".\tools\codex-environment-setup.ps1"'
+script = '''
+cd /workspace/projec-cdx
+python -m pip install -e ".[dev,agents-sdk,openai-orchestration]"
+'''
 
 [cleanup]
-script = 'pwsh -NoProfile -File ".\tools\codex-environment-cleanup.ps1"'
+script = '''
+if command -v docker >/dev/null 2>&1; then
+  docker compose down --remove-orphans
+fi
+rm -rf .cache/tmp
+'''
 
 [[actions]]
 name = "Setup"
 icon = "run"
-command = 'pwsh -NoProfile -File ".\tools\codex-environment-setup.ps1"'
+command = "pwsh -NoProfile -File \".\\tools\\codex-environment-setup.ps1\""
 
 [[actions]]
 name = "Cleanup"
-icon = "trash"
-command = 'pwsh -NoProfile -File ".\tools\codex-environment-cleanup.ps1"'
+command = "pwsh -NoProfile -File \".\\tools\\codex-environment-cleanup.ps1\""

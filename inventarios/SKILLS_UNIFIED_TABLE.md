@@ -13,7 +13,7 @@ Mapa unico de skills activas de `.codex` y `.agents` con raiz real, carril/famil
 | --- | ---: |
 | .agents/plugins | 1 |
 | .agents/skills | 25 |
-| .codex/skills | 72 |
+| .codex/skills | 75 |
 
 ## .agents/plugins
 
@@ -98,6 +98,9 @@ Mapa unico de skills activas de `.codex` y `.agents` con raiz real, carril/famil
 | cabina-mini-router | cabina-mini-router | Route a task through a one-line Cabina lane map. Use when Codex needs the smallest possible routing choice. |  |
 | codex-surface-map | codex-surface-map | Organize Codex workspaces and project folders into short visible entry points, map maestros, and longer reference pages without breaking cross-links. Use when the user asks to split or refactor README/AGENTS/environment/skills/outputs/worktrees/plugins/workpapers into a navigable structure, preserve connections, or create a reusable navigation skill. |  |
 | governed-readback-closeout | governed-readback-closeout | Use when a readback, closeout, validator result, evidence packet, or next-lane handoff must close local D-drive work under cabina governance. |  |
+| cierre-wave-documental | cierre-wave-documental | Absorbs a documented wave into a hito, index, trace, and readback; use when a wave already has local evidence and needs a durable closeout, visible navigation, and a short next delta. |  |
+| dataverse-rehidratacion | dataverse-rehidratacion | Restores Dataverse context when a thread is long, continuity is lost, or the lane needs to be re-opened from local evidence; use when rehydrating Dataverse state, choosing the next governed delta, or separating metadata-only from live surfaces. |  |
+| normalizacion-perfil-windows | normalizacion-perfil-windows | Normalizes a Windows profile when Documents, OneDrive, shell folders, or junctions have drifted; use when repairing profile paths, reconciling shell folder targets, or moving content from a cloud-backed path to a local canonical path without breaking compatibility. |  |
 | tcu-descubridor-capacidades | tcu-descubridor-capacidades | Use when starting, assigning, deriving, dispatching, executing, or closing any Cabina Universal task to run skill discovery, capability assignment, NO_DISPONIBLE marking, and preflight for the real available skill, recipe, plugin, and tool set. |  |
 
 ### Continuidad / Rey Modo

@@ -1,10 +1,23 @@
-# Mapa De Operativa
+# Mapa de Operativa
 
 Mesa viva para el trabajo punta a punta de `PROJEC CDX`.
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
+## Vigencia 20260617
+
+- [CURRENT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md): estado vigente y cadena de deltas.
+- [NEXT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md): unico proximo movimiento.
+- [PENDIENTES_HOY_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PENDIENTES_HOY_20260617.md): carriles vivos, supersedidos y ruido identificado.
+- [READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md): Dataverse live read confirmado.
+- [READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md): revision de paquetes preparados.
+- [READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md): SGIN ya leido y paquetizado.
+
 La matriz corta de skills, tools y recetas queda en [MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md).
+
+La orden preliminar para Microsoft live read queda en [ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md) y el plan en [PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md).
+
+El readback vivo del universo Microsoft queda en [READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md).
 
 El arranque corto para waves de cierre queda en [START_HERE_CIERRE_WAVE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/START_HERE_CIERRE_WAVE.md).
 
@@ -13,6 +26,12 @@ El prompt corto para reanudar una wave queda en [PROMPT_CIERRE_WAVE.md](C:/Users
 Las anclas on-demand quedan en [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
 El diagnostico de limpieza queda en [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md).
+
+Las notas de limpieza de esta wave quedan en:
+
+- [20260616-limpieza-repos-findings.md](C:/Users/enzo1/PROJEC%20CDX/operativa/20260616-limpieza-repos-findings.md)
+- [20260616-limpieza-repos-progress.md](C:/Users/enzo1/PROJEC%20CDX/operativa/20260616-limpieza-repos-progress.md)
+- [20260616-limpieza-repos-task-plan.md](C:/Users/enzo1/PROJEC%20CDX/operativa/20260616-limpieza-repos-task-plan.md)
 
 El cierre de repos Git queda en [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md).
 
@@ -39,6 +58,9 @@ La wave base absorbida sigue siendo [20260615-pr-cierre-atomico-v1](C:/Users/enz
 - [METODO.md](C:/Users/enzo1/PROJEC%20CDX/operativa/METODO.md)
 - [START_HERE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/START_HERE.md)
 - [START_HERE_CIERRE_WAVE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/START_HERE_CIERRE_WAVE.md)
+- [PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md)
+- [ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md)
+- [READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md)
 - [PROMPT_CIERRE_WAVE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PROMPT_CIERRE_WAVE.md)
 - [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md)
 - [PROMPT_NUEVO_HILO.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PROMPT_NUEVO_HILO.md)
@@ -81,6 +103,7 @@ La wave base absorbida sigue siendo [20260615-pr-cierre-atomico-v1](C:/Users/enz
 - `CONTROL.md` es el punto unico desde donde se controla todo.
 - `METODO.md` condensa la secuencia corta de trabajo.
 - `START_HERE.md` es la entrada obligatoria para hilos nuevos.
+- `PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md` y `ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md` gobiernan la pasada Microsoft preliminar sin writes.
 - `PROMPT_NUEVO_HILO.md` contiene el bloque listo para continuar sin perder contexto.
 - `PLAN_COMPLETAR_ESTRUCTURA.md` define el orden para terminar la estructura.
 - `CURRENT.md` dice que se esta haciendo ahora.

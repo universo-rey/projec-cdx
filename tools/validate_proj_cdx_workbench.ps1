@@ -30,6 +30,27 @@ function Add-Check {
   }
 }
 
+$ExcludedWorkbenchDirs = @("node_modules", ".git", ".cache", ".codex", ".venv")
+
+function Get-WorkbenchFiles {
+  param(
+    [string]$RootPath,
+    [string]$Filter
+  )
+
+  $pending = New-Object System.Collections.Generic.Stack[string]
+  $pending.Push($RootPath)
+
+  while ($pending.Count -gt 0) {
+    $current = $pending.Pop()
+    Get-ChildItem -LiteralPath $current -Directory -Force -ErrorAction SilentlyContinue |
+      Where-Object { $_.Name -notin $script:ExcludedWorkbenchDirs } |
+      ForEach-Object { $pending.Push($_.FullName) }
+
+    Get-ChildItem -LiteralPath $current -File -Force -Filter $Filter -ErrorAction SilentlyContinue
+  }
+}
+
 if (-not (Test-Path -LiteralPath $Root -PathType Container)) {
   Add-Check "root_exists" "FAIL" "No existe la raiz esperada."
 } else {
@@ -75,7 +96,7 @@ foreach ($relative in $requiredFiles) {
 }
 
 $visibleDirs = Get-ChildItem -LiteralPath $Root -Directory -Force |
-  Where-Object { $_.Name -notin @("node_modules") }
+  Where-Object { $_.Name -notin $ExcludedWorkbenchDirs }
 
 foreach ($dir in $visibleDirs) {
   $readme = Join-Path $dir.FullName "README.md"
@@ -92,12 +113,11 @@ foreach ($dir in $visibleDirs) {
   }
 }
 
-$markdownFiles = Get-ChildItem -LiteralPath $Root -Recurse -File -Include "*.md" -Force |
-  Where-Object { $_.FullName -notlike "*\node_modules\*" }
+$markdownFiles = Get-WorkbenchFiles -RootPath $Root -Filter "*.md"
 
 $linkPattern = [regex]'\]\((C:/Users/enzo1/[^)]+)\)'
 foreach ($file in $markdownFiles) {
-  $text = Get-Content -LiteralPath $file.FullName -Raw
+  $text = [string](Get-Content -LiteralPath $file.FullName -Raw -ErrorAction SilentlyContinue)
   foreach ($match in $linkPattern.Matches($text)) {
     $raw = $match.Groups[1].Value
     $decoded = [uri]::UnescapeDataString($raw).Replace("/", "\")
@@ -109,8 +129,7 @@ foreach ($file in $markdownFiles) {
   }
 }
 
-$xlsxFiles = Get-ChildItem -LiteralPath $Root -Recurse -File -Filter "*.xlsx" -Force |
-  Where-Object { $_.FullName -notlike "*\node_modules\*" }
+$xlsxFiles = Get-WorkbenchFiles -RootPath $Root -Filter "*.xlsx"
 foreach ($xlsx in $xlsxFiles) {
   try {
     $stream = [System.IO.File]::OpenRead($xlsx.FullName)
@@ -131,8 +150,7 @@ foreach ($xlsx in $xlsxFiles) {
   }
 }
 
-$formulaFiles = Get-ChildItem -LiteralPath $Root -Recurse -File -Filter "formula_errors.ndjson" -Force |
-  Where-Object { $_.FullName -notlike "*\node_modules\*" }
+$formulaFiles = Get-WorkbenchFiles -RootPath $Root -Filter "formula_errors.ndjson"
 foreach ($formula in $formulaFiles) {
   $content = Get-Content -LiteralPath $formula.FullName -Raw
   if ([string]::IsNullOrWhiteSpace($content) -or $content -match "matched 0 entries") {

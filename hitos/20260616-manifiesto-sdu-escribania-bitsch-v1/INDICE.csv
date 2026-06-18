@@ -1,0 +1,9 @@
+path,role,status,notes
+README.md,hito_entrypoint,BORRADOR_V1_FAN_IN_INTEGRATED,entrada visible del hito
+MANIFEST.yaml,manifest,BORRADOR_V1_FAN_IN_INTEGRATED,metadatos y frontera
+READBACK.md,readback,BORRADOR_V1_FAN_IN_INTEGRATED,fuente proceso salida hito cierre
+EVIDENCIA.md,evidencia,BORRADOR_V1_FAN_IN_INTEGRATED,evidencia y validator
+../../operativa/ORDEN_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md,orden,DISPATCHED,paquetes de agentes
+../../operativa/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md,borrador,BORRADOR_V1_FAN_IN_INTEGRATED,manifiesto rector
+../../operativa/READBACK_FAN_IN_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md,fan_in,FAN_IN_INTEGRATED,retorno de agentes
+../../operativa/MATRIZ_HUELLA_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.csv,matriz,FAN_IN_INTEGRATED,huella de carriles

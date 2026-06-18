@@ -1,0 +1,156 @@
+[
+  {
+    "name": "PROJEC_CDX_ROOT",
+    "type": "workbench",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": false,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "CODEX_HOME",
+    "type": "codex_local",
+    "path": "C:\\Users\\enzo1\\.codex",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": true,
+    "tracked": false,
+    "notes": ""
+  },
+  {
+    "name": "AGENTS_HOME",
+    "type": "agents_local",
+    "path": "C:\\Users\\enzo1\\.agents",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": true,
+    "tracked": false,
+    "notes": ""
+  },
+  {
+    "name": "CODEX_CLOUD_ENV",
+    "type": "codex_cloud_config",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\.codex\\environments\\environment.toml",
+    "exists": true,
+    "item_type": "file",
+    "has_readme": false,
+    "has_mapa": false,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "CODEX_CLOUD_BRIDGE",
+    "type": "sdk_bridge",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\src\\projec_cdx_cloud\\cloud_bridge.py",
+    "exists": true,
+    "item_type": "file",
+    "has_readme": false,
+    "has_mapa": false,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "CODEX_CLOUD_TASK",
+    "type": "cloud_task_prompt",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\operativa\\CODEX_CLOUD_SMOKE_TASK_20260617.md",
+    "exists": true,
+    "item_type": "file",
+    "has_readme": false,
+    "has_mapa": false,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "DATAVERSE_SURFACE",
+    "type": "dataverse_local",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\dataverse",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": true,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "OPERATIVA_SURFACE",
+    "type": "operativa",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\operativa",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": true,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "HITOS_SURFACE",
+    "type": "hitos",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\hitos",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": true,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "INVENTARIOS_SURFACE",
+    "type": "inventarios",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\inventarios",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": true,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "RECIPES_SURFACE",
+    "type": "recipes",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\recipes",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": true,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "PROCESOS_SURFACE",
+    "type": "procesos",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\procesos",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": true,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "PATRONES_SURFACE",
+    "type": "patrones",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\patrones",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": true,
+    "tracked": true,
+    "notes": ""
+  },
+  {
+    "name": "TOOLS_SURFACE",
+    "type": "tools",
+    "path": "C:\\Users\\enzo1\\PROJEC CDX\\tools",
+    "exists": true,
+    "item_type": "directory",
+    "has_readme": true,
+    "has_mapa": true,
+    "tracked": true,
+    "notes": ""
+  }
+]

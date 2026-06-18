@@ -1,0 +1,35 @@
+{
+  "status": "LIVE_SHAREPOINT_DOCUMENT_WRITE",
+  "delta": "delta_lane_b_home_link_or_ui_surface_binding_after_pointer",
+  "created_at_local": "2026-06-17",
+  "tenant": "escribaniabitsch.sharepoint.com",
+  "site_path": "/sites/SeshatHubRegistroN.8",
+  "site_display_name": "Hub Seshat - Centro Rector de Conocimiento Notarial Digital",
+  "library": "Documentos compartidos",
+  "file_name": "BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md",
+  "file_url": "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md",
+  "item_id": "017KTOXDC3JY4I65TK2NHYNU7FHHS3AZC7",
+  "drive_id": "b!O3h4VaIAl0G8IAlSWZQfBt6x2B-fiCFLtg4yI57A_sbIqOZZIimRT6k3y6Abfa8A",
+  "remote_size": 2352,
+  "local_sha256": "10754EF29B3F509D77B5FE2B8B1544AE9A3B504B1D584748AE314D33CB051B82",
+  "linked_atoms": [
+    "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/HUELLA_ATOMICA_SESHAT_HOME_20260616.md",
+    "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/HUELLA_ATOMICA_CORTE_PROPOSITO_20260616.md",
+    "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/INDICE_CORTE_AGENTES_20260617.md"
+  ],
+  "postcheck": {
+    "site_resolved": true,
+    "preexisting_file_found_before_upload": false,
+    "upload_conflict_behavior": "fail",
+    "listed_after_upload": true,
+    "home_aspx_edited": false,
+    "permissions_changed": false,
+    "navigation_changed": false,
+    "dataverse_payload_written": false,
+    "flow_run": false,
+    "secrets_printed": false,
+    "remote_normalized_after_local_whitespace_correction": true
+  },
+  "rollback": "delete exact file BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md only if owner orders rollback",
+  "next_delta": "delta_dataverse_pointer_binding_ui_seshat_home_atomos_metadata_only"
+}

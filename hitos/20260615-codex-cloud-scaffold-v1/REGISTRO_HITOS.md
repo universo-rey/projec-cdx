@@ -1,13 +1,3 @@
-# Registro De Hitos
+# Registro Hitos (Archivado)
 
-## H-001 - Codex Cloud Scaffold Y UI Versionado
-
-- Estado: `closed`
-- Evidencia: `.codex/environments/environment.toml`
-- Resultado: el carril local queda seleccionable, con setup y cleanup declarados.
-
-## H-002 - Runner Python Versionado
-
-- Estado: `closed`
-- Evidencia: `pyproject.toml`
-- Resultado: el runner local queda empaquetado para humo y ejecucion viva controlada.
+Ver [hitos/_archivo/20260615-codex-cloud-scaffold-v1/REGISTRO_HITOS.md](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/20260615-codex-cloud-scaffold-v1/REGISTRO_HITOS.md).

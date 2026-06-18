@@ -2,6 +2,12 @@
 
 Receta reusable para reducir ruido en una PC Windows local sin tocar la base del sistema ni superficies live.
 
+## Subpatrones
+
+- [Inventario y gate](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-inventario-y-gate.md)
+- [Auxiliares y temporales](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-auxiliares-y-temporales.md)
+- [Evidencia y rollback](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-evidencia-y-rollback.md)
+
 ## Cuando Usarla
 
 Usar esta receta cuando el delta pida:
@@ -12,16 +18,11 @@ Usar esta receta cuando el delta pida:
 - recortar la superficie de busqueda local;
 - cerrar con evidencia, rollback y un unico siguiente gate.
 
-## Derivacion
+## Flujo
 
-1. Confirmar que el delta es local y no live.
-2. Levantar inventario de procesos, servicios, startup, PATH y busqueda.
-3. Clasificar cada item como `NO_TOCAR`, `REQUIERE_DECISION`, `BAJO_RIESGO` o `BLOQUEADO`.
-4. Limpiar solo temporales y caches autorizados dentro de rutas aprobadas.
-5. Desactivar solo auxiliares aprobados por nombre exacto.
-6. Reducir ruido de busqueda si la politica lo pide, sin tocar shell base ni servicios criticos.
-7. Guardar evidencia, rollback y el unico proximo gate.
-8. Registrar la salida en la traza y en la superficie Dataverse local.
+1. Aplicar [inventario y gate](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-inventario-y-gate.md).
+2. Aplicar [auxiliares y temporales](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-auxiliares-y-temporales.md).
+3. Cerrar con [evidencia y rollback](C:/Users/enzo1/PROJEC%20CDX/patrones/limpieza-pc-local-evidencia-y-rollback.md).
 
 ## Guardrails
 
@@ -36,8 +37,7 @@ PC mas gobernable, con ruido recortado y evidencia reusable.
 
 ## Stop Condition
 
-- Falta gate.
-- Falta evidencia.
-- El target es ambiguo.
-- El item apunta a infraestructura base.
-- El cambio requiere live write o secreto.
+- Falta el gate de inventario.
+- El recorte toca base Windows.
+- Falta evidencia o rollback.
+- El proximo gate no es unico.

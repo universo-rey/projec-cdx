@@ -1,4 +1,4 @@
-# Mapa De Docs
+# Mapa de Docs
 
 Vista unica de la documentacion de soporte de `PROJEC CDX`.
 

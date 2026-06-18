@@ -1,0 +1,14 @@
+id: 20260617-seshat-sgin-ambiguous-content-readonly-v1
+estado: SESHAT_SGIN_AMBIGUOUS_CONTENT_RESOLVED_READ_ONLY
+fecha: 2026-06-17
+delta: delta_d_seshat_ambiguous_content_read_only
+repos:
+  - C:/Users/enzo1/Documents/GitHub/seshat-bootstrap-sdu-cn
+  - C:/Users/enzo1/Documents/GitHub/Sgin
+  - C:/Users/enzo1/Documents/GitHub/sgin-cumplimiento
+validacion:
+  sgin_identity_reconciliation_lote2: PASS
+  seshat_sharepoint_complete_read_order: PASS
+  seshat_validate_repo: OBSERVED_SECRET_MARKER_LOCAL_ENV
+live_write: false
+next_delta: delta_c_runtime_readme_batch_low_risk

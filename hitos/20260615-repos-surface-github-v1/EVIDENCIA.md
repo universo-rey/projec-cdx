@@ -1,5 +1,3 @@
-# Evidencia
+# EVIDENCIA (Archivada)
 
-- [`operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md`](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md)
-- [`operativa/CURRENT.md`](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md)
-- [`operativa/TRACE.md`](C:/Users/enzo1/PROJEC%20CDX/operativa/TRACE.md)
+Ver [hitos/_archivo/20260615-repos-surface-github-v1/EVIDENCIA.md](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/20260615-repos-surface-github-v1/EVIDENCIA.md).

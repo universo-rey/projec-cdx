@@ -1,0 +1,20 @@
+id: 20260615-cierre-cadena-github-auditar-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: cierre_cadena_github_auditar
+estado: GREEN_LOCAL
+fuente:
+  - operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md
+  - operativa/READBACK_CIERRE_20260615.md
+salida:
+  - hitos/20260615-cierre-cadena-github-auditar-v1/
+rollback: restaurar el acta y el readback de la ronda
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+guardrails:
+  - no_live_write
+  - no_secret_read
+evidencia:
+  - hitos/20260615-cierre-cadena-github-auditar-v1/README.md
+  - hitos/20260615-cierre-cadena-github-auditar-v1/READBACK.md
+  - hitos/20260615-cierre-cadena-github-auditar-v1/INDICE.csv

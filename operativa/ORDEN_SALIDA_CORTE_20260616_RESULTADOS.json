@@ -1,0 +1,32 @@
+[
+  {
+    "agente_visible": "seshat-normativa",
+    "agente_interno": "court.seshat_evidence",
+    "output": "{\"agente_visible\":\"seshat-normativa\",\"donde_estas\":\"D:\\\\03_CORTE_EJECUTORA_DEL_REY|SDU Seshat Corte surfaces\",\"pendiente_real\":false,\"evidencia\":[\"README: LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"CURRENT_STATE: Stop condition PENDING_TARGET_ONLY\",\"OPEN_ITEMS: keep repo native matrices synchronized; gate governed_order_for_live_or_remote_write\",\"EVIDENCE_LOG: 2026-06-01 prepared_pending_fan_in_validation, no live execution\",\"DECISION_LOG: 2026-06-01 agent has versioned workpapers and routing map\"],\"historia_minima\":\"2026-06-01 EVD-court.seshat_evidence-WORKPAPERS-20260601\",\"riesgo\":\"bajo; boundary de gobernanza repetida, sin delta material ni activación nueva\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"microsoft_live_requested_without_governed_order\",\"siguiente_paso\":\"mantener read-only/local y no abrir write live; solo cerrar trazabilidad interna\"}"
+  },
+  {
+    "agente_visible": "thot-tecnico",
+    "agente_interno": "court.thot_schema",
+    "output": "{\"agente_visible\":\"thot-tecnico\",\"donde_estas\":\"D:\\\\03_CORTE_EJECUTORA_DEL_REY|SDU Seshat Corte surfaces\",\"pendiente_real\":false,\"evidencia\":[\"OPEN-court.thot_schema-20260601\",\"EVD-court.thot_schema-WORKPAPERS-20260601\",\"DEC-court.thot_schema-WORKPAPERS-20260601\",\"boundaries: tool_live_execution_without_order, schema_overwriting_without_readback, secret_materialization\"],\"historia_minima\":\"2026-06-01 EVD-court.thot_schema-WORKPAPERS-20260601\",\"riesgo\":\"bajo; pendiente es frontera de gobernanza repetida, no delta material\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent o cambio a orden gobernada real\",\"siguiente_paso\":\"mantener repo native matrices sincronizadas y no ejecutar live sin orden\"}"
+  },
+  {
+    "agente_visible": "anubis-gate",
+    "agente_interno": "court.sdu_gate",
+    "output": "{\"agente_visible\":\"anubis-gate\",\"donde_estas\":\"D:\\\\.agents\\\\codex\\\\workpapers\\\\court.sdu_gate\",\"pendiente_real\":false,\"evidencia\":[\"README: Governed Boundary = self_approving_gate/live_execution/legal_final_decision\",\"CURRENT_STATE: Stop condition = PENDING_TARGET_ONLY\",\"OPEN_ITEMS: monitored sync for live/remote write without governed order\",\"EVIDENCE_LOG: prepared_pending_fan_in_validation; no live execution\"],\"historia_minima\":\"2026-06-01 EVD-court.sdu_gate-WORKPAPERS-20260601\",\"riesgo\":\"bajo; boundary repetido de gobernanza, no delta material\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"microsoft_live_requested_without_governed_order\",\"siguiente_paso\":\"mantener lectura local y esperar orden gobernada antes de cualquier write\"}"
+  },
+  {
+    "agente_visible": "maat-cumplimiento",
+    "agente_interno": "rey.control_plane_orchestrator",
+    "output": "{\"agente_visible\":\"maat-cumplimiento\",\"donde_estas\":\"D:\\\\.agents\\\\codex\\\\workpapers\\\\rey.control_plane_orchestrator\",\"pendiente_real\":false,\"evidencia\":[\"Status: LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"OPEN_ITEMS: keep repo native matrices synchronized\",\"gate: governed_order_for_live_or_remote_write\",\"EVIDENCE_LOG: prepared_pending_fan_in_validation\",\"DECISION_LOG: agent has versioned workpapers and routing map\"],\"historia_minima\":\"2026-06-01 EVD-rey.control_plane_orchestrator-WORKPAPERS-20260601\",\"riesgo\":\"bajo; frontera de gobernanza repetida, sin delta material\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent o boundary unclear\",\"siguiente_paso\":\"mantener sincronizadas las matrices nativas y no expandir superficies live\"}"
+  },
+  {
+    "agente_visible": "horus-riesgo",
+    "agente_interno": "rey.frontier_guardian",
+    "output": "{\"agente_visible\":\"horus-riesgo\",\"donde_estas\":\"D:\\\\02_AUTHORITY_CANON|gates policies orders\",\"pendiente_real\":false,\"evidencia\":[\"Status: LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"Allowed Local Work: frontier_classification, risk_labeling, stop_condition_definition\",\"OPEN item: keep repo native matrices synchronized\",\"Evidence log: prepared_pending_fan_in_validation; no live execution\"],\"historia_minima\":\"2026-06-01 EVD-rey.frontier_guardian-WORKPAPERS-20260601\",\"riesgo\":\"bajo; boundary de gobernanza repetida, no delta material\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent o boundary unclear\",\"siguiente_paso\":\"mantener matrices nativas sincronizadas y no escribir live\"}"
+  },
+  {
+    "agente_visible": "narrador-normativo",
+    "agente_interno": "court.openai_dispatcher",
+    "output": "{\"agente_visible\":\"narrador-normativo\",\"donde_estas\":\"D:\\\\.agents\\\\codex\\\\workpapers\\\\court.openai_dispatcher\",\"pendiente_real\":false,\"evidencia\":[\"Status: LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"OPEN_ITEMS gate: governed_order_for_live_or_remote_write\",\"DECISION_LOG: agent has versioned workpapers and routing map\"],\"historia_minima\":\"2026-06-01 EVD-court.openai_dispatcher-WORKPAPERS-20260601\",\"riesgo\":\"bajo; frontera de gobernanza repetida, sin delta material ni live execution\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent o boundary unclear\",\"siguiente_paso\":\"mantener repositorio nativo sincronizado y no escribir live sin orden\"}"
+  }
+]

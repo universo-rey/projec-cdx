@@ -18,11 +18,11 @@ organizacion,C:/Users/enzo1/Documents/GitHub/Auditar/organizacion,nested_repo_or
 PowerToys,C:/Users/enzo1/Documents/GitHub/Auditar/PowerToys,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,referencia tecnica PowerToys
 sdu-canon,C:/Users/enzo1/Documents/GitHub/Auditar/sdu-canon,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo SDU Canon
 semantic-kernel,C:/Users/enzo1/Documents/GitHub/Auditar/semantic-kernel,nested_repo_or_folder,README.md,INDEXED,referencia Semantic Kernel
-Sgin,C:/Users/enzo1/Documents/GitHub/Auditar/Sgin,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo Sgin
-SGIN_Canonico_Puro,C:/Users/enzo1/Documents/GitHub/Auditar/SGIN_Canonico_Puro,nested_repo_or_folder,README.md,INDEXED,canon puro SGIN
-sgin-canonico,C:/Users/enzo1/Documents/GitHub/Auditar/sgin-canonico,nested_repo_or_folder,README.md,INDEXED,canonico SGIN
-sgin-cloud,C:/Users/enzo1/Documents/GitHub/Auditar/sgin-cloud,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,SGIN cloud
-sgin-cumplimiento,C:/Users/enzo1/Documents/GitHub/Auditar/sgin-cumplimiento,nested_repo_or_folder,README.md,INDEXED,espejo cumplimiento
+Sgin,C:/Users/enzo1/Documents/GitHub/Auditar/Sgin,nested_repo_or_folder,AGENTS.md;README.md,HISTORICAL_MIRROR,espejo Sgin; no consumir como fuente viva
+SGIN_Canonico_Puro,C:/Users/enzo1/Documents/GitHub/Auditar/SGIN_Canonico_Puro,nested_repo_or_folder,README.md,HISTORICAL_MIRROR,canon puro SGIN historico; no consumir como fuente viva
+sgin-canonico,C:/Users/enzo1/Documents/GitHub/Auditar/sgin-canonico,nested_repo_or_folder,README.md,HISTORICAL_MIRROR,canonico SGIN historico; no consumir como fuente viva
+sgin-cloud,C:/Users/enzo1/Documents/GitHub/Auditar/sgin-cloud,nested_repo_or_folder,AGENTS.md;README.md,HISTORICAL_MIRROR,SGIN cloud documental consolidado; produccion bloqueada; no runtime productivo
+sgin-cumplimiento,C:/Users/enzo1/Documents/GitHub/Auditar/sgin-cumplimiento,nested_repo_or_folder,README.md,HISTORICAL_MIRROR,espejo cumplimiento; fuente viva en Documents/GitHub/sgin-cumplimiento
 tcu-agentic-runtime-control,C:/Users/enzo1/Documents/GitHub/Auditar/tcu-agentic-runtime-control,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo TCU runtime
 tcu-control-plane,C:/Users/enzo1/Documents/GitHub/Auditar/tcu-control-plane,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,control plane historico
 tge-agentic-runtime-control-escribania,C:/Users/enzo1/Documents/GitHub/Auditar/tge-agentic-runtime-control-escribania,nested_repo_or_folder,AGENTS.md;README.md,INDEXED,espejo TGE runtime

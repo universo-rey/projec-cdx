@@ -19,26 +19,39 @@ Cuando hace falta:
 
 ## Campos Manuales
 
-Usar estos valores en la UI de Codex cuando la configuracion se cargue manualmente:
+Usar este carril cuando queres un arranque seguro estilo `cabina-universal-d`, sin bootstrap real en la UI.
+En esta superficie los paths son del contenedor Linux, no de tu Windows local:
 
 - `Nombre`: `PROJEC CDX`
 - `Agente`: `EATOMIC`
+- `Directorio del espacio de trabajo`: `/workspace/projec-cdx`
 - `Variables de entorno del script de instalación`:
-  - `CODEX_SOURCE_TREE_PATH`: `C:\Users\enzo1\PROJEC CDX`
-  - `CODEX_WORKTREE_PATH`: `C:\Users\enzo1\.codex\worktrees\49ea\PROJEC CDX`
+  - `CODEX_SOURCE_TREE_PATH`: `/workspace/projec-cdx`
+  - `CODEX_WORKTREE_PATH`: `/workspace/projec-cdx`
 - `Script de configuración`:
 
 ```bash
-cd "$CODEX_WORKTREE_PATH"
-python -m pip install -e ".[dev,agents-sdk,openai-orchestration]"
-pwsh -NoProfile -File ".\tools\codex-cloud-bootstrap.ps1"
+#!/usr/bin/env bash
+set +e
+
+echo "SCRIPT_ID=projec_cdx_codex_cloud_setup_noop_20260616"
+pwd || true
+echo "NOOP_SETUP_PASS=True"
+
+exit 0
 ```
 
 - `Script de limpieza`:
 
 ```bash
-docker compose down --remove-orphans
-Remove-Item -Recurse -Force .cache\tmp -ErrorAction SilentlyContinue
+#!/usr/bin/env bash
+set +e
+
+echo "SCRIPT_ID=projec_cdx_codex_cloud_maintenance_noop_20260616"
+pwd || true
+echo "NOOP_MAINTENANCE_PASS=True"
+
+exit 0
 ```
 
 ## Personalidad EATOMIC
@@ -63,12 +76,13 @@ Notas:
 - El script de limpieza se ejecuta en la raíz del proyecto antes de limpiar el worktree.
 - Si la UI usa otro shell, traducir los comandos al shell activo sin cambiar el orden ni el propósito.
 - La selección visible en la UI sale de `.codex/environments/environment.toml`.
+- Si queres el carril estilo `cabina-universal-d`, usa estos scripts no-op en la UI y deja la ejecucion real para otra pasada gobernada.
 
 ## Derivación
 
 1. Confirmar la raiz canonica `C:\Users\enzo1\PROJEC CDX`.
-2. Confirmar el worktree activo `C:\Users\enzo1\.codex\worktrees\49ea\PROJEC CDX`.
-3. Abrir la UI de Codex sobre la raiz correcta o sobre el worktree correcto, segun el carril activo.
+2. Confirmar el workspace activo `C:\Users\enzo1\PROJEC CDX`.
+3. Abrir la UI de Codex sobre la raiz correcta o sobre el workspace correcto, segun el carril activo.
 4. Confirmar que la UI muestre la configuracion del proyecto y que lea la capa local desde `.codex/config.toml`.
 5. Verificar que las variables de entorno de control queden presentes:
    - `OPENAI_MODEL=gpt-5.4-mini`
@@ -77,8 +91,8 @@ Notas:
    - `CODEX_CLOUD_GATE=metadata-only`
    - `CODEX_CLOUD_PROFILE=projec-cdx`
    - `CODEX_CLOUD_REPO_ROOT=C:\Users\enzo1\PROJEC CDX`
-   - `CODEX_CLOUD_WORKTREE=C:\Users\enzo1\.codex\worktrees\49ea\PROJEC CDX`
-   - `CODEX_CLOUD_BRANCH=codex/revisar-procesos-del-equipo`
+   - `CODEX_CLOUD_WORKTREE=C:\Users\enzo1\PROJEC CDX`
+   - `CODEX_CLOUD_BRANCH=main`
 6. Si la UI sigue mostrando otro contexto, cerrar y reabrir el proyecto correcto antes de seguir.
 7. Verificar humo en la raiz:
 

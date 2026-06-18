@@ -1,0 +1,7 @@
+item,tipo,ruta,estado,nota
+README.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/live_repo_review_20260615/README.md,ACTIVE,portada de la revision
+MAPA.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/live_repo_review_20260615/MAPA.md,ACTIVE,mapa de la revision
+READBACK.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/live_repo_review_20260615/READBACK.md,ACTIVE,readback de cierre
+LIVE_REPO_REVIEW_20260615.csv,data,C:/Users/enzo1/PROJEC%20CDX/outputs/live_repo_review_20260615/LIVE_REPO_REVIEW_20260615.csv,ACTIVE,resultado tabular
+SUMMARY.txt,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/live_repo_review_20260615/SUMMARY.txt,ACTIVE,resumen corto
+GH_AUTH_STATUS.txt,data,C:/Users/enzo1/PROJEC%20CDX/outputs/live_repo_review_20260615/GH_AUTH_STATUS.txt,ACTIVE,estado auth

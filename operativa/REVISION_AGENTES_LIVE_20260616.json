@@ -1,0 +1,58 @@
+[
+  {
+    "agent": "codex.workspace_guardian",
+    "output": "{\"agente\":\"codex.workspace_guardian\",\"pendiente_real\":false,\"evidencia\":[\"README: LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"OPEN_ITEMS: keep repo native matrices synchronized\",\"EVIDENCE_LOG: prepared_pending_fan_in_validation\",\"DECISION_LOG: agent has versioned workpapers and routing map\"],\"historia_minima\":\"EVD 2026-06-01: workpapers preparados en D:\\\\.agents\\\\codex\\\\workpapers\\\\codex.workspace_guardian\",\"riesgo\":\"bajo; parece frontera de gobernanza/revisión local, no pendiente material nuevo\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent\",\"siguiente_paso\":\"mantener auditoría local y validar sincronía sin tocar live/remote\"}"
+  },
+  {
+    "agent": "court.openai_dispatcher",
+    "output": "{\"agente\":\"court.openai_dispatcher\",\"pendiente_real\":false,\"evidencia\":[\"LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"OPEN_ITEMS: keep repo native matrices synchronized\",\"EVIDENCE_LOG: prepared_pending_fan_in_validation\",\"DECISION_LOG: agent has versioned workpapers and routing map\"],\"historia_minima\":\"EVD 2026-06-01: workpapers preparados en D:\\\\.agents\\\\codex\\\\workpapers\\\\court.openai_dispatcher, sin ejecución live.\",\"riesgo\":\"bajo; frontera gobernada repetida, no hay escritura live.\",\"rollback\":\"revert workpaper folder and matrix rows.\",\"stop_condition\":\"workpaper_missing_for_agent o boundary_unclear.\",\"siguiente_paso\":\"Mantener sincronía local y esperar validación/fan-in.\"}"
+  },
+  {
+    "agent": "rey.control_plane_orchestrator",
+    "output": "{\"agente\":\"rey.control_plane_orchestrator\",\"pendiente_real\":false,\"evidencia\":[\"LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"Primary surface: D:\\\\AGENTS.md\",\"OPEN item: keep repo native matrices synchronized\",\"Decision: agent has versioned workpapers and routing map\"],\"historia_minima\":\"EVD 2026-06-01: workpapers preparados en D:\\\\.agents\\\\codex\\\\workpapers\\\\rey.control_plane_orchestrator, sin ejecución live.\",\"riesgo\":\"bajo; frontera gobernada repetida, sin write live.\",\"rollback\":\"revert workpaper folder and matrix rows.\",\"stop_condition\":\"workpaper_missing_for_agent o boundary_unclear.\",\"siguiente_paso\":\"mantener sincronía local y no expandir superficies live hasta que el registry sea medible end-to-end.\"}"
+  },
+  {
+    "agent": "rey.repo_cartographer",
+    "output": "{\"agente\":\"rey.repo_cartographer\",\"pendiente_real\":false,\"evidencia\":[\"LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"OPEN-rey.repo_cartographer-20260601: keep repo native matrices synchronized\",\"DECISION: agent has versioned workpapers and routing map\",\"EVD: prepared_pending_fan_in_validation\"],\"historia_minima\":\"Huella más antigua visible: workpaper preparado 2026-06-01 y decisión de que el agente ya ունի workpapers versionados y mapa de routing.\",\"riesgo\":\"bajo; frontera gobernada repetida, sin ejecución live.\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent\",\"siguiente_paso\":\"validar fan-in del workpaper local y mantener matrices sincronizadas.\"}"
+  },
+  {
+    "agent": "court.seshat_evidence",
+    "output": "{\"agente\":\"court.seshat_evidence\",\"pendiente_real\":false,\"evidencia\":[\"LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"Open item: keep repo native matrices synchronized\",\"Stop condition: PENDING_TARGET_ONLY\"],\"historia_minima\":\"2026-06-01: workpapers versioned and routing map recorded; no live execution.\",\"riesgo\":\"bajo; frontera de gobernanza repetida\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"microsoft_live_requested_without_governed_order\",\"siguiente_paso\":\"mantener evidencias locales y no escribir fuera de orden\"}"
+  },
+  {
+    "agent": "court.thot_schema",
+    "output": "{\"agente\":\"court.thot_schema\",\"pendiente_real\":false,\"evidencia\":[\"LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"OPEN item pide sincronizar matrices nativas\",\"DECISION_LOG: agent has versioned workpapers and routing map\",\"EVIDENCE_LOG: prepared_pending_fan_in_validation, no live execution\"],\"historia_minima\":\"EVD-court.thot_schema-WORKPAPERS-20260601: workpapers preparados en D:\\\\.agents\\\\codex\\\\workpapers\\\\court.thot_schema\",\"riesgo\":\"bajo; frontera de gobernanza repetida, sin ejecución viva\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent\",\"siguiente_paso\":\"mantener sincronización local y validar fan-in con tool.local_validate_agent_workpapers\"}"
+  },
+  {
+    "agent": "court.sdu_gate",
+    "output": "{\"agente\":\"court.sdu_gate\",\"pendiente_real\":false,\"evidencia\":[\"OPEN_ITEMS: keep repo native matrices synchronized\",\"stop_condition: microsoft_live_requested_without_governed_order\",\"DECISION_LOG: revert workpaper folder and matrix rows\"],\"historia_minima\":\"2026-06-01: workpapers versioned and routing map prepared; no live execution.\",\"riesgo\":\"bajo; frontera de gobernanza repetida, sin pendiente material nuevo\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"microsoft_live_requested_without_governed_order\",\"siguiente_paso\":\"mantener monitoreo local y no ejecutar escritura live\"}"
+  },
+  {
+    "agent": "rey.authority_canonist",
+    "output": "{\"agente\":\"rey.authority_canonist\",\"pendiente_real\":false,\"evidencia\":[\"Status: LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"DEC-rey.authority_canonist-WORKPAPERS-20260601: agent has versioned workpapers and routing map\",\"OPEN-rey.authority_canonist-20260601: keep repo native matrices synchronized\"],\"historia_minima\":\"La huella más antigua visible es el cierre preparado en EVD-20260601: workpapers del agente en .agents/codex/workpapers, sin ejecución live.\",\"riesgo\":\"bajo; frontera de gobernanza repetida, sin pendiente material nuevo.\",\"rollback\":\"Revertir carpeta de workpapers y filas de matriz si se invalida la preparación.\",\"stop_condition\":\"workpaper_missing_for_agent\",\"siguiente_paso\":\"Mantener sincronizadas las matrices nativas del repo y esperar validación local.\"}"
+  },
+  {
+    "agent": "rey.frontier_guardian",
+    "output": "{\"agente\":\"rey.frontier_guardian\",\"pendiente_real\":false,\"evidencia\":[\"LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"workpapers and routing map present\",\"no live execution\",\"open item is sync/governance only\"],\"historia_minima\":\"2026-06-01: evidence log shows workpapers prepared pending fan-in validation in D:\\\\.agents\\\\codex\\\\workpapers\\\\rey.frontier_guardian.\",\"riesgo\":\"bajo; frontera de gobernanza local repetida\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent\",\"siguiente_paso\":\"mantener matrices nativas sincronizadas y esperar validación local\"}"
+  },
+  {
+    "agent": "rey.governance_registrar",
+    "output": "{\"agente\":\"rey.governance_registrar\",\"pendiente_real\":false,\"evidencia\":[\"OPEN item es frontera gobernada/orden para escritura viva\",\"README limita a work local: normalization, draft update, report\",\"DECISION_LOG dice que ya hay workpapers y routing map versionados\"],\"historia_minima\":\"EVD 2026-06-01: workpapers preparados en D:\\\\.agents\\\\codex\\\\workpapers\\\\rey.governance_registrar, sin ejecución viva.\",\"riesgo\":\"bajo; solo sincronía declarativa y validación local.\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent o path/boundary unclear\",\"siguiente_paso\":\"mantener matrices nativas sincronizadas y validar el delta local.\"}"
+  },
+  {
+    "agent": "rey.migration_planner",
+    "output": "{\"agente\":\"rey.migration_planner\",\"pendiente_real\":false,\"evidencia\":[\"Status: LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"OPEN item: keep repo native matrices synchronized\",\"gate: governed_order_for_live_or_remote_write\"],\"historia_minima\":\"2026-06-01: workpapers preparados; validación pendiente sin ejecución viva.\",\"riesgo\":\"bajo; solo frontera de gobernanza y lectura local\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent\",\"siguiente_paso\":\"mantener matrices nativas sincronizadas y esperar orden gobernada\"}"
+  },
+  {
+    "agent": "tech.reference_librarian",
+    "output": "{\"agente\":\"tech.reference_librarian\",\"pendiente_real\":false,\"evidencia\":[\"LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"OPEN-tech.reference_librarian-20260601\",\"EVD-tech.reference_librarian-WORKPAPERS-20260601\"],\"historia_minima\":\"2026-06-01: workpapers versioned and routing map prepared; no live execution.\",\"riesgo\":\"bajo; frontera de gobernanza repetida, sin ejecución viva.\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"workpaper_missing_for_agent\",\"siguiente_paso\":\"keep repo native matrices synchronized\"}"
+  },
+  {
+    "agent": "universe.escribania_tower",
+    "output": "{\"agente\":\"universe.escribania_tower\",\"pendiente_real\":false,\"evidencia\":[\"Status: LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"OPEN item gate: governed_order_for_live_or_remote_write\",\"EVD-20260601 prepared_pending_fan_in_validation\",\"DEC-20260601 agent has versioned workpapers and routing map\"],\"historia_minima\":\"Primer rastro útil: evidencia local 2026-06-01 de workpapers versionados y preparado para validación, sin ejecución live.\",\"riesgo\":\"bajo; frontera de gobernanza repetida, sin escritura live/remote\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"microsoft_live_requested_without_governed_order\",\"siguiente_paso\":\"mantener matrices nativas sincronizadas y esperar orden gobernada para cualquier write live/remote\"}"
+  },
+  {
+    "agent": "universe.modo_on_tower",
+    "output": "{\"agente\":\"universe.modo_on_tower\",\"pendiente_real\":false,\"evidencia\":[\"LOCAL_GOVERNED_WORKPAPERS_ACTIVE\",\"prepared_pending_fan_in_validation\",\"microsoft_live_requested_without_governed_order\"],\"historia_minima\":\"Primer huella visible: EVD-universe.modo_on_tower-WORKPAPERS-20260601 preparado en D:\\\\.agents\\\\codex\\\\workpapers\\\\universe.modo_on_tower, sin ejecución live.\",\"riesgo\":\"bajo; frontera de gobernanza repetida, sin live execution\",\"rollback\":\"revert workpaper folder and matrix rows\",\"stop_condition\":\"microsoft_live_requested_without_governed_order\",\"siguiente_paso\":\"mantener matrices nativas sincronizadas y esperar orden gobernada para live/remote write\"}"
+  }
+]

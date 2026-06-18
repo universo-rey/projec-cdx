@@ -1,0 +1,45 @@
+{
+  "promoted_at_local": "2026-06-17T18:59:25",
+  "environment_url": "https://org084965d9.crm.dynamics.com",
+  "environment_id": "7f65fc04-c27a-ea0d-bd2d-266aa9203c1e",
+  "tenant_id": "858a0852-44a1-413e-a0fe-f053949797d6",
+  "mode": "LIVE_METADATA_POINTER_WRITE",
+  "source_canonical_id": "sharepoint:binding-ui-seshat-home-atomos:20260617:v1",
+  "evidence_canonical_id": "evidence:sharepoint:binding-ui-seshat-home-atomos:20260617:v1",
+  "dataverse_source_id": "8b5d03ca-976a-f111-ab0e-00224805f8f9",
+  "dataverse_evidence_id": "5dda6cc7-976a-f111-ab0e-00224805fc91",
+  "batch_id": "20260617_binding_ui_seshat_home_atomos_dataverse_pointer_v1",
+  "sharepoint": {
+    "url": "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md",
+    "item_id": "017KTOXDC3JY4I65TK2NHYNU7FHHS3AZC7",
+    "drive_id": "b!O3h4VaIAl0G8IAlSWZQfBt6x2B-fiCFLtg4yI57A_sbIqOZZIimRT6k3y6Abfa8A"
+  },
+  "hashes": {
+    "source_sha256": "10754ef29b3f509d77b5fe2b8b1544ae9a3b504b1d584748ae314d33cb051b82",
+    "readback_sha256": "0a5f8b6b6f3459f6691c6766be3a1d69dda6edda69125cf0214756448739b034"
+  },
+  "before": {
+    "source_count": 0,
+    "evidence_count": 0
+  },
+  "after": {
+    "source_count": 1,
+    "evidence_count": 1
+  },
+  "created": [
+    {
+      "entity_set": "mon_sdu_source_artifacts",
+      "canonical_id": "sharepoint:binding-ui-seshat-home-atomos:20260617:v1",
+      "id": "8b5d03ca-976a-f111-ab0e-00224805f8f9"
+    },
+    {
+      "entity_set": "mon_sdu_evidences",
+      "canonical_id": "evidence:sharepoint:binding-ui-seshat-home-atomos:20260617:v1",
+      "id": "5dda6cc7-976a-f111-ab0e-00224805fc91"
+    }
+  ],
+  "skipped": [],
+  "rollback": "Patch exact canonical ids to Pending/Retired or delete exact created ids only if owner orders reversal.",
+  "postcheck": "source_count=1 and evidence_count=1 by canonical_id; no payload, no secrets, no Home.aspx edit, no flow run.",
+  "next_delta": "delta_home_aspx_page_binding_when_ui_or_pnp_context_available"
+}

@@ -1,0 +1,10 @@
+path,type,status,notes
+README.md,readme,METADATA_ONLY_PREPARED,Entrada corta del hito
+MANIFEST.yaml,manifest,METADATA_ONLY_PREPARED,Identidad y frontera
+READBACK.md,readback,METADATA_ONLY_PREPARED,Cierre humano
+EVIDENCIA.md,evidence,METADATA_ONLY_PREPARED,Fuentes y artefactos
+METADATA_HYDRATION_MATRIX.csv,matrix,METADATA_ONLY_PREPARED,Matriz atomica
+METADATA_HYDRATION_MATRIX.json,matrix_json,METADATA_ONLY_PREPARED,Espejo JSON
+ROLLBACK.md,rollback,METADATA_ONLY_PREPARED,Reversa actual y futura
+POSTCHECK.md,postcheck,METADATA_ONLY_PREPARED,Validadores
+STOP_CONDITIONS.md,stop_conditions,METADATA_ONLY_PREPARED,Cortes duros

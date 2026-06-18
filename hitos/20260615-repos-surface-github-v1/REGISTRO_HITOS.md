@@ -1,7 +1,3 @@
-# Registro De Hitos
+# Registro Hitos (Archivado)
 
-## H-001 - Repos Surface GitHub Absorbido
-
-- Estado: `closed`
-- Evidencia: `operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md`
-- Resultado: la wave de repos GitHub queda documentada y no abre live write.
+Ver [hitos/_archivo/20260615-repos-surface-github-v1/REGISTRO_HITOS.md](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/20260615-repos-surface-github-v1/REGISTRO_HITOS.md).

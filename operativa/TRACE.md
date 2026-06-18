@@ -1,12 +1,16 @@
 # Despierta Traza del Flujo
 
-## Cadena actual
-- Fuente: lectura live de Dataverse ya confirmada.
-- Proceso: compactar a set minimo de evidencia y workbook.
-- Salida: readback corto + JSON vivo + workbook vigente.
-- Hito: snapshot liviano 2026-06-17.
-- Cierre: `delta_select_next_consumer_from_dataverse_live_rows`
+## Fuente Maestra
+- La traza completa vive en [CRONOLOGIA_MAESTRA_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CRONOLOGIA_MAESTRA_20260617.md).
+
+## Cadena Actual
+- Fuente: `operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json` + `operativa/DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED_20260618.csv`.
+- Proceso: regenerar el workbook global para absorber la decision de consumidor Dataverse.
+- Salida: `workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`.
+- Hito fuente: `hitos/20260617-rehidratacion-dataverse-desde-paquetes-v1`.
+- Cierre: `operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md`.
+- Etapa: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
 
 ## Regla
-- La traza completa queda del lado de la rama pesada.
-- Esta rama solo conserva el carril activo minimo.
+- Esta traza conserva solo el carril activo minimo.
+- No rehidratar ni reempaquetar otra vez salvo orden explicita del owner.

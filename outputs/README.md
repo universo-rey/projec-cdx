@@ -24,3 +24,8 @@ La cobertura atomica energetica se conserva en corridas y readbacks visibles.
 - `tracker_workbook_20260613` (variante alterna de tracker)
 - `universe_relationship_audit_20260614`
 - `workbook_base_20260613`
+
+## Regla
+
+- Las corridas grandes dejan `README.md`, `MAPA.md` y, cuando aplica, `INDICE.csv` y `READBACK.md`.
+- Las corridas compactas pueden quedarse solo con la puerta visible y el archivo principal para no duplicar evidencia.

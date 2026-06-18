@@ -1,0 +1,8 @@
+id,artefacto,uso
+1,README.md,portada viva del hito preliminar
+2,READBACK.md,readback gobernado con sistemas tocados/no tocados
+3,MANIFEST.yaml,manifest declarativo del paquete
+4,INDICE.csv,indice interno del paquete
+5,operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md,borrador constitutivo previo
+6,operativa/PRELIMINARES_CIERRE_TOTAL_20260616.md,fan-in preliminar de mesa de seis
+7,operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv,snapshot reconciliado previo al paquete

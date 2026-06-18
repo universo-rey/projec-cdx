@@ -1,0 +1,6 @@
+item,tipo,ruta,estado,nota
+README.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/universe_relationship_audit_20260614/README.md,ACTIVE,portada de la corrida
+MAPA.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/universe_relationship_audit_20260614/MAPA.md,ACTIVE,mapa de la corrida
+UNIVERSE_RELATIONSHIP_AUDIT.xlsx,workbook,C:/Users/enzo1/PROJEC%20CDX/outputs/universe_relationship_audit_20260614/UNIVERSE_RELATIONSHIP_AUDIT.xlsx,ACTIVE,workbook principal
+UNIVERSE_RELATIONSHIP_AUDIT.md,doc,C:/Users/enzo1/PROJEC%20CDX/outputs/universe_relationship_audit_20260614/UNIVERSE_RELATIONSHIP_AUDIT.md,ACTIVE,resumen principal
+UNIVERSE_RELATIONSHIP_AUDIT.csv,data,C:/Users/enzo1/PROJEC%20CDX/outputs/universe_relationship_audit_20260614/UNIVERSE_RELATIONSHIP_AUDIT.csv,ACTIVE,export tabular

@@ -1,0 +1,5 @@
+carril,estado,evidencia,lectura,next_delta
+SGIN documental,confirmada,READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md,"Site /sites/sistema; drive Documentos compartidos; 41 listas/bibliotecas metadata","Mapa de listas/bibliotecas por tipo sin abrir documentos"
+SPGovernanceModel,confirmada,READBACK_SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.md,"Modelo apunta a /sites/soporte, no a SGIN","Mapa de entidades cr3c_* y workflows SDU sin payloads"
+SDU runtime,confirmada,READBACK_DATAVERSE_POWER_PLATFORM_TENANT_ESCRIBANIA_BITSCH_20260616.md,"8 colas SDU; 373 backlog; workflows SDU visibles","Backlog por cola y reglas de prioridad metadata-only"
+Dataverse hydration,metadata_only_prepared,hitos/20260616-sdu-dataverse-metadata-wave-v1,"65 filas metadata-only preparadas, no aplicadas","Candidate count por mon_sdu_* antes de apply"

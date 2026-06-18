@@ -4,37 +4,27 @@ Portal corto del archivo versionado de hitos de `PROJEC CDX`.
 
 Si queres reanudar una wave de cierre, entrar por [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
+## Indices
 - [MAPA.md](C:/Users/enzo1/PROJEC%20CDX/hitos/MAPA.md)
 - [INDICE_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md)
 - [INDICE_MAESTRO.csv](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.csv)
 
-Versiones:
+## Estado De Vigencia
+- Estado vigente: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
+- Hitos activos: `62` carpetas versionadas, mas `_archivo`.
+- Indice maestro: fuente unica para vigencia, absorciones y evidencia.
+- Ruido identificado: `20260617-ajuste-sgin-ya-leido-v1` es carpeta vacia, sin canon propio; queda registrada como `EMPTY_SUPERSEDED_NO_CANON`.
 
-- [20260614-hilo-anterior-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260614-hilo-anterior-v1/README.md)
-- [20260614-hitos-otros-repos-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260614-hitos-otros-repos-v1/README.md)
+## Hitos Base Requeridos
 - [20260615-cierre-workbench-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cierre-workbench-v1/README.md)
 - [20260615-patrones-procesos-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-patrones-procesos-v1/README.md)
-- [20260615-sincronizacion-tiempo-real-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-sincronizacion-tiempo-real-v1/README.md)
 - [20260615-hilo-origen-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-hilo-origen-v1/README.md)
-- [20260615-dataverse-conexiones-drift-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-dataverse-conexiones-drift-v1/README.md)
-- [20260615-corte-ejecutora-vs-sdu-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-corte-ejecutora-vs-sdu-v1/README.md)
-- [20260615-wave-revision-total-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-wave-revision-total-v1/README.md)
-- [20260615-codexlocal-base-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-codexlocal-base-v1/README.md)
-- [20260615-github-repos-canonical-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-github-repos-canonical-v1/README.md)
-- [20260615-github-repos-chain-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-github-repos-chain-v1/README.md)
-- [20260615-auditar-surface-chain-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-auditar-surface-chain-v1/README.md)
-- [20260615-cierre-cadena-github-auditar-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cierre-cadena-github-auditar-v1/README.md)
-- [20260615-semaforo-verde-historicos-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-semaforo-verde-historicos-v1/README.md)
-- [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md)
-- [20260615-archivo-ramas-historicas-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-archivo-ramas-historicas-v1/README.md)
-- [20260615-agentes-atomicos-algoritmicos-en-waves-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-agentes-atomicos-algoritmicos-en-waves-v1/README.md)
-- [20260615-cobertura-atomica-energetica-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cobertura-atomica-energetica-v1/README.md)
-- [20260615-projec-cdx-dataverse-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-projec-cdx-dataverse-v1/README.md)
-- [20260615-codex-cloud-scaffold-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-codex-cloud-scaffold-v1/README.md)
-- [20260615-politica-ramas-versionado-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-politica-ramas-versionado-v1/README.md)
-- [20260615-repos-surface-github-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-repos-surface-github-v1/README.md)
 
-Regla:
+## Archivo
+- [README del archivo](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/README.md)
+- [Mapa del archivo](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/MAPA.md)
 
-- Cada nuevo hito entra como carpeta nueva.
-- El detalle queda en el paquete versionado y en el indice maestro.
+## Regla
+- No crear nuevos hitos si el delta ya esta cubierto por el indice maestro, un readback vigente o un paquete existente.
+- La forma ideal de un hito consolidado es `README.md` + `MANIFEST.yaml` + `INDICE.csv` + evidencia o readback.
+- Algunas versiones compactas conservan solo lo necesario para no duplicar material ya absorbido por otro hito.

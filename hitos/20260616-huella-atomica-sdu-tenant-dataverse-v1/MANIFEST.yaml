@@ -1,0 +1,21 @@
+version: 20260616-huella-atomica-sdu-tenant-dataverse-v1
+status: DELTA_APLICADO
+date: 2026-06-16
+tenant_id: 858a0852-44a1-413e-a0fe-f053949797d6
+environment_name: HUBDesarrollo
+environment_id: 7f65fc04-c27a-ea0d-bd2d-266aa9203c1e
+environment_url: https://org084965d9.crm.dynamics.com
+mode: LIVE_METADATA_POINTER_WRITE
+source:
+  entity_set: mon_sdu_source_artifacts
+  canonical_id: sdu:manifesto:escribania-bitsch:20260616:v1
+  id: 03293284-d269-f111-ab0e-00224805fc91
+evidence:
+  entity_set: mon_sdu_evidences
+  canonical_id: evidence:sdu:manifesto:escribania-bitsch:20260616:v1
+  id: 9dc73696-d269-f111-ab0e-00224805f9dd
+postcheck:
+  source_count: 1
+  evidence_count: 1
+rollback: patch exact canonical ids to Pending/retired or delete exact ids if owner orders reversal
+next_delta: propagate canon semantics to remaining active maps and Dataverse deltas

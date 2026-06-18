@@ -9,10 +9,10 @@
 - contract: `operativa/CODEX_CLOUD_CONTRACT_20260615.md`
 - bootstrap: `tools/codex-cloud-bootstrap.ps1`
 - maintenance: `tools/codex-cloud-maintenance.ps1`
-- mode: `hybrid`
+- mode: `cloud`
 - gate: `metadata-only`
 - dataverse_write: `no`
-- generated at: `2026-06-15T19:50:01.8364404-03:00`
+- last_maintenance: `2026-06-16T07:06:47.9802889-03:00`
 
 ## Dataverse Hydration
 
@@ -20,7 +20,7 @@
 - blocker registry: `dataverse/REGISTRO_BLOQUEOS.md`
 - source map: `dataverse/MAPA_CONEXIONES_DATAVERSE.md`
 - plan: `dataverse/PLAN_SEGUNDA_PASADA.md`
-- hydration_state: `pending_first_run`
+- hydration_state: `validated_metadata_only`
 
 ## Variables Declaradas
 
@@ -38,10 +38,9 @@
 - `CODEX_CLOUD_DATAVERSE_BLOCKERS`
 - `CODEX_CLOUD_DATAVERSE_SOURCE_MAP`
 - `CODEX_CLOUD_DATAVERSE_PLAN`
-- `OPENAI_MODEL`
 
 ## Notas
 
-- Este registro es metadata local.
+- Este registro sigue siendo metadata local.
 - No implica write live.
-- El script de mantenimiento lo actualiza cuando exista una primera corrida.
+- Se actualiza con cada pasada de mantenimiento.

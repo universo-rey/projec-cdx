@@ -4,6 +4,15 @@ Carril vivo para organizar el trabajo punta a punta de `PROJEC CDX`.
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
+## Vigencia 20260618
+
+- Estado vigente: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
+- Consumidor aplicado: `workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`.
+- Movimiento unico: `delta_commit_dataverse_workbook_binding_branch`.
+- No crear nuevos paquetes: revisar primero [PENDIENTES_HOY_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PENDIENTES_HOY_20260617.md) y [INDICE_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md).
+- SGIN ya fue leido/paquetizado; `Sgin/torres` es paquete local preparado, no runtime activo.
+- `Home.aspx`, Cloud UI y carriles metadata quedan como espera gobernada, no bloqueo humano.
+
 La cobertura atomica energetica queda en [COBERTURA_ATOMICA_ENERGETICA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md).
 
 La matriz corta de skills, tools y recetas queda en [MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md).
@@ -15,6 +24,12 @@ El prompt corto para reanudar una wave queda en [PROMPT_CIERRE_WAVE.md](C:/Users
 Las anclas on-demand quedan en [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
 El diagnostico de limpieza queda en [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md).
+
+Las notas de limpieza de repos de esta wave quedan en:
+
+- [20260616-limpieza-repos-findings.md](C:/Users/enzo1/PROJEC%20CDX/operativa/20260616-limpieza-repos-findings.md)
+- [20260616-limpieza-repos-progress.md](C:/Users/enzo1/PROJEC%20CDX/operativa/20260616-limpieza-repos-progress.md)
+- [20260616-limpieza-repos-task-plan.md](C:/Users/enzo1/PROJEC%20CDX/operativa/20260616-limpieza-repos-task-plan.md)
 
 El cierre de repos Git queda en [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md).
 

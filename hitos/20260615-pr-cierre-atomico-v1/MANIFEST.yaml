@@ -1,0 +1,25 @@
+id: 20260615-pr-cierre-atomico-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: pr_cierre_atomico
+estado: GREEN_LOCAL
+fuente:
+  - operativa/READBACK_CIERRE_20260615.md
+  - operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md
+  - operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md
+salida:
+  - hitos/20260615-pr-cierre-atomico-v1/
+rollback: remover la carpeta versionada y revertir el cierre documental
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - one_pr_one_wave
+evidencia:
+  - hitos/20260615-pr-cierre-atomico-v1/README.md
+  - hitos/20260615-pr-cierre-atomico-v1/INDICE.csv
+  - hitos/20260615-pr-cierre-atomico-v1/ORDEN_PR-11_microsoft-agents-governed-lab.md
+  - hitos/20260615-pr-cierre-atomico-v1/ORDEN_PR-12_microsoft-agents-governed-lab.md
+  - hitos/20260615-pr-cierre-atomico-v1/ORDEN_PR-43_organizacion.md
+  - hitos/20260615-pr-cierre-atomico-v1/ORDEN_PR-155_cabina-universal-d.md

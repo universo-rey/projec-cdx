@@ -1,4 +1,4 @@
-# Mapa De Outputs
+# Mapa de Outputs
 
 Vista unica de las corridas visibles en `PROJEC CDX/outputs`.
 
@@ -157,6 +157,7 @@ Ruta: [inicio_workbook_20260613](C:/Users/enzo1/PROJEC%20CDX/outputs/inicio_work
 ## Nota
 
 Las salidas son generadas. Si cambia la fuente, se regenera la corrida correspondiente y se actualiza el mapa.
+Las familias grandes suelen llevar `INDICE.csv` o `READBACK.md`; las compactas conservan solo `README.md` y `MAPA.md` cuando no hace falta más detalle.
 
 ## Resolucion
 

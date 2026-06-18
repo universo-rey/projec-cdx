@@ -1,0 +1,19 @@
+root,entry,gb,classification,note
+C:\Users\enzo1\Documents\Cumplimiento,AUDITORIA_CODEX_LOCAL,16.76,codigo,payload principal
+C:\Users\enzo1\Documents\Cumplimiento,.git,2.77,git metadata,canonico
+C:\Users\enzo1\Documents\Cumplimiento,.vscode,0.00,configuracion local,soporte
+C:\Users\enzo1\Documents\Cumplimiento,finalize_codex_local_audit.ps1,0.00,script operativo,soporte
+C:\Users\enzo1\Documents\Cumplimiento,run_codex_local_audit.ps1,0.00,script operativo,soporte
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,07_SHAREPOINT_POWER_PLATFORM_SGIN,9.80,superficie viva,mayor masa operativa
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,02_CHATS_PROMPTS_INSTRUCCIONES,1.92,conocimiento,prompts e instrucciones
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,04_CONFIGURACIONES,1.87,configuracion,soporte local
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,01_PROYECTOS_CODEX,1.26,proyectos,workspaces y proyectos
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,09_EVIDENCIA_NO_CLASIFICADA,0.76,evidencia,pendiente de clasificar
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,05_MEMORIA_Y_CONTEXTO,0.45,memoria,contexto reutilizable
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,03_AGENTES_Y_HABILIDADES,0.38,capacidades,agentes y skills
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,06_REPOSITORIOS_Y_WORKSPACES,0.14,repositorios,workspaces y mirrors
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,00_SENSIBLE_REQUIERE_REVISION_MANUAL,0.09,sensible,gate manual
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,08_DOCUMENTACION_CANONICA,0.06,documentacion,canon documentado
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,00_MANIFIESTOS,0.04,manifiestos,indices declarativos
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,00_LOGS,0.00,logs,telemetria
+C:\Users\enzo1\Documents\Cumplimiento\AUDITORIA_CODEX_LOCAL,99_REPORTE_FINAL,0.00,reporte,cierre final

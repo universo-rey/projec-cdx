@@ -1,0 +1,2 @@
+delta,repo,branch,head,pr,status,validators_total,validators_failed,live_write,next_delta
+delta_e_cdf_split_context_evidence,C:/Users/enzo1/Documents/GitHub/cdf-soluciones,codex/cdf-seshat-context-evidence-split-20260617,2ccd77d,https://github.com/SeshatSgin/cdf-soluciones/pull/28,CDF_SPLIT_SCOPED_PR_READY,73,0,false,delta_d_seshat_ambiguous_content_read_only

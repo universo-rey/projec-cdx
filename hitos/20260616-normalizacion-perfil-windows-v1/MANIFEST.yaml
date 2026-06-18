@@ -1,0 +1,25 @@
+id: 20260616-normalizacion-perfil-windows-v1
+fecha: 2026-06-16
+superficie: PROJEC CDX
+tipo: normalizacion_perfil_windows
+estado: GREEN_LOCAL
+fuente:
+  - operativa/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md
+  - recipes/normalizacion-perfil-windows.md
+  - procesos/normalizacion-perfil-windows.md
+  - patrones/normalizacion-perfil-windows.md
+salida:
+  - hitos/20260616-normalizacion-perfil-windows-v1/
+rollback: remover la carpeta versionada y revertir las referencias documentales nuevas
+postcheck:
+  - ruta resuelta de Desktop, Pictures y Documents
+  - claves de shell alineadas
+  - compatibilidad preservada solo donde fue necesaria
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - no_snapshot_inference
+evidencia:
+  - hitos/20260616-normalizacion-perfil-windows-v1/README.md
+  - hitos/20260616-normalizacion-perfil-windows-v1/READBACK.md
+  - hitos/20260616-normalizacion-perfil-windows-v1/INDICE.csv

@@ -1,0 +1,23 @@
+{
+  "promoted_at_local": "2026-06-16T19:55:00",
+  "mode": "LIVE_SHAREPOINT_FILE_WRITE_AND_DATAVERSE_POINTER_WRITE",
+  "tenant_id": "858a0852-44a1-413e-a0fe-f053949797d6",
+  "sharepoint_site": "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8",
+  "site_id": "escribaniabitsch.sharepoint.com,5578783b-00a2-4197-bc20-095259941f06,1fd8b1de-889f-4b21-b60e-32239ec0fec6",
+  "site_display_name": "Hub Seshat - Centro Rector de Conocimiento Notarial Digital",
+  "primary_surface": "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/SitePages/Home.aspx",
+  "sharepoint_file_url": "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/HUELLA_ATOMICA_SESHAT_HOME_20260616.md",
+  "sharepoint_file_item_id": "017KTOXDDRQOWBVL74BBAIEB2ZL7CHHTWJ",
+  "sharepoint_file_drive_id": "b!O3h4VaIAl0G8IAlSWZQfBt6x2B-fiCFLtg4yI57A_sbIqOZZIimRT6k3y6Abfa8A",
+  "sharepoint_file_mimetype": "text/markdown",
+  "dataverse_source_count": 1,
+  "dataverse_evidence_count": 1,
+  "dataverse_source_id": "b540e1ee-d569-f111-ab0e-00224805f9dd",
+  "dataverse_source_canonical_id": "sharepoint:seshat-home:20260616:v1",
+  "dataverse_evidence_id": "f18df1f4-d569-f111-ab0e-00224805f9dd",
+  "dataverse_evidence_canonical_id": "evidence:sharepoint:seshat-home:20260616:v1",
+  "direct_page_api": "403_OBSERVED_DELTA_GOBERNADO",
+  "page_api_delta": "Home.aspx direct modern page binding requires page API permission or manual page edit; not a human blocker.",
+  "rollback": "Delete or replace exact SharePoint file item_id 017KTOXDDRQOWBVL74BBAIEB2ZL7CHHTWJ; patch Dataverse canonical ids to retired if owner orders reversal.",
+  "postcheck": "SharePoint upload metadata confirmed by connector; Dataverse source/evidence counts are 1/1 by canonical id."
+}

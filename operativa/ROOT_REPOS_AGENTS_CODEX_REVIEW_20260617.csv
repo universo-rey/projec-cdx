@@ -1,0 +1,3 @@
+repo,path,remote,branch,head,status,action,pr_url
+codex-root,C:/Users/enzo1/.codex,https://github.com/universo-rey/codex-root.git,main,eed6262,CLEAN_MAIN_ALIGNED,no_pr_needed,
+agents-root,C:/Users/enzo1/.agents,https://github.com/universo-rey/agents-root.git,codex/agents-root-codex-cleanup-skills-20260617,6b82f5e,PR_DRAFT_READY,opened_draft_pr,https://github.com/universo-rey/agents-root/pull/1

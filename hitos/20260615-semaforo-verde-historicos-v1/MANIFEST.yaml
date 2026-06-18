@@ -1,0 +1,20 @@
+id: 20260615-semaforo-verde-historicos-v1
+fecha: 2026-06-15
+superficie: PROJEC CDX
+tipo: semaforo_verde_historicos
+estado: GREEN_LOCAL
+fuente:
+  - operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md
+  - operativa/CONTROL_TOTAL_20260615.md
+salida:
+  - hitos/20260615-semaforo-verde-historicos-v1/
+rollback: restaurar el acta y la reclasificacion historica
+postcheck:
+  - pwsh -NoProfile -File "C:\\Users\\enzo1\\PROJEC CDX\\tools\\validate_proj_cdx_workbench.ps1"
+guardrails:
+  - no_live_write
+  - no_secret_read
+evidencia:
+  - hitos/20260615-semaforo-verde-historicos-v1/README.md
+  - hitos/20260615-semaforo-verde-historicos-v1/READBACK.md
+  - hitos/20260615-semaforo-verde-historicos-v1/INDICE.csv

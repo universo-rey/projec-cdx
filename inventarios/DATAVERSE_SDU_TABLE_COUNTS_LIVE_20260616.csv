@@ -1,0 +1,7 @@
+"captured_at_local","entity_set","live_status","row_count","classification","source"
+"2026-06-16T17:57:17-03:00","mon_sdu_source_artifacts","query_error",,"observed_with_query_limit","dataverse_webapi_count"
+"2026-06-16T17:57:17-03:00","mon_sdu_validation_gates","query_error",,"observed_with_query_limit","dataverse_webapi_count"
+"2026-06-16T17:57:17-03:00","mon_sdu_stop_conditions","query_error",,"observed_with_query_limit","dataverse_webapi_count"
+"2026-06-16T17:57:17-03:00","mon_sdu_evidences","query_error",,"observed_with_query_limit","dataverse_webapi_count"
+"2026-06-16T17:57:17-03:00","mon_sdu_apply_logs","query_error",,"observed_with_query_limit","dataverse_webapi_count"
+"2026-06-16T17:57:17-03:00","mon_sdu_agent_connection_mappings","query_error",,"observed_with_query_limit","dataverse_webapi_count"

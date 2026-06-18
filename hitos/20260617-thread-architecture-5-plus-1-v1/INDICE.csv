@@ -1,0 +1,6 @@
+"id","artifact","status","notes"
+"SPEC","docs/superpowers/specs/2026-06-17-nonlinear-thread-architecture-design.md","THREAD_PACKETS_PREPARED_NOT_CREATED","Spec de arquitectura no lineal."
+"ARCHITECTURE","operativa/THREAD_ARCHITECTURE_5_PLUS_1_20260617.md","THREAD_PACKETS_PREPARED_NOT_CREATED","Arquitectura hub-and-spokes."
+"QUEUE","operativa/THREAD_CREATION_QUEUE_5_PLUS_1_20260617.csv","THREAD_PACKETS_PREPARED_NOT_CREATED","Cola de creacion de hilos."
+"PACKETS","operativa/thread-packets-20260617","THREAD_PACKETS_PREPARED_NOT_CREATED","Paquetes de arranque."
+"READBACK","operativa/READBACK_THREAD_ARCHITECTURE_5_PLUS_1_20260617.md","THREAD_PACKETS_PREPARED_NOT_CREATED","Readback de preparacion."

@@ -1,0 +1,10 @@
+id: 20260616-seshat-home-sharepoint-canon-v1
+estado: DELTA_APLICADO_CON_DELTA_TECNICO_PAGE_BINDING
+fecha: 2026-06-16
+owner: Enzo Figueroa / SDU Owner Operativo
+superficie_primaria: https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/SitePages/Home.aspx
+archivo_sharepoint: https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/HUELLA_ATOMICA_SESHAT_HOME_20260616.md
+dataverse_source_id: b540e1ee-d569-f111-ab0e-00224805f9dd
+dataverse_evidence_id: f18df1f4-d569-f111-ab0e-00224805f9dd
+rollback: retirar o reemplazar item_id 017KTOXDDRQOWBVL74BBAIEB2ZL7CHHTWJ y retirar punteros Dataverse si el owner lo ordena
+postcheck: SharePoint metadata confirmada y Dataverse 1/1 por canonical id

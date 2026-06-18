@@ -1,0 +1,8 @@
+name: wave-atomica-documentos-pc-root-codex-mantenimiento-v1
+status: GREEN_LOCAL
+summary: Secuencia reusable de tres waves para reconocer, transformar y registrar la superficie documental y el root pesado de Documents.
+artifacts:
+  - README.md
+  - READBACK.md
+  - INDICE.csv
+  - MANIFEST.yaml

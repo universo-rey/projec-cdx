@@ -1,4 +1,4 @@
-# Mapa De Atomic
+# Mapa de Atomic
 
 Vista unica del paquete operativo atomico de Codex.
 

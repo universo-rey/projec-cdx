@@ -1,0 +1,8 @@
+id: 20260616-wave-atomica-repos-lane-c-organizacion-v1
+type: wave_atomica_repos_lane_c_organizacion
+status: prepared
+repo: organizacion
+guardrails:
+  - no_live_write
+  - no_secret_read
+  - no_repo_mutation

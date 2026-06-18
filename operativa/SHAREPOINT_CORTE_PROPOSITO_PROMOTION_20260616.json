@@ -1,0 +1,19 @@
+{
+  "promoted_at_local": "2026-06-16T20:08:00",
+  "mode": "LIVE_SHAREPOINT_FILE_WRITE_AND_DATAVERSE_POINTER_WRITE",
+  "tenant_id": "858a0852-44a1-413e-a0fe-f053949797d6",
+  "sharepoint_site": "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8",
+  "site_display_name": "Hub Seshat - Centro Rector de Conocimiento Notarial Digital",
+  "sharepoint_file_url": "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/Documentos%20compartidos/HUELLA_ATOMICA_CORTE_PROPOSITO_20260616.md",
+  "sharepoint_file_item_id": "017KTOXDEDZ54ZDQQVAJGJYWIO2V325DR5",
+  "sharepoint_file_drive_id": "b!O3h4VaIAl0G8IAlSWZQfBt6x2B-fiCFLtg4yI57A_sbIqOZZIimRT6k3y6Abfa8A",
+  "sharepoint_file_mimetype": "text/markdown",
+  "dataverse_source_count": 1,
+  "dataverse_evidence_count": 1,
+  "dataverse_source_id": "b332bc16-d969-f111-ab0e-00224805f8f9",
+  "dataverse_source_canonical_id": "sharepoint:corte-proposito:20260616:v1",
+  "dataverse_evidence_id": "f77f4619-d969-f111-ab0e-00224805fc91",
+  "dataverse_evidence_canonical_id": "evidence:sharepoint:corte-proposito:20260616:v1",
+  "rollback": "Delete or replace exact SharePoint file item_id 017KTOXDEDZ54ZDQQVAJGJYWIO2V325DR5; patch Dataverse canonical ids to retired if owner orders reversal.",
+  "postcheck": "SharePoint upload metadata confirmed by connector; Dataverse source/evidence counts are 1/1 by canonical id."
+}

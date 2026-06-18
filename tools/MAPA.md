@@ -1,4 +1,4 @@
-# Mapa De Tools
+# Mapa de Tools
 
 Vista unica de las herramientas locales de `PROJEC CDX`.
 
@@ -22,6 +22,7 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - `validate_proj_cdx_operational_chain.ps1`
 - `validate_proj_cdx_workbench.ps1`
 - `validate_proj_cdx_sync.ps1`
+- `validate_sdu_dataverse_metadata_wave.ps1`
 
 ## Uso
 
@@ -31,6 +32,7 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - `codex-control-total.ps1 -ScanGitHubRoot` para un barrido completo de `C:\Users\enzo1\Documents\GitHub`.
 - `validate_proj_cdx_workbench.ps1` para validar mapas, archivos requeridos, links, workbooks y formulas.
 - `validate_proj_cdx_sync.ps1` para comprobar fuentes vivas, outputs, hitos y Dataverse local.
+- `validate_sdu_dataverse_metadata_wave.ps1` para validar hito, matriz metadata_only y saneamiento Planner de la wave SDU Dataverse.
 - `validate_proj_cdx_operational_chain.ps1` para validar schema, estados y fronteras del indice puente.
 - `codex-cloud-bootstrap.ps1` para declarar el contrato y el registro local de Codex Cloud.
 - `codex-cloud-maintenance.ps1` para refrescar la bitacora y verificar la superficie metadata-only.

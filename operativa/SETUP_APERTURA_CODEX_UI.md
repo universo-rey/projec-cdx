@@ -8,23 +8,37 @@ Abrir la UI sobre el proyecto correcto, leer la config local correcta y salir co
 
 ## Campos Manuales
 
+En la UI de Codex Cloud, estos paths apuntan al contenedor Linux, no a Windows local.
+
 - `Nombre`: `PROJEC CDX`
+- `Directorio del espacio de trabajo`: `/workspace/projec-cdx`
 - `Variables de entorno del script de instalación`:
-  - `CODEX_SOURCE_TREE_PATH`: `C:\Users\enzo1\PROJEC CDX`
-  - `CODEX_WORKTREE_PATH`: `C:\Users\enzo1\.codex\worktrees\49ea\PROJEC CDX`
+  - `CODEX_SOURCE_TREE_PATH`: `/workspace/projec-cdx`
+  - `CODEX_WORKTREE_PATH`: `/workspace/projec-cdx`
 - `Script de configuración`:
 
 ```bash
-cd "$CODEX_WORKTREE_PATH"
-python -m pip install -e ".[dev,agents-sdk,openai-orchestration]"
-pwsh -NoProfile -File ".\tools\codex-cloud-bootstrap.ps1"
+#!/usr/bin/env bash
+set +e
+
+echo "SCRIPT_ID=projec_cdx_codex_cloud_setup_noop_20260616"
+pwd || true
+echo "NOOP_SETUP_PASS=True"
+
+exit 0
 ```
 
 - `Script de limpieza`:
 
 ```bash
-docker compose down --remove-orphans
-Remove-Item -Recurse -Force .cache\tmp -ErrorAction SilentlyContinue
+#!/usr/bin/env bash
+set +e
+
+echo "SCRIPT_ID=projec_cdx_codex_cloud_maintenance_noop_20260616"
+pwd || true
+echo "NOOP_MAINTENANCE_PASS=True"
+
+exit 0
 ```
 
 ## Personalidad EATOMIC
@@ -47,7 +61,7 @@ Remove-Item -Recurse -Force .cache\tmp -ErrorAction SilentlyContinue
 
 ## Paso Unico
 
-1. Abrir Codex sobre `C:\Users\enzo1\PROJEC CDX` o sobre el worktree activo `C:\Users\enzo1\.codex\worktrees\49ea\PROJEC CDX`.
+1. Abrir Codex sobre `C:\Users\enzo1\PROJEC CDX`.
 2. Confirmar que la UI lea `.codex/config.toml` del carril abierto.
 3. Verificar que el entorno visible muestre:
    - `OPENAI_MODEL=gpt-5.4-mini`
@@ -56,8 +70,8 @@ Remove-Item -Recurse -Force .cache\tmp -ErrorAction SilentlyContinue
    - `CODEX_CLOUD_GATE=metadata-only`
    - `CODEX_CLOUD_PROFILE=projec-cdx`
    - `CODEX_CLOUD_REPO_ROOT=C:\Users\enzo1\PROJEC CDX`
-   - `CODEX_CLOUD_WORKTREE=C:\Users\enzo1\.codex\worktrees\49ea\PROJEC CDX`
-   - `CODEX_CLOUD_BRANCH=codex/revisar-procesos-del-equipo`
+   - `CODEX_CLOUD_WORKTREE=C:\Users\enzo1\PROJEC CDX`
+   - `CODEX_CLOUD_BRANCH=main`
 4. Si la UI muestra otro contexto, cerrar, reabrir el proyecto correcto y volver a validar.
 5. Correr humo local.
 
@@ -73,3 +87,4 @@ Remove-Item -Recurse -Force .cache\tmp -ErrorAction SilentlyContinue
 - El live se activa cuando el carril y el target estan declarados.
 - Si el worktree no coincide con el carril, reabrir antes de seguir.
 - La UI selecciona el entorno desde `.codex/environments/environment.toml`.
+- Este carril no-op es solo para destrabar la UI. La ejecucion real se deja para una pasada gobernada aparte.

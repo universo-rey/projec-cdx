@@ -1,3 +1,2 @@
-id,tipo,estado,evidencia
-H-001,repos_surface_acta,closed,operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md
-H-002,operativa_trace_current,closed,operativa/CURRENT.md
+id,tipo,ruta,estado,nota
+redirect,stub,C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/20260615-repos-surface-github-v1,ARCHIVED,Movido al archivo de hitos
