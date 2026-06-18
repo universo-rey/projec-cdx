@@ -1,21 +1,25 @@
 # Next
 
 Movimiento unico:
-`delta_consume_bound_workbook_for_next_governed_decision`
+`delta_normalize_codexlocal_live_entrypoint`
 
 ## Etapa Actual
-- `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
+- `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`.
 
 ## Consumidor Aplicado
 - `workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`.
 - Hoja: `Dataverse Fuentes`.
 - Fila viva: `DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED`.
+- Hoja: `Workspace Actual`.
+- Hoja: `Superficies Locales`.
+- Hoja: `Ramas Organizadas`.
 
 ## Regla Anti-Ruido
 - No rehidratar Dataverse otra vez.
 - No reempaquetar paquetes ya existentes.
 - No releer SGIN por inercia.
+- No mover `D:\`, `Documents\CodexLocal`, `Documents\Codex` ni `Documents\CodexArchives`.
 - Si hace falta historia, abrir `operativa/CRONOLOGIA_MAESTRA_20260617.md`.
 
 ## Proximo Movimiento
-Consumir el workbook vigente como superficie de decision para el siguiente delta gobernado, con target, owner, rollback, postcheck y evidencia.
+Normalizar la entrada viva liviana `C:\Users\enzo1\CodexLocal` con `README.md`, `MAPA.md`, `AGENTS.md` e indice minimo, dejando `Documents\CodexLocal` como legado pesado referenciado.

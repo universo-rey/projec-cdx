@@ -2,6 +2,8 @@
 
 Entrada rapida del workbench local.
 
+Identidad operativa: `CEO`. Perfil fisico y rutas tecnicas: `C:/Users/enzo1`.
+
 ## Arranque
 
 ```powershell

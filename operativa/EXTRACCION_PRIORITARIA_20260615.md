@@ -19,7 +19,7 @@ Tomar solo lo necesario para resolver continuidad, inventario y coherencia:
   - 5 repos principales del control total
 - `20260614-config-full-review-v1`
   - 15 proyectos confiables
-  - 21 plugins habilitados
+  - 23 plugins habilitados
   - 2 MCP servers
   - 0 rutas faltantes en proyectos
 - `20260614-root-coherence-v1`
@@ -27,7 +27,7 @@ Tomar solo lo necesario para resolver continuidad, inventario y coherencia:
   - 0 broken links
   - raiz navegable desde README, mapa y hitos
 - `20260614-capabilities-review-v1`
-  - 274 entradas en `SKILLS_INDEX.csv`
+  - 371 entradas en `SKILLS_INDEX.csv`
   - 0 gaps
   - 7 buckets de cache visibles
 
@@ -35,7 +35,7 @@ Tomar solo lo necesario para resolver continuidad, inventario y coherencia:
 
 Tomar la version vigente y sus archivos de alineacion:
 
-- Version vigente: `20260614-v6`
+- Version vigente: `20260618-v1`
 - Archivos a tomar:
   - `skills_inventory.csv`
   - `roots_summary.csv`

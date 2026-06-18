@@ -2,8 +2,12 @@
 
 Vista compacta de acceso a `PROJEC CDX`.
 
+Identidad operativa: `CEO`; perfil fisico/ruta tecnica: `C:/Users/enzo1`.
+
 ## Al Frente
 
+- [Identidad operativa](C:/Users/enzo1/.codex/environment/IDENTIDAD_OPERATIVA.md)
+- [Accesos correctos](C:/Users/enzo1/.codex/environment/ACCESOS_CORRECTOS.md)
 - [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md)
 - [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
 - [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
@@ -24,6 +28,7 @@ Vista compacta de acceso a `PROJEC CDX`.
 ## Trabajo Vivo
 
 - [operativa/README_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/operativa/README_CORTO.md)
+- [launch-desk/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/launch-desk/MAPA.md)
 - [tools/README.md](C:/Users/enzo1/PROJEC%20CDX/tools/README.md)
 - [dataverse/README.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/README.md)
 - [atomic/README.md](C:/Users/enzo1/PROJEC%20CDX/atomic/README.md)

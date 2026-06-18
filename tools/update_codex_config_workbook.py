@@ -39,6 +39,10 @@ EVIDENCE_LOG = Path(
     r"\D_DRIVE_RECOVERY_20260617_210929\diskpart_attach_readonly.log"
 )
 GITHUB_ROOT = Path(r"C:\Users\enzo1\Documents\GitHub")
+HOME_CODEX_LOCAL = Path(r"C:\Users\enzo1\CodexLocal")
+DOCUMENTS_CODEX_LOCAL = Path(r"C:\Users\enzo1\Documents\CodexLocal")
+DOCUMENTS_CODEX = Path(r"C:\Users\enzo1\Documents\Codex")
+DOCUMENTS_CODEX_ARCHIVES = Path(r"C:\Users\enzo1\Documents\CodexArchives")
 D_ROOT = Path(r"D:\\")
 D_CODEX_ROOT = D_ROOT / ".agents" / "codex"
 D_SKILLS_ROOT = D_ROOT / ".agents" / "skills"
@@ -420,6 +424,87 @@ def discover_branch_rows(repo_rows: list[list]) -> list[list]:
     return rows
 
 
+def discover_branch_organization_rows() -> list[list]:
+    repo_slug = repo_slug_from_remote(git_value(ROOT, ["remote", "get-url", "origin"])) or ROOT.name
+    current_branch = git_value(ROOT, ["branch", "--show-current"]) or "DETACHED_OR_UNKNOWN"
+    branch_ref_output = git_value(
+        ROOT,
+        [
+            "for-each-ref",
+            "--format=%(refname:short)|%(objectname:short)|%(committerdate:iso8601)|%(upstream:short)",
+            "refs/heads",
+        ],
+    )
+    worktree_output = git_value(ROOT, ["worktree", "list", "--porcelain"])
+    branch_worktrees: dict[str, str] = {}
+    current_worktree = ""
+    for line in worktree_output.splitlines():
+        if line.startswith("worktree "):
+            current_worktree = line[len("worktree ") :].strip()
+        elif line.startswith("branch "):
+            branch_ref = line[len("branch ") :].strip()
+            if branch_ref.startswith("refs/heads/"):
+                branch_name = branch_ref.removeprefix("refs/heads/")
+                branch_worktrees[branch_name] = current_worktree
+
+    rows: list[list] = []
+    root_abs = os.path.normcase(os.path.abspath(str(ROOT)))
+    for line in branch_ref_output.splitlines():
+        parts = line.split("|")
+        if len(parts) < 4:
+            continue
+        branch_name, commit, committed_at, upstream = parts[:4]
+        branch_worktree = branch_worktrees.get(branch_name, "")
+        branch_worktree_norm = os.path.normcase(os.path.abspath(branch_worktree)) if branch_worktree else ""
+        is_current = branch_name == current_branch
+        is_root_worktree = branch_worktree_norm == root_abs
+        actual = "SI" if is_current or is_root_worktree else "NO"
+
+        if is_current and branch_name == "main":
+            estado = "CANON"
+            decision = "SEGUIR"
+            note = "Rama canon y activa del workspace."
+        elif is_current:
+            estado = "ACTIVA"
+            decision = "SEGUIR"
+            note = "Rama foco de la sesion."
+        elif branch_name == "main":
+            estado = "CANON"
+            decision = "CONSERVAR"
+            note = "Rama canon de integracion."
+        elif branch_worktree and not is_root_worktree:
+            estado = "WORKTREE"
+            decision = "MANTENER_SEPARADA"
+            note = f"Rama fijada en worktree externo: {branch_worktree}."
+        elif branch_name.startswith("codex/"):
+            estado = "PARALELA"
+            decision = "PARQUEAR"
+            note = "Rama paralela sin worktree activo."
+        else:
+            estado = "REVISAR"
+            decision = "REVISAR"
+            note = "Rama local fuera del canon codex."
+
+        rows.append(
+            [
+                branch_name,
+                repo_slug,
+                estado,
+                actual,
+                branch_worktree or "N/D",
+                upstream or "N/D",
+                commit,
+                committed_at,
+                decision,
+                note,
+            ]
+        )
+
+    priority = {"ACTIVA": 0, "CANON": 1, "WORKTREE": 2, "PARALELA": 3, "REVISAR": 4}
+    rows.sort(key=lambda row: (priority.get(str(row[2]), 99), str(row[0]).lower()))
+    return rows
+
+
 def discover_pr_rows(repo_rows: list[list]) -> list[list]:
     rows: list[list] = []
     slugs_seen: set[str] = set()
@@ -655,6 +740,35 @@ def dir_counts(path: Path, recursive: bool = True) -> tuple[int | None, int | No
     return dirs, files, ext_text
 
 
+def dir_file_stats(path: Path, recursive: bool = True) -> tuple[int | None, int | None, int | None, str]:
+    if not path.exists() or not path.is_dir():
+        return None, None, None, ""
+    dirs = 0
+    files = 0
+    bytes_total = 0
+    extensions: dict[str, int] = {}
+    iterator = path.rglob("*") if recursive else path.iterdir()
+    try:
+        for item in iterator:
+            if item.is_dir():
+                dirs += 1
+            elif item.is_file():
+                files += 1
+                try:
+                    bytes_total += item.stat().st_size
+                except OSError:
+                    pass
+                suffix = item.suffix.lower() or "[none]"
+                extensions[suffix] = extensions.get(suffix, 0) + 1
+    except Exception:
+        return dirs, files, bytes_total, ""
+    ext_text = ", ".join(
+        f"{key}:{value}"
+        for key, value in sorted(extensions.items(), key=lambda item: (-item[1], item[0]))[:8]
+    )
+    return dirs, files, bytes_total, ext_text
+
+
 def file_modified(path: Path | None) -> str:
     if path is None or not path.exists():
         return ""
@@ -851,7 +965,7 @@ def discover_universe_rows() -> list[list]:
         ["SUPERFICIE_CANONICA", "CODEX_ROOT", str(CODEX_ROOT), "codex_config", "Cabina global local", "", "ACTIVO", str(CODEX_ROOT / "README.md")],
         ["SUPERFICIE_CANONICA", "AGENTS_ROOT", str(AGENTS_ROOT), "agent_layer", "Skills, recipes, plugins y scripts locales", "", "ACTIVO", str(AGENTS_ROOT / "README.md")],
         ["SUPERFICIE_CANONICA", "GITHUB_ROOT", str(GITHUB_ROOT), "repos_root", "Repositorios canonicos locales", "", "ACTIVO", str(GITHUB_ROOT)],
-        ["SUPERFICIE_CANONICA", "D_CABINA_UNIVERSAL", r"D:\\", "vhdx_readonly", "Cabina D recuperada read-only", "", "MONTADA_READONLY" if Path(r"D:\\").exists() else "OBSERVAR", str(VHDX_PATH)],
+        ["SUPERFICIE_CANONICA", "D_CABINA_UNIVERSAL", r"D:\\", "consola_rectora_gobernada", "Cabina D / consola rectora local", "", "MONTADA_GOBERNADA" if Path(r"D:\\").exists() else "OBSERVAR", r"D:\AGENTS.md|D:\MANIFEST.yaml|D:\REPO_SCOPE.md"],
         ["SUPERFICIE_CANONICA", "CODEX_CLOUD_PROJEC_CDX", "/workspace/projec-cdx", "codex_cloud", "Environment local confirmado por global-state", "", "CONFIRMADO_LOCAL", str(STATE_PATH)],
         ["SUPERFICIE_CANONICA", "DATAVERSE_SDU", str(ROOT / "dataverse"), "dataverse_metadata", "Mapas y conexiones Dataverse", "", "METADATA_ONLY", str(ROOT / "dataverse" / "INDICE_DATAVERSE.md")],
         ["SUPERFICIE_CANONICA", "SESHAT_SHAREPOINT_CANON", "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/SitePages/Home.aspx", "sharepoint_canon", "Canon Seshat indicado por owner", "", "GOBERNADO", "orden conversacional / workbook"],
@@ -1585,6 +1699,156 @@ def discover_d_surface_rows(scan_time: str) -> list[list]:
                 notes,
             ]
         )
+    return rows
+
+
+def discover_local_surface_rows(scan_time: str, d_status: str) -> list[list]:
+    surfaces = [
+        (
+            D_ROOT,
+            "D_CABINA_RECTOR_LOCAL",
+            "consola_rectora",
+            "Cabina Universal D; autoridad/gobierno heredado y wrapper repo.",
+            "Leer AGENTS/MANIFEST/REPO_SCOPE; no escribir sin gate.",
+            False,
+        ),
+        (
+            ROOT,
+            "PROJEC_CDX_WORKBENCH",
+            "workbench_actual",
+            "Workbench actual de cierre, decision y workbook.",
+            "Entrada viva de este hilo; versionar por rama codex/*.",
+            True,
+        ),
+        (
+            CODEX_ROOT,
+            "CODEX_RUNTIME_CONFIG",
+            "runtime_config_memoria",
+            "Config local, skills, memoria, sesiones y runtime Codex.",
+            "No tocar secretos ni runtime interno por inferencia.",
+            False,
+        ),
+        (
+            HOME_CODEX_LOCAL,
+            "HOME_CODEXLOCAL_LIVE_ENTRY",
+            "entrada_viva_liviana",
+            "Nueva entrada liviana/puente local; todavia incompleta.",
+            "Debe tener README/MAPA/AGENTS/indice antes de operar como raiz principal.",
+            True,
+        ),
+        (
+            DOCUMENTS_CODEX_LOCAL,
+            "DOCUMENTS_CODEXLOCAL_LEGACY_HEAVY",
+            "workspace_legado_pesado",
+            "Workspace local pesado historico con indices y evidencia.",
+            "No mover 14GB+ sin paquete de migracion y rollback.",
+            True,
+        ),
+        (
+            DOCUMENTS_CODEX,
+            "DOCUMENTS_CODEX_CHRONOLOGY",
+            "cronologia_documental",
+            "Cronologia documental por fecha, handoffs y rastros de sesiones.",
+            "Fuente de recuperacion historica; no canon operativo.",
+            True,
+        ),
+        (
+            DOCUMENTS_CODEX_ARCHIVES,
+            "DOCUMENTS_CODEX_ARCHIVES",
+            "archivo_zip_reversible",
+            "Archivo frio reversible de zips y snapshots.",
+            "Conservar; no extraer ni borrar sin orden.",
+            True,
+        ),
+        (
+            GITHUB_ROOT,
+            "DOCUMENTS_GITHUB_CANONICAL_REPOS",
+            "repositorios_canonicos",
+            "Raiz canonica local de repos GitHub.",
+            "Los repos conservan sus propios remotos y ramas.",
+            False,
+        ),
+    ]
+    rows: list[list] = []
+    for path, surface_id, surface_class, role, rule, recursive in surfaces:
+        exists = path.exists()
+        dirs, files, bytes_total, extensions = dir_file_stats(path, recursive=recursive) if exists else (None, None, None, "")
+        has_readme = (path / "README.md").exists() if exists else False
+        has_agents = (path / "AGENTS.md").exists() if exists else False
+        has_map = any((path / name).exists() for name in ("MAPA.md", "MAPA_MAESTRO.md")) if exists else False
+        has_index = any((path / name).exists() for name in ("INDICE.csv", "CODEX_INDEX.csv", "CODEXLOCAL_INDEX.csv")) if exists else False
+        has_git = (path / ".git").exists() if exists else False
+        if not exists:
+            status = "MISSING"
+        elif path == D_ROOT:
+            status = d_status
+        elif path == HOME_CODEX_LOCAL and not has_readme:
+            status = "ENTRYPOINT_INCOMPLETE"
+        elif path == DOCUMENTS_CODEX_LOCAL:
+            status = "LEGACY_HEAVY_INDEXED"
+        elif path == DOCUMENTS_CODEX:
+            status = "CHRONOLOGY_INDEXED"
+        elif path == DOCUMENTS_CODEX_ARCHIVES:
+            status = "ARCHIVE_REVERSIBLE"
+        elif has_readme or has_map or has_index:
+            status = "INDEXED"
+        else:
+            status = "OBSERVED"
+        rows.append(
+            [
+                surface_id,
+                str(path),
+                surface_class,
+                status,
+                "SI" if exists else "NO",
+                "SI" if has_readme else "NO",
+                "SI" if has_agents else "NO",
+                "SI" if has_map else "NO",
+                "SI" if has_index else "NO",
+                "SI" if has_git else "NO",
+                dirs,
+                files,
+                kb(bytes_total) if bytes_total is not None else None,
+                extensions,
+                scan_time,
+                role,
+                rule,
+            ]
+        )
+    return rows
+
+
+def discover_workspace_rows(scan_time: str, d_status: str) -> list[list]:
+    branch = git_value(ROOT, ["branch", "--show-current"]) or "DETACHED_OR_UNKNOWN"
+    head = git_value(ROOT, ["rev-parse", "--short", "HEAD"]) or "UNKNOWN"
+    remote = git_value(ROOT, ["remote", "get-url", "origin"]) or "NO_REMOTE"
+    upstream = git_value(ROOT, ["rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"]) or "NO_UPSTREAM"
+    status = git_value(ROOT, ["status", "--short", "--branch"]) or "UNKNOWN"
+    dirty = "SI" if any(line and not line.startswith("##") for line in status.splitlines()) else "NO"
+    rows = [
+        ["workspace.root", str(ROOT), "ACTUAL", "Workspace operativo de este hilo."],
+        ["workspace.cwd_when_built", str(Path.cwd()), "INFO", "Directorio desde donde corre el builder."],
+        ["workspace.branch", branch, "ACTUAL", "Rama de trabajo vigente."],
+        ["workspace.head", head, "INFO", "Commit corto del workspace."],
+        ["workspace.remote", remote, "INFO", "Remoto origin del repo actual."],
+        ["workspace.upstream", upstream, "INFO", "Upstream de la rama actual."],
+        ["workspace.dirty", dirty, "OBSERVAR" if dirty == "SI" else "PASS", "Estado Git antes/despues de regenerar workbook."],
+        ["workspace.status", status.replace("\n", " | "), "INFO", "Resumen git status --short --branch."],
+        ["workspace.workbook", str(WORKBOOK), "ACTUAL", "Workbook de decision vigente."],
+        ["workspace.builder", str(ROOT / "tools" / "update_codex_config_workbook.py"), "ACTUAL", "Builder idempotente del workbook."],
+        ["workspace.current", str(ROOT / "operativa" / "CURRENT.md"), "ACTUAL", "Estado vivo de PROJEC CDX."],
+        ["workspace.next", str(ROOT / "operativa" / "NEXT.md"), "ACTUAL", "Movimiento unico."],
+        ["workspace.trace", str(ROOT / "operativa" / "TRACE.md"), "ACTUAL", "Trazabilidad activa."],
+        ["workspace.codex_root", str(CODEX_ROOT), "REFERENCIA", "Runtime/config/memoria local Codex."],
+        ["workspace.d_root", str(D_ROOT), d_status, "Consola rectora local D."],
+        ["workspace.home_codexlocal", str(HOME_CODEX_LOCAL), "REFERENCIA", "Entrada viva liviana nueva."],
+        ["workspace.documents_codexlocal", str(DOCUMENTS_CODEX_LOCAL), "REFERENCIA", "Workspace legado pesado."],
+        ["workspace.documents_codex", str(DOCUMENTS_CODEX), "REFERENCIA", "Cronologia documental."],
+        ["workspace.documents_codex_archives", str(DOCUMENTS_CODEX_ARCHIVES), "REFERENCIA", "Archivo reversible ZIP."],
+        ["workspace.github_root", str(GITHUB_ROOT), "REFERENCIA", "Repositorios canonicos locales."],
+        ["workspace.codex_worktree_env", os.environ.get("CODEX_WORKTREE_PATH", "N/D"), "INFO", "Variable de worktree si existe."],
+        ["workspace.updated_at", scan_time, "INFO", "Timestamp local de regeneracion."],
+    ]
     return rows
 
 
@@ -2656,9 +2920,9 @@ def create_sheet(
                 cell.fill = PatternFill("solid", fgColor=ALT_FILL)
             if isinstance(value, str):
                 upper = value.upper()
-                if upper in {"PASS", "OK", "SI", "NO_TOCAR", "MONTADA_READONLY", "ACTUAL"}:
+                if upper in {"PASS", "OK", "SI", "NO_TOCAR", "MONTADA_READONLY", "MONTADA_GOBERNADA", "ACTUAL", "INDEXED", "CHRONOLOGY_INDEXED", "ARCHIVE_REVERSIBLE", "LEGACY_HEAVY_INDEXED", "REFERENCIA"}:
                     cell.fill = PatternFill("solid", fgColor=OK_FILL)
-                elif upper in {"REVISAR", "OBSERVAR", "PENDIENTE", "REVISAR_OWNER", "REVISAR_SENSIBLE"}:
+                elif upper in {"REVISAR", "OBSERVAR", "PENDIENTE", "REVISAR_OWNER", "REVISAR_SENSIBLE", "ENTRYPOINT_INCOMPLETE", "NO_MONTADA"}:
                     cell.fill = PatternFill("solid", fgColor=WARN_FILL)
                 elif upper in {"FAIL", "MISSING"}:
                     cell.fill = PatternFill("solid", fgColor=BAD_FILL)
@@ -2750,6 +3014,15 @@ def main():
     d_disk = next((item for item in as_list(disk_json) if item.get("FriendlyName") == "Msft Virtual Disk"), {})
     d_exists = Path(r"D:\\").exists()
     d_readonly = bool(d_disk.get("IsReadOnly"))
+    if d_exists and d_readonly:
+        d_status = "MONTADA_READONLY"
+        d_mode_note = "Cabina D montada en modo solo lectura."
+    elif d_exists:
+        d_status = "MONTADA_GOBERNADA"
+        d_mode_note = "Cabina D montada; escritura solo con gate humano exacto."
+    else:
+        d_status = "NO_MONTADA"
+        d_mode_note = "Cabina D no disponible."
 
     text_patterns = [
         "OPENAI_API_KEY",
@@ -2841,6 +3114,7 @@ def main():
     ph_text = json.dumps(prompt_history, ensure_ascii=False, sort_keys=True)
     repo_rows = discover_repositories(projects)
     branch_rows = discover_branch_rows(repo_rows)
+    branch_org_rows = discover_branch_organization_rows()
     pr_rows = discover_pr_rows(repo_rows)
     cloud_rows = discover_cloud_environment_rows(env, ph_text)
     agent_rows = discover_agent_rows()
@@ -2857,6 +3131,8 @@ def main():
     master_atomic_rows = discover_master_atomic_matrix_rows()
     metadata_hydration_rows = discover_metadata_hydration_rows()
     d_surface_rows = discover_d_surface_rows(now_label)
+    local_surface_rows = discover_local_surface_rows(now_label, d_status)
+    workspace_rows = discover_workspace_rows(now_label, d_status)
     d_indexes_rows = discover_d_indexes_rows()
     d_matrix_index_rows = discover_d_matrix_index_rows()
     d_skill_registry_rows = discover_d_skill_registry_rows()
@@ -2906,7 +3182,9 @@ def main():
         ["Sandbox / approval", f"{config.get('sandbox_mode', 'N/D')} / {config.get('approval_policy', 'N/D')}", "Config local"],
         ["Plugins habilitados", len(plugins), ", ".join(plugins[:8]) + ("..." if len(plugins) > 8 else "")],
         ["Trusted projects", len(projects), "Entradas [projects] en config.toml"],
-        ["D root", "MONTADA_READONLY" if d_exists and d_readonly else "OBSERVAR", "DISCO_DESARROLLO ReFS" if d_exists else "No montada"],
+        ["Workspace actual", str(ROOT), "Rama y estado en hoja Workspace Actual"],
+        ["Superficies locales", len(local_surface_rows), "D, PROJEC CDX, .codex, CodexLocal, cronologia, archivo y repos"],
+        ["D root", d_status, d_mode_note],
         ["D total GB", gb(d_drive.get("TotalSize")), "Capacidad visible actual"],
         ["D libre GB", gb(d_drive.get("AvailableFreeSpace")), "Espacio libre actual"],
         ["VHDX origen", str(VHDX_PATH), f"{gb(VHDX_PATH.stat().st_size) if VHDX_PATH.exists() else 'N/D'} GB físicos"],
@@ -2915,6 +3193,7 @@ def main():
         ["Prompts lectura filas", len(prompt_read_rows), "Una fila por entrada/chunk con tokens reales redactados"],
         ["Repositorios inventariados", len(repo_rows), "GitHub local, D activo, trusted projects y workspace actual"],
         ["Ramas inventariadas", len(branch_rows), "Refs locales/remotas y ramas GitHub live cuando gh responde"],
+        ["Ramas organizadas", len(branch_org_rows), "Ramas locales del repo actual clasificadas por estado y decision"],
         ["PRs inventariados", len(pr_rows), "GitHub live via gh; all states, limite 50 por repo"],
         ["Codex Cloud entornos", len(cloud_rows), "Confirmados localmente + menciones en prompts"],
         ["Agentes inventariados", len(agent_rows), "Fan-in, roster SDU, revision live y componentes Dataverse"],
@@ -2972,6 +3251,8 @@ def main():
             "Decision",
             "Config Vigente",
             "Cabina D",
+            "Workspace Actual",
+            "Superficies Locales",
             "D Surface Summary",
             "D Indexes",
             "D Matrix Index",
@@ -3000,6 +3281,7 @@ def main():
             "Candidatos",
             "Repositorios",
             "Ramas",
+            "Ramas Organizadas",
             "PRs",
             "Codex Cloud Env",
             "Agentes",
@@ -3067,15 +3349,15 @@ def main():
         ["codex.plugins.enabled_count", len(plugins), "OK", "Plugins habilitados."],
         ["codex.projects.trusted_count", len(projects), "OK", "Proyectos trusted."],
         ["codex.mcp_servers.count", len(mcp_servers), "OK", "Servidores MCP configurados."],
-        ["local.surface.D.status", "MONTADA_READONLY" if d_exists and d_readonly else "OBSERVAR", "OK" if d_exists else "REVISAR", "Cabina D recuperada como VHDX read-only."],
+        ["local.surface.D.status", d_status, "OK" if d_exists else "REVISAR", d_mode_note],
         ["local.surface.D.path", r"D:\\", "NO_TOCAR", "Root de cabina universal."],
         ["local.surface.D.label", d_drive.get("VolumeLabel"), "OK", "Etiqueta del volumen."],
         ["local.surface.D.format", d_drive.get("DriveFormat"), "OK", "Formato del volumen."],
         ["local.surface.D.total_gb", gb(d_drive.get("TotalSize")), "OK", "Tamaño virtual visible."],
         ["local.surface.D.free_gb", gb(d_drive.get("AvailableFreeSpace")), "OK", "Espacio libre visible."],
-        ["local.surface.D.disk_readonly", d_readonly, "NO_TOCAR", "Solo lectura vigente."],
-        ["local.surface.D.vhdx", str(VHDX_PATH), "NO_TOCAR", "Archivo que sostiene D."],
-        ["local.surface.D.evidence_log", str(EVIDENCE_LOG), "OK", "Bitácora de attach readonly."],
+        ["local.surface.D.disk_readonly", d_readonly, "OBSERVAR", "Indicador del disco subyacente; no usar como permiso de escritura."],
+        ["local.surface.D.vhdx", str(VHDX_PATH), "REFERENCIA", "Evidencia historica de recuperacion si existe."],
+        ["local.surface.D.evidence_log", str(EVIDENCE_LOG), "REFERENCIA", "Bitácora historica de attach/recuperacion si existe."],
     ]
     for key, value in sorted((env.get("env_vars") or {}).items()):
         decision = "REVISAR" if key == "SOURCE_TREE_PATH" and str(value) == "CODEX_SOURCE_TREE_PATH" else "OK"
@@ -3101,7 +3383,7 @@ def main():
     d_validator_agent = Path(r"D:\.agents\codex\tools\local_validate_agent_layer.ps1")
     d_validator_chain = Path(r"D:\.agents\codex\tools\local_validate_operational_chain.ps1")
     d_rows = [
-        ["status", "MONTADA_READONLY" if d_exists and d_readonly else "OBSERVAR", "PASS" if d_exists else "FAIL", "D recuperado desde VHDX."],
+        ["status", d_status, "PASS" if d_exists else "FAIL", d_mode_note],
         ["drive", r"D:\\", "PASS" if d_exists else "FAIL", "Letra visible actual."],
         ["label", d_drive.get("VolumeLabel"), "PASS", "Etiqueta del volumen."],
         ["format", d_drive.get("DriveFormat"), "PASS", "Formato del volumen."],
@@ -3109,22 +3391,60 @@ def main():
         ["free_gb", gb(d_drive.get("AvailableFreeSpace")), "PASS", "Libre actual."],
         ["disk_number", d_disk.get("Number"), "PASS", "Número de disco asociado."],
         ["disk_name", d_disk.get("FriendlyName"), "PASS", "Msft Virtual Disk."],
-        ["is_readonly", d_readonly, "PASS" if d_readonly else "OBSERVAR", "Attach readonly vigente."],
-        ["vhdx_path", str(VHDX_PATH), "PASS" if VHDX_PATH.exists() else "FAIL", "Origen del disco virtual."],
-        ["vhdx_size_gb", gb(VHDX_PATH.stat().st_size) if VHDX_PATH.exists() else None, "PASS" if VHDX_PATH.exists() else "FAIL", "Tamaño físico del VHDX."],
+        ["is_readonly", d_readonly, "INFO" if d_exists else "OBSERVAR", "Estado reportado por el disco; no reemplaza el gate humano."],
+        ["vhdx_path", str(VHDX_PATH), "INFO" if VHDX_PATH.exists() else "MISSING", "Referencia historica de recuperacion."],
+        ["vhdx_size_gb", gb(VHDX_PATH.stat().st_size) if VHDX_PATH.exists() else None, "INFO" if VHDX_PATH.exists() else "MISSING", "Tamaño físico si la referencia existe."],
         ["AGENTS.md", str(d_agents), "PASS" if d_agents.exists() else "MISSING", "Fuente rectora local."],
         ["MANIFEST.yaml", str(d_manifest), "PASS" if d_manifest.exists() else "MISSING", "Manifest de cabina."],
         ["validator.agent_layer", str(d_validator_agent), "PASS" if d_validator_agent.exists() else "MISSING", "Validador local."],
         ["validator.operational_chain", str(d_validator_chain), "PASS" if d_validator_chain.exists() else "MISSING", "Validador cadena."],
-        ["evidence_log", str(EVIDENCE_LOG), "PASS" if EVIDENCE_LOG.exists() else "MISSING", "Bitácora del attach readonly."],
+        ["evidence_log", str(EVIDENCE_LOG), "INFO" if EVIDENCE_LOG.exists() else "MISSING", "Bitácora historica de attach/recuperacion."],
         ["next_gate", "D_READWRITE_GOVERNED", "PENDIENTE", "Solo si hace falta escribir; requiere orden humana exacta."],
     ]
-    create_sheet(wb, "Cabina D", "Estado de la superficie D recuperada y su VHDX origen.", ["Campo", "Valor", "Estado", "Nota"], d_rows, "tblCabinaD", [30, 98, 18, 62])
+    create_sheet(wb, "Cabina D", "Estado de la consola rectora D y frontera de escritura gobernada.", ["Campo", "Valor", "Estado", "Nota"], d_rows, "tblCabinaD", [30, 98, 18, 62])
+
+    create_sheet(
+        wb,
+        "Workspace Actual",
+        "Workspace de esta rama: ruta, Git, workbook vigente y cruces con superficies locales.",
+        ["Campo", "Valor", "Estado", "Nota"],
+        workspace_rows,
+        "tblWorkspaceActual",
+        [34, 110, 24, 70],
+    )
+
+    create_sheet(
+        wb,
+        "Superficies Locales",
+        "Mapa operativo de consola, workbench, runtime, puente local, cronologia, archivo y repos canonicos.",
+        [
+            "Surface Id",
+            "Path",
+            "Clase",
+            "Estado",
+            "Existe",
+            "README",
+            "AGENTS",
+            "MAPA",
+            "Indice",
+            "Git",
+            "Dirs",
+            "Files",
+            "KB aprox",
+            "Extensiones",
+            "Last Scan",
+            "Rol",
+            "Regla",
+        ],
+        local_surface_rows,
+        "tblSuperficiesLocales",
+        [36, 92, 28, 30, 10, 10, 10, 10, 10, 10, 12, 12, 14, 50, 22, 62, 78],
+    )
 
     create_sheet(
         wb,
         "D Surface Summary",
-        "Roots principales de D con conteo fisico read-only y estado de disponibilidad.",
+        "Roots principales de D con conteo fisico y estado de disponibilidad gobernada.",
         ["Surface Root", "Existe", "Dirs", "Files", "Extensions", "Last Scan", "Status", "Notes"],
         d_surface_rows,
         "tblDSurfaceSummary",
@@ -3603,6 +3923,27 @@ def main():
 
     create_sheet(
         wb,
+        "Ramas Organizadas",
+        "Clasificacion operable de las ramas locales del repo actual: canon, activa, worktree y paralelas.",
+        [
+            "Branch",
+            "Repo",
+            "Estado",
+            "Actual",
+            "Worktree",
+            "Upstream",
+            "Commit",
+            "Commit Date",
+            "Decision",
+            "Nota",
+        ],
+        branch_org_rows,
+        "tblRamasOrganizadas",
+        [34, 30, 18, 10, 72, 40, 18, 28, 24, 72],
+    )
+
+    create_sheet(
+        wb,
         "PRs",
         "Pull requests leidos con GitHub live via gh; incluye abiertos, draft e historicos recientes por repo.",
         [
@@ -3949,18 +4290,18 @@ def main():
         ["NO_TOCAR", "secrets/auth/cap_sid/SQLite", "Secretos y runtime interno", "Cualquier secreto o auth requiere gate separado."],
         ["NO_TOCAR", "heartbeat-thread-permissions-by-id", "Permisos de hilos", "No borrar permisos por inferencia."],
         ["RIESGO", "prompt-history", "Historial textual sensible, no secreto estructural", "No reemplazar texto globalmente."],
-        ["GATE", "D read/write", "D está montado read-only", "Escritura requiere orden humana y rollback."],
+        ["GATE", "D read/write", "D es consola rectora local gobernada", "Escritura requiere orden humana, target, rollback y postcheck."],
         ["GATE", "Wave 2 dry-run", "Primer movimiento seguro", "Debe producir lista exacta sin escribir."],
         ["GATE", "Wave 3 escritura", "Requiere backup y Codex cerrado", "Si hash cambia durante operación, abortar."],
         ["POSTCHECK", "JSON", "Debe parsear después", "Si falla parseo, restaurar backup."],
-        ["POSTCHECK", "D root", "Debe conservar AGENTS/MANIFEST visibles", "Si desaparece D, volver a attach readonly."],
+        ["POSTCHECK", "D root", "Debe conservar AGENTS/MANIFEST visibles", "Si desaparece D o cambia frontera, detener y revalidar."],
         ["POSTCHECK", "environment", "Debe quedar idéntico", "Si cambia id/label/repo/secrets, rollback."],
     ]
     create_sheet(wb, "Riesgos Gates", "Fronteras para mantener limpieza atómica y cabina D segura.", ["Tipo", "Elemento", "Motivo", "Stop condition"], risk_rows, "tblRiesgos", [18, 34, 58, 68])
 
     lane_rows = [
         ["parallel_readonly_scouts", "rey.control_plane_orchestrator", "court.seshat_evidence", "read_only", "lock.readonly.scout", "agent_final_readback", "OK"],
-        ["d_drive_recovery_readonly", "rey.control_plane_orchestrator", "court.anubis_gate", "D:/AGENTS|D:/MANIFEST|VHDX log", "lock.d.readonly", str(EVIDENCE_LOG), "PASS"],
+        ["d_drive_governed_console", "rey.control_plane_orchestrator", "court.anubis_gate", "D:/AGENTS|D:/MANIFEST|D:/REPO_SCOPE", "lock.d.governed", str(D_ROOT), d_status],
         ["global_state_safe_dry_run", "rey.control_plane_orchestrator", "court.seshat_evidence", "prompt-history candidates", "lock.global_state", "dry-run manifest", "PREPARADO"],
     ]
     create_sheet(wb, "Agentes Carriles", "Carriles gobernados usados para D y limpieza futura.", ["lane_id", "lead_agent", "reviewer_agent", "read_scope", "lock_key", "evidence", "status"], lane_rows, "tblParallel", [32, 34, 28, 46, 28, 60, 16])
@@ -3989,6 +4330,7 @@ def main():
         ["PROMPTS_LECTURA_ROWS", len(prompt_read_rows), "INFO"],
         ["REPOSITORIES_ROWS", len(repo_rows), "INFO"],
         ["BRANCH_ROWS", len(branch_rows), "INFO"],
+        ["BRANCH_ORG_ROWS", len(branch_org_rows), "INFO"],
         ["PR_ROWS", len(pr_rows), "INFO"],
         ["CODEX_CLOUD_ENV_ROWS", len(cloud_rows), "INFO"],
         ["AGENTS_ROWS", len(agent_rows), "INFO"],
@@ -4026,9 +4368,12 @@ def main():
         ["D_DOMAIN_MATRIX_ROWS", len(d_domain_matrix_rows), "INFO"],
         ["D_COVERAGE_AUDIT_ROWS", len(d_coverage_audit_rows), "INFO"],
         ["D_WORKBOOK_GAP_ROWS", len(d_gap_rows), "INFO"],
+        ["LOCAL_SURFACE_ROWS", len(local_surface_rows), "INFO"],
+        ["WORKSPACE_ROWS", len(workspace_rows), "INFO"],
         ["D_VALIDATORS_EXECUTED", "NO", "INFO"],
         ["D_DRIVE_PRESENT", d_exists, "PASS" if d_exists else "FAIL"],
-        ["D_DRIVE_READONLY", d_readonly, "PASS" if d_readonly else "OBSERVAR"],
+        ["D_DRIVE_STATUS", d_status, "PASS" if d_exists else "FAIL"],
+        ["D_DRIVE_READONLY", d_readonly, "INFO"],
         ["D_AGENTS", str(d_agents), "PASS" if d_agents.exists() else "MISSING"],
         ["D_MANIFEST", str(d_manifest), "PASS" if d_manifest.exists() else "MISSING"],
         ["D_EVIDENCE_LOG", str(EVIDENCE_LOG), "PASS" if EVIDENCE_LOG.exists() else "MISSING"],
@@ -4056,7 +4401,14 @@ def main():
         ["Archivo", "Codex config", str(CONFIG_PATH), "Config técnica"],
         ["Archivo", "Codex AGENTS", r"C:\Users\enzo1\.codex\AGENTS.md", "Prompt global visible"],
         ["Archivo", "PROJEC CDX AGENTS", str(ROOT / "AGENTS.md"), "Instrucción local"],
-        ["Superficie", "Cabina D root", r"D:\\", "Montada read-only" if d_exists else "No montada"],
+        ["Superficie", "Workspace actual", str(ROOT), f"{len(workspace_rows)} filas en Workspace Actual"],
+        ["Superficie", "Mapa superficies locales", "Superficies Locales", f"{len(local_surface_rows)} superficies normalizadas"],
+        ["Superficie", "Cabina D root", r"D:\\", d_status if d_exists else "No montada"],
+        ["Superficie", "CodexLocal live entry", str(HOME_CODEX_LOCAL), "Entrada viva liviana; requiere indice si se promueve"],
+        ["Superficie", "CodexLocal legacy", str(DOCUMENTS_CODEX_LOCAL), "Workspace legado pesado"],
+        ["Superficie", "Documents Codex chronology", str(DOCUMENTS_CODEX), "Cronologia documental"],
+        ["Superficie", "Documents CodexArchives", str(DOCUMENTS_CODEX_ARCHIVES), "Archivo reversible"],
+        ["Superficie", "GitHub repos canonicos", str(GITHUB_ROOT), "Raiz de repositorios"],
         ["Archivo", "D AGENTS", str(d_agents), "PASS" if d_agents.exists() else "MISSING"],
         ["Archivo", "D MANIFEST", str(d_manifest), "PASS" if d_manifest.exists() else "MISSING"],
         ["Archivo", "D validator agent", str(d_validator_agent), "PASS" if d_validator_agent.exists() else "MISSING"],
@@ -4067,11 +4419,14 @@ def main():
         ["Directorio", "D authority canon", str(D_AUTHORITY_CANON), f"{len(d_authority_rows)} archivos rectores"],
         ["Directorio", "D dataverse data", str(D_DATAVERSE_DATA), "Seeds/ref data incluidos en cobertura"],
         ["Directorio", "D validation", str(D_VALIDATION_ROOT), "Reportes incluidos como evidencia read-only"],
-        ["Archivo", "VHDX origen", str(VHDX_PATH), "Origen D" if VHDX_PATH.exists() else "MISSING"],
-        ["Archivo", "Attach evidence log", str(EVIDENCE_LOG), "PASS" if EVIDENCE_LOG.exists() else "MISSING"],
+        ["Archivo", "VHDX referencia historica", str(VHDX_PATH), "Referencia" if VHDX_PATH.exists() else "MISSING"],
+        ["Archivo", "Attach/recovery evidence log", str(EVIDENCE_LOG), "INFO" if EVIDENCE_LOG.exists() else "MISSING"],
+        ["Hoja", "Workspace Actual", "Workspace Actual", f"{len(workspace_rows)} filas"],
+        ["Hoja", "Superficies Locales", "Superficies Locales", f"{len(local_surface_rows)} filas"],
         ["Hoja", "Prompts Lectura", "Prompts Lectura", f"{len(prompt_read_rows)} filas saneadas"],
         ["Hoja", "Repositorios", "Repositorios", f"{len(repo_rows)} filas"],
         ["Hoja", "Ramas", "Ramas", f"{len(branch_rows)} filas"],
+        ["Hoja", "Ramas Organizadas", "Ramas Organizadas", f"{len(branch_org_rows)} filas"],
         ["Hoja", "PRs", "PRs", f"{len(pr_rows)} filas"],
         ["Hoja", "Codex Cloud Env", "Codex Cloud Env", f"{len(cloud_rows)} filas"],
         ["Hoja", "Agentes", "Agentes", f"{len(agent_rows)} filas"],
@@ -4121,6 +4476,8 @@ def main():
     list_rows = []
     for value in ["CONSERVAR", "REMOVER_DRY_RUN", "REVISAR_OWNER", "REVISAR_SENSIBLE", "NO_TOCAR", "ACTUAL", "APROBADO", "ESPERAR", "RECHAZADO"]:
         list_rows.append(["Decision humana", value])
+    for value in ["CANON", "ACTIVA", "WORKTREE", "PARALELA", "REVISAR", "SEGUIR", "MANTENER_SEPARADA", "PARQUEAR"]:
+        list_rows.append(["Estado rama", value])
     for value in [
         "PASS",
         "INFO",
@@ -4153,6 +4510,15 @@ def main():
         "PENDING_FINE_MODEL",
         "PENDING_EXECUTION",
         "AVAILABLE_READONLY",
+        "MONTADA_GOBERNADA",
+        "NO_MONTADA",
+        "ENTRYPOINT_INCOMPLETE",
+        "LEGACY_HEAVY_INDEXED",
+        "CHRONOLOGY_INDEXED",
+        "ARCHIVE_REVERSIBLE",
+        "INDEXED",
+        "REFERENCIA",
+        "ACTUAL",
         "MISSING_EXPECTED_OR_NOT_APPLICABLE",
         "NOT_EXECUTED_READONLY_INVENTORY",
     ]:

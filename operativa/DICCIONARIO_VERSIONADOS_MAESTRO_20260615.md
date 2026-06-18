@@ -17,7 +17,7 @@ Definir, en una sola tabla, que superficie versionada se consulta, que se toma d
 | `outputs` | Corridas generadas, evidencia fechada y salidas consumibles | `README.md`, `MAPA.md`, `RETENCION.md` | corrida vigente del frente activo, `xlsx/md/csv/png/ndjson`, readbacks durables | recuperar evidencia, comparar versiones de corrida o cerrar un delta con artefactos | vivo |
 | `tools` | Scripts de generacion, normalizacion y validacion | `README.md`, `MAPA.md` | `build_codex_root_inventory.py`, `codex-control-total.ps1`, `validate_proj_cdx_workbench.ps1`, `validate_proj_cdx_sync.ps1` | regenerar inventarios, contar `.codex`, validar superficies o cerrar un cambio | vivo |
 | `hitos` | Cierres, readbacks y hitos operativos durables | `README.md`, `MAPA.md`, `INDICE_MAESTRO.md` | hito vigente y su evidencia; usar `INDICE_MAESTRO.md` para la seleccion de version | cerrar, versionar o recuperar continuidad | versionado |
-| `catalogo-local` | Snapshot versionado del catalogo local de skills, roots y config | `README.md`, `20260614-v6/README.md` | `skills_inventory.csv`, `roots_summary.csv`, `duplicate_skill_names.csv`, `config_catalog_sections.txt`, `index_consistency_gap.csv` | alinear config, plugins, skills y roots | versionado |
+| `catalogo-local` | Snapshot versionado del catalogo local de skills, roots y config | `README.md`, `20260618-v1/README.md` | `skills_inventory.csv`, `roots_summary.csv`, `duplicate_skill_names.csv`, `config_catalog_sections.txt`, `index_consistency_gap.csv` | alinear config, plugins, skills y roots | versionado |
 
 ## Regla Operativa
 

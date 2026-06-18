@@ -3,6 +3,7 @@
 Estado compacto para continuar sin arrastrar historico pesado.
 
 ## Desde Aca Se Controla Todo
+- Identidad operativa: `CEO`; perfil fisico/ruta tecnica: `C:/Users/enzo1`.
 - Estado vivo: [CURRENT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md)
 - Siguiente paso: [NEXT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md)
 - Trazabilidad: [TRACE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TRACE.md)

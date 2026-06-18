@@ -1,0 +1,7 @@
+Branch,Repo,Estado,Actual,Worktree,Upstream,Commit,CommitDate,Decision,Nota
+codex/consume-bound-workbook-next-delta,universo-rey/projec-cdx,ACTIVA,SI,"C:/Users/enzo1/PROJEC CDX",origin/codex/consume-bound-workbook-next-delta,19736551,2026-06-18 00:52:33 -0300,SEGUIR,"Rama foco de la sesion."
+main,universo-rey/projec-cdx,CANON,NO,N/D,origin/main,b8991040,2026-06-18 00:24:36 -0300,CONSERVAR,"Rama canon de integracion."
+codex/revisar-procesos-del-equipo,universo-rey/projec-cdx,WORKTREE,NO,"C:/Users/enzo1/.codex/worktrees/49ea/PROJEC CDX",N/D,6a7923f5,2026-06-16 06:40:51 -0300,MANTENER_SEPARADA,"Rama fijada en worktree externo."
+codex/cloud-setup-ui-v1,universo-rey/projec-cdx,PARALELA,NO,N/D,N/D,5d8585a5,2026-06-16 16:22:55 -0300,PARQUEAR,"Rama paralela sin worktree activo."
+codex/dataverse-corte-ejecutora-v1,universo-rey/projec-cdx,PARALELA,NO,N/D,origin/codex/dataverse-corte-ejecutora-v1,ff8c5e41,2026-06-18 00:22:36 -0300,PARQUEAR,"Rama paralela sin worktree activo."
+codex/wave-mapas-uniformes-v1,universo-rey/projec-cdx,PARALELA,NO,N/D,N/D,ce10eb51,2026-06-16 16:22:00 -0300,PARQUEAR,"Rama paralela sin worktree activo."
