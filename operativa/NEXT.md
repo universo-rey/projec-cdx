@@ -1,25 +1,6 @@
 # Next
 
-Siguiente movimiento unico para `PROJEC CDX`.
+Movimiento unico:
+`delta_select_next_consumer_from_dataverse_live_rows`
 
-## Paso Siguiente
-
-No hay movimiento obligatorio adicional en esta ronda.
-
-La limpieza local de la PC ya quedo documentada en `operativa/INVENTARIO_FINAL_PC_20260615.md` y el estado general en `operativa/CURRENT.md`.
-
-Si aparece un nuevo hijo de `Auditar` o un nuevo delta documental, todo trabajo debe entrar por `operativa/NEXT.md`, registrar fuente -> proceso -> salida -> hito -> cierre y validar con:
-
-```powershell
-pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workbench.ps1"
-```
-
-## Resultado Esperado
-
-Una nueva entrada versionada solo si aparece una superficie nueva o un cambio operativo que realmente mueva el estado.
-
-## Criterio De Cierre
-
-- `TRACE.md` registra fuente, proceso, salida, hito y cierre.
-- `BLOCKERS.md` queda sin bloqueo activo o con bloqueo real nombrado.
-- `validate_proj_cdx_workbench.ps1` devuelve `PASS`.
+No rehidratar ni reempaquetar otra vez. Consumir solo las filas vivas ya confirmadas.
