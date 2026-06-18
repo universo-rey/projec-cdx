@@ -4,41 +4,43 @@
 Codex
 
 ## Orden
-Reducir el peso visible del trabajo dejando un solo backup vigente del workbook y consolidando la evidencia repetida en una salida corta reutilizable.
+Reducir el peso visible dejando un set minimo de superficies activas y evidencia reutilizable.
 
 ## Superficie
-`workbooks/_backups/` y `operativa/`
+`workbooks/` y `operativa/`
 
 ## Skill
 `delta-gobernado` + `governed-readback-closeout`
 
 ## Receta
-Recorte seguro de backups reconstruibles, con cierre corto y sin tocar el workbook vigente ni las superficies live.
+Recorte seguro de reconstruibles, mantenimiento de evidencia viva y continuidad por cronologia maestra.
 
 ## Tool
-`Remove-Item` + `Get-ChildItem`
+`git`, `Get-ChildItem`, `Remove-Item`
 
 ## Estado
 HECHO_VERIFICADO
 
 ## Evidencia
-- Quedó un solo backup en `workbooks/_backups/`.
-- Se conservaron `workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx` y el backup `CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617_before_update_20260617_231403.xlsx`.
-- La cronologia consolidada ya vive en `operativa/CRONOLOGIA_MAESTRA_20260617.md`.
+- Workbook vigente: `workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`.
+- Evidencia viva: `operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`.
+- Evidencia de binding: `operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md`.
+- Cronologia consolidada: `operativa/CRONOLOGIA_MAESTRA_20260617.md`.
+- Backup vigente de workbook conservado en `workbooks/_backups/`.
 
 ## Validador
-- `Get-ChildItem 'C:\\Users\\enzo1\\PROJEC CDX\\workbooks\\_backups' -File`
 - `git status --short --branch`
+- `git diff --shortstat origin/main...HEAD`
+- `tools/validate_proj_cdx_workbench.ps1`
 
 ## Riesgo
-Bajo. Se redujo el stock de rollback rapido, pero quedo un backup vigente y el workbook actual sigue intacto.
+Bajo. Se redujo historico visible, pero el workbook vigente, el backup y la cronologia maestra permanecen disponibles.
 
 ## Rollback
-Si hiciera falta recuperar backups intermedios, se pueden restaurar desde Git history.
+Restaurar desde Git history o desde el backup vigente en `workbooks/_backups/`.
 
 ## Stop Condition
-No seguir borrando historial reconstruible si en el futuro se necesita auditar una iteracion intermedia del workbook.
+No arrastrar historico pesado a superficies livianas ni borrar evidencia si no existe fuente reconstruible.
 
-## Proximos carriles
-Mantener vivo el delta actual `delta_select_next_consumer_from_dataverse_live_rows`.
-Si se sigue compactando contexto, la siguiente referencia corta debe partir de `operativa/CRONOLOGIA_MAESTRA_20260617.md`.
+## Proximos Carriles
+`delta_consume_bound_workbook_for_next_governed_decision`
