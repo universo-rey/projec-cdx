@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Launch Desk</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Launch Desk</p>
+          <h1>Turn rough launch notes into a release plan that the team can actually use.</h1>
+          <p class="lede">
+            Feed the agent a product brief, audience, launch date, constraints, and assets. It streams a
+            prioritized plan, readiness checks, owner actions, copy drafts, and the questions that still need answers.
+          </p>
+        </div>
+        <div class="status-card" id="status-card">
+          <span class="status-label">Ready</span>
+          <strong>Waiting for a launch brief</strong>
+          <p>Use the sample or paste your own launch idea. The stream will light up as the agent works.</p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <form class="panel form-panel" id="launch-form">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">Input brief</p>
+              <h2>Launch briefing</h2>
+            </div>
+            <button type="button" class="ghost-button" id="load-sample">Load sample</button>
+          </div>
+
+          <label>
+            Product brief
+            <textarea
+              id="product_brief"
+              rows="8"
+              placeholder="Describe the launch, why it matters, what changed, and any must-not-break details."
+            ></textarea>
+          </label>
+
+          <div class="field-grid">
+            <label>
+              Audience
+              <input id="audience" type="text" placeholder="e.g. existing admin users and internal support" />
+            </label>
+            <label>
+              Launch date
+              <input id="launch_date" type="date" />
+            </label>
+          </div>
+
+          <label>
+            Constraints
+            <textarea
+              id="constraints"
+              rows="4"
+              placeholder="One per line or comma separated: security review, no production downtime, pricing approved"
+            ></textarea>
+          </label>
+
+          <label>
+            Available assets
+            <textarea
+              id="assets"
+              rows="4"
+              placeholder="One per line or comma separated: product screenshots, FAQ draft, release notes outline"
+            ></textarea>
+          </label>
+
+          <label>
+            Desired channels
+            <input
+              id="desired_channels"
+              type="text"
+              value="Slack, Email, Release notes"
+              placeholder="Slack, Email, Release notes"
+            />
+          </label>
+
+          <div class="button-row">
+            <button type="submit" class="primary-button">Plan launch</button>
+            <button type="button" class="secondary-button" id="reset-form">Reset</button>
+          </div>
+        </form>
+
+        <section class="stack">
+          <article class="panel stream-panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Live stream</p>
+                <h2>Agent progress</h2>
+              </div>
+              <div class="panel-actions">
+                <button type="button" class="ghost-button small" id="cancel-run" disabled>Cancel</button>
+                <span class="pill" id="stream-pill">Idle</span>
+              </div>
+            </div>
+            <div class="stream-log" id="stream-log">
+              <p class="stream-empty">No run yet. Submit the form to start a live plan.</p>
+            </div>
+          </article>
+
+          <article class="panel result-panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Output</p>
+                <h2>Plan summary</h2>
+              </div>
+              <div class="panel-actions">
+                <button type="button" class="ghost-button small" id="export-markdown" disabled>Export .md</button>
+                <button type="button" class="ghost-button small" id="export-json" disabled>Export .json</button>
+                <div class="score-badge" id="score-badge">--</div>
+              </div>
+            </div>
+            <div class="result-body" id="result-body">
+              <p class="stream-empty">The final report will render here after the run completes.</p>
+            </div>
+          </article>
+
+          <article class="panel history-panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">History</p>
+                <h2>Recent runs</h2>
+              </div>
+              <button type="button" class="ghost-button" id="refresh-history">Refresh</button>
+            </div>
+            <div class="history-controls">
+              <input
+                id="history-query"
+                type="search"
+                placeholder="Search title, audience, summary, or request ID"
+              />
+              <select id="history-verdict">
+                <option value="all">All verdicts</option>
+                <option value="go">Go</option>
+                <option value="go_with_risks">Go with risks</option>
+                <option value="hold">Hold</option>
+              </select>
+            </div>
+            <div class="history-list" id="history-list">
+              <p class="stream-empty">No runs saved yet. Finish a launch plan and it will appear here.</p>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
