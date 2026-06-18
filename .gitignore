@@ -5,6 +5,9 @@ __pycache__/
 .venv/
 *.egg-info/
 .cache/
+.pytest_cache/
+launch-desk/.logs/
+launch-desk/data/
 workbooks/_backups/
 workbooks/~$*.xlsx
 operativa/PAC_*_HUBDESARROLLO_*.txt

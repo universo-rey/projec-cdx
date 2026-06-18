@@ -26,7 +26,7 @@ $stack = $stack.Replace('`sdu-snapshot-publisher`', '`sdu-publicador-snapshots` 
 $stack = $stack.Replace('`tcu-powerautomate-flow-auth-fix`', '`tcu-fix-auth-flows-power-automate` *(alias: `tcu-powerautomate-flow-auth-fix`)*')
 
 if ($stack -notmatch 'SKILLS_UNIFIED_TABLE\.xlsx') {
-    $stack = $stack -replace '(## Referencias\s*)', "$1`n- [SKILLS_UNIFIED_TABLE.xlsx](C:/Users/enzo1/PROJEC CDX/SKILLS_UNIFIED_TABLE.xlsx)`n"
+    $stack = $stack -replace '(## Referencias\s*)', "$1`n- [SKILLS_UNIFIED_TABLE.xlsx](C:/Users/enzo1/PROJEC%20CDX/inventarios/SKILLS_UNIFIED_TABLE.xlsx)`n"
 }
 
 $referenceStart = [Array]::IndexOf($stackLines, '## Referencias')
@@ -41,7 +41,7 @@ if ($referenceStart -ge 0) {
     }
     [void]$newLines.Add('## Referencias')
     [void]$newLines.Add('')
-    [void]$newLines.Add('- [SKILLS_UNIFIED_TABLE.xlsx](C:/Users/enzo1/PROJEC CDX/SKILLS_UNIFIED_TABLE.xlsx)')
+    [void]$newLines.Add('- [SKILLS_UNIFIED_TABLE.xlsx](C:/Users/enzo1/PROJEC%20CDX/inventarios/SKILLS_UNIFIED_TABLE.xlsx)')
     [void]$newLines.Add('- [README.md](C:/Users/enzo1/.codex/skills/README.md)')
     [void]$newLines.Add('- [MATRIZ_OPERATIVA.md](C:/Users/enzo1/.codex/skills/MATRIZ_OPERATIVA.md)')
     [void]$newLines.Add('- [PROMPT_ARRANQUE.md](C:/Users/enzo1/.codex/skills/PROMPT_ARRANQUE.md)')

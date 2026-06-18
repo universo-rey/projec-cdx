@@ -11,9 +11,10 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 from openpyxl.worksheet.datavalidation import DataValidation
 
 
-ROOT = Path(__file__).resolve().parent
-CSV_PATH = ROOT / "SKILLS_UNIFIED_TABLE.csv"
-XLSX_PATH = ROOT / "SKILLS_UNIFIED_TABLE.xlsx"
+WORKSPACE_ROOT = Path(__file__).resolve().parents[1]
+INVENTORY_ROOT = WORKSPACE_ROOT / "inventarios"
+CSV_PATH = INVENTORY_ROOT / "SKILLS_UNIFIED_TABLE.csv"
+XLSX_PATH = INVENTORY_ROOT / "SKILLS_UNIFIED_TABLE.xlsx"
 
 
 def read_rows():
@@ -86,7 +87,7 @@ def build_workbook():
 
     meta = [
         ("Generado", datetime.now().strftime("%Y-%m-%d %H:%M")),
-        ("Fuente", CSV_PATH.name),
+        ("Fuente", str(CSV_PATH.relative_to(WORKSPACE_ROOT))),
         ("Roots", "3"),
     ]
     for i, (label, value) in enumerate(meta, start=4):
@@ -255,4 +256,3 @@ def build_workbook():
 if __name__ == "__main__":
     build_workbook()
     print(f"Wrote: {XLSX_PATH}")
-

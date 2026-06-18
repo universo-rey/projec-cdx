@@ -26,18 +26,18 @@ function Resolve-ProjectRoot {
   }
 
   foreach ($candidate in $candidates) {
-    if (Test-Path -LiteralPath (Join-Path $candidate 'src\projec_cdx_cloud\__init__.py')) {
+    if (Test-Path -LiteralPath (Join-Path $candidate 'src/projec_cdx_cloud/__init__.py')) {
       return (Resolve-Path -LiteralPath $candidate).Path
     }
   }
 
-  throw "No se encontro una raiz con src\projec_cdx_cloud en $BaseRoot ni en sus worktrees."
+  throw "No se encontro una raiz con src/projec_cdx_cloud en $BaseRoot ni en sus worktrees."
 }
 
 function Resolve-PythonExe {
   param([Parameter(Mandatory = $true)][string]$ProjectRoot)
 
-  $candidate = Join-Path $ProjectRoot '.venv\Scripts\python.exe'
+  $candidate = Join-Path $ProjectRoot '.venv/Scripts/python.exe'
   if (Test-Path -LiteralPath $candidate) {
     return $candidate
   }
@@ -47,7 +47,7 @@ function Resolve-PythonExe {
     foreach ($line in ($gitWorktrees -split [Environment]::NewLine)) {
       if ($line.StartsWith('worktree ')) {
         $worktreeRoot = $line.Substring(9).Trim()
-        $candidate = Join-Path $worktreeRoot '.venv\Scripts\python.exe'
+        $candidate = Join-Path $worktreeRoot '.venv/Scripts/python.exe'
         if (Test-Path -LiteralPath $candidate) {
           return $candidate
         }
@@ -68,7 +68,7 @@ $projectRoot = Resolve-ProjectRoot -BaseRoot $repoRoot
 $python = Resolve-PythonExe -ProjectRoot $projectRoot
 
 if ([string]::IsNullOrWhiteSpace($Model)) {
-  $Model = 'gpt-5.4-mini'
+  $Model = 'gpt-5.5'
 }
 
 Set-Location $projectRoot

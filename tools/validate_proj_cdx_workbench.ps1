@@ -1,5 +1,5 @@
 param(
-  [string]$Root = "C:\Users\enzo1\PROJEC CDX",
+  [string]$Root = "C:/Users/enzo1/PROJEC CDX",
   [switch]$Json
 )
 

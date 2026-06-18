@@ -313,7 +313,7 @@ function Test-PowerShellLayer {
         Add-Check -Area 'powershell' -Name 'pwsh' -Status red -Detail 'pwsh no disponible.' -Recommendation 'Instalar PowerShell 7.'
     }
 
-    $profilePath = 'C:\Users\enzo1\OneDrive - ESCRIBANIA BITSCH\Documentos\PowerShell\Microsoft.PowerShell_profile.ps1'
+    $profilePath = 'C:/Users/enzo1/Documents/PowerShell/Microsoft.PowerShell_profile.ps1'
     if (Test-Path -LiteralPath $profilePath) {
         $profile = Get-Item -LiteralPath $profilePath -Force
         $color = if ($profile.Length -eq 0) { 'green' } else { 'yellow' }
@@ -325,7 +325,7 @@ function Test-PowerShellLayer {
     }
 
     if (-not $SkipProfileTest) {
-        $testScript = 'C:\Users\enzo1\PROJEC CDX\tools\test_codex_powershell_layout.ps1'
+        $testScript = 'C:/Users/enzo1/PROJEC CDX/tools/test_codex_powershell_layout.ps1'
         if (Test-Path -LiteralPath $testScript) {
             $result = Invoke-ReadOnlyCommand -FilePath 'pwsh' -Arguments @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', $testScript) -TimeoutSeconds 15
             if ($result.exitCode -eq 0 -and $result.stdout -match 'LAYOUT_OK') {

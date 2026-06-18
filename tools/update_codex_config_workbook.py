@@ -63,6 +63,7 @@ D_LEVELS_CSV = D_CODEX_ROOT / "agents" / "LEVELS.csv"
 D_AGENT_WORKPAPERS_MATRIX = D_CODEX_ROOT / "matrices" / "AGENT_WORKPAPERS_MATRIX.csv"
 D_GOVERNED_ASSET_INVENTORY = D_CODEX_ROOT / "matrices" / "GOVERNED_ASSET_CANONICAL_INVENTORY.csv"
 SKILLS_UNIFIED_TABLE = ROOT / "inventarios" / "SKILLS_UNIFIED_TABLE.csv"
+PWSH_CMD = Path(r"C:\Users\enzo1\AppData\Local\Microsoft\WindowsApps\pwsh.exe")
 UNIVERSE_AUDIT = ROOT / "outputs" / "universe_relationship_audit_20260614" / "UNIVERSE_RELATIONSHIP_AUDIT.csv"
 CONNECTION_MATRIX_DIR = CODEX_ROOT / "matrices" / "matrices" / "connections"
 DATAVERSE_CONNECTION_DATA = CODEX_ROOT / "matrices" / "dataverse" / "data"
@@ -106,8 +107,9 @@ def gb(value: int | float | None) -> float | None:
 
 def ps_json(command: str):
     try:
+        shell = str(PWSH_CMD) if PWSH_CMD.exists() else "pwsh"
         result = subprocess.run(
-            ["powershell.exe", "-NoProfile", "-Command", command],
+            [shell, "-NoProfile", "-Command", command],
             capture_output=True,
             text=True,
             timeout=25,

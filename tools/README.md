@@ -49,29 +49,29 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 ## Control total rapido
 
 ```powershell
-pwsh -NoProfile -File "C:\Users\enzo1\PROJEC CDX\tools\codex-control-total.ps1"
+pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/codex-control-total.ps1"
 ```
 
 Salida auditable:
 
 ```powershell
-pwsh -NoProfile -File "C:\Users\enzo1\PROJEC CDX\tools\codex-control-total.ps1" -Format Json
+pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/codex-control-total.ps1" -Format Json
 ```
 
 Pasada extendida de repos:
 
 ```powershell
-pwsh -NoProfile -File "C:\Users\enzo1\PROJEC CDX\tools\codex-control-total.ps1" -Full
+pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/codex-control-total.ps1" -Full
 ```
 
 Barrido completo de la raiz GitHub:
 
 ```powershell
-pwsh -NoProfile -File "C:\Users\enzo1\PROJEC CDX\tools\codex-control-total.ps1" -ScanGitHubRoot
+pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/codex-control-total.ps1" -ScanGitHubRoot
 ```
 
 Arranque vivo unico:
 
 ```powershell
-pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
+pwsh -NoProfile -File "./tools/codex-cloud-live.ps1"
 ```

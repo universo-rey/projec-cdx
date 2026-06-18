@@ -6,17 +6,24 @@ build-backend = "setuptools.build_meta"
 name = "projec-cdx"
 version = "0.1.0"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+  "fastapi>=0.137.2",
+  "httpx>=0.28.1",
+  "jinja2>=3.1.6",
+  "openai-agents>=0.17.5",
+  "uvicorn>=0.49.0",
+]
 
 [project.optional-dependencies]
 dev = [
   "pytest",
 ]
-agents-sdk = ["openai-agents>=0.3.0"]
-openai-orchestration = ["openai>=2.0.0"]
+agents-sdk = ["openai-agents>=0.17.5"]
+openai-orchestration = ["openai>=2.43.0"]
 
 [project.scripts]
 projec-cdx-cloud = "projec_cdx_cloud.cli:main"
+launch-desk = "launch_desk.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,9 +1,9 @@
 param(
-  [string]$Root = "C:\Users\enzo1\PROJEC CDX",
-  [string]$ChainCsv = "C:\Users\enzo1\Documents\Codex\2026-06-14\projec-cdx-handoff-20260614\outputs\PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv",
-  [string]$SchemaCsv = "C:\Users\enzo1\Documents\Codex\2026-06-14\projec-cdx-handoff-20260614\outputs\PROJEC_CDX_OPERATIONAL_CHAIN_SCHEMA_20260615.csv",
-  [string]$DataverseSourceMapCsv = "C:\Users\enzo1\PROJEC CDX\dataverse\DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
-  [string]$AtomicMatrixCsv = "C:\Users\enzo1\PROJEC CDX\atomic\CODEX_ATOMIC_ACTION_MATRIX.csv",
+  [string]$Root = "C:/Users/enzo1/PROJEC CDX",
+  [string]$ChainCsv = "C:/Users/enzo1/Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv",
+  [string]$SchemaCsv = "C:/Users/enzo1/Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/PROJEC_CDX_OPERATIONAL_CHAIN_SCHEMA_20260615.csv",
+  [string]$DataverseSourceMapCsv = "C:/Users/enzo1/PROJEC CDX/dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
+  [string]$AtomicMatrixCsv = "C:/Users/enzo1/PROJEC CDX/atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
   [switch]$Json
 )
 

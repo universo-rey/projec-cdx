@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-DEFAULT_MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.4-mini")
+DEFAULT_MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.5")
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 SYSTEM_INSTRUCTIONS = (
