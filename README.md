@@ -91,6 +91,7 @@ pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1" -Prompt "Tu prompt aca"
 - [Playbooks](C:/Users/enzo1/PROJEC%20CDX/playbooks/README.md)
 - [Excel al frente](C:/Users/enzo1/PROJEC%20CDX/workbooks/EXCEL_AL_FRENTE.md)
 - [Workbook de control](C:/Users/enzo1/PROJEC%20CDX/workbooks/control_operativo.xlsx)
+- [Configuracion vigente](C:/Users/enzo1/PROJEC%20CDX/workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx)
 - [Tracker](C:/Users/enzo1/PROJEC%20CDX/workbooks/tracker.xlsx)
 - [Dataverse](C:/Users/enzo1/PROJEC%20CDX/dataverse/README.md)
 - [src](C:/Users/enzo1/PROJEC%20CDX/src/README.md)

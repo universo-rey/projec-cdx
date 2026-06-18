@@ -4,6 +4,7 @@ Indice visible de los libros Excel principales de `PROJEC CDX`.
 
 ## Fuentes Vivas
 
+- [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx) - configuracion vigente con agentes, entornos, colas y Dataverse.
 - [control_operativo.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/control_operativo.xlsx) - tablero operativo actual.
 - [inicio.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/inicio.xlsx) - libro fuente de inicio.
 - [tracker.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/tracker.xlsx) - libro fuente de tracker.

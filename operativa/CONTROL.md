@@ -24,6 +24,7 @@ Punto unico de control operativo de `PROJEC CDX`.
 - Validador sync: [validate_proj_cdx_sync.ps1](C:/Users/enzo1/PROJEC%20CDX/tools/validate_proj_cdx_sync.ps1)
 - Excel al frente: [EXCEL_AL_FRENTE.md](C:/Users/enzo1/PROJEC%20CDX/workbooks/EXCEL_AL_FRENTE.md)
 - Workbook: [control_operativo.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/control_operativo.xlsx)
+- Configuracion vigente: [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx)
 
 ## Regla Atomica
 

@@ -2,6 +2,11 @@
 
 Siguiente movimiento unico para `PROJEC CDX`.
 
+## Nota De Peso
+
+- El recorte de backups ya quedo aplicado.
+- Si hace falta contexto corto, abrir `operativa/READBACK_CIERRE_PESO_REDUCIDO_20260617.md`.
+
 ## Regla Anti-Ruido
 
 - Solo el bloque `Paso Siguiente` declara el movimiento actual.
