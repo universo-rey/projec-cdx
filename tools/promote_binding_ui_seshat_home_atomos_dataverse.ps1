@@ -7,6 +7,8 @@ param(
     [string]$OutputPath = "operativa\DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json"
 )
 
+# MANUAL-ONLY LIVE WRITE: Dataverse POST/PATCH capable. Requires explicit target, rollback, postcheck, and operator approval.
+
 $ErrorActionPreference = "Stop"
 
 function Resolve-InputPath {

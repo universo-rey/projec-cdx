@@ -5,6 +5,8 @@ param(
   [string]$Model = $env:OPENAI_MODEL
 )
 
+# MANUAL-ONLY: local/cloud agent invocation. Do not run from CI or automation without explicit approval.
+
 $ErrorActionPreference = 'Stop'
 
 function Resolve-ProjectRoot {

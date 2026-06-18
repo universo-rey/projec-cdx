@@ -7,6 +7,8 @@ param(
     [string]$OutputPath = "operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json"
 )
 
+# MANUAL-ONLY LIVE WRITE: Dataverse POST/PATCH capable. Requires explicit target, rollback, postcheck, and operator approval.
+
 $ErrorActionPreference = "Stop"
 
 function Get-Token {
