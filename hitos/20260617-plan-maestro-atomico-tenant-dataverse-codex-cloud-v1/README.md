@@ -25,4 +25,3 @@ Hito atomico para preparar la wave maestra de orden, correccion, atomicidad, ide
 ## Siguiente Delta
 
 `delta_repo_dirty_worktree_triage_by_surface`
-

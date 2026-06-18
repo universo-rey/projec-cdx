@@ -32,4 +32,3 @@ Lean el acta borrador que quedo preparada temprano y respondan como mesa.
 
 Si falta target concreto, la mesa se limita a preparacion y lectura.
 Si el target aparece, se reabre con owner, rollback, postcheck, evidencia y validator.
-

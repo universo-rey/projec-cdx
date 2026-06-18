@@ -22,4 +22,3 @@ Hito atomico para la pasada read-only de `delta_repo_dirty_worktree_triage_by_su
 ## Siguiente Delta
 
 `delta_cabina_universal_d_canon_context_package`
-

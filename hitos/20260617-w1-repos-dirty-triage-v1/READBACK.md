@@ -27,4 +27,3 @@ Se completo la matriz read-only de los `13` repos dirty actuales bajo `C:/Users/
 ## Proximo Delta Unico
 
 `delta_cabina_universal_d_canon_context_package`
-

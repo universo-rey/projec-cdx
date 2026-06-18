@@ -24,4 +24,3 @@ Quiero una sola respuesta comun:
 - cual es el siguiente paso
 
 Despues de esa charla, preparen el acta.
-

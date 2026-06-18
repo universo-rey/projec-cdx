@@ -17,4 +17,3 @@ Quiero una sola voz comun:
 - cual es el siguiente paso
 
 Despues de eso, preparen el acta.
-

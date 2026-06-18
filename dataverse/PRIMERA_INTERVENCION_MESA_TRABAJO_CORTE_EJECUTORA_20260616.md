@@ -28,4 +28,3 @@ Respuesta comun de la mesa:
 - cual es el siguiente paso
 
 Despues de esta intervencion, se redacta el acta.
-
