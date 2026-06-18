@@ -39,6 +39,7 @@ La wave visible mas reciente es [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/P
 - [workbooks/README.md](C:/Users/enzo1/PROJEC%20CDX/workbooks/README.md)
 - [workbooks/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/workbooks/MAPA.md)
 - [workbooks/EXCEL_AL_FRENTE.md](C:/Users/enzo1/PROJEC%20CDX/workbooks/EXCEL_AL_FRENTE.md)
+- [launch-desk/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/launch-desk/MAPA.md)
 - [dataverse/README.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/README.md)
 - [dataverse/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/MAPA.md)
 - [dataverse/GATE.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/GATE.md)

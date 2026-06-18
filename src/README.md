@@ -2,7 +2,10 @@
 
 Capa de codigo fuente de `PROJEC CDX`.
 
-El paquete principal vive en [projec_cdx_cloud](C:/Users/enzo1/PROJEC%20CDX/src/projec_cdx_cloud/).
+Los paquetes principales viven en:
+
+- [projec_cdx_cloud](C:/Users/enzo1/PROJEC%20CDX/src/projec_cdx_cloud/)
+- [launch_desk](C:/Users/enzo1/PROJEC%20CDX/src/launch_desk/)
 
 ## Indice
 
@@ -11,6 +14,9 @@ El paquete principal vive en [projec_cdx_cloud](C:/Users/enzo1/PROJEC%20CDX/src/
 - [projec_cdx_cloud/agent.py](C:/Users/enzo1/PROJEC%20CDX/src/projec_cdx_cloud/agent.py)
 - [projec_cdx_cloud/__main__.py](C:/Users/enzo1/PROJEC%20CDX/src/projec_cdx_cloud/__main__.py)
 - [projec_cdx_cloud/__init__.py](C:/Users/enzo1/PROJEC%20CDX/src/projec_cdx_cloud/__init__.py)
+- [launch_desk/server.py](C:/Users/enzo1/PROJEC%20CDX/src/launch_desk/server.py)
+- [launch_desk/agent.py](C:/Users/enzo1/PROJEC%20CDX/src/launch_desk/agent.py)
+- [launch_desk/tools.py](C:/Users/enzo1/PROJEC%20CDX/src/launch_desk/tools.py)
 
 ## Regla
 

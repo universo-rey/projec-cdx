@@ -15,6 +15,7 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 
 ## Al Frente
 
+- [Launch Desk](C:/Users/enzo1/PROJEC%20CDX/launch-desk/MAPA.md)
 - [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md)
 - [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
 - [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
@@ -80,6 +81,8 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 - [packages/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/packages/MAPA.md)
 - [tools/README.md](C:/Users/enzo1/PROJEC%20CDX/tools/README.md)
 - [tools/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/tools/MAPA.md)
+- [launch-desk/README.md](C:/Users/enzo1/PROJEC%20CDX/launch-desk/README.md)
+- [launch-desk/VALIDATION.md](C:/Users/enzo1/PROJEC%20CDX/launch-desk/VALIDATION.md)
 - [src/README.md](C:/Users/enzo1/PROJEC%20CDX/src/README.md)
 - [src/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/src/MAPA.md)
 - [tools/validate_proj_cdx_workbench.ps1](C:/Users/enzo1/PROJEC%20CDX/tools/validate_proj_cdx_workbench.ps1)

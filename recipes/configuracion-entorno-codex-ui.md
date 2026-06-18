@@ -1,6 +1,6 @@
 # Configuracion Entorno Codex UI
 
-Receta para declarar el entorno necesario en la UI de Codex y dejar listo el carril vivo de `PROJEC CDX` sin mezclarlo con live write.
+Receta para declarar el entorno necesario en la UI de Codex y dejar listo el carril local de `PROJEC CDX` sin mezclarlo con live write ni con un workspace cloud.
 
 La configuracion real queda en `.codex/config.toml` en la raiz del proyecto y en el worktree activo.
 
@@ -20,38 +20,25 @@ Cuando hace falta:
 ## Campos Manuales
 
 Usar este carril cuando queres un arranque seguro estilo `cabina-universal-d`, sin bootstrap real en la UI.
-En esta superficie los paths son del contenedor Linux, no de tu Windows local:
+En esta superficie local los paths son de Windows normalizados con `/`:
 
 - `Nombre`: `PROJEC CDX`
 - `Agente`: `EATOMIC`
-- `Directorio del espacio de trabajo`: `/workspace/projec-cdx`
+- `Directorio del espacio de trabajo`: `C:/Users/enzo1/PROJEC CDX`
 - `Variables de entorno del script de instalación`:
-  - `CODEX_SOURCE_TREE_PATH`: `/workspace/projec-cdx`
-  - `CODEX_WORKTREE_PATH`: `/workspace/projec-cdx`
+  - `CODEX_RUNTIME_SURFACE`: `local-desktop`
+  - `CODEX_SOURCE_TREE_PATH`: `C:/Users/enzo1/PROJEC CDX`
+  - `CODEX_WORKTREE_PATH`: `C:/Users/enzo1/PROJEC CDX`
 - `Script de configuración`:
 
-```bash
-#!/usr/bin/env bash
-set +e
-
-echo "SCRIPT_ID=projec_cdx_codex_cloud_setup_noop_20260616"
-pwd || true
-echo "NOOP_SETUP_PASS=True"
-
-exit 0
+```powershell
+pwsh -NoProfile -File ".\tools\codex-environment-setup.ps1"
 ```
 
 - `Script de limpieza`:
 
-```bash
-#!/usr/bin/env bash
-set +e
-
-echo "SCRIPT_ID=projec_cdx_codex_cloud_maintenance_noop_20260616"
-pwd || true
-echo "NOOP_MAINTENANCE_PASS=True"
-
-exit 0
+```powershell
+pwsh -NoProfile -File ".\tools\codex-environment-cleanup.ps1"
 ```
 
 ## Personalidad EATOMIC
@@ -80,37 +67,43 @@ Notas:
 
 ## Derivación
 
-1. Confirmar la raiz canonica `C:\Users\enzo1\PROJEC CDX`.
-2. Confirmar el workspace activo `C:\Users\enzo1\PROJEC CDX`.
-3. Abrir la UI de Codex sobre la raiz correcta o sobre el workspace correcto, segun el carril activo.
-4. Confirmar que la UI muestre la configuracion del proyecto y que lea la capa local desde `.codex/config.toml`.
-5. Verificar que las variables de entorno de control queden presentes:
-   - `OPENAI_MODEL=gpt-5.4-mini`
-   - `CODEX_CLOUD_ENABLED=1`
-   - `CODEX_CLOUD_MODE=cloud`
-   - `CODEX_CLOUD_GATE=metadata-only`
+1. Confirmar la raiz canonica de repos `C:/Users/enzo1/Documents/GitHub`.
+2. Confirmar el repo canonico de Cabina `C:/Users/enzo1/Documents/GitHub/cabina-universal-d`.
+3. Confirmar el workbench/metadata root `C:/Users/enzo1/PROJEC CDX`.
+4. Abrir la UI de Codex sobre la raiz correcta o sobre el workspace correcto, segun el carril activo.
+5. Confirmar que la UI muestre la configuracion del proyecto y que lea la capa local desde `.codex/config.toml`.
+6. Verificar que las variables de entorno de control queden presentes:
+   - `OPENAI_MODEL=gpt-5.5`
+   - `CODEX_RUNTIME_SURFACE=local-desktop`
+   - `CODEX_CLOUD_ENABLED=0`
+   - `CODEX_CLOUD_MODE=local`
+   - `CODEX_CLOUD_GATE=local-only`
    - `CODEX_CLOUD_PROFILE=projec-cdx`
-   - `CODEX_CLOUD_REPO_ROOT=C:\Users\enzo1\PROJEC CDX`
-   - `CODEX_CLOUD_WORKTREE=C:\Users\enzo1\PROJEC CDX`
-   - `CODEX_CLOUD_BRANCH=main`
-6. Si la UI sigue mostrando otro contexto, cerrar y reabrir el proyecto correcto antes de seguir.
-7. Verificar humo en la raiz:
+   - `CODEX_REPOS_ROOT=C:/Users/enzo1/Documents/GitHub`
+   - `CODEX_CABINA_REPO_ROOT=C:/Users/enzo1/Documents/GitHub/cabina-universal-d`
+   - `CODEX_WORKBENCH_ROOT=C:/Users/enzo1/PROJEC CDX`
+   - `CODEX_CLOUD_REPO_ROOT=C:/Users/enzo1/Documents/GitHub/cabina-universal-d`
+   - `CODEX_CLOUD_METADATA_ROOT=C:/Users/enzo1/PROJEC CDX`
+   - `CODEX_CLOUD_WORKTREE=C:/Users/enzo1/PROJEC CDX`
+   - `CODEX_CLOUD_BRANCH=codex/consume-bound-workbook-next-delta`
+7. Si la UI sigue mostrando otro contexto, cerrar y reabrir el proyecto correcto antes de seguir.
+8. Verificar humo en la raiz:
 
 ```powershell
-.\.venv\Scripts\python main.py --smoke --json
+./.venv/Scripts/python main.py --smoke --json
 ```
 
-8. Verificar arranque vivo con el acceso unico:
+9. Verificar arranque local con el acceso unico:
 
 ```powershell
-pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1" -Prompt "Responde solo: OK."
+C:/Users/enzo1/AppData/Local/Microsoft/WindowsApps/pwsh.exe -NoProfile -File "./tools/codex-environment-setup.ps1"
 ```
 
-9. Registrar la actualizacion en `operativa/CURRENT.md` y `operativa/TRACE.md` si la UI cambio de estado real.
+10. Registrar la actualizacion en `operativa/CURRENT.md` y `operativa/TRACE.md` si la UI cambio de estado real.
 
 ## Salida
 
-Entorno de Codex UI alineado, runner local usable y gate mantenido en `metadata-only`.
+Entorno de Codex UI alineado, runner local usable y gate mantenido en `local-only`.
 
 ## Stop Condition
 

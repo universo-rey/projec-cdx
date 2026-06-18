@@ -10,10 +10,11 @@ Codex Cloud se usa para delegacion, orquestacion y trabajo repetible de varios p
 
 ## Current Context
 
-- repo root: C:\Users\enzo1\PROJEC CDX
+- canonical repo root: C:/Users/enzo1/Documents/GitHub/cabina-universal-d
+- metadata/workbench root: C:/Users/enzo1/PROJEC CDX
 - branch: main
 - remote: https://github.com/universo-rey/projec-cdx.git
-- workspace root: C:\Users\enzo1\PROJEC CDX
+- workspace root: C:/Users/enzo1/PROJEC CDX
 - mode: cloud
 - gate: metadata-only
 - generated at: 2026-06-16T07:06:46.4472407-03:00
@@ -24,16 +25,20 @@ Codex Cloud se usa para delegacion, orquestacion y trabajo repetible de varios p
 - `CODEX_CLOUD_MODE` | default: `cloud` | Execution mode: local, cloud, or hybrid.
 - `CODEX_CLOUD_GATE` | default: `metadata-only` | Gate contract for metadata-only or higher.
 - `CODEX_CLOUD_PROFILE` | default: `projec-cdx` | Project profile name.
-- `CODEX_CLOUD_REPO_ROOT` | default: `C:\Users\enzo1\PROJEC CDX` | Canonical repo root.
-- `CODEX_CLOUD_WORKTREE` | default: `C:\Users\enzo1\PROJEC CDX` | Current isolated workspace path.
+- `CODEX_REPOS_ROOT` | default: `C:/Users/enzo1/Documents/GitHub` | Canonical local repositories root.
+- `CODEX_CABINA_REPO_ROOT` | default: `C:/Users/enzo1/Documents/GitHub/cabina-universal-d` | Canonical Cabina repository root.
+- `CODEX_WORKBENCH_ROOT` | default: `C:/Users/enzo1/PROJEC CDX` | PROJEC CDX workbench and metadata root.
+- `CODEX_CLOUD_REPO_ROOT` | default: `C:/Users/enzo1/Documents/GitHub/cabina-universal-d` | Canonical repo root for delegated cloud work.
+- `CODEX_CLOUD_METADATA_ROOT` | default: `C:/Users/enzo1/PROJEC CDX` | Local contract, registry, and Dataverse metadata root.
+- `CODEX_CLOUD_WORKTREE` | default: `C:/Users/enzo1/PROJEC CDX` | Current isolated workspace path.
 - `CODEX_CLOUD_BRANCH` | default: `main` | Current branch for the lane.
-- `CODEX_CLOUD_CONTRACT` | default: `C:\Users\enzo1\PROJEC CDX\operativa\CODEX_CLOUD_CONTRACT_20260615.md` | Contract document path.
-- `CODEX_CLOUD_MAINTENANCE_LOG` | default: `C:\Users\enzo1\PROJEC CDX\operativa\CODEX_CLOUD_MAINTENANCE_20260615.md` | Maintenance log path.
-- `CODEX_CLOUD_DATAVERSE_REGISTRY` | default: `C:\Users\enzo1\PROJEC CDX\dataverse\REGISTRO_CODEX_CLOUD_20260615.md` | Metadata-only Dataverse registry path.
-- `CODEX_CLOUD_DATAVERSE_GATE` | default: `C:\Users\enzo1\PROJEC CDX\dataverse\GATE.md` | Dataverse gate file.
-- `CODEX_CLOUD_DATAVERSE_BLOCKERS` | default: `C:\Users\enzo1\PROJEC CDX\dataverse\REGISTRO_BLOQUEOS.md` | Dataverse blocker registry.
-- `CODEX_CLOUD_DATAVERSE_SOURCE_MAP` | default: `C:\Users\enzo1\PROJEC CDX\dataverse\MAPA_CONEXIONES_DATAVERSE.md` | Dataverse connection and drift map.
-- `CODEX_CLOUD_DATAVERSE_PLAN` | default: `C:\Users\enzo1\PROJEC CDX\dataverse\PLAN_SEGUNDA_PASADA.md` | Dataverse second-pass plan.
+- `CODEX_CLOUD_CONTRACT` | default: `C:/Users/enzo1/PROJEC CDX/operativa/CODEX_CLOUD_CONTRACT_20260615.md` | Contract document path.
+- `CODEX_CLOUD_MAINTENANCE_LOG` | default: `C:/Users/enzo1/PROJEC CDX/operativa/CODEX_CLOUD_MAINTENANCE_20260615.md` | Maintenance log path.
+- `CODEX_CLOUD_DATAVERSE_REGISTRY` | default: `C:/Users/enzo1/PROJEC CDX/dataverse/REGISTRO_CODEX_CLOUD_20260615.md` | Metadata-only Dataverse registry path.
+- `CODEX_CLOUD_DATAVERSE_GATE` | default: `C:/Users/enzo1/PROJEC CDX/dataverse/GATE.md` | Dataverse gate file.
+- `CODEX_CLOUD_DATAVERSE_BLOCKERS` | default: `C:/Users/enzo1/PROJEC CDX/dataverse/REGISTRO_BLOQUEOS.md` | Dataverse blocker registry.
+- `CODEX_CLOUD_DATAVERSE_SOURCE_MAP` | default: `C:/Users/enzo1/PROJEC CDX/dataverse/MAPA_CONEXIONES_DATAVERSE.md` | Dataverse connection and drift map.
+- `CODEX_CLOUD_DATAVERSE_PLAN` | default: `C:/Users/enzo1/PROJEC CDX/dataverse/PLAN_SEGUNDA_PASADA.md` | Dataverse second-pass plan.
 - `OPENAI_MODEL` | default: `gpt-5.4-mini` | Optional fallback model when API mode is used.
 
 `OPENAI_API_KEY` queda fuera del repo. Solo se usa si existe un carril API de respaldo.

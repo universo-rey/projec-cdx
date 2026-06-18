@@ -21,13 +21,13 @@ sh ./tools/codex-cloud-ui-maintenance-noop.sh
 ## Comando unico
 
 ```powershell
-pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
+pwsh -NoProfile -File "./tools/codex-cloud-live.ps1"
 ```
 
 ## Verificacion rapida
 
 ```powershell
-.\.venv\Scripts\python main.py --smoke
+./.venv/Scripts/python main.py --smoke
 ```
 
 El humo debe cerrar con `context_ok=True`. Si aparece `prepared_with_context_drift`, el Git real ya esta identificado pero la sesion o la UI siguen inyectando variables viejas; reiniciar el entorno antes de activar el siguiente turno.

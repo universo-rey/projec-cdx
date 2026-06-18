@@ -61,24 +61,24 @@ exit 0
 
 ## Paso Unico
 
-1. Abrir Codex sobre `C:\Users\enzo1\PROJEC CDX`.
+1. Abrir Codex sobre `C:/Users/enzo1/PROJEC CDX`.
 2. Confirmar que la UI lea `.codex/config.toml` del carril abierto.
 3. Verificar que el entorno visible muestre:
-   - `OPENAI_MODEL=gpt-5.4-mini`
+   - `OPENAI_MODEL=gpt-5.5`
    - `CODEX_CLOUD_ENABLED=1`
    - `CODEX_CLOUD_MODE=cloud`
    - `CODEX_CLOUD_GATE=metadata-only`
    - `CODEX_CLOUD_PROFILE=projec-cdx`
-   - `CODEX_CLOUD_REPO_ROOT=C:\Users\enzo1\PROJEC CDX`
-   - `CODEX_CLOUD_WORKTREE=C:\Users\enzo1\PROJEC CDX`
-   - `CODEX_CLOUD_BRANCH=main`
+   - `CODEX_CLOUD_REPO_ROOT=C:/Users/enzo1/PROJEC CDX`
+   - `CODEX_CLOUD_WORKTREE=C:/Users/enzo1/PROJEC CDX`
+   - `CODEX_CLOUD_BRANCH=codex/consume-bound-workbook-next-delta`
 4. Si la UI muestra otro contexto, cerrar, reabrir el proyecto correcto y volver a validar.
 5. Correr humo local.
 
 ## Humo Local
 
 ```powershell
-.\.venv\Scripts\python main.py --smoke --json
+./.venv/Scripts/python main.py --smoke --json
 ```
 
 ## Regla

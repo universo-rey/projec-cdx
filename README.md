@@ -2,6 +2,10 @@
 
 Snapshot liviano de la cabina.
 
+## Launch Desk
+
+- App de planificacion de lanzamientos: [launch-desk/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/launch-desk/MAPA.md)
+
 ## Entrada
 - [Current](operativa/CURRENT.md)
 - [Next](operativa/NEXT.md)
