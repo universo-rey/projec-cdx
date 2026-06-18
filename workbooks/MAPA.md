@@ -21,7 +21,7 @@ Vista unica de los libros de trabajo visibles de `PROJEC CDX`.
 - `EXCEL_AL_FRENTE.md` trae al frente fuentes vivas y salidas Excel generadas.
 - `CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx` es el workbook vigente de configuracion global.
 - Consumidor aplicado de Dataverse live rows: `CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`, con fila `DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED` en `Dataverse Fuentes`.
-- Hojas nuevas de decision local: `Workspace Actual` y `Superficies Locales`.
+- Hojas nuevas de decision local: `Workspace Actual`, `Superficies Locales` y `Ramas Organizadas`.
 
 ## Regla
 - Si cambia una fuente viva, se actualiza el workbook y su evidencia.

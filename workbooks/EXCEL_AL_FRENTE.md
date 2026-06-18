@@ -3,7 +3,7 @@
 Indice visible de los libros Excel principales de `PROJEC CDX`.
 
 ## Fuente Viva Principal
-- [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx) - configuracion vigente con agentes, entornos, colas, repositorios, skills, recetas, tools, conexiones y Dataverse.
+- [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx) - configuracion vigente con agentes, entornos, colas, repositorios, ramas organizadas, skills, recetas, tools, conexiones y Dataverse.
 
 ## Fuentes Operativas
 - [control_operativo.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/control_operativo.xlsx) - tablero operativo actual.
@@ -22,7 +22,9 @@ Indice visible de los libros Excel principales de `PROJEC CDX`.
 ## Estado Workspace Y Superficies
 - Hoja: `Workspace Actual`.
 - Hoja: `Superficies Locales`.
+- Hoja: `Ramas Organizadas`.
 - Evidencia: `operativa/READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md`.
+- Evidencia: `operativa/READBACK_BRANCH_ORGANIZATION_20260618.md`.
 
 ## Regla
 - `workbooks/` contiene fuentes vivas o libros de uso operativo.

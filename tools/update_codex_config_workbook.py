@@ -424,6 +424,87 @@ def discover_branch_rows(repo_rows: list[list]) -> list[list]:
     return rows
 
 
+def discover_branch_organization_rows() -> list[list]:
+    repo_slug = repo_slug_from_remote(git_value(ROOT, ["remote", "get-url", "origin"])) or ROOT.name
+    current_branch = git_value(ROOT, ["branch", "--show-current"]) or "DETACHED_OR_UNKNOWN"
+    branch_ref_output = git_value(
+        ROOT,
+        [
+            "for-each-ref",
+            "--format=%(refname:short)|%(objectname:short)|%(committerdate:iso8601)|%(upstream:short)",
+            "refs/heads",
+        ],
+    )
+    worktree_output = git_value(ROOT, ["worktree", "list", "--porcelain"])
+    branch_worktrees: dict[str, str] = {}
+    current_worktree = ""
+    for line in worktree_output.splitlines():
+        if line.startswith("worktree "):
+            current_worktree = line[len("worktree ") :].strip()
+        elif line.startswith("branch "):
+            branch_ref = line[len("branch ") :].strip()
+            if branch_ref.startswith("refs/heads/"):
+                branch_name = branch_ref.removeprefix("refs/heads/")
+                branch_worktrees[branch_name] = current_worktree
+
+    rows: list[list] = []
+    root_abs = os.path.normcase(os.path.abspath(str(ROOT)))
+    for line in branch_ref_output.splitlines():
+        parts = line.split("|")
+        if len(parts) < 4:
+            continue
+        branch_name, commit, committed_at, upstream = parts[:4]
+        branch_worktree = branch_worktrees.get(branch_name, "")
+        branch_worktree_norm = os.path.normcase(os.path.abspath(branch_worktree)) if branch_worktree else ""
+        is_current = branch_name == current_branch
+        is_root_worktree = branch_worktree_norm == root_abs
+        actual = "SI" if is_current or is_root_worktree else "NO"
+
+        if is_current and branch_name == "main":
+            estado = "CANON"
+            decision = "SEGUIR"
+            note = "Rama canon y activa del workspace."
+        elif is_current:
+            estado = "ACTIVA"
+            decision = "SEGUIR"
+            note = "Rama foco de la sesion."
+        elif branch_name == "main":
+            estado = "CANON"
+            decision = "CONSERVAR"
+            note = "Rama canon de integracion."
+        elif branch_worktree and not is_root_worktree:
+            estado = "WORKTREE"
+            decision = "MANTENER_SEPARADA"
+            note = f"Rama fijada en worktree externo: {branch_worktree}."
+        elif branch_name.startswith("codex/"):
+            estado = "PARALELA"
+            decision = "PARQUEAR"
+            note = "Rama paralela sin worktree activo."
+        else:
+            estado = "REVISAR"
+            decision = "REVISAR"
+            note = "Rama local fuera del canon codex."
+
+        rows.append(
+            [
+                branch_name,
+                repo_slug,
+                estado,
+                actual,
+                branch_worktree or "N/D",
+                upstream or "N/D",
+                commit,
+                committed_at,
+                decision,
+                note,
+            ]
+        )
+
+    priority = {"ACTIVA": 0, "CANON": 1, "WORKTREE": 2, "PARALELA": 3, "REVISAR": 4}
+    rows.sort(key=lambda row: (priority.get(str(row[2]), 99), str(row[0]).lower()))
+    return rows
+
+
 def discover_pr_rows(repo_rows: list[list]) -> list[list]:
     rows: list[list] = []
     slugs_seen: set[str] = set()
@@ -3033,6 +3114,7 @@ def main():
     ph_text = json.dumps(prompt_history, ensure_ascii=False, sort_keys=True)
     repo_rows = discover_repositories(projects)
     branch_rows = discover_branch_rows(repo_rows)
+    branch_org_rows = discover_branch_organization_rows()
     pr_rows = discover_pr_rows(repo_rows)
     cloud_rows = discover_cloud_environment_rows(env, ph_text)
     agent_rows = discover_agent_rows()
@@ -3111,6 +3193,7 @@ def main():
         ["Prompts lectura filas", len(prompt_read_rows), "Una fila por entrada/chunk con tokens reales redactados"],
         ["Repositorios inventariados", len(repo_rows), "GitHub local, D activo, trusted projects y workspace actual"],
         ["Ramas inventariadas", len(branch_rows), "Refs locales/remotas y ramas GitHub live cuando gh responde"],
+        ["Ramas organizadas", len(branch_org_rows), "Ramas locales del repo actual clasificadas por estado y decision"],
         ["PRs inventariados", len(pr_rows), "GitHub live via gh; all states, limite 50 por repo"],
         ["Codex Cloud entornos", len(cloud_rows), "Confirmados localmente + menciones en prompts"],
         ["Agentes inventariados", len(agent_rows), "Fan-in, roster SDU, revision live y componentes Dataverse"],
@@ -3198,6 +3281,7 @@ def main():
             "Candidatos",
             "Repositorios",
             "Ramas",
+            "Ramas Organizadas",
             "PRs",
             "Codex Cloud Env",
             "Agentes",
@@ -3839,6 +3923,27 @@ def main():
 
     create_sheet(
         wb,
+        "Ramas Organizadas",
+        "Clasificacion operable de las ramas locales del repo actual: canon, activa, worktree y paralelas.",
+        [
+            "Branch",
+            "Repo",
+            "Estado",
+            "Actual",
+            "Worktree",
+            "Upstream",
+            "Commit",
+            "Commit Date",
+            "Decision",
+            "Nota",
+        ],
+        branch_org_rows,
+        "tblRamasOrganizadas",
+        [34, 30, 18, 10, 72, 40, 18, 28, 24, 72],
+    )
+
+    create_sheet(
+        wb,
         "PRs",
         "Pull requests leidos con GitHub live via gh; incluye abiertos, draft e historicos recientes por repo.",
         [
@@ -4225,6 +4330,7 @@ def main():
         ["PROMPTS_LECTURA_ROWS", len(prompt_read_rows), "INFO"],
         ["REPOSITORIES_ROWS", len(repo_rows), "INFO"],
         ["BRANCH_ROWS", len(branch_rows), "INFO"],
+        ["BRANCH_ORG_ROWS", len(branch_org_rows), "INFO"],
         ["PR_ROWS", len(pr_rows), "INFO"],
         ["CODEX_CLOUD_ENV_ROWS", len(cloud_rows), "INFO"],
         ["AGENTS_ROWS", len(agent_rows), "INFO"],
@@ -4320,6 +4426,7 @@ def main():
         ["Hoja", "Prompts Lectura", "Prompts Lectura", f"{len(prompt_read_rows)} filas saneadas"],
         ["Hoja", "Repositorios", "Repositorios", f"{len(repo_rows)} filas"],
         ["Hoja", "Ramas", "Ramas", f"{len(branch_rows)} filas"],
+        ["Hoja", "Ramas Organizadas", "Ramas Organizadas", f"{len(branch_org_rows)} filas"],
         ["Hoja", "PRs", "PRs", f"{len(pr_rows)} filas"],
         ["Hoja", "Codex Cloud Env", "Codex Cloud Env", f"{len(cloud_rows)} filas"],
         ["Hoja", "Agentes", "Agentes", f"{len(agent_rows)} filas"],
@@ -4369,6 +4476,8 @@ def main():
     list_rows = []
     for value in ["CONSERVAR", "REMOVER_DRY_RUN", "REVISAR_OWNER", "REVISAR_SENSIBLE", "NO_TOCAR", "ACTUAL", "APROBADO", "ESPERAR", "RECHAZADO"]:
         list_rows.append(["Decision humana", value])
+    for value in ["CANON", "ACTIVA", "WORKTREE", "PARALELA", "REVISAR", "SEGUIR", "MANTENER_SEPARADA", "PARQUEAR"]:
+        list_rows.append(["Estado rama", value])
     for value in [
         "PASS",
         "INFO",

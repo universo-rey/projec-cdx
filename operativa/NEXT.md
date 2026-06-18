@@ -12,6 +12,7 @@ Movimiento unico:
 - Fila viva: `DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED`.
 - Hoja: `Workspace Actual`.
 - Hoja: `Superficies Locales`.
+- Hoja: `Ramas Organizadas`.
 
 ## Regla Anti-Ruido
 - No rehidratar Dataverse otra vez.
