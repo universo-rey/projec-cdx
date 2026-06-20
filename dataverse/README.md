@@ -2,6 +2,18 @@
 
 Carril gobernado para Dataverse dentro de `PROJEC CDX`.
 
+## Autoridad Y Plan Vigente
+
+- Gobierno de cabina: `C:\CEO`.
+- Entrada canonica: `C:\CEO\project-cdx`.
+- Workspace fisico real: `C:\Users\enzo1\PROJEC CDX`.
+- Plan de familia visible: `docs/superpowers/plans/2026-06-19-dataverse-familia-cobertura.md`.
+- Plan rector de cobertura: `docs/superpowers/plans/2026-06-19-plan-rector-cobertura-total.md`.
+- Plan de normalizacion de cabina local: `docs/superpowers/plans/2026-06-19-normalizacion-cabina-local.md`.
+- Cobertura Dataverse actual: cubierta como carril gobernado por `2026-06-15-ecosistema-cadena-punta-a-punta.md` y absorbida por el plan de familia visible.
+
+Dataverse no es la raiz de gobierno ni el workspace fisico. Es una familia de trabajo gobernada que se lee desde la entrada canonica y se evidencia en este workspace.
+
 La wave visible mas reciente queda absorbida en [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
 
 El indice operativo corto queda en [INDICE_DATAVERSE.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/INDICE_DATAVERSE.md).
@@ -28,6 +40,7 @@ El acceso on-demand a waves de cierre queda en [ANCLAS_ON_DEMAND.md](C:/Users/en
 - [MINUTA_MESA_TRABAJO_CORTE_EJECUTORA_20260616.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/MINUTA_MESA_TRABAJO_CORTE_EJECUTORA_20260616.md)
 - [REGISTRO_BLOQUEOS.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/REGISTRO_BLOQUEOS.md)
 - [PLAN_SEGUNDA_PASADA.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/PLAN_SEGUNDA_PASADA.md)
+- [2026-06-19-dataverse-familia-cobertura.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-19-dataverse-familia-cobertura.md)
 - [READBACK_EXCEL_BLOCKER_FRONTIER.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md)
 - [ACTA_CORTE_EJECUTORA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/ACTA_CORTE_EJECUTORA_20260615.md)
 - [MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md)
@@ -37,6 +50,9 @@ El acceso on-demand a waves de cierre queda en [ANCLAS_ON_DEMAND.md](C:/Users/en
 ## Regla
 
 Dataverse queda como estructura de la orden, memoria larga del ecosistema y superficie gobernada.
+PAC y Dataverse live quedan en modo read-only hasta nuevo gate explicito.
+No ejecutar imports, writes, env fetch, patch, activation ni flow run desde este carril.
+La puerta visible de familia es `docs/superpowers/plans/2026-06-19-dataverse-familia-cobertura.md`; `PLAN_SEGUNDA_PASADA.md` queda como soporte tecnico.
 La consulta viva de lectura confirmo `HUBDesarrollo`, `SDUCapabilityControlPlane` y `sdu_runtime_control_plane`.
 `Codex Cloud` y `Dataverse` son consumidos por la cadena de agentes como superficies complementarias; la energia nace en `Codex Cloud`, se contiene en `Dataverse` y se consume desde ambas.
 No mires Dataverse como inventario: entra, toma la orden, reconoce tu lugar y sigue el flujo.

@@ -2,6 +2,8 @@
 
 Plan para integrar Dataverse en la estructura punta a punta de `PROJEC CDX`.
 
+Este plan queda absorbido como soporte tecnico por [2026-06-19-dataverse-familia-cobertura.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-19-dataverse-familia-cobertura.md), que es la puerta visible de familia.
+
 ## Objetivo
 
 Separar y gobernar Dataverse como carril propio:

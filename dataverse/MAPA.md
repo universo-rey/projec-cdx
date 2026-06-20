@@ -2,6 +2,18 @@
 
 Vista unica del carril Dataverse de `PROJEC CDX`.
 
+## Jerarquia De Lectura
+
+1. `C:\CEO`: hub de gobierno.
+2. `C:\CEO\project-cdx`: entrada canonica.
+3. `C:\Users\enzo1\PROJEC CDX`: workspace fisico real.
+4. `dataverse/`: familia Dataverse dentro del workspace.
+
+Este mapa no declara a Dataverse como centro autonomo. Dataverse es una familia gobernada por el plan rector de cobertura y por gates explicitos.
+
+Plan rector: `docs/superpowers/plans/2026-06-19-plan-rector-cobertura-total.md`.
+Plan de familia visible: `docs/superpowers/plans/2026-06-19-dataverse-familia-cobertura.md`.
+
 La wave visible mas reciente queda absorbida en [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
 
 El indice operativo corto queda en [INDICE_DATAVERSE.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/INDICE_DATAVERSE.md).
@@ -29,6 +41,7 @@ El acceso on-demand a waves de cierre queda en [ANCLAS_ON_DEMAND.md](C:/Users/en
 - `REGISTRO_LIMPIEZA_PC_LOCAL_20260615.md`
 - `DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv`
 - `playbooks/07-dataverse-fronteras.md`
+- `docs/superpowers/plans/2026-06-19-dataverse-familia-cobertura.md`
 
 ## Evidencia Local Actual
 
@@ -66,11 +79,14 @@ El acceso on-demand a waves de cierre queda en [ANCLAS_ON_DEMAND.md](C:/Users/en
 
 ## Regla
 
+PAC y Dataverse live quedan en modo read-only hasta nuevo gate explicito.
+No ejecutar imports, writes, env fetch, patch, activation ni flow run desde este mapa.
 Metadata no equivale a live rows. Preparado no equivale a ejecutado.
 Las filas de Dataverse valen mas cuando registran deltas, decisiones y escaladas humanas que cuando intentan duplicar inventarios ya presentes en repos o workbooks.
 La corte ejecutora de Dataverse reutiliza el packet ya activo del apply worker hasta que exista un target nuevo y unico.
 Las conexiones, gates y evidencia de semilla viven en `MAPA_CONEXIONES_DATAVERSE.md`.
 El acceso a waves de cierre que toquen Dataverse vive en `operativa/ANCLAS_ON_DEMAND.md`; desde alli se abre `ANCLA_CIERRE_WAVE.md` solo cuando el delta lo pide.
+La familia visible de cobertura vive en `docs/superpowers/plans/2026-06-19-dataverse-familia-cobertura.md`; `PLAN_SEGUNDA_PASADA.md` queda como soporte.
 La cadena operativa se gobierna desde Dataverse. `DATAVERSE_OPERATIONAL_CHAIN_MATRIX` es el nombre funcional canonico; su superficie viva actual es compuesta y mapeada a `mon_sdu_*`, `workqueue` y `workqueueitem`.
 La huella atomica owner-approved deja `stop_condition` tecnico como delta gobernado y proximo paso; `human_blocked` queda reservado para bloqueo humano expreso.
 La rehidratacion live read del 2026-06-17 confirma `5/5` parejas

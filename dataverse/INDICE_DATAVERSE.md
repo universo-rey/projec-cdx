@@ -10,6 +10,7 @@ Entrada corta para volver al carril Dataverse sin recorrer toda la superficie.
 4. [README.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/README.md)
 5. [MAPA.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/MAPA.md)
 6. [PLAN_SEGUNDA_PASADA.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/PLAN_SEGUNDA_PASADA.md)
+7. [2026-06-19-dataverse-familia-cobertura.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-19-dataverse-familia-cobertura.md)
 
 ## Piezas Clave
 
@@ -33,6 +34,7 @@ Entrada corta para volver al carril Dataverse sin recorrer toda la superficie.
 - Si aparece live, volver a `GATE.md`; la escritura solo avanza con target exacto, owner humano, rollback, postcheck y evidencia.
 - Las condiciones tecnicas de pausa son `delta_gobernado` y proximo paso, no bloqueo autonomo.
 - Si solo hace falta evidencia local, quedarse en `README.md` y `MAPA.md`.
+- Si hace falta cobertura de familia visible, abrir el plan rector de Dataverse antes que repetir la segunda pasada.
 - Si hay que hidratar Dataverse con metadata atomica, usar `sdu-dataverse-metadata-wave` y cerrar en hito metadata-only antes de cualquier apply.
 - Si la fila ya fue escrita y el owner pide verdad actual, ejecutar live read
   solo-GET y clasificar como `live_rows_confirmed` cuando el conteo
