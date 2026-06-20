@@ -1,21 +1,27 @@
 # Mapa De Plans
 
-Vista unica del plan visible en `docs/superpowers/plans`.
+Vista de ruta para `docs/superpowers/plans`.
 
-## Contenido
+## Ruta
 
-- `2026-06-13-codex-dotcodex-surface-split.md`
-- `2026-06-16-wave-atomica-repositorios.md`
-- `2026-06-16-wave-atomica-documentos-conocimiento.md`
-- `2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md`
+`README.md` -> `MAPA.md` -> plan de dominio -> `READBACK_COBERTURA_PLANES_20260619.md`
+
+## Matriz
+
+La unica matriz visible de cobertura vive en [README.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md).
+Usa las columnas estables `Plan`, `Superficie`, `Estado`, `Owner`, `Stop condition` y `Siguiente revision`.
 
 ## Lectura
 
-- El plan describe la separacion entre capa visible y capa de referencia.
-- La wave atomica de repositorios queda como el siguiente movimiento visible.
-- La wave atomica de documentos y conocimiento queda como la nueva lane documental atómica.
-- La nueva wave agrega atomizacion de PC local, raiz pesada de Codex y reglas de mantenimiento.
+- Entrar por `README.md` para ver la cobertura visible.
+- Bajar a `MAPA.md` para ver la ruta de lectura sin duplicar la matriz.
+- Abrir el plan de dominio cuando haga falta detalle operativo.
+- Usar el readback de cobertura para cerrar el estado sin rehacer el mapa.
+- La familia Dataverse tiene un solo punto visible y ya no queda como superficie aislada.
+- La frontera local de cabina se extiende en dos planes visibles: perfiles/variables/repos y ChatGPT Project/local runtime.
+- Esos dos planes agregan cobertura nueva, pero siguen leyendo desde la misma matriz visible.
 
 ## Regla
 
-- Mantener el archivo de plan como evidencia operativa y no mezclarlo con la referencia larga.
+- No mezclar entrada visible con ejecucion.
+- No inventar un segundo dueño para la misma superficie.
