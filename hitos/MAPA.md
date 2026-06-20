@@ -2,7 +2,7 @@
 
 Vista unica del archivo versionado de hitos operativos de `PROJEC CDX`.
 
-Si queres reanudar una wave de cierre, entrar por [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
+Reanuda una wave de cierre por [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
 La capa de matrices, controles y otras superficies de gobierno vive en `C:\Users\enzo1\.codex`.
 Este mapa solo indexa los hitos versionados de este workbench.
@@ -13,8 +13,12 @@ Este mapa solo indexa los hitos versionados de este workbench.
 
 ## Vigencia
 - Estado vigente: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
-- Cantidad actual: `62` hitos activos mas `_archivo`.
+- Cantidad actual: `64` hitos activos mas `_archivo`.
 - Paquetes `20260617`: `22` carpetas; el detalle completo vive en `INDICE_MAESTRO`.
+- Nuevo hito visible: `20260619-reuso-recursos-sdu1-v1`, con objetivo maximo, hitos y aprendizaje compacto para SDU 1.
+- Nuevo hito visible: `20260619-home-user-roots-normalized-v1`, con entrada minima para CodexLocal, Projects, Sandboxes, Intake y HOME_USUARIO.
+- Semaforo del nuevo hito: `VERDE_LIVIANO` para seguir avanzando con reuso.
+- Frontera maxima del nuevo hito: `workbook + hitos + trazas + mapas`.
 - Paquete vacio/ruido: `20260617-ajuste-sgin-ya-leido-v1`, registrado como `EMPTY_SUPERSEDED_NO_CANON`.
 - Paquetes `5+1`: consumidos por `20260617-thread-live-dispatch-5-plus-1-v1`; no reabrirlos como pendientes de creacion.
 

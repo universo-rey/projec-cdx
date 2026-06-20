@@ -2,7 +2,7 @@
 
 Portal corto del archivo versionado de hitos de `PROJEC CDX`.
 
-Si queres reanudar una wave de cierre, entrar por [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
+Reanuda una wave de cierre por [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
 ## Indices
 - [MAPA.md](C:/Users/enzo1/PROJEC%20CDX/hitos/MAPA.md)
@@ -11,8 +11,12 @@ Si queres reanudar una wave de cierre, entrar por [ANCLAS_ON_DEMAND.md](C:/Users
 
 ## Estado De Vigencia
 - Estado vigente: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
-- Hitos activos: `62` carpetas versionadas, mas `_archivo`.
+- Hitos activos: `64` carpetas versionadas, mas `_archivo`.
 - Indice maestro: fuente unica para vigencia, absorciones y evidencia.
+- Hito energia nuevo: `20260619-reuso-recursos-sdu1-v1`, donde la historia se comprime en objetivo, hitos y aprendizaje reusable.
+- Hito hogar nuevo: `20260619-home-user-roots-normalized-v1`, donde las raices visibles del usuario quedan normalizadas con mapa maestro.
+- Semaforo del nuevo hito: `VERDE_LIVIANO`.
+- Frontera maxima del nuevo hito: `workbook + hitos + trazas + mapas`.
 - Ruido identificado: `20260617-ajuste-sgin-ya-leido-v1` es carpeta vacia, sin canon propio; queda registrada como `EMPTY_SUPERSEDED_NO_CANON`.
 
 ## Hitos Base Requeridos
