@@ -1,10 +1,11 @@
 # Mapa de Workbooks
 
-Vista unica de los libros de trabajo visibles de `PROJEC CDX`.
+Entra por aca. Ve directo al workbook correcto.
 
 ## Vigente
 - Workbook: `CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`
 - Estado: `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`
+- Superficie canonica local: `C:\CEO\project-cdx`
 - Fuente corta: `operativa/READBACK_CIERRE_PESO_REDUCIDO_20260617.md`
 - Evidencia de binding: `operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md`
 - Evidencia superficies/workspace: `operativa/READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md`
@@ -24,4 +25,4 @@ Vista unica de los libros de trabajo visibles de `PROJEC CDX`.
 - Hojas nuevas de decision local: `Workspace Actual`, `Superficies Locales` y `Ramas Organizadas`.
 
 ## Regla
-- Si cambia una fuente viva, se actualiza el workbook y su evidencia.
+- Si cambia una fuente viva, actualiza el workbook y su evidencia.
