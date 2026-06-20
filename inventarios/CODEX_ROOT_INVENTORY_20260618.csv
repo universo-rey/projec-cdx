@@ -1,0 +1,2 @@
+snapshot_at,root_id,root_name,path,role,scope,recursive_files,recursive_dirs,recursive_bytes,immediate_files,immediate_dirs,immediate_links,has_readme,has_agents,has_mapa,has_index,has_git,gap_note,linked_surface_files,linked_surface_dirs,linked_surface_bytes,linked_surface_path
+2026-06-18 20:20:09-03:00,CODEX_ROOT_INVENTORY,.codex,C:\Users\enzo1\.codex,codex_root_physical,physical_recursive_excluding_reparse_points,53270,9604,8630218208,48,47,0,SI,SI,SI,NO,SI,Current snapshot of the live Codex root (.codex); physical recursive count excludes reparse points.,,,,
