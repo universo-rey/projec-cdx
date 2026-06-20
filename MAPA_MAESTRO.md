@@ -1,14 +1,28 @@
 # Mapa Maestro
 
-Punto unico para entrar a las superficies visibles de `PROJEC CDX`.
-Para una lectura rapida por niveles, usar [MAPA_CAPAS.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_CAPAS.md).
+Entra por este mapa cuando quieras orientar la mano y no perder pulso.
+No habla para desconocidos: habla para vos, con rutas vivas y pasos cortos.
+Canon local: `C:\CEO\project-cdx`; runtime formal: `C:\CEO\runtime`.
+Para una lectura rapida por niveles, usa [MAPA_CAPAS.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_CAPAS.md).
+La cobertura visible de planes vive en [docs/superpowers/plans/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md) y [MAPA.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/MAPA.md).
+
+## Voz
+
+- Las entradas hablan en segunda persona, con accion y destino claro.
+- Si un texto no despierta ni empuja un delta, bajalo a referencia o reescribilo.
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
-## Vigencia 20260618
+## Vigencia 20260619
 
-- [Estado actual](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md): `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`.
-- [Siguiente movimiento](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md): publicar `main` solo como repo/local-only preparado.
+- [Cobertura de planes](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_COBERTURA_PLANES_20260619.md): indice visible, mapa y cierre de cobertura.
+- [Perfil y terminal CEO](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_CEO_ENV_TERMINAL_20260619.md): variables `CEO_*`, `CODEX_*` y Windows Terminal.
+- [Perfiles y variables pre-repos](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_PERFILES_VARIABLES_PRE_REPOS_20260619.md): variables y perfiles sellados antes de mover repos o abrir entornos aislados.
+- [Data Analytics wave](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_DATA_ANALYTICS_WAVE_PROJEC_CDX_CONTROL_PLANE_20260620.md): capa semantica, polling semanal y delta `validator_points_to_legacy_missing_csv`.
+- [Plan rector de cobertura total](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-19-plan-rector-cobertura-total.md): matriz visible y entry points.
+- [Dataverse familia cobertura](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-19-dataverse-familia-cobertura.md): familia Dataverse con un solo camino visible.
+- [Estado actual](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md): `COBERTURA_PLANES_REVISADA_Y_DATAVERSE_ALINEADA`.
+- [Siguiente movimiento](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md): vigilar superficie nueva o conflicto de cobertura.
 - [Validacion Launch Desk](C:/Users/enzo1/PROJEC%20CDX/launch-desk/VALIDATION.md): `local-only/prepared`, no end-to-end live.
 - [Pendientes normalizados](C:/Users/enzo1/PROJEC%20CDX/operativa/PENDIENTES_HOY_20260617.md): carriles vivos, supersedidos y ruido.
 - [Maximo estado real](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md): fan-in de superficies.
@@ -17,6 +31,12 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 ## Al Frente
 
 - [Launch Desk](C:/Users/enzo1/PROJEC%20CDX/launch-desk/MAPA.md)
+- [Planes](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md)
+- [Mapa de planes](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/MAPA.md)
+- [Readback cobertura planes](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_COBERTURA_PLANES_20260619.md)
+- [agents/README.md](C:/Users/enzo1/PROJEC%20CDX/agents/README.md)
+- [chains/README.md](C:/Users/enzo1/PROJEC%20CDX/chains/README.md)
+- [skills/README.md](C:/Users/enzo1/PROJEC%20CDX/skills/README.md)
 - [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md)
 - [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
 - [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
@@ -155,7 +175,7 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 
 ## Nota
 
-El mapa maestro solo enlaza superficies visibles. Las entradas visibles deben ser atómicas en el sentido operativo: breves, claras y accionables. El detalle completo sigue en la referencia.
+El mapa maestro solo enlaza superficies visibles. Las entradas visibles deben ser atomicas en el sentido operativo: breves, claras y accionables. El detalle completo sigue en la referencia.
 
 ## Estado Ecosistemico
 
