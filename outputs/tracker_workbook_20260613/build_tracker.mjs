@@ -152,7 +152,7 @@ styleSection(resumen.getRange("A16:H16"));
 
 resumen.getRange("A17:H18").merge();
 resumen.getRange("A17").values = [[
-  "Si queres, esta misma base se puede convertir despues en seguimiento de ventas, incidencias o proyectos con cambios minimos.",
+  "Convierte esta misma base despues en seguimiento de ventas, incidencias o proyectos con cambios minimos.",
 ]];
 stylePanel(resumen.getRange("A17:H18"));
 resumen.getRange("A17:H18").format.rowHeightPx = 32;
