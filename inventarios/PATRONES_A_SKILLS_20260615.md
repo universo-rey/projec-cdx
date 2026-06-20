@@ -36,4 +36,4 @@ El resto de los patrones sigue absorbido por skills existentes, procesos, playbo
 
 ## Siguiente Paso Sugerido
 
-Elegir un solo hueco real y materializarlo como skill nueva, si queres convertir uno de estos patrones en capacidad propia.
+Elegi un solo hueco real y materializalo como skill nueva para convertir uno de estos patrones en capacidad propia.

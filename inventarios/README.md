@@ -1,6 +1,7 @@
 # Inventarios
 
 Tablas e índices del workspace `PROJEC CDX`.
+La cobertura visible de inventarios se lee en [docs/superpowers/plans/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md) y en el plan rector.
 
 La wave visible mas reciente es [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
 
