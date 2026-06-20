@@ -11,28 +11,30 @@ param(
 
     [switch]$ScanGitHubRoot,
 
-    [string]$GitHubRoot = 'C:\Users\enzo1\Documents\GitHub',
+    [string]$GitHubRoot = 'C:/Users/enzo1/Documents/GitHub',
 
-    [string]$CodexRoot = 'C:\Users\enzo1\.codex',
+    [string]$CodexRoot = 'C:/Users/enzo1/.codex',
 
-    [switch]$SkipProfileTest
+    [switch]$SkipProfileTest,
+
+    [switch]$StrictNoRuntime
 )
 
 $ErrorActionPreference = 'Stop'
 
 $DefaultRepoPaths = @(
-    'C:\Users\enzo1\Documents\GitHub\cabina-universal-d',
-    'C:\Users\enzo1\Documents\GitHub\torre-gemela-escribania',
-    'C:\Users\enzo1\Documents\GitHub\seshat-bootstrap-sdu-cn',
-    'C:\Users\enzo1\Documents\GitHub\tcu-agentic-runtime-control',
-    'C:\Users\enzo1\Documents\GitHub\tge-agentic-runtime-control-escribania'
+    'C:/Users/enzo1/Documents/GitHub/cabina-universal-d',
+    'C:/Users/enzo1/Documents/GitHub/torre-gemela-escribania',
+    'C:/Users/enzo1/Documents/GitHub/seshat-bootstrap-sdu-cn',
+    'C:/Users/enzo1/Documents/GitHub/tcu-agentic-runtime-control',
+    'C:/Users/enzo1/Documents/GitHub/tge-agentic-runtime-control-escribania'
 )
 
 $FullRepoPaths = $DefaultRepoPaths + @(
-    'C:\Users\enzo1\Documents\GitHub\microsoft-agents-governed-lab',
-    'C:\Users\enzo1\Documents\GitHub\modo-on-foundation',
-    'C:\Users\enzo1\Documents\GitHub\organizacion',
-    'C:\Users\enzo1\Documents\GitHub\sgin-cumplimiento'
+    'C:/Users/enzo1/Documents/GitHub/microsoft-agents-governed-lab',
+    'C:/Users/enzo1/Documents/GitHub/modo-on-foundation',
+    'C:/Users/enzo1/Documents/GitHub/organizacion',
+    'C:/Users/enzo1/Documents/GitHub/sgin-cumplimiento'
 )
 
 if ($ScanGitHubRoot) {
@@ -299,14 +301,21 @@ function Test-CodexRoot {
 }
 
 function Test-PowerShellLayer {
+    param([switch]$StrictNoRuntime)
+
     $pwsh = Get-Command pwsh -ErrorAction SilentlyContinue
     if ($pwsh) {
-        $version = (& pwsh -NoLogo -NoProfile -Command '$PSVersionTable.PSVersion.ToString()').Trim()
-        if ([version]$version -ge [version]'7.0.0') {
-            Add-Check -Area 'powershell' -Name 'pwsh' -Status green -Detail "PowerShell moderno disponible: $version." -Evidence $pwsh.Source
+        if ($StrictNoRuntime) {
+            Add-Check -Area 'powershell' -Name 'pwsh' -Status green -Detail 'PowerShell detectable; version no ejecutada por StrictNoRuntime.' -Evidence $pwsh.Source
         }
         else {
-            Add-Check -Area 'powershell' -Name 'pwsh' -Status yellow -Detail "pwsh disponible pero antiguo: $version." -Evidence $pwsh.Source
+            $version = (& pwsh -NoLogo -NoProfile -Command '$PSVersionTable.PSVersion.ToString()').Trim()
+            if ([version]$version -ge [version]'7.0.0') {
+                Add-Check -Area 'powershell' -Name 'pwsh' -Status green -Detail "PowerShell moderno disponible: $version." -Evidence $pwsh.Source
+            }
+            else {
+                Add-Check -Area 'powershell' -Name 'pwsh' -Status yellow -Detail "pwsh disponible pero antiguo: $version." -Evidence $pwsh.Source
+            }
         }
     }
     else {
@@ -324,7 +333,10 @@ function Test-PowerShellLayer {
         Add-Check -Area 'powershell' -Name 'pwsh user profile' -Status green -Detail 'No hay perfil de usuario cargado.' -Evidence $profilePath
     }
 
-    if (-not $SkipProfileTest) {
+    if ($StrictNoRuntime) {
+        Add-Check -Area 'powershell' -Name 'codex profile layout' -Status green -Detail 'Test externo omitido por StrictNoRuntime.' -Recommendation 'Ejecutar test solo fuera de auditoria read-only estricta.'
+    }
+    elseif (-not $SkipProfileTest) {
         $testScript = 'C:/Users/enzo1/PROJEC CDX/tools/test_codex_powershell_layout.ps1'
         if (Test-Path -LiteralPath $testScript) {
             $result = Invoke-ReadOnlyCommand -FilePath 'pwsh' -Arguments @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', $testScript) -TimeoutSeconds 15
@@ -354,11 +366,16 @@ function Test-GuardianLayer {
 $startedAt = Get-Date
 
 Test-Tool -Name 'git' -Area 'tools'
-Test-Tool -Name 'gh' -Area 'tools'
-Test-Tool -Name 'rg' -Area 'tools'
-Test-Tool -Name 'python' -Area 'tools'
+if ($StrictNoRuntime) {
+    Add-Check -Area 'tools' -Name 'strict runtime probes' -Status green -Detail 'StrictNoRuntime activo: omitidos gh, rg, python, pac, node, npm, py, pytest y validadores externos.'
+}
+else {
+    Test-Tool -Name 'gh' -Area 'tools'
+    Test-Tool -Name 'rg' -Area 'tools'
+    Test-Tool -Name 'python' -Area 'tools'
+}
 
-Test-PowerShellLayer
+Test-PowerShellLayer -StrictNoRuntime:$StrictNoRuntime
 Test-CodexRoot
 Test-GuardianLayer
 
