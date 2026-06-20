@@ -1,6 +1,6 @@
 # Mapa por Capas
 
-Vista rapida de `PROJEC CDX` por niveles de uso.
+Vista rapida de `project-cdx` por niveles de uso.
 
 La wave visible mas reciente es [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
 

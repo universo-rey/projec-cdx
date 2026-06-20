@@ -1,8 +1,12 @@
 # Mapa Corto
 
-Vista compacta de acceso a `PROJEC CDX`.
+Mapa compacto para entrar con pulso a `project-cdx`.
 
-Identidad operativa: `CEO`; perfil fisico/ruta tecnica: `C:/Users/enzo1`.
+Identidad operativa: `CEO`; hub de gobierno: `C:\CEO`; canon local: `C:\CEO\project-cdx`; workspace fisico real: `C:\Users\enzo1\PROJEC CDX`; perfil fisico/ruta tecnica: `C:\Users\enzo1`.
+
+Canon local: `C:\CEO\project-cdx`.
+Plan rector: [docs/superpowers/plans/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md).
+Cadena: [agents/README.md](C:/Users/enzo1/PROJEC%20CDX/agents/README.md), [chains/README.md](C:/Users/enzo1/PROJEC%20CDX/chains/README.md), [skills/README.md](C:/Users/enzo1/PROJEC%20CDX/skills/README.md).
 
 ## Al Frente
 
@@ -24,10 +28,15 @@ Identidad operativa: `CEO`; perfil fisico/ruta tecnica: `C:/Users/enzo1`.
 - [README.md](C:/Users/enzo1/PROJEC%20CDX/README.md)
 - [MAPA_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_MAESTRO.md)
 - [MAPA_CAPAS.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_CAPAS.md)
+- [Indice de planes](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md)
+- [Mapa de planes](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/MAPA.md)
+- [Plan rector de cobertura total](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-19-plan-rector-cobertura-total.md)
+- [Dataverse familia cobertura](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-19-dataverse-familia-cobertura.md)
 
 ## Trabajo Vivo
 
 - [operativa/README_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/operativa/README_CORTO.md)
+- [Readback cobertura planes](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_COBERTURA_PLANES_20260619.md)
 - [launch-desk/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/launch-desk/MAPA.md)
 - [tools/README.md](C:/Users/enzo1/PROJEC%20CDX/tools/README.md)
 - [dataverse/README.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/README.md)
@@ -47,4 +56,4 @@ Identidad operativa: `CEO`; perfil fisico/ruta tecnica: `C:/Users/enzo1`.
 ## Gate
 
 - `metadata-only`
-- el arranque vivo usa `pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"`
+- El arranque vivo usa `pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"`.
