@@ -1,6 +1,7 @@
 # Recipes
 
 Capa visible para leer y gobernar recetas en `PROJEC CDX`.
+La cobertura visible de recetas se lee en [docs/superpowers/plans/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md) y en el plan rector.
 
 ## Al Frente
 

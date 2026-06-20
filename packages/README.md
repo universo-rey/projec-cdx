@@ -1,6 +1,7 @@
 # Packages
 
 Paquetes comprimidos de soporte de `PROJEC CDX`.
+La cobertura visible de paquetes se lee en [docs/superpowers/plans/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md) y en el plan rector.
 
 - [MAPA.md](C:/Users/enzo1/PROJEC%20CDX/packages/MAPA.md)
 

@@ -19,7 +19,7 @@ Cuando hace falta:
 
 ## Campos Manuales
 
-Usar este carril cuando queres un arranque seguro estilo `cabina-universal-d`, sin bootstrap real en la UI.
+Usar este carril para un arranque seguro estilo `cabina-universal-d`, sin bootstrap real en la UI.
 En esta superficie local los paths son de Windows normalizados con `/`:
 
 - `Nombre`: `PROJEC CDX`
@@ -63,7 +63,7 @@ Notas:
 - El script de limpieza se ejecuta en la raíz del proyecto antes de limpiar el worktree.
 - Si la UI usa otro shell, traducir los comandos al shell activo sin cambiar el orden ni el propósito.
 - La selección visible en la UI sale de `.codex/environments/environment.toml`.
-- Si queres el carril estilo `cabina-universal-d`, usa estos scripts no-op en la UI y deja la ejecucion real para otra pasada gobernada.
+- Para el carril estilo `cabina-universal-d`, usa estos scripts no-op en la UI y deja la ejecucion real para otra pasada gobernada.
 
 ## Derivación
 
