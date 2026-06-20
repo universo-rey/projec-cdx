@@ -49,8 +49,8 @@ HECHO_VERIFICADO: el workbook vigente fue regenerado y la superficie browser-vis
 
 ## Proximos carriles
 
-- Si queres, puedo intentar una ruta browser alternativa dentro del puerto permitido.
-- Si no, cerramos este delta y seguimos con la siguiente superficie.
+- Abre una ruta browser alternativa dentro del puerto permitido.
+- Cierra este delta y sigue con la siguiente superficie.
 
 ## Ficha
 

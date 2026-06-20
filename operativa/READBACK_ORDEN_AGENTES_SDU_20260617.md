@@ -45,8 +45,8 @@ HECHO_VERIFICADO: la configuracion vigente quedo al frente y fue asegurada en el
 
 ## Proximos carriles
 
-- Refrescar el workbook si queres un timestamp nuevo.
-- Abrir la superficie local y confirmar que el workbook vigente quede visible al frente.
+- Refresca el workbook para dejar un timestamp nuevo.
+- Abre la superficie local y confirma que el workbook vigente quede visible al frente.
 
 ## Ficha
 
