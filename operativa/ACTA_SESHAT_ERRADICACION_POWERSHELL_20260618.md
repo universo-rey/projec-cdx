@@ -1,8 +1,8 @@
 # Acta Seshat - Erradicacion Bug PowerShell
 
-Fecha: 2026-06-18  
-Modo: local, gobernado, sin live writes externos  
-Custodio documental: Seshat  
+Fecha: 2026-06-18
+Modo: local, gobernado, sin live writes externos
+Custodio documental: Seshat
 Workbench: `C:/Users/enzo1/PROJEC CDX`
 
 ## Dictamen

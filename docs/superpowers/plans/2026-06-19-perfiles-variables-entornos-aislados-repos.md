@@ -137,13 +137,13 @@ No se parte de cero. Este plan reusa recetas, patrones y procesos ya versionados
   PASS|OBSERVED|FAIL
 
   ## Variables
-  - 
+  -
 
   ## Terminal
-  - 
+  -
 
   ## Delta
-  - 
+  -
 
   ## Stop Condition
   - No mover repos ni crear entornos si las variables rectoras fallan.

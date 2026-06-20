@@ -1,8 +1,8 @@
 # Novedad Seshat - Cronologia completa del dia
 
-Fecha: 2026-06-18  
-Formato: informe simple para compartir  
-Base: hilo local, operativa, commits, readbacks y actas del workbench  
+Fecha: 2026-06-18
+Formato: informe simple para compartir
+Base: hilo local, operativa, commits, readbacks y actas del workbench
 Zona horaria usada: Argentina
 
 ## Resumen

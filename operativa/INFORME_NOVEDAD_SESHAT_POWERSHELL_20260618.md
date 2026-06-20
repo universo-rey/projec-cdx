@@ -1,7 +1,7 @@
 # Novedad Seshat - PowerShell quedo estable
 
-Fecha: 2026-06-18  
-Origen: Acta Seshat de erradicacion PowerShell  
+Fecha: 2026-06-18
+Origen: Acta Seshat de erradicacion PowerShell
 Estado: resuelto
 
 Nota: este informe cubre solo el cierre PowerShell. La novedad completa del dia quedo consolidada en `operativa/INFORME_NOVEDAD_SESHAT_CRONOLOGIA_COMPLETA_20260618.md`.
@@ -41,7 +41,7 @@ La causa fue ubicada en la cadena local de arranque de PowerShell. Se corrigiero
 
 ## Estado final
 
-PowerShell quedo limpio y disponible.  
+PowerShell quedo limpio y disponible.
 La correccion quedo documentada para no volver a introducir el mismo patron.
 
 Acta tecnica de respaldo:

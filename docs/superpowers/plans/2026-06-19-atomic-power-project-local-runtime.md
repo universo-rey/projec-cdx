@@ -133,7 +133,7 @@ Este plan no cubre:
   - Codex Desktop:
 
   ## Deltas
-  - 
+  -
 
   ## Stop Condition
   - No cambiar variables, perfiles ni rutas si el postcheck no muestra drift real.
@@ -241,22 +241,22 @@ Este plan no cubre:
   - Workspace fisico:
 
   ## Camino de lectura
-  - 
+  -
 
   ## Estado vivo
-  - 
+  -
 
   ## Planes rectores
-  - 
+  -
 
   ## Dataverse
-  - 
+  -
 
   ## Agentes Skills Chains
-  - 
+  -
 
   ## Stop condition
-  - 
+  -
   ```
 
 - [ ] **Step 3: No copiar todo el repo**
@@ -337,10 +337,10 @@ Este plan no cubre:
   - Apps/MCP:
 
   ## Validacion
-  - 
+  -
 
   ## Deltas
-  - 
+  -
 
   ## Stop Condition
   - No activar writes ni conectores externos sin gate exacto.
