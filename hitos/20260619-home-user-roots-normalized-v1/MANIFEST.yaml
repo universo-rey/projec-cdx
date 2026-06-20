@@ -1,0 +1,20 @@
+hito: 20260619-home-user-roots-normalized-v1
+estado: HOME_USER_ROOTS_NORMALIZED
+semaforo: VERDE_LIVIANO
+frontera_maxima: workbook + hitos + trazas + mapas
+objetivo_maximo:
+  - Crear entradas minimas para CodexLocal, Projects, Sandboxes e Intake.
+  - Levantar HOME_USUARIO como mapa maestro con indice, relacion y revision corta.
+  - Mantener el home corto, visible, reversible y sin ruido.
+evidencia:
+  - C:/Users/enzo1/CodexLocal/README.md
+  - C:/Users/enzo1/Projects/README.md
+  - C:/Users/enzo1/Sandboxes/README.md
+  - C:/Users/enzo1/Intake/README.md
+  - C:/Users/enzo1/Documents/HOME_USUARIO/README.md
+  - C:/Users/enzo1/Documents/HOME_USUARIO/HOME_INDEX.csv
+  - C:/Users/enzo1/Documents/HOME_USUARIO/HOME_CONTEXT_MAP.csv
+  - C:/Users/enzo1/Documents/HOME_USUARIO/HOME_CONTEXT_MAP.md
+  - C:/Users/enzo1/Documents/HOME_USUARIO/HOME_AGENT_REVIEW.csv
+  - C:/Users/enzo1/Documents/HOME_USUARIO/HOME_AGENT_REVIEW.md
+next_delta: delta_cabina_universal_d_surface_map

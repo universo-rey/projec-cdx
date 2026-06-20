@@ -1,0 +1,27 @@
+id: 20260619-reuso-recursos-sdu1-v1
+title: Reuso Recursos SDU 1
+status: PACK_VISIBLE_AND_READY
+semaphore: VERDE_LIVIANO
+frontier_maxima: workbook_hitos_trazas_mapas
+date: 2026-06-19
+owner: Enzo Figueroa
+control_tower: PROJEC CDX
+branch: main
+inputs:
+  - workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx
+  - operativa/CURRENT.md
+  - operativa/TRACE.md
+  - operativa/NEXT.md
+outputs:
+  - hitos/20260619-reuso-recursos-sdu1-v1/README.md
+  - hitos/20260619-reuso-recursos-sdu1-v1/INDICE.csv
+  - hitos/20260619-reuso-recursos-sdu1-v1/READBACK.md
+  - hitos/20260619-reuso-recursos-sdu1-v1/MANIFEST.yaml
+next_delta: delta_normalize_codexlocal_live_entrypoint
+live_writes_executed: false
+mutations_in_dirty_repos_executed: false
+guardrails:
+  - no_live_write
+  - no_secrets
+  - no_new_surface
+  - no_noise

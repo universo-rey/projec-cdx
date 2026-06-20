@@ -1,0 +1,6 @@
+id,tipo,estado,evidencia
+H-001,objetivo_maximo,closed,"README.md#objetivo-maximo"
+H-002,hitos_del_camino,closed,"README.md#hitos-del-camino"
+H-003,aprendizajes,closed,"README.md#aprendizajes"
+H-004,evidencia,closed,"MANIFEST.yaml; READBACK.md"
+H-005,next_delta,open,"operativa/NEXT.md; delta_normalize_codexlocal_live_entrypoint"
