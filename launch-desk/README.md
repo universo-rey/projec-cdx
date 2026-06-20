@@ -1,6 +1,7 @@
 # Launch Desk
 
 Launch Desk is a launch-planning app for engineering teams. It turns a rough launch brief into:
+La cobertura visible de esta superficie se lee en [docs/superpowers/plans/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md) y en el plan rector.
 
 - a prioritized plan
 - a risk register
