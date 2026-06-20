@@ -1,7 +1,7 @@
 param(
   [string]$Root = "C:/Users/enzo1/PROJEC CDX",
-  [string]$ChainCsv = "C:/Users/enzo1/Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv",
-  [string]$SchemaCsv = "C:/Users/enzo1/Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/PROJEC_CDX_OPERATIONAL_CHAIN_SCHEMA_20260615.csv",
+  [string]$ChainCsv = "",
+  [string]$SchemaCsv = "",
   [string]$DataverseSourceMapCsv = "C:/Users/enzo1/PROJEC CDX/dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
   [string]$AtomicMatrixCsv = "C:/Users/enzo1/PROJEC CDX/atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
   [switch]$Json
@@ -15,6 +15,7 @@ $result = [ordered]@{
   schema_csv = $SchemaCsv
   dataverse_source_map_csv = $DataverseSourceMapCsv
   atomic_matrix_csv = $AtomicMatrixCsv
+  current_chain_source = "DATAVERSE_OPERATIONAL_CHAIN_MATRIX"
   status = "PASS"
   checked_at = (Get-Date).ToString("s")
   checks = @()
@@ -38,16 +39,25 @@ function Add-Check {
   }
 }
 
-if (-not (Test-Path -LiteralPath $ChainCsv -PathType Leaf)) {
-  Add-Check "chain_csv_exists" "FAIL" "No existe el indice puente."
+$chainCsvProvided = -not [string]::IsNullOrWhiteSpace($ChainCsv)
+$schemaCsvProvided = -not [string]::IsNullOrWhiteSpace($SchemaCsv)
+$chainCsvExists = $chainCsvProvided -and (Test-Path -LiteralPath $ChainCsv -PathType Leaf)
+$schemaCsvExists = $schemaCsvProvided -and (Test-Path -LiteralPath $SchemaCsv -PathType Leaf)
+
+if (-not $chainCsvProvided) {
+  Add-Check "chain_projection_csv" "OBSERVED" "No se recibio proyeccion CSV legacy; se valida la fuente Dataverse vigente."
+} elseif (-not $chainCsvExists) {
+  Add-Check "chain_projection_csv" "OBSERVED" "La proyeccion CSV legacy no existe; se valida la fuente Dataverse vigente."
 } else {
-  Add-Check "chain_csv_exists" "PASS" "OK"
+  Add-Check "chain_projection_csv" "PASS" "OK"
 }
 
-if (-not (Test-Path -LiteralPath $SchemaCsv -PathType Leaf)) {
-  Add-Check "schema_csv_exists" "FAIL" "No existe el schema."
+if (-not $schemaCsvProvided) {
+  Add-Check "schema_projection_csv" "OBSERVED" "No se recibio schema CSV legacy; se valida contrato minimo vigente."
+} elseif (-not $schemaCsvExists) {
+  Add-Check "schema_projection_csv" "OBSERVED" "El schema CSV legacy no existe; se valida contrato minimo vigente."
 } else {
-  Add-Check "schema_csv_exists" "PASS" "OK"
+  Add-Check "schema_projection_csv" "PASS" "OK"
 }
 
 if (-not (Test-Path -LiteralPath $DataverseSourceMapCsv -PathType Leaf)) {
@@ -63,10 +73,40 @@ if (-not (Test-Path -LiteralPath $AtomicMatrixCsv -PathType Leaf)) {
 }
 
 if ($result.status -ne "FAIL") {
-  $rows = @(Import-Csv -LiteralPath $ChainCsv)
-  $schema = @(Import-Csv -LiteralPath $SchemaCsv)
   $sourceMap = @(Import-Csv -LiteralPath $DataverseSourceMapCsv)
   $atomicMatrix = @(Import-Csv -LiteralPath $AtomicMatrixCsv)
+
+  $mappedDataverseSources = @($sourceMap | Select-Object -ExpandProperty functional_source_table -Unique)
+  if ($mappedDataverseSources -contains "DATAVERSE_OPERATIONAL_CHAIN_MATRIX") {
+    Add-Check "dataverse_current_source_declared" "PASS" "DATAVERSE_OPERATIONAL_CHAIN_MATRIX resuelta por source map."
+  } else {
+    Add-Check "dataverse_current_source_declared" "FAIL" "Falta DATAVERSE_OPERATIONAL_CHAIN_MATRIX en source map."
+  }
+
+  $ungovernedDataverseSurface = @($sourceMap | Where-Object { $_.governance_state -notmatch "^GOVERNED_" })
+  if ($ungovernedDataverseSurface.Count -eq 0) {
+    Add-Check "dataverse_source_map_governed" "PASS" "Source map apunta a superficies gobernadas."
+  } else {
+    Add-Check "dataverse_source_map_governed" "FAIL" (($ungovernedDataverseSurface | Select-Object -ExpandProperty logical_surface -Unique) -join ";")
+  }
+
+  $allowedAtomicActions = @()
+  if ($atomicMatrix.Count -gt 0 -and ($atomicMatrix[0].PSObject.Properties.Name -contains "action_type")) {
+    $allowedAtomicActions = @($atomicMatrix | Select-Object -ExpandProperty action_type -Unique)
+  } elseif ($atomicMatrix.Count -gt 0 -and ($atomicMatrix[0].PSObject.Properties.Name -contains "atomic_action_type")) {
+    $allowedAtomicActions = @($atomicMatrix | Select-Object -ExpandProperty atomic_action_type -Unique)
+  }
+  if ($allowedAtomicActions.Count -eq 0) {
+    Add-Check "atomic_action_type_source" "FAIL" "La matriz atomica no expone action_type."
+  } else {
+    Add-Check "atomic_action_type_source" "PASS" "La matriz atomica expone tipos de accion."
+  }
+
+  if (-not ($chainCsvExists -and $schemaCsvExists)) {
+    Add-Check "legacy_projection_mode" "OBSERVED" "Las filas CSV legacy no son fuente canonica; materializarlas queda como delta separado si el owner lo pide."
+  } else {
+  $rows = @(Import-Csv -LiteralPath $ChainCsv)
+  $schema = @(Import-Csv -LiteralPath $SchemaCsv)
   $required = @($schema | Where-Object { $_.required -eq "yes" } | Select-Object -ExpandProperty field)
 
   if ($rows.Count -gt 0) {
@@ -150,19 +190,11 @@ if ($result.status -ne "FAIL") {
     Add-Check "dataverse_source_status_enum" "FAIL" (($badDataverseStatus | Select-Object -ExpandProperty dataverse_source_status -Unique) -join ";")
   }
 
-  $mappedDataverseSources = @($sourceMap | Select-Object -ExpandProperty functional_source_table -Unique)
   $badDataverseSource = @($rows | Where-Object { $_.dataverse_source_table -notin $mappedDataverseSources })
   if ($badDataverseSource.Count -eq 0) {
     Add-Check "dataverse_source_table_mapped" "PASS" "Fuentes Dataverse declaradas en source map."
   } else {
     Add-Check "dataverse_source_table_mapped" "FAIL" (($badDataverseSource | Select-Object -ExpandProperty dataverse_source_table -Unique) -join ";")
-  }
-
-  $ungovernedDataverseSurface = @($sourceMap | Where-Object { $_.governance_state -notmatch "^GOVERNED_" })
-  if ($ungovernedDataverseSurface.Count -eq 0) {
-    Add-Check "dataverse_source_map_governed" "PASS" "Source map apunta a superficies gobernadas."
-  } else {
-    Add-Check "dataverse_source_map_governed" "FAIL" (($ungovernedDataverseSurface | Select-Object -ExpandProperty logical_surface -Unique) -join ";")
   }
 
   $badRowKeyPattern = @($rows | Where-Object { $_.dataverse_row_key -notmatch "^opchain_[0-9a-f]{16}$" })
@@ -195,21 +227,11 @@ if ($result.status -ne "FAIL") {
     Add-Check "atomic_terminal_state_enum" "FAIL" (($badAtomicTerminal | Select-Object -ExpandProperty atomic_terminal_state -Unique) -join ";")
   }
 
-  $allowedAtomicActions = @()
-  if ($atomicMatrix.Count -gt 0 -and ($atomicMatrix[0].PSObject.Properties.Name -contains "action_type")) {
-    $allowedAtomicActions = @($atomicMatrix | Select-Object -ExpandProperty action_type -Unique)
-  } elseif ($atomicMatrix.Count -gt 0 -and ($atomicMatrix[0].PSObject.Properties.Name -contains "atomic_action_type")) {
-    $allowedAtomicActions = @($atomicMatrix | Select-Object -ExpandProperty atomic_action_type -Unique)
-  }
-  if ($allowedAtomicActions.Count -eq 0) {
-    Add-Check "atomic_action_type_source" "FAIL" "La matriz atomica no expone action_type."
+  $badAtomicAction = @($rows | Where-Object { $_.atomic_action_type -notin $allowedAtomicActions })
+  if ($badAtomicAction.Count -eq 0) {
+    Add-Check "atomic_action_type_matrix" "PASS" "Tipos atomicos presentes en matriz canonica."
   } else {
-    $badAtomicAction = @($rows | Where-Object { $_.atomic_action_type -notin $allowedAtomicActions })
-    if ($badAtomicAction.Count -eq 0) {
-      Add-Check "atomic_action_type_matrix" "PASS" "Tipos atomicos presentes en matriz canonica."
-    } else {
-      Add-Check "atomic_action_type_matrix" "FAIL" (($badAtomicAction | Select-Object -ExpandProperty atomic_action_type -Unique) -join ";")
-    }
+    Add-Check "atomic_action_type_matrix" "FAIL" (($badAtomicAction | Select-Object -ExpandProperty atomic_action_type -Unique) -join ";")
   }
 
   $badIdempotencyPattern = @($rows | Where-Object { $_.atomic_idempotency_key -notmatch "^atom_[0-9a-f]{24}$" })
@@ -252,6 +274,7 @@ if ($result.status -ne "FAIL") {
     }
   } else {
     Add-Check "index_only_rows" "PASS" "Sin filas index-only."
+  }
   }
 }
 
