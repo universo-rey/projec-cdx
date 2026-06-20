@@ -1,6 +1,8 @@
 # Operativa Corto
 
 Entrada rapida del carril vivo de `PROJEC CDX`.
+Cobertura visible: [docs/superpowers/plans/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md) y [READBACK_COBERTURA_PLANES_20260619.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_COBERTURA_PLANES_20260619.md).
+Cadena: [agents/README.md](C:/Users/enzo1/PROJEC%20CDX/agents/README.md), [chains/README.md](C:/Users/enzo1/PROJEC%20CDX/chains/README.md), [skills/README.md](C:/Users/enzo1/PROJEC%20CDX/skills/README.md).
 
 ## Arranque atomico
 
@@ -17,6 +19,7 @@ pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
 - [NEXT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md)
 - [TRACE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TRACE.md)
 - [BLOCKERS.md](C:/Users/enzo1/PROJEC%20CDX/operativa/BLOCKERS.md)
+- [Cobertura de planes](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_COBERTURA_PLANES_20260619.md)
 
 ## Control
 
@@ -36,3 +39,4 @@ pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
 
 - [TAXONOMIA_NOMENCLATURA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TAXONOMIA_NOMENCLATURA_20260615.md)
 - [NOMENCLATURA_CADENA_OPERATIVA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md)
+- [Indice de planes](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md)

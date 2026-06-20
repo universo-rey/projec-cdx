@@ -21,6 +21,7 @@ pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
 - [NEXT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md)
 - [BLOCKERS.md](C:/Users/enzo1/PROJEC%20CDX/operativa/BLOCKERS.md)
 - [TRACE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TRACE.md)
+- [READBACK_COBERTURA_PLANES_20260619.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_COBERTURA_PLANES_20260619.md)
 
 ## Cierres
 
@@ -32,3 +33,4 @@ pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
 
 - [TAXONOMIA_NOMENCLATURA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TAXONOMIA_NOMENCLATURA_20260615.md)
 - [NOMENCLATURA_CADENA_OPERATIVA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md)
+- [Indice de planes](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/README.md)
