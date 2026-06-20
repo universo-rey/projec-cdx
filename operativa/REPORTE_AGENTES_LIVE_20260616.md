@@ -39,4 +39,4 @@ Todos los agentes convocados devolvieron que su `OPEN_ITEMS.csv` refleja una fro
 
 ## Siguiente Paso
 
-Consolidar esta vuelta de agentes dentro del acta constitutiva definitiva y, si querés más granularidad, sacar un anexo por agente.
+Consolida esta vuelta de agentes dentro del acta constitutiva definitiva y saca un anexo por agente para mas granularidad.

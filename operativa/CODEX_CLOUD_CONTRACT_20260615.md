@@ -8,6 +8,20 @@ Codex Cloud se usa para delegacion, orquestacion y trabajo repetible de varios p
 
 `metadata_only_until_activation`
 
+## Ancla Cache y Memoria
+
+La cache de Codex Cloud es acelerador regenerable, no memoria canonica.
+
+| Capa | Rol |
+| --- | --- |
+| `Codex Cloud cache` | Acelera setup, dependencias, paquetes y artefactos regenerables. |
+| `repo` | Verdad versionada. |
+| `Dataverse` | Memoria larga estructural. |
+| `ChatGPT Project` | Contexto vivo conversacional y source packs. |
+| `readbacks` | Evidencia de cierre y decisiones observadas. |
+
+Regla: nada unico, sensible, canonico o irreversible depende de cache. Si importa, se versiona en repo, se estructura en Dataverse o se cierra en readback.
+
 ## Current Context
 
 - canonical repo root: C:/Users/enzo1/Documents/GitHub/cabina-universal-d
