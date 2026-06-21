@@ -34,7 +34,7 @@ descripcion: Convenciones de nombres para documentos, ramas y artefactos.
 | `operativa-` | Evidencia o proceso vivo |
 | `sdu-` | Sistema Declarativo Universal |
 | `metadata-` | Esquemas, indices y manifiestos |
-| `chore/`, `docs/`, `fix/`, `feat/` | Tipos de cambios Git |
+| `chore/`, `docs/`, `fix/`, `feature/` | Tipos de cambios Git |
 
 ## Terminos normalizados
 

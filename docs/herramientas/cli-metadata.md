@@ -24,4 +24,4 @@ Entrada para documentar comandos de validacion, indexacion y grafo de metadata.
 ## Pendiente
 
 - Confirmar comandos canonicos actuales.
-- Enlazar workflows `meta-validate`, `build-graph` y `promote` cuando esten fusionados en main.
+- Workflows versionados: [`meta-validate`](../../.github/workflows/meta-validate.yml), [`build-graph`](../../.github/workflows/build-graph.yml) y [`promote`](../../.github/workflows/promote.yml).

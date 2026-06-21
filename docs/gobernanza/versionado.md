@@ -33,6 +33,7 @@ Usar SemVer para releases publicables:
 
 - `v0.x.y`: baseline inicial y estabilizacion.
 - `v1.0.0`: primer canon estable.
+- El prefijo `v` se usa para tags/releases Git; dentro del front matter documental usar version SemVer sin prefijo, por ejemplo `0.1.0`.
 
 ## Merge
 
