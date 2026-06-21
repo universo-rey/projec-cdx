@@ -19,4 +19,4 @@ descripcion: Indice de planes operativos enlazados sin duplicarlos.
 ---
 # Planes
 
-Indice para planes operativos. Los planes de superpowers permanecen en `docs/superpowers/plans/`.
+Indice para planes operativos. Los planes de superpowers se enlazan sin duplicar desde [docs/superpowers/plans](../../superpowers/plans/README.md).

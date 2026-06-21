@@ -15,7 +15,7 @@ Entrada corta a la documentacion canonica de `PROJEC CDX`.
 - [Superpowers](superpowers/README.md)
 - [Referencia del workspace](referencia/README.reference.md)
 - [Referencia de AGENTS](referencia/AGENTS.reference.md)
-- [Machine doc](C:/Users/enzo1/.codex/CODEX_ATOMIC_RUNTIME_MACHINE_V2_1.md)
+- Machine doc: evidencia local no transportable en `%USERPROFILE%/.codex/CODEX_ATOMIC_RUNTIME_MACHINE_V2_1.md`.
 
 ## Regla
 
