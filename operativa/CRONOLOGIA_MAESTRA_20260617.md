@@ -1,3 +1,24 @@
+---
+artifact_id: operativa/CRONOLOGIA_MAESTRA_20260617.md
+categoria: operativa
+tipo: reporte
+estado: aprobado
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/CRONOLOGIA_MAESTRA_20260617.md
+etiquetas:
+- operativa
+- reporte
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Cronologia maestra de eventos operativos del 20260617.
+fecha_evento: '2026-06-17'
+---
+
 # Cronologia Maestra 20260617
 
 ## Estado

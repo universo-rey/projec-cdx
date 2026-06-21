@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/MAPA_CORTO.md
+categoria: operativa
+tipo: mapa
+estado: aprobado
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/MAPA_CORTO.md
+etiquetas:
+- operativa
+- mapa
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Mapa corto para navegacion rapida del carril operativa.
+---
+
 # Mapa Corto
 
 Vista compacta de `operativa`.

@@ -1,0 +1,667 @@
+{
+  "generated_at": "2026-06-21T03:58:24.441732+00:00",
+  "count": 26,
+  "items": [
+    {
+      "artifact_id": "operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md",
+      "etiquetas": [
+        "operativa",
+        "acta",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Acta constitutiva de cierre con trazabilidad parcial.",
+      "fecha_evento": "2026-06-15",
+      "metadata_source": "operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/BRANCH_ORGANIZATION_20260618",
+      "categoria": "operativa",
+      "tipo": "matriz",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/BRANCH_ORGANIZATION_20260618.csv",
+      "etiquetas": [
+        "operativa",
+        "matriz",
+        "metadata",
+        "branches",
+        "organization"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Estructura de organizacion de ramas con trazabilidad parcial.",
+      "fecha_evento": "2026-06-18",
+      "metadata_source": "operativa/BRANCH_ORGANIZATION_20260618.csv.meta.json",
+      "metadata_kind": "meta_json"
+    },
+    {
+      "artifact_id": "operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617",
+      "categoria": "operativa",
+      "tipo": "matriz",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617.csv",
+      "etiquetas": [
+        "operativa",
+        "matriz",
+        "metadata",
+        "cloud",
+        "dataverse",
+        "preflight"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Resultado de preflight cloud Dataverse con trazabilidad parcial.",
+      "fecha_evento": "2026-06-17",
+      "metadata_source": "operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617.csv.meta.json",
+      "metadata_kind": "meta_json"
+    },
+    {
+      "artifact_id": "operativa/CRONOLOGIA_MAESTRA_20260617.md",
+      "categoria": "operativa",
+      "tipo": "reporte",
+      "estado": "aprobado",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/CRONOLOGIA_MAESTRA_20260617.md",
+      "etiquetas": [
+        "operativa",
+        "reporte",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Cronologia maestra de eventos operativos del 20260617.",
+      "fecha_evento": "2026-06-17",
+      "metadata_source": "operativa/CRONOLOGIA_MAESTRA_20260617.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/DATAVERSE_POWER_PLATFORM_LIVE_SUMMARY_20260616",
+      "categoria": "operativa",
+      "tipo": "reporte",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/DATAVERSE_POWER_PLATFORM_LIVE_SUMMARY_20260616.json",
+      "etiquetas": [
+        "operativa",
+        "reporte",
+        "metadata",
+        "dataverse",
+        "power-platform",
+        "live-summary"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Resumen live de Dataverse y Power Platform con trazabilidad parcial.",
+      "fecha_evento": "2026-06-16",
+      "metadata_source": "operativa/DATAVERSE_POWER_PLATFORM_LIVE_SUMMARY_20260616.json.meta.json",
+      "metadata_kind": "meta_json"
+    },
+    {
+      "artifact_id": "operativa/MAPA.md",
+      "categoria": "operativa",
+      "tipo": "mapa",
+      "estado": "live",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/MAPA.md",
+      "etiquetas": [
+        "operativa",
+        "mapa",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA_CORTO.md",
+        "operativa/README.md"
+      ],
+      "descripcion": "Mapa operativo principal de la carpeta operativa.",
+      "metadata_source": "operativa/MAPA.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/MAPA_CORTO.md",
+      "categoria": "operativa",
+      "tipo": "mapa",
+      "estado": "aprobado",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/MAPA_CORTO.md",
+      "etiquetas": [
+        "operativa",
+        "mapa",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Mapa corto para navegacion rapida del carril operativa.",
+      "metadata_source": "operativa/MAPA_CORTO.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617",
+      "categoria": "operativa",
+      "tipo": "matriz",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617.csv",
+      "etiquetas": [
+        "operativa",
+        "matriz",
+        "metadata",
+        "plan-maestro",
+        "atomico"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Matriz derivada del plan maestro atomico con trazabilidad parcial.",
+      "fecha_evento": "2026-06-17",
+      "metadata_source": "operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617.csv.meta.json",
+      "metadata_kind": "meta_json"
+    },
+    {
+      "artifact_id": "operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616",
+      "categoria": "operativa",
+      "tipo": "matriz",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv",
+      "etiquetas": [
+        "operativa",
+        "matriz",
+        "metadata",
+        "deltas",
+        "cierre"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Matriz preliminar CSV de deltas de cierre total con trazabilidad parcial.",
+      "fecha_evento": "2026-06-16",
+      "metadata_source": "operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv.meta.json",
+      "metadata_kind": "meta_json"
+    },
+    {
+      "artifact_id": "operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md",
+      "categoria": "operativa",
+      "tipo": "matriz",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md",
+      "etiquetas": [
+        "operativa",
+        "matriz",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Matriz preliminar de deltas para cierre total con trazabilidad parcial.",
+      "fecha_evento": "2026-06-16",
+      "metadata_source": "operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md",
+      "categoria": "operativa",
+      "tipo": "matriz",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md",
+      "etiquetas": [
+        "operativa",
+        "matriz",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Matriz de repositorios restringidos a main con trazabilidad parcial.",
+      "fecha_evento": "2026-06-15",
+      "metadata_source": "operativa/MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/ORDEN_DESPACHO_AGENTES_WAVE_ATOMICA_METADATA_20260616.md",
+      "categoria": "operativa",
+      "tipo": "orden",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/ORDEN_DESPACHO_AGENTES_WAVE_ATOMICA_METADATA_20260616.md",
+      "etiquetas": [
+        "operativa",
+        "orden",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Orden de despacho de agentes para wave atomica metadata con trazabilidad parcial.",
+      "fecha_evento": "2026-06-16",
+      "metadata_source": "operativa/ORDEN_DESPACHO_AGENTES_WAVE_ATOMICA_METADATA_20260616.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/ORDEN_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md",
+      "categoria": "operativa",
+      "tipo": "orden",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/ORDEN_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md",
+      "etiquetas": [
+        "operativa",
+        "orden",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Orden de promocion de huella atomica a tenant y Dataverse con trazabilidad parcial.",
+      "fecha_evento": "2026-06-16",
+      "metadata_source": "operativa/ORDEN_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/ORDEN_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md",
+      "categoria": "operativa",
+      "tipo": "orden",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/ORDEN_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md",
+      "etiquetas": [
+        "operativa",
+        "orden",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Orden de promocion de Seshat Home SharePoint con trazabilidad parcial.",
+      "fecha_evento": "2026-06-16",
+      "metadata_source": "operativa/ORDEN_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/PENDIENTES_HOY_20260617.md",
+      "categoria": "operativa",
+      "tipo": "plan",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/PENDIENTES_HOY_20260617.md",
+      "etiquetas": [
+        "operativa",
+        "plan",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Listado de pendientes operativos del dia con trazabilidad parcial.",
+      "fecha_evento": "2026-06-17",
+      "metadata_source": "operativa/PENDIENTES_HOY_20260617.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md",
+      "categoria": "operativa",
+      "tipo": "plan",
+      "estado": "aprobado",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md",
+      "etiquetas": [
+        "operativa",
+        "plan",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Plan maestro atomico para tenant Dataverse y Codex Cloud.",
+      "fecha_evento": "2026-06-17",
+      "metadata_source": "operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md",
+      "categoria": "operativa",
+      "tipo": "plan",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md",
+      "etiquetas": [
+        "operativa",
+        "plan",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Plan preliminar de lectura live de Microsoft con trazabilidad parcial.",
+      "fecha_evento": "2026-06-16",
+      "metadata_source": "operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md",
+      "categoria": "operativa",
+      "tipo": "readback",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md",
+      "etiquetas": [
+        "operativa",
+        "readback",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Readback de preflight cloud Dataverse con trazabilidad parcial.",
+      "fecha_evento": "2026-06-17",
+      "metadata_source": "operativa/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md",
+      "categoria": "operativa",
+      "tipo": "readback",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md",
+      "etiquetas": [
+        "operativa",
+        "readback",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Readback del lanzamiento SDK de Codex Cloud con trazabilidad parcial.",
+      "fecha_evento": "2026-06-17",
+      "metadata_source": "operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md",
+      "categoria": "operativa",
+      "tipo": "readback",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md",
+      "etiquetas": [
+        "operativa",
+        "readback",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Readback del binding de workbook y Dataverse con trazabilidad parcial.",
+      "fecha_evento": "2026-06-18",
+      "metadata_source": "operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md",
+      "categoria": "operativa",
+      "tipo": "readback",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md",
+      "etiquetas": [
+        "operativa",
+        "readback",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Readback de estado real maximo por superficies con trazabilidad parcial.",
+      "fecha_evento": "2026-06-17",
+      "metadata_source": "operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md",
+      "categoria": "operativa",
+      "tipo": "readback",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md",
+      "etiquetas": [
+        "operativa",
+        "readback",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Readback de universo Microsoft live con trazabilidad parcial.",
+      "fecha_evento": "2026-06-16",
+      "metadata_source": "operativa/READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/README.md",
+      "categoria": "operativa",
+      "tipo": "indice",
+      "estado": "live",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/README.md",
+      "etiquetas": [
+        "operativa",
+        "indice",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md",
+        "operativa/START_HERE.md"
+      ],
+      "descripcion": "Indice vivo de la carpeta operativa y su estado actual.",
+      "metadata_source": "operativa/README.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/README_CORTO.md",
+      "categoria": "operativa",
+      "tipo": "indice",
+      "estado": "aprobado",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/README_CORTO.md",
+      "etiquetas": [
+        "operativa",
+        "indice",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Indice corto de operativa para recuperacion rapida.",
+      "metadata_source": "operativa/README_CORTO.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617",
+      "categoria": "operativa",
+      "tipo": "reporte",
+      "estado": "en_revision",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv",
+      "etiquetas": [
+        "operativa",
+        "reporte",
+        "metadata",
+        "sgin",
+        "clasificacion"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Clasificacion de contenido ambiguo de Seshat SGIN con trazabilidad parcial.",
+      "fecha_evento": "2026-06-17",
+      "metadata_source": "operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv.meta.json",
+      "metadata_kind": "meta_json"
+    },
+    {
+      "artifact_id": "operativa/START_HERE.md",
+      "categoria": "operativa",
+      "tipo": "indice",
+      "estado": "aprobado",
+      "version": "2026.06.21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "@SeshatSgin"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/START_HERE.md",
+      "etiquetas": [
+        "operativa",
+        "indice",
+        "metadata"
+      ],
+      "relacionados": [
+        "operativa/MAPA.md"
+      ],
+      "descripcion": "Punto de entrada operativo para hilos nuevos.",
+      "metadata_source": "operativa/START_HERE.md",
+      "metadata_kind": "front_matter"
+    }
+  ]
+}

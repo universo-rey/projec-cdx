@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/README_CORTO.md
+categoria: operativa
+tipo: indice
+estado: aprobado
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/README_CORTO.md
+etiquetas:
+- operativa
+- indice
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Indice corto de operativa para recuperacion rapida.
+---
+
 # Operativa Corto
 
 Entrada rapida del carril vivo de `PROJEC CDX`.

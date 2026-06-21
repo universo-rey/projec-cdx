@@ -1,3 +1,24 @@
+---
+artifact_id: operativa/ORDEN_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md
+categoria: operativa
+tipo: orden
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/ORDEN_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md
+etiquetas:
+- operativa
+- orden
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Orden de promocion de Seshat Home SharePoint con trazabilidad parcial.
+fecha_evento: '2026-06-16'
+---
+
 # Orden - Promocion Seshat Home SharePoint
 
 Estado: `LIVE_WRITE_APPROVED_BY_OWNER`

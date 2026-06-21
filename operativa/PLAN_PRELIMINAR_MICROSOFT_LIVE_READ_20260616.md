@@ -1,3 +1,24 @@
+---
+artifact_id: operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md
+categoria: operativa
+tipo: plan
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md
+etiquetas:
+- operativa
+- plan
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Plan preliminar de lectura live de Microsoft con trazabilidad parcial.
+fecha_evento: '2026-06-16'
+---
+
 # Plan Preliminar Microsoft Live Read 20260616
 
 Estado: `PRELIMINAR`.

@@ -1,3 +1,24 @@
+---
+artifact_id: operativa/MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md
+categoria: operativa
+tipo: matriz
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md
+etiquetas:
+- operativa
+- matriz
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Matriz de repositorios restringidos a main con trazabilidad parcial.
+fecha_evento: '2026-06-15'
+---
+
 # Matriz Repos Git Main Only 20260615
 
 ## Estado

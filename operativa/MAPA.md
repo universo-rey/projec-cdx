@@ -1,3 +1,24 @@
+---
+artifact_id: operativa/MAPA.md
+categoria: operativa
+tipo: mapa
+estado: live
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/MAPA.md
+etiquetas:
+- operativa
+- mapa
+- metadata
+relacionados:
+- operativa/MAPA_CORTO.md
+- operativa/README.md
+descripcion: Mapa operativo principal de la carpeta operativa.
+---
+
 # Mapa de Operativa
 
 Mesa viva para el trabajo punta a punta de `PROJEC CDX`.

@@ -1,3 +1,24 @@
+---
+artifact_id: operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md
+categoria: operativa
+tipo: matriz
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md
+etiquetas:
+- operativa
+- matriz
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Matriz preliminar de deltas para cierre total con trazabilidad parcial.
+fecha_evento: '2026-06-16'
+---
+
 # Matriz Preliminar Deltas Cierre Total 20260616
 
 Estado: `PRELIMINARES`.
