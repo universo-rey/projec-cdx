@@ -20,12 +20,18 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
   "black>=25.0.0",
+  "matplotlib>=3.10.0",
   "pytest",
   "pytest-cov>=7.0.0",
+  "reportlab>=5.0.0",
   "ruff>=0.14.0",
 ]
 agents-sdk = ["openai-agents>=0.17.5"]
 openai-orchestration = ["openai>=2.43.0"]
+reports = [
+  "matplotlib>=3.10.0",
+  "reportlab>=5.0.0",
+]
 
 [project.scripts]
 projec-cdx-cloud = "projec_cdx_cloud.cli:main"
