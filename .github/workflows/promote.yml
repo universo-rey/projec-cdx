@@ -1,0 +1,97 @@
+name: promote
+
+on:
+  workflow_dispatch:
+    inputs:
+      artifact_id:
+        description: "artifact_id a promover"
+        required: true
+        type: string
+      estado:
+        description: "Estado destino"
+        required: true
+        type: choice
+        options:
+          - borrador
+          - en_revision
+          - aprobado
+          - live
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('pyproject.toml') }}
+          restore-keys: |
+            pip-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .[dev] jsonschema pydantic pyyaml
+
+      - name: Promote artifact locally
+        run: |
+          python main.py promote "${{ inputs.artifact_id }}" "${{ inputs.estado }}"
+          python -m tools.build_index
+          python -m tools.validate
+
+      - name: Detect changes
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Prepare branch name
+        if: steps.changes.outputs.changed == 'true'
+        id: branch
+        shell: bash
+        run: |
+          safe_artifact="$(printf '%s' "${{ inputs.artifact_id }}" | sed 's#[^A-Za-z0-9._-]#-#g')"
+          safe_artifact="${safe_artifact:-artifact}"
+          echo "name=release/promote-${safe_artifact}-${{ inputs.estado }}" >> "$GITHUB_OUTPUT"
+
+      - name: Create promotion PR
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ steps.branch.outputs.name }}
+          base: main
+          delete-branch: true
+          commit-message: "promote: ${{ inputs.artifact_id }} -> ${{ inputs.estado }}"
+          title: "promote: ${{ inputs.artifact_id }} -> ${{ inputs.estado }}"
+          body: |
+            Promocion solicitada por workflow manual.
+
+            - artifact_id: `${{ inputs.artifact_id }}`
+            - estado: `${{ inputs.estado }}`
+            - cambia metadata local, `live-manifest.json` e indices si corresponde
+            - requiere revision normal y `meta-validate / metadata`
+          add-paths: |
+            live-manifest.json
+            index.json
+            operativa/index.json
+            **/*.md
+            **/*.meta.json
