@@ -48,8 +48,11 @@ jobs:
           python -m pip install -e .[dev] jsonschema pydantic pyyaml
 
       - name: Promote artifact locally
+        env:
+          ARTIFACT_ID: ${{ inputs.artifact_id }}
+          TARGET_ESTADO: ${{ inputs.estado }}
         run: |
-          python main.py promote "${{ inputs.artifact_id }}" "${{ inputs.estado }}"
+          python main.py promote "$ARTIFACT_ID" "$TARGET_ESTADO"
           python -m tools.build_index
           python -m tools.validate
 
@@ -67,10 +70,15 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         id: branch
         shell: bash
+        env:
+          ARTIFACT_ID: ${{ inputs.artifact_id }}
+          TARGET_ESTADO: ${{ inputs.estado }}
         run: |
-          safe_artifact="$(printf '%s' "${{ inputs.artifact_id }}" | sed 's#[^A-Za-z0-9._-]#-#g')"
+          safe_artifact="$(printf '%s' "$ARTIFACT_ID" | sed 's#[^A-Za-z0-9._-]#-#g')"
+          safe_estado="$(printf '%s' "$TARGET_ESTADO" | sed 's#[^A-Za-z0-9._-]#-#g')"
           safe_artifact="${safe_artifact:-artifact}"
-          echo "name=release/promote-${safe_artifact}-${{ inputs.estado }}" >> "$GITHUB_OUTPUT"
+          safe_estado="${safe_estado:-estado}"
+          echo "name=release/promote-${safe_artifact}-${safe_estado}" >> "$GITHUB_OUTPUT"
 
       - name: Create promotion PR
         if: steps.changes.outputs.changed == 'true'
