@@ -9,8 +9,8 @@ from .config import ROOT
 from .schemas import (
     LaunchDeskHistoryItem,
     LaunchDeskHistoryResponse,
-    LaunchDeskRequest,
     LaunchDeskReport,
+    LaunchDeskRequest,
 )
 
 HISTORY_PATH = Path(
@@ -107,7 +107,9 @@ def _record_search_text(record: dict) -> str:
         " ".join(item.get("question", "") for item in report.get("follow_up_questions", []) or []),
         " ".join(item.get("risk", "") for item in report.get("risk_register", []) or []),
         " ".join(item.get("owner", "") for item in report.get("owner_checklist", []) or []),
-        " ".join(item.get("channel", "") for item in report.get("launch_copy_suggestions", []) or []),
+        " ".join(
+            item.get("channel", "") for item in report.get("launch_copy_suggestions", []) or []
+        ),
         str(readiness.get("score", "")),
         readiness.get("verdict", ""),
     ]
@@ -273,7 +275,9 @@ def render_history_record_markdown(record: dict) -> str:
     rubric = readiness.get("rubric", []) or []
     if rubric:
         for item in rubric:
-            lines.append(f"- {item.get('dimension', '')}: {item.get('status', '')} - {item.get('notes', '')}")
+            lines.append(
+                f"- {item.get('dimension', '')}: {item.get('status', '')} - {item.get('notes', '')}"
+            )
     else:
         lines.append("- None")
 

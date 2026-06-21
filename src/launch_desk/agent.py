@@ -7,7 +7,7 @@ from typing import Any
 from agents import Agent
 
 from .config import DEFAULT_MODEL, ENABLE_SDK_TOOLS
-from .schemas import LaunchDeskRequest, LaunchDeskReport
+from .schemas import LaunchDeskReport, LaunchDeskRequest
 from .tools import build_launch_tools
 
 SYSTEM_INSTRUCTIONS = (
@@ -28,7 +28,9 @@ class LaunchDeskRuntimeContext:
     source: str = "frontend"
 
 
-def build_launch_prompt(request: LaunchDeskRequest, tool_context: dict[str, Any] | None = None) -> str:
+def build_launch_prompt(
+    request: LaunchDeskRequest, tool_context: dict[str, Any] | None = None
+) -> str:
     payload = json.dumps(request.model_dump(mode="json"), indent=2, ensure_ascii=False)
     context = json.dumps(tool_context or {}, indent=2, ensure_ascii=False)
     return (

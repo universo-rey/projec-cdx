@@ -1,15 +1,12 @@
 from __future__ import annotations
 
 import argparse
-import asyncio
-from pathlib import Path
-from typing import Iterable
+from collections.abc import Iterable
 
 import uvicorn
 
-from .config import DEFAULT_MODEL, load_local_env
+from .config import load_local_env
 from .frontend_server import serve_frontend
-from .server import create_app
 
 
 def build_parser() -> argparse.ArgumentParser:

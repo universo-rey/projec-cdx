@@ -4,12 +4,11 @@ import argparse
 import asyncio
 import json
 import os
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
 from .agent import DEFAULT_MODEL, align_runtime_context, build_sdu_agents, run_agent, smoke_report
 from .cloud_bridge import cloud_bridge_packet, run_cloud_bridge_agent, write_cloud_bridge_readback
-
 
 ROOT = Path(__file__).resolve().parents[2]
 

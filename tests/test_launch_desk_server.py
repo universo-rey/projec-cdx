@@ -34,7 +34,12 @@ def test_history_endpoint_lists_saved_runs(monkeypatch, tmp_path: Path) -> None:
     app = create_app()
     client = TestClient(app)
 
-    from launch_desk.schemas import LaunchDeskReport, LaunchDeskRequest, ReadinessRubricItem, ReadinessSummary
+    from launch_desk.schemas import (
+        LaunchDeskReport,
+        LaunchDeskRequest,
+        ReadinessRubricItem,
+        ReadinessSummary,
+    )
 
     request = LaunchDeskRequest(
         product_brief="Launch Desk helps teams plan launches with owner checklists and risk control.",
@@ -93,7 +98,12 @@ def test_history_filters_and_exports(monkeypatch, tmp_path: Path) -> None:
     app = create_app()
     client = TestClient(app)
 
-    from launch_desk.schemas import LaunchDeskReport, LaunchDeskRequest, ReadinessRubricItem, ReadinessSummary
+    from launch_desk.schemas import (
+        LaunchDeskReport,
+        LaunchDeskRequest,
+        ReadinessRubricItem,
+        ReadinessSummary,
+    )
     from launch_desk.store import persist_run_record
 
     common_report = dict(
@@ -147,7 +157,11 @@ def test_history_filters_and_exports(monkeypatch, tmp_path: Path) -> None:
                     score=45,
                     verdict="hold",
                     top_gaps=["signoff"],
-                    rubric=[ReadinessRubricItem(dimension="brief clarity", status="partial", notes="needs work")],
+                    rubric=[
+                        ReadinessRubricItem(
+                            dimension="brief clarity", status="partial", notes="needs work"
+                        )
+                    ],
                 ),
             }
         ),

@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
-from pathlib import Path
 
 from .config import FRONTEND_DIR
 

@@ -11,7 +11,6 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.worksheet.table import Table, TableStyleInfo
 
-
 ROOT = Path(r"C:\Users\enzo1\.codex")
 WORKSPACE = Path(__file__).resolve().parents[1]
 XLSX_PATH = WORKSPACE / "CODEX_ROOT_INVENTORY.xlsx"
@@ -83,7 +82,11 @@ def classify(entry: Path) -> dict[str, str]:
     name = entry.name
     is_dir = entry.is_dir()
     size = str(entry.stat().st_size) if entry.exists() and entry.is_file() else ""
-    lwt = datetime.fromtimestamp(entry.stat().st_mtime).isoformat(timespec="seconds") if entry.exists() else ""
+    lwt = (
+        datetime.fromtimestamp(entry.stat().st_mtime).isoformat(timespec="seconds")
+        if entry.exists()
+        else ""
+    )
     current_path = str(entry)
 
     if is_dir:
@@ -266,7 +269,9 @@ def classify(entry: Path) -> dict[str, str]:
             "Size": size,
         }
 
-    if name.startswith(("pending-", "repair-", "restart-")) and name.lower().endswith((".ps1", ".log")):
+    if name.startswith(("pending-", "repair-", "restart-")) and name.lower().endswith(
+        (".ps1", ".log")
+    ):
         return {
             "Name": name,
             "Kind": "file",
@@ -392,14 +397,12 @@ def build_workbook(rows: list[dict[str, str]]) -> None:
 
     navy = "17324D"
     teal = "1E6F78"
-    gold = "C89B3C"
     pale = "F3F6F8"
     soft = "EAF2F6"
     border = Side(style="thin", color="C9D3DA")
     thin_border = Border(left=border, right=border, top=border, bottom=border)
     header_fill = PatternFill("solid", fgColor=navy)
     band_fill = PatternFill("solid", fgColor=teal)
-    accent_fill = PatternFill("solid", fgColor=gold)
     soft_fill = PatternFill("solid", fgColor=pale)
     table_fill = PatternFill("solid", fgColor=soft)
 
@@ -487,7 +490,9 @@ def build_workbook(rows: list[dict[str, str]]) -> None:
         "and cap_sid remain sensitive and are not candidates for cleanup without an "
         "explicit review order."
     )
-    ws_summary.merge_cells(start_row=note_row + 1, start_column=1, end_row=note_row + 3, end_column=8)
+    ws_summary.merge_cells(
+        start_row=note_row + 1, start_column=1, end_row=note_row + 3, end_column=8
+    )
     ws_summary.cell(note_row + 1, 1).value = note_text
     ws_summary.cell(note_row + 1, 1).fill = soft_fill
     ws_summary.cell(note_row + 1, 1).font = body_font
@@ -574,7 +579,9 @@ def build_workbook(rows: list[dict[str, str]]) -> None:
     wb.properties.creator = "Codex"
     wb.properties.title = "Inventario de raiz .codex"
     wb.properties.subject = "Clasificacion de la raiz de .codex"
-    wb.properties.description = "Inventario, plan de movimiento y clasificacion de la raiz de .codex"
+    wb.properties.description = (
+        "Inventario, plan de movimiento y clasificacion de la raiz de .codex"
+    )
     wb.save(XLSX_PATH)
 
 

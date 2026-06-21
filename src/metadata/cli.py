@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
 from .indexer import build_indexes
 from .validator import replace_front_matter, validate_repository
@@ -69,7 +69,9 @@ def _run_graph(root: Path, schema: Path, output: Path, fmt: str) -> int:
         output.write_text("\n".join(lines) + "\n", encoding="utf-8")
     else:
         payload = {"edges": [{"from": source, "to": target} for source, target in edges]}
-        output.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        output.write_text(
+            json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
     print(f"Grafo generado: {output}")
     return 0
 
@@ -80,7 +82,10 @@ def _run_promote(root: Path, schema: Path, artifact_id: str, estado: str) -> int
         print("No se puede promover: hay metadatos invalidos.")
         return 1
 
-    target = next((record for record in result.records if record.metadata.get("artifact_id") == artifact_id), None)
+    target = next(
+        (record for record in result.records if record.metadata.get("artifact_id") == artifact_id),
+        None,
+    )
     if target is None:
         print(f"artifact_id no encontrado: {artifact_id}")
         return 1
@@ -91,7 +96,9 @@ def _run_promote(root: Path, schema: Path, artifact_id: str, estado: str) -> int
     if target.kind == "front_matter":
         replace_front_matter(metadata_source, metadata)
     else:
-        metadata_source.write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        metadata_source.write_text(
+            json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
 
     manifest_path = root / "live-manifest.json"
     manifest = _load_live_manifest(manifest_path)
@@ -117,7 +124,9 @@ def build_parser() -> argparse.ArgumentParser:
     graph_parser.add_argument("--output", type=Path, default=Path("metadata-graph.json"))
     graph_parser.add_argument("--format", choices=["json", "dot"], default="json")
 
-    promote_parser = subparsers.add_parser("promote", help="Cambiar estado y actualizar live-manifest")
+    promote_parser = subparsers.add_parser(
+        "promote", help="Cambiar estado y actualizar live-manifest"
+    )
     promote_parser.add_argument("artifact_id")
     promote_parser.add_argument("estado", choices=["borrador", "en_revision", "aprobado", "live"])
 

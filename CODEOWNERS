@@ -1,0 +1,12 @@
+# Ownership canonico inicial.
+
+* @SeshatSgin
+
+/docs/ @SeshatSgin
+/src/ @SeshatSgin
+/tools/ @SeshatSgin
+/tests/ @SeshatSgin
+/.github/ @SeshatSgin
+/schema.json @SeshatSgin
+/index.json @SeshatSgin
+/live-manifest.json @SeshatSgin

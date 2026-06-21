@@ -150,7 +150,15 @@ contenido
     )
     _write(repo / "review-env" / "pyvenv.cfg", "home = python\n")
     _write(
-        repo / "review-env" / "Lib" / "site-packages" / "fastapi" / ".agents" / "skills" / "fastapi" / "SKILL.md",
+        repo
+        / "review-env"
+        / "Lib"
+        / "site-packages"
+        / "fastapi"
+        / ".agents"
+        / "skills"
+        / "fastapi"
+        / "SKILL.md",
         """---
 name: fastapi
 description: external package skill
