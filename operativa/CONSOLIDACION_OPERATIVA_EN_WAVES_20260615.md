@@ -33,7 +33,7 @@ Consolidar la superficie operativa por waves cortas, manteniendo una sola energi
 
 ### Wave 4 - Puentes De Referencia
 
-- Fuente: `MAPA_CAPAS.md`, `docs/reference/README.reference.md`.
+- Fuente: `MAPA_CAPAS.md`, `docs/referencia/README.reference.md`.
 - Proceso: dejar los puentes de nivel y referencia hablando el mismo cierre.
 - Salida: mapa por capas y referencia larga alineados.
 - Verificacion: `OK_NO_BROKEN_LINKS_MAPA_CAPAS_AND_DOCS_REF`.

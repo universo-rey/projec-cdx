@@ -1,19 +1,22 @@
 # Docs
 
-Entrada corta a la documentación de soporte de `PROJEC CDX`.
+Entrada corta a la documentacion canonica de `PROJEC CDX`.
 
-La wave visible mas reciente es [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
+## Camino de lectura
 
-La cobertura atomica energetica tambien se declara aqui cuando la documentacion gobierna una superficie.
+1. [Indice documental](index.md)
+2. [Mapa arquitectonico](arquitectura/mapa.md)
+3. [Gobernanza](gobernanza/index.md)
+4. [Operativa](operativa/index.md)
+5. [Referencia](referencia/index.md)
 
-- [MAPA.md](C:/Users/enzo1/PROJEC%20CDX/docs/MAPA.md)
+## Superficies existentes
 
-## Referencias
+- [Superpowers](superpowers/README.md)
+- [Referencia del workspace](referencia/README.reference.md)
+- [Referencia de AGENTS](referencia/AGENTS.reference.md)
+- Machine doc: evidencia local no transportable en `%USERPROFILE%/.codex/CODEX_ATOMIC_RUNTIME_MACHINE_V2_1.md`.
 
-- [Referencia del workspace](C:/Users/enzo1/PROJEC%20CDX/docs/reference/README.reference.md)
-- [Referencia de AGENTS](C:/Users/enzo1/PROJEC%20CDX/docs/reference/AGENTS.reference.md)
-- [Machine doc](C:/Users/enzo1/.codex/CODEX_ATOMIC_RUNTIME_MACHINE_V2_1.md)
+## Regla
 
-## Nota
-
-La documentación larga vive en `docs/reference/`. Esta carpeta solo orienta.
+`docs/` organiza guias, normas y plantillas. La evidencia viva permanece en `operativa/`, `hitos/`, `outputs/`, `inventarios/` y `workbooks/`.

@@ -1,7 +1,768 @@
 {
-  "generated_at": "2026-06-21T03:58:24.441732+00:00",
-  "count": 26,
+  "generated_at": "2026-06-21T11:31:51.892015+00:00",
+  "count": 59,
   "items": [
+    {
+      "artifact_id": "docs/MAPA.md",
+      "categoria": "playbooks",
+      "tipo": "mapa",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/MAPA.md",
+      "etiquetas": [
+        "docs",
+        "mapa",
+        "compatibilidad"
+      ],
+      "relacionados": [
+        "docs/arquitectura/mapa.md"
+      ],
+      "descripcion": "Puerta historica de compatibilidad hacia el mapa documental canonico.",
+      "metadata_source": "docs/MAPA.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/apendices/adr-template.md",
+      "categoria": "playbooks",
+      "tipo": "reporte",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/apendices/adr-template.md",
+      "etiquetas": [
+        "docs",
+        "adr",
+        "plantilla"
+      ],
+      "relacionados": [],
+      "descripcion": "Plantilla base para registrar decisiones de arquitectura.",
+      "metadata_source": "docs/apendices/adr-template.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/apendices/index.md",
+      "categoria": "playbooks",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/apendices/index.md",
+      "etiquetas": [
+        "docs",
+        "apendices",
+        "plantillas"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de plantillas y apendices documentales reutilizables.",
+      "metadata_source": "docs/apendices/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/apendices/plantilla-ficha-matriz.md",
+      "categoria": "playbooks",
+      "tipo": "reporte",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/apendices/plantilla-ficha-matriz.md",
+      "etiquetas": [
+        "docs",
+        "matriz",
+        "plantilla"
+      ],
+      "relacionados": [],
+      "descripcion": "Plantilla para describir matrices sin duplicar datos fuente.",
+      "metadata_source": "docs/apendices/plantilla-ficha-matriz.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/apendices/plantilla-operativa.md",
+      "categoria": "playbooks",
+      "tipo": "reporte",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/apendices/plantilla-operativa.md",
+      "etiquetas": [
+        "docs",
+        "operativa",
+        "plantilla"
+      ],
+      "relacionados": [],
+      "descripcion": "Plantilla para actas, planes y readbacks operativos.",
+      "metadata_source": "docs/apendices/plantilla-operativa.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/arquitectura/decisiones/index.md",
+      "categoria": "playbooks",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/arquitectura/decisiones/index.md",
+      "etiquetas": [
+        "docs",
+        "adr",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de decisiones de arquitectura registradas como ADR.",
+      "metadata_source": "docs/arquitectura/decisiones/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/arquitectura/index.md",
+      "categoria": "playbooks",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/arquitectura/index.md",
+      "etiquetas": [
+        "docs",
+        "arquitectura",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de arquitectura documental y decisiones asociadas.",
+      "metadata_source": "docs/arquitectura/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/arquitectura/mapa.md",
+      "categoria": "playbooks",
+      "tipo": "mapa",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/arquitectura/mapa.md",
+      "etiquetas": [
+        "docs",
+        "arquitectura",
+        "mapa"
+      ],
+      "relacionados": [],
+      "descripcion": "Mapa arquitectonico de la nueva organizacion documental.",
+      "metadata_source": "docs/arquitectura/mapa.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/datos/index.md",
+      "categoria": "packages",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/datos/index.md",
+      "etiquetas": [
+        "docs",
+        "datos",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de documentacion de datos, matrices y manifiestos.",
+      "metadata_source": "docs/datos/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/datos/manifiestos/index.md",
+      "categoria": "packages",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/datos/manifiestos/index.md",
+      "etiquetas": [
+        "docs",
+        "manifiestos",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de manifiestos documentados sin duplicar artefactos.",
+      "metadata_source": "docs/datos/manifiestos/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/datos/matrices/index.md",
+      "categoria": "packages",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/datos/matrices/index.md",
+      "etiquetas": [
+        "docs",
+        "matrices",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de fichas documentales para matrices del sistema.",
+      "metadata_source": "docs/datos/matrices/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/gobernanza/calidad.md",
+      "categoria": "playbooks",
+      "tipo": "plan",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/gobernanza/calidad.md",
+      "etiquetas": [
+        "docs",
+        "calidad",
+        "gobernanza"
+      ],
+      "relacionados": [],
+      "descripcion": "Politica de calidad, revision y seguridad documental.",
+      "metadata_source": "docs/gobernanza/calidad.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/gobernanza/index.md",
+      "categoria": "playbooks",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/gobernanza/index.md",
+      "etiquetas": [
+        "docs",
+        "gobernanza",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de normas de gobernanza documental del proyecto.",
+      "metadata_source": "docs/gobernanza/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/gobernanza/nomenclatura.md",
+      "categoria": "playbooks",
+      "tipo": "plan",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/gobernanza/nomenclatura.md",
+      "etiquetas": [
+        "docs",
+        "nomenclatura",
+        "gobernanza"
+      ],
+      "relacionados": [],
+      "descripcion": "Convenciones de nombres para documentos, ramas y artefactos.",
+      "metadata_source": "docs/gobernanza/nomenclatura.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/gobernanza/versionado.md",
+      "categoria": "playbooks",
+      "tipo": "plan",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/gobernanza/versionado.md",
+      "etiquetas": [
+        "docs",
+        "versionado",
+        "gobernanza"
+      ],
+      "relacionados": [],
+      "descripcion": "Politica de versionado, ramas y promocion documental.",
+      "metadata_source": "docs/gobernanza/versionado.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/herramientas/cli-metadata.md",
+      "categoria": "playbooks",
+      "tipo": "reporte",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/herramientas/cli-metadata.md",
+      "etiquetas": [
+        "docs",
+        "metadata",
+        "cli"
+      ],
+      "relacionados": [],
+      "descripcion": "Guia de uso de la CLI de metadata y comandos relacionados.",
+      "metadata_source": "docs/herramientas/cli-metadata.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/herramientas/index.md",
+      "categoria": "playbooks",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/herramientas/index.md",
+      "etiquetas": [
+        "docs",
+        "herramientas",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de herramientas documentadas para validacion y pipeline.",
+      "metadata_source": "docs/herramientas/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/herramientas/pipelines/index.md",
+      "categoria": "playbooks",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/herramientas/pipelines/index.md",
+      "etiquetas": [
+        "docs",
+        "pipelines",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de pipelines y validaciones automatizadas documentadas.",
+      "metadata_source": "docs/herramientas/pipelines/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/index.md",
+      "categoria": "playbooks",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/index.md",
+      "etiquetas": [
+        "docs",
+        "indice",
+        "fase-1"
+      ],
+      "relacionados": [],
+      "descripcion": "Entrada central de la documentacion canonica del proyecto.",
+      "metadata_source": "docs/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/modelos/index.md",
+      "categoria": "playbooks",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/modelos/index.md",
+      "etiquetas": [
+        "docs",
+        "modelos",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de modelos conceptuales y esquemas documentales.",
+      "metadata_source": "docs/modelos/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/operativa/actas/index.md",
+      "categoria": "operativa",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/operativa/actas/index.md",
+      "etiquetas": [
+        "docs",
+        "actas",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de actas operativas enlazadas desde la documentacion.",
+      "metadata_source": "docs/operativa/actas/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/operativa/cortes/index.md",
+      "categoria": "operativa",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/operativa/cortes/index.md",
+      "etiquetas": [
+        "docs",
+        "cortes",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de cortes, waves y cierres operativos documentados.",
+      "metadata_source": "docs/operativa/cortes/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/operativa/cronologia/cronologia-maestra.md",
+      "categoria": "operativa",
+      "tipo": "reporte",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/operativa/cronologia/cronologia-maestra.md",
+      "etiquetas": [
+        "docs",
+        "cronologia",
+        "fase-1"
+      ],
+      "relacionados": [],
+      "descripcion": "Cronologia maestra inicial del refactor documental.",
+      "metadata_source": "docs/operativa/cronologia/cronologia-maestra.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/operativa/cronologia/index.md",
+      "categoria": "operativa",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/operativa/cronologia/index.md",
+      "etiquetas": [
+        "docs",
+        "cronologia",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de cronologia operativa y eventos principales.",
+      "metadata_source": "docs/operativa/cronologia/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/operativa/index.md",
+      "categoria": "operativa",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/operativa/index.md",
+      "etiquetas": [
+        "docs",
+        "operativa",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de documentacion operativa sin mover evidencia viva.",
+      "metadata_source": "docs/operativa/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/operativa/planes/index.md",
+      "categoria": "operativa",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/operativa/planes/index.md",
+      "etiquetas": [
+        "docs",
+        "planes",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de planes operativos enlazados sin duplicarlos.",
+      "metadata_source": "docs/operativa/planes/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/operativa/procesos/index.md",
+      "categoria": "operativa",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/operativa/procesos/index.md",
+      "etiquetas": [
+        "docs",
+        "procesos",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de procesos documentados y referencias operativas.",
+      "metadata_source": "docs/operativa/procesos/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/operativa/readbacks/index.md",
+      "categoria": "operativa",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/operativa/readbacks/index.md",
+      "etiquetas": [
+        "docs",
+        "readbacks",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de readbacks operativos enlazados por la documentacion.",
+      "metadata_source": "docs/operativa/readbacks/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/referencia/AGENTS.reference.md",
+      "categoria": "playbooks",
+      "tipo": "reporte",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/referencia/AGENTS.reference.md",
+      "etiquetas": [
+        "docs",
+        "agents",
+        "referencia"
+      ],
+      "relacionados": [],
+      "descripcion": "Referencia extendida de instrucciones locales de agentes.",
+      "metadata_source": "docs/referencia/AGENTS.reference.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/referencia/README.reference.md",
+      "categoria": "playbooks",
+      "tipo": "reporte",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/referencia/README.reference.md",
+      "etiquetas": [
+        "docs",
+        "readme",
+        "referencia"
+      ],
+      "relacionados": [],
+      "descripcion": "Referencia historica extendida de la superficie documental.",
+      "metadata_source": "docs/referencia/README.reference.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/referencia/glosario.md",
+      "categoria": "playbooks",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/referencia/glosario.md",
+      "etiquetas": [
+        "docs",
+        "glosario",
+        "referencia"
+      ],
+      "relacionados": [],
+      "descripcion": "Glosario inicial de terminos clave del sistema documental.",
+      "metadata_source": "docs/referencia/glosario.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/referencia/index.md",
+      "categoria": "playbooks",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/referencia/index.md",
+      "etiquetas": [
+        "docs",
+        "referencia",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de referencia, glosario y documentos historicos migrados.",
+      "metadata_source": "docs/referencia/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/workbooks/index.md",
+      "categoria": "packages",
+      "tipo": "indice",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/workbooks/index.md",
+      "etiquetas": [
+        "docs",
+        "workbooks",
+        "indice"
+      ],
+      "relacionados": [],
+      "descripcion": "Indice de workbooks documentados sin mover archivos binarios.",
+      "metadata_source": "docs/workbooks/index.md",
+      "metadata_kind": "front_matter"
+    },
     {
       "artifact_id": "operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md",
       "categoria": "operativa",

@@ -6,7 +6,7 @@ Un hilo, readback, hito, referencia o carpeta documental que necesita quedar com
 
 ## Pasos
 
-1. Leer `docs/README.md`, `docs/reference/README.reference.md`, `operativa/TRACE.md` y `hitos/INDICE_MAESTRO.md`.
+1. Leer `docs/README.md`, `docs/referencia/README.reference.md`, `operativa/TRACE.md` y `hitos/INDICE_MAESTRO.md`.
 2. Identificar la pieza fuente y la evidencia asociada.
 3. Clasificar cada artefacto por rol: fuente, evidencia, patron, proceso, hito, indice o salida.
 4. Detectar repeticiones reales y separar lo durable de lo circunstancial.

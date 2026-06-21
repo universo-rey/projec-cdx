@@ -58,7 +58,7 @@ La wave visible mas reciente es [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/P
 - [hitos/README.md](C:/Users/enzo1/PROJEC%20CDX/hitos/README.md)
 - [hitos/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/hitos/MAPA.md)
 - [docs/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/README.md)
-- [docs/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/docs/MAPA.md)
+- [docs/arquitectura/mapa.md](docs/arquitectura/mapa.md)
 
 ## Capa 4: Soporte Y Patrones
 
