@@ -1,15 +1,22 @@
 ---
-id: docs-operativa-readbacks
-titulo: Readbacks
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/operativa/readbacks/index.md
-etiquetas: [operativa, readbacks]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/operativa/readbacks/index.md
+categoria: operativa
+tipo: indice
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/operativa/readbacks/index.md
+etiquetas:
+  - docs
+  - readbacks
+  - indice
+relacionados: []
+descripcion: Indice de readbacks operativos enlazados por la documentacion.
 ---
-
 # Readbacks
 
 Indice para cierres y devoluciones. No se duplican readbacks existentes; se enlazan desde indices.

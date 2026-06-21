@@ -1,15 +1,22 @@
 ---
-id: docs-referencia-agents-reference
-titulo: Referencia de agentes del workspace
-fecha: 2026-06-21
-estado: migrado
-origen: docs/reference/AGENTS.reference.md
-etiquetas: [referencia, agents, workspace]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/referencia/AGENTS.reference.md
+categoria: playbooks
+tipo: reporte
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/referencia/AGENTS.reference.md
+etiquetas:
+  - docs
+  - agents
+  - referencia
+relacionados: []
+descripcion: Referencia extendida de instrucciones locales de agentes.
 ---
-
 # AGENTS.reference.md - PROJEC CDX
 
 Version temporal completa de la guia de esta carpeta. Se deja como referencia mientras terminamos de organizar el espacio.

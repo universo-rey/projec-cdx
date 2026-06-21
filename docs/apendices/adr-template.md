@@ -1,15 +1,22 @@
 ---
-id: docs-apendices-adr-template
-titulo: Plantilla ADR
-fecha: 2026-06-21
-estado: plantilla
-origen: docs/apendices/adr-template.md
-etiquetas: [plantilla, adr]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/apendices/adr-template.md
+categoria: playbooks
+tipo: reporte
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/apendices/adr-template.md
+etiquetas:
+  - docs
+  - adr
+  - plantilla
+relacionados: []
+descripcion: Plantilla base para registrar decisiones de arquitectura.
 ---
-
 # Plantilla ADR
 
 ## Contexto

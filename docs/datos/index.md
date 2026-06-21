@@ -1,15 +1,22 @@
 ---
-id: docs-datos
-titulo: Datos y manifiestos
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/datos/index.md
-etiquetas: [datos, manifiestos, matrices]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/datos/index.md
+categoria: packages
+tipo: indice
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/datos/index.md
+etiquetas:
+  - docs
+  - datos
+  - indice
+relacionados: []
+descripcion: Indice de documentacion de datos, matrices y manifiestos.
 ---
-
 # Datos
 
 Documenta matrices, manifiestos e indices sin copiar artefactos pesados.

@@ -1,15 +1,22 @@
 ---
-id: docs-apendices
-titulo: Apendices y plantillas
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/apendices/index.md
-etiquetas: [apendices, plantillas]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/apendices/index.md
+categoria: playbooks
+tipo: indice
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/apendices/index.md
+etiquetas:
+  - docs
+  - apendices
+  - plantillas
+relacionados: []
+descripcion: Indice de plantillas y apendices documentales reutilizables.
 ---
-
 # Apendices
 
 Plantillas reutilizables para documentos canonicos.

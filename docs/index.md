@@ -1,15 +1,22 @@
 ---
-id: docs
-titulo: Indice de documentacion
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/index.md
-etiquetas: [docs, indice]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/index.md
+categoria: playbooks
+tipo: indice
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/index.md
+etiquetas:
+  - docs
+  - indice
+  - fase-1
+relacionados: []
+descripcion: Entrada central de la documentacion canonica del proyecto.
 ---
-
 # Indice de Documentacion
 
 Esta carpeta concentra la documentacion canonica del proyecto y enlaza la evidencia sin duplicarla.

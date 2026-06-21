@@ -1,15 +1,22 @@
 ---
-id: docs-gobernanza
-titulo: Gobernanza documental
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/gobernanza/index.md
-etiquetas: [gobernanza]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/gobernanza/index.md
+categoria: playbooks
+tipo: indice
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/gobernanza/index.md
+etiquetas:
+  - docs
+  - gobernanza
+  - indice
+relacionados: []
+descripcion: Indice de normas de gobernanza documental del proyecto.
 ---
-
 # Gobernanza
 
 Normas para que la documentacion conserve consistencia, integridad y trazabilidad.

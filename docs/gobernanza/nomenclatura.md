@@ -1,15 +1,22 @@
 ---
-id: docs-gobernanza-nomenclatura
-titulo: Nomenclatura
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/gobernanza/nomenclatura.md
-etiquetas: [gobernanza, nomenclatura]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/gobernanza/nomenclatura.md
+categoria: playbooks
+tipo: plan
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/gobernanza/nomenclatura.md
+etiquetas:
+  - docs
+  - nomenclatura
+  - gobernanza
+relacionados: []
+descripcion: Convenciones de nombres para documentos, ramas y artefactos.
 ---
-
 # Nomenclatura
 
 ## Principios

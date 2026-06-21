@@ -1,15 +1,22 @@
 ---
-id: docs-arquitectura-decisiones
-titulo: Decisiones de arquitectura
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/arquitectura/decisiones/index.md
-etiquetas: [arquitectura, adr]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/arquitectura/decisiones/index.md
+categoria: playbooks
+tipo: indice
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/arquitectura/decisiones/index.md
+etiquetas:
+  - docs
+  - adr
+  - indice
+relacionados: []
+descripcion: Indice de decisiones de arquitectura registradas como ADR.
 ---
-
 # Decisiones de Arquitectura
 
 Las ADR documentan decisiones estructurales con contexto, alternativas y consecuencias.

@@ -1,15 +1,22 @@
 ---
-id: docs-referencia-readme-reference
-titulo: Referencia historica del workspace
-fecha: 2026-06-21
-estado: migrado
-origen: docs/reference/README.reference.md
-etiquetas: [referencia, legacy, workspace]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/referencia/README.reference.md
+categoria: playbooks
+tipo: reporte
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/referencia/README.reference.md
+etiquetas:
+  - docs
+  - readme
+  - referencia
+relacionados: []
+descripcion: Referencia historica extendida de la superficie documental.
 ---
-
 # README.reference.md - PROJEC CDX
 
 Inventario de referencia de la carpeta `C:\Users\enzo1\PROJEC CDX`.

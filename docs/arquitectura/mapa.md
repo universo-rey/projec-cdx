@@ -1,15 +1,22 @@
 ---
-id: docs-arquitectura-mapa
-titulo: Mapa arquitectonico documental
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/MAPA.md
-etiquetas: [arquitectura, documentacion, navegacion]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/arquitectura/mapa.md
+categoria: playbooks
+tipo: mapa
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/arquitectura/mapa.md
+etiquetas:
+  - docs
+  - arquitectura
+  - mapa
+relacionados: []
+descripcion: Mapa arquitectonico de la nueva organizacion documental.
 ---
-
 # Mapa Arquitectonico Documental
 
 Este mapa cose la documentacion visible de `PROJEC CDX` sin duplicar el control plane operativo.

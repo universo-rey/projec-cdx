@@ -1,15 +1,22 @@
 ---
-id: docs-referencia-glosario
-titulo: Glosario
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/referencia/glosario.md
-etiquetas: [referencia, glosario]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/referencia/glosario.md
+categoria: playbooks
+tipo: indice
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/referencia/glosario.md
+etiquetas:
+  - docs
+  - glosario
+  - referencia
+relacionados: []
+descripcion: Glosario inicial de terminos clave del sistema documental.
 ---
-
 # Glosario
 
 | Termino | Definicion inicial |

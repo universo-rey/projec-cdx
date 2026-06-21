@@ -1,15 +1,22 @@
 ---
-id: docs-operativa
-titulo: Operativa documental
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/operativa/index.md
-etiquetas: [operativa]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/operativa/index.md
+categoria: operativa
+tipo: indice
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/operativa/index.md
+etiquetas:
+  - docs
+  - operativa
+  - indice
+relacionados: []
+descripcion: Indice de documentacion operativa sin mover evidencia viva.
 ---
-
 # Operativa
 
 Ordena actas, planes, readbacks y cronologia sin mover la evidencia viva de `operativa/`.

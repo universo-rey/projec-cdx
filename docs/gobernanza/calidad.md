@@ -1,15 +1,22 @@
 ---
-id: docs-gobernanza-calidad
-titulo: Calidad documental y seguridad
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/gobernanza/calidad.md
-etiquetas: [gobernanza, calidad, seguridad]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/gobernanza/calidad.md
+categoria: playbooks
+tipo: plan
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/gobernanza/calidad.md
+etiquetas:
+  - docs
+  - calidad
+  - gobernanza
+relacionados: []
+descripcion: Politica de calidad, revision y seguridad documental.
 ---
-
 # Calidad
 
 ## Reglas
@@ -26,3 +33,28 @@ version: 0.1.0-docs
 - Front matter completo.
 - Rutas absolutas solo cuando sean evidencia local deliberada.
 - Indices actualizados despues de mover documentos.
+
+## Front matter canonico
+
+Usar solo claves aceptadas por `schema.json`:
+
+```yaml
+---
+artifact_id: docs/ruta/archivo.md
+categoria: playbooks
+tipo: indice
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/ruta/archivo.md
+etiquetas:
+  - docs
+  - ejemplo
+relacionados: []
+descripcion: Descripcion breve del artefacto documental.
+---
+```

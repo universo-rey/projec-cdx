@@ -1,15 +1,22 @@
 ---
-id: docs-operativa-cronologia-maestra
-titulo: Cronologia maestra
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/operativa/cronologia/cronologia-maestra.md
-etiquetas: [operativa, cronologia]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/operativa/cronologia/cronologia-maestra.md
+categoria: operativa
+tipo: reporte
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/operativa/cronologia/cronologia-maestra.md
+etiquetas:
+  - docs
+  - cronologia
+  - fase-1
+relacionados: []
+descripcion: Cronologia maestra inicial del refactor documental.
 ---
-
 # Cronologia Maestra
 
 Registro unificado de eventos mayores del proyecto.

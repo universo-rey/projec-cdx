@@ -1,15 +1,22 @@
 ---
-id: docs-operativa-cronologia
-titulo: Cronologia
-fecha: 2026-06-21
-estado: fase-1
-origen: docs/operativa/cronologia/index.md
-etiquetas: [operativa, cronologia]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/operativa/cronologia/index.md
+categoria: operativa
+tipo: indice
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/operativa/cronologia/index.md
+etiquetas:
+  - docs
+  - cronologia
+  - indice
+relacionados: []
+descripcion: Indice de cronologia operativa y eventos principales.
 ---
-
 # Cronologia
 
 - [Cronologia maestra](cronologia-maestra.md)

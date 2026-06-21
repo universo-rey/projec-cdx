@@ -1,15 +1,22 @@
 ---
-id: docs-apendices-plantilla-ficha-matriz
-titulo: Plantilla de ficha de matriz
-fecha: 2026-06-21
-estado: plantilla
-origen: docs/apendices/plantilla-ficha-matriz.md
-etiquetas: [plantilla, matriz]
-responsable: PROJEC CDX
-owner: CEO
-version: 0.1.0-docs
+artifact_id: docs/apendices/plantilla-ficha-matriz.md
+categoria: playbooks
+tipo: reporte
+estado: en_revision
+version: 0.1.0
+fecha_evento: "2026-06-21"
+autoridad:
+  tipo: owner
+  referencia: CEO
+origen: GitHub
+ubicacion_repo: docs/apendices/plantilla-ficha-matriz.md
+etiquetas:
+  - docs
+  - matriz
+  - plantilla
+relacionados: []
+descripcion: Plantilla para describir matrices sin duplicar datos fuente.
 ---
-
 # Plantilla de Ficha de Matriz
 
 ## Descripcion
