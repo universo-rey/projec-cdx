@@ -1,3 +1,15 @@
+---
+id: docs-referencia-readme-reference
+titulo: Referencia historica del workspace
+fecha: 2026-06-21
+estado: migrado
+origen: docs/reference/README.reference.md
+etiquetas: [referencia, legacy, workspace]
+responsable: PROJEC CDX
+owner: CEO
+version: 0.1.0-docs
+---
+
 # README.reference.md - PROJEC CDX
 
 Inventario de referencia de la carpeta `C:\Users\enzo1\PROJEC CDX`.
@@ -29,7 +41,7 @@ Las superficies sensibles `secrets/`, `.sandbox-secrets/` y `private/` se invent
 | [packages/codex_evolutionary_blueprint_package.zip](C:/Users/enzo1/PROJEC%20CDX/packages/codex_evolutionary_blueprint_package.zip) | Paquete comprimido de blueprint |
 | [packages/codex_evolutionary_runtime_activation_v2.zip](C:/Users/enzo1/PROJEC%20CDX/packages/codex_evolutionary_runtime_activation_v2.zip) | Paquete comprimido de activacion |
 | [AGENTS.md](C:/Users/enzo1/PROJEC%20CDX/AGENTS.md) | Guia minima local |
-| [docs/reference/AGENTS.reference.md](C:/Users/enzo1/PROJEC%20CDX/docs/reference/AGENTS.reference.md) | Guia completa temporal |
+| [docs/referencia/AGENTS.reference.md](C:/Users/enzo1/PROJEC%20CDX/docs/referencia/AGENTS.reference.md) | Guia completa temporal |
 | [Origen del chat actual](C:/Users/enzo1/.codex/attachments/296335cf-ca6e-4cf2-b2c5-a46b23c27ff4/pasted-text.txt) | Canon de origen usado para esta organización |
 | [CARTOGRAFIA_COMPLETA.md](C:/Users/enzo1/.codex/CARTOGRAFIA_COMPLETA.md) | Mapa maestro del universo compartido |
 

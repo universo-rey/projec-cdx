@@ -68,7 +68,7 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 - [dataverse/GATE.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/GATE.md)
 - [dataverse/MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md)
 - [docs/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/README.md)
-- [docs/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/docs/MAPA.md)
+- [docs/arquitectura/mapa.md](C:/Users/enzo1/PROJEC%20CDX/docs/arquitectura/mapa.md)
 - [inventarios/README.md](C:/Users/enzo1/PROJEC%20CDX/inventarios/README.md)
 - [inventarios/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/inventarios/MAPA.md)
 - [inventarios/PROJEC_CDX_ROOT_INVENTORY.md](C:/Users/enzo1/PROJEC%20CDX/inventarios/PROJEC_CDX_ROOT_INVENTORY.md)
@@ -143,8 +143,8 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 ## Soporte
 
 - [docs/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/README.md)
-- [docs/reference/README.reference.md](C:/Users/enzo1/PROJEC%20CDX/docs/reference/README.reference.md)
-- [docs/reference/AGENTS.reference.md](C:/Users/enzo1/PROJEC%20CDX/docs/reference/AGENTS.reference.md)
+- [docs/referencia/README.reference.md](C:/Users/enzo1/PROJEC%20CDX/docs/referencia/README.reference.md)
+- [docs/referencia/AGENTS.reference.md](C:/Users/enzo1/PROJEC%20CDX/docs/referencia/AGENTS.reference.md)
 
 ## Superficies Extendidas
 

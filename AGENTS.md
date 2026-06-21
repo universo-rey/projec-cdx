@@ -19,5 +19,5 @@ La guia operativa principal y la navegacion visible de la cabina global de Codex
 
 - Si la ruta operativa esta en duda, seguir la navegacion de la cabina global `.codex` antes que esta carpeta.
 - Si este repo contradice una instruccion general, manda la instruccion local de la carpeta.
-- Si una superficie crece, mover el detalle a `docs/reference/README.reference.md` o `docs/reference/AGENTS.reference.md`.
+- Si una superficie crece, mover el detalle a `docs/referencia/README.reference.md` o `docs/referencia/AGENTS.reference.md`.
 - Si hace falta navegar mejor la carpeta, usar `codex-surface-map`.
