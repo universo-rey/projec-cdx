@@ -13,10 +13,14 @@
   "etiquetas": [
     "operativa",
     "matriz",
-    "metadata"
+    "metadata",
+    "cloud",
+    "dataverse",
+    "preflight"
   ],
   "relacionados": [
     "operativa/MAPA.md"
   ],
-  "descripcion": "Resultado de preflight cloud Dataverse con trazabilidad parcial."
+  "descripcion": "Resultado de preflight cloud Dataverse con trazabilidad parcial.",
+  "fecha_evento": "2026-06-17"
 }

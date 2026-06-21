@@ -17,6 +17,7 @@ relacionados:
 - operativa/MAPA.md
 descripcion: Orden de despacho de agentes para wave atomica metadata con trazabilidad
   parcial.
+fecha_evento: '2026-06-16'
 ---
 
 # Orden Despacho Agentes Wave Atomica Metadata 20260616

@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Matriz de repositorios restringidos a main con trazabilidad parcial.
+fecha_evento: '2026-06-15'
 ---
 
 # Matriz Repos Git Main Only 20260615

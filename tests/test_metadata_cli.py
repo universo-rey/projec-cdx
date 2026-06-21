@@ -190,3 +190,30 @@ contenido
     assert exit_code == 0
     manifest = json.loads((repo / "live-manifest.json").read_text(encoding="utf-8"))
     assert "operativa/README.md" in manifest["artifacts"]
+
+
+def test_validate_repository_enforces_dataset_artifact_id_convention(tmp_path: Path) -> None:
+    repo = _seed_repo(tmp_path)
+    _write(
+        repo / "operativa" / "B.csv.meta.json",
+        json.dumps(
+            {
+                "artifact_id": "operativa/B.csv",
+                "categoria": "operativa",
+                "tipo": "matriz",
+                "estado": "en_revision",
+                "version": "1",
+                "autoridad": {"tipo": "owner", "referencia": "@seshat"},
+                "origen": "GitHub",
+                "ubicacion_repo": "operativa/B.csv",
+                "etiquetas": ["b"],
+                "relacionados": [],
+                "descripcion": "prueba B",
+            }
+        ),
+    )
+
+    result = validate_repository(repo, repo / "schema.json")
+
+    assert not result.is_valid
+    assert any("convencion artifact_id" in item.message for item in result.errors)

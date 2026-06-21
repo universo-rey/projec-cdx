@@ -13,10 +13,13 @@
   "etiquetas": [
     "operativa",
     "reporte",
-    "metadata"
+    "metadata",
+    "sgin",
+    "clasificacion"
   ],
   "relacionados": [
     "operativa/MAPA.md"
   ],
-  "descripcion": "Clasificacion de contenido ambiguo de Seshat SGIN con trazabilidad parcial."
+  "descripcion": "Clasificacion de contenido ambiguo de Seshat SGIN con trazabilidad parcial.",
+  "fecha_evento": "2026-06-17"
 }

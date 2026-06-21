@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Readback de preflight cloud Dataverse con trazabilidad parcial.
+fecha_evento: '2026-06-17'
 ---
 
 # Readback Cloud Dataverse Preflight 20260617

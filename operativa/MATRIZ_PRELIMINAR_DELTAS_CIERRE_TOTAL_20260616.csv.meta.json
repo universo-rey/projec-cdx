@@ -13,10 +13,13 @@
   "etiquetas": [
     "operativa",
     "matriz",
-    "metadata"
+    "metadata",
+    "deltas",
+    "cierre"
   ],
   "relacionados": [
     "operativa/MAPA.md"
   ],
-  "descripcion": "Matriz preliminar CSV de deltas de cierre total con trazabilidad parcial."
+  "descripcion": "Matriz preliminar CSV de deltas de cierre total con trazabilidad parcial.",
+  "fecha_evento": "2026-06-16"
 }

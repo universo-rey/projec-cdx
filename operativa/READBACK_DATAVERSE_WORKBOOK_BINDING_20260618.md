@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Readback del binding de workbook y Dataverse con trazabilidad parcial.
+fecha_evento: '2026-06-18'
 ---
 
 # READBACK_DATAVERSE_WORKBOOK_BINDING_20260618

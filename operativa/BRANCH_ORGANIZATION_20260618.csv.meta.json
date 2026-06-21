@@ -13,10 +13,13 @@
   "etiquetas": [
     "operativa",
     "matriz",
-    "metadata"
+    "metadata",
+    "branches",
+    "organization"
   ],
   "relacionados": [
     "operativa/MAPA.md"
   ],
-  "descripcion": "Estructura de organizacion de ramas con trazabilidad parcial."
+  "descripcion": "Estructura de organizacion de ramas con trazabilidad parcial.",
+  "fecha_evento": "2026-06-18"
 }

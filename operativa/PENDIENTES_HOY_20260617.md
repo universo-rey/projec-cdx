@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Listado de pendientes operativos del dia con trazabilidad parcial.
+fecha_evento: '2026-06-17'
 ---
 
 # Pendientes Hoy 2026-06-17

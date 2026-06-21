@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Orden de promocion de Seshat Home SharePoint con trazabilidad parcial.
+fecha_evento: '2026-06-16'
 ---
 
 # Orden - Promocion Seshat Home SharePoint

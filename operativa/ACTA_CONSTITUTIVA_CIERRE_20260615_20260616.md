@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Acta constitutiva de cierre con trazabilidad parcial.
+fecha_evento: '2026-06-15'
 ---
 
 # Acta Constitutiva Del Cierre 20260615_20260616

@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Plan maestro atomico para tenant Dataverse y Codex Cloud.
+fecha_evento: '2026-06-17'
 ---
 
 # VIVO: Plan Maestro Atomico Tenant Dataverse Codex Cloud 20260617

@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Readback de estado real maximo por superficies con trazabilidad parcial.
+fecha_evento: '2026-06-17'
 ---
 
 # Readback Maximo Estado Real Por Superficie 20260617

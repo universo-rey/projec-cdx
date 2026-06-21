@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Readback del lanzamiento SDK de Codex Cloud con trazabilidad parcial.
+fecha_evento: '2026-06-17'
 ---
 
 # Readback Codex Cloud SDK Launch 20260617

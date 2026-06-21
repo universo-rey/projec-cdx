@@ -13,10 +13,14 @@
   "etiquetas": [
     "operativa",
     "reporte",
-    "metadata"
+    "metadata",
+    "dataverse",
+    "power-platform",
+    "live-summary"
   ],
   "relacionados": [
     "operativa/MAPA.md"
   ],
-  "descripcion": "Resumen live de Dataverse y Power Platform con trazabilidad parcial."
+  "descripcion": "Resumen live de Dataverse y Power Platform con trazabilidad parcial.",
+  "fecha_evento": "2026-06-16"
 }

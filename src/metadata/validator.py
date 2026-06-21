@@ -45,6 +45,33 @@ class ValidationResult:
         return not self.errors
 
 
+def _strip_dataset_extension(path: str) -> str | None:
+    for ext in (".csv", ".json"):
+        if path.endswith(ext):
+            return path[: -len(ext)]
+    return None
+
+
+def _artifact_id_convention_error(record: MetadataRecord) -> str | None:
+    artifact_id = record.metadata.get("artifact_id")
+    repo_path = record.metadata.get("ubicacion_repo")
+    if not isinstance(artifact_id, str) or not isinstance(repo_path, str):
+        return None
+
+    if record.kind == "front_matter" and repo_path.endswith(".md"):
+        if artifact_id != repo_path:
+            return "convencion artifact_id: Markdown debe usar la ruta con extension .md"
+        return None
+
+    if record.kind == "meta_json":
+        expected = _strip_dataset_extension(repo_path)
+        if expected and artifact_id != expected:
+            return (
+                "convencion artifact_id: datasets CSV/JSON deben usar la ruta sin extension"
+            )
+    return None
+
+
 def load_schema(schema_path: Path) -> dict[str, Any]:
     return json.loads(schema_path.read_text(encoding="utf-8"))
 
@@ -178,5 +205,15 @@ def validate_repository(root: Path, schema_path: Path) -> ValidationResult:
                 )
             else:
                 seen_artifacts[artifact_id] = record.source_path
+
+        convention_error = _artifact_id_convention_error(record)
+        if convention_error:
+            errors.append(
+                ValidationErrorItem(
+                    source_path=record.source_path,
+                    message=convention_error,
+                    field_path="artifact_id",
+                )
+            )
 
     return ValidationResult(records=records, errors=errors)

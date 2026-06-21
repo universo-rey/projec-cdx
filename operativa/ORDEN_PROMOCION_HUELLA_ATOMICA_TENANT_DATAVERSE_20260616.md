@@ -17,6 +17,7 @@ relacionados:
 - operativa/MAPA.md
 descripcion: Orden de promocion de huella atomica a tenant y Dataverse con trazabilidad
   parcial.
+fecha_evento: '2026-06-16'
 ---
 
 # Orden De Promocion - Huella Atomica SDU A Tenant Y Dataverse

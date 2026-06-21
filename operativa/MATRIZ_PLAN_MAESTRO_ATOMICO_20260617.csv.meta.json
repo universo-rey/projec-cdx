@@ -13,10 +13,13 @@
   "etiquetas": [
     "operativa",
     "matriz",
-    "metadata"
+    "metadata",
+    "plan-maestro",
+    "atomico"
   ],
   "relacionados": [
     "operativa/MAPA.md"
   ],
-  "descripcion": "Matriz derivada del plan maestro atomico con trazabilidad parcial."
+  "descripcion": "Matriz derivada del plan maestro atomico con trazabilidad parcial.",
+  "fecha_evento": "2026-06-17"
 }

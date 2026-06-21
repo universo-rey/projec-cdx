@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Matriz preliminar de deltas para cierre total con trazabilidad parcial.
+fecha_evento: '2026-06-16'
 ---
 
 # Matriz Preliminar Deltas Cierre Total 20260616

@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Plan preliminar de lectura live de Microsoft con trazabilidad parcial.
+fecha_evento: '2026-06-16'
 ---
 
 # Plan Preliminar Microsoft Live Read 20260616

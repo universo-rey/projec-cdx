@@ -16,6 +16,7 @@ etiquetas:
 relacionados:
 - operativa/MAPA.md
 descripcion: Readback de universo Microsoft live con trazabilidad parcial.
+fecha_evento: '2026-06-16'
 ---
 
 # Readback Microsoft Universo Live 20260616
