@@ -1,3 +1,24 @@
+---
+artifact_id: operativa/ORDEN_DESPACHO_AGENTES_WAVE_ATOMICA_METADATA_20260616.md
+categoria: operativa
+tipo: orden
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/ORDEN_DESPACHO_AGENTES_WAVE_ATOMICA_METADATA_20260616.md
+etiquetas:
+- operativa
+- orden
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Orden de despacho de agentes para wave atomica metadata con trazabilidad
+  parcial.
+---
+
 # Orden Despacho Agentes Wave Atomica Metadata 20260616
 
 Estado: `DISPATCH_PREPARED`.

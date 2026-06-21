@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md
+categoria: operativa
+tipo: readback
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md
+etiquetas:
+- operativa
+- readback
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Readback de universo Microsoft live con trazabilidad parcial.
+---
+
 # Readback Microsoft Universo Live 20260616
 
 Estado: `OBSERVED_READ_ONLY`.

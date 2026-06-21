@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/START_HERE.md
+categoria: operativa
+tipo: indice
+estado: aprobado
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/START_HERE.md
+etiquetas:
+- operativa
+- indice
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Punto de entrada operativo para hilos nuevos.
+---
+
 # Start Here
 
 Entrada obligatoria para cualquier hilo nuevo abierto sobre `PROJEC CDX`.

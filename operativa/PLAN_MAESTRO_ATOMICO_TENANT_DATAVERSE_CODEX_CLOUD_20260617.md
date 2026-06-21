@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md
+categoria: operativa
+tipo: plan
+estado: aprobado
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md
+etiquetas:
+- operativa
+- plan
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Plan maestro atomico para tenant Dataverse y Codex Cloud.
+---
+
 # VIVO: Plan Maestro Atomico Tenant Dataverse Codex Cloud 20260617
 
 Estado: `PLAN_PREPARADO_VERSIONABLE`

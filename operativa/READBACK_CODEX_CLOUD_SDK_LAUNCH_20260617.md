@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md
+categoria: operativa
+tipo: readback
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md
+etiquetas:
+- operativa
+- readback
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Readback del lanzamiento SDK de Codex Cloud con trazabilidad parcial.
+---
+
 # Readback Codex Cloud SDK Launch 20260617
 
 Estado: `SDK_LOCAL_LAUNCH_OBSERVED_CLOUD_UI_FRONTIER`

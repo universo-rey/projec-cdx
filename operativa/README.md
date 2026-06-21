@@ -1,3 +1,24 @@
+---
+artifact_id: operativa/README.md
+categoria: operativa
+tipo: indice
+estado: live
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/README.md
+etiquetas:
+- operativa
+- indice
+- metadata
+relacionados:
+- operativa/MAPA.md
+- operativa/START_HERE.md
+descripcion: Indice vivo de la carpeta operativa y su estado actual.
+---
+
 # Operativa
 
 Carril vivo para organizar el trabajo punta a punta de `PROJEC CDX`.
@@ -90,3 +111,21 @@ La cobertura atomica energetica introduce `atomic_energy_phase` y `atomic_next_i
 - Si algo crece, se parte en una pieza nueva antes de seguir.
 - La vista compacta queda en [README_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/operativa/README_CORTO.md) y [MAPA_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/operativa/MAPA_CORTO.md).
 - La entrada compacta queda en [README_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/operativa/README_CORTO.md).
+
+## Metadatos
+
+Los artefactos Markdown de `operativa/` usan front matter YAML:
+
+```yaml
+---
+artifact_id: operativa/README.md
+categoria: operativa
+tipo: indice
+estado: live
+version: 2026.06.21
+origen: GitHub
+ubicacion_repo: operativa/README.md
+---
+```
+
+Para CSV/JSON se usa archivo hermano `*.meta.json` con el mismo esquema declarado en `/schema.json`.

@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md
+categoria: operativa
+tipo: acta
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md
+etiquetas:
+- operativa
+- acta
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Acta constitutiva de cierre con trazabilidad parcial.
+---
+
 # Acta Constitutiva Del Cierre 20260615_20260616
 
 ## Estado

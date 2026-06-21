@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/PENDIENTES_HOY_20260617.md
+categoria: operativa
+tipo: plan
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/PENDIENTES_HOY_20260617.md
+etiquetas:
+- operativa
+- plan
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Listado de pendientes operativos del dia con trazabilidad parcial.
+---
+
 # Pendientes Hoy 2026-06-17
 
 Relevamiento operativo desde `NEXT.md`, `CURRENT.md`, `BLOCKERS.md`, `TRACE.md`, matriz preliminar y estado Git.

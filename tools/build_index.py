@@ -1,0 +1,9 @@
+from __future__ import annotations
+
+import sys
+
+from metadata.cli import main
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(["build-index", *sys.argv[1:]]))

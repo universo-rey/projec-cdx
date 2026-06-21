@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md
+categoria: operativa
+tipo: readback
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md
+etiquetas:
+- operativa
+- readback
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Readback de estado real maximo por superficies con trazabilidad parcial.
+---
+
 # Readback Maximo Estado Real Por Superficie 20260617
 
 Estado: `MAX_STATE_FAN_IN_VERIFIED`.

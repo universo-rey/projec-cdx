@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md
+categoria: operativa
+tipo: readback
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md
+etiquetas:
+- operativa
+- readback
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Readback de preflight cloud Dataverse con trazabilidad parcial.
+---
+
 # Readback Cloud Dataverse Preflight 20260617
 
 Estado: `CLOUD_DATAVERSE_PREFLIGHT_READY`

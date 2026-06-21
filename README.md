@@ -24,3 +24,24 @@ Snapshot liviano de la cabina.
 ## Regla
 - No rehidratar, no reempaquetar y no releer SGIN si ya existe evidencia vigente.
 - Consumir el workbook, `Workspace Actual` y `Superficies Locales` para decidir el proximo delta.
+
+## Metadatos canonicos
+
+Este repositorio ahora usa metadatos canonicos para recuperacion por Copilot:
+
+- `schema.json`: contrato de metadatos (artifact_id, categoria, tipo, estado, origen, trazabilidad).
+- Front matter YAML en Markdown (`--- ... ---`).
+- Archivos hermanos `*.meta.json` para CSV/JSON.
+- `index.json` y `operativa/index.json` como catalogos generados.
+- `live-manifest.json` para artefactos `aprobado|live`.
+
+Comandos principales:
+
+- `python main.py validate`
+- `python main.py build-index`
+- `python -m tools.validate`
+- `python -m tools.build_index`
+
+Promocion de estado (actualiza `live-manifest.json`):
+
+- `python main.py promote <artifact_id> <borrador|en_revision|aprobado|live>`

@@ -1,0 +1,22 @@
+{
+  "artifact_id": "operativa/DATAVERSE_POWER_PLATFORM_LIVE_SUMMARY_20260616",
+  "categoria": "operativa",
+  "tipo": "reporte",
+  "estado": "en_revision",
+  "version": "2026.06.21",
+  "autoridad": {
+    "tipo": "owner",
+    "referencia": "@SeshatSgin"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/DATAVERSE_POWER_PLATFORM_LIVE_SUMMARY_20260616.json",
+  "etiquetas": [
+    "operativa",
+    "reporte",
+    "metadata"
+  ],
+  "relacionados": [
+    "operativa/MAPA.md"
+  ],
+  "descripcion": "Resumen live de Dataverse y Power Platform con trazabilidad parcial."
+}

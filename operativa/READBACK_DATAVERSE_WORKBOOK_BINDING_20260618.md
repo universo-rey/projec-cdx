@@ -1,3 +1,23 @@
+---
+artifact_id: operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md
+categoria: operativa
+tipo: readback
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md
+etiquetas:
+- operativa
+- readback
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Readback del binding de workbook y Dataverse con trazabilidad parcial.
+---
+
 # READBACK_DATAVERSE_WORKBOOK_BINDING_20260618
 
 ## Estado

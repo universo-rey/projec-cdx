@@ -1,0 +1,22 @@
+{
+  "artifact_id": "operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617",
+  "categoria": "operativa",
+  "tipo": "reporte",
+  "estado": "en_revision",
+  "version": "2026.06.21",
+  "autoridad": {
+    "tipo": "owner",
+    "referencia": "@SeshatSgin"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv",
+  "etiquetas": [
+    "operativa",
+    "reporte",
+    "metadata"
+  ],
+  "relacionados": [
+    "operativa/MAPA.md"
+  ],
+  "descripcion": "Clasificacion de contenido ambiguo de Seshat SGIN con trazabilidad parcial."
+}

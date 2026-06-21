@@ -1,0 +1,22 @@
+{
+  "artifact_id": "operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "2026.06.21",
+  "autoridad": {
+    "tipo": "owner",
+    "referencia": "@SeshatSgin"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617.csv",
+  "etiquetas": [
+    "operativa",
+    "matriz",
+    "metadata"
+  ],
+  "relacionados": [
+    "operativa/MAPA.md"
+  ],
+  "descripcion": "Matriz derivada del plan maestro atomico con trazabilidad parcial."
+}

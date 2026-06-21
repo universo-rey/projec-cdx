@@ -1,3 +1,24 @@
+---
+artifact_id: operativa/ORDEN_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md
+categoria: operativa
+tipo: orden
+estado: en_revision
+version: 2026.06.21
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: GitHub
+ubicacion_repo: operativa/ORDEN_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md
+etiquetas:
+- operativa
+- orden
+- metadata
+relacionados:
+- operativa/MAPA.md
+descripcion: Orden de promocion de huella atomica a tenant y Dataverse con trazabilidad
+  parcial.
+---
+
 # Orden De Promocion - Huella Atomica SDU A Tenant Y Dataverse
 
 Estado: `LIVE_METADATA_POINTER_WRITE_EXECUTED`
