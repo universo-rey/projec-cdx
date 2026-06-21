@@ -1,7 +1,32 @@
 {
-  "generated_at": "2026-06-21T10:50:14.059068+00:00",
-  "count": 58,
+  "generated_at": "2026-06-21T11:31:51.892015+00:00",
+  "count": 59,
   "items": [
+    {
+      "artifact_id": "docs/MAPA.md",
+      "categoria": "playbooks",
+      "tipo": "mapa",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/MAPA.md",
+      "etiquetas": [
+        "docs",
+        "mapa",
+        "compatibilidad"
+      ],
+      "relacionados": [
+        "docs/arquitectura/mapa.md"
+      ],
+      "descripcion": "Puerta historica de compatibilidad hacia el mapa documental canonico.",
+      "metadata_source": "docs/MAPA.md",
+      "metadata_kind": "front_matter"
+    },
     {
       "artifact_id": "docs/apendices/adr-template.md",
       "categoria": "playbooks",
