@@ -1,4 +1,5 @@
 # Despierta PROJEC CDX: Circuito Vivo
+![meta-validate](https://github.com/universo-rey/projec-cdx/actions/workflows/meta-validate.yml/badge.svg?branch=main)
 
 Snapshot liviano de la cabina.
 
@@ -37,8 +38,8 @@ Este repositorio ahora usa metadatos canonicos para recuperacion por Copilot:
 
 Convencion de `artifact_id`:
 
-- Markdown (`.md`): `artifact_id` **con extension** (ej. `operativa/MAPA.md`).
-- Datasets (`.csv`/`.json` con `*.meta.json`): `artifact_id` **sin extension** (ej. `operativa/BRANCH_ORGANIZATION_20260618`).
+- Markdown (`.md`): `artifact_id` con extension (ej. `operativa/MAPA.md`).
+- Datasets (`.csv`/`.json` con `*.meta.json`): `artifact_id` sin extension (ej. `operativa/BRANCH_ORGANIZATION_20260618`).
 
 Comandos principales:
 
@@ -57,4 +58,4 @@ La CLI de cloud y la de metadata conviven:
 
 - Cloud: `projec-cdx-cloud ...` (entrypoint actual de cloud).
 - Metadata por modulo: `python -m tools.validate` y `python -m tools.build_index`.
-- Metadata unificada: `python main.py validate|build-index|graph|promote ...` o `cdx validate|build-index|graph|promote ...`.
+- Metadata unificada: `python main.py validate|build-index|graph|promote ...` o `cdx validate|build-index|graph|promote ...`. [1] [2]
