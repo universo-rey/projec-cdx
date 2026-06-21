@@ -8,7 +8,17 @@ from typing import Any
 import yaml
 from jsonschema import Draft202012Validator
 
-IGNORED_PARTS = {".git", ".venv", "node_modules", "__pycache__"}
+IGNORED_PARTS = {
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    "__pycache__",
+    "dist-packages",
+    "node_modules",
+    "site-packages",
+}
+IGNORED_ENV_NAMES = {".env", ".venv", "env", "venv"}
 
 
 @dataclass(frozen=True)
@@ -40,7 +50,36 @@ def load_schema(schema_path: Path) -> dict[str, Any]:
 
 
 def _is_ignored(path: Path) -> bool:
-    return any(part in IGNORED_PARTS for part in path.parts)
+    parts = [part.lower() for part in path.parts]
+    return any(
+        part in IGNORED_PARTS
+        or part in IGNORED_ENV_NAMES
+        or part.startswith(".venv")
+        for part in parts
+    )
+
+
+def _is_relative_to(path: Path, parent: Path) -> bool:
+    try:
+        path.relative_to(parent)
+        return True
+    except ValueError:
+        return False
+
+
+def _discover_virtualenv_roots(root: Path) -> list[Path]:
+    roots: list[Path] = []
+    for config_path in root.rglob("pyvenv.cfg"):
+        try:
+            rel = config_path.parent.relative_to(root)
+        except ValueError:
+            continue
+        roots.append(rel)
+    return roots
+
+
+def _should_skip(path: Path, virtualenv_roots: list[Path]) -> bool:
+    return _is_ignored(path) or any(_is_relative_to(path, root) for root in virtualenv_roots)
 
 
 def parse_front_matter(path: Path) -> dict[str, Any] | None:
@@ -76,10 +115,11 @@ def replace_front_matter(path: Path, metadata: dict[str, Any]) -> None:
 
 def discover_metadata_records(root: Path) -> list[MetadataRecord]:
     records: list[MetadataRecord] = []
+    virtualenv_roots = _discover_virtualenv_roots(root)
 
     for md_path in root.rglob("*.md"):
         rel = md_path.relative_to(root)
-        if _is_ignored(rel):
+        if _should_skip(rel, virtualenv_roots):
             continue
         front_matter = parse_front_matter(md_path)
         if front_matter:
@@ -93,7 +133,7 @@ def discover_metadata_records(root: Path) -> list[MetadataRecord]:
 
     for meta_path in root.rglob("*.meta.json"):
         rel = meta_path.relative_to(root)
-        if _is_ignored(rel):
+        if _should_skip(rel, virtualenv_roots):
             continue
         payload = json.loads(meta_path.read_text(encoding="utf-8"))
         if not isinstance(payload, dict):

@@ -97,6 +97,74 @@ contenido
     assert operativa_payload["items"][0]["artifact_id"] == "operativa/MAPA.md"
 
 
+def test_build_indexes_is_idempotent_when_metadata_is_unchanged(tmp_path: Path) -> None:
+    repo = _seed_repo(tmp_path)
+    _write(
+        repo / "operativa" / "MAPA.md",
+        """---
+artifact_id: operativa/MAPA.md
+categoria: operativa
+tipo: mapa
+estado: live
+version: "1"
+autoridad: {tipo: owner, referencia: "@seshat"}
+origen: GitHub
+ubicacion_repo: operativa/MAPA.md
+etiquetas: [operativa]
+relacionados: []
+descripcion: mapa
+---
+contenido
+""",
+    )
+
+    root_index, operativa_index = build_indexes(repo, repo / "schema.json")
+    first_root = root_index.read_text(encoding="utf-8")
+    first_operativa = operativa_index.read_text(encoding="utf-8")
+
+    build_indexes(repo, repo / "schema.json")
+
+    assert root_index.read_text(encoding="utf-8") == first_root
+    assert operativa_index.read_text(encoding="utf-8") == first_operativa
+
+
+def test_validate_repository_ignores_local_virtualenv_metadata(tmp_path: Path) -> None:
+    repo = _seed_repo(tmp_path)
+    _write(
+        repo / "operativa" / "MAPA.md",
+        """---
+artifact_id: operativa/MAPA.md
+categoria: operativa
+tipo: mapa
+estado: live
+version: "1"
+autoridad: {tipo: owner, referencia: "@seshat"}
+origen: GitHub
+ubicacion_repo: operativa/MAPA.md
+etiquetas: [operativa]
+relacionados: []
+descripcion: mapa
+---
+contenido
+""",
+    )
+    _write(repo / "review-env" / "pyvenv.cfg", "home = python\n")
+    _write(
+        repo / "review-env" / "Lib" / "site-packages" / "fastapi" / ".agents" / "skills" / "fastapi" / "SKILL.md",
+        """---
+name: fastapi
+description: external package skill
+---
+external metadata shape
+""",
+    )
+
+    result = validate_repository(repo, repo / "schema.json")
+
+    assert result.is_valid
+    assert [record.source_path for record in result.records] == ["operativa/MAPA.md"]
+
+
 def test_promote_updates_manifest(tmp_path: Path) -> None:
     repo = _seed_repo(tmp_path)
     _write(
