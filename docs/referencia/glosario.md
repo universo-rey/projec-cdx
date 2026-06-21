@@ -29,3 +29,8 @@ descripcion: Glosario inicial de terminos clave del sistema documental.
 | Readback | Cierre escrito que devuelve estado, evidencia, decision y siguiente delta. |
 | Gate | Condicion explicita de avance, validacion o decision humana. |
 | Dev Drive | Volumen optimizado para desarrollo en Windows. |
+| Control plane | Capa que coordina estado, validaciones, indices, gates y decisiones operativas. |
+| Evidencia viva | Registro versionado o verificable que permite reconstruir una decision, ejecucion o cierre. |
+| Indice maestro | Entrada consolidada que evita adivinar donde empieza una superficie o paquete. |
+| Playbook | Guia operativa reutilizable para ejecutar una tarea o delta con criterio consistente. |
+| Package | Paquete versionado o exportable que agrupa evidencia, artefactos o capacidades relacionadas. |

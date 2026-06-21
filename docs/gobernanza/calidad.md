@@ -58,3 +58,21 @@ relacionados: []
 descripcion: Descripcion breve del artefacto documental.
 ---
 ```
+
+## Claves permitidas
+
+| Clave | Tipo esperado | Nota |
+|---|---|---|
+| `artifact_id` | string | Ruta Markdown con extension `.md`. |
+| `categoria` | enum | `operativa`, `dataverse`, `procesos`, `playbooks`, `recipes`, `tests`, `packages`. |
+| `tipo` | enum | `mapa`, `indice`, `matriz`, `plan`, `acta`, `orden`, `readback`, `prompt`, `reporte`. |
+| `estado` | enum | `borrador`, `en_revision`, `aprobado`, `live`. |
+| `version` | string | Version del artefacto. |
+| `fecha_evento` | string date | Fecha ISO entre comillas. |
+| `autoridad.tipo` | enum | `owner`, `equipo`, `sistema`, `externo`. |
+| `autoridad.referencia` | string | Responsable o fuente de autoridad. |
+| `origen` | enum | `GitHub`, `SharePoint`, `Dataverse`, `Mixto`. |
+| `ubicacion_repo` | string | Ruta relativa en el repo. |
+| `etiquetas[]` | array[string] | Lista de etiquetas en kebab-case o minusculas. |
+| `relacionados[]` | array[string] | Rutas o artefactos relacionados. |
+| `descripcion` | string | Maximo 280 caracteres. |
