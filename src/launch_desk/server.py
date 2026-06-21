@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 import os
 from typing import Any
 from uuid import uuid4
@@ -82,7 +81,9 @@ def create_app() -> FastAPI:
         verdict: str | None = None,
         audience: str | None = None,
     ) -> dict[str, Any]:
-        return list_history(limit=limit, query=query, verdict=verdict, audience=audience).model_dump(mode="json")
+        return list_history(
+            limit=limit, query=query, verdict=verdict, audience=audience
+        ).model_dump(mode="json")
 
     @app.get("/api/history/{request_id}")
     async def history_item(request_id: str) -> dict[str, Any]:

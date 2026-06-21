@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import asyncio
 import os
 import subprocess
 from dataclasses import dataclass
@@ -27,9 +26,7 @@ SDU_AGENT_PROFILES: dict[str, str] = {
     "thot-tecnico": (
         "Ordena el esquema, convierte la orden en movimiento util y deja la estructura legible."
     ),
-    "anubis-gate": (
-        "Cuida frontera, gate, rollback y postcheck. Si falta target, detente."
-    ),
+    "anubis-gate": ("Cuida frontera, gate, rollback y postcheck. Si falta target, detente."),
     "maat-cumplimiento": (
         "Vigila coherencia, RACI y condiciones de cierre. No cierres sin evidencia."
     ),
@@ -49,7 +46,9 @@ class AgentRun:
     final_output: str
 
 
-def build_agent(name: str = "CodexCloudAtomic", instructions: str | None = None, model: str | None = None) -> Any:
+def build_agent(
+    name: str = "CodexCloudAtomic", instructions: str | None = None, model: str | None = None
+) -> Any:
     try:
         from agents import Agent
     except ImportError as exc:  # pragma: no cover - runtime guard
@@ -128,6 +127,7 @@ async def run_agent(prompt: str, model: str | None = None) -> AgentRun:
 def smoke_report() -> dict[str, Any]:
     try:
         import agents  # type: ignore[import-not-found]
+
         agents_installed = True
         agents_version = getattr(agents, "__version__", "unknown")
     except Exception:

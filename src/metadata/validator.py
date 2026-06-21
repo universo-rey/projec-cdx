@@ -66,9 +66,7 @@ def _artifact_id_convention_error(record: MetadataRecord) -> str | None:
     if record.kind == "meta_json":
         expected = _strip_dataset_extension(repo_path)
         if expected and artifact_id != expected:
-            return (
-                "convencion artifact_id: datasets CSV/JSON deben usar la ruta sin extension"
-            )
+            return "convencion artifact_id: datasets CSV/JSON deben usar la ruta sin extension"
     return None
 
 
@@ -79,9 +77,7 @@ def load_schema(schema_path: Path) -> dict[str, Any]:
 def _is_ignored(path: Path) -> bool:
     parts = [part.lower() for part in path.parts]
     return any(
-        part in IGNORED_PARTS
-        or part in IGNORED_ENV_NAMES
-        or part.startswith(".venv")
+        part in IGNORED_PARTS or part in IGNORED_ENV_NAMES or part.startswith(".venv")
         for part in parts
     )
 

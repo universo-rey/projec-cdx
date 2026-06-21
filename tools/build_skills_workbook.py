@@ -5,11 +5,10 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 
-from openpyxl import Workbook, load_workbook
+from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
-from openpyxl.worksheet.table import Table, TableStyleInfo
 from openpyxl.worksheet.datavalidation import DataValidation
-
+from openpyxl.worksheet.table import Table, TableStyleInfo
 
 WORKSPACE_ROOT = Path(__file__).resolve().parents[1]
 INVENTORY_ROOT = WORKSPACE_ROOT / "inventarios"
@@ -23,7 +22,9 @@ def read_rows():
 
 
 def nice_title(text: str) -> str:
-    return text.replace(".codex/skills", ".codex skills").replace(".agents/skills", ".agents skills")
+    return text.replace(".codex/skills", ".codex skills").replace(
+        ".agents/skills", ".agents skills"
+    )
 
 
 def autosize(ws, rows, columns):
@@ -121,7 +122,6 @@ def build_workbook():
     for row in rows:
         families[row["Family"]] += 1
 
-    fam_row = 4
     ws_summary["G4"] = "Family"
     ws_summary["H4"] = "Count"
     for cell in ("G4", "H4"):
@@ -159,7 +159,16 @@ def build_workbook():
 
     # ---------- Registro ----------
     ws_registry.sheet_view.showGridLines = False
-    headers = ["RootLabel", "Kind", "Family", "Canonical", "Alias", "Purpose", "SourcePath", "Notes"]
+    headers = [
+        "RootLabel",
+        "Kind",
+        "Family",
+        "Canonical",
+        "Alias",
+        "Purpose",
+        "SourcePath",
+        "Notes",
+    ]
     ws_registry.append(headers)
     for cell in ws_registry[1]:
         cell.fill = header_fill

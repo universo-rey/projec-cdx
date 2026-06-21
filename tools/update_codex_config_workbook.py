@@ -64,17 +64,23 @@ D_AGENT_WORKPAPERS_MATRIX = D_CODEX_ROOT / "matrices" / "AGENT_WORKPAPERS_MATRIX
 D_GOVERNED_ASSET_INVENTORY = D_CODEX_ROOT / "matrices" / "GOVERNED_ASSET_CANONICAL_INVENTORY.csv"
 SKILLS_UNIFIED_TABLE = ROOT / "inventarios" / "SKILLS_UNIFIED_TABLE.csv"
 PWSH_CMD = Path(r"C:\Users\enzo1\AppData\Local\Microsoft\WindowsApps\pwsh.exe")
-UNIVERSE_AUDIT = ROOT / "outputs" / "universe_relationship_audit_20260614" / "UNIVERSE_RELATIONSHIP_AUDIT.csv"
+UNIVERSE_AUDIT = (
+    ROOT / "outputs" / "universe_relationship_audit_20260614" / "UNIVERSE_RELATIONSHIP_AUDIT.csv"
+)
 CONNECTION_MATRIX_DIR = CODEX_ROOT / "matrices" / "matrices" / "connections"
 DATAVERSE_CONNECTION_DATA = CODEX_ROOT / "matrices" / "dataverse" / "data"
 DATAVERSE_LIVE_SUMMARY = ROOT / "operativa" / "DATAVERSE_POWER_PLATFORM_LIVE_SUMMARY_20260616.json"
-DATAVERSE_LIVE_INVENTORY = ROOT / "operativa" / "DATAVERSE_POWER_PLATFORM_LIVE_INVENTORY_20260616.json"
+DATAVERSE_LIVE_INVENTORY = (
+    ROOT / "operativa" / "DATAVERSE_POWER_PLATFORM_LIVE_INVENTORY_20260616.json"
+)
 DATAVERSE_BOTS_CSV = ROOT / "inventarios" / "DATAVERSE_BOTS_LIVE_20260616.csv"
 DATAVERSE_SOLUTIONS_CSV = ROOT / "inventarios" / "DATAVERSE_SOLUTIONS_LIVE_20260616.csv"
 DATAVERSE_WORKQUEUES_CSV = ROOT / "inventarios" / "DATAVERSE_WORKQUEUES_LIVE_20260616.csv"
 ATOMIC_ACTION_MATRIX = ROOT / "atomic" / "CODEX_ATOMIC_ACTION_MATRIX.csv"
 MASTER_ATOMIC_MATRIX = ROOT / "operativa" / "MATRIZ_PLAN_MAESTRO_ATOMICO_20260617.csv"
-METADATA_HYDRATION_MATRIX = ROOT / "hitos" / "20260616-sdu-dataverse-metadata-wave-v1" / "METADATA_HYDRATION_MATRIX.csv"
+METADATA_HYDRATION_MATRIX = (
+    ROOT / "hitos" / "20260616-sdu-dataverse-metadata-wave-v1" / "METADATA_HYDRATION_MATRIX.csv"
+)
 PROMPT_CHUNK_SIZE = 25000
 
 TITLE_FILL = "1F4E79"
@@ -152,9 +158,7 @@ SIMPLE_PATTERNS = [
 TOKEN_PATTERNS = {
     "openai_sk_like": re.compile(r"sk-[A-Za-z0-9]{20,}"),
     "github_token_like": re.compile(r"gh[pousr]_[A-Za-z0-9_]{20,}"),
-    "jwt_like": re.compile(
-        r"eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}"
-    ),
+    "jwt_like": re.compile(r"eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}"),
     "aws_access_key_like": re.compile(r"AKIA[0-9A-Z]{16}"),
     "private_key_block": re.compile(
         r"-----BEGIN [A-Z ]*PRIVATE KEY-----.*?-----END [A-Z ]*PRIVATE KEY-----",
@@ -281,13 +285,19 @@ def discover_repositories(projects: list[str]) -> list[list]:
         (Path(r"D:\\"), "D_ROOT_WRAPPER", "Cabina D wrapper repo recuperada read-only."),
     ]
     if GITHUB_ROOT.exists():
-        for child in sorted([p for p in GITHUB_ROOT.iterdir() if p.is_dir()], key=lambda p: p.name.lower()):
+        for child in sorted(
+            [p for p in GITHUB_ROOT.iterdir() if p.is_dir()], key=lambda p: p.name.lower()
+        ):
             candidates.append((child, "GITHUB_LOCAL", "Directorio bajo Documents/GitHub."))
     if D_ACTIVE_REPOS.exists():
-        for child in sorted([p for p in D_ACTIVE_REPOS.iterdir() if p.is_dir()], key=lambda p: p.name.lower()):
+        for child in sorted(
+            [p for p in D_ACTIVE_REPOS.iterdir() if p.is_dir()], key=lambda p: p.name.lower()
+        ):
             candidates.append((child, "D_ACTIVE_REPOS", "Repo activo dentro de Corte Ejecutora D."))
     for project in projects:
-        candidates.append((Path(project), "CODEX_TRUSTED_PROJECT", "Entrada [projects] en config.toml."))
+        candidates.append(
+            (Path(project), "CODEX_TRUSTED_PROJECT", "Entrada [projects] en config.toml.")
+        )
 
     seen = set()
     rows = []
@@ -377,7 +387,9 @@ def discover_branch_rows(repo_rows: list[list]) -> list[list]:
 
         if ctx["slug"] and ctx["slug"] not in live_slugs_seen:
             live_slugs_seen.add(ctx["slug"])
-            branches = command_json(["gh", "api", f"repos/{ctx['slug']}/branches?per_page=100"], timeout=35)
+            branches = command_json(
+                ["gh", "api", f"repos/{ctx['slug']}/branches?per_page=100"], timeout=35
+            )
             if isinstance(branches, list):
                 for branch in branches:
                     if not isinstance(branch, dict):
@@ -457,7 +469,9 @@ def discover_branch_organization_rows() -> list[list]:
             continue
         branch_name, commit, committed_at, upstream = parts[:4]
         branch_worktree = branch_worktrees.get(branch_name, "")
-        branch_worktree_norm = os.path.normcase(os.path.abspath(branch_worktree)) if branch_worktree else ""
+        branch_worktree_norm = (
+            os.path.normcase(os.path.abspath(branch_worktree)) if branch_worktree else ""
+        )
         is_current = branch_name == current_branch
         is_root_worktree = branch_worktree_norm == root_abs
         actual = "SI" if is_current or is_root_worktree else "NO"
@@ -613,7 +627,9 @@ def discover_cloud_environment_rows(env: dict, prompt_text: str) -> list[list]:
     if isinstance(repo_map, dict):
         for repo in repo_map.values():
             if isinstance(repo, dict):
-                repo_names.append(repo.get("repository_full_name") or repo.get("full_name") or repo.get("name"))
+                repo_names.append(
+                    repo.get("repository_full_name") or repo.get("full_name") or repo.get("name")
+                )
     rows.append(
         [
             "CONFIRMADO_LOCAL",
@@ -633,7 +649,9 @@ def discover_cloud_environment_rows(env: dict, prompt_text: str) -> list[list]:
     )
 
     active_id = str(env.get("id") or "")
-    env_url_regex = re.compile(r"https://chatgpt\.com/codex/cloud/settings/environment/([a-f0-9]{32})", re.I)
+    env_url_regex = re.compile(
+        r"https://chatgpt\.com/codex/cloud/settings/environment/([a-f0-9]{32})", re.I
+    )
     for env_id in sorted(set(env_url_regex.findall(prompt_text))):
         if env_id == active_id:
             continue
@@ -738,11 +756,16 @@ def dir_counts(path: Path, recursive: bool = True) -> tuple[int | None, int | No
                 extensions[suffix] = extensions.get(suffix, 0) + 1
     except Exception:
         return dirs, files, ""
-    ext_text = ", ".join(f"{key}:{value}" for key, value in sorted(extensions.items(), key=lambda item: (-item[1], item[0]))[:8])
+    ext_text = ", ".join(
+        f"{key}:{value}"
+        for key, value in sorted(extensions.items(), key=lambda item: (-item[1], item[0]))[:8]
+    )
     return dirs, files, ext_text
 
 
-def dir_file_stats(path: Path, recursive: bool = True) -> tuple[int | None, int | None, int | None, str]:
+def dir_file_stats(
+    path: Path, recursive: bool = True
+) -> tuple[int | None, int | None, int | None, str]:
     if not path.exists() or not path.is_dir():
         return None, None, None, ""
     dirs = 0
@@ -933,7 +956,11 @@ def discover_agent_rows() -> list[list]:
                     item.get("agente_visible"),
                     "Corte ejecutora / workpapers",
                     "",
-                    "PENDIENTE_REAL=False" if item.get("pendiente_real") is False else safe(item.get("pendiente_real")),
+                    (
+                        "PENDIENTE_REAL=False"
+                        if item.get("pendiente_real") is False
+                        else safe(item.get("pendiente_real"))
+                    ),
                     " | ".join(as_list(evidence)),
                     item.get("riesgo"),
                     item.get("siguiente_paso"),
@@ -963,14 +990,86 @@ def discover_agent_rows() -> list[list]:
 
 def discover_universe_rows() -> list[list]:
     rows = [
-        ["SUPERFICIE_CANONICA", "PROJEC_CDX", str(ROOT), "workspace", "Workbook y workbench actual", "", "ACTIVO", str(ROOT / "AGENTS.md")],
-        ["SUPERFICIE_CANONICA", "CODEX_ROOT", str(CODEX_ROOT), "codex_config", "Cabina global local", "", "ACTIVO", str(CODEX_ROOT / "README.md")],
-        ["SUPERFICIE_CANONICA", "AGENTS_ROOT", str(AGENTS_ROOT), "agent_layer", "Skills, recipes, plugins y scripts locales", "", "ACTIVO", str(AGENTS_ROOT / "README.md")],
-        ["SUPERFICIE_CANONICA", "GITHUB_ROOT", str(GITHUB_ROOT), "repos_root", "Repositorios canonicos locales", "", "ACTIVO", str(GITHUB_ROOT)],
-        ["SUPERFICIE_CANONICA", "D_CABINA_UNIVERSAL", r"D:\\", "consola_rectora_gobernada", "Cabina D / consola rectora local", "", "MONTADA_GOBERNADA" if Path(r"D:\\").exists() else "OBSERVAR", r"D:\AGENTS.md|D:\MANIFEST.yaml|D:\REPO_SCOPE.md"],
-        ["SUPERFICIE_CANONICA", "CODEX_CLOUD_PROJEC_CDX", "/workspace/projec-cdx", "codex_cloud", "Environment local confirmado por global-state", "", "CONFIRMADO_LOCAL", str(STATE_PATH)],
-        ["SUPERFICIE_CANONICA", "DATAVERSE_SDU", str(ROOT / "dataverse"), "dataverse_metadata", "Mapas y conexiones Dataverse", "", "METADATA_ONLY", str(ROOT / "dataverse" / "INDICE_DATAVERSE.md")],
-        ["SUPERFICIE_CANONICA", "SESHAT_SHAREPOINT_CANON", "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/SitePages/Home.aspx", "sharepoint_canon", "Canon Seshat indicado por owner", "", "GOBERNADO", "orden conversacional / workbook"],
+        [
+            "SUPERFICIE_CANONICA",
+            "PROJEC_CDX",
+            str(ROOT),
+            "workspace",
+            "Workbook y workbench actual",
+            "",
+            "ACTIVO",
+            str(ROOT / "AGENTS.md"),
+        ],
+        [
+            "SUPERFICIE_CANONICA",
+            "CODEX_ROOT",
+            str(CODEX_ROOT),
+            "codex_config",
+            "Cabina global local",
+            "",
+            "ACTIVO",
+            str(CODEX_ROOT / "README.md"),
+        ],
+        [
+            "SUPERFICIE_CANONICA",
+            "AGENTS_ROOT",
+            str(AGENTS_ROOT),
+            "agent_layer",
+            "Skills, recipes, plugins y scripts locales",
+            "",
+            "ACTIVO",
+            str(AGENTS_ROOT / "README.md"),
+        ],
+        [
+            "SUPERFICIE_CANONICA",
+            "GITHUB_ROOT",
+            str(GITHUB_ROOT),
+            "repos_root",
+            "Repositorios canonicos locales",
+            "",
+            "ACTIVO",
+            str(GITHUB_ROOT),
+        ],
+        [
+            "SUPERFICIE_CANONICA",
+            "D_CABINA_UNIVERSAL",
+            r"D:\\",
+            "consola_rectora_gobernada",
+            "Cabina D / consola rectora local",
+            "",
+            "MONTADA_GOBERNADA" if Path(r"D:\\").exists() else "OBSERVAR",
+            r"D:\AGENTS.md|D:\MANIFEST.yaml|D:\REPO_SCOPE.md",
+        ],
+        [
+            "SUPERFICIE_CANONICA",
+            "CODEX_CLOUD_PROJEC_CDX",
+            "/workspace/projec-cdx",
+            "codex_cloud",
+            "Environment local confirmado por global-state",
+            "",
+            "CONFIRMADO_LOCAL",
+            str(STATE_PATH),
+        ],
+        [
+            "SUPERFICIE_CANONICA",
+            "DATAVERSE_SDU",
+            str(ROOT / "dataverse"),
+            "dataverse_metadata",
+            "Mapas y conexiones Dataverse",
+            "",
+            "METADATA_ONLY",
+            str(ROOT / "dataverse" / "INDICE_DATAVERSE.md"),
+        ],
+        [
+            "SUPERFICIE_CANONICA",
+            "SESHAT_SHAREPOINT_CANON",
+            "https://escribaniabitsch.sharepoint.com/sites/SeshatHubRegistroN.8/SitePages/Home.aspx",
+            "sharepoint_canon",
+            "Canon Seshat indicado por owner",
+            "",
+            "GOBERNADO",
+            "orden conversacional / workbook",
+        ],
     ]
     for row in read_csv_dicts(UNIVERSE_AUDIT):
         rows.append(
@@ -1070,7 +1169,12 @@ def discover_recipe_rows() -> list[list]:
                 ]
             )
 
-    recipe_roots = [ROOT / "recipes", AGENTS_ROOT / "recipes", AGENTS_ROOT / "codex" / "recipes", D_CODEX_ROOT / "recipes"]
+    recipe_roots = [
+        ROOT / "recipes",
+        AGENTS_ROOT / "recipes",
+        AGENTS_ROOT / "codex" / "recipes",
+        D_CODEX_ROOT / "recipes",
+    ]
     for root in recipe_roots:
         if not root.exists():
             continue
@@ -1130,10 +1234,32 @@ def discover_tool_rows(config: dict) -> list[list]:
             )
 
     for name in sorted((config.get("mcp_servers") or {}).keys()):
-        rows.append(["config.toml", name, "mcp_server", str(CONFIG_PATH), "", "", "CONFIGURADO_LOCAL", "Servidor MCP configurado."])
+        rows.append(
+            [
+                "config.toml",
+                name,
+                "mcp_server",
+                str(CONFIG_PATH),
+                "",
+                "",
+                "CONFIGURADO_LOCAL",
+                "Servidor MCP configurado.",
+            ]
+        )
     for name, item in sorted((config.get("plugins") or {}).items()):
         if isinstance(item, dict) and item.get("enabled") is True:
-            rows.append(["config.toml", name, "plugin_enabled", str(CONFIG_PATH), "", "", "ENABLED_LOCAL", "Plugin habilitado en Codex local."])
+            rows.append(
+                [
+                    "config.toml",
+                    name,
+                    "plugin_enabled",
+                    str(CONFIG_PATH),
+                    "",
+                    "",
+                    "ENABLED_LOCAL",
+                    "Plugin habilitado en Codex local.",
+                ]
+            )
     rows.sort(key=lambda item: (str(item[2]).lower(), str(item[0]).lower(), str(item[1]).lower()))
     return rows
 
@@ -1217,14 +1343,59 @@ def discover_connection_rows(config: dict, env: dict) -> list[list]:
         )
 
     for name in sorted((config.get("mcp_servers") or {}).keys()):
-        rows.append(["config.toml", "mcp_server", name, "Codex/local", "GATE_CONNECTOR_REGISTRY_NO_SECRET", "CONFIGURADO_LOCAL", "no", "", "", "MCP server local configurado.", "connection_gate_missing", str(CONFIG_PATH)])
+        rows.append(
+            [
+                "config.toml",
+                "mcp_server",
+                name,
+                "Codex/local",
+                "GATE_CONNECTOR_REGISTRY_NO_SECRET",
+                "CONFIGURADO_LOCAL",
+                "no",
+                "",
+                "",
+                "MCP server local configurado.",
+                "connection_gate_missing",
+                str(CONFIG_PATH),
+            ]
+        )
     for name, item in sorted((config.get("plugins") or {}).items()):
         if isinstance(item, dict) and item.get("enabled") is True:
-            rows.append(["config.toml", "plugin_surface", name, "Codex UI", "GATE_CONNECTOR_REGISTRY_NO_SECRET", "ENABLED_LOCAL", "no", "", "", "Plugin habilitado; surface seleccionada por tarea.", "", str(CONFIG_PATH)])
+            rows.append(
+                [
+                    "config.toml",
+                    "plugin_surface",
+                    name,
+                    "Codex UI",
+                    "GATE_CONNECTOR_REGISTRY_NO_SECRET",
+                    "ENABLED_LOCAL",
+                    "no",
+                    "",
+                    "",
+                    "Plugin habilitado; surface seleccionada por tarea.",
+                    "",
+                    str(CONFIG_PATH),
+                ]
+            )
 
     env_label = env.get("label")
     if env_label:
-        rows.append(["global-state", "codex_cloud_env", env_label, "OpenAI Codex Cloud", "GATE_OPENAI_LIVE_GOVERNED_ORDER", "CONFIRMADO_LOCAL", safe((env.get("agent_network_access") or {}).get("mode")), "", "", f"id={env.get('id')} workspace={env.get('workspace_dir')}", "", str(STATE_PATH)])
+        rows.append(
+            [
+                "global-state",
+                "codex_cloud_env",
+                env_label,
+                "OpenAI Codex Cloud",
+                "GATE_OPENAI_LIVE_GOVERNED_ORDER",
+                "CONFIRMADO_LOCAL",
+                safe((env.get("agent_network_access") or {}).get("mode")),
+                "",
+                "",
+                f"id={env.get('id')} workspace={env.get('workspace_dir')}",
+                "",
+                str(STATE_PATH),
+            ]
+        )
 
     return rows
 
@@ -1287,7 +1458,11 @@ def discover_dataverse_source_rows() -> list[list]:
                     f"count={pair.get('source_count')} id={pair.get('source_id')}",
                     pair.get("source_canonical"),
                     pair.get("source_statecode_label"),
-                    "live GET read-only; source row confirmed 1/1" if pair.get("source_count") == 1 else "source row count requires review",
+                    (
+                        "live GET read-only; source row confirmed 1/1"
+                        if pair.get("source_count") == 1
+                        else "source row count requires review"
+                    ),
                     str(live_read),
                 ]
             )
@@ -1302,12 +1477,18 @@ def discover_dataverse_source_rows() -> list[list]:
                     f"count={pair.get('evidence_count')} id={pair.get('evidence_id')}",
                     pair.get("evidence_canonical"),
                     pair.get("evidence_statecode_label"),
-                    "live GET read-only; evidence row confirmed 1/1" if pair.get("evidence_count") == 1 else "evidence row count requires review",
+                    (
+                        "live GET read-only; evidence row confirmed 1/1"
+                        if pair.get("evidence_count") == 1
+                        else "evidence row count requires review"
+                    ),
                     str(live_read),
                 ]
             )
 
-    for selection_path in sorted((ROOT / "operativa").glob("DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED_*.csv")):
+    for selection_path in sorted(
+        (ROOT / "operativa").glob("DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED_*.csv")
+    ):
         for row in read_csv_dicts(selection_path):
             rows.append(
                 [
@@ -1682,7 +1863,9 @@ def discover_d_surface_rows(scan_time: str) -> list[list]:
     rows: list[list] = []
     for path, notes, recursive in surfaces:
         exists = path.exists()
-        dirs, files, extensions = dir_counts(path, recursive=recursive) if exists else (None, None, "")
+        dirs, files, extensions = (
+            dir_counts(path, recursive=recursive) if exists else (None, None, "")
+        )
         if exists:
             status = "AVAILABLE_READONLY"
         elif path.name.lower() == "logs":
@@ -1774,11 +1957,24 @@ def discover_local_surface_rows(scan_time: str, d_status: str) -> list[list]:
     rows: list[list] = []
     for path, surface_id, surface_class, role, rule, recursive in surfaces:
         exists = path.exists()
-        dirs, files, bytes_total, extensions = dir_file_stats(path, recursive=recursive) if exists else (None, None, None, "")
+        dirs, files, bytes_total, extensions = (
+            dir_file_stats(path, recursive=recursive) if exists else (None, None, None, "")
+        )
         has_readme = (path / "README.md").exists() if exists else False
         has_agents = (path / "AGENTS.md").exists() if exists else False
-        has_map = any((path / name).exists() for name in ("MAPA.md", "MAPA_MAESTRO.md")) if exists else False
-        has_index = any((path / name).exists() for name in ("INDICE.csv", "CODEX_INDEX.csv", "CODEXLOCAL_INDEX.csv")) if exists else False
+        has_map = (
+            any((path / name).exists() for name in ("MAPA.md", "MAPA_MAESTRO.md"))
+            if exists
+            else False
+        )
+        has_index = (
+            any(
+                (path / name).exists()
+                for name in ("INDICE.csv", "CODEX_INDEX.csv", "CODEXLOCAL_INDEX.csv")
+            )
+            if exists
+            else False
+        )
         has_git = (path / ".git").exists() if exists else False
         if not exists:
             status = "MISSING"
@@ -1824,31 +2020,91 @@ def discover_workspace_rows(scan_time: str, d_status: str) -> list[list]:
     branch = git_value(ROOT, ["branch", "--show-current"]) or "DETACHED_OR_UNKNOWN"
     head = git_value(ROOT, ["rev-parse", "--short", "HEAD"]) or "UNKNOWN"
     remote = git_value(ROOT, ["remote", "get-url", "origin"]) or "NO_REMOTE"
-    upstream = git_value(ROOT, ["rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"]) or "NO_UPSTREAM"
+    upstream = (
+        git_value(ROOT, ["rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"])
+        or "NO_UPSTREAM"
+    )
     status = git_value(ROOT, ["status", "--short", "--branch"]) or "UNKNOWN"
-    dirty = "SI" if any(line and not line.startswith("##") for line in status.splitlines()) else "NO"
+    dirty = (
+        "SI" if any(line and not line.startswith("##") for line in status.splitlines()) else "NO"
+    )
     rows = [
         ["workspace.root", str(ROOT), "ACTUAL", "Workspace operativo de este hilo."],
-        ["workspace.cwd_when_built", str(Path.cwd()), "INFO", "Directorio desde donde corre el builder."],
+        [
+            "workspace.cwd_when_built",
+            str(Path.cwd()),
+            "INFO",
+            "Directorio desde donde corre el builder.",
+        ],
         ["workspace.branch", branch, "ACTUAL", "Rama de trabajo vigente."],
         ["workspace.head", head, "INFO", "Commit corto del workspace."],
         ["workspace.remote", remote, "INFO", "Remoto origin del repo actual."],
         ["workspace.upstream", upstream, "INFO", "Upstream de la rama actual."],
-        ["workspace.dirty", dirty, "OBSERVAR" if dirty == "SI" else "PASS", "Estado Git antes/despues de regenerar workbook."],
-        ["workspace.status", status.replace("\n", " | "), "INFO", "Resumen git status --short --branch."],
+        [
+            "workspace.dirty",
+            dirty,
+            "OBSERVAR" if dirty == "SI" else "PASS",
+            "Estado Git antes/despues de regenerar workbook.",
+        ],
+        [
+            "workspace.status",
+            status.replace("\n", " | "),
+            "INFO",
+            "Resumen git status --short --branch.",
+        ],
         ["workspace.workbook", str(WORKBOOK), "ACTUAL", "Workbook de decision vigente."],
-        ["workspace.builder", str(ROOT / "tools" / "update_codex_config_workbook.py"), "ACTUAL", "Builder idempotente del workbook."],
-        ["workspace.current", str(ROOT / "operativa" / "CURRENT.md"), "ACTUAL", "Estado vivo de PROJEC CDX."],
+        [
+            "workspace.builder",
+            str(ROOT / "tools" / "update_codex_config_workbook.py"),
+            "ACTUAL",
+            "Builder idempotente del workbook.",
+        ],
+        [
+            "workspace.current",
+            str(ROOT / "operativa" / "CURRENT.md"),
+            "ACTUAL",
+            "Estado vivo de PROJEC CDX.",
+        ],
         ["workspace.next", str(ROOT / "operativa" / "NEXT.md"), "ACTUAL", "Movimiento unico."],
         ["workspace.trace", str(ROOT / "operativa" / "TRACE.md"), "ACTUAL", "Trazabilidad activa."],
-        ["workspace.codex_root", str(CODEX_ROOT), "REFERENCIA", "Runtime/config/memoria local Codex."],
+        [
+            "workspace.codex_root",
+            str(CODEX_ROOT),
+            "REFERENCIA",
+            "Runtime/config/memoria local Codex.",
+        ],
         ["workspace.d_root", str(D_ROOT), d_status, "Consola rectora local D."],
-        ["workspace.home_codexlocal", str(HOME_CODEX_LOCAL), "REFERENCIA", "Entrada viva liviana nueva."],
-        ["workspace.documents_codexlocal", str(DOCUMENTS_CODEX_LOCAL), "REFERENCIA", "Workspace legado pesado."],
+        [
+            "workspace.home_codexlocal",
+            str(HOME_CODEX_LOCAL),
+            "REFERENCIA",
+            "Entrada viva liviana nueva.",
+        ],
+        [
+            "workspace.documents_codexlocal",
+            str(DOCUMENTS_CODEX_LOCAL),
+            "REFERENCIA",
+            "Workspace legado pesado.",
+        ],
         ["workspace.documents_codex", str(DOCUMENTS_CODEX), "REFERENCIA", "Cronologia documental."],
-        ["workspace.documents_codex_archives", str(DOCUMENTS_CODEX_ARCHIVES), "REFERENCIA", "Archivo reversible ZIP."],
-        ["workspace.github_root", str(GITHUB_ROOT), "REFERENCIA", "Repositorios canonicos locales."],
-        ["workspace.codex_worktree_env", os.environ.get("CODEX_WORKTREE_PATH", "N/D"), "INFO", "Variable de worktree si existe."],
+        [
+            "workspace.documents_codex_archives",
+            str(DOCUMENTS_CODEX_ARCHIVES),
+            "REFERENCIA",
+            "Archivo reversible ZIP.",
+        ],
+        [
+            "workspace.github_root",
+            str(GITHUB_ROOT),
+            "REFERENCIA",
+            "Repositorios canonicos locales.",
+        ],
+        [
+            "workspace.codex_worktree_env",
+            os.environ.get("CODEX_WORKTREE_PATH", "N/D"),
+            "INFO",
+            "Variable de worktree si existe.",
+        ],
         ["workspace.updated_at", scan_time, "INFO", "Timestamp local de regeneracion."],
     ]
     return rows
@@ -1870,7 +2126,19 @@ def discover_d_indexes_rows() -> list[list]:
         if not root.exists():
             continue
         for path in sorted(root.rglob("*.csv"), key=lambda item: str(item).lower()):
-            if not any(token in path.name.upper() for token in ["INDEX", "MATRIX", "REGISTRY", "MAP", "CANON", "POLICY", "GATE", "ORDER"]):
+            if not any(
+                token in path.name.upper()
+                for token in [
+                    "INDEX",
+                    "MATRIX",
+                    "REGISTRY",
+                    "MAP",
+                    "CANON",
+                    "POLICY",
+                    "GATE",
+                    "ORDER",
+                ]
+            ):
                 continue
             key = os.path.normcase(os.path.abspath(str(path)))
             if key in seen:
@@ -2037,9 +2305,14 @@ def discover_d_recipe_registry_rows() -> list[list]:
             path = path_from_cell(raw_path) or (index_path.parent / raw_path if raw_path else None)
             rows.append(
                 [
-                    row.get("recipe_id") or row.get("subrecipe_id") or row.get("name") or row.get("id"),
+                    row.get("recipe_id")
+                    or row.get("subrecipe_id")
+                    or row.get("name")
+                    or row.get("id"),
                     row.get("level_id") or row.get("parent_recipe") or row.get("source"),
-                    row.get("primary_agent") or row.get("assigned_agents") or row.get("owner_agent"),
+                    row.get("primary_agent")
+                    or row.get("assigned_agents")
+                    or row.get("owner_agent"),
                     str(path) if path else raw_path,
                     row.get("output") or row.get("purpose") or row.get("use_when"),
                     path.stat().st_size if path and path.exists() and path.is_file() else "",
@@ -2085,15 +2358,29 @@ def discover_d_validator_rows() -> list[list]:
         raw_path = row.get("path_or_command", "")
         path = path_from_cell(raw_path)
         if path:
-            linked_by_path.setdefault(os.path.normcase(os.path.abspath(str(path))), []).append(tool_id)
+            linked_by_path.setdefault(os.path.normcase(os.path.abspath(str(path))), []).append(
+                tool_id
+            )
     rows: list[list] = []
     tools_dir = D_CODEX_ROOT / "tools"
     if tools_dir.exists():
         for path in sorted(tools_dir.iterdir(), key=lambda item: item.name.lower()):
-            if not path.is_file() or path.suffix.lower() not in {".ps1", ".py", ".sh", ".cmd", ".bat", ".js", ".mjs"}:
+            if not path.is_file() or path.suffix.lower() not in {
+                ".ps1",
+                ".py",
+                ".sh",
+                ".cmd",
+                ".bat",
+                ".js",
+                ".mjs",
+            }:
                 continue
             linked = linked_by_path.get(os.path.normcase(os.path.abspath(str(path))), [])
-            kind = "validator" if "validate" in path.name.lower() else "runner" if "run" in path.name.lower() else "tool_script"
+            kind = (
+                "validator"
+                if "validate" in path.name.lower()
+                else "runner" if "run" in path.name.lower() else "tool_script"
+            )
             rows.append(
                 [
                     path.name,
@@ -2114,7 +2401,11 @@ def discover_d_validator_rows() -> list[list]:
 def discover_d_agent_registry_rows() -> list[list]:
     rows: list[list] = []
     agent_json = read_json_obj(D_AGENTS_JSON) or {}
-    json_agents = {item.get("id"): item for item in as_list(agent_json.get("agents") if isinstance(agent_json, dict) else []) if isinstance(item, dict)}
+    json_agents = {
+        item.get("id"): item
+        for item in as_list(agent_json.get("agents") if isinstance(agent_json, dict) else [])
+        if isinstance(item, dict)
+    }
     for row in read_csv_dicts(D_AGENTS_INDEX):
         agent_id = row.get("agent_id")
         item = json_agents.get(agent_id, {})
@@ -2204,13 +2495,14 @@ def discover_d_workpaper_rows() -> list[list]:
     file_counts: dict[str, int] = {}
     root = D_CODEX_ROOT / "workpapers"
     if root.exists():
-        for child in sorted([item for item in root.iterdir() if item.is_dir()], key=lambda item: item.name.lower()):
+        for child in sorted(
+            [item for item in root.iterdir() if item.is_dir()], key=lambda item: item.name.lower()
+        ):
             file_counts[child.name] = len([item for item in child.rglob("*") if item.is_file()])
     index_rows = read_csv_dicts(workpaper_index) or read_csv_dicts(D_AGENT_WORKPAPERS_MATRIX)
     for row in index_rows:
         agent_id = row.get("agent_id")
         path_text = row.get("workpaper_path") or row.get("workpapers_path")
-        path = path_from_cell(path_text or "")
         rows.append(
             [
                 agent_id,
@@ -2285,7 +2577,10 @@ def discover_d_order_rows() -> list[list]:
         )
     orders_root = D_CODEX_ROOT / "orders"
     if orders_root.exists():
-        for path in sorted([item for item in orders_root.iterdir() if item.is_file()], key=lambda item: item.name.lower()):
+        for path in sorted(
+            [item for item in orders_root.iterdir() if item.is_file()],
+            key=lambda item: item.name.lower(),
+        ):
             rows.append(
                 [
                     path.stem,
@@ -2334,7 +2629,10 @@ def discover_d_readback_rows() -> list[list]:
     readbacks_root = D_CODEX_ROOT / "readbacks"
     if readbacks_root.exists():
         registered = {str(row[1]).replace("/", "\\").lower() for row in rows}
-        for path in sorted([item for item in readbacks_root.rglob("*") if item.is_file()], key=lambda item: str(item).lower()):
+        for path in sorted(
+            [item for item in readbacks_root.rglob("*") if item.is_file()],
+            key=lambda item: str(item).lower(),
+        ):
             normalized = str(path).replace("/", "\\").lower()
             if normalized in registered:
                 continue
@@ -2387,9 +2685,20 @@ def discover_d_authority_rows() -> list[list]:
     rows: list[list] = []
     if not D_AUTHORITY_CANON.exists():
         return rows
-    for path in sorted([item for item in D_AUTHORITY_CANON.rglob("*") if item.is_file()], key=lambda item: str(item).lower()):
+    for path in sorted(
+        [item for item in D_AUTHORITY_CANON.rglob("*") if item.is_file()],
+        key=lambda item: str(item).lower(),
+    ):
         shape_rows, columns = csv_shape(path)
-        kind = "csv_matrix" if path.suffix.lower() == ".csv" else "markdown_canon" if path.suffix.lower() == ".md" else path.suffix.lower().lstrip(".")
+        kind = (
+            "csv_matrix"
+            if path.suffix.lower() == ".csv"
+            else (
+                "markdown_canon"
+                if path.suffix.lower() == ".md"
+                else path.suffix.lower().lstrip(".")
+            )
+        )
         rows.append(
             [
                 path.name,
@@ -2399,7 +2708,11 @@ def discover_d_authority_rows() -> list[list]:
                 file_modified(path),
                 shape_rows,
                 columns,
-                first_markdown_heading(path) if path.suffix.lower() == ".md" else first_meaningful_line(path),
+                (
+                    first_markdown_heading(path)
+                    if path.suffix.lower() == ".md"
+                    else first_meaningful_line(path)
+                ),
                 "D_AUTHORITY_CANON",
             ]
         )
@@ -2446,7 +2759,10 @@ def d_candidate_artifacts() -> list[Path]:
             if not path.is_file() or path.suffix.lower() not in suffixes:
                 continue
             lowered = str(path).lower()
-            if any(part in lowered for part in ["\\.git\\", "\\node_modules\\", "\\.venv\\", "\\__pycache__\\"]):
+            if any(
+                part in lowered
+                for part in ["\\.git\\", "\\node_modules\\", "\\.venv\\", "\\__pycache__\\"]
+            ):
                 continue
             key = os.path.normcase(os.path.abspath(str(path)))
             if key in seen:
@@ -2475,7 +2791,11 @@ def classify_d_artifact(path: Path) -> tuple[str, str, str, str]:
     elif "VALIDATION" in name or "\\validation\\" in lowered:
         artifact_type = "validation_report"
     else:
-        artifact_type = "source_ref" if path.suffix.lower() in {".md", ".json", ".yaml", ".yml"} else "csv_source"
+        artifact_type = (
+            "source_ref"
+            if path.suffix.lower() in {".md", ".json", ".yaml", ".yml"}
+            else "csv_source"
+        )
 
     if D_MATRICES_ROOT.exists() and (path == D_MATRICES_ROOT or D_MATRICES_ROOT in path.parents):
         try:
@@ -2483,11 +2803,17 @@ def classify_d_artifact(path: Path) -> tuple[str, str, str, str]:
             domain = relative.parts[0] if len(relative.parts) > 1 else "matrices_root"
         except Exception:
             domain = "matrices"
-    elif D_GOVERNANCE_REGISTRY.exists() and (path == D_GOVERNANCE_REGISTRY or D_GOVERNANCE_REGISTRY in path.parents):
+    elif D_GOVERNANCE_REGISTRY.exists() and (
+        path == D_GOVERNANCE_REGISTRY or D_GOVERNANCE_REGISTRY in path.parents
+    ):
         domain = "governance_registry"
-    elif D_DATAVERSE_DATA.exists() and (path == D_DATAVERSE_DATA or D_DATAVERSE_DATA in path.parents):
+    elif D_DATAVERSE_DATA.exists() and (
+        path == D_DATAVERSE_DATA or D_DATAVERSE_DATA in path.parents
+    ):
         domain = "dataverse_data"
-    elif D_VALIDATION_ROOT.exists() and (path == D_VALIDATION_ROOT or D_VALIDATION_ROOT in path.parents):
+    elif D_VALIDATION_ROOT.exists() and (
+        path == D_VALIDATION_ROOT or D_VALIDATION_ROOT in path.parents
+    ):
         domain = "validation"
     elif D_CODEX_ROOT in path.parents:
         domain = "codex_agent_matrices"
@@ -2513,7 +2839,13 @@ def classify_d_artifact(path: Path) -> tuple[str, str, str, str]:
         "seed_environments.csv",
         "DATAVERSE_VALIDATION_REPORT.md",
     }
-    priority = "P0" if path.name in critical_names else "P1" if artifact_type in {"matrix", "registry", "ledger", "validation_report"} else "P2"
+    priority = (
+        "P0"
+        if path.name in critical_names
+        else (
+            "P1" if artifact_type in {"matrix", "registry", "ledger", "validation_report"} else "P2"
+        )
+    )
 
     if artifact_type == "source_ref":
         recommended_sheet = "D Source Refs"
@@ -2547,7 +2879,11 @@ def discover_d_source_ref_rows() -> list[list]:
                 columns,
                 path.stat().st_size,
                 file_modified(path),
-                first_markdown_heading(path) if path.suffix.lower() == ".md" else first_meaningful_line(path),
+                (
+                    first_markdown_heading(path)
+                    if path.suffix.lower() == ".md"
+                    else first_meaningful_line(path)
+                ),
                 "MODELED_CURRENT_RUN",
             ]
         )
@@ -2567,7 +2903,12 @@ def discover_d_registries_ledgers_rows() -> list[list]:
         sample_rows = read_csv_dicts(path, limit=1)
         if sample_rows:
             sample = sample_rows[0]
-            owner_agent = sample.get("owner_agent") or sample.get("primary_reader") or sample.get("agent_id") or ""
+            owner_agent = (
+                sample.get("owner_agent")
+                or sample.get("primary_reader")
+                or sample.get("agent_id")
+                or ""
+            )
             reviewer_agent = sample.get("reviewer_agent") or ""
             stop_condition = sample.get("stop_condition") or ""
         rows.append(
@@ -2599,11 +2940,29 @@ def discover_d_domain_matrix_rows() -> list[list]:
         shape_rows, columns = csv_shape(path)
         sample_rows = read_csv_dicts(path, limit=1)
         sample = sample_rows[0] if sample_rows else {}
-        surface = sample.get("surface") or sample.get("target_surface") or sample.get("asset_id") or sample.get("path") or ""
-        owner = sample.get("owner_agent") or sample.get("primary_reader") or sample.get("agent_id") or ""
-        gate = sample.get("gate") or sample.get("gate_required") or sample.get("required_gate") or ""
+        surface = (
+            sample.get("surface")
+            or sample.get("target_surface")
+            or sample.get("asset_id")
+            or sample.get("path")
+            or ""
+        )
+        owner = (
+            sample.get("owner_agent")
+            or sample.get("primary_reader")
+            or sample.get("agent_id")
+            or ""
+        )
+        gate = (
+            sample.get("gate") or sample.get("gate_required") or sample.get("required_gate") or ""
+        )
         postcheck = sample.get("postcheck") or sample.get("validator") or ""
-        boundary = sample.get("live_boundary") or sample.get("allowed_surface") or sample.get("blocked_surface") or ""
+        boundary = (
+            sample.get("live_boundary")
+            or sample.get("allowed_surface")
+            or sample.get("blocked_surface")
+            or ""
+        )
         rows.append(
             [
                 domain,
@@ -2652,14 +3011,31 @@ def discover_d_coverage_audit_rows() -> list[list]:
         artifact_type, domain, recommended_sheet, priority = classify_d_artifact(path)
         key = os.path.normcase(os.path.abspath(str(path)))
         matched_by_path = "SI" if key in directly_modeled else "NO"
-        matched_by_file = "SI" if path.name in {D_MATRIX_INDEX.name, D_RECIPE_INDEX.name, D_SKILL_USAGE_MATRIX.name, D_TOOL_INDEX.name, D_AGENTS_INDEX.name} else "NO"
-        matched_by_id = "SI" if artifact_type in {"matrix", "index", "registry", "ledger"} else "NO" if priority == "P0" else ""
+        matched_by_file = (
+            "SI"
+            if path.name
+            in {
+                D_MATRIX_INDEX.name,
+                D_RECIPE_INDEX.name,
+                D_SKILL_USAGE_MATRIX.name,
+                D_TOOL_INDEX.name,
+                D_AGENTS_INDEX.name,
+            }
+            else "NO"
+        )
+        matched_by_id = (
+            "SI"
+            if artifact_type in {"matrix", "index", "registry", "ledger"}
+            else "NO" if priority == "P0" else ""
+        )
         if matched_by_path == "SI":
             missing_reason = "MODELED_DIRECTLY"
             next_delta = "Mantener sincronizado."
         elif recommended_sheet in {"D Source Refs", "D Registries Ledgers", "D Domain Matrices"}:
             missing_reason = "MODELED_IN_COVERAGE_SHEET"
-            next_delta = "Si pasa a operativo, crear hoja especializada o vincular a matriz maestra."
+            next_delta = (
+                "Si pasa a operativo, crear hoja especializada o vincular a matriz maestra."
+            )
         else:
             missing_reason = "PENDING_FINE_MODEL"
             next_delta = "Revisar si debe entrar en validación o cierre."
@@ -2685,24 +3061,168 @@ def discover_d_coverage_audit_rows() -> list[list]:
 
 def discover_d_workbook_gap_rows() -> list[list]:
     rows = [
-        ["W_D_INDEX_LAYER", "D Indexes", "index_registry", str(D_CODEX_ROOT), "ADDED_CURRENT_RUN", "All D indexes visible with row/column counts", "Mantener como landing sheet para nuevas matrices."],
-        ["W_D_MATRIX_LAYER", "D Matrix Index", "matrix_registry", str(D_MATRIX_INDEX), "ADDED_CURRENT_RUN", "159-row matrix index modeled", "Usar para decidir próxima absorción fina."],
-        ["W_D_COVERAGE_LAYER", "D Source Refs", "source_refs", str(D_ROOT), "ADDED_CURRENT_RUN", "SOURCE_* and markdown/json refs modeled as coverage", "Escalar solo los P0/P1 que pasen a operación."],
-        ["W_D_COVERAGE_LAYER", "D Registries Ledgers", "registry_ledger", str(D_ROOT), "ADDED_CURRENT_RUN", "Indexes, registries and ledgers modeled across D", "Usar owner/reviewer/stop condition when present."],
-        ["W_D_COVERAGE_LAYER", "D Domain Matrices", "domain_matrices", str(D_MATRICES_ROOT), "ADDED_CURRENT_RUN", "Domain matrices from D:/matrices and governance registry visible", "Promover a matriz maestra si afecta decisiones."],
-        ["W_D_COVERAGE_LAYER", "D Coverage Audit", "coverage_audit", str(D_ROOT), "ADDED_CURRENT_RUN", "Path/file/id coverage audit modeled", "Resolver P0/P1 pending fine model first."],
-        ["W_D_AGENT_WORKPAPER_READBACK_LAYER", "D Agent Registry", "agent_roster", str(D_AGENTS_INDEX), "ADDED_CURRENT_RUN", "14 canonical D agents modeled", "Seleccionar owner/reviewer desde esta hoja."],
-        ["W_D_AGENT_WORKPAPER_READBACK_LAYER", "D Routing", "routing", str(D_ROUTING_JSON), "ADDED_CURRENT_RUN", "25 routes + handoff rules modeled", "Usar señales de routing para despachos."],
-        ["W_D_AGENT_WORKPAPER_READBACK_LAYER", "D Workpapers", "workpapers", str(D_CODEX_ROOT / "workpapers"), "ADDED_CURRENT_RUN", "Canonical + extra workpaper folders visible", "Revisar carpetas no canónicas antes de limpiar."],
-        ["W_D_AGENT_WORKPAPER_READBACK_LAYER", "D Orders", "orders", str(D_CODEX_ROOT / "orders"), "ADDED_CURRENT_RUN", "Order classes + files modeled", "Preparar órdenes desde matriz, no desde memoria conversacional."],
-        ["W_D_AGENT_WORKPAPER_READBACK_LAYER", "D Readbacks", "readbacks", str(D_CODEX_ROOT / "readbacks"), "ADDED_CURRENT_RUN", "Registry + file-only readbacks visible", "Alinear readbacks no registrados si son vigentes."],
-        ["W_D_CAPABILITY_LAYER", "D Skills Registry", "skill_usage", str(D_SKILL_USAGE_MATRIX), "ADDED_CURRENT_RUN", "Skill ids, levels, agents and live boundary modeled", "Resolver duplicados físicos cuando se active cleanup."],
-        ["W_D_CAPABILITY_LAYER", "D Recipes Registry", "recipe_registry", str(D_RECIPE_INDEX), "ADDED_CURRENT_RUN", "Recipe ids modeled independently from physical markdown", "Usar recipe_id como clave, no nombre de archivo."],
-        ["W_D_CAPABILITY_LAYER", "D Tools Registry", "tool_registry", str(D_TOOL_INDEX), "ADDED_CURRENT_RUN", "Tool ids and allowed/blocked surfaces modeled", "No confundir tool inventariado con validador ejecutado."],
-        ["W_D_CAPABILITY_LAYER", "D Validators", "validator_execution", str(D_CODEX_ROOT / "tools"), "PENDING_EXECUTION", "Validators listed but not run in this workbook pass", "Ejecutar solo con gate read-only/postcheck explícito."],
-        ["W_D_AUTHORITY_LAYER", "D Authority Canon", "authority_canon", str(D_AUTHORITY_CANON), "ADDED_CURRENT_RUN", "Authority files and matrices modeled", "Usar como fuente de jerarquía y cierre."],
-        ["W_D_AUTHORITY_LAYER", "D Governed Assets", "asset_inventory", str(D_GOVERNED_ASSET_INVENTORY), "ADDED_CURRENT_RUN", "Governed assets modeled", "Usar coverage_status para detectar ruido o brechas."],
-        ["W_D_LOGS_LAYER", "D Surface Summary", "logs", str(D_CODEX_ROOT / "logs"), "MISSING_EXPECTED_OR_NOT_APPLICABLE", "Logs folder absent", "No tratar como evidencia disponible."],
+        [
+            "W_D_INDEX_LAYER",
+            "D Indexes",
+            "index_registry",
+            str(D_CODEX_ROOT),
+            "ADDED_CURRENT_RUN",
+            "All D indexes visible with row/column counts",
+            "Mantener como landing sheet para nuevas matrices.",
+        ],
+        [
+            "W_D_MATRIX_LAYER",
+            "D Matrix Index",
+            "matrix_registry",
+            str(D_MATRIX_INDEX),
+            "ADDED_CURRENT_RUN",
+            "159-row matrix index modeled",
+            "Usar para decidir próxima absorción fina.",
+        ],
+        [
+            "W_D_COVERAGE_LAYER",
+            "D Source Refs",
+            "source_refs",
+            str(D_ROOT),
+            "ADDED_CURRENT_RUN",
+            "SOURCE_* and markdown/json refs modeled as coverage",
+            "Escalar solo los P0/P1 que pasen a operación.",
+        ],
+        [
+            "W_D_COVERAGE_LAYER",
+            "D Registries Ledgers",
+            "registry_ledger",
+            str(D_ROOT),
+            "ADDED_CURRENT_RUN",
+            "Indexes, registries and ledgers modeled across D",
+            "Usar owner/reviewer/stop condition when present.",
+        ],
+        [
+            "W_D_COVERAGE_LAYER",
+            "D Domain Matrices",
+            "domain_matrices",
+            str(D_MATRICES_ROOT),
+            "ADDED_CURRENT_RUN",
+            "Domain matrices from D:/matrices and governance registry visible",
+            "Promover a matriz maestra si afecta decisiones.",
+        ],
+        [
+            "W_D_COVERAGE_LAYER",
+            "D Coverage Audit",
+            "coverage_audit",
+            str(D_ROOT),
+            "ADDED_CURRENT_RUN",
+            "Path/file/id coverage audit modeled",
+            "Resolver P0/P1 pending fine model first.",
+        ],
+        [
+            "W_D_AGENT_WORKPAPER_READBACK_LAYER",
+            "D Agent Registry",
+            "agent_roster",
+            str(D_AGENTS_INDEX),
+            "ADDED_CURRENT_RUN",
+            "14 canonical D agents modeled",
+            "Seleccionar owner/reviewer desde esta hoja.",
+        ],
+        [
+            "W_D_AGENT_WORKPAPER_READBACK_LAYER",
+            "D Routing",
+            "routing",
+            str(D_ROUTING_JSON),
+            "ADDED_CURRENT_RUN",
+            "25 routes + handoff rules modeled",
+            "Usar señales de routing para despachos.",
+        ],
+        [
+            "W_D_AGENT_WORKPAPER_READBACK_LAYER",
+            "D Workpapers",
+            "workpapers",
+            str(D_CODEX_ROOT / "workpapers"),
+            "ADDED_CURRENT_RUN",
+            "Canonical + extra workpaper folders visible",
+            "Revisar carpetas no canónicas antes de limpiar.",
+        ],
+        [
+            "W_D_AGENT_WORKPAPER_READBACK_LAYER",
+            "D Orders",
+            "orders",
+            str(D_CODEX_ROOT / "orders"),
+            "ADDED_CURRENT_RUN",
+            "Order classes + files modeled",
+            "Preparar órdenes desde matriz, no desde memoria conversacional.",
+        ],
+        [
+            "W_D_AGENT_WORKPAPER_READBACK_LAYER",
+            "D Readbacks",
+            "readbacks",
+            str(D_CODEX_ROOT / "readbacks"),
+            "ADDED_CURRENT_RUN",
+            "Registry + file-only readbacks visible",
+            "Alinear readbacks no registrados si son vigentes.",
+        ],
+        [
+            "W_D_CAPABILITY_LAYER",
+            "D Skills Registry",
+            "skill_usage",
+            str(D_SKILL_USAGE_MATRIX),
+            "ADDED_CURRENT_RUN",
+            "Skill ids, levels, agents and live boundary modeled",
+            "Resolver duplicados físicos cuando se active cleanup.",
+        ],
+        [
+            "W_D_CAPABILITY_LAYER",
+            "D Recipes Registry",
+            "recipe_registry",
+            str(D_RECIPE_INDEX),
+            "ADDED_CURRENT_RUN",
+            "Recipe ids modeled independently from physical markdown",
+            "Usar recipe_id como clave, no nombre de archivo.",
+        ],
+        [
+            "W_D_CAPABILITY_LAYER",
+            "D Tools Registry",
+            "tool_registry",
+            str(D_TOOL_INDEX),
+            "ADDED_CURRENT_RUN",
+            "Tool ids and allowed/blocked surfaces modeled",
+            "No confundir tool inventariado con validador ejecutado.",
+        ],
+        [
+            "W_D_CAPABILITY_LAYER",
+            "D Validators",
+            "validator_execution",
+            str(D_CODEX_ROOT / "tools"),
+            "PENDING_EXECUTION",
+            "Validators listed but not run in this workbook pass",
+            "Ejecutar solo con gate read-only/postcheck explícito.",
+        ],
+        [
+            "W_D_AUTHORITY_LAYER",
+            "D Authority Canon",
+            "authority_canon",
+            str(D_AUTHORITY_CANON),
+            "ADDED_CURRENT_RUN",
+            "Authority files and matrices modeled",
+            "Usar como fuente de jerarquía y cierre.",
+        ],
+        [
+            "W_D_AUTHORITY_LAYER",
+            "D Governed Assets",
+            "asset_inventory",
+            str(D_GOVERNED_ASSET_INVENTORY),
+            "ADDED_CURRENT_RUN",
+            "Governed assets modeled",
+            "Usar coverage_status para detectar ruido o brechas.",
+        ],
+        [
+            "W_D_LOGS_LAYER",
+            "D Surface Summary",
+            "logs",
+            str(D_CODEX_ROOT / "logs"),
+            "MISSING_EXPECTED_OR_NOT_APPLICABLE",
+            "Logs folder absent",
+            "No tratar como evidencia disponible.",
+        ],
     ]
     validation_coverage = D_CODEX_ROOT / "matrices" / "VALIDATION_COVERAGE_MATRIX.csv"
     for row in read_csv_dicts(validation_coverage):
@@ -2854,7 +3374,11 @@ def discover_atomic_delta_rows(
         sequence += 1
 
     if d_gap_rows:
-        pending = [row for row in d_gap_rows if str(row[4]).startswith("PENDING") or str(row[4]).startswith("MISSING")]
+        pending = [
+            row
+            for row in d_gap_rows
+            if str(row[4]).startswith("PENDING") or str(row[4]).startswith("MISSING")
+        ]
         rows.append(
             [
                 sequence,
@@ -2922,9 +3446,30 @@ def create_sheet(
                 cell.fill = PatternFill("solid", fgColor=ALT_FILL)
             if isinstance(value, str):
                 upper = value.upper()
-                if upper in {"PASS", "OK", "SI", "NO_TOCAR", "MONTADA_READONLY", "MONTADA_GOBERNADA", "ACTUAL", "INDEXED", "CHRONOLOGY_INDEXED", "ARCHIVE_REVERSIBLE", "LEGACY_HEAVY_INDEXED", "REFERENCIA"}:
+                if upper in {
+                    "PASS",
+                    "OK",
+                    "SI",
+                    "NO_TOCAR",
+                    "MONTADA_READONLY",
+                    "MONTADA_GOBERNADA",
+                    "ACTUAL",
+                    "INDEXED",
+                    "CHRONOLOGY_INDEXED",
+                    "ARCHIVE_REVERSIBLE",
+                    "LEGACY_HEAVY_INDEXED",
+                    "REFERENCIA",
+                }:
                     cell.fill = PatternFill("solid", fgColor=OK_FILL)
-                elif upper in {"REVISAR", "OBSERVAR", "PENDIENTE", "REVISAR_OWNER", "REVISAR_SENSIBLE", "ENTRYPOINT_INCOMPLETE", "NO_MONTADA"}:
+                elif upper in {
+                    "REVISAR",
+                    "OBSERVAR",
+                    "PENDIENTE",
+                    "REVISAR_OWNER",
+                    "REVISAR_SENSIBLE",
+                    "ENTRYPOINT_INCOMPLETE",
+                    "NO_MONTADA",
+                }:
                     cell.fill = PatternFill("solid", fgColor=WARN_FILL)
                 elif upper in {"FAIL", "MISSING"}:
                     cell.fill = PatternFill("solid", fgColor=BAD_FILL)
@@ -3013,7 +3558,9 @@ def main():
         "ConvertTo-Json -Depth 4"
     )
     d_drive = next((item for item in as_list(drive_json) if item.get("Name") == "D:\\"), {})
-    d_disk = next((item for item in as_list(disk_json) if item.get("FriendlyName") == "Msft Virtual Disk"), {})
+    d_disk = next(
+        (item for item in as_list(disk_json) if item.get("FriendlyName") == "Msft Virtual Disk"), {}
+    )
     d_exists = Path(r"D:\\").exists()
     d_readonly = bool(d_disk.get("IsReadOnly"))
     if d_exists and d_readonly:
@@ -3043,18 +3590,53 @@ def main():
 
     def classify_prompt(group: str, text: str, sensitive_count: int):
         if group in {"global", "new-conversation"}:
-            return "CORE_PROMPT_HISTORY", "NO_TOCAR", "Medio", "Base UI/prompt; no remover por limpieza."
+            return (
+                "CORE_PROMPT_HISTORY",
+                "NO_TOCAR",
+                "Medio",
+                "Base UI/prompt; no remover por limpieza.",
+            )
         if group in pinned:
-            return "PINNED_THREAD", "NO_TOCAR", "Medio", "Hilo fijado; requiere decisión humana específica."
+            return (
+                "PINNED_THREAD",
+                "NO_TOCAR",
+                "Medio",
+                "Hilo fijado; requiere decisión humana específica.",
+            )
         if group.startswith("task_"):
-            return "CLEANUP_TASK_EPHEMERAL", "REMOVER_DRY_RUN", "Bajo", "Grupo task efímero; candidato seguro si postcheck pasa."
+            return (
+                "CLEANUP_TASK_EPHEMERAL",
+                "REMOVER_DRY_RUN",
+                "Bajo",
+                "Grupo task efímero; candidato seguro si postcheck pasa.",
+            )
         if group in thread_permissions:
-            return "PERMISSION_LINKED", "REVISAR_OWNER", "Medio/Alto", "Tiene permiso de hilo visible; revisar owner/recencia."
+            return (
+                "PERMISSION_LINKED",
+                "REVISAR_OWNER",
+                "Medio/Alto",
+                "Tiene permiso de hilo visible; revisar owner/recencia.",
+            )
         if group in thread_hints:
-            return "WORKSPACE_HINTED", "REVISAR_OWNER", "Medio", "Tiene pista de workspace; revisar antes de limpiar."
+            return (
+                "WORKSPACE_HINTED",
+                "REVISAR_OWNER",
+                "Medio",
+                "Tiene pista de workspace; revisar antes de limpiar.",
+            )
         if sensitive_count:
-            return "CLEANUP_NO_PERMISSION", "REVISAR_SENSIBLE", "Medio", "Sin permiso visible pero con menciones sensibles."
-        return "CLEANUP_NO_PERMISSION", "REMOVER_DRY_RUN", "Bajo/Medio", "Sin permiso de hilo visible; remover con backup."
+            return (
+                "CLEANUP_NO_PERMISSION",
+                "REVISAR_SENSIBLE",
+                "Medio",
+                "Sin permiso visible pero con menciones sensibles.",
+            )
+        return (
+            "CLEANUP_NO_PERMISSION",
+            "REMOVER_DRY_RUN",
+            "Bajo/Medio",
+            "Sin permiso de hilo visible; remover con backup.",
+        )
 
     prompt_rows = []
     for group, entries in prompt_history.items():
@@ -3081,7 +3663,9 @@ def main():
                 note,
             ]
         )
-    prompt_rows.sort(key=lambda item: (0 if item[9].startswith("CLEANUP") else 1, -(item[3] or 0), item[0]))
+    prompt_rows.sort(
+        key=lambda item: (0 if item[9].startswith("CLEANUP") else 1, -(item[3] or 0), item[0])
+    )
     candidate_rows = [row[:] for row in prompt_rows if row[9].startswith("CLEANUP")]
     prompt_read_rows = []
     for group, entries in prompt_history.items():
@@ -3180,37 +3764,109 @@ def main():
         ["JSON valido", "PASS", "Parseo correcto"],
         ["Backup identical", backup_identical, "Backup del global-state contra archivo vivo"],
         ["Environment activo", env_label, env_id],
-        ["Codex model", config.get("model", "N/D"), f"reasoning={config.get('model_reasoning_effort', 'N/D')}"],
-        ["Sandbox / approval", f"{config.get('sandbox_mode', 'N/D')} / {config.get('approval_policy', 'N/D')}", "Config local"],
-        ["Plugins habilitados", len(plugins), ", ".join(plugins[:8]) + ("..." if len(plugins) > 8 else "")],
+        [
+            "Codex model",
+            config.get("model", "N/D"),
+            f"reasoning={config.get('model_reasoning_effort', 'N/D')}",
+        ],
+        [
+            "Sandbox / approval",
+            f"{config.get('sandbox_mode', 'N/D')} / {config.get('approval_policy', 'N/D')}",
+            "Config local",
+        ],
+        [
+            "Plugins habilitados",
+            len(plugins),
+            ", ".join(plugins[:8]) + ("..." if len(plugins) > 8 else ""),
+        ],
         ["Trusted projects", len(projects), "Entradas [projects] en config.toml"],
         ["Workspace actual", str(ROOT), "Rama y estado en hoja Workspace Actual"],
-        ["Superficies locales", len(local_surface_rows), "D, PROJEC CDX, .codex, CodexLocal, cronologia, archivo y repos"],
+        [
+            "Superficies locales",
+            len(local_surface_rows),
+            "D, PROJEC CDX, .codex, CodexLocal, cronologia, archivo y repos",
+        ],
         ["D root", d_status, d_mode_note],
         ["D total GB", gb(d_drive.get("TotalSize")), "Capacidad visible actual"],
         ["D libre GB", gb(d_drive.get("AvailableFreeSpace")), "Espacio libre actual"],
-        ["VHDX origen", str(VHDX_PATH), f"{gb(VHDX_PATH.stat().st_size) if VHDX_PATH.exists() else 'N/D'} GB físicos"],
+        [
+            "VHDX origen",
+            str(VHDX_PATH),
+            f"{gb(VHDX_PATH.stat().st_size) if VHDX_PATH.exists() else 'N/D'} GB físicos",
+        ],
         ["Prompt-history grupos", ph_groups, "Con lectura saneada en hoja Prompts Lectura"],
         ["Prompt-history entradas", ph_entries, "Conteo saneado"],
-        ["Prompts lectura filas", len(prompt_read_rows), "Una fila por entrada/chunk con tokens reales redactados"],
-        ["Repositorios inventariados", len(repo_rows), "GitHub local, D activo, trusted projects y workspace actual"],
-        ["Ramas inventariadas", len(branch_rows), "Refs locales/remotas y ramas GitHub live cuando gh responde"],
-        ["Ramas organizadas", len(branch_org_rows), "Ramas locales del repo actual clasificadas por estado y decision"],
+        [
+            "Prompts lectura filas",
+            len(prompt_read_rows),
+            "Una fila por entrada/chunk con tokens reales redactados",
+        ],
+        [
+            "Repositorios inventariados",
+            len(repo_rows),
+            "GitHub local, D activo, trusted projects y workspace actual",
+        ],
+        [
+            "Ramas inventariadas",
+            len(branch_rows),
+            "Refs locales/remotas y ramas GitHub live cuando gh responde",
+        ],
+        [
+            "Ramas organizadas",
+            len(branch_org_rows),
+            "Ramas locales del repo actual clasificadas por estado y decision",
+        ],
         ["PRs inventariados", len(pr_rows), "GitHub live via gh; all states, limite 50 por repo"],
         ["Codex Cloud entornos", len(cloud_rows), "Confirmados localmente + menciones en prompts"],
-        ["Agentes inventariados", len(agent_rows), "Fan-in, roster SDU, revision live y componentes Dataverse"],
-        ["Agentes por entorno", len(environment_agent_rows), "SDU agent mappings + bots/copilots Dataverse"],
-        ["Entornos/Soluciones", len(environment_solution_rows), "HUBDesarrollo, soluciones y conteos de tablas"],
+        [
+            "Agentes inventariados",
+            len(agent_rows),
+            "Fan-in, roster SDU, revision live y componentes Dataverse",
+        ],
+        [
+            "Agentes por entorno",
+            len(environment_agent_rows),
+            "SDU agent mappings + bots/copilots Dataverse",
+        ],
+        [
+            "Entornos/Soluciones",
+            len(environment_solution_rows),
+            "HUBDesarrollo, soluciones y conteos de tablas",
+        ],
         ["Colas Dataverse", len(workqueue_rows), "Workqueues vivas con backlog"],
-        ["Universos inventariados", len(universe_rows), "Superficies canonicas + auditoria de relaciones"],
+        [
+            "Universos inventariados",
+            len(universe_rows),
+            "Superficies canonicas + auditoria de relaciones",
+        ],
         ["Skills inventariadas", len(skill_rows), "Tabla unificada + escaneo SKILL.md"],
         ["Recetas inventariadas", len(recipe_rows), "Recipes locales y .agents"],
         ["Tools inventariadas", len(tool_rows), "Scripts, MCP servers y plugins habilitados"],
-        ["Conexiones inventariadas", len(connection_rows), "Superficies, gates, mappings, MCP y plugins"],
-        ["Dataverse fuentes", len(dataverse_source_rows), "Tablas SDU, source/evidence y lecturas vivas previas"],
-        ["Matriz maestra atómica", len(master_atomic_rows), "Waves owner/reviewer/gates/surface/next_delta"],
-        ["Acciones atómicas", len(atomic_action_rows), "Diccionario de acciones atómicas y mutabilidad"],
-        ["Matriz hidratación", len(metadata_hydration_rows), "Rows metadata-only para Dataverse SDU"],
+        [
+            "Conexiones inventariadas",
+            len(connection_rows),
+            "Superficies, gates, mappings, MCP y plugins",
+        ],
+        [
+            "Dataverse fuentes",
+            len(dataverse_source_rows),
+            "Tablas SDU, source/evidence y lecturas vivas previas",
+        ],
+        [
+            "Matriz maestra atómica",
+            len(master_atomic_rows),
+            "Waves owner/reviewer/gates/surface/next_delta",
+        ],
+        [
+            "Acciones atómicas",
+            len(atomic_action_rows),
+            "Diccionario de acciones atómicas y mutabilidad",
+        ],
+        [
+            "Matriz hidratación",
+            len(metadata_hydration_rows),
+            "Rows metadata-only para Dataverse SDU",
+        ],
         ["D superficies", len(d_surface_rows), "Roots y capas D con conteos físicos"],
         ["D indexes/matrices", len(d_indexes_rows), "Índices CSV y matrices de D con shape"],
         ["D matriz index", len(d_matrix_index_rows), "MATRIX_INDEX D como mapa maestro operativo"],
@@ -3224,7 +3880,11 @@ def main():
         ["D authority canon", len(d_authority_rows), "Archivos rectores en 02_AUTHORITY_CANON"],
         ["D governed assets", len(d_governed_asset_rows), "GOVERNED_ASSET_CANONICAL_INVENTORY"],
         ["D source refs", len(d_source_ref_rows), "SOURCE/ref markdown-json-yaml detectados en D"],
-        ["D registries/ledgers", len(d_registries_ledgers_rows), "Indexes, registries y ledgers detectados"],
+        [
+            "D registries/ledgers",
+            len(d_registries_ledgers_rows),
+            "Indexes, registries y ledgers detectados",
+        ],
         ["D domain matrices", len(d_domain_matrix_rows), "Matrices/seeds por dominio D"],
         ["D coverage audit", len(d_coverage_audit_rows), "Auditoría path/file/id de cobertura D"],
         ["D workbook gaps", len(d_gap_rows), "Capa de gaps modelada y pendientes"],
@@ -3312,23 +3972,88 @@ def main():
         ws.cell(index, 1).style = "Hyperlink"
 
     decision_rows = [
-        ["0_NO_TOCAR", "Conservar estado actual", 0, "Bajo", "Estabilidad total", "Ninguno", "No aplica", old_decisions.get("0_NO_TOCAR")],
-        ["1_D_READONLY_ACTUAL", "Mantener D montado solo lectura", 0, "Bajo", "Auditoría/inventario seguro", "Actual", "Dismount VHDX", old_decisions.get("1_D_READONLY_ACTUAL", "ACTUAL")],
-        ["2_D_READWRITE_GOVERNED", "Remontar D con escritura", 0, "Medio", "Solo si hay que operar en cabina D", "Orden humana exacta", "Dismount + attach readonly", old_decisions.get("2_D_READWRITE_GOVERNED")],
-        ["3_SAFE_DRY_RUN", "Marcar/remover task_ephemeral + no-permission", safe_kb, "Bajo", "Primer movimiento atómico seguro", "Codex cerrado + backup", "Restaurar JSON backup", old_decisions.get("3_SAFE_DRY_RUN", "RECOMENDADO")],
-        ["4_BALANCED_REVIEW", "Sumar buckets tras revisar recencia", review_kb, "Medio", "Reducción notable", "Lista exacta + owner/reviewer", "Restaurar JSON backup", old_decisions.get("4_BALANCED_REVIEW")],
-        ["5_POWERFUL_PERMISSION_REVIEW", "Revisar permission/workspace", review_kb, "Medio/Alto", "Limpieza potente real", "Orden gobernada separada", "Restaurar JSON backup", old_decisions.get("5_POWERFUL_PERMISSION_REVIEW")],
+        [
+            "0_NO_TOCAR",
+            "Conservar estado actual",
+            0,
+            "Bajo",
+            "Estabilidad total",
+            "Ninguno",
+            "No aplica",
+            old_decisions.get("0_NO_TOCAR"),
+        ],
+        [
+            "1_D_READONLY_ACTUAL",
+            "Mantener D montado solo lectura",
+            0,
+            "Bajo",
+            "Auditoría/inventario seguro",
+            "Actual",
+            "Dismount VHDX",
+            old_decisions.get("1_D_READONLY_ACTUAL", "ACTUAL"),
+        ],
+        [
+            "2_D_READWRITE_GOVERNED",
+            "Remontar D con escritura",
+            0,
+            "Medio",
+            "Solo si hay que operar en cabina D",
+            "Orden humana exacta",
+            "Dismount + attach readonly",
+            old_decisions.get("2_D_READWRITE_GOVERNED"),
+        ],
+        [
+            "3_SAFE_DRY_RUN",
+            "Marcar/remover task_ephemeral + no-permission",
+            safe_kb,
+            "Bajo",
+            "Primer movimiento atómico seguro",
+            "Codex cerrado + backup",
+            "Restaurar JSON backup",
+            old_decisions.get("3_SAFE_DRY_RUN", "RECOMENDADO"),
+        ],
+        [
+            "4_BALANCED_REVIEW",
+            "Sumar buckets tras revisar recencia",
+            review_kb,
+            "Medio",
+            "Reducción notable",
+            "Lista exacta + owner/reviewer",
+            "Restaurar JSON backup",
+            old_decisions.get("4_BALANCED_REVIEW"),
+        ],
+        [
+            "5_POWERFUL_PERMISSION_REVIEW",
+            "Revisar permission/workspace",
+            review_kb,
+            "Medio/Alto",
+            "Limpieza potente real",
+            "Orden gobernada separada",
+            "Restaurar JSON backup",
+            old_decisions.get("5_POWERFUL_PERMISSION_REVIEW"),
+        ],
     ]
     ws = create_sheet(
         wb,
         "Decision",
         "Opciones graduadas para operar D y alivianar Codex sin romper estado vivo.",
-        ["Opcion", "Accion", "Reduccion estimada KB", "Riesgo", "Cuando elegir", "Gate", "Rollback", "Decision"],
+        [
+            "Opcion",
+            "Accion",
+            "Reduccion estimada KB",
+            "Riesgo",
+            "Cuando elegir",
+            "Gate",
+            "Rollback",
+            "Decision",
+        ],
         decision_rows,
         "tblDecision",
         [30, 48, 22, 18, 42, 32, 34, 18],
     )
-    dv = DataValidation(type="list", formula1='"ACTUAL,RECOMENDADO,APROBADO,ESPERAR,RECHAZADO"', allow_blank=True)
+    dv = DataValidation(
+        type="list", formula1='"ACTUAL,RECOMENDADO,APROBADO,ESPERAR,RECHAZADO"', allow_blank=True
+    )
     ws.add_data_validation(dv)
     dv.add(f"H5:H{4 + len(decision_rows)}")
 
@@ -3336,15 +4061,55 @@ def main():
         ["environment.id", env.get("id"), "NO_TOCAR", "Environment activo de Codex Cloud."],
         ["environment.label", env.get("label"), "NO_TOCAR", "Label visible del entorno."],
         ["environment.workspace_dir", env.get("workspace_dir"), "NO_TOCAR", "Ruta cloud activa."],
-        ["environment.codexCloudAccess", persisted.get("codexCloudAccess"), "NO_TOCAR", "Acceso cloud."],
-        ["environment.task_count", env.get("task_count"), "OBSERVAR", "Tareas actuales del entorno."],
-        ["environment.post_setup_cache_enabled", env.get("post_setup_cache_enabled"), "NO_TOCAR", "Cache post setup."],
-        ["environment.secrets.count", len(env.get("secrets") or []), "OK", "Sin imprimir secretos."],
+        [
+            "environment.codexCloudAccess",
+            persisted.get("codexCloudAccess"),
+            "NO_TOCAR",
+            "Acceso cloud.",
+        ],
+        [
+            "environment.task_count",
+            env.get("task_count"),
+            "OBSERVAR",
+            "Tareas actuales del entorno.",
+        ],
+        [
+            "environment.post_setup_cache_enabled",
+            env.get("post_setup_cache_enabled"),
+            "NO_TOCAR",
+            "Cache post setup.",
+        ],
+        [
+            "environment.secrets.count",
+            len(env.get("secrets") or []),
+            "OK",
+            "Sin imprimir secretos.",
+        ],
         ["codex.config.model", config.get("model"), "OK", "Modelo local configurado."],
-        ["codex.config.reasoning", config.get("model_reasoning_effort"), "OK", "Esfuerzo de razonamiento."],
-        ["codex.config.approval_policy", config.get("approval_policy"), "OBSERVAR", "Archivo config.toml."],
-        ["codex.config.sandbox_mode", config.get("sandbox_mode"), "OBSERVAR", "Archivo config.toml."],
-        ["codex.features.multi_agent", features.get("multi_agent"), "OK", "Multi-agente habilitado."],
+        [
+            "codex.config.reasoning",
+            config.get("model_reasoning_effort"),
+            "OK",
+            "Esfuerzo de razonamiento.",
+        ],
+        [
+            "codex.config.approval_policy",
+            config.get("approval_policy"),
+            "OBSERVAR",
+            "Archivo config.toml.",
+        ],
+        [
+            "codex.config.sandbox_mode",
+            config.get("sandbox_mode"),
+            "OBSERVAR",
+            "Archivo config.toml.",
+        ],
+        [
+            "codex.features.multi_agent",
+            features.get("multi_agent"),
+            "OK",
+            "Multi-agente habilitado.",
+        ],
         ["codex.features.memories", features.get("memories"), "OK", "Memorias habilitadas."],
         ["codex.desktop.locale", desktop.get("localeOverride"), "OK", "Interfaz local."],
         ["codex.desktop.shell", desktop.get("integratedTerminalShell"), "OK", "Shell integrada."],
@@ -3356,19 +4121,45 @@ def main():
         ["local.surface.D.label", d_drive.get("VolumeLabel"), "OK", "Etiqueta del volumen."],
         ["local.surface.D.format", d_drive.get("DriveFormat"), "OK", "Formato del volumen."],
         ["local.surface.D.total_gb", gb(d_drive.get("TotalSize")), "OK", "Tamaño virtual visible."],
-        ["local.surface.D.free_gb", gb(d_drive.get("AvailableFreeSpace")), "OK", "Espacio libre visible."],
-        ["local.surface.D.disk_readonly", d_readonly, "OBSERVAR", "Indicador del disco subyacente; no usar como permiso de escritura."],
-        ["local.surface.D.vhdx", str(VHDX_PATH), "REFERENCIA", "Evidencia historica de recuperacion si existe."],
-        ["local.surface.D.evidence_log", str(EVIDENCE_LOG), "REFERENCIA", "Bitácora historica de attach/recuperacion si existe."],
+        [
+            "local.surface.D.free_gb",
+            gb(d_drive.get("AvailableFreeSpace")),
+            "OK",
+            "Espacio libre visible.",
+        ],
+        [
+            "local.surface.D.disk_readonly",
+            d_readonly,
+            "OBSERVAR",
+            "Indicador del disco subyacente; no usar como permiso de escritura.",
+        ],
+        [
+            "local.surface.D.vhdx",
+            str(VHDX_PATH),
+            "REFERENCIA",
+            "Evidencia historica de recuperacion si existe.",
+        ],
+        [
+            "local.surface.D.evidence_log",
+            str(EVIDENCE_LOG),
+            "REFERENCIA",
+            "Bitácora historica de attach/recuperacion si existe.",
+        ],
     ]
     for key, value in sorted((env.get("env_vars") or {}).items()):
-        decision = "REVISAR" if key == "SOURCE_TREE_PATH" and str(value) == "CODEX_SOURCE_TREE_PATH" else "OK"
+        decision = (
+            "REVISAR"
+            if key == "SOURCE_TREE_PATH" and str(value) == "CODEX_SOURCE_TREE_PATH"
+            else "OK"
+        )
         note = "Valor literal sospechoso" if decision == "REVISAR" else "Variable runtime/version."
         config_rows.append([f"env_vars.{key}", safe(value), decision, note])
     for index, line in enumerate(as_list(env.get("setup")), 1):
         config_rows.append([f"setup[{index}]", line, "OK", "Script setup cloud vigente."])
     for index, line in enumerate(as_list(env.get("maintenance_setup")), 1):
-        config_rows.append([f"maintenance_setup[{index}]", line, "OK", "Script mantenimiento cloud vigente."])
+        config_rows.append(
+            [f"maintenance_setup[{index}]", line, "OK", "Script mantenimiento cloud vigente."]
+        )
 
     ws = create_sheet(
         wb,
@@ -3393,17 +4184,70 @@ def main():
         ["free_gb", gb(d_drive.get("AvailableFreeSpace")), "PASS", "Libre actual."],
         ["disk_number", d_disk.get("Number"), "PASS", "Número de disco asociado."],
         ["disk_name", d_disk.get("FriendlyName"), "PASS", "Msft Virtual Disk."],
-        ["is_readonly", d_readonly, "INFO" if d_exists else "OBSERVAR", "Estado reportado por el disco; no reemplaza el gate humano."],
-        ["vhdx_path", str(VHDX_PATH), "INFO" if VHDX_PATH.exists() else "MISSING", "Referencia historica de recuperacion."],
-        ["vhdx_size_gb", gb(VHDX_PATH.stat().st_size) if VHDX_PATH.exists() else None, "INFO" if VHDX_PATH.exists() else "MISSING", "Tamaño físico si la referencia existe."],
-        ["AGENTS.md", str(d_agents), "PASS" if d_agents.exists() else "MISSING", "Fuente rectora local."],
-        ["MANIFEST.yaml", str(d_manifest), "PASS" if d_manifest.exists() else "MISSING", "Manifest de cabina."],
-        ["validator.agent_layer", str(d_validator_agent), "PASS" if d_validator_agent.exists() else "MISSING", "Validador local."],
-        ["validator.operational_chain", str(d_validator_chain), "PASS" if d_validator_chain.exists() else "MISSING", "Validador cadena."],
-        ["evidence_log", str(EVIDENCE_LOG), "INFO" if EVIDENCE_LOG.exists() else "MISSING", "Bitácora historica de attach/recuperacion."],
-        ["next_gate", "D_READWRITE_GOVERNED", "PENDIENTE", "Solo si hace falta escribir; requiere orden humana exacta."],
+        [
+            "is_readonly",
+            d_readonly,
+            "INFO" if d_exists else "OBSERVAR",
+            "Estado reportado por el disco; no reemplaza el gate humano.",
+        ],
+        [
+            "vhdx_path",
+            str(VHDX_PATH),
+            "INFO" if VHDX_PATH.exists() else "MISSING",
+            "Referencia historica de recuperacion.",
+        ],
+        [
+            "vhdx_size_gb",
+            gb(VHDX_PATH.stat().st_size) if VHDX_PATH.exists() else None,
+            "INFO" if VHDX_PATH.exists() else "MISSING",
+            "Tamaño físico si la referencia existe.",
+        ],
+        [
+            "AGENTS.md",
+            str(d_agents),
+            "PASS" if d_agents.exists() else "MISSING",
+            "Fuente rectora local.",
+        ],
+        [
+            "MANIFEST.yaml",
+            str(d_manifest),
+            "PASS" if d_manifest.exists() else "MISSING",
+            "Manifest de cabina.",
+        ],
+        [
+            "validator.agent_layer",
+            str(d_validator_agent),
+            "PASS" if d_validator_agent.exists() else "MISSING",
+            "Validador local.",
+        ],
+        [
+            "validator.operational_chain",
+            str(d_validator_chain),
+            "PASS" if d_validator_chain.exists() else "MISSING",
+            "Validador cadena.",
+        ],
+        [
+            "evidence_log",
+            str(EVIDENCE_LOG),
+            "INFO" if EVIDENCE_LOG.exists() else "MISSING",
+            "Bitácora historica de attach/recuperacion.",
+        ],
+        [
+            "next_gate",
+            "D_READWRITE_GOVERNED",
+            "PENDIENTE",
+            "Solo si hace falta escribir; requiere orden humana exacta.",
+        ],
     ]
-    create_sheet(wb, "Cabina D", "Estado de la consola rectora D y frontera de escritura gobernada.", ["Campo", "Valor", "Estado", "Nota"], d_rows, "tblCabinaD", [30, 98, 18, 62])
+    create_sheet(
+        wb,
+        "Cabina D",
+        "Estado de la consola rectora D y frontera de escritura gobernada.",
+        ["Campo", "Valor", "Estado", "Nota"],
+        d_rows,
+        "tblCabinaD",
+        [30, 98, 18, 62],
+    )
 
     create_sheet(
         wb,
@@ -3457,7 +4301,18 @@ def main():
         wb,
         "D Indexes",
         "Indices, matrices, registries y mapas CSV encontrados en D; muestra shape y si ya quedan consumidos por el workbook.",
-        ["Root", "Index Name", "Path", "Kind", "Rows", "Columns", "Bytes", "Modified", "Consumed By Sheet", "Gap Status"],
+        [
+            "Root",
+            "Index Name",
+            "Path",
+            "Kind",
+            "Rows",
+            "Columns",
+            "Bytes",
+            "Modified",
+            "Consumed By Sheet",
+            "Gap Status",
+        ],
         d_indexes_rows,
         "tblDIndexes",
         [70, 54, 96, 24, 12, 92, 14, 22, 20, 30],
@@ -3467,7 +4322,18 @@ def main():
         wb,
         "D Matrix Index",
         "MATRIX_INDEX de D como mapa maestro de matrices operativas, readers y reglas de actualizacion.",
-        ["Matrix Id", "Path", "Path Exists", "Rows", "Columns", "Scope", "Primary Reader", "Update Rule", "Source", "Source Path"],
+        [
+            "Matrix Id",
+            "Path",
+            "Path Exists",
+            "Rows",
+            "Columns",
+            "Scope",
+            "Primary Reader",
+            "Update Rule",
+            "Source",
+            "Source Path",
+        ],
         d_matrix_index_rows,
         "tblDMatrixIndex",
         [48, 96, 14, 10, 92, 38, 34, 90, 24, 96],
@@ -3521,7 +4387,17 @@ def main():
         wb,
         "D Recipes Registry",
         "Recipe, subrecipe y source recipe indexes de D modelados por ID estable.",
-        ["Recipe Id", "Level/Parent", "Primary Agent", "Path", "Output/Purpose", "Bytes", "Modified", "Source Index", "Workbook Status"],
+        [
+            "Recipe Id",
+            "Level/Parent",
+            "Primary Agent",
+            "Path",
+            "Output/Purpose",
+            "Bytes",
+            "Modified",
+            "Source Index",
+            "Workbook Status",
+        ],
         d_recipe_registry_rows,
         "tblDRecipesRegistry",
         [58, 34, 46, 100, 70, 14, 22, 96, 34],
@@ -3531,7 +4407,17 @@ def main():
         wb,
         "D Tools Registry",
         "TOOL_INDEX y permisos/fuentes TCU de D; distingue tool_id de archivo fisico.",
-        ["Tool Id", "Level/Source", "Tool Type", "Path Or Command", "Physical Path Present", "Allowed Surface", "Blocked Surface", "Source Index", "Workbook Status"],
+        [
+            "Tool Id",
+            "Level/Source",
+            "Tool Type",
+            "Path Or Command",
+            "Physical Path Present",
+            "Allowed Surface",
+            "Blocked Surface",
+            "Source Index",
+            "Workbook Status",
+        ],
         d_tools_registry_rows,
         "tblDToolsRegistry",
         [52, 34, 24, 110, 18, 58, 58, 96, 34],
@@ -3541,7 +4427,18 @@ def main():
         wb,
         "D Validators",
         "Validators y runners fisicos de D; inventariados pero no ejecutados en esta pasada.",
-        ["Validator Name", "Path", "Linked Tool Id", "Linked Recipe", "Linked Subskill", "Present In Tools", "Present In Validacion", "Last Result", "Execution Status", "Kind"],
+        [
+            "Validator Name",
+            "Path",
+            "Linked Tool Id",
+            "Linked Recipe",
+            "Linked Subskill",
+            "Present In Tools",
+            "Present In Validacion",
+            "Last Result",
+            "Execution Status",
+            "Kind",
+        ],
         d_validator_rows,
         "tblDValidators",
         [54, 100, 50, 42, 42, 16, 20, 24, 34, 22],
@@ -3576,7 +4473,15 @@ def main():
         wb,
         "D Levels",
         "Subniveles de agentes en D y politica de lectura por nivel.",
-        ["Level Id", "Name", "Folder", "Primary Role", "Agent Count", "Default Read", "Source Index"],
+        [
+            "Level Id",
+            "Name",
+            "Folder",
+            "Primary Role",
+            "Agent Count",
+            "Default Read",
+            "Source Index",
+        ],
         d_levels_rows,
         "tblDLevels",
         [28, 34, 92, 70, 14, 70, 96],
@@ -3586,7 +4491,17 @@ def main():
         wb,
         "D Routing",
         "routing.json de D: clases de orden, señales, agentes y handoff rules.",
-        ["Kind", "Order/When", "Signals", "Agents", "Default Agent", "Must Include", "Notes", "Status", "Source Path"],
+        [
+            "Kind",
+            "Order/When",
+            "Signals",
+            "Agents",
+            "Default Agent",
+            "Must Include",
+            "Notes",
+            "Status",
+            "Source Path",
+        ],
         d_routing_rows,
         "tblDRouting",
         [18, 42, 96, 70, 38, 120, 60, 34, 96],
@@ -3826,29 +4741,87 @@ def main():
         wb,
         "D Workbook Gaps",
         "Gaps detectados por agentes y estado de absorcion dentro de esta actualizacion del workbook.",
-        ["Gap Id", "Target Sheet", "Item Type", "Absolute Path", "Current Presence", "Expected Presence", "Proposed Action"],
+        [
+            "Gap Id",
+            "Target Sheet",
+            "Item Type",
+            "Absolute Path",
+            "Current Presence",
+            "Expected Presence",
+            "Proposed Action",
+        ],
         d_gap_rows,
         "tblDWorkbookGaps",
         [44, 34, 34, 100, 34, 76, 82],
     )
 
     global_rows = []
-    for prefix, source in [("persisted", persisted), ("root", {k: v for k, v in state.items() if k != "electron-persisted-atom-state"})]:
+    for prefix, source in [
+        ("persisted", persisted),
+        ("root", {k: v for k, v in state.items() if k != "electron-persisted-atom-state"}),
+    ]:
         for key, value in source.items():
-            typ = "array" if isinstance(value, list) else "object" if isinstance(value, dict) else "null" if value is None else type(value).__name__
+            typ = (
+                "array"
+                if isinstance(value, list)
+                else (
+                    "object"
+                    if isinstance(value, dict)
+                    else "null" if value is None else type(value).__name__
+                )
+            )
             children = len(value) if isinstance(value, (list, dict)) else None
             size = json_size(value)
             action = "REVISAR_DRY_RUN" if key == "prompt-history" else "NO_TOCAR"
             risk = "Historial textual" if key == "prompt-history" else "Estado vivo"
-            if key in {"active-workspace-roots", "electron-saved-workspace-roots", "electron-workspace-root-labels"}:
+            if key in {
+                "active-workspace-roots",
+                "electron-saved-workspace-roots",
+                "electron-workspace-root-labels",
+            }:
                 risk = "Workspace vivo"
             global_rows.append([f"{prefix}.{key}", typ, children, size, kb(size), action, risk])
     global_rows.sort(key=lambda row: (-(row[4] or 0), row[0]))
-    create_sheet(wb, "Global State", "Secciones root y persisted atom state, tamaño aproximado y acción recomendada.", ["Seccion", "Tipo", "Hijos", "Bytes aprox", "KB aprox", "Accion recomendada", "Riesgo"], global_rows, "tblGlobalState", [58, 16, 12, 16, 14, 24, 26])
+    create_sheet(
+        wb,
+        "Global State",
+        "Secciones root y persisted atom state, tamaño aproximado y acción recomendada.",
+        ["Seccion", "Tipo", "Hijos", "Bytes aprox", "KB aprox", "Accion recomendada", "Riesgo"],
+        global_rows,
+        "tblGlobalState",
+        [58, 16, 12, 16, 14, 24, 26],
+    )
 
-    prompt_headers = ["Grupo", "Entradas", "Chars aprox", "KB aprox", "Max entrada chars", "Menciones sensibles", "Permiso hilo", "Workspace hint", "Updated at", "Clase", "Accion recomendada", "Riesgo", "Decision humana", "Nota"]
-    ws = create_sheet(wb, "Prompt History", "No incluye contenidos de prompts. Solo conteos, tamaños, flags y decisión.", prompt_headers, prompt_rows, "tblPromptHistory", [44, 12, 14, 12, 18, 18, 14, 16, 20, 28, 24, 18, 18, 70])
-    dv = DataValidation(type="list", formula1='"CONSERVAR,REMOVER_DRY_RUN,REVISAR_OWNER,REVISAR_SENSIBLE,NO_TOCAR"', allow_blank=True)
+    prompt_headers = [
+        "Grupo",
+        "Entradas",
+        "Chars aprox",
+        "KB aprox",
+        "Max entrada chars",
+        "Menciones sensibles",
+        "Permiso hilo",
+        "Workspace hint",
+        "Updated at",
+        "Clase",
+        "Accion recomendada",
+        "Riesgo",
+        "Decision humana",
+        "Nota",
+    ]
+    ws = create_sheet(
+        wb,
+        "Prompt History",
+        "No incluye contenidos de prompts. Solo conteos, tamaños, flags y decisión.",
+        prompt_headers,
+        prompt_rows,
+        "tblPromptHistory",
+        [44, 12, 14, 12, 18, 18, 14, 16, 20, 28, 24, 18, 18, 70],
+    )
+    dv = DataValidation(
+        type="list",
+        formula1='"CONSERVAR,REMOVER_DRY_RUN,REVISAR_OWNER,REVISAR_SENSIBLE,NO_TOCAR"',
+        allow_blank=True,
+    )
     ws.add_data_validation(dv)
     dv.add(f"M5:M{4 + len(prompt_rows)}")
     create_sheet(
@@ -3871,7 +4844,15 @@ def main():
         "tblPromptsLectura",
         [44, 10, 10, 26, 22, 18, 14, 68, 14, 120],
     )
-    create_sheet(wb, "Candidatos", "Lista operable para decidir Wave 2 sin tocar contenidos.", prompt_headers, candidate_rows, "tblCandidatos", [44, 12, 14, 12, 18, 18, 14, 16, 20, 28, 24, 18, 18, 70])
+    create_sheet(
+        wb,
+        "Candidatos",
+        "Lista operable para decidir Wave 2 sin tocar contenidos.",
+        prompt_headers,
+        candidate_rows,
+        "tblCandidatos",
+        [44, 12, 14, 12, 18, 18, 14, 16, 20, 28, 24, 18, 18, 70],
+    )
 
     create_sheet(
         wb,
@@ -4106,7 +5087,17 @@ def main():
         wb,
         "Skills",
         "Skills disponibles desde tabla unificada, raices locales y cache de plugins.",
-        ["RootLabel", "Kind", "Family", "Canonical", "Alias", "Purpose", "SourcePath", "Estado", "Notes"],
+        [
+            "RootLabel",
+            "Kind",
+            "Family",
+            "Canonical",
+            "Alias",
+            "Purpose",
+            "SourcePath",
+            "Estado",
+            "Notes",
+        ],
         skill_rows,
         "tblSkills",
         [24, 16, 36, 38, 34, 90, 100, 24, 70],
@@ -4116,7 +5107,17 @@ def main():
         wb,
         "Recetas",
         "Recetas operativas locales y .agents, con indice y ruta de fuente.",
-        ["Fuente", "Nombre", "Tipo", "Ruta", "Bytes", "Modified", "Estado", "Resumen", "Indice/Fuente"],
+        [
+            "Fuente",
+            "Nombre",
+            "Tipo",
+            "Ruta",
+            "Bytes",
+            "Modified",
+            "Estado",
+            "Resumen",
+            "Indice/Fuente",
+        ],
         recipe_rows,
         "tblRecetas",
         [24, 42, 22, 100, 14, 18, 22, 90, 90],
@@ -4211,7 +5212,34 @@ def main():
         ],
         master_atomic_rows,
         "tblMatrizMaestra",
-        [24, 22, 22, 24, 18, 28, 36, 38, 70, 54, 54, 26, 30, 34, 28, 18, 42, 60, 92, 60, 62, 70, 62, 46, 54, 92],
+        [
+            24,
+            22,
+            22,
+            24,
+            18,
+            28,
+            36,
+            38,
+            70,
+            54,
+            54,
+            26,
+            30,
+            34,
+            28,
+            18,
+            42,
+            60,
+            92,
+            60,
+            62,
+            70,
+            62,
+            46,
+            54,
+            92,
+        ],
     )
 
     create_sheet(
@@ -4288,34 +5316,134 @@ def main():
     )
 
     risk_rows = [
-        ["NO_TOCAR", "environment", "Estado vivo de entorno cloud/local", "Si un cambio toca environment, detener."],
-        ["NO_TOCAR", "secrets/auth/cap_sid/SQLite", "Secretos y runtime interno", "Cualquier secreto o auth requiere gate separado."],
-        ["NO_TOCAR", "heartbeat-thread-permissions-by-id", "Permisos de hilos", "No borrar permisos por inferencia."],
-        ["RIESGO", "prompt-history", "Historial textual sensible, no secreto estructural", "No reemplazar texto globalmente."],
-        ["GATE", "D read/write", "D es consola rectora local gobernada", "Escritura requiere orden humana, target, rollback y postcheck."],
-        ["GATE", "Wave 2 dry-run", "Primer movimiento seguro", "Debe producir lista exacta sin escribir."],
-        ["GATE", "Wave 3 escritura", "Requiere backup y Codex cerrado", "Si hash cambia durante operación, abortar."],
+        [
+            "NO_TOCAR",
+            "environment",
+            "Estado vivo de entorno cloud/local",
+            "Si un cambio toca environment, detener.",
+        ],
+        [
+            "NO_TOCAR",
+            "secrets/auth/cap_sid/SQLite",
+            "Secretos y runtime interno",
+            "Cualquier secreto o auth requiere gate separado.",
+        ],
+        [
+            "NO_TOCAR",
+            "heartbeat-thread-permissions-by-id",
+            "Permisos de hilos",
+            "No borrar permisos por inferencia.",
+        ],
+        [
+            "RIESGO",
+            "prompt-history",
+            "Historial textual sensible, no secreto estructural",
+            "No reemplazar texto globalmente.",
+        ],
+        [
+            "GATE",
+            "D read/write",
+            "D es consola rectora local gobernada",
+            "Escritura requiere orden humana, target, rollback y postcheck.",
+        ],
+        [
+            "GATE",
+            "Wave 2 dry-run",
+            "Primer movimiento seguro",
+            "Debe producir lista exacta sin escribir.",
+        ],
+        [
+            "GATE",
+            "Wave 3 escritura",
+            "Requiere backup y Codex cerrado",
+            "Si hash cambia durante operación, abortar.",
+        ],
         ["POSTCHECK", "JSON", "Debe parsear después", "Si falla parseo, restaurar backup."],
-        ["POSTCHECK", "D root", "Debe conservar AGENTS/MANIFEST visibles", "Si desaparece D o cambia frontera, detener y revalidar."],
-        ["POSTCHECK", "environment", "Debe quedar idéntico", "Si cambia id/label/repo/secrets, rollback."],
+        [
+            "POSTCHECK",
+            "D root",
+            "Debe conservar AGENTS/MANIFEST visibles",
+            "Si desaparece D o cambia frontera, detener y revalidar.",
+        ],
+        [
+            "POSTCHECK",
+            "environment",
+            "Debe quedar idéntico",
+            "Si cambia id/label/repo/secrets, rollback.",
+        ],
     ]
-    create_sheet(wb, "Riesgos Gates", "Fronteras para mantener limpieza atómica y cabina D segura.", ["Tipo", "Elemento", "Motivo", "Stop condition"], risk_rows, "tblRiesgos", [18, 34, 58, 68])
+    create_sheet(
+        wb,
+        "Riesgos Gates",
+        "Fronteras para mantener limpieza atómica y cabina D segura.",
+        ["Tipo", "Elemento", "Motivo", "Stop condition"],
+        risk_rows,
+        "tblRiesgos",
+        [18, 34, 58, 68],
+    )
 
     lane_rows = [
-        ["parallel_readonly_scouts", "rey.control_plane_orchestrator", "court.seshat_evidence", "read_only", "lock.readonly.scout", "agent_final_readback", "OK"],
-        ["d_drive_governed_console", "rey.control_plane_orchestrator", "court.anubis_gate", "D:/AGENTS|D:/MANIFEST|D:/REPO_SCOPE", "lock.d.governed", str(D_ROOT), d_status],
-        ["global_state_safe_dry_run", "rey.control_plane_orchestrator", "court.seshat_evidence", "prompt-history candidates", "lock.global_state", "dry-run manifest", "PREPARADO"],
+        [
+            "parallel_readonly_scouts",
+            "rey.control_plane_orchestrator",
+            "court.seshat_evidence",
+            "read_only",
+            "lock.readonly.scout",
+            "agent_final_readback",
+            "OK",
+        ],
+        [
+            "d_drive_governed_console",
+            "rey.control_plane_orchestrator",
+            "court.anubis_gate",
+            "D:/AGENTS|D:/MANIFEST|D:/REPO_SCOPE",
+            "lock.d.governed",
+            str(D_ROOT),
+            d_status,
+        ],
+        [
+            "global_state_safe_dry_run",
+            "rey.control_plane_orchestrator",
+            "court.seshat_evidence",
+            "prompt-history candidates",
+            "lock.global_state",
+            "dry-run manifest",
+            "PREPARADO",
+        ],
     ]
-    create_sheet(wb, "Agentes Carriles", "Carriles gobernados usados para D y limpieza futura.", ["lane_id", "lead_agent", "reviewer_agent", "read_scope", "lock_key", "evidence", "status"], lane_rows, "tblParallel", [32, 34, 28, 46, 28, 60, 16])
+    create_sheet(
+        wb,
+        "Agentes Carriles",
+        "Carriles gobernados usados para D y limpieza futura.",
+        ["lane_id", "lead_agent", "reviewer_agent", "read_scope", "lock_key", "evidence", "status"],
+        lane_rows,
+        "tblParallel",
+        [32, 34, 28, 46, 28, 60, 16],
+    )
 
     env_text = json.dumps(env, ensure_ascii=False, sort_keys=True)
     ph_text = json.dumps(prompt_history, ensure_ascii=False, sort_keys=True)
-    other_text = json.dumps({k: v for k, v in persisted.items() if k not in {"environment", "prompt-history"}}, ensure_ascii=False, sort_keys=True)
+    other_text = json.dumps(
+        {k: v for k, v in persisted.items() if k not in {"environment", "prompt-history"}},
+        ensure_ascii=False,
+        sort_keys=True,
+    )
     secret_rows = []
-    for zone, text in [("environment", env_text), ("prompt-history", ph_text), ("other-state", other_text)]:
+    for zone, text in [
+        ("environment", env_text),
+        ("prompt-history", ph_text),
+        ("other-state", other_text),
+    ]:
         counts = count_mentions(text)
         for pattern in text_patterns:
-            secret_rows.append([zone, pattern, counts.get(pattern, 0), "token_real_pattern" if pattern.endswith("_like") else "mencion_textual"])
+            secret_rows.append(
+                [
+                    zone,
+                    pattern,
+                    counts.get(pattern, 0),
+                    "token_real_pattern" if pattern.endswith("_like") else "mencion_textual",
+                ]
+            )
 
     validation_rows = [
         ["STATE_PATH", str(STATE_PATH), "INFO"],
@@ -4379,9 +5507,21 @@ def main():
         ["D_AGENTS", str(d_agents), "PASS" if d_agents.exists() else "MISSING"],
         ["D_MANIFEST", str(d_manifest), "PASS" if d_manifest.exists() else "MISSING"],
         ["D_EVIDENCE_LOG", str(EVIDENCE_LOG), "PASS" if EVIDENCE_LOG.exists() else "MISSING"],
-        ["WORKBOOK_BACKUP", str(backup_path) if backup_path else "N/D", "PASS" if backup_path else "INFO"],
+        [
+            "WORKBOOK_BACKUP",
+            str(backup_path) if backup_path else "N/D",
+            "PASS" if backup_path else "INFO",
+        ],
     ]
-    ws = create_sheet(wb, "Validacion", "Hashes, parseo, escaneo saneado, D read-only y postchecks.", ["Check", "Resultado", "Estado"], validation_rows, "tblValidation", [30, 100, 18])
+    ws = create_sheet(
+        wb,
+        "Validacion",
+        "Hashes, parseo, escaneo saneado, D read-only y postchecks.",
+        ["Check", "Resultado", "Estado"],
+        validation_rows,
+        "tblValidation",
+        [30, 100, 18],
+    )
     start = 4 + len(validation_rows) + 3
     ws.cell(start - 1, 1, "Escaneo De Patrones Saneado").font = Font(bold=True, color=WHITE)
     ws.cell(start - 1, 1).fill = PatternFill("solid", fgColor=HEADER_FILL)
@@ -4399,30 +5539,105 @@ def main():
 
     nav_rows = [
         ["Archivo", "Global State", str(STATE_PATH), "Vivo / ignorado por Git"],
-        ["Archivo", "Global State Backup", str(STATE_BAK), "Rollback inmediato" if STATE_BAK.exists() else "No encontrado"],
+        [
+            "Archivo",
+            "Global State Backup",
+            str(STATE_BAK),
+            "Rollback inmediato" if STATE_BAK.exists() else "No encontrado",
+        ],
         ["Archivo", "Codex config", str(CONFIG_PATH), "Config técnica"],
         ["Archivo", "Codex AGENTS", r"C:\Users\enzo1\.codex\AGENTS.md", "Prompt global visible"],
         ["Archivo", "PROJEC CDX AGENTS", str(ROOT / "AGENTS.md"), "Instrucción local"],
-        ["Superficie", "Workspace actual", str(ROOT), f"{len(workspace_rows)} filas en Workspace Actual"],
-        ["Superficie", "Mapa superficies locales", "Superficies Locales", f"{len(local_surface_rows)} superficies normalizadas"],
+        [
+            "Superficie",
+            "Workspace actual",
+            str(ROOT),
+            f"{len(workspace_rows)} filas en Workspace Actual",
+        ],
+        [
+            "Superficie",
+            "Mapa superficies locales",
+            "Superficies Locales",
+            f"{len(local_surface_rows)} superficies normalizadas",
+        ],
         ["Superficie", "Cabina D root", r"D:\\", d_status if d_exists else "No montada"],
-        ["Superficie", "CodexLocal live entry", str(HOME_CODEX_LOCAL), "Entrada viva liviana; requiere indice si se promueve"],
+        [
+            "Superficie",
+            "CodexLocal live entry",
+            str(HOME_CODEX_LOCAL),
+            "Entrada viva liviana; requiere indice si se promueve",
+        ],
         ["Superficie", "CodexLocal legacy", str(DOCUMENTS_CODEX_LOCAL), "Workspace legado pesado"],
         ["Superficie", "Documents Codex chronology", str(DOCUMENTS_CODEX), "Cronologia documental"],
-        ["Superficie", "Documents CodexArchives", str(DOCUMENTS_CODEX_ARCHIVES), "Archivo reversible"],
+        [
+            "Superficie",
+            "Documents CodexArchives",
+            str(DOCUMENTS_CODEX_ARCHIVES),
+            "Archivo reversible",
+        ],
         ["Superficie", "GitHub repos canonicos", str(GITHUB_ROOT), "Raiz de repositorios"],
         ["Archivo", "D AGENTS", str(d_agents), "PASS" if d_agents.exists() else "MISSING"],
         ["Archivo", "D MANIFEST", str(d_manifest), "PASS" if d_manifest.exists() else "MISSING"],
-        ["Archivo", "D validator agent", str(d_validator_agent), "PASS" if d_validator_agent.exists() else "MISSING"],
-        ["Archivo", "D validator chain", str(d_validator_chain), "PASS" if d_validator_chain.exists() else "MISSING"],
-        ["Directorio", "D Codex agent root", str(D_CODEX_ROOT), f"{len(d_surface_rows)} superficies D resumidas"],
-        ["Directorio", "D matrices root", str(D_MATRICES_ROOT), f"{len(d_domain_matrix_rows)} matrices/seeds/csv de dominio"],
-        ["Directorio", "D governance registry", str(D_GOVERNANCE_REGISTRY), "Incluido en auditoria de cobertura"],
-        ["Directorio", "D authority canon", str(D_AUTHORITY_CANON), f"{len(d_authority_rows)} archivos rectores"],
-        ["Directorio", "D dataverse data", str(D_DATAVERSE_DATA), "Seeds/ref data incluidos en cobertura"],
-        ["Directorio", "D validation", str(D_VALIDATION_ROOT), "Reportes incluidos como evidencia read-only"],
-        ["Archivo", "VHDX referencia historica", str(VHDX_PATH), "Referencia" if VHDX_PATH.exists() else "MISSING"],
-        ["Archivo", "Attach/recovery evidence log", str(EVIDENCE_LOG), "INFO" if EVIDENCE_LOG.exists() else "MISSING"],
+        [
+            "Archivo",
+            "D validator agent",
+            str(d_validator_agent),
+            "PASS" if d_validator_agent.exists() else "MISSING",
+        ],
+        [
+            "Archivo",
+            "D validator chain",
+            str(d_validator_chain),
+            "PASS" if d_validator_chain.exists() else "MISSING",
+        ],
+        [
+            "Directorio",
+            "D Codex agent root",
+            str(D_CODEX_ROOT),
+            f"{len(d_surface_rows)} superficies D resumidas",
+        ],
+        [
+            "Directorio",
+            "D matrices root",
+            str(D_MATRICES_ROOT),
+            f"{len(d_domain_matrix_rows)} matrices/seeds/csv de dominio",
+        ],
+        [
+            "Directorio",
+            "D governance registry",
+            str(D_GOVERNANCE_REGISTRY),
+            "Incluido en auditoria de cobertura",
+        ],
+        [
+            "Directorio",
+            "D authority canon",
+            str(D_AUTHORITY_CANON),
+            f"{len(d_authority_rows)} archivos rectores",
+        ],
+        [
+            "Directorio",
+            "D dataverse data",
+            str(D_DATAVERSE_DATA),
+            "Seeds/ref data incluidos en cobertura",
+        ],
+        [
+            "Directorio",
+            "D validation",
+            str(D_VALIDATION_ROOT),
+            "Reportes incluidos como evidencia read-only",
+        ],
+        [
+            "Archivo",
+            "VHDX referencia historica",
+            str(VHDX_PATH),
+            "Referencia" if VHDX_PATH.exists() else "MISSING",
+        ],
+        [
+            "Archivo",
+            "Attach/recovery evidence log",
+            str(EVIDENCE_LOG),
+            "INFO" if EVIDENCE_LOG.exists() else "MISSING",
+        ],
         ["Hoja", "Workspace Actual", "Workspace Actual", f"{len(workspace_rows)} filas"],
         ["Hoja", "Superficies Locales", "Superficies Locales", f"{len(local_surface_rows)} filas"],
         ["Hoja", "Prompts Lectura", "Prompts Lectura", f"{len(prompt_read_rows)} filas saneadas"],
@@ -4433,7 +5648,12 @@ def main():
         ["Hoja", "Codex Cloud Env", "Codex Cloud Env", f"{len(cloud_rows)} filas"],
         ["Hoja", "Agentes", "Agentes", f"{len(agent_rows)} filas"],
         ["Hoja", "Agentes Entorno", "Agentes Entorno", f"{len(environment_agent_rows)} filas"],
-        ["Hoja", "Entornos Soluciones", "Entornos Soluciones", f"{len(environment_solution_rows)} filas"],
+        [
+            "Hoja",
+            "Entornos Soluciones",
+            "Entornos Soluciones",
+            f"{len(environment_solution_rows)} filas",
+        ],
         ["Hoja", "Colas", "Colas", f"{len(workqueue_rows)} filas"],
         ["Hoja", "Universos", "Universos", f"{len(universe_rows)} filas"],
         ["Hoja", "Skills", "Skills", f"{len(skill_rows)} filas"],
@@ -4443,14 +5663,24 @@ def main():
         ["Hoja", "Dataverse Fuentes", "Dataverse Fuentes", f"{len(dataverse_source_rows)} filas"],
         ["Hoja", "Matriz Maestra", "Matriz Maestra", f"{len(master_atomic_rows)} filas"],
         ["Hoja", "Acciones Atomicas", "Acciones Atomicas", f"{len(atomic_action_rows)} filas"],
-        ["Hoja", "Matriz Hidratacion", "Matriz Hidratacion", f"{len(metadata_hydration_rows)} filas"],
+        [
+            "Hoja",
+            "Matriz Hidratacion",
+            "Matriz Hidratacion",
+            f"{len(metadata_hydration_rows)} filas",
+        ],
         ["Hoja", "Deltas Atomicos", "Deltas Atomicos", f"{len(atomic_delta_rows)} filas"],
         ["Hoja", "D Surface Summary", "D Surface Summary", f"{len(d_surface_rows)} filas"],
         ["Hoja", "D Indexes", "D Indexes", f"{len(d_indexes_rows)} filas"],
         ["Hoja", "D Matrix Index", "D Matrix Index", f"{len(d_matrix_index_rows)} filas"],
         ["Hoja", "D Skills Registry", "D Skills Registry", f"{len(d_skill_registry_rows)} filas"],
         ["Hoja", "D Subskills", "D Subskills", f"{len(d_subskill_rows)} filas"],
-        ["Hoja", "D Recipes Registry", "D Recipes Registry", f"{len(d_recipe_registry_rows)} filas"],
+        [
+            "Hoja",
+            "D Recipes Registry",
+            "D Recipes Registry",
+            f"{len(d_recipe_registry_rows)} filas",
+        ],
         ["Hoja", "D Tools Registry", "D Tools Registry", f"{len(d_tools_registry_rows)} filas"],
         ["Hoja", "D Validators", "D Validators", f"{len(d_validator_rows)} filas"],
         ["Hoja", "D Agent Registry", "D Agent Registry", f"{len(d_agent_registry_rows)} filas"],
@@ -4458,27 +5688,79 @@ def main():
         ["Hoja", "D Workpapers", "D Workpapers", f"{len(d_workpaper_rows)} filas"],
         ["Hoja", "D Orders", "D Orders", f"{len(d_order_rows)} filas"],
         ["Hoja", "D Readbacks", "D Readbacks", f"{len(d_readback_rows)} filas"],
-        ["Hoja", "D Agent Tool Skill", "D Agent Tool Skill", f"{len(d_agent_tool_skill_rows)} filas"],
+        [
+            "Hoja",
+            "D Agent Tool Skill",
+            "D Agent Tool Skill",
+            f"{len(d_agent_tool_skill_rows)} filas",
+        ],
         ["Hoja", "D Authority Canon", "D Authority Canon", f"{len(d_authority_rows)} filas"],
         ["Hoja", "D Governed Assets", "D Governed Assets", f"{len(d_governed_asset_rows)} filas"],
         ["Hoja", "D Source Refs", "D Source Refs", f"{len(d_source_ref_rows)} filas"],
-        ["Hoja", "D Registries Ledgers", "D Registries Ledgers", f"{len(d_registries_ledgers_rows)} filas"],
+        [
+            "Hoja",
+            "D Registries Ledgers",
+            "D Registries Ledgers",
+            f"{len(d_registries_ledgers_rows)} filas",
+        ],
         ["Hoja", "D Domain Matrices", "D Domain Matrices", f"{len(d_domain_matrix_rows)} filas"],
         ["Hoja", "D Coverage Audit", "D Coverage Audit", f"{len(d_coverage_audit_rows)} filas"],
         ["Hoja", "D Workbook Gaps", "D Workbook Gaps", f"{len(d_gap_rows)} filas"],
-        ["Dataverse", "Source artifacts", "mon_sdu_source_artifacts", "Tabla viva confirmada para artefactos fuente"],
+        [
+            "Dataverse",
+            "Source artifacts",
+            "mon_sdu_source_artifacts",
+            "Tabla viva confirmada para artefactos fuente",
+        ],
         ["Dataverse", "Evidences", "mon_sdu_evidences", "Tabla viva confirmada para evidencias"],
-        ["Dataverse", "Agent mapping", "mon_sdu_agent_connection_mappings", "Tabla viva/postcheck para roster SDU"],
+        [
+            "Dataverse",
+            "Agent mapping",
+            "mon_sdu_agent_connection_mappings",
+            "Tabla viva/postcheck para roster SDU",
+        ],
         ["Dataverse", "Work queues", "workqueues / workqueueitems", "Tablas vivas para cola SDU"],
         ["Workbook", "Este workbook", str(WORKBOOK), "Decision"],
-        ["Workbook", "Backup anterior", str(backup_path) if backup_path else "N/D", "Rollback workbook" if backup_path else "N/D"],
+        [
+            "Workbook",
+            "Backup anterior",
+            str(backup_path) if backup_path else "N/D",
+            "Rollback workbook" if backup_path else "N/D",
+        ],
     ]
-    create_sheet(wb, "Navegacion", "Entradas, fuentes y rutas de decisión.", ["Tipo", "Nombre", "Ruta", "Estado"], nav_rows, "tblNavegacion", [18, 30, 100, 28])
+    create_sheet(
+        wb,
+        "Navegacion",
+        "Entradas, fuentes y rutas de decisión.",
+        ["Tipo", "Nombre", "Ruta", "Estado"],
+        nav_rows,
+        "tblNavegacion",
+        [18, 30, 100, 28],
+    )
 
     list_rows = []
-    for value in ["CONSERVAR", "REMOVER_DRY_RUN", "REVISAR_OWNER", "REVISAR_SENSIBLE", "NO_TOCAR", "ACTUAL", "APROBADO", "ESPERAR", "RECHAZADO"]:
+    for value in [
+        "CONSERVAR",
+        "REMOVER_DRY_RUN",
+        "REVISAR_OWNER",
+        "REVISAR_SENSIBLE",
+        "NO_TOCAR",
+        "ACTUAL",
+        "APROBADO",
+        "ESPERAR",
+        "RECHAZADO",
+    ]:
         list_rows.append(["Decision humana", value])
-    for value in ["CANON", "ACTIVA", "WORKTREE", "PARALELA", "REVISAR", "SEGUIR", "MANTENER_SEPARADA", "PARQUEAR"]:
+    for value in [
+        "CANON",
+        "ACTIVA",
+        "WORKTREE",
+        "PARALELA",
+        "REVISAR",
+        "SEGUIR",
+        "MANTENER_SEPARADA",
+        "PARQUEAR",
+    ]:
         list_rows.append(["Estado rama", value])
     for value in [
         "PASS",
@@ -4525,10 +5807,20 @@ def main():
         "NOT_EXECUTED_READONLY_INVENTORY",
     ]:
         list_rows.append(["Estado", value])
-    create_sheet(wb, "Listas", "Valores para dropdowns y criterios.", ["Lista", "Valor"], list_rows, "tblListas", [28, 42])
+    create_sheet(
+        wb,
+        "Listas",
+        "Valores para dropdowns y criterios.",
+        ["Lista", "Valor"],
+        list_rows,
+        "tblListas",
+        [28, 42],
+    )
 
     wb.properties.title = "Codex Global State Decision Workbook"
-    wb.properties.subject = "Configuración vigente Codex, Cabina D, global-state y limpieza gobernada"
+    wb.properties.subject = (
+        "Configuración vigente Codex, Cabina D, global-state y limpieza gobernada"
+    )
     wb.properties.creator = "Codex"
     wb.properties.lastModifiedBy = "Codex"
     wb.properties.modified = now

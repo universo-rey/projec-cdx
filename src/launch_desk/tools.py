@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from datetime import date, datetime
-from zoneinfo import ZoneInfo
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from agents import function_tool
 
@@ -179,7 +178,11 @@ def extract_tasks_from_brief_data(
         },
     ]
 
-    if launch_date is None or _days_until(launch_date) is not None and _days_until(launch_date) <= 7:
+    if (
+        launch_date is None
+        or _days_until(launch_date) is not None
+        and _days_until(launch_date) <= 7
+    ):
         tasks.insert(
             1,
             {
@@ -264,17 +267,29 @@ def check_launch_readiness_data(
         {
             "dimension": "brief clarity",
             "status": "ready" if brief_ready else "partial",
-            "notes": "The brief is specific enough to guide execution." if brief_ready else "The brief needs more detail.",
+            "notes": (
+                "The brief is specific enough to guide execution."
+                if brief_ready
+                else "The brief needs more detail."
+            ),
         }
     )
     score -= 0 if brief_ready else 15
 
-    audience_ready = len(audience.strip()) >= 6 and audience.lower() not in {"everyone", "users", "customers"}
+    audience_ready = len(audience.strip()) >= 6 and audience.lower() not in {
+        "everyone",
+        "users",
+        "customers",
+    }
     rubric.append(
         {
             "dimension": "audience definition",
             "status": "ready" if audience_ready else "blocked",
-            "notes": "Audience is concrete." if audience_ready else "Audience is too broad for launch copy and routing.",
+            "notes": (
+                "Audience is concrete."
+                if audience_ready
+                else "Audience is too broad for launch copy and routing."
+            ),
         }
     )
     score -= 0 if audience_ready else 20
@@ -308,7 +323,11 @@ def check_launch_readiness_data(
         {
             "dimension": "assets",
             "status": "ready" if assets_ready else "partial",
-            "notes": "Enough launch assets are listed." if assets_ready else "Missing assets or asset details need attention.",
+            "notes": (
+                "Enough launch assets are listed."
+                if assets_ready
+                else "Missing assets or asset details need attention."
+            ),
         }
     )
     score -= 0 if assets_ready else 10
@@ -318,17 +337,27 @@ def check_launch_readiness_data(
         {
             "dimension": "constraints",
             "status": "ready" if constraints_ready else "partial",
-            "notes": "Constraints are named." if constraints_ready else "No hard constraints were provided.",
+            "notes": (
+                "Constraints are named."
+                if constraints_ready
+                else "No hard constraints were provided."
+            ),
         }
     )
     score -= 0 if constraints_ready else 5
 
-    qa_ready = _contains(product_brief, "qa", "test", "rollback", "rollout", "monitor") or assets_ready
+    qa_ready = (
+        _contains(product_brief, "qa", "test", "rollback", "rollout", "monitor") or assets_ready
+    )
     rubric.append(
         {
             "dimension": "qa and rollback",
             "status": "ready" if qa_ready else "partial",
-            "notes": "A release safety path is visible." if qa_ready else "QA or rollback details still need to be added.",
+            "notes": (
+                "A release safety path is visible."
+                if qa_ready
+                else "QA or rollback details still need to be added."
+            ),
         }
     )
     score -= 0 if qa_ready else 10
@@ -338,7 +367,9 @@ def check_launch_readiness_data(
         {
             "dimension": "comms readiness",
             "status": "ready" if copy_ready else "partial",
-            "notes": "Copy can be tailored." if copy_ready else "Channel copy still needs grounding.",
+            "notes": (
+                "Copy can be tailored." if copy_ready else "Channel copy still needs grounding."
+            ),
         }
     )
     score -= 0 if copy_ready else 10

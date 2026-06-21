@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import csv
 import os
-import re
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
@@ -13,7 +12,6 @@ from openpyxl.chart import BarChart, PieChart, Reference
 from openpyxl.formatting.rule import FormulaRule
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.worksheet.table import Table, TableStyleInfo
-
 
 HOME = Path(r"C:\Users\enzo1")
 PROJEC = HOME / "PROJEC CDX"
@@ -145,9 +143,29 @@ def classify_state(path: Path, kind: str, universe: str) -> str:
     if universe == ".codex":
         if kind in {"reference", "map", "governance"}:
             return "referencia"
-        if "workpapers" in p or "skills" in p or "matrices" in p or "readbacks" in p or "rules" in p or "sessions" in p or "plugins" in p or "worktrees" in p or "environment" in p or "log" in p:
+        if (
+            "workpapers" in p
+            or "skills" in p
+            or "matrices" in p
+            or "readbacks" in p
+            or "rules" in p
+            or "sessions" in p
+            or "plugins" in p
+            or "worktrees" in p
+            or "environment" in p
+            or "log" in p
+        ):
             return "activo"
-        if "tmp" in p or "cache" in p or "backup" in p or "archived" in p or "sqlite" in p or "secrets" in p or "private" in p or "node_modules" in p:
+        if (
+            "tmp" in p
+            or "cache" in p
+            or "backup" in p
+            or "archived" in p
+            or "sqlite" in p
+            or "secrets" in p
+            or "private" in p
+            or "node_modules" in p
+        ):
             return "interno"
         return "activo"
     if universe == "PROJEC CDX":
@@ -159,7 +177,11 @@ def classify_state(path: Path, kind: str, universe: str) -> str:
             return "activo"
         return "activo"
     if universe in {"Projects", "CodexLocal", "Documents\\GitHub"}:
-        if name in {"readme.md", "mapa_maestro.md", "agents.md"} or kind in {"reference", "map", "governance"}:
+        if name in {"readme.md", "mapa_maestro.md", "agents.md"} or kind in {
+            "reference",
+            "map",
+            "governance",
+        }:
             return "referencia"
         if "archive" in p or "backup" in p or "tmp" in p:
             return "interno"
@@ -189,7 +211,15 @@ def state_for_status(status: str) -> str:
 def destination_for_path(path: Path, root_readme: str):
     current = path if path.is_dir() else path.parent
     while True:
-        for name in ("README.md", "MAPA_MAESTRO.md", "MAPA.md", "README.reference.md", "reference.md", "AGENTS.md", "AGENTS.reference.md"):
+        for name in (
+            "README.md",
+            "MAPA_MAESTRO.md",
+            "MAPA.md",
+            "README.reference.md",
+            "reference.md",
+            "AGENTS.md",
+            "AGENTS.reference.md",
+        ):
             candidate = current / name
             if candidate.exists():
                 return rel(candidate)
@@ -304,7 +334,16 @@ def add_codex_inventory(rows):
             dependency = rel(CODEX / "README.md")
             state = state_for_status(status)
             source = "CODEX_ROOT_INVENTORY.csv"
-            add_row(rows, universe, current or rel(CODEX / name), typ, destination, dependency, state, source)
+            add_row(
+                rows,
+                universe,
+                current or rel(CODEX / name),
+                typ,
+                destination,
+                dependency,
+                state,
+                source,
+            )
 
 
 def add_skills(rows):
@@ -317,10 +356,13 @@ def add_skills(rows):
             canonical = norm(row.get("Canonical"))
             alias = norm(row.get("Alias"))
             source_path = norm(row.get("SourcePath"))
-            family = norm(row.get("Family"))
             universe = ".codex" if root_label.startswith(".codex") else ".agents"
             origin = source_path or canonical or alias
-            destination = rel(CODEX / "skills" / "README.md") if root_label.startswith(".codex") else rel(AGENTS / "README.md")
+            destination = (
+                rel(CODEX / "skills" / "README.md")
+                if root_label.startswith(".codex")
+                else rel(AGENTS / "README.md")
+            )
             if "plugins" in root_label:
                 destination = rel(AGENTS / "README.md")
             dependency = "STACK.md / AGENTS_INDEX.csv"
@@ -338,8 +380,26 @@ def scan_github_roots(rows):
         root_readme = rel(repo / "README.md")
         dependency = rel(PROJEC / "README.md")
         state = "activo" if (repo / ".git").exists() or (repo / "README.md").exists() else "listado"
-        add_row(rows, universe, rel(repo), "root", root_readme, dependency, state, "scan:Documents\\GitHub")
-        add_tree_rows(rows, universe, repo, root_readme, dependency, "scan:Documents\\GitHub", max_depth=2, max_files_per_dir=5)
+        add_row(
+            rows,
+            universe,
+            rel(repo),
+            "root",
+            root_readme,
+            dependency,
+            state,
+            "scan:Documents\\GitHub",
+        )
+        add_tree_rows(
+            rows,
+            universe,
+            repo,
+            root_readme,
+            dependency,
+            "scan:Documents\\GitHub",
+            max_depth=2,
+            max_files_per_dir=5,
+        )
 
 
 def build_rows():
@@ -353,28 +413,111 @@ def build_rows():
 
     # Root surfaces
     root_specs = [
-        (".agents", AGENTS, rel(AGENTS / "README.md"), rel(HOME / "README.md"), ".agents/README.md", 2, 6),
-        ("PROJEC CDX", PROJEC, rel(PROJEC / "README.md"), rel(CODEX / "README.reference.md"), "PROJEC CDX/README.md", 3, 8),
-        ("Projects", HOME / "Projects", rel(HOME / "Projects" / "README.md"), rel(CODEX / "README.md"), "Projects/README.md", 2, 6),
-        ("CodexLocal", HOME / "CodexLocal", rel(HOME / "CodexLocal" / "README.md"), rel(CODEX / "README.md"), "CodexLocal/README.md", 2, 6),
-        ("Sandboxes", HOME / "Sandboxes", rel(HOME / "Sandboxes" / "README.md"), rel(HOME / "Projects" / "README.md"), "Sandboxes/README.md", 2, 5),
-        ("Intake", HOME / "Intake", rel(HOME / "Intake" / "README.md"), rel(HOME / "Projects" / "README.md"), "Intake/README.md", 2, 5),
-        ("cabina-universal-d", HOME / "Documents" / "GitHub" / "cabina-universal-d", rel(HOME / "Documents" / "GitHub" / "cabina-universal-d" / "README.md"), rel(PROJEC / "README.md"), "cabina-universal-d/README.md", 3, 6),
+        (
+            ".agents",
+            AGENTS,
+            rel(AGENTS / "README.md"),
+            rel(HOME / "README.md"),
+            ".agents/README.md",
+            2,
+            6,
+        ),
+        (
+            "PROJEC CDX",
+            PROJEC,
+            rel(PROJEC / "README.md"),
+            rel(CODEX / "README.reference.md"),
+            "PROJEC CDX/README.md",
+            3,
+            8,
+        ),
+        (
+            "Projects",
+            HOME / "Projects",
+            rel(HOME / "Projects" / "README.md"),
+            rel(CODEX / "README.md"),
+            "Projects/README.md",
+            2,
+            6,
+        ),
+        (
+            "CodexLocal",
+            HOME / "CodexLocal",
+            rel(HOME / "CodexLocal" / "README.md"),
+            rel(CODEX / "README.md"),
+            "CodexLocal/README.md",
+            2,
+            6,
+        ),
+        (
+            "Sandboxes",
+            HOME / "Sandboxes",
+            rel(HOME / "Sandboxes" / "README.md"),
+            rel(HOME / "Projects" / "README.md"),
+            "Sandboxes/README.md",
+            2,
+            5,
+        ),
+        (
+            "Intake",
+            HOME / "Intake",
+            rel(HOME / "Intake" / "README.md"),
+            rel(HOME / "Projects" / "README.md"),
+            "Intake/README.md",
+            2,
+            5,
+        ),
+        (
+            "cabina-universal-d",
+            HOME / "Documents" / "GitHub" / "cabina-universal-d",
+            rel(HOME / "Documents" / "GitHub" / "cabina-universal-d" / "README.md"),
+            rel(PROJEC / "README.md"),
+            "cabina-universal-d/README.md",
+            3,
+            6,
+        ),
     ]
 
     for universe, root_path, root_readme, dependency, source, max_depth, max_files in root_specs:
         if not root_path.exists():
             continue
         add_row(rows, universe, rel(root_path), "root", root_readme, dependency, "activo", source)
-        add_tree_rows(rows, universe, root_path, root_readme, dependency, source, max_depth=max_depth, max_files_per_dir=max_files)
+        add_tree_rows(
+            rows,
+            universe,
+            root_path,
+            root_readme,
+            dependency,
+            source,
+            max_depth=max_depth,
+            max_files_per_dir=max_files,
+        )
 
     # Extra nested surfaces in PROJEC CDX.
     proj_outputs = PROJEC / "outputs"
     if proj_outputs.exists():
-        add_tree_rows(rows, "PROJEC CDX", proj_outputs, rel(proj_outputs / "README.md"), rel(PROJEC / "README.md"), "scan:PROJEC CDX/outputs", max_depth=2, max_files_per_dir=8)
+        add_tree_rows(
+            rows,
+            "PROJEC CDX",
+            proj_outputs,
+            rel(proj_outputs / "README.md"),
+            rel(PROJEC / "README.md"),
+            "scan:PROJEC CDX/outputs",
+            max_depth=2,
+            max_files_per_dir=8,
+        )
     proj_docs = PROJEC / "docs" / "superpowers"
     if proj_docs.exists():
-        add_tree_rows(rows, "PROJEC CDX", proj_docs, rel(proj_docs / "README.md"), rel(PROJEC / "README.md"), "scan:PROJEC CDX/docs/superpowers", max_depth=2, max_files_per_dir=6)
+        add_tree_rows(
+            rows,
+            "PROJEC CDX",
+            proj_docs,
+            rel(proj_docs / "README.md"),
+            rel(PROJEC / "README.md"),
+            "scan:PROJEC CDX/docs/superpowers",
+            max_depth=2,
+            max_files_per_dir=6,
+        )
 
     # GitHub repo roots.
     scan_github_roots(rows)
@@ -387,14 +530,35 @@ def build_rows():
     ]
     for root_path in listed_roots:
         if root_path.exists():
-            add_row(rows, "home-listed", rel(root_path), "root", rel(root_path / "README.md"), rel(HOME / "Projects" / "README.md"), "listado", "Projects/README.md")
-            add_tree_rows(rows, "home-listed", root_path, rel(root_path / "README.md"), rel(HOME / "Projects" / "README.md"), "scan:home-listed", max_depth=2, max_files_per_dir=5)
+            add_row(
+                rows,
+                "home-listed",
+                rel(root_path),
+                "root",
+                rel(root_path / "README.md"),
+                rel(HOME / "Projects" / "README.md"),
+                "listado",
+                "Projects/README.md",
+            )
+            add_tree_rows(
+                rows,
+                "home-listed",
+                root_path,
+                rel(root_path / "README.md"),
+                rel(HOME / "Projects" / "README.md"),
+                "scan:home-listed",
+                max_depth=2,
+                max_files_per_dir=5,
+            )
 
     # Dedupe while preserving order.
     seen = set()
     deduped = []
     for row in rows:
-        key = tuple(row[k] for k in ("Universo", "Origen", "Tipo", "Destino", "Dependencia", "Estado", "Fuente"))
+        key = tuple(
+            row[k]
+            for k in ("Universo", "Origen", "Tipo", "Destino", "Dependencia", "Estado", "Fuente")
+        )
         if key in seen:
             continue
         seen.add(key)
@@ -507,8 +671,19 @@ def build_cabina_rows():
 
     root_readme = rel(CABINA / "README.md")
     dependency = rel(CABINA / "README.md")
-    add_row(rows, "cabina-universal-d", rel(CABINA), "root", root_readme, dependency, "activo", "cabina-universal-d/README.md")
-    add_priority_files(rows, "cabina-universal-d", root_readme, dependency, "cabina-universal-d/priority")
+    add_row(
+        rows,
+        "cabina-universal-d",
+        rel(CABINA),
+        "root",
+        root_readme,
+        dependency,
+        "activo",
+        "cabina-universal-d/README.md",
+    )
+    add_priority_files(
+        rows, "cabina-universal-d", root_readme, dependency, "cabina-universal-d/priority"
+    )
     add_tree_rows(
         rows,
         "cabina-universal-d",
@@ -524,7 +699,10 @@ def build_cabina_rows():
     seen = set()
     deduped = []
     for row in rows:
-        key = tuple(row[k] for k in ("Universo", "Origen", "Tipo", "Destino", "Dependencia", "Estado", "Fuente"))
+        key = tuple(
+            row[k]
+            for k in ("Universo", "Origen", "Tipo", "Destino", "Dependencia", "Estado", "Fuente")
+        )
         if key in seen:
             continue
         seen.add(key)
@@ -535,13 +713,15 @@ def build_cabina_rows():
 def build_cabina_executive_rows():
     rows = build_cabina_rows()
     executive = [row for row in rows if is_executive_row(row)]
-    executive.sort(key=lambda row: (
-        -executive_score(row),
-        cabina_depth(row["Origen"]),
-        0 if row["Tipo"] == "root" else 1,
-        row["Tipo"],
-        row["Origen"],
-    ))
+    executive.sort(
+        key=lambda row: (
+            -executive_score(row),
+            cabina_depth(row["Origen"]),
+            0 if row["Tipo"] == "root" else 1,
+            row["Tipo"],
+            row["Origen"],
+        )
+    )
     return executive[:EXECUTIVE_ROW_LIMIT]
 
 
@@ -561,7 +741,9 @@ def write_md(rows, out_path: Path, title: str, intro: str):
         fh.write("| " + " | ".join(headers) + " |\n")
         fh.write("|" + "|".join(["---"] * len(headers)) + "|\n")
         for row in rows:
-            fh.write("| " + " | ".join(row.get(h, "").replace("|", "\\|") for h in headers) + " |\n")
+            fh.write(
+                "| " + " | ".join(row.get(h, "").replace("|", "\\|") for h in headers) + " |\n"
+            )
 
 
 def autosize(ws, headers, rows):
@@ -621,11 +803,36 @@ def write_xlsx(rows, out_path: Path, title: str, subtitle: str):
 
     cards = [
         ("A4:C5", "Total relaciones", len(rows), header_fill),
-        ("D4:F5", "Activas", counts_state.get("activo", 0), PatternFill("solid", fgColor=STATE_COLORS["activo"])),
-        ("G4:I5", "Referencias", counts_state.get("referencia", 0), PatternFill("solid", fgColor=STATE_COLORS["referencia"])),
-        ("J4:L5", "Derivadas", counts_state.get("derivado", 0), PatternFill("solid", fgColor=STATE_COLORS["derivado"])),
-        ("A7:C8", "Internas", counts_state.get("interno", 0), PatternFill("solid", fgColor=STATE_COLORS["interno"])),
-        ("D7:F8", "Listadas", counts_state.get("listado", 0), PatternFill("solid", fgColor=STATE_COLORS["listado"])),
+        (
+            "D4:F5",
+            "Activas",
+            counts_state.get("activo", 0),
+            PatternFill("solid", fgColor=STATE_COLORS["activo"]),
+        ),
+        (
+            "G4:I5",
+            "Referencias",
+            counts_state.get("referencia", 0),
+            PatternFill("solid", fgColor=STATE_COLORS["referencia"]),
+        ),
+        (
+            "J4:L5",
+            "Derivadas",
+            counts_state.get("derivado", 0),
+            PatternFill("solid", fgColor=STATE_COLORS["derivado"]),
+        ),
+        (
+            "A7:C8",
+            "Internas",
+            counts_state.get("interno", 0),
+            PatternFill("solid", fgColor=STATE_COLORS["interno"]),
+        ),
+        (
+            "D7:F8",
+            "Listadas",
+            counts_state.get("listado", 0),
+            PatternFill("solid", fgColor=STATE_COLORS["listado"]),
+        ),
     ]
     for rng, label, value, fill in cards:
         ws_dash.merge_cells(rng)
@@ -714,7 +921,17 @@ def write_xlsx(rows, out_path: Path, title: str, subtitle: str):
     type_chart.width = 12
     ws_dash.add_chart(type_chart, "A28")
 
-    for col, width in {"A": 30, "B": 12, "D": 20, "E": 12, "G": 26, "H": 12, "J": 14, "K": 14, "L": 14}.items():
+    for col, width in {
+        "A": 30,
+        "B": 12,
+        "D": 20,
+        "E": 12,
+        "G": 26,
+        "H": 12,
+        "J": 14,
+        "K": 14,
+        "L": 14,
+    }.items():
         ws_dash.column_dimensions[col].width = width
 
     # Summary
@@ -764,7 +981,12 @@ def write_xlsx(rows, out_path: Path, title: str, subtitle: str):
 
     write_count_block(4, "Universo", counts_universe)
     write_count_block(7, "Estado", counts_state, STATE_ORDER)
-    write_count_block(10, "Tipo", counts_type, top_type_names + [k for k in sorted(counts_type) if k not in set(top_type_names)])
+    write_count_block(
+        10,
+        "Tipo",
+        counts_type,
+        top_type_names + [k for k in sorted(counts_type) if k not in set(top_type_names)],
+    )
 
     ws_summary["A8"] = "Criterio"
     ws_summary["A8"].fill = accent_fill
@@ -839,7 +1061,11 @@ def write_xlsx(rows, out_path: Path, title: str, subtitle: str):
         ws_lists[cell].border = thin_border
     for idx, value in enumerate(sorted(counts_universe), start=2):
         ws_lists[f"A{idx}"] = value
-    for idx, value in enumerate([k for k, _ in type_order] + [k for k in sorted(counts_type) if k not in {x for x, _ in type_order}], start=2):
+    for idx, value in enumerate(
+        [k for k, _ in type_order]
+        + [k for k in sorted(counts_type) if k not in {x for x, _ in type_order}],
+        start=2,
+    ):
         ws_lists[f"B{idx}"] = value
     for idx, value in enumerate(STATE_ORDER, start=2):
         ws_lists[f"C{idx}"] = value

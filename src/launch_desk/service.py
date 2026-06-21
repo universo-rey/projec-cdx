@@ -2,18 +2,19 @@ from __future__ import annotations
 
 import asyncio
 import json
+from collections.abc import AsyncIterator
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, AsyncIterator
+from typing import Any
 
 from agents import Runner
-from pydantic import ValidationError
 from openai.types.responses.response_text_delta_event import ResponseTextDeltaEvent
+from pydantic import ValidationError
 
 from .agent import LaunchDeskRuntimeContext, build_launch_desk_agent, build_launch_prompt
 from .config import ENABLE_RESPONSE_CACHE, RUN_TIMEOUT_SECONDS, resolve_model
 from .observability import LaunchDeskRunHooks
-from .schemas import LaunchDeskRequest, LaunchDeskReport
+from .schemas import LaunchDeskReport, LaunchDeskRequest
 from .store import get_cached_run_record, persist_run_record
 from .tools import (
     check_launch_readiness_data,
@@ -44,7 +45,9 @@ def _public_error_message(exc: BaseException) -> str:
     if "rate limit" in lowered or "429" in lowered:
         return "OpenAI rate limits were reached. Please wait a moment and try again."
     if "api key" in lowered or "authentication" in lowered or "401" in lowered:
-        return "The server could not authenticate with OpenAI. Check the OPENAI_API_KEY configuration."
+        return (
+            "The server could not authenticate with OpenAI. Check the OPENAI_API_KEY configuration."
+        )
     if "model" in lowered and ("not found" in lowered or "does not exist" in lowered):
         return "The configured OpenAI model is not available for this project. Choose another Launch Desk model profile."
     if isinstance(exc, ValidationError):
@@ -63,7 +66,10 @@ def _tool_name_from_item(item: Any) -> str:
 def _map_stream_event(event: Any) -> dict[str, Any] | None:
     if getattr(event, "type", None) == "raw_response_event":
         data = getattr(event, "data", None)
-        if isinstance(data, ResponseTextDeltaEvent) or getattr(data, "type", None) == "response.output_text.delta":
+        if (
+            isinstance(data, ResponseTextDeltaEvent)
+            or getattr(data, "type", None) == "response.output_text.delta"
+        ):
             return {"type": "text_delta", "delta": getattr(data, "delta", "")}
         if getattr(data, "type", None) == "response.reasoning_text.delta":
             return {"type": "reasoning_delta", "delta": getattr(data, "delta", "")}
@@ -170,7 +176,9 @@ async def stream_launch_desk(
             phase="cache",
             tool="history_cache",
         )
-        yield _serialize_event("text_delta", request_id=request_id, delta="Loaded cached launch plan.")
+        yield _serialize_event(
+            "text_delta", request_id=request_id, delta="Loaded cached launch plan."
+        )
         yield _serialize_event(
             "final",
             request_id=request_id,
@@ -209,7 +217,9 @@ async def stream_launch_desk(
 
     try:
         final = stream.final_output
-        report = final if isinstance(final, LaunchDeskReport) else LaunchDeskReport.model_validate(final)
+        report = (
+            final if isinstance(final, LaunchDeskReport) else LaunchDeskReport.model_validate(final)
+        )
     except Exception as exc:
         yield _serialize_event("error", request_id=request_id, message=_public_error_message(exc))
         return

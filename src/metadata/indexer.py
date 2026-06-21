@@ -54,11 +54,17 @@ def build_indexes(root: Path, schema_path: Path) -> tuple[Path, Path]:
         "count": len(items),
         "items": items,
     }
-    root_index_path.write_text(json.dumps(root_index, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    root_index_path.write_text(
+        json.dumps(root_index, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
 
-    operativa_items = [item for item in items if str(item.get("artifact_id", "")).startswith("operativa/")]
+    operativa_items = [
+        item for item in items if str(item.get("artifact_id", "")).startswith("operativa/")
+    ]
     operativa_index_path = root / "operativa" / "index.json"
-    operativa_generated_at = _existing_generated_at(operativa_index_path, operativa_items) or root_generated_at
+    operativa_generated_at = (
+        _existing_generated_at(operativa_index_path, operativa_items) or root_generated_at
+    )
     operativa_index = {
         "generated_at": operativa_generated_at,
         "count": len(operativa_items),

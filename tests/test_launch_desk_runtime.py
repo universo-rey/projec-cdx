@@ -1,11 +1,16 @@
 from __future__ import annotations
 
-import json
 import asyncio
+import json
 from datetime import date
 
 from launch_desk.config import resolve_model
-from launch_desk.schemas import LaunchDeskReport, LaunchDeskRequest, ReadinessRubricItem, ReadinessSummary
+from launch_desk.schemas import (
+    LaunchDeskReport,
+    LaunchDeskRequest,
+    ReadinessRubricItem,
+    ReadinessSummary,
+)
 from launch_desk.service import _public_error_message, run_launch_desk, stream_launch_desk
 from launch_desk.store import get_cached_run_record, persist_run_record, request_cache_key
 
@@ -34,7 +39,11 @@ def _sample_report() -> LaunchDeskReport:
             score=88,
             verdict="go_with_risks",
             top_gaps=["Final security approval"],
-            rubric=[ReadinessRubricItem(dimension="approval", status="partial", notes="Security is pending.")],
+            rubric=[
+                ReadinessRubricItem(
+                    dimension="approval", status="partial", notes="Security is pending."
+                )
+            ],
         ),
         next_action="Confirm the release owner and security approver.",
     )
