@@ -1,14 +1,28 @@
-name: meta-validate
+name: build-graph
 
 on:
   push:
     branches: [main]
+    paths:
+      - "**/*.py"
+      - "**/*.md"
+      - "**/*.json"
+      - "schema.json"
+      - "pyproject.toml"
+      - ".github/workflows/build-graph.yml"
   pull_request:
     branches: [main]
+    paths:
+      - "**/*.py"
+      - "**/*.md"
+      - "**/*.json"
+      - "schema.json"
+      - "pyproject.toml"
+      - ".github/workflows/build-graph.yml"
   workflow_dispatch:
 
 jobs:
-  metadata:
+  graph:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -37,31 +51,15 @@ jobs:
       - name: Validate metadata
         run: python -m tools.validate
 
-      - name: Build metadata indexes
-        run: python -m tools.build_index
-
-      - name: Check metadata indexes are current
-        run: git diff --exit-code -- index.json operativa/index.json
-
-      - name: Run tests
+      - name: Build graph exports
         run: |
-          mkdir -p reports
-          pytest -q --junitxml=reports/pytest.xml
+          mkdir -p outputs
+          python main.py graph --output outputs/metadata-graph.json --format json
+          python main.py graph --output outputs/metadata-graph.dot --format dot
 
-      - name: Upload metadata indexes
-        if: always()
+      - name: Upload graph artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: metadata-indexes
-          if-no-files-found: ignore
-          path: |
-            index.json
-            operativa/index.json
-
-      - name: Upload test report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-report
-          if-no-files-found: ignore
-          path: reports/pytest.xml
+          name: metadata-graph
+          if-no-files-found: error
+          path: outputs/metadata-graph.*
