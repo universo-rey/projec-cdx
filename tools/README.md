@@ -21,6 +21,8 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - `codex-cloud-maintenance.ps1`
 - `codex-cloud-maintenance.sh`
 - `codex-cloud-live.ps1`
+- `sdu_boot.ps1`
+- `sdu_chain_resolver.py`
 - `normalize_codex_surfaces.ps1`
 - `rehome_codex_root_safe.ps1`
 - `test_codex_powershell_layout.ps1`
@@ -38,6 +40,7 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - Ejecutar `validate_proj_cdx_workbench.ps1` antes de cerrar un delta.
 - Ejecutar `validate_proj_cdx_sync.ps1` cuando el cambio toque fuentes vivas, outputs, hitos o Dataverse.
 - Ejecutar `validate_proj_cdx_operational_chain.ps1` cuando cambie el indice puente repo-agente-skill-receta-tool-evidencia.
+- Ejecutar `sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun` para verificar la cadena local `agent -> skill -> recipe -> tool -> validator -> evidence -> stop_condition`.
 - Ejecutar `codex-cloud-bootstrap.ps1` para dejar declarado el contrato local de Codex Cloud y el registro metadata-only.
 - Ejecutar `codex-cloud-setup.sh` como wrapper minimo y portable para Codex Cloud.
 - Ejecutar `codex-cloud-bootstrap.sh` si queres invocarlo directo sin el wrapper.
@@ -74,4 +77,10 @@ Arranque vivo unico:
 
 ```powershell
 pwsh -NoProfile -File "./tools/codex-cloud-live.ps1"
+```
+
+Arranque SDU local seguro:
+
+```powershell
+pwsh -NoProfile -File "./tools/sdu_boot.ps1" -Mode all -Agent All -NoExternal -DryRun
 ```

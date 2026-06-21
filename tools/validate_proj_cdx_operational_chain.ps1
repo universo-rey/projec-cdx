@@ -4,6 +4,8 @@ param(
   [string]$SchemaCsv = "C:/Users/enzo1/Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs/PROJEC_CDX_OPERATIONAL_CHAIN_SCHEMA_20260615.csv",
   [string]$DataverseSourceMapCsv = "C:/Users/enzo1/PROJEC CDX/dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
   [string]$AtomicMatrixCsv = "C:/Users/enzo1/PROJEC CDX/atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
+  [string]$ResolverPy = "C:/Users/enzo1/PROJEC CDX/tools/sdu_chain_resolver.py",
+  [switch]$LegacyCsvValidation,
   [switch]$Json
 )
 
@@ -36,6 +38,54 @@ function Add-Check {
   } elseif ($Status -eq "OBSERVED" -and $script:result.status -ne "FAIL") {
     $script:result.status = "OBSERVED"
   }
+}
+
+if (-not $LegacyCsvValidation) {
+  $result["resolver_py"] = $ResolverPy
+
+  if (-not (Test-Path -LiteralPath $ResolverPy -PathType Leaf)) {
+    Add-Check "resolver_exists" "FAIL" "No existe el resolvedor local SDU."
+  } else {
+    Add-Check "resolver_exists" "PASS" "OK"
+    $VenvPython = Join-Path $Root ".venv/Scripts/python.exe"
+    if (Test-Path -LiteralPath $VenvPython -PathType Leaf) {
+      $Python = $VenvPython
+    } else {
+      $Python = "python"
+    }
+
+    $resolverOutput = & $Python $ResolverPy --root $Root --mode all --agent All --no-external --dry-run --json 2>&1
+    $resolverText = ($resolverOutput | Out-String).Trim()
+    $resolverPayload = $null
+
+    try {
+      $resolverPayload = $resolverText | ConvertFrom-Json
+    } catch {
+      Add-Check "resolver_json_parse" "FAIL" "El resolvedor no emitio JSON valido: $resolverText"
+    }
+
+    if ($null -ne $resolverPayload) {
+      $result["resolver"] = $resolverPayload
+      Add-Check "resolver_status" $resolverPayload.status "Cadena local: $($resolverPayload.chain)"
+      foreach ($check in @($resolverPayload.checks)) {
+        Add-Check "resolver:$($check.name)" $check.status $check.detail
+      }
+    }
+  }
+
+  if ($Json) {
+    $result | ConvertTo-Json -Depth 12
+  } else {
+    "STATUS: $($result.status)"
+    foreach ($check in $result.checks) {
+      "$($check.status) | $($check.name) | $($check.detail)"
+    }
+  }
+
+  if ($result.status -eq "FAIL") {
+    exit 1
+  }
+  exit 0
 }
 
 if (-not (Test-Path -LiteralPath $ChainCsv -PathType Leaf)) {

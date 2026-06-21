@@ -16,6 +16,8 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - `codex-cloud-bootstrap.ps1`
 - `codex-cloud-maintenance.ps1`
 - `codex-cloud-live.ps1`
+- `sdu_boot.ps1`
+- `sdu_chain_resolver.py`
 - `normalize_codex_surfaces.ps1`
 - `rehome_codex_root_safe.ps1`
 - `test_codex_powershell_layout.ps1`
@@ -33,7 +35,9 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - `validate_proj_cdx_workbench.ps1` para validar mapas, archivos requeridos, links, workbooks y formulas.
 - `validate_proj_cdx_sync.ps1` para comprobar fuentes vivas, outputs, hitos y Dataverse local.
 - `validate_sdu_dataverse_metadata_wave.ps1` para validar hito, matriz metadata_only y saneamiento Planner de la wave SDU Dataverse.
-- `validate_proj_cdx_operational_chain.ps1` para validar schema, estados y fronteras del indice puente.
+- `sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun` para activar la verificacion local segura de la cadena SDU.
+- `sdu_chain_resolver.py` para resolver `agent -> skill -> recipe -> tool -> validator -> evidence -> stop_condition`.
+- `validate_proj_cdx_operational_chain.ps1` para validar la cadena local vigente; el modo legacy CSV queda disponible solo por parametro.
 - `codex-cloud-bootstrap.ps1` para declarar el contrato y el registro local de Codex Cloud.
 - `codex-cloud-maintenance.ps1` para refrescar la bitacora y verificar la superficie metadata-only.
 - `codex-cloud-live.ps1` para abrir el carril vivo en un solo paso.
@@ -47,4 +51,10 @@ Arranque vivo unico:
 
 ```powershell
 pwsh -NoProfile -File "./tools/codex-cloud-live.ps1"
+```
+
+Arranque SDU local seguro:
+
+```powershell
+pwsh -NoProfile -File "./tools/sdu_boot.ps1" -Mode all -Agent All -NoExternal -DryRun
 ```

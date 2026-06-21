@@ -55,6 +55,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Emit JSON instead of plain text.",
     )
     parser.add_argument(
+        "--no-local-env",
+        action="store_true",
+        help="Do not load .env or .env.local before running this command.",
+    )
+    parser.add_argument(
         "--activate-sdu",
         action="store_true",
         help="Build the six SDK-SDU agents and report them as active in the local runtime.",
@@ -82,10 +87,12 @@ def _print_json(payload: dict[str, object]) -> None:
 
 
 def main(argv: Iterable[str] | None = None) -> int:
-    load_local_env()
-    align_runtime_context()
     parser = build_parser()
     args = parser.parse_args(list(argv) if argv is not None else None)
+    local_only_mode = args.smoke or args.activate_sdu or args.cloud_bridge
+    if not args.no_local_env and not local_only_mode:
+        load_local_env()
+    align_runtime_context()
 
     if args.smoke:
         report = smoke_report()
