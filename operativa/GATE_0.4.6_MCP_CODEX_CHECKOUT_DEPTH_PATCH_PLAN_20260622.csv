@@ -1,0 +1,4 @@
+gate_id,target_repo,workflow_file,checkout_step,diff_command,risk,required_change,rollback_required,postcheck_required,decision
+0.4.6,universo-rey/cabina-universal-d,sdu-mcp-codex-cloud-dev-preflight.yml,actions/checkout,git diff base...head,shallow_checkout_breaks_diff,set fetch-depth sufficient or fetch explicit base/head refs,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
+0.4.6,universo-rey/cabina-universal-d,sdu-mcp-codex-cloud-dev-preflight.yml,actions/checkout,changed-files detection,missing_base_ref,ensure base branch refs are present before diff,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
+0.4.6,universo-rey/cabina-universal-d,sdu-teams-identity-dev-preflight.yml,actions/checkout,git diff base...head,false_negative_preflight,set refspec/fetch-depth for base and head refs,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
