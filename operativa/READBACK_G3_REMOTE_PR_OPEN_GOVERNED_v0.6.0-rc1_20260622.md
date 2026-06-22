@@ -29,13 +29,13 @@ fecha_evento: '2026-06-22'
 
 ## Estado
 
-HECHO_VERIFICADO: `G3_REMOTE_PR_OPEN_GOVERNED_PREP_READY`
+HECHO_VERIFICADO: `G3_REMOTE_PR_OPEN_GOVERNED_v0.6.0-rc1_OPEN`
 
 ## Sistemas tocados
 
 - Repo local `project-cdx`: evidencia G3 pre-open.
-- Rama remota candidate: pendiente de fast-forward con evidencia G3.
-- PR draft: pendiente de apertura.
+- Rama remota candidate: publicada con evidencia G3.
+- PR draft: `https://github.com/universo-rey/projec-cdx/pull/23`
 
 ## Sistemas no tocados
 
@@ -56,6 +56,7 @@ HECHO_VERIFICADO: `G3_REMOTE_PR_OPEN_GOVERNED_PREP_READY`
 - Se creo matriz de riesgo.
 - Se creo certificacion de frontera.
 - Se creo cuerpo estructurado de PR.
+- Se abrio PR draft gobernado `#23`.
 
 ## Validacion
 
@@ -64,23 +65,27 @@ HECHO_VERIFICADO: `G3_REMOTE_PR_OPEN_GOVERNED_PREP_READY`
 - Sentinel check: PASS.
 - Pytest: PASS.
 - Git diff check: PASS.
+- PR draft abierto: PASS.
+- Base: `main`.
+- Head branch: `codex/v0.6.0-rc1-governed-publication`.
+- Head OID inicial del PR: `59ec05c56d2d8e83871bcf928c26f0bd87ff6e97`.
+- Review decision: `REVIEW_REQUIRED`.
+- Checks iniciales: queued/in_progress.
 
 ## Riesgos
 
-- El PR todavia no existe al crear este readback inicial.
-- La rama remota debe avanzar por fast-forward para incluir esta evidencia antes de abrir el PR.
+- El PR existe en estado draft y requiere G4 para checks/review/stabilization.
+- La rama remota debe avanzar por fast-forward para incluir este readback final.
 - El tag remoto debe permanecer ausente.
 
 ## Rollback
 
-Antes de abrir PR: revertir el commit G3 local si la evidencia queda incorrecta. Despues de push: borrar rama remota solo con orden owner.
+Antes de merge: cerrar el PR draft si el owner lo ordena. Para revertir rama, borrar rama remota solo con orden owner.
 
 ## Proximos carriles
 
-1. Commit local de evidencia G3.
-2. Push fast-forward a `codex/v0.6.0-rc1-governed-publication`.
-3. Apertura de PR draft gobernado.
-4. Actualizacion de este readback con URL del PR, si corresponde.
+1. Push fast-forward de este readback final a `codex/v0.6.0-rc1-governed-publication`.
+2. `G4_REMOTE_CHECKS_REVIEW_STABILIZATION_v0.6.0-rc1`.
 
 ## Contrato operativo
 
@@ -90,7 +95,7 @@ Antes de abrir PR: revertir el commit G3 local si la evidencia queda incorrecta.
 - skill: `delta-gobernado`, `github:yeet`, `governed-readback-closeout`
 - receta: `validate -> evidence -> fast-forward -> draft-pr -> readback`
 - tool: `git`, `gh pr create`
-- estado: `G3_REMOTE_PR_OPEN_GOVERNED_PREP_READY`
+- estado: `G3_REMOTE_PR_OPEN_GOVERNED_v0.6.0-rc1_OPEN`
 - evidencia: artefactos G3 relacionados
 - validador: `tools/cabina/Invoke-CabinaGovernancePrecheck.ps1`
 - riesgo: abrir PR sin evidencia completa
