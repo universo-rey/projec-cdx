@@ -1,5 +1,5 @@
 execution_id,source_gate,target_version,surface,repo_or_system,execution_type,risk_level,requires_owner,requires_rollback,requires_postcheck,requires_secret,requires_live_surface,recommended_order,current_status,decision
-0.3.0,0.2.3,0.3.0,github,universo-rey/projec-cdx,github_label_write,low,true,true,true,false,true,1,AWAITING_OWNER_AUTHORIZATION,RECOMMENDED_FIRST_EXTERNAL_GATE
+0.3.0,0.2.3,0.3.0,github,universo-rey/projec-cdx,github_label_write,low,true,true,true,false,true,1,AUTHORIZED_LOCAL_READY_FOR_EXTERNAL_EXECUTION,AWAITING_CONTROLLED_GITHUB_LABEL_WRITE
 0.3.1,0.2.1,0.3.1,github,universo-rey/cabina-universal-d,remote_repo_evidence_sync,medium,true,true,true,false,true,2,AWAITING_OWNER_AUTHORIZATION,REQUIRES_REMOTE_REPO_GATE
 0.3.2,0.2.2,0.3.2,github,universo-rey/cabina-universal-d,remote_repo_canon_sync,high,true,true,true,false,true,3,AWAITING_OWNER_AUTHORIZATION,REQUIRES_CANON_OWNER
 0.3.3,0.2.4,0.3.3,github,SeshatSgin/seshat-bootstrap-sdu-cn,remote_repo_issue_prep_alignment,medium,true,true,true,false,true,4,AWAITING_OWNER_AUTHORIZATION,REQUIRES_REMOTE_REPO_GATE
