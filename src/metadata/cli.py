@@ -8,6 +8,7 @@ from pathlib import Path
 from .doc_report import build_doc_report
 from .indexer import build_indexes
 from .validator import replace_front_matter, validate_repository
+from projec_cdx_common.safe_errors import sanitize_exception_message
 
 
 def _repo_root() -> Path:
@@ -117,7 +118,7 @@ def _run_doc_report(root: Path, schema: Path, json_output: Path, md_output: Path
     try:
         json_path, md_path = build_doc_report(root, schema, json_output, md_output)
     except ValueError as exc:
-        print(str(exc))
+        print(sanitize_exception_message(exc, fallback="No se pudo generar el reporte documental."))
         return 1
     print(f"Reporte JSON generado: {json_path}")
     print(f"Reporte Markdown generado: {md_path}")
