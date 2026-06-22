@@ -1,0 +1,14 @@
+{
+  "mode": "LOCAL_ONLY",
+  "auto_remediation_enabled": true,
+  "rollback_strategy": "SAFE_LOCAL_ONLY",
+  "max_actions_per_cycle": 3,
+  "policies": {
+    "boundary_violation": "BLOCK",
+    "missing_evidence": "REMEDIATE",
+    "unexpected_drift": "ROLLBACK",
+    "index_drift": "REGENERATE",
+    "validator_failure": "ROLLBACK",
+    "secret_risk": "BLOCK_HARD"
+  }
+}
