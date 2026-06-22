@@ -1,0 +1,4 @@
+target_commit,registered_files,actual_files,missing_files,requires_regeneration,decision
+cabina-universal-d:target_commit_unknown,change-aware manifest,unknown,unknown,true,READY_FOR_REMOTE_REGEN_GATE
+cabina-universal-d:PR130,change-aware evidence package,unknown,unknown,true,READY_FOR_REMOTE_REGEN_GATE
+cabina-universal-d:governance baseline,registered evidence index,unknown,unknown,true,READY_FOR_REMOTE_REGEN_GATE
