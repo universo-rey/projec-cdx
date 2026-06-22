@@ -12,3 +12,11 @@ workbooks/_backups/
 workbooks/~$*.xlsx
 operativa/PAC_*_HUBDESARROLLO_*.txt
 operativa/backup-*.reg
+
+# Local workspace tooling overlays.
+.opencode
+.agent/
+.bookmarks/
+.github/agents/
+.github/skills/
+.vscode/
