@@ -1,0 +1,11 @@
+repo,pr_number,dependency,from_version,to_version,category,labels_expected,labels_now_available,runner_requirement,risk,recommended_decision,external_action_required
+universo-rey/projec-cdx,dependabot,pyyaml,unknown,unknown,python dependency,"dependencies|python",true,python,medium,READY_FOR_HUMAN_REVIEW,false
+universo-rey/projec-cdx,dependabot,jsonschema,unknown,unknown,python dependency,"dependencies|python",true,python,medium,READY_FOR_HUMAN_REVIEW,false
+universo-rey/projec-cdx,dependabot,openai-agents,unknown,unknown,python dependency,"dependencies|python",true,python,high,BLOCKED_SECURITY_REVIEW,false
+universo-rey/projec-cdx,dependabot,setuptools,unknown,unknown,python dependency,"dependencies|python",true,python,medium,READY_FOR_HUMAN_REVIEW,false
+universo-rey/projec-cdx,dependabot,black,unknown,unknown,dev dependency,"dependencies|python",true,python,low,READY_FOR_HUMAN_REVIEW,false
+universo-rey/projec-cdx,dependabot,actions/setup-python,unknown,unknown,setup-python action,"dependencies|github-actions",true,github-actions,medium,BLOCKED_NEEDS_CI_GREEN,false
+universo-rey/projec-cdx,dependabot,actions/upload-artifact,unknown,unknown,upload-artifact action,"dependencies|github-actions",true,github-actions,medium,BLOCKED_NEEDS_CI_GREEN,false
+universo-rey/projec-cdx,dependabot,actions/cache,unknown,unknown,cache action,"dependencies|github-actions",true,github-actions,medium,BLOCKED_NEEDS_CI_GREEN,false
+universo-rey/projec-cdx,dependabot,actions/checkout,unknown,unknown,checkout action,"dependencies|github-actions",true,github-actions,medium,BLOCKED_NEEDS_CI_GREEN,false
+universo-rey/projec-cdx,dependabot,peter-evans/create-pull-request,unknown,unknown,create-pull-request action,"dependencies|github-actions",true,github-actions,high,BLOCKED_SECURITY_REVIEW,false
