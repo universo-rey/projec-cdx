@@ -1,0 +1,4 @@
+repo,label,description,color,source_config,required_by,exists_locally_known,github_write_required,rollback_required,postcheck_required,decision
+universo-rey/projec-cdx,dependencies,PRs de dependencias,0366d6,dependabot.yml,dependabot,unknown,true,true,true,REQUIRES_GITHUB_WRITE_GATE
+universo-rey/projec-cdx,python,Dependencias Python,3572A5,dependabot.yml,dependabot,unknown,true,true,true,REQUIRES_GITHUB_WRITE_GATE
+universo-rey/projec-cdx,github-actions,Dependencias GitHub Actions,2088FF,dependabot.yml,dependabot,unknown,true,true,true,REQUIRES_GITHUB_WRITE_GATE
