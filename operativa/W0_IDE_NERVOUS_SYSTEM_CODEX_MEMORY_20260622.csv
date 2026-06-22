@@ -1,0 +1,10 @@
+path,type,file_count,db_like_count,classification,policy,next_action
+C:\Users\enzo1\.codex\config.toml,file,1,0,RUNTIME_MEMORY,"read config only; no secret print","W1 compare with project config if needed"
+C:\Users\enzo1\.codex\state,dir,2,0,RUNTIME_MEMORY,"inventory only; no DB mutation","W1 classify plugin state"
+C:\Users\enzo1\.codex\logs,missing,0,0,NO_CONSTA,"no action","none"
+C:\Users\enzo1\.codex\memories,dir,260,0,RUNTIME_MEMORY,"read only via memory policy; no broad rewrite","use for continuity only"
+C:\Users\enzo1\.codex\plugins,dir,2097,0,RUNTIME_MEMORY,"do not delete; plugins governed","W1 classify active/on-demand"
+C:\Users\enzo1\.codex\worktrees,dir,16910,0,RUNTIME_MEMORY,"do not move/delete worktrees","W1 classify if owner asks"
+C:\Users\enzo1\.codex\cache,dir,22509,0,RUNTIME_MEMORY,"do not clean cache in W0","W1 decide cleanup only with owner"
+C:\Users\enzo1\.codex\skills,dir,234,0,ACTIVE_LOCAL,"read skill registry; no mutation","align with skill matrix"
+C:\Users\enzo1\.codex\sessions,dir,682,0,ARCHIVE_REFERENCE,"do not rewrite sessions","use readbacks instead of history scraping"
