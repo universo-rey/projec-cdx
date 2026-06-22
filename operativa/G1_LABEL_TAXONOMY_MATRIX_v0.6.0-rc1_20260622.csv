@@ -1,0 +1,9 @@
+label,color,description,pre_status,action,post_status,rollback_allowed,notes
+release,5319e7,Release packaging and publication governance,MISSING_CREATE,CREATED,REMOTE_PRESENT,true,required by remote publication plan
+gate,d4c5f9,Governed gate or approval boundary,MISSING_CREATE,CREATED,REMOTE_PRESENT,true,required by remote publication plan
+status/ready,0e8a16,Ready for next governed action,MISSING_CREATE,CREATED,REMOTE_PRESENT,true,required by remote publication plan
+status/blocked,b60205,Blocked by real condition,MISSING_CREATE,CREATED,REMOTE_PRESENT,true,required by remote publication plan
+status/review-required,fbca04,Review required before proceeding,MISSING_CREATE,CREATED,REMOTE_PRESENT,true,required by remote publication plan
+surface/github,1d76db,GitHub repository or remote publication surface,MISSING_CREATE,CREATED,REMOTE_PRESENT,true,required by remote publication plan
+risk/secrets,b60205,Secret handling or exposure risk,MISSING_CREATE,CREATED,REMOTE_PRESENT,true,required by remote publication plan
+risk/permissions,d93f0b,Permission approval or access-control risk,MISSING_CREATE,CREATED,REMOTE_PRESENT,true,required by remote publication plan
