@@ -9,8 +9,8 @@ La guia operativa principal y la navegacion visible de la cabina global de Codex
 - Leer [AGENTS.reference.md](AGENTS.reference.md) solo para el detalle local de esta carpeta.
 - Inspeccionar primero, cambiar despues.
 - Identidad operativa de la cabina: `CEO`; perfil fisico/ruta tecnica: `%USERPROFILE%`.
-- No borrar ni mover nada sin confirmacion.
-- No tocar otras carpetas salvo que el usuario lo pida.
+- Borrar o mover solo con confirmacion explicita.
+- Operar dentro de esta carpeta; ampliar frontera solo con orden del usuario.
 - `node_modules` no se edita a mano.
 - `outputs` se trata como salida generada.
 - `README.md` y `AGENTS.md` deben quedar cortos; el detalle vive en los archivos de referencia.

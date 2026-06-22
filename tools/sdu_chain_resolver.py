@@ -10,6 +10,9 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_AGENT = "All"
+NERVOUS_SYSTEM_CHAIN = (
+    "entrada -> estado -> orden -> agentes -> semantica -> motor -> modelo -> evidencia -> salida"
+)
 
 SDU_AGENT_ORDER = [
     "seshat-normativa",
@@ -222,11 +225,34 @@ def build_graph(
     add("env_local_read", "PASS", ".env.local not read by resolver")
 
     required_files = {
-        "skills_inventory": "inventarios/SKILLS_UNIFIED_TABLE.csv",
-        "recipes_index": "recipes/INDICE_RECETAS.md",
-        "dataverse_source_map": "dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
-        "atomic_action_matrix": "atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
-        "sdu_boot": "tools/sdu_boot.ps1",
+        "entrada:readme": "README.md",
+        "entrada:agents": "AGENTS.md",
+        "entrada:mapa_maestro": "MAPA_MAESTRO.md",
+        "estado:current": "operativa/CURRENT.md",
+        "estado:next": "operativa/NEXT.md",
+        "estado:trace": "operativa/TRACE.md",
+        "orden:sdu_boot": "tools/sdu_boot.ps1",
+        "orden:sdu_chain_resolver": "tools/sdu_chain_resolver.py",
+        "orden:orden_sdu_viva": "dataverse/ORDEN_SDU_VIVA.md",
+        "agentes:agent_skill_map": "inventarios/AGENTES_SKILLS_RECETAS_20260616.md",
+        "agentes:skills_inventory": "inventarios/SKILLS_UNIFIED_TABLE.csv",
+        "agentes:recipes_index": "recipes/INDICE_RECETAS.md",
+        "semantica:semantic_layer_repo": "docs/referencia/semantic-layer.md",
+        "semantica:semantic_canon": "operativa/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md",
+        "motor:metadata_cli": "src/metadata/cli.py",
+        "motor:doc_report": "src/metadata/doc_report.py",
+        "motor:validate": "tools/validate.py",
+        "motor:build_index": "tools/build_index.py",
+        "modelo:schema": "schema.json",
+        "modelo:index": "index.json",
+        "modelo:operativa_index": "operativa/index.json",
+        "modelo:live_manifest": "live-manifest.json",
+        "evidencia:actas_papeles": "inventarios/ACTAS_PAPELES_AGENTES_20260616.md",
+        "evidencia:hitos_index": "hitos/INDICE_MAESTRO.md",
+        "evidencia:source_map": "dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
+        "evidencia:atomic_matrix": "atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
+        "salida:outputs": "outputs/README.md",
+        "salida:cli_metadata_doc": "docs/herramientas/cli-metadata.md",
     }
     for name, relative in required_files.items():
         add(name, "PASS" if _exists(root, relative) else "FAIL", relative)
@@ -243,12 +269,18 @@ def build_graph(
     )
 
     inventory_skills = _skill_names_from_inventory(root)
-    physical_skills = _physical_skill_names()
+    physical_skills = set() if no_external else _physical_skill_names()
     available_skills = inventory_skills | physical_skills
+    add(
+        "semantica:projec_cdx_semantic_layer_registered",
+        "PASS" if "projec-cdx-semantic-layer" in available_skills else "FAIL",
+        "projec-cdx-semantic-layer",
+    )
     add(
         "skills_resolved",
         "PASS" if available_skills else "FAIL",
-        f"inventory={len(inventory_skills)} physical={len(physical_skills)}",
+        f"inventory={len(inventory_skills)} "
+        + (f"physical={len(physical_skills)}" if not no_external else "physical=skipped(no_external)"),
     )
 
     recipe_files = sorted((root / "recipes").glob("*.md")) if (root / "recipes").exists() else []
@@ -277,15 +309,21 @@ def build_graph(
         "root": str(root),
         "no_external": no_external,
         "dry_run": dry_run,
-        "chain": "agent -> skill -> recipe -> tool -> validator -> evidence -> stop_condition",
+        "chain": NERVOUS_SYSTEM_CHAIN,
         "checks": [check.__dict__ for check in checks],
         "agents": packets,
         "canonical_sources": {
+            "entrada": "README.md, AGENTS.md, MAPA_MAESTRO.md",
+            "estado": "operativa/CURRENT.md, operativa/NEXT.md, operativa/TRACE.md",
+            "orden": "tools/sdu_boot.ps1, tools/sdu_chain_resolver.py",
             "skills": "inventarios/SKILLS_UNIFIED_TABLE.csv",
             "recipes": "recipes/INDICE_RECETAS.md",
             "tools": "tools/",
+            "semantica": "docs/referencia/semantic-layer.md + projec-cdx-semantic-layer + operativa/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md",
+            "modelo": "schema.json, index.json, live-manifest.json",
             "dataverse": "dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
             "atomic": "atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
+            "salida": "outputs/README.md, docs/herramientas/cli-metadata.md",
         },
     }
 

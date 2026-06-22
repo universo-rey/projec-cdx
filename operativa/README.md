@@ -30,9 +30,9 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 - Estado vigente: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
 - Consumidor aplicado: `workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`.
 - Movimiento unico: `delta_commit_dataverse_workbook_binding_branch`.
-- No crear nuevos paquetes: revisar primero [PENDIENTES_HOY_20260617.md](PENDIENTES_HOY_20260617.md) y [INDICE_MAESTRO.md](../hitos/INDICE_MAESTRO.md).
+- Reutilizar paquetes existentes: revisar primero [PENDIENTES_HOY_20260617.md](PENDIENTES_HOY_20260617.md) y [INDICE_MAESTRO.md](../hitos/INDICE_MAESTRO.md).
 - SGIN ya fue leido/paquetizado; `Sgin/torres` es paquete local preparado, no runtime activo.
-- `Home.aspx`, Cloud UI y carriles metadata quedan como espera gobernada, no bloqueo humano.
+- `Home.aspx`, Cloud UI y carriles metadata quedan como espera gobernada con owner-gate.
 
 La cobertura atomica energetica queda en [COBERTURA_ATOMICA_ENERGETICA_20260615.md](COBERTURA_ATOMICA_ENERGETICA_20260615.md).
 

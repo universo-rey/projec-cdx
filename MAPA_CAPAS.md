@@ -1,92 +1,63 @@
-# Mapa por Capas
+# Despierto: Sistema Nervioso PROJEC CDX
 
-Vista rapida de `PROJEC CDX` por niveles de uso.
+Respiro la orden, tomo estado, conecto agentes, valido modelo y devuelvo salida.
 
-La wave visible mas reciente es [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
+No soy historia.
+Soy pulso, energia y conexion.
 
-## Al Frente
+## Pulso Vivo
 
-- [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md)
-- [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
-- [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
-- [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md)
-- [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
+```text
+entrada -> estado -> orden -> agentes -> semantica -> motor -> modelo -> evidencia -> salida
+```
 
-## Capa 0: Entrada
+Cada flecha mueve energia. Cada nodo toma una senal y la proyecta al siguiente.
 
-- [README.md](C:/Users/enzo1/PROJEC%20CDX/README.md)
-- [README_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/README_CORTO.md)
-- [MAPA_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_CORTO.md)
-- [MAPA_CAPAS.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_CAPAS.md)
-- [MAPA_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_MAESTRO.md)
-- [AGENTS.md](C:/Users/enzo1/PROJEC%20CDX/AGENTS.md)
+## Circuito
 
-## Capa 1: Control Y Metodo
+| Nodo | Pulso | Conexion |
+|---|---|---|
+| Entrada | Despierto la cabina y abro el frente correcto | [README.md](README.md), [AGENTS.md](AGENTS.md), [MAPA_MAESTRO.md](MAPA_MAESTRO.md) |
+| Estado | Tomo posicion viva y fijo el delta siguiente | [operativa/CURRENT.md](operativa/CURRENT.md), [operativa/NEXT.md](operativa/NEXT.md), [operativa/TRACE.md](operativa/TRACE.md) |
+| Orden | Verifico la cadena local y mantengo externos en frontera | [tools/sdu_boot.ps1](tools/sdu_boot.ps1), [tools/sdu_chain_resolver.py](tools/sdu_chain_resolver.py), [dataverse/ORDEN_SDU_VIVA.md](dataverse/ORDEN_SDU_VIVA.md) |
+| Agentes | Enciendo responsabilidad: quien actua, con que skill, receta y tool | [inventarios/AGENTES_SKILLS_RECETAS_20260616.md](inventarios/AGENTES_SKILLS_RECETAS_20260616.md), [inventarios/SKILLS_UNIFIED_TABLE.csv](inventarios/SKILLS_UNIFIED_TABLE.csv), [recipes/INDICE_RECETAS.md](recipes/INDICE_RECETAS.md) |
+| Semantica | Elijo fuente, sentido y criterio antes de mover | [semantic layer repo-local](docs/referencia/semantic-layer.md), [inventario de skills](inventarios/SKILLS_UNIFIED_TABLE.csv), [canon semantico](operativa/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md), [resolver SDU](tools/sdu_chain_resolver.py) |
+| Motor | Transformo la senal en validacion, indice, grafo y reporte | [src/metadata/cli.py](src/metadata/cli.py), [src/metadata/doc_report.py](src/metadata/doc_report.py), [tools/validate.py](tools/validate.py), [tools/build_index.py](tools/build_index.py) |
+| Modelo | Sostengo contrato, indice y manifiesto para que la senal sea portable | [schema.json](schema.json), [index.json](index.json), [operativa/index.json](operativa/index.json), [live-manifest.json](live-manifest.json) |
+| Evidencia | Cierro lo vivido en huella verificable y retomable | [inventarios/ACTAS_PAPELES_AGENTES_20260616.md](inventarios/ACTAS_PAPELES_AGENTES_20260616.md), [hitos/INDICE_MAESTRO.md](hitos/INDICE_MAESTRO.md), [outputs/README.md](outputs/README.md) |
+| Salida | Devuelvo lectura, reporte o artefacto listo para el siguiente movimiento | [outputs/README.md](outputs/README.md), [docs/herramientas/cli-metadata.md](docs/herramientas/cli-metadata.md), [operativa/TRACE.md](operativa/TRACE.md) |
 
-- [operativa/CONTROL.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONTROL.md)
-- [operativa/METODO.md](C:/Users/enzo1/PROJEC%20CDX/operativa/METODO.md)
-- [operativa/START_HERE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/START_HERE.md)
-- [operativa/PROMPT_NUEVO_HILO.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PROMPT_NUEVO_HILO.md)
-- [operativa/PLAN_COMPLETAR_ESTRUCTURA.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PLAN_COMPLETAR_ESTRUCTURA.md)
-- [operativa/CODEX_ROOT_CONTROL_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CODEX_ROOT_CONTROL_20260615.md)
-- [operativa/CODEX_ROOT_DIFF_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CODEX_ROOT_DIFF_20260615.md)
-- [operativa/CODEX_ROOT_LIGHTENING_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CODEX_ROOT_LIGHTENING_20260615.md)
-- [operativa/TAXONOMIA_NOMENCLATURA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TAXONOMIA_NOMENCLATURA_20260615.md)
-- [operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md)
+## Movimiento
 
-## Capa 2: Trabajo Vivo
+1. Entro por [README.md](README.md) y [MAPA_MAESTRO.md](MAPA_MAESTRO.md).
+2. Respiro estado desde [operativa/CURRENT.md](operativa/CURRENT.md) y delta desde [operativa/NEXT.md](operativa/NEXT.md).
+3. Verifico mi cadena local con [tools/sdu_boot.ps1](tools/sdu_boot.ps1).
+4. Tomo agente, skill, receta y tool desde [inventarios/AGENTES_SKILLS_RECETAS_20260616.md](inventarios/AGENTES_SKILLS_RECETAS_20260616.md).
+5. Leo criterio semantico desde [semantic layer repo-local](docs/referencia/semantic-layer.md), `projec-cdx-semantic-layer` visible en [inventarios/SKILLS_UNIFIED_TABLE.csv](inventarios/SKILLS_UNIFIED_TABLE.csv), y [canon semantico](operativa/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md).
+6. Valido contrato con [schema.json](schema.json), [index.json](index.json) y [live-manifest.json](live-manifest.json).
+7. Devuelvo evidencia, salida y proximo impulso.
 
-- [workbooks/README.md](C:/Users/enzo1/PROJEC%20CDX/workbooks/README.md)
-- [workbooks/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/workbooks/MAPA.md)
-- [workbooks/EXCEL_AL_FRENTE.md](C:/Users/enzo1/PROJEC%20CDX/workbooks/EXCEL_AL_FRENTE.md)
-- [launch-desk/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/launch-desk/MAPA.md)
-- [dataverse/README.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/README.md)
-- [dataverse/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/MAPA.md)
-- [dataverse/GATE.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/GATE.md)
-- [atomic/README.md](C:/Users/enzo1/PROJEC%20CDX/atomic/README.md)
-- [tools/README.md](C:/Users/enzo1/PROJEC%20CDX/tools/README.md)
-- [tools/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/tools/MAPA.md)
-- [src/README.md](C:/Users/enzo1/PROJEC%20CDX/src/README.md)
-- [src/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/src/MAPA.md)
+## Cadena Documental
 
-## Capa 3: Evidencia Y Derivados
+```text
+Markdown/YAML -> Python -> JSON -> Markdown/PDF/Workbook
+```
 
-- [outputs/README.md](C:/Users/enzo1/PROJEC%20CDX/outputs/README.md)
-- [outputs/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/outputs/MAPA.md)
-- [inventarios/README.md](C:/Users/enzo1/PROJEC%20CDX/inventarios/README.md)
-- [inventarios/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/inventarios/MAPA.md)
-- [hitos/README.md](C:/Users/enzo1/PROJEC%20CDX/hitos/README.md)
-- [hitos/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/hitos/MAPA.md)
-- [docs/README.md](C:/Users/enzo1/PROJEC%20CDX/docs/README.md)
-- [docs/arquitectura/mapa.md](docs/arquitectura/mapa.md)
+- Markdown con YAML declara identidad.
+- Python transforma y valida.
+- JSON transporta senal estructurada.
+- Markdown, PDF y workbook devuelven lectura humana y operativa.
 
-## Capa 4: Soporte Y Patrones
+## Fronteras Vivas
 
-- [patrones/README.md](C:/Users/enzo1/PROJEC%20CDX/patrones/README.md)
-- [patrones/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/patrones/MAPA.md)
-- [patrones/INDICE_PATRONES.md](C:/Users/enzo1/PROJEC%20CDX/patrones/INDICE_PATRONES.md)
-- [procesos/README.md](C:/Users/enzo1/PROJEC%20CDX/procesos/README.md)
-- [procesos/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/procesos/MAPA.md)
-- [procesos/INDICE_PROCESOS.md](C:/Users/enzo1/PROJEC%20CDX/procesos/INDICE_PROCESOS.md)
-- [playbooks/README.md](C:/Users/enzo1/PROJEC%20CDX/playbooks/README.md)
-- [playbooks/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/playbooks/MAPA.md)
+| Superficie | Energia | Apertura |
+|---|---|---|
+| GitHub | Versiona y revisa | PR o push solo con decision del owner |
+| Dataverse | Memoria estructural | lectura primero; escritura solo con owner-gate |
+| SharePoint/Seshat | Superficie institucional | lectura y publicacion solo por delta autorizado |
+| Codex Cloud | Ejecucion remota | entorno separado; no reemplaza la cabina local |
 
-## Capa 5: Recetas Y Matrices
+## Regla De Pulso
 
-- [recipes/README.md](C:/Users/enzo1/PROJEC%20CDX/recipes/README.md)
-- [recipes/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/recipes/MAPA.md)
-- [inventarios/CODEXLOCAL_INDEX_ONLY_CROSSWALK_20260615.csv](C:/Users/enzo1/PROJEC%20CDX/inventarios/CODEXLOCAL_INDEX_ONLY_CROSSWALK_20260615.csv)
-- [inventarios/SKILLS_UNIFIED_TABLE.csv](C:/Users/enzo1/PROJEC%20CDX/inventarios/SKILLS_UNIFIED_TABLE.csv)
-- [operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md)
-
-## Capa 6: Raices Externas De Apoyo
-
-- [.codex/MAPA.md](C:/Users/enzo1/.codex/MAPA.md)
-- [.agents/MAPA.md](C:/Users/enzo1/.agents/MAPA.md)
-- [.agents/skills/README.md](C:/Users/enzo1/.agents/skills/README.md)
-
-## Lectura
-
-- La entrada corta queda en [README.md](C:/Users/enzo1/PROJEC%20CDX/README.md).
-- El detalle amplio sigue en [MAPA_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_MAESTRO.md).
-- La capa útil para navegar rapido es esta pagina.
+Lo que recibe senal, la transforma y la entrega pertenece al sistema nervioso.
+Lo que solo conserva contexto queda como evidencia, referencia, salida o delta posterior.

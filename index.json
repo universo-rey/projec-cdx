@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-21T11:31:51.892015+00:00",
-  "count": 59,
+  "generated_at": "2026-06-21T14:56:10.535207+00:00",
+  "count": 60,
   "items": [
     {
       "artifact_id": "docs/MAPA.md",
@@ -738,6 +738,34 @@
       "relacionados": [],
       "descripcion": "Indice de referencia, glosario y documentos historicos migrados.",
       "metadata_source": "docs/referencia/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/referencia/semantic-layer.md",
+      "categoria": "playbooks",
+      "tipo": "mapa",
+      "estado": "en_revision",
+      "version": "0.1.0",
+      "fecha_evento": "2026-06-21",
+      "autoridad": {
+        "tipo": "owner",
+        "referencia": "CEO"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/referencia/semantic-layer.md",
+      "etiquetas": [
+        "docs",
+        "referencia",
+        "semantic-layer",
+        "sistema-nervioso"
+      ],
+      "relacionados": [
+        "MAPA_CAPAS.md",
+        "tools/sdu_chain_resolver.py",
+        "inventarios/SKILLS_UNIFIED_TABLE.csv"
+      ],
+      "descripcion": "Capa semantica repo-local para que el sistema nervioso elija fuente, sentido y criterio sin depender de memoria externa.",
+      "metadata_source": "docs/referencia/semantic-layer.md",
       "metadata_kind": "front_matter"
     },
     {

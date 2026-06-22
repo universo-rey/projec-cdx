@@ -5,6 +5,7 @@ import json
 from collections.abc import Iterable
 from pathlib import Path
 
+from .doc_report import build_doc_report
 from .indexer import build_indexes
 from .validator import replace_front_matter, validate_repository
 
@@ -112,6 +113,17 @@ def _run_promote(root: Path, schema: Path, artifact_id: str, estado: str) -> int
     return 0
 
 
+def _run_doc_report(root: Path, schema: Path, json_output: Path, md_output: Path) -> int:
+    try:
+        json_path, md_path = build_doc_report(root, schema, json_output, md_output)
+    except ValueError as exc:
+        print(str(exc))
+        return 1
+    print(f"Reporte JSON generado: {json_path}")
+    print(f"Reporte Markdown generado: {md_path}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="CLI de metadatos PROJEC CDX")
     parser.add_argument("--root", type=Path, default=_repo_root(), help="Raiz del repositorio")
@@ -129,6 +141,22 @@ def build_parser() -> argparse.ArgumentParser:
     )
     promote_parser.add_argument("artifact_id")
     promote_parser.add_argument("estado", choices=["borrador", "en_revision", "aprobado", "live"])
+
+    report_parser = subparsers.add_parser(
+        "doc-report", help="Construir reporte documental JSON + Markdown"
+    )
+    report_parser.add_argument(
+        "--json-output",
+        type=Path,
+        default=Path("outputs/documental/doc-report.json"),
+        help="Salida JSON del reporte documental",
+    )
+    report_parser.add_argument(
+        "--md-output",
+        type=Path,
+        default=Path("outputs/documental/doc-report.md"),
+        help="Salida Markdown del reporte documental",
+    )
 
     return parser
 
@@ -152,5 +180,9 @@ def main(argv: Iterable[str] | None = None) -> int:
         return _run_graph(root, schema, output, args.format)
     if args.command == "promote":
         return _run_promote(root, schema, args.artifact_id, args.estado)
+    if args.command == "doc-report":
+        json_output = args.json_output if args.json_output.is_absolute() else root / args.json_output
+        md_output = args.md_output if args.md_output.is_absolute() else root / args.md_output
+        return _run_doc_report(root, schema, json_output, md_output)
     parser.print_help()
     return 1

@@ -38,23 +38,44 @@ def test_sdu_chain_resolver_builds_local_chain(tmp_path: Path) -> None:
             }
         ],
     )
+    _write(repo / "README.md", "# Repo\n")
+    _write(repo / "AGENTS.md", "# Agents\n")
+    _write(repo / "MAPA_MAESTRO.md", "# Mapa\n")
+    _write(repo / "operativa" / "CURRENT.md", "# Current\n")
+    _write(repo / "operativa" / "NEXT.md", "# Next\n")
+    _write(repo / "operativa" / "TRACE.md", "# Trace\n")
     _write(repo / "recipes" / "INDICE_RECETAS.md", "# Recetas\n")
     _write(repo / "recipes" / "canon-documental.md", "# Canon documental\n")
+    _write(repo / "dataverse" / "ORDEN_SDU_VIVA.md", "# Orden\n")
     _write(repo / "dataverse" / "DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv", "a,b\n1,2\n")
     _write(repo / "atomic" / "CODEX_ATOMIC_ACTION_MATRIX.csv", "a,b\n1,2\n")
+    _write(repo / "inventarios" / "AGENTES_SKILLS_RECETAS_20260616.md", "# Agentes\n")
+    _write(repo / "docs" / "referencia" / "semantic-layer.md", "# Semantic layer\n")
+    _write(repo / "operativa" / "CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md", "# Canon\n")
+    _write(repo / "src" / "metadata" / "cli.py", "# cli\n")
+    _write(repo / "src" / "metadata" / "doc_report.py", "# report\n")
     _write(repo / "tools" / "sdu_boot.ps1", "# boot\n")
     _write(repo / "tools" / "sdu_chain_resolver.py", "# resolver\n")
     _write(repo / "tools" / "validate_proj_cdx_operational_chain.ps1", "# validator\n")
     _write(repo / "tools" / "validate_sdu_dataverse_metadata_wave.ps1", "# validator\n")
     _write(repo / "tools" / "validate.py", "# validator\n")
+    _write(repo / "tools" / "build_index.py", "# build index\n")
     _write(repo / "tools" / "build_skills_unified_table.ps1", "# builder\n")
     _write(repo / "tools" / "codex-control-total.ps1", "# control\n")
+    _write(repo / "schema.json", "{}\n")
+    _write(repo / "index.json", "{}\n")
+    _write(repo / "operativa" / "index.json", "{}\n")
+    _write(repo / "live-manifest.json", "{}\n")
+    _write(repo / "inventarios" / "ACTAS_PAPELES_AGENTES_20260616.md", "# Actas\n")
+    _write(repo / "hitos" / "INDICE_MAESTRO.md", "# Hitos\n")
+    _write(repo / "outputs" / "README.md", "# Outputs\n")
+    _write(repo / "docs" / "herramientas" / "cli-metadata.md", "# CLI\n")
     _write(repo / "operativa" / "MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md", "# matrix\n")
 
     payload = build_graph(repo, no_external=True, dry_run=True)
 
     assert payload["status"] in {"PASS", "OBSERVED"}
-    assert payload["chain"] == "agent -> skill -> recipe -> tool -> validator -> evidence -> stop_condition"
+    assert payload["chain"] == "entrada -> estado -> orden -> agentes -> semantica -> motor -> modelo -> evidencia -> salida"
     assert payload["agents"][0]["agent"] == "seshat-normativa"
     assert "tools/sdu_boot.ps1" in payload["agents"][0]["tools"]
 
