@@ -1,0 +1,5 @@
+gate_id,target_repo,artifact,issue,canonical_source,required_change,live_surface_allowed,rollback_required,postcheck_required,decision
+0.4.10,SeshatSgin/seshat-bootstrap-sdu-cn,ORDEN_VIVA_PARA_SESHAT.md,can be interpreted as live mandate from Dataverse,repo policy and boundary matrix,mark as repo-only/not-live,false,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
+0.4.10,SeshatSgin/seshat-bootstrap-sdu-cn,herramienta_solicitada,tool enum is stale,current tools matrix,align enum to current tools matrix,false,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
+0.4.10,SeshatSgin/seshat-bootstrap-sdu-cn,Teams/Entra/SharePoint tool entries,tools can be read as live-enabled,current tools matrix and owner gates,mark as governed not live,false,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
+0.4.10,SeshatSgin/seshat-bootstrap-sdu-cn,Dataverse prompt context,orden viva can be treated as Dataverse live instruction,boundary matrix and owner gates,block Dataverse live interpretation without separate gate,false,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
