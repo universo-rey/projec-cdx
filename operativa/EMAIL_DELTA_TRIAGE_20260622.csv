@@ -1,0 +1,16 @@
+delta_id,source_signal,repo,surface,category,blocking_level,local_fix_possible,requires_external_gate,assigned_order,status,notes
+DELTA-00,email_delta_intake,universo-rey/projec-cdx,control-plane,EXTERNAL_GATE_PREP,HIGH,true,false,ORDER-00,READY_LOCAL,Package intake from email-derived deltas.
+DELTA-01,gate_id_crosswalk,SeshatSgin/seshat-bootstrap-sdu-cn,gates,GATE_ID_DRIFT,BLOCKING,true,false,ORDER-01,READY_LOCAL,SDU-CN gate naming must be reconciled against local canonical gates.
+DELTA-02,boundary_canon_conflict,SeshatSgin/sdu-canon,boundary,BOUNDARY_CANON_CONFLICT,BLOCKING,true,false,ORDER-02,READY_LOCAL,Runtime boundaries must preserve no-external-by-default.
+DELTA-03,runtime_registry_agent,cabina-universal-d,dataverse-runtime,RUNTIME_REGISTRY_DRIFT,HIGH,true,true,ORDER-03,P1_QUEUED,Seventh agent registry requires later scoped reconciliation.
+DELTA-04,power_automate_validator,cabina-universal-d,power-platform,VALIDATOR_MISSING,BLOCKING,true,false,ORDER-04,READY_LOCAL,Ready claims must not pass without validator evidence.
+DELTA-05,local_bridge_auth,cabina-universal-d,local-agent-bridge,PLACEHOLDER_SECRET_RISK,BLOCKING,true,false,ORDER-05,READY_LOCAL,Dev auth placeholders must fail closed.
+DELTA-06,stale_evidence,cabina-universal-d,evidence,STALE_EVIDENCE,HIGH,true,false,ORDER-06,P1_QUEUED,Stale evidence requires a separate evidence refresh lane.
+DELTA-07,bom_parse,universo-rey/projec-cdx,dataverse-evidence,DATAVERSE_EVIDENCE_PARSE_ERROR,HIGH,true,false,ORDER-07,P1_QUEUED,Dataverse evidence parser needs later BOM-safe pass.
+DELTA-08,pr_open_canon_source,SeshatSgin/tcu-agentic-runtime-control,canon,SOURCE_CITATION_DRIFT,HIGH,true,false,ORDER-08,P1_QUEUED,Open PR source references must not become canon by inference.
+DELTA-09,pr130_constitution_drift,cabina-universal-d,canon,BOUNDARY_CANON_CONFLICT,HIGH,true,false,ORDER-09,P1_QUEUED,Constitutional claims require explicit canon reconciliation.
+DELTA-10,secret_exception_reporting,multi,smoke-errors,PLACEHOLDER_SECRET_RISK,BLOCKING,true,false,ORDER-10,READY_LOCAL,Raw exception reporting must be audited without reading secrets.
+DELTA-11,docs_metadata_pipeline,universo-rey/projec-cdx,docs-ci,DOC_NAVIGATION_REFACTOR,MEDIUM,true,false,ORDER-11,P2_QUEUED,Docs refactor and metadata pipeline are follow-up scope.
+DELTA-12,ci_dependabot_labels,universo-rey/projec-cdx,github-ci,DEPENDABOT_LABEL_DRIFT,MEDIUM,true,true,ORDER-11,P2_QUEUED,GitHub label mutation needs owner gate.
+DELTA-13,issue_prep_gate,SeshatSgin/sdu-cn,github-issues,EXTERNAL_GATE_PREP,HIGH,true,true,ORDER-12,P2_QUEUED,Issue creation is external and remains blocked without gate.
+DELTA-14,evidence_path_doc_quality,multi,evidence-docs,SOURCE_CITATION_DRIFT,LOW,true,false,ORDER-13-14,P3_QUEUED,Path cardinality and language quality are non-blocking follow-up.
