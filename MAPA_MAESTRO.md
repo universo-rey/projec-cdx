@@ -1,7 +1,7 @@
 # Mapa Maestro
 
 Punto unico para entrar a las superficies visibles de `PROJEC CDX`.
-Para una lectura rapida por niveles, usar [MAPA_CAPAS.md](MAPA_CAPAS.md).
+Para activar solo el sistema nervioso, usar [MAPA_CAPAS.md](MAPA_CAPAS.md).
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
@@ -10,7 +10,7 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 - [Estado actual](operativa/CURRENT.md): `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`.
 - [Siguiente movimiento](operativa/NEXT.md): publicar `main` solo como repo/local-only preparado.
 - [Validacion Launch Desk](launch-desk/VALIDATION.md): `local-only/prepared`, no end-to-end live.
-- [Pendientes normalizados](operativa/PENDIENTES_HOY_20260617.md): carriles vivos, supersedidos y ruido.
+- [Pendientes normalizados](operativa/PENDIENTES_HOY_20260617.md): carriles vivos, supersedidos y senal no vigente.
 - [Maximo estado real](operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md): fan-in de superficies.
 - [Indice maestro de hitos](hitos/INDICE_MAESTRO.md): fuente unica de paquetes versionados.
 

@@ -192,6 +192,11 @@ def sanitize_prompt_text(text: str) -> tuple[str, int]:
     return sanitized, redactions
 
 
+def sanitize_exception_text(exc: BaseException) -> str:
+    sanitized, _ = sanitize_prompt_text(str(exc).strip())
+    return sanitized or "Error local no detallado."
+
+
 def chunk_text(text: str, size: int = PROMPT_CHUNK_SIZE) -> list[str]:
     return [text[i : i + size] for i in range(0, len(text), size)] or [""]
 
@@ -224,7 +229,7 @@ def command_text(args: list[str], timeout: int = 25) -> tuple[int, str, str]:
         result = subprocess.run(args, capture_output=True, text=True, timeout=timeout)
         return result.returncode, result.stdout.strip(), result.stderr.strip()
     except Exception as exc:
-        return 1, "", str(exc)
+        return 1, "", sanitize_exception_text(exc)
 
 
 def repo_slug_from_remote(remote: str) -> str:
@@ -715,7 +720,7 @@ def read_json_obj(path: Path):
     if not path.exists():
         return None
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        return json.loads(path.read_text(encoding="utf-8-sig"))
     except Exception:
         return None
 
@@ -1564,7 +1569,7 @@ def load_json_file(path: Path) -> dict:
     if not path.exists():
         return {}
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        return json.loads(path.read_text(encoding="utf-8-sig"))
     except Exception:
         return {}
 

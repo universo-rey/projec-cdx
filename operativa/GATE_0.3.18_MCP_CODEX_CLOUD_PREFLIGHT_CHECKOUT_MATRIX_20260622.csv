@@ -1,0 +1,4 @@
+workflow_file,checkout_step,diff_command,risk,required_change,decision
+cabina-universal-d:.github/workflows/mcp-preflight.yml,actions/checkout,git diff base...head,shallow_checkout_breaks_diff,set fetch-depth 0 or fetch needed refs,READY_FOR_REMOTE_REPO_PATCH_GATE
+cabina-universal-d:.github/workflows/codex-cloud-dev-preflight.yml,actions/checkout,git diff origin/main...HEAD,missing_refspec,set refspec/fetch-depth for base ref,READY_FOR_REMOTE_REPO_PATCH_GATE
+cabina-universal-d:.github/workflows/teams-mcp-preflight.yml,actions/checkout,changed-files detection,false_negative_preflight,ensure base branch refs are present,READY_FOR_REMOTE_REPO_PATCH_GATE

@@ -1,0 +1,11 @@
+repo,pr,dependency,from_version,to_version,release_note_risk,runner_requirement,labels_missing,requires_owner_review,requires_ci_green,decision
+universo-rey/projec-cdx,dependabot,pyyaml,unknown,unknown,medium,python,false,true,true,BLOCKED_WITH_GATE_PACKET
+universo-rey/projec-cdx,dependabot,jsonschema,unknown,unknown,medium,python,false,true,true,BLOCKED_WITH_GATE_PACKET
+universo-rey/projec-cdx,dependabot,openai-agents,unknown,unknown,high,python,false,true,true,BLOCKED_WITH_GATE_PACKET
+universo-rey/projec-cdx,dependabot,setuptools,unknown,unknown,medium,python,false,true,true,BLOCKED_WITH_GATE_PACKET
+universo-rey/projec-cdx,dependabot,black,unknown,unknown,low,python,false,true,true,BLOCKED_WITH_GATE_PACKET
+universo-rey/projec-cdx,dependabot,actions/setup-python,unknown,unknown,medium,github-actions,false,true,true,BLOCKED_WITH_GATE_PACKET
+universo-rey/projec-cdx,dependabot,actions/upload-artifact,unknown,unknown,medium,github-actions,false,true,true,BLOCKED_WITH_GATE_PACKET
+universo-rey/projec-cdx,dependabot,actions/cache,unknown,unknown,medium,github-actions,false,true,true,BLOCKED_WITH_GATE_PACKET
+universo-rey/projec-cdx,dependabot,actions/checkout,unknown,unknown,medium,github-actions,false,true,true,BLOCKED_WITH_GATE_PACKET
+universo-rey/projec-cdx,dependabot,peter-evans/create-pull-request,unknown,unknown,high,github-actions,false,true,true,BLOCKED_WITH_GATE_PACKET

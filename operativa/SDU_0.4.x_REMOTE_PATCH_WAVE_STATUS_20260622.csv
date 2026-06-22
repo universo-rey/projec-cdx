@@ -1,0 +1,14 @@
+gate_id,target_version,target_repo,status,decision,external_write_executed,live_surface_executed,owner_required,rollback_required,postcheck_required,commit,next_action
+0.4.0,0.4.x,universo-rey/cabina-universal-d,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,0085af37,REMOTE_PATCH_OWNER_GATE
+0.4.1,0.4.x,universo-rey/cabina-universal-d,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,1b1fbe65,REMOTE_PATCH_OWNER_GATE
+0.4.2,0.4.x,universo-rey/cabina-universal-d,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,e900e299,REMOTE_PATCH_OWNER_GATE
+0.4.3,0.4.x,universo-rey/cabina-universal-d,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,03910ac7,REMOTE_PATCH_OWNER_GATE
+0.4.4,0.4.x,universo-rey/cabina-universal-d,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,a1b3b749,REMOTE_PATCH_OWNER_GATE
+0.4.5,0.4.x,universo-rey/cabina-universal-d,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,2a0c7758,REMOTE_PATCH_OWNER_GATE
+0.4.6,0.4.x,universo-rey/cabina-universal-d,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,d80d1c26,REMOTE_PATCH_OWNER_GATE
+0.4.7,0.4.x,universo-rey/cabina-universal-d,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,4b9776c6,REMOTE_PATCH_OWNER_GATE
+0.4.8,0.4.x,universo-rey/cabina-universal-d,READY_FOR_REMOTE_REGEN_AUTHORIZATION,READY_FOR_REMOTE_REGEN_AUTHORIZATION,false,false,true,true,true,862b6283,REMOTE_REGEN_OWNER_GATE
+0.4.9,0.4.x,SeshatSgin/seshat-bootstrap-sdu-cn,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,b54d349a,REMOTE_PATCH_OWNER_GATE
+0.4.10,0.4.x,SeshatSgin/seshat-bootstrap-sdu-cn,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,76629b0c,REMOTE_PATCH_OWNER_GATE
+0.4.11,0.4.x,SeshatSgin/seshat-bootstrap-sdu-cn,READY_FOR_REMOTE_PATCH_AUTHORIZATION,READY_FOR_REMOTE_PATCH_AUTHORIZATION,false,false,true,true,true,d38e2536,REMOTE_PATCH_OWNER_GATE
+0.4.12,0.4.x,universo-rey/cabina-universal-d,READY_FOR_REMOTE_LOG_COLLECTION_GATE,READY_FOR_REMOTE_LOG_COLLECTION_GATE,false,false,true,false,true,ccd01555,REMOTE_LOG_COLLECTION_OWNER_GATE

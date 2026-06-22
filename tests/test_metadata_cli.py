@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from metadata.cli import main as metadata_main
+from metadata.doc_report import build_doc_report
 from metadata.indexer import build_indexes
 from metadata.validator import validate_repository
 
@@ -173,6 +174,59 @@ external metadata shape
     assert [record.source_path for record in result.records] == ["operativa/MAPA.md"]
 
 
+def test_validate_repository_ignores_local_agent_overlay_metadata(tmp_path: Path) -> None:
+    repo = _seed_repo(tmp_path)
+    _write(
+        repo / "operativa" / "MAPA.md",
+        """---
+artifact_id: operativa/MAPA.md
+categoria: operativa
+tipo: mapa
+estado: live
+version: "1"
+autoridad: {tipo: owner, referencia: "@seshat"}
+origen: GitHub
+ubicacion_repo: operativa/MAPA.md
+etiquetas: [operativa]
+relacionados: []
+descripcion: mapa
+---
+contenido
+""",
+    )
+    _write(
+        repo / ".agent" / "schemas-location.md",
+        """---
+description: local extension schema pointer
+---
+overlay
+""",
+    )
+    _write(
+        repo / ".github" / "agents" / "agileagentcanvas.agent.md",
+        """---
+description: external agent overlay
+tools: [read, edit]
+---
+overlay
+""",
+    )
+    _write(
+        repo / ".github" / "skills" / "agileagentcanvas-help" / "SKILL.md",
+        """---
+name: help
+description: external skill router
+---
+overlay
+""",
+    )
+
+    result = validate_repository(repo, repo / "schema.json")
+
+    assert result.is_valid
+    assert [record.source_path for record in result.records] == ["operativa/MAPA.md"]
+
+
 def test_promote_updates_manifest(tmp_path: Path) -> None:
     repo = _seed_repo(tmp_path)
     _write(
@@ -198,6 +252,65 @@ contenido
     assert exit_code == 0
     manifest = json.loads((repo / "live-manifest.json").read_text(encoding="utf-8"))
     assert "operativa/README.md" in manifest["artifacts"]
+
+
+def test_doc_report_generates_json_and_markdown(tmp_path: Path) -> None:
+    repo = _seed_repo(tmp_path)
+    _write(
+        repo / "docs" / "gobernanza" / "nomenclatura.md",
+        """---
+artifact_id: docs/gobernanza/nomenclatura.md
+categoria: playbooks
+tipo: plan
+estado: en_revision
+version: "1"
+autoridad: {tipo: owner, referencia: CEO}
+origen: GitHub
+ubicacion_repo: docs/gobernanza/nomenclatura.md
+etiquetas: [docs]
+relacionados: []
+descripcion: nomenclatura
+---
+contenido
+""",
+    )
+    json_output = repo / "outputs" / "documental" / "doc-report.json"
+    md_output = repo / "outputs" / "documental" / "doc-report.md"
+
+    build_doc_report(repo, repo / "schema.json", json_output, md_output)
+
+    payload = json.loads(json_output.read_text(encoding="utf-8"))
+    assert payload["schema"] == "projec-cdx-doc-report-v1"
+    assert payload["summary"]["by_categoria"] == {"playbooks": 1}
+    assert "Reporte Documental PROJEC CDX" in md_output.read_text(encoding="utf-8")
+
+
+def test_doc_report_cli_generates_outputs(tmp_path: Path) -> None:
+    repo = _seed_repo(tmp_path)
+    _write(
+        repo / "operativa" / "README.md",
+        """---
+artifact_id: operativa/README.md
+categoria: operativa
+tipo: indice
+estado: live
+version: "1"
+autoridad: {tipo: owner, referencia: CEO}
+origen: GitHub
+ubicacion_repo: operativa/README.md
+etiquetas: [operativa]
+relacionados: []
+descripcion: indice
+---
+contenido
+""",
+    )
+
+    exit_code = metadata_main(["--root", str(repo), "doc-report"])
+
+    assert exit_code == 0
+    assert (repo / "outputs" / "documental" / "doc-report.json").exists()
+    assert (repo / "outputs" / "documental" / "doc-report.md").exists()
 
 
 def test_validate_repository_enforces_dataset_artifact_id_convention(tmp_path: Path) -> None:

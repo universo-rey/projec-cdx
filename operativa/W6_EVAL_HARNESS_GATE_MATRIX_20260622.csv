@@ -1,0 +1,3 @@
+"harness_id","scope","owner","allowed","blocked","gate_required","validator","evidence","status"
+"tcu-agent-eval-harness","synthetic/local evals","ramanujan.sequence_controller","fixtures synthetic,dry-run traces","OpenAI API real by default,production runtime,regulated data","eval_owner_gate","pytest or local harness","W6 matrix","ON_DEMAND_GATED"
+"agents-sdk-evals","Agents SDK evals when app target exists","tech.reference_librarian","local harness with synthetic cases","platform eval upload without manifest/gate","openai_eval_gate","local eval result","agents-sdk skill","BLOCKED_NEEDS_TARGET"

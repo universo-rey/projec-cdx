@@ -1,0 +1,5 @@
+"lane_id","skill","scope","owner","gate_required","live_allowed","secret_allowed","cost_allowed","manifest_required","status"
+"OPENAI_DEVELOPERS_LANE","openai-docs","official docs and model/API guidance","tech.reference_librarian","docs_read_gate","false_without_gate","false","false","false","ACTIVE_CANON"
+"OPENAI_DEVELOPERS_LANE","openai-developers:agents-sdk","Agents SDK app/eval prototype when target exists","tech.reference_librarian","openai_live_gate","false_without_gate","false_without_key_gate","false_without_owner","true_for_any_file_or_vector_store","ON_DEMAND_GATED"
+"OPENAI_SECURITY_LANE","openai-platform-api-key","credential gate","anubis.frontier_guardian","secret_safe_owner_gate","false","only secure helper never print","false","true_if_key_written","ON_DEMAND_GATED"
+"OPENAI_SECURITY_LANE","openai-api-troubleshooting","classify concrete API errors","anubis.frontier_guardian","api_error_owner_gate","false_without_error_target","false","false","false","ON_DEMAND_GATED"

@@ -1,0 +1,29 @@
+{
+  "gate": "0.3.0",
+  "generated_at": "2026-06-22T10:33:08.8154477-03:00",
+  "secret_printed": false,
+  "token_included": false,
+  "labels": [
+    {
+      "repo": "universo-rey/projec-cdx",
+      "label": "dependencies",
+      "existed": false,
+      "color": null,
+      "description": null
+    },
+    {
+      "repo": "universo-rey/projec-cdx",
+      "label": "python",
+      "existed": false,
+      "color": null,
+      "description": null
+    },
+    {
+      "repo": "universo-rey/projec-cdx",
+      "label": "github-actions",
+      "existed": false,
+      "color": null,
+      "description": null
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+surface_or_path,classification,execution_allowed,owner_gate_required,evidence,decision
+operativa/orders_0.4.x/ORDER_0.4.1_BRIDGE_LOOPBACK_MCP_GATING.md,DOCUMENTED_REMOTE_PATCH_PACKET,false,true,"MCP gating documentado como patch remoto futuro",CLOSED_AS_GATE_PACKET
+operativa/GATE_0.3.15_BRIDGE_LOOPBACK_MCP_GATING_MATRIX_20260622.csv,DOCUMENTED_GATE_MATRIX,false,true,"Matriz existente de loopback/MCP",CLOSED_AS_GATE_MATRIX
+operativa/GATE_0.3.18_MCP_CODEX_CLOUD_PREFLIGHT_CHECKOUT_MATRIX_20260622.csv,DOCUMENTED_PREFLIGHT_PACKET,false,true,"Preflight MCP/Codex Cloud preparado sin ejecucion",CLOSED_AS_GATE_MATRIX
+operativa/orders_0.4.x/ORDER_0.4.6_MCP_CODEX_CHECKOUT_DEPTH.md,DOCUMENTED_REMOTE_PATCH_PACKET,false,true,"Checkout depth para MCP/Codex Cloud",CLOSED_AS_GATE_PACKET
+recipes/microsoft-live-read-preliminar.md,LIVE_READ_RECIPE_REFERENCE,false,true,"Receta de lectura live requiere gate exacto",DEFERRED_WITH_GATE
+outputs/live_repo_review_20260615,DOCUMENTAL_EVIDENCE,false,false,"Evidencia historica versionada; no implica ejecucion",NO_ACTION_REQUIRED
+localhost_or_pipe_mentions,EPHEMERAL_RUNTIME_REFERENCE,false,true,"Referencias a localhost/pipe tratadas como runtime efimero o documentacion",NO_ACTION_UNLESS_PERSISTENT_CONFIG
+mcp_config_persistent,NOT_OBSERVED_AS_EXECUTED,false,true,"No se ejecuto MCP durante auditoria",STOP_IF_AUTOEXEC_CONFIG_FOUND

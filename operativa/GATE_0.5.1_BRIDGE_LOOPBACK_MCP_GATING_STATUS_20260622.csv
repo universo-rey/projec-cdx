@@ -1,0 +1,2 @@
+gate_id,target_repo,target_branch,target_commit,status,pr_opened,push_executed,live_surface_executed,workflow_dispatch_executed,secret_read,validation,rollback,next_action
+0.5.1,universo-rey/cabina-universal-d,codex/sdu-0.5.1-bridge-loopback-mcp-gating,8fe58a7,SDU_0.5.1_CONTROLLED_REMOTE_PATCH_REALIZED_NO_LIVE,false,false,false,false,false,PASS,revert target commit 8fe58a7,OWNER_DECISION_FOR_PR_OR_MANUAL_PACKET

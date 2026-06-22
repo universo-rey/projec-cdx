@@ -14,11 +14,11 @@ Movimiento unico:
 - Hoja: `Superficies Locales`.
 - Hoja: `Ramas Organizadas`.
 
-## Regla Anti-Ruido
-- No rehidratar Dataverse otra vez.
-- No reempaquetar paquetes ya existentes.
-- No releer SGIN por inercia.
-- No mover `D:\`, `Documents\CodexLocal`, `Documents\Codex` ni `Documents\CodexArchives`.
+## Regla Senal Viva
+- Dataverse se consume desde la metadata vigente ya versionada.
+- Los paquetes existentes se reutilizan antes de crear otros.
+- SGIN se lee cuando aporta evidencia nueva al delta activo.
+- `D:\`, `Documents\CodexLocal`, `Documents\Codex` y `Documents\CodexArchives` quedan como superficies con owner-gate.
 - Si hace falta historia, abrir `operativa/CRONOLOGIA_MAESTRA_20260617.md`.
 
 ## Proximo Movimiento

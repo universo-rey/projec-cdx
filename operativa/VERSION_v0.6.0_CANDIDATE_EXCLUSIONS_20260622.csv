@@ -1,0 +1,13 @@
+exclusion_id,surface,excluded_action,reason,status,next_gate
+E01,github,push,Remote publication not authorized in this delta,EXCLUDED,CABINA_REMOTE_PUBLICATION_DECISION
+E02,github,pr,Remote PR not authorized in this delta,EXCLUDED,CABINA_REMOTE_PUBLICATION_DECISION
+E03,github,tag,Release tag not authorized in candidate preparation,EXCLUDED,TAG_v0.6.0-rc1_LOCAL_ONLY
+E04,mcp,execution,MCP execution is outside local candidate packaging,EXCLUDED,OWNER_GATED_MCP_EXECUTION
+E05,dataverse,write,No Dataverse live write authorized,EXCLUDED,OWNER_GATED_DATAVERSE_WRITE
+E06,microsoft,write,No Microsoft or SharePoint write authorized,EXCLUDED,OWNER_GATED_MICROSOFT_WRITE
+E07,power_platform,mutation,No Power Platform mutation authorized,EXCLUDED,OWNER_GATED_POWER_PLATFORM_MUTATION
+E08,openai,live_api,No OpenAI live operation authorized,EXCLUDED,OWNER_GATED_OPENAI_LIVE
+E09,codex_cloud,execution,No Codex Cloud execution authorized,EXCLUDED,OWNER_GATED_CODEX_CLOUD
+E10,codex_local,db_cache_mutation,No .codex DB/cache mutation in this delta,EXCLUDED,CABINA_LOCAL_MAINTENANCE_GATE
+E11,filesystem,destructive_cleanup,No delete move reset clean or destructive cleanup,EXCLUDED,OWNER_GATED_LOCAL_CLEANUP
+E12,child_repos,dirty_closeout,Child repo dirty surfaces are not closed by this candidate,DEFERRED,W1_CHILD_REPO_CLASSIFICATION

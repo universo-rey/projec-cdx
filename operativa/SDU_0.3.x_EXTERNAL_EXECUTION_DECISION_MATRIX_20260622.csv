@@ -1,0 +1,15 @@
+execution_id,source_gate,target_version,surface,repo_or_system,execution_type,risk_level,requires_owner,requires_rollback,requires_postcheck,requires_secret,requires_live_surface,recommended_order,current_status,decision
+0.3.0,0.2.3,0.3.0,github,universo-rey/projec-cdx,github_label_write,low,true,true,true,false,true,1,EXECUTED_SUCCESS,GITHUB_LABELS_ONLY_SUCCESS
+0.3.1,0.2.1,0.3.1,github,universo-rey/cabina-universal-d,remote_repo_evidence_sync,medium,true,true,true,false,true,11,READY_FOR_OWNER_AUTHORIZATION,REQUIRES_REMOTE_REPO_GATE
+0.3.2,0.2.2,0.3.2,github,universo-rey/cabina-universal-d,remote_repo_canon_sync,high,true,true,true,false,true,12,READY_FOR_OWNER_AUTHORIZATION,REQUIRES_CANON_OWNER
+0.3.3,0.2.4,0.3.3,github,SeshatSgin/seshat-bootstrap-sdu-cn,remote_repo_issue_prep_alignment,medium,true,true,true,false,true,13,READY_FOR_OWNER_AUTHORIZATION,REQUIRES_REMOTE_REPO_GATE
+0.3.4,0.2.5,0.3.4,github,universo-rey/cabina-universal-d,dataverse_dev_precheck_code_change,high,true,true,true,false,true,3,READY_FOR_CONTROLLED_EXTERNAL_EXECUTION,READY_FOR_REMOTE_REPO_PATCH_GATE
+0.3.5,0.2.6,0.3.5,github,universo-rey/cabina-universal-d,power_automate_validator_code_change,high,true,true,true,false,true,4,READY_FOR_CONTROLLED_EXTERNAL_EXECUTION,READY_FOR_REMOTE_REPO_PATCH_GATE
+0.3.6,0.2.8,0.3.6,github,SeshatSgin/seshat-bootstrap-sdu-cn,sdu_cn_gate_id_canonicalization,medium,true,true,true,false,true,8,READY_FOR_OWNER_AUTHORIZATION,REQUIRES_REMOTE_REPO_GATE
+0.3.7,0.2.9,0.3.7,github,SeshatSgin/seshat-bootstrap-sdu-cn,sdu_cn_prompt_tool_enum_alignment,medium,true,true,true,false,true,9,READY_FOR_OWNER_AUTHORIZATION,REQUIRES_REMOTE_REPO_GATE
+0.3.8,0.2.10,0.3.8,github,SeshatSgin/seshat-bootstrap-sdu-cn,sdu_cn_validator_ci_registration,medium,true,true,true,false,true,10,READY_FOR_OWNER_AUTHORIZATION,REQUIRES_REMOTE_REPO_GATE
+0.3.9,0.2.11,0.3.9,github,universo-rey/cabina-universal-d,agent_memory_boundary_hardening,high,true,true,true,false,true,6,READY_FOR_OWNER_AUTHORIZATION,REQUIRES_REMOTE_REPO_GATE
+0.3.10,0.2.12,0.3.10,github,universo-rey/cabina-universal-d,bridge_auth_validator_hardening,high,true,true,true,false,true,5,READY_FOR_CONTROLLED_EXTERNAL_EXECUTION,READY_FOR_REMOTE_REPO_PATCH_GATE
+0.3.11,0.2.13,0.3.11,github,universo-rey/cabina-universal-d,agile_canvas_postcheck_enforcement,medium,true,true,true,false,true,7,READY_FOR_OWNER_AUTHORIZATION,REQUIRES_REMOTE_REPO_GATE
+0.3.12,0.2.14,0.3.12,github,universo-rey/projec-cdx,dependabot_pr_review,medium,true,false,true,false,true,1,CLOSED_LOCAL,DEPENDABOT_PR_REVIEW_LOCAL_CLOSED
+0.3.13,0.2.7,0.3.13,github,universo-rey/cabina-universal-d,cabina_runtime_ci_failure_triage,medium,true,false,true,false,true,2,CLOSED_LOCAL,CABINA_RUNTIME_CI_TRIAGE_LOCAL_CLOSED_WITH_REMOTE_LOG_PACKET

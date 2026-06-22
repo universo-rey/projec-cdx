@@ -11,84 +11,84 @@ Orden:
 
 | clase | fecha | superficie | artefacto | proposito |
 | --- | --- | --- | --- | --- |
-| acta | 2026-06-15 | `operativa` | [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md) | Diagnostico local de limpieza PC con gate pendiente. |
-| acta | 2026-06-15 | `operativa` | [ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md) | Segunda pasada de Dataverse con frontera y cierre. |
-| acta | 2026-06-15 | `operativa` | [ACTA_CORTE_EJECUTORA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_CORTE_EJECUTORA_20260615.md) | Mesa de corte ejecutora y continuidad local. |
-| acta | 2026-06-15 | `dataverse` | [ACTA_CORTE_EJECUTORA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/ACTA_CORTE_EJECUTORA_20260615.md) | Acta del canal Dataverse para la corte ejecutora. |
-| acta | 2026-06-15 | `operativa` | [ACTA_COBERTURA_ATOMICA_ENERGETICA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_COBERTURA_ATOMICA_ENERGETICA_20260615.md) | Cobertura atomica energetica como contrato visible. |
-| acta | 2026-06-15 | `operativa` | [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md) | Cierre de repos Git en `main`. |
-| acta | 2026-06-15 | `operativa` | [ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md) | Cierre de la cadena GitHub + Auditar. |
-| acta | 2026-06-15 | `operativa` | [ACTA_AUDITAR_CLASIFICACION_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_AUDITAR_CLASIFICACION_20260615.md) | Clasificacion fina de `Auditar` y sus hijos. |
-| acta | 2026-06-15 | `operativa` | [ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md) | Archivo de ramas historicas. |
-| acta | 2026-06-15 | `operativa` | [ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md) | Reclasificacion de historicos a verde gobernado. |
-| acta | 2026-06-15 | `operativa` | [ACTA_REPOS_SURFACE_GITHUB_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md) | Versionado de `.codex` y `.agents` como repos. |
-| acta | 2026-06-15 | `operativa` | [ACTA_REMANENTE_SUPERFICIES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_REMANENTE_SUPERFICIES_20260615.md) | Remanentes de superficies tras la absorcion inicial. |
+| acta | 2026-06-15 | `operativa` | [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](../operativa/ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md) | Diagnostico local de limpieza PC con gate pendiente. |
+| acta | 2026-06-15 | `operativa` | [ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md](../operativa/ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md) | Segunda pasada de Dataverse con frontera y cierre. |
+| acta | 2026-06-15 | `operativa` | [ACTA_CORTE_EJECUTORA_20260615.md](../operativa/ACTA_CORTE_EJECUTORA_20260615.md) | Mesa de corte ejecutora y continuidad local. |
+| acta | 2026-06-15 | `dataverse` | [ACTA_CORTE_EJECUTORA_20260615.md](../dataverse/ACTA_CORTE_EJECUTORA_20260615.md) | Acta del canal Dataverse para la corte ejecutora. |
+| acta | 2026-06-15 | `operativa` | [ACTA_COBERTURA_ATOMICA_ENERGETICA_20260615.md](../operativa/ACTA_COBERTURA_ATOMICA_ENERGETICA_20260615.md) | Cobertura atomica energetica como contrato visible. |
+| acta | 2026-06-15 | `operativa` | [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](../operativa/ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md) | Cierre de repos Git en `main`. |
+| acta | 2026-06-15 | `operativa` | [ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md](../operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md) | Cierre de la cadena GitHub + Auditar. |
+| acta | 2026-06-15 | `operativa` | [ACTA_AUDITAR_CLASIFICACION_20260615.md](../operativa/ACTA_AUDITAR_CLASIFICACION_20260615.md) | Clasificacion fina de `Auditar` y sus hijos. |
+| acta | 2026-06-15 | `operativa` | [ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md](../operativa/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md) | Archivo de ramas historicas. |
+| acta | 2026-06-15 | `operativa` | [ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md](../operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md) | Reclasificacion de historicos a verde gobernado. |
+| acta | 2026-06-15 | `operativa` | [ACTA_REPOS_SURFACE_GITHUB_20260615.md](../operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md) | Versionado de `.codex` y `.agents` como repos. |
+| acta | 2026-06-15 | `operativa` | [ACTA_REMANENTE_SUPERFICIES_20260615.md](../operativa/ACTA_REMANENTE_SUPERFICIES_20260615.md) | Remanentes de superficies tras la absorcion inicial. |
 
 ## Handoff
 
 | clase | fecha | superficie | artefacto | proposito |
 | --- | --- | --- | --- | --- |
-| handoff | 2026-06-14 | `hitos/20260614-hilo-anterior-v1` | [HANDOFF_THREAD_HEAVY_20260614.md](C:/Users/enzo1/PROJEC%20CDX/hitos/20260614-hilo-anterior-v1/HANDOFF_THREAD_HEAVY_20260614.md) | Continuidad del hilo pesado previo. |
+| handoff | 2026-06-14 | `hitos/20260614-hilo-anterior-v1` | [HANDOFF_THREAD_HEAVY_20260614.md](../hitos/20260614-hilo-anterior-v1/HANDOFF_THREAD_HEAVY_20260614.md) | Continuidad del hilo pesado previo. |
 
 ## Papeles De Trabajo
 
 | clase | fecha | superficie | artefacto | proposito |
 | --- | --- | --- | --- | --- |
-| workpaper | 2026-06-16 | `operativa` | [WAVE_ATOMICA_REPOS_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/WAVE_ATOMICA_REPOS_20260616.md) | Packet de la wave atomica de repositorios. |
-| workpaper | 2026-06-15 | `operativa` | [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md) | Consolidacion operativa por waves cortas. |
-| workpaper | 2026-06-15 | `operativa` | [TRACE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TRACE.md) | Traza operativa fuente-proceso-salida-hito-cierre. |
-| workpaper | 2026-06-16 | `inventarios` | [AGENTES_SKILLS_RECETAS_20260616.md](C:/Users/enzo1/PROJEC%20CDX/inventarios/AGENTES_SKILLS_RECETAS_20260616.md) | Mapa corto de conexiones entre agentes, skills y recetas. |
-| workpaper | 2026-06-15 | `inventarios` | [HILOS_A_CANON_20260615.md](C:/Users/enzo1/PROJEC%20CDX/inventarios/HILOS_A_CANON_20260615.md) | Cruce de hilos con canon reusable. |
-| workpaper | 2026-06-15 | `inventarios` | [PATRONES_A_SKILLS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/inventarios/PATRONES_A_SKILLS_20260615.md) | Cruce de patrones con skills existentes. |
+| workpaper | 2026-06-16 | `operativa` | [WAVE_ATOMICA_REPOS_20260616.md](../operativa/WAVE_ATOMICA_REPOS_20260616.md) | Packet de la wave atomica de repositorios. |
+| workpaper | 2026-06-15 | `operativa` | [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](../operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md) | Consolidacion operativa por waves cortas. |
+| workpaper | 2026-06-15 | `operativa` | [TRACE.md](../operativa/TRACE.md) | Traza operativa fuente-proceso-salida-hito-cierre. |
+| workpaper | 2026-06-16 | `inventarios` | [AGENTES_SKILLS_RECETAS_20260616.md](../inventarios/AGENTES_SKILLS_RECETAS_20260616.md) | Mapa corto de conexiones entre agentes, skills y recetas. |
+| workpaper | 2026-06-15 | `inventarios` | [HILOS_A_CANON_20260615.md](../inventarios/HILOS_A_CANON_20260615.md) | Cruce de hilos con canon reusable. |
+| workpaper | 2026-06-15 | `inventarios` | [PATRONES_A_SKILLS_20260615.md](../inventarios/PATRONES_A_SKILLS_20260615.md) | Cruce de patrones con skills existentes. |
 
 ## Readbacks Sueltos
 
 | clase | fecha | superficie | artefacto | proposito |
 | --- | --- | --- | --- | --- |
-| readback | 2026-06-15 | `operativa` | [READBACK_CIERRE_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_CIERRE_20260615.md) | Readback de cierre del workbench. |
-| readback | 2026-06-15 | `atomic` | [CODEX_ATOMIC_READBACK.md](C:/Users/enzo1/PROJEC%20CDX/atomic/CODEX_ATOMIC_READBACK.md) | Readback atomico de superficie de codex. |
-| readback | 2026-06-15 | `dataverse` | [READBACK_EXCEL_BLOCKER_FRONTIER.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md) | Readback de la frontera blocker de Excel/Dataverse. |
-| readback | 2026-06-15 | `outputs/live_repo_review_20260615` | [READBACK.md](C:/Users/enzo1/PROJEC%20CDX/outputs/live_repo_review_20260615/READBACK.md) | Readback del review vivo de repos. |
+| readback | 2026-06-15 | `operativa` | [READBACK_CIERRE_20260615.md](../operativa/READBACK_CIERRE_20260615.md) | Readback de cierre del workbench. |
+| readback | 2026-06-15 | `atomic` | [CODEX_ATOMIC_READBACK.md](../atomic/CODEX_ATOMIC_READBACK.md) | Readback atomico de superficie de codex. |
+| readback | 2026-06-15 | `dataverse` | [READBACK_EXCEL_BLOCKER_FRONTIER.md](../dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md) | Readback de la frontera blocker de Excel/Dataverse. |
+| readback | 2026-06-15 | `outputs/live_repo_review_20260615` | [READBACK.md](../outputs/live_repo_review_20260615/READBACK.md) | Readback del review vivo de repos. |
 
 ## Paquetes Versionados
 
 | clase | fecha | superficie | paquete | proposito |
 | --- | --- | --- | --- | --- |
-| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-documentos-conocimiento-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-documentos-conocimiento-v1/README.md) | Wave de documentos y conocimiento atomico. |
-| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-repos-lane-b-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-repos-lane-b-v1/README.md) | Lane B de la wave de repos. |
-| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-repos-lane-c-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-repos-lane-c-v1/README.md) | Lane C de la wave de repos. |
-| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-repos-lane-c-organizacion-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-repos-lane-c-organizacion-v1/README.md) | Microatom `organizacion`. |
-| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-repos-lane-c-cdf-soluciones-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-repos-lane-c-cdf-soluciones-v1/README.md) | Microatom `cdf-soluciones`. |
-| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-repos-lane-c-jara-consultores-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-wave-atomica-repos-lane-c-jara-consultores-v1/README.md) | Microatom `jara-consultores`. |
-| package | 2026-06-16 | `hitos` | [20260616-limpieza-pc-local-canon-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-limpieza-pc-local-canon-v1/README.md) | Canon de limpieza PC local. |
-| package | 2026-06-16 | `hitos` | [20260616-normalizacion-perfil-windows-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-normalizacion-perfil-windows-v1/README.md) | Normalizacion del perfil Windows. |
-| package | 2026-06-16 | `hitos` | [20260616-perfil-windows-canon-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-perfil-windows-canon-v1/README.md) | Bundle canon del perfil Windows. |
-| package | 2026-06-15 | `hitos` | [20260615-wave-revision-total-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-wave-revision-total-v1/README.md) | Revision total de la wave. |
-| package | 2026-06-15 | `hitos` | [20260615-repos-surface-github-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-repos-surface-github-v1/README.md) | Acta de repos surface GitHub. |
-| package | 2026-06-15 | `hitos` | [20260615-semaforo-verde-historicos-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-semaforo-verde-historicos-v1/README.md) | Reclasificacion de historicos. |
-| package | 2026-06-15 | `hitos` | [20260615-projec-cdx-dataverse-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-projec-cdx-dataverse-v1/README.md) | Segunda pasada de Dataverse versionada. |
-| package | 2026-06-15 | `hitos` | [20260615-politica-ramas-versionado-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-politica-ramas-versionado-v1/README.md) | Politica de ramas y versionado. |
-| package | 2026-06-15 | `hitos` | [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md) | Ordenes atomicas por PR. |
-| package | 2026-06-15 | `hitos` | [20260615-patrones-procesos-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-patrones-procesos-v1/README.md) | Levantamiento de patrones y procesos. |
-| package | 2026-06-15 | `hitos` | [20260615-sincronizacion-tiempo-real-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-sincronizacion-tiempo-real-v1/README.md) | Sincronizacion tiempo real. |
-| package | 2026-06-15 | `hitos` | [20260615-hilo-origen-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-hilo-origen-v1/README.md) | Hilo de origen consolidado. |
-| package | 2026-06-15 | `hitos` | [20260615-github-repos-chain-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-github-repos-chain-v1/README.md) | Cadena de repos GitHub. |
-| package | 2026-06-15 | `hitos` | [20260615-github-repos-canonical-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-github-repos-canonical-v1/README.md) | Canon de repos GitHub. |
-| package | 2026-06-15 | `hitos` | [20260615-dataverse-conexiones-drift-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-dataverse-conexiones-drift-v1/README.md) | Conexiones y drift Dataverse. |
-| package | 2026-06-15 | `hitos` | [20260615-corte-ejecutora-vs-sdu-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-corte-ejecutora-vs-sdu-v1/README.md) | Diferencia corte ejecutora y SDU. |
-| package | 2026-06-15 | `hitos` | [20260615-codexlocal-base-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-codexlocal-base-v1/README.md) | Base local de CodexLocal. |
-| package | 2026-06-15 | `hitos` | [20260615-codex-cloud-scaffold-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-codex-cloud-scaffold-v1/README.md) | Scaffold de Codex Cloud. |
-| package | 2026-06-15 | `hitos` | [20260615-cobertura-atomica-energetica-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cobertura-atomica-energetica-v1/README.md) | Cobertura atomica energetica. |
-| package | 2026-06-15 | `hitos` | [20260615-cierre-workbench-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cierre-workbench-v1/README.md) | Cierre del workbench local. |
-| package | 2026-06-15 | `hitos` | [20260615-cierre-cadena-github-auditar-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cierre-cadena-github-auditar-v1/README.md) | Cierre de la cadena GitHub + Auditar. |
-| package | 2026-06-15 | `hitos` | [20260615-archivo-ramas-historicas-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-archivo-ramas-historicas-v1/README.md) | Archivo de ramas historicas. |
-| package | 2026-06-15 | `hitos` | [20260615-auditar-surface-chain-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-auditar-surface-chain-v1/README.md) | Clasificacion de hijos de `Auditar`. |
-| package | 2026-06-15 | `hitos` | [20260615-agentes-atomicos-algoritmicos-en-waves-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-agentes-atomicos-algoritmicos-en-waves-v1/README.md) | Wave de agentes atomicos en lanes. |
-| package | 2026-06-14 | `hitos` | [20260614-hilo-anterior-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260614-hilo-anterior-v1/README.md) | Hilo anterior versionado. |
-| package | 2026-06-14 | `hitos` | [20260614-hitos-otros-repos-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260614-hitos-otros-repos-v1/README.md) | Hitos de otros repos. |
-| package | 2026-06-15 | `hitos/_archivo` | [20260615-codex-cloud-scaffold-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/20260615-codex-cloud-scaffold-v1/README.md) | Version archivada del scaffold. |
-| package | 2026-06-15 | `hitos/_archivo` | [20260615-codexlocal-base-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/20260615-codexlocal-base-v1/README.md) | Version archivada de CodexLocal base. |
-| package | 2026-06-15 | `hitos/_archivo` | [20260615-repos-surface-github-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/_archivo/20260615-repos-surface-github-v1/README.md) | Version archivada de repos surface GitHub. |
+| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-documentos-conocimiento-v1](../hitos/20260616-wave-atomica-documentos-conocimiento-v1/README.md) | Wave de documentos y conocimiento atomico. |
+| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-repos-lane-b-v1](../hitos/20260616-wave-atomica-repos-lane-b-v1/README.md) | Lane B de la wave de repos. |
+| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-repos-lane-c-v1](../hitos/20260616-wave-atomica-repos-lane-c-v1/README.md) | Lane C de la wave de repos. |
+| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-repos-lane-c-organizacion-v1](../hitos/20260616-wave-atomica-repos-lane-c-organizacion-v1/README.md) | Microatom `organizacion`. |
+| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-repos-lane-c-cdf-soluciones-v1](../hitos/20260616-wave-atomica-repos-lane-c-cdf-soluciones-v1/README.md) | Microatom `cdf-soluciones`. |
+| package | 2026-06-16 | `hitos` | [20260616-wave-atomica-repos-lane-c-jara-consultores-v1](../hitos/20260616-wave-atomica-repos-lane-c-jara-consultores-v1/README.md) | Microatom `jara-consultores`. |
+| package | 2026-06-16 | `hitos` | [20260616-limpieza-pc-local-canon-v1](../hitos/20260616-limpieza-pc-local-canon-v1/README.md) | Canon de limpieza PC local. |
+| package | 2026-06-16 | `hitos` | [20260616-normalizacion-perfil-windows-v1](../hitos/20260616-normalizacion-perfil-windows-v1/README.md) | Normalizacion del perfil Windows. |
+| package | 2026-06-16 | `hitos` | [20260616-perfil-windows-canon-v1](../hitos/20260616-perfil-windows-canon-v1/README.md) | Bundle canon del perfil Windows. |
+| package | 2026-06-15 | `hitos` | [20260615-wave-revision-total-v1](../hitos/20260615-wave-revision-total-v1/README.md) | Revision total de la wave. |
+| package | 2026-06-15 | `hitos` | [20260615-repos-surface-github-v1](../hitos/20260615-repos-surface-github-v1/README.md) | Acta de repos surface GitHub. |
+| package | 2026-06-15 | `hitos` | [20260615-semaforo-verde-historicos-v1](../hitos/20260615-semaforo-verde-historicos-v1/README.md) | Reclasificacion de historicos. |
+| package | 2026-06-15 | `hitos` | [20260615-projec-cdx-dataverse-v1](../hitos/20260615-projec-cdx-dataverse-v1/README.md) | Segunda pasada de Dataverse versionada. |
+| package | 2026-06-15 | `hitos` | [20260615-politica-ramas-versionado-v1](../hitos/20260615-politica-ramas-versionado-v1/README.md) | Politica de ramas y versionado. |
+| package | 2026-06-15 | `hitos` | [20260615-pr-cierre-atomico-v1](../hitos/20260615-pr-cierre-atomico-v1/README.md) | Ordenes atomicas por PR. |
+| package | 2026-06-15 | `hitos` | [20260615-patrones-procesos-v1](../hitos/20260615-patrones-procesos-v1/README.md) | Levantamiento de patrones y procesos. |
+| package | 2026-06-15 | `hitos` | [20260615-sincronizacion-tiempo-real-v1](../hitos/20260615-sincronizacion-tiempo-real-v1/README.md) | Sincronizacion tiempo real. |
+| package | 2026-06-15 | `hitos` | [20260615-hilo-origen-v1](../hitos/20260615-hilo-origen-v1/README.md) | Hilo de origen consolidado. |
+| package | 2026-06-15 | `hitos` | [20260615-github-repos-chain-v1](../hitos/20260615-github-repos-chain-v1/README.md) | Cadena de repos GitHub. |
+| package | 2026-06-15 | `hitos` | [20260615-github-repos-canonical-v1](../hitos/20260615-github-repos-canonical-v1/README.md) | Canon de repos GitHub. |
+| package | 2026-06-15 | `hitos` | [20260615-dataverse-conexiones-drift-v1](../hitos/20260615-dataverse-conexiones-drift-v1/README.md) | Conexiones y drift Dataverse. |
+| package | 2026-06-15 | `hitos` | [20260615-corte-ejecutora-vs-sdu-v1](../hitos/20260615-corte-ejecutora-vs-sdu-v1/README.md) | Diferencia corte ejecutora y SDU. |
+| package | 2026-06-15 | `hitos` | [20260615-codexlocal-base-v1](../hitos/20260615-codexlocal-base-v1/README.md) | Base local de CodexLocal. |
+| package | 2026-06-15 | `hitos` | [20260615-codex-cloud-scaffold-v1](../hitos/20260615-codex-cloud-scaffold-v1/README.md) | Scaffold de Codex Cloud. |
+| package | 2026-06-15 | `hitos` | [20260615-cobertura-atomica-energetica-v1](../hitos/20260615-cobertura-atomica-energetica-v1/README.md) | Cobertura atomica energetica. |
+| package | 2026-06-15 | `hitos` | [20260615-cierre-workbench-v1](../hitos/20260615-cierre-workbench-v1/README.md) | Cierre del workbench local. |
+| package | 2026-06-15 | `hitos` | [20260615-cierre-cadena-github-auditar-v1](../hitos/20260615-cierre-cadena-github-auditar-v1/README.md) | Cierre de la cadena GitHub + Auditar. |
+| package | 2026-06-15 | `hitos` | [20260615-archivo-ramas-historicas-v1](../hitos/20260615-archivo-ramas-historicas-v1/README.md) | Archivo de ramas historicas. |
+| package | 2026-06-15 | `hitos` | [20260615-auditar-surface-chain-v1](../hitos/20260615-auditar-surface-chain-v1/README.md) | Clasificacion de hijos de `Auditar`. |
+| package | 2026-06-15 | `hitos` | [20260615-agentes-atomicos-algoritmicos-en-waves-v1](../hitos/20260615-agentes-atomicos-algoritmicos-en-waves-v1/README.md) | Wave de agentes atomicos en lanes. |
+| package | 2026-06-14 | `hitos` | [20260614-hilo-anterior-v1](../hitos/20260614-hilo-anterior-v1/README.md) | Hilo anterior versionado. |
+| package | 2026-06-14 | `hitos` | [20260614-hitos-otros-repos-v1](../hitos/20260614-hitos-otros-repos-v1/README.md) | Hitos de otros repos. |
+| package | 2026-06-15 | `hitos/_archivo` | [20260615-codex-cloud-scaffold-v1](../hitos/_archivo/20260615-codex-cloud-scaffold-v1/README.md) | Version archivada del scaffold. |
+| package | 2026-06-15 | `hitos/_archivo` | [20260615-codexlocal-base-v1](../hitos/_archivo/20260615-codexlocal-base-v1/README.md) | Version archivada de CodexLocal base. |
+| package | 2026-06-15 | `hitos/_archivo` | [20260615-repos-surface-github-v1](../hitos/_archivo/20260615-repos-surface-github-v1/README.md) | Version archivada de repos surface GitHub. |
 
 ## Nota
 

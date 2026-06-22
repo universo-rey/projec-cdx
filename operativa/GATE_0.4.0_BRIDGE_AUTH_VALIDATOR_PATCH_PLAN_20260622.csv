@@ -1,0 +1,4 @@
+gate_id,target_repo,target_file,route_or_symbol,current_detection,false_positive_risk,required_patch,negative_test,rollback_required,postcheck_required,decision
+0.4.0,universo-rey/cabina-universal-d,local-agent-bridge/src/localActions.mjs,/v1/shell/command,global symbol count,true,verify assertDevAuth(req) call inside this route block,remove guard from route and validator must fail,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
+0.4.0,universo-rey/cabina-universal-d,local-agent-bridge/src/localActions.mjs,/v1/sdu/route,global symbol count,true,verify assertDevAuth(req) call inside this route block,remove guard from route and validator must fail,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
+0.4.0,universo-rey/cabina-universal-d,local-agent-bridge/src/localActions.mjs,function assertDevAuth(req),definition counted as coverage,true,exclude function definition from route coverage count,definition alone must never pass,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION

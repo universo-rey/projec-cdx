@@ -1,0 +1,6 @@
+source_path,artifact_type,exists_in_projec_cdx,changed_files_available,decision,status,notes
+.agents/codex/evals/results/*change_aware*.json,expected_artifact,false,false,no_local_artifact_to_refresh,NO_ACTION_REQUIRED,No .agents/codex change-aware result exists in PROJEC CDX.
+.agents/codex/matrices/*,expected_artifact,false,false,no_local_artifact_to_refresh,NO_ACTION_REQUIRED,No local .agents/codex matrices folder exists in PROJEC CDX.
+.agents/codex/readbacks/*,expected_artifact,false,false,no_local_artifact_to_refresh,NO_ACTION_REQUIRED,No local .agents/codex readbacks folder exists in PROJEC CDX.
+outputs/cabina_relationship_audit_20260614/CABINA_RELATIONSHIP_AUDIT_DEEP.csv,reference,true,false,external_repo_reference_only,BLOCKED_WITH_GATE_PACKET,References cabina-universal-d change-aware artifact outside this repo.
+operativa/EMAIL_DELTA_TRIAGE_20260622.csv,email_delta,true,false,delta_06_packetized,BLOCKED_WITH_GATE_PACKET,Stale evidence remains a cabina-universal-d follow-up lane.

@@ -19,6 +19,11 @@ IGNORED_PARTS = {
     "site-packages",
 }
 IGNORED_ENV_NAMES = {".env", ".venv", "env", "venv"}
+IGNORED_METADATA_PREFIXES = (
+    ".agent/",
+    ".github/agents/",
+    ".github/skills/",
+)
 
 
 @dataclass(frozen=True)
@@ -102,7 +107,12 @@ def _discover_virtualenv_roots(root: Path) -> list[Path]:
 
 
 def _should_skip(path: Path, virtualenv_roots: list[Path]) -> bool:
-    return _is_ignored(path) or any(_is_relative_to(path, root) for root in virtualenv_roots)
+    normalized = path.as_posix()
+    return (
+        _is_ignored(path)
+        or any(normalized.startswith(prefix) for prefix in IGNORED_METADATA_PREFIXES)
+        or any(_is_relative_to(path, root) for root in virtualenv_roots)
+    )
 
 
 def parse_front_matter(path: Path) -> dict[str, Any] | None:

@@ -1,0 +1,9 @@
+surface,item,observed_state,expected_state,divergence,risk,decision
+local_branch,codex/multirepo-alignment-16,c1596a3a324e802d0d51aeab802fa6d15001c058,clean local head,NONE,controlado,ALLOW_G3_PREP
+remote_branch,codex/v0.6.0-rc1-governed-publication,c5904f6c703a3a3d229040e23b0e87249760ad64,fast-forward to local evidence before PR,RESOLVABLE,medio,SYNC_BEFORE_PR
+local_tag,v0.6.0-rc1,c818ae3a627db6dd34f5a1bc4579a08431d5c563,local-only tag,NO_REMOTE_TAG,bajo,KEEP_LOCAL_ONLY
+remote_tag,v0.6.0-rc1,ABSENT,absent before G5,NONE,bajo,BLOCK_TAG_PUSH
+pull_request,candidate_pr,ABSENT,draft PR in G3,NONE,bajo,OPEN_DRAFT_ONLY
+metadata,repo_metadata,93 valid metadata before G3 package,valid metadata,NO_DRIFT,bajo,REVALIDATE_AFTER_PACKAGE
+sentinel,local_guard,PASS NO_DRIFT before G3 package,PASS NO_DRIFT,NO_DRIFT,bajo,REVALIDATE_AFTER_PACKAGE
+pytest,test_suite,43 passed 1 skipped before G3 package,tests pass,NONE,bajo,REVALIDATE_AFTER_PACKAGE

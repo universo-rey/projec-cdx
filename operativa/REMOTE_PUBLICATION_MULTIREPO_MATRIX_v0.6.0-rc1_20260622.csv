@@ -1,0 +1,8 @@
+repo,ring,role,publication_scope,required_precheck,owner_required,remote_write_allowed_now,stop_condition,next_action
+universo-rey/projec-cdx,control,release_root,"publicar rc1 por branch/PR/tag bajo gates","local validators; gh repo/pr/labels/workflows; tag remote check",true,false,"preflight fail; tag remote exists; checks fail; REQUEST_CHANGES; secret/live/perms","G1 preflight"
+universo-rey/cabina-universal-d,child,operating_system_runtime,"no publicar por inferencia; solo referenciar como evidencia relacionada","PR/checks/logs separados si owner lo pide",true,false,"dirty unresolved; live surface; workflow logs required","mantener como carril separado"
+SeshatSgin/seshat-bootstrap-sdu-cn,child,sdu_cn_canon,"no publicar por inferencia","repo scoped preflight si owner abre carril",true,false,"gate id drift; prompt live ambiguity; CI missing validator","mantener como carril separado"
+SeshatSgin/torre-gemela-escribania,child,evidence_and_operating_contract,"no merge masivo; revisar PRs repo-scoped","repo scoped PR/check preflight",true,false,"HEAD changed; REQUEST_CHANGES; checks fail","mantener como carril separado"
+SeshatSgin/cdf-soluciones,child,business_solution,"no publicar por inferencia","repo scoped metadata hygiene preflight",true,false,"template/CODEOWNERS/labels broken; secrets; perms","mantener como carril separado"
+SeshatSgin/tge-agentic-runtime-control-escribania,child,runtime_control,"no publicar por inferencia","repo scoped metadata hygiene preflight",true,false,"workflow unsafe; live/prod/perms","mantener como carril separado"
+SeshatSgin/Sgin,child,canon_surface,"no publicar por inferencia","repo scoped preflight",true,false,"unowned repo; dirty unresolved; missing rollback","mantener como carril separado"
