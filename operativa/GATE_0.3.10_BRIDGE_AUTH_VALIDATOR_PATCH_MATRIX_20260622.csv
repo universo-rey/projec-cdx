@@ -1,0 +1,4 @@
+route,current_guard_detection,false_positive_risk,required_validator_change,rollback,postcheck,decision
+/v1/shell/command,global symbol count,true,verify assertDevAuth(req) call inside route handler,revert validator patch,route without guard fails validator,READY_FOR_REMOTE_REPO_PATCH_GATE
+/v1/sdu/route,global symbol count,true,verify assertDevAuth(req) call inside route handler,revert validator patch,route without guard fails validator,READY_FOR_REMOTE_REPO_PATCH_GATE
+function assertDevAuth(req),definition counted as coverage,true,exclude function definition from route coverage count,revert validator patch,definition alone never passes,READY_FOR_REMOTE_REPO_PATCH_GATE
