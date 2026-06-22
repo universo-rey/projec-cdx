@@ -1,0 +1,45 @@
+surface,capability,gate_id,required_inputs,blocked_inputs,owner_required,rollback_required,postcheck_required,evidence_required,default_state,decision,repo_gate_id_detected
+GitHub,issue draft local,GH_ISSUE_DRAFT_LOCAL,target repo; issue body,token; remote write,yes,yes,yes,yes,GITHUB_WRITE: BLOCKED_UNTIL_GATE,PREPARED_ONLY,none_detected
+GitHub,branch push,GH_BRANCH_PUSH,target branch; commit range,token; push,yes,yes,yes,yes,GITHUB_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+GitHub,PR creation,GH_PR_CREATE,branch; base; title; body,token; create PR,yes,yes,yes,yes,GITHUB_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+GitHub,PR review request,GH_PR_REVIEW_REQUEST,PR id; reviewers,token; reviewer mutation,yes,yes,yes,yes,GITHUB_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+GitHub,workflow dispatch,GH_WORKFLOW_DISPATCH,workflow id; ref; inputs,token; dispatch,yes,yes,yes,yes,GITHUB_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Codex Cloud,project binding,CODEX_CLOUD_PROJECT_BIND,project; repo; owner,cloud credentials; binding write,yes,yes,yes,yes,CODEX_CLOUD_EXECUTION: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Codex Cloud,cloud task execution,CODEX_CLOUD_TASK_EXEC,project; task; no-secret policy,cloud run,yes,yes,yes,yes,CODEX_CLOUD_EXECUTION: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Codex Cloud,external repo mutation,CODEX_CLOUD_REPO_MUTATION,repo; branch; rollback,cloud write,yes,yes,yes,yes,CODEX_CLOUD_EXECUTION: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Codex Cloud,cloud artifact sync,CODEX_CLOUD_ARTIFACT_SYNC,artifact target; retention,cloud sync,yes,yes,yes,yes,CODEX_CLOUD_EXECUTION: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+OpenAI,model call,OPENAI_MODEL_CALL,api key; model; budget; prompt boundary,live API call,yes,yes,yes,yes,OPENAI_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+OpenAI,batch,OPENAI_BATCH,api key; batch file; cancellation plan,batch creation,yes,yes,yes,yes,OPENAI_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+OpenAI,vector store,OPENAI_VECTOR_STORE,api key; store owner; retention,resource creation,yes,yes,yes,yes,OPENAI_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+OpenAI,file search,OPENAI_FILE_SEARCH,api key; files; retention,file upload/search,yes,yes,yes,yes,OPENAI_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+OpenAI,assistant/agent creation,OPENAI_AGENT_CREATE,api key; owner; lifecycle,resource creation,yes,yes,yes,yes,OPENAI_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Microsoft Graph,read user/profile,MS_GRAPH_READ_PROFILE,tenant; auth; target,interactive/live auth,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Microsoft Graph,read SharePoint,MS_GRAPH_READ_SHAREPOINT,tenant; site; auth,interactive/live auth,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Microsoft Graph,read Teams,MS_GRAPH_READ_TEAMS,tenant; team; auth,interactive/live auth,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Microsoft Graph,write SharePoint,MS_GRAPH_WRITE_SHAREPOINT,tenant; site; item; rollback,write token,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Microsoft Graph,write Teams,MS_GRAPH_WRITE_TEAMS,tenant; team; channel; rollback,write token,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Microsoft Graph,write Planner,MS_GRAPH_WRITE_PLANNER,tenant; plan; task; rollback,write token,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+SharePoint,site read,SP_SITE_READ,site url; owner; read scope,auth/live read,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+SharePoint,library read,SP_LIBRARY_READ,site; library; read scope,auth/live read,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+SharePoint,list read,SP_LIST_READ,site; list; read scope,auth/live read,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+SharePoint,write document,SP_WRITE_DOCUMENT,site; library; file; rollback,write token,yes,yes,yes,yes,SHAREPOINT_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+SharePoint,write list item,SP_WRITE_LIST_ITEM,site; list; item; rollback,write token,yes,yes,yes,yes,SHAREPOINT_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+SharePoint,create library/list,SP_CREATE_CONTAINER,site; schema; rollback,write token,yes,yes,yes,yes,SHAREPOINT_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Dataverse,environment read,DV_ENV_READ,env id/url; auth,auth/live read,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Dataverse,table read,DV_TABLE_READ,env; table; auth,auth/live read,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Dataverse,solution import/export,DV_SOLUTION_PACKAGE,env; solution; backup,import/export,yes,yes,yes,yes,DATAVERSE_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Dataverse,table create/update,DV_TABLE_MUTATION,env; table; schema; rollback,write token,yes,yes,yes,yes,DATAVERSE_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Dataverse,row create/update,DV_ROW_MUTATION,env; table; rows; rollback,write token,yes,yes,yes,yes,DATAVERSE_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Dataverse,flow connection binding,DV_FLOW_CONNECTION_BIND,env; connection ref; rollback,write token,yes,yes,yes,yes,DATAVERSE_WRITE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Power Platform,flow inventory read,PP_FLOW_INVENTORY_READ,env; auth,auth/live read,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Power Platform,flow export,PP_FLOW_EXPORT,env; flow; export path,auth/live export,yes,yes,yes,yes,MICROSOFT_LIVE: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Power Platform,flow enable/disable,PP_FLOW_STATE_MUTATION,env; flow; rollback,mutation,yes,yes,yes,yes,POWER_AUTOMATE_MUTATION: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Power Platform,flow trigger,PP_FLOW_TRIGGER,env; flow; inputs; rollback,trigger,yes,yes,yes,yes,POWER_AUTOMATE_MUTATION: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Power Platform,connection reference mutation,PP_CONNECTION_REF_MUTATION,env; connection ref; rollback,mutation,yes,yes,yes,yes,POWER_AUTOMATE_MUTATION: BLOCKED_UNTIL_GATE,BLOCKED_UNTIL_GATE,none_detected
+Local Runtime,PowerShell profile mutation,LOCAL_PS_PROFILE_MUTATION,target profile; backup,profile write,yes,yes,yes,yes,LOCAL_RUNTIME_WRITE: REQUIRES_OPERATOR_ORDER,REQUIRES_OPERATOR_ORDER,none_detected
+Local Runtime,machine env mutation,LOCAL_MACHINE_ENV_MUTATION,var name; target value; rollback,machine env write,yes,yes,yes,yes,LOCAL_RUNTIME_WRITE: REQUIRES_OPERATOR_ORDER,REQUIRES_OPERATOR_ORDER,none_detected
+Local Runtime,user env mutation,LOCAL_USER_ENV_MUTATION,var name; target value; rollback,user env write,yes,yes,yes,yes,LOCAL_RUNTIME_WRITE: REQUIRES_OPERATOR_ORDER,REQUIRES_OPERATOR_ORDER,none_detected
+Local Runtime,repo config mutation,LOCAL_REPO_CONFIG_MUTATION,path; diff; rollback,repo config write,yes,yes,yes,yes,LOCAL_RUNTIME_WRITE: REQUIRES_OPERATOR_ORDER,REQUIRES_OPERATOR_ORDER,none_detected
+Local Runtime,local bridge start,LOCAL_BRIDGE_START,host; port; auth; stop command,server start,yes,yes,yes,yes,LOCAL_RUNTIME_WRITE: REQUIRES_OPERATOR_ORDER,REQUIRES_OPERATOR_ORDER,none_detected
+Local Runtime,watchdog start,LOCAL_WATCHDOG_START,interval; stop condition; owner,background process,yes,yes,yes,yes,LOCAL_RUNTIME_WRITE: REQUIRES_OPERATOR_ORDER,REQUIRES_OPERATOR_ORDER,none_detected
+Local Runtime,local read,LOCAL_RUNTIME_READ,repo path; no external flag,none,no,no,yes,yes,LOCAL_RUNTIME_READ: ALLOWED_LOCAL_READ,ALLOWED_LOCAL_READ,none_detected
