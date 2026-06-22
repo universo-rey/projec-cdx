@@ -1,0 +1,2 @@
+gate_id,target_repo,target_branch,authorized_scope,remote_write_allowed,pr_allowed,workflow_dispatch_allowed,live_surface_allowed,secret_read_allowed,token_print_allowed,merge_allowed,force_push_allowed,owner_required,rollback_required,postcheck_required,decision
+0.5.0,universo-rey/cabina-universal-d,codex/sdu-0.5.0-bridge-auth-fail-closed,controlled_remote_patch_preparation,false,false,false,false,false,false,false,false,true,true,true,GATE_0.5.0_READY_FOR_REMOTE_PATCH_EXECUTION
