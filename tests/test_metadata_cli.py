@@ -174,6 +174,59 @@ external metadata shape
     assert [record.source_path for record in result.records] == ["operativa/MAPA.md"]
 
 
+def test_validate_repository_ignores_local_agent_overlay_metadata(tmp_path: Path) -> None:
+    repo = _seed_repo(tmp_path)
+    _write(
+        repo / "operativa" / "MAPA.md",
+        """---
+artifact_id: operativa/MAPA.md
+categoria: operativa
+tipo: mapa
+estado: live
+version: "1"
+autoridad: {tipo: owner, referencia: "@seshat"}
+origen: GitHub
+ubicacion_repo: operativa/MAPA.md
+etiquetas: [operativa]
+relacionados: []
+descripcion: mapa
+---
+contenido
+""",
+    )
+    _write(
+        repo / ".agent" / "schemas-location.md",
+        """---
+description: local extension schema pointer
+---
+overlay
+""",
+    )
+    _write(
+        repo / ".github" / "agents" / "agileagentcanvas.agent.md",
+        """---
+description: external agent overlay
+tools: [read, edit]
+---
+overlay
+""",
+    )
+    _write(
+        repo / ".github" / "skills" / "agileagentcanvas-help" / "SKILL.md",
+        """---
+name: help
+description: external skill router
+---
+overlay
+""",
+    )
+
+    result = validate_repository(repo, repo / "schema.json")
+
+    assert result.is_valid
+    assert [record.source_path for record in result.records] == ["operativa/MAPA.md"]
+
+
 def test_promote_updates_manifest(tmp_path: Path) -> None:
     repo = _seed_repo(tmp_path)
     _write(
