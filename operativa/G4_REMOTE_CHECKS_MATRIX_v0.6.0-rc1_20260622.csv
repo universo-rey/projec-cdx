@@ -1,6 +1,7 @@
 check_name,workflow,run_id,job_id,initial_status,root_cause,action_taken,local_validation,expected_remote_status,decision
 metadata,meta-validate,27984143336,82821409124,failed,index.json and operativa/index.json stale after G3 evidence package,regenerated indexes with tools.build_index,tools.validate PASS observed,success,FIX_AND_RECHECK
 lint-test,quality,27984143310,82821409101,failed,ruff import ordering failures and black formatting drift,applied ruff import-order auto-fix and black formatter,ruff PASS and black PASS expected,success,FIX_AND_RECHECK
+chain-resolver-tests,metadata-and-quality,27984968483/27984968515,82824132869/82824132630,failed_remote,relative path resolver used Windows separators on Linux,normalized resolver path joining to platform-native relative parts,pytest PASS expected on Linux,success,FIX_AND_RECHECK
 pytest,quality,local-prepush,local-prepush,blocked_locally,pytest console entrypoint did not resolve repo-root tools package,added repo root to pytest pythonpath in pyproject.toml,pytest with coverage PASS expected,success,FIX_AND_RECHECK
 graph,build-graph,27984143348,82821409135,success,no failure observed,no action required,not changed,success,NO_ACTION_REQUIRED
 analyze,codeql,27984143361,82821409140,success,no failure observed,no action required,not changed,success,NO_ACTION_REQUIRED

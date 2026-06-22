@@ -109,11 +109,11 @@ def _rel(path: Path, root: Path) -> str:
 
 
 def _path(root: Path, value: str) -> Path:
-    normalized = value.replace("/", "\\")
-    candidate = Path(normalized)
+    candidate = Path(value)
     if candidate.is_absolute():
         return candidate
-    return root / candidate
+    parts = [part for part in value.replace("\\", "/").split("/") if part not in {"", "."}]
+    return root.joinpath(*parts)
 
 
 def _exists(root: Path, value: str) -> bool:

@@ -48,6 +48,7 @@ fecha_evento: '2026-06-22'
 - `metadata` fallo porque `index.json` y `operativa/index.json` no estaban alineados con el paquete documental G3.
 - `lint-test` fallo primero por orden de imports detectado por Ruff y hubiera seguido fallando por formato Black.
 - La validacion local con el entrypoint `pytest` tambien detecto que `tools` no quedaba visible para tests; se normalizo `pythonpath` para cubrir el comando que usa CI.
+- La segunda corrida remota redujo el fallo a `test_sdu_chain_resolver_builds_local_chain`: el resolver usaba separadores Windows para rutas relativas y en Linux eso convertia los paths en nombres literales.
 
 ## Resolucion tecnica aplicada
 
@@ -55,6 +56,7 @@ fecha_evento: '2026-06-22'
 - Se aplico correccion automatica de Ruff para ordenar imports y espacios.
 - Se aplico Black sobre `src`, `tests` y `tools` para cumplir el workflow `quality`.
 - Se agrego la raiz del repo al `pythonpath` de pytest para que los tests de `tools` sean resolubles por el entrypoint usado en CI.
+- Se corrigio el resolver de rutas de `tools/sdu_chain_resolver.py` para unir partes relativas con el separador nativo de la plataforma.
 - No se modifico runtime live.
 - No se ejecuto workflow dispatch.
 - No se hizo merge.

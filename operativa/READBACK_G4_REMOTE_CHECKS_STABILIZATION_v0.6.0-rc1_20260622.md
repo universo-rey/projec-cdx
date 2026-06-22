@@ -33,6 +33,7 @@ fecha_evento: '2026-06-22'
 - `metadata`: indices desactualizados.
 - `lint-test`: orden de imports Ruff y formato Black.
 - `pytest`: resolucion local de `tools` faltante bajo entrypoint de CI.
+- `chain-resolver`: paths relativos con separador Windows rompian fixture en Linux.
 
 ## Acciones ejecutadas
 
@@ -45,6 +46,7 @@ fecha_evento: '2026-06-22'
   - `tools/sdu_sentinel.py`
 - Formato Black aplicado sobre `src`, `tests` y `tools`.
 - Ajuste de `pyproject.toml` para incluir la raiz del repo en `pythonpath`.
+- Ajuste portable de `_path` en `tools/sdu_chain_resolver.py`.
 
 ## Validacion esperada
 
