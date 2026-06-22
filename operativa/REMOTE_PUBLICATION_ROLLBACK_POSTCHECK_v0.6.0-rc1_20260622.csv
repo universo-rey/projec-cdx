@@ -1,0 +1,8 @@
+gate,rollback,postcheck,evidence_required,owner_required
+G0_REMOTE_PUBLICATION_PLAN,"git revert <G0_commit>","runner cabina PASS; git status clean","plan, matrices, readback",true
+G1_REMOTE_REPO_PREFLIGHT,"no rollback; read-only","preflight matrix complete; no writes observed","remote preflight findings",true
+G2_REMOTE_BRANCH_PUSH_CANDIDATE,"git push origin --delete codex/v0.6.0-rc1-governed-publication","git ls-remote --heads origin codex/v0.6.0-rc1-governed-publication","branch URL/OID",true
+G3_REMOTE_PR_OPEN_GOVERNED,"close draft PR if owner orders","gh pr view state/isDraft/headRefOid","PR URL, number, head OID",true
+G4_REMOTE_CHECKS_REVIEW_STABILIZATION,"revert/stabilize branch or close PR according to finding","gh pr checks; gh pr view reviewDecision","checks, comments, findings",true
+G5_REMOTE_TAG_PUBLICATION,"git push origin :refs/tags/v0.6.0-rc1 only with owner","git ls-remote --tags origin v0.6.0-rc1","remote tag OID",true
+G6_REMOTE_RELEASE_CLOSEOUT,"git revert <G6_commit> if evidence wrong","runner cabina PASS; PR branch contains closeout","final readback and status csv",true

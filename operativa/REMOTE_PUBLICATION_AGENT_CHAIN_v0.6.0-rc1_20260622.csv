@@ -1,0 +1,9 @@
+agent,lane,responsibility,tools_allowed,tools_blocked,gate,output
+rey.control_plane_orchestrator,coordination,"ordenar gates y consolidar decision","git local; runner cabina; gh read/write solo bajo gate","force push; merge; live; secrets","G0-G6","readback consolidado"
+rey.repo_cartographer,github_remote,"verificar remoto, branch, PRs, tags, divergencias","git remote; git ls-remote; gh repo/pr","merge; workflow_dispatch","G1-G4","matriz remoto"
+court.maat_governance,governance,"exigir owner, reviewer, rollback, postcheck y evidencia","matrices; readbacks; validators","cierre sin evidencia","G0-G6","decision de avance"
+anubis.frontier_guardian,security_boundary,"bloquear secretos, live, force push y permisos peligrosos","secret-safe inspection; gh metadata","secret print; live write; prod perms","G1-G6","stop conditions"
+thot_schema,workflow_metadata,"revisar workflows, path filters, metadata, YAML, CODEOWNERS","repo files; gh workflow list","workflow_dispatch; mutation live","G1-G4","finding matrix"
+seshat.canon_librarian,canon_docs,"validar docs por capas y evitar duplicar evidencia viva","docs/readbacks/matrices","propagacion por inferencia","G0-G6","canon readback"
+faraday.integration_guard,connectors,"controlar gh, Dependabot, labels y checks","gh label/pr/checks","push/tag sin gate","G1-G5","connector status"
+ramanujan.sequence_controller,sequence,"evitar carreras entre push, PR, tag y merge","git rev-parse; gh headRefOid","merge sin HEAD fijo; tag antes de checks","G2-G5","sequence decision"
