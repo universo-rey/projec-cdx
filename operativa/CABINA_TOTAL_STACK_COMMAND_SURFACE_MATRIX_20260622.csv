@@ -18,6 +18,7 @@ tools/codex-control-total.ps1,powershell,local,false,true,LOCAL_RUNTIME_GATED,"c
 tools/codex-environment-cleanup.ps1,powershell,local,false,true,LOCAL_CLEANUP_GATED,"cleanup local; requiere backup/gate"
 tools/codex-environment-setup.ps1,powershell,local,false,true,LOCAL_SETUP_GATED,"setup local; modifica entorno"
 tools/normalize_codex_surfaces.ps1,powershell,local,false,true,LOCAL_NORMALIZATION_GATED,"normaliza superficies; requiere plan"
+tools/cabina/Invoke-CabinaGovernancePrecheck.ps1,powershell,local,true,false,LOCAL_ANALYZE,"precheck seguro para macro-wave: usa Code Insiders por ruta completa y Python de .venv"
 tools/promote_binding_ui_seshat_home_atomos_dataverse.ps1,powershell,dataverse,false,true,BLOCKED_WITHOUT_GATE,"promocion Dataverse"
 tools/promote_lane_b_corte_agent_index_dataverse.ps1,powershell,dataverse,false,true,BLOCKED_WITHOUT_GATE,"promocion Dataverse/SharePoint"
 tools/promote_sdu_manifesto_dataverse.ps1,powershell,dataverse,false,true,BLOCKED_WITHOUT_GATE,"promocion Dataverse"
