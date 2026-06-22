@@ -27,9 +27,10 @@ def sanitize_exception_message(
 
     sanitized = raw
     for name, pattern in SECRET_PATTERNS.items():
-        replacement = r"\1=[REDACTED_VALUE]" if name == "sensitive_assignment" else "[REDACTED_SECRET]"
+        replacement = (
+            r"\1=[REDACTED_VALUE]" if name == "sensitive_assignment" else "[REDACTED_SECRET]"
+        )
         sanitized = pattern.sub(replacement, sanitized)
 
     sanitized = sanitized.strip()
     return sanitized or fallback
-

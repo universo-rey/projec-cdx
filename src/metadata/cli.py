@@ -5,10 +5,11 @@ import json
 from collections.abc import Iterable
 from pathlib import Path
 
+from projec_cdx_common.safe_errors import sanitize_exception_message
+
 from .doc_report import build_doc_report
 from .indexer import build_indexes
 from .validator import replace_front_matter, validate_repository
-from projec_cdx_common.safe_errors import sanitize_exception_message
 
 
 def _repo_root() -> Path:
@@ -182,7 +183,9 @@ def main(argv: Iterable[str] | None = None) -> int:
     if args.command == "promote":
         return _run_promote(root, schema, args.artifact_id, args.estado)
     if args.command == "doc-report":
-        json_output = args.json_output if args.json_output.is_absolute() else root / args.json_output
+        json_output = (
+            args.json_output if args.json_output.is_absolute() else root / args.json_output
+        )
         md_output = args.md_output if args.md_output.is_absolute() else root / args.md_output
         return _run_doc_report(root, schema, json_output, md_output)
     parser.print_help()

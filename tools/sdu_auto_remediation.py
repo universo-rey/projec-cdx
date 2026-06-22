@@ -13,7 +13,6 @@ if __package__ in {None, ""}:
 
 from tools import sdu_sentinel
 
-
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "operativa" / "SDU_AUTO_REMEDIATION_CONFIG_20260622.json"
 
@@ -39,7 +38,11 @@ def _next_event_id(prefix: str) -> str:
     events_path = sdu_sentinel.EVENTS_PATH
     count = 0
     if events_path.exists():
-        count = sum(1 for line in events_path.read_text(encoding="utf-8").splitlines() if f'"event_id": "{prefix}-{date}-' in line)
+        count = sum(
+            1
+            for line in events_path.read_text(encoding="utf-8").splitlines()
+            if f'"event_id": "{prefix}-{date}-' in line
+        )
     return f"{prefix}-{date}-{count + 1:03d}"
 
 
@@ -98,7 +101,12 @@ def rollback_target(target: str, root: Path = ROOT, apply: bool = False) -> dict
 
     tracked = _run(["git", "ls-files", "--error-unmatch", rel], root)
     if tracked.returncode != 0:
-        return {"status": "BLOCK", "action": "rollback", "target": rel, "result": "untracked_target"}
+        return {
+            "status": "BLOCK",
+            "action": "rollback",
+            "target": rel,
+            "result": "untracked_target",
+        }
 
     if not apply:
         return {"status": "PASS", "action": "rollback", "target": rel, "result": "dry_run"}
@@ -116,7 +124,12 @@ def rollback_target(target: str, root: Path = ROOT, apply: bool = False) -> dict
 def write_evidence_gap_readback(root: Path = ROOT, apply: bool = False) -> dict[str, Any]:
     path = root / "operativa" / "READBACK_AUTO_REMEDIATION_EVIDENCE_GAP.md"
     if not apply:
-        return {"status": "PASS", "action": "regenerate", "target": _relative_path(path, root), "result": "dry_run"}
+        return {
+            "status": "PASS",
+            "action": "regenerate",
+            "target": _relative_path(path, root),
+            "result": "dry_run",
+        }
     text = "\n".join(
         [
             "# AUTO REMEDIATION EVIDENCE GAP",
@@ -130,7 +143,12 @@ def write_evidence_gap_readback(root: Path = ROOT, apply: bool = False) -> dict[
         ]
     )
     path.write_text(text, encoding="utf-8")
-    return {"status": "PASS", "action": "regenerate", "target": _relative_path(path, root), "result": "success"}
+    return {
+        "status": "PASS",
+        "action": "regenerate",
+        "target": _relative_path(path, root),
+        "result": "success",
+    }
 
 
 def remediation_event(payload: dict[str, Any]) -> dict[str, Any]:
@@ -156,18 +174,38 @@ def log_remediation_event(payload: dict[str, Any]) -> None:
     sdu_sentinel.append_event(remediation_event(payload), sdu_sentinel.EVENTS_PATH)
 
 
-def remediate(drift_type: str | None = None, target: str | None = None, root: Path = ROOT, apply: bool = False) -> dict[str, Any]:
+def remediate(
+    drift_type: str | None = None, target: str | None = None, root: Path = ROOT, apply: bool = False
+) -> dict[str, Any]:
     drift = drift_type or analyze(root)["drift"]
     if drift == "NO_DRIFT":
-        payload = {"status": "PASS", "drift": drift, "action": "none", "target": "local", "result": "skipped"}
+        payload = {
+            "status": "PASS",
+            "drift": drift,
+            "action": "none",
+            "target": "local",
+            "result": "skipped",
+        }
     elif drift == "SECRET_RISK_DRIFT":
-        payload = {"status": "BLOCK", "drift": drift, "action": "block", "target": target or "secret_boundary", "result": "skipped"}
+        payload = {
+            "status": "BLOCK",
+            "drift": drift,
+            "action": "block",
+            "target": target or "secret_boundary",
+            "result": "skipped",
+        }
     elif drift == "BOUNDARY_POLICY_DRIFT":
         payload = rollback_target("operativa/SDU_RUNTIME_BOUNDARY_MATRIX.json", root, apply)
         payload["drift"] = drift
     elif drift in {"UNEXPECTED_RUNTIME_DRIFT", "VALIDATOR_FAILURE"}:
         if not target:
-            payload = {"status": "BLOCK", "drift": drift, "action": "rollback", "target": "missing", "result": "target_required"}
+            payload = {
+                "status": "BLOCK",
+                "drift": drift,
+                "action": "rollback",
+                "target": "missing",
+                "result": "target_required",
+            }
         else:
             payload = rollback_target(target, root, apply)
             payload["drift"] = drift
@@ -175,9 +213,21 @@ def remediate(drift_type: str | None = None, target: str | None = None, root: Pa
         payload = write_evidence_gap_readback(root, apply)
         payload["drift"] = drift
     elif drift == "EXPECTED_INDEX_REFRESH":
-        payload = {"status": "PASS", "drift": drift, "action": "regenerate", "target": "index", "result": "operator_review_required"}
+        payload = {
+            "status": "PASS",
+            "drift": drift,
+            "action": "regenerate",
+            "target": "index",
+            "result": "operator_review_required",
+        }
     else:
-        payload = {"status": "BLOCK", "drift": drift, "action": "block", "target": target or "local", "result": "unsupported_drift"}
+        payload = {
+            "status": "BLOCK",
+            "drift": drift,
+            "action": "block",
+            "target": target or "local",
+            "result": "unsupported_drift",
+        }
 
     log_remediation_event(payload)
     return payload

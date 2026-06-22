@@ -10,6 +10,7 @@ from typing import Any
 from agents import Runner
 from openai.types.responses.response_text_delta_event import ResponseTextDeltaEvent
 from pydantic import ValidationError
+
 from projec_cdx_common.safe_errors import sanitize_exception_message
 
 from .agent import LaunchDeskRuntimeContext, build_launch_desk_agent, build_launch_prompt

@@ -22,12 +22,15 @@ def classify_source_authority(state: str) -> str:
 
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Clasifica autoridad canonica de una fuente.")
-    parser.add_argument("state", help="Estado de fuente: PR_OPEN, PR_MERGED, DRAFT, BRANCH, SMOKE_ONLY.")
+    parser.add_argument(
+        "state", help="Estado de fuente: PR_OPEN, PR_MERGED, DRAFT, BRANCH, SMOKE_ONLY."
+    )
     args = parser.parse_args(list(argv) if argv is not None else None)
-    print(json.dumps({"state": args.state, "classification": classify_source_authority(args.state)}))
+    print(
+        json.dumps({"state": args.state, "classification": classify_source_authority(args.state)})
+    )
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

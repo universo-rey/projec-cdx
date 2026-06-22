@@ -17,4 +17,3 @@ def test_merged_sources_can_be_canon() -> None:
 
 def test_validated_readback_is_evidence_only() -> None:
     assert classify_source_authority("READBACK_VALIDATED") == "EVIDENCE_ONLY"
-

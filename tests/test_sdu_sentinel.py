@@ -27,14 +27,21 @@ def test_guard_blocks_microsoft_without_gate() -> None:
 
 
 def test_gate_incomplete_blocks_external_action() -> None:
-    decision = sdu_sentinel.guard("github", "workflow_dispatch", "GATE-1", "owner", None, "postcheck", "evidence")
+    decision = sdu_sentinel.guard(
+        "github", "workflow_dispatch", "GATE-1", "owner", None, "postcheck", "evidence"
+    )
     assert decision["decision"] == "GATE_INCOMPLETE_BLOCKED"
     assert "rollback" in decision["reason"]
 
 
 def test_drift_classifier_detects_critical_files() -> None:
-    assert sdu_sentinel.classify_status_lines([" M tools/sdu_boot.ps1"]) == "UNEXPECTED_RUNTIME_DRIFT"
-    assert sdu_sentinel.classify_status_lines([" M operativa/SDU_RUNTIME_BOUNDARY_MATRIX.json"]) == "BOUNDARY_POLICY_DRIFT"
+    assert (
+        sdu_sentinel.classify_status_lines([" M tools/sdu_boot.ps1"]) == "UNEXPECTED_RUNTIME_DRIFT"
+    )
+    assert (
+        sdu_sentinel.classify_status_lines([" M operativa/SDU_RUNTIME_BOUNDARY_MATRIX.json"])
+        == "BOUNDARY_POLICY_DRIFT"
+    )
     assert sdu_sentinel.classify_status_lines([" M index.json"]) == "EXPECTED_INDEX_REFRESH"
     assert sdu_sentinel.classify_status_lines([]) == "NO_DRIFT"
 

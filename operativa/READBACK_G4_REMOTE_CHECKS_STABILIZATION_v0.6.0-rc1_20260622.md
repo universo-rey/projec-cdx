@@ -1,0 +1,68 @@
+---
+artifact_id: operativa/READBACK_G4_REMOTE_CHECKS_STABILIZATION_v0.6.0-rc1_20260622.md
+categoria: operativa
+tipo: readback
+estado: en_revision
+version: 2026.06.22
+autoridad:
+  tipo: owner
+  referencia: '@SeshatSgin'
+origen: Mixto
+ubicacion_repo: operativa/READBACK_G4_REMOTE_CHECKS_STABILIZATION_v0.6.0-rc1_20260622.md
+etiquetas:
+- cabina
+- release
+- github
+- checks
+- readback
+relacionados:
+- operativa/G4_REMOTE_CHECKS_STABILIZATION_v0.6.0-rc1_20260622.md
+- operativa/G4_REMOTE_CHECKS_MATRIX_v0.6.0-rc1_20260622.csv
+descripcion: Readback de estabilizacion G4 de checks remotos para PR gobernado v0.6.0-rc1.
+fecha_evento: '2026-06-22'
+---
+
+# READBACK G4 REMOTE CHECKS STABILIZATION v0.6.0-rc1
+
+## Estado
+
+`G4_REMOTE_CHECKS_STABILIZATION_IN_PROGRESS`
+
+## Fallas remotas tratadas
+
+- `metadata`: indices desactualizados.
+- `lint-test`: orden de imports Ruff y formato Black.
+- `pytest`: resolucion local de `tools` faltante bajo entrypoint de CI.
+
+## Acciones ejecutadas
+
+- Regeneracion de `index.json`.
+- Regeneracion de `operativa/index.json`.
+- Correccion Ruff en:
+  - `src/launch_desk/service.py`
+  - `src/metadata/cli.py`
+  - `tools/sdu_auto_remediation.py`
+  - `tools/sdu_sentinel.py`
+- Formato Black aplicado sobre `src`, `tests` y `tools`.
+- Ajuste de `pyproject.toml` para incluir la raiz del repo en `pythonpath`.
+
+## Validacion esperada
+
+- `metadata`: success.
+- `lint-test`: success.
+- `graph`: success.
+- `analyze`: success.
+- `CodeQL`: success.
+
+## Frontera
+
+- No merge.
+- No tag push.
+- No workflow dispatch.
+- No live.
+- No secretos.
+- No PR nuevo.
+
+## Resultado
+
+`READY_FOR_REMOTE_RECHECK`

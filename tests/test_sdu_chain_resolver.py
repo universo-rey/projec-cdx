@@ -75,7 +75,10 @@ def test_sdu_chain_resolver_builds_local_chain(tmp_path: Path) -> None:
     payload = build_graph(repo, no_external=True, dry_run=True)
 
     assert payload["status"] in {"PASS", "OBSERVED"}
-    assert payload["chain"] == "entrada -> estado -> orden -> agentes -> semantica -> motor -> modelo -> evidencia -> salida"
+    assert (
+        payload["chain"]
+        == "entrada -> estado -> orden -> agentes -> semantica -> motor -> modelo -> evidencia -> salida"
+    )
     assert payload["agents"][0]["agent"] == "seshat-normativa"
     assert "tools/sdu_boot.ps1" in payload["agents"][0]["tools"]
 

@@ -9,7 +9,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "operativa" / "SDU_SENTINEL_CONFIG_20260622.json"
 BOUNDARY_PATH = ROOT / "operativa" / "SDU_RUNTIME_BOUNDARY_MATRIX.json"
@@ -114,9 +113,13 @@ def classify_status_lines(status_lines: list[str]) -> str:
         return "SECRET_RISK_DRIFT"
     if any(path == "operativa/SDU_RUNTIME_BOUNDARY_MATRIX.json" for path in normalized):
         return "BOUNDARY_POLICY_DRIFT"
-    if any(path in {"index.json", "live-manifest.json", "operativa/index.json"} for path in normalized):
+    if any(
+        path in {"index.json", "live-manifest.json", "operativa/index.json"} for path in normalized
+    ):
         return "EXPECTED_INDEX_REFRESH"
-    if any(path.startswith("docs/") or path.startswith("operativa/READBACK_") for path in normalized):
+    if any(
+        path.startswith("docs/") or path.startswith("operativa/READBACK_") for path in normalized
+    ):
         return "EXPECTED_DOC_DRIFT"
     if any(
         path
@@ -138,8 +141,20 @@ def scan(root: Path = ROOT) -> dict[str, Any]:
 
     config_exists = CONFIG_PATH.exists()
     boundary_exists = BOUNDARY_PATH.exists()
-    checks.append(SentinelCheck("sentinel_config_present", "PASS" if config_exists else "FAIL", _safe_relative(CONFIG_PATH, root)))
-    checks.append(SentinelCheck("boundary_matrix_present", "PASS" if boundary_exists else "FAIL", _safe_relative(BOUNDARY_PATH, root)))
+    checks.append(
+        SentinelCheck(
+            "sentinel_config_present",
+            "PASS" if config_exists else "FAIL",
+            _safe_relative(CONFIG_PATH, root),
+        )
+    )
+    checks.append(
+        SentinelCheck(
+            "boundary_matrix_present",
+            "PASS" if boundary_exists else "FAIL",
+            _safe_relative(BOUNDARY_PATH, root),
+        )
+    )
 
     config: dict[str, Any] = _load_json(CONFIG_PATH) if config_exists else {}
     boundary: dict[str, Any] = _load_json(BOUNDARY_PATH) if boundary_exists else {}
@@ -200,7 +215,15 @@ def scan(root: Path = ROOT) -> dict[str, Any]:
     }
 
 
-def guard(surface: str, action: str, gate: str | None, owner: str | None, rollback: str | None, postcheck: str | None, evidence: str | None) -> dict[str, Any]:
+def guard(
+    surface: str,
+    action: str,
+    gate: str | None,
+    owner: str | None,
+    rollback: str | None,
+    postcheck: str | None,
+    evidence: str | None,
+) -> dict[str, Any]:
     normalized_surface = surface.lower()
     if normalized_surface == "local":
         return {
@@ -250,7 +273,9 @@ def append_event(event: dict[str, Any], events_path: Path = EVENTS_PATH) -> None
         handle.write(json.dumps(event, ensure_ascii=True, sort_keys=True) + "\n")
 
 
-def make_event(category: str, severity: str, decision: str, surface: str, evidence: list[str], notes: str) -> dict[str, Any]:
+def make_event(
+    category: str, severity: str, decision: str, surface: str, evidence: list[str], notes: str
+) -> dict[str, Any]:
     timestamp = _utc_now()
     return {
         "timestamp_utc": timestamp,
@@ -270,7 +295,11 @@ def write_report(root: Path = ROOT) -> dict[str, Any]:
         "# SDU SENTINEL STATE",
         "",
         "## Estado",
-        "SDU_SENTINEL_ACTIVE_LOCAL_GOVERNED" if payload["status"] in {"PASS", "WARN"} else "SDU_SENTINEL_BLOCKED",
+        (
+            "SDU_SENTINEL_ACTIVE_LOCAL_GOVERNED"
+            if payload["status"] in {"PASS", "WARN"}
+            else "SDU_SENTINEL_BLOCKED"
+        ),
         "",
         "## Modo",
         "LOCAL_FIRST",
@@ -319,8 +348,34 @@ def write_report(root: Path = ROOT) -> dict[str, Any]:
 
 def run_check(root: Path = ROOT) -> dict[str, Any]:
     commands = [
-        ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(root / "tools" / "sdu_boot.ps1"), "-Mode", "all", "-Agent", "All", "-NoExternal", "-DryRun", "-Json"],
-        [sys.executable, str(root / "tools" / "sdu_chain_resolver.py"), "--root", str(root), "--mode", "all", "--agent", "All", "--no-external", "--dry-run", "--json"],
+        [
+            "powershell",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            str(root / "tools" / "sdu_boot.ps1"),
+            "-Mode",
+            "all",
+            "-Agent",
+            "All",
+            "-NoExternal",
+            "-DryRun",
+            "-Json",
+        ],
+        [
+            sys.executable,
+            str(root / "tools" / "sdu_chain_resolver.py"),
+            "--root",
+            str(root),
+            "--mode",
+            "all",
+            "--agent",
+            "All",
+            "--no-external",
+            "--dry-run",
+            "--json",
+        ],
         [sys.executable, "-m", "tools.validate"],
         ["git", "diff", "--check"],
         [sys.executable, "-m", "pytest", "-q"],
@@ -386,7 +441,15 @@ def main(argv: list[str] | None = None) -> int:
     elif args.command == "classify-drift":
         payload = {"status": "PASS", "drift": classify_status_lines(_git_status(ROOT))}
     elif args.command == "guard":
-        payload = guard(args.surface, args.action, args.gate, args.owner, args.rollback, args.postcheck, args.evidence)
+        payload = guard(
+            args.surface,
+            args.action,
+            args.gate,
+            args.owner,
+            args.rollback,
+            args.postcheck,
+            args.evidence,
+        )
     else:
         raise AssertionError(args.command)
 

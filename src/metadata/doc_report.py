@@ -87,17 +87,23 @@ def _build_markdown(payload: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
-def build_doc_report(root: Path, schema_path: Path, json_output: Path, md_output: Path) -> tuple[Path, Path]:
+def build_doc_report(
+    root: Path, schema_path: Path, json_output: Path, md_output: Path
+) -> tuple[Path, Path]:
     result = validate_repository(root, schema_path)
     if not result.is_valid:
         details = "\n".join(
             f"- {item.source_path} [{item.field_path}]: {item.message}" for item in result.errors
         )
-        raise ValueError(f"No se puede construir reporte documental: metadatos invalidos.\n{details}")
+        raise ValueError(
+            f"No se puede construir reporte documental: metadatos invalidos.\n{details}"
+        )
 
     payload = _build_payload(result)
     json_output.parent.mkdir(parents=True, exist_ok=True)
     md_output.parent.mkdir(parents=True, exist_ok=True)
-    json_output.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    json_output.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
     md_output.write_text(_build_markdown(payload), encoding="utf-8")
     return json_output, md_output

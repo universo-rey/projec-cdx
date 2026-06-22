@@ -221,7 +221,11 @@ def build_graph(
 
     add("repo_root_exists", "PASS" if root.exists() else "FAIL", str(root))
     add("no_external_gate", "PASS" if no_external else "FAIL", "external surfaces disabled")
-    add("dry_run_gate", "PASS" if dry_run else "OBSERVED", "no mutation requested" if dry_run else "execution mode can mutate")
+    add(
+        "dry_run_gate",
+        "PASS" if dry_run else "OBSERVED",
+        "no mutation requested" if dry_run else "execution mode can mutate",
+    )
     add("env_local_read", "PASS", ".env.local not read by resolver")
 
     required_files = {
@@ -261,7 +265,9 @@ def build_graph(
         add(f"validator:{relative}", "PASS" if _exists(root, relative) else "FAIL", relative)
 
     agent_profiles = _load_agent_profiles(root)
-    missing_agents = [agent_name for agent_name in SDU_AGENT_ORDER if agent_name not in agent_profiles]
+    missing_agents = [
+        agent_name for agent_name in SDU_AGENT_ORDER if agent_name not in agent_profiles
+    ]
     add(
         "sdu_agents_defined",
         "PASS" if not missing_agents else "FAIL",
@@ -280,7 +286,11 @@ def build_graph(
         "skills_resolved",
         "PASS" if available_skills else "FAIL",
         f"inventory={len(inventory_skills)} "
-        + (f"physical={len(physical_skills)}" if not no_external else "physical=skipped(no_external)"),
+        + (
+            f"physical={len(physical_skills)}"
+            if not no_external
+            else "physical=skipped(no_external)"
+        ),
     )
 
     recipe_files = sorted((root / "recipes").glob("*.md")) if (root / "recipes").exists() else []
@@ -345,9 +355,13 @@ def _print_text(payload: dict[str, Any]) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Resolve the local SDU agent capability chain.")
     parser.add_argument("--root", default=str(REPO_ROOT), help="Repository root.")
-    parser.add_argument("--mode", default="all", choices=["all", "check", "agents"], help="Resolution mode.")
+    parser.add_argument(
+        "--mode", default="all", choices=["all", "check", "agents"], help="Resolution mode."
+    )
     parser.add_argument("--agent", default=DEFAULT_AGENT, help="Agent name or All.")
-    parser.add_argument("--no-external", action="store_true", help="Keep remote/live surfaces closed.")
+    parser.add_argument(
+        "--no-external", action="store_true", help="Keep remote/live surfaces closed."
+    )
     parser.add_argument("--dry-run", action="store_true", help="Do not mutate anything.")
     parser.add_argument("--json", action="store_true", help="Emit JSON.")
     args = parser.parse_args(argv)
