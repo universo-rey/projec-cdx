@@ -1,0 +1,9 @@
+risk_id,risk,level,control,decision
+R1,remote_branch_missing_latest_local_evidence,Medio,fast-forward branch before PR without force push,CONTROLLED
+R2,tag_push_accidental,Alto,do not push tag in G3 and verify remote tag absent,BLOCKED
+R3,merge_accidental,Alto,open draft PR only and do not merge,BLOCKED
+R4,workflow_dispatch_accidental,Alto,no gh workflow run and no manual dispatch,BLOCKED
+R5,secret_exposure,Critico,no env print and no token output beyond gh masked status,BLOCKED
+R6,live_surface_execution,Critico,no Dataverse Microsoft OpenAI MCP live actions,BLOCKED
+R7,checks_fail_after_pr,Medio,defer to G4 stabilization,CONTROLLED
+R8,dependabot_pr_noise,Medio,do not merge or approve dependency PRs by inference,OBSERVED
