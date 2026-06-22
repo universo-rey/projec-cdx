@@ -1,0 +1,7 @@
+item,source_path,local_result,external_result,decision,status
+metadata_validate,tools.validate,PASS,n/a,local_validator_ok,CLOSED_LOCAL
+pytest,tests,PASS_42_PASSED_1_SKIPPED,n/a,local_tests_ok,CLOSED_LOCAL
+build_index,tools.build_index,PASS,n/a,index_generation_ok,CLOSED_LOCAL
+build_graph,.github/workflows/build-graph.yml,CONFIG_PRESENT,github_check_not_queried,local_workflow_present,CLOSED_LOCAL_WITH_WARNINGS
+dependabot_labels,.github/dependabot.yml,labels_dependencies_python_github_actions,github_labels_not_queried,requires_github_label_gate,BLOCKED_WITH_GATE_PACKET
+promote_permissions,.github/workflows/promote.yml,contents_write_pull_requests_write,n/a,permissions_present,CLOSED_LOCAL
