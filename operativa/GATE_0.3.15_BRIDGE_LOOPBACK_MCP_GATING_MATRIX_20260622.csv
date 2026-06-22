@@ -1,0 +1,4 @@
+target_file,issue,risk,required_change,decision,postcheck
+cabina-universal-d:bridge_config,bind host may allow non-loopback without gate,remote exposure,reject non-loopback hosts unless explicit gate,READY_FOR_REMOTE_REPO_PATCH_GATE,non-loopback config fails without gate
+cabina-universal-d:mcp_registry,requires_approval yes can be bypassed when write_scope none,implicit live connection,gate requires_approval=yes regardless of write_scope,READY_FOR_REMOTE_REPO_PATCH_GATE,approval-required entries fail without gate
+cabina-universal-d:teams_mcp_config,Teams/MCP connection may activate without live gate,tenant-side effect,block live MCP/Teams until owner gate,READY_FOR_REMOTE_REPO_PATCH_GATE,no Teams/MCP live without gate
