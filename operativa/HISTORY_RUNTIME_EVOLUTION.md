@@ -24,3 +24,4 @@ descripcion: Timeline de versiones, snapshots y eventos criticos del runtime gob
 - `2026-06-23T00:19:37Z` snapshot `CEORUNTIME_20260623_0019` version `v0.6.0-rc1` commit `2d5302c7a61b66841bbcf8b95d541900b0adc395`.
 - `2026-06-23T00:21:44Z` snapshot `CEORUNTIME_20260623_0021` version `v0.6.0-rc1` commit `c572698f03869734da51ac64d1208992235f5875`.
 - `2026-06-23T00:31:14Z` snapshot `CEORUNTIME_20260623_0031` version `v0.6.0-rc1` commit `9240b9b38049fcd964b3abb7d763e190ac447c67`.
+- `2026-06-23T00:40:38Z` snapshot `CEORUNTIME_20260623_0040` version `v0.6.0-rc1` commit `64d9a61d96c8278617a151bc0b3f1b980091f9ce`.
