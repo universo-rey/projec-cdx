@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T00:42:40.851334+00:00",
-  "count": 76,
+  "generated_at": "2026-06-23T00:52:20.372939+00:00",
+  "count": 77,
   "items": [
     {
       "artifact_id": "operativa/ACTA_CLOUD_CODEX_GOVERNED_20260622.md",
@@ -2107,6 +2107,32 @@
       ],
       "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0040 generada por operacion continua.",
       "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0040.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0051.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0051.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0051.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0051 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0051.md",
       "metadata_kind": "front_matter"
     }
   ]

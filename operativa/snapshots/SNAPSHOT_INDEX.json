@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-06-23T00:40:39Z",
-  "total": 5,
+  "generated_at_utc": "2026-06-23T00:51:36Z",
+  "total": 6,
   "snapshots": [
     {
       "snapshot_id": "CEORUNTIME_20260623_0008",
@@ -57,6 +57,17 @@
       "dirty": false,
       "global_hash": "2c9c7922d6f13cd1e444cd38144d17300b93d79ad2a065445a95230c6aa59511",
       "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0040.json"
+    },
+    {
+      "snapshot_id": "CEORUNTIME_20260623_0051",
+      "version": "v0.6.0-rc1",
+      "commit": "392bc7bb35c4f5e0d38b884f3a95aeeac8e5480c",
+      "branch": "codex/runtime-versioning-snapshots",
+      "fecha": "2026-06-23T00:51:36Z",
+      "tipo": "auditoria-integral-corte",
+      "dirty": false,
+      "global_hash": "9ba141cbd3f857f75b5a060255c071cf054df7bfc4953c1dbc09e06b1314aa9d",
+      "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0051.json"
     }
   ]
 }
