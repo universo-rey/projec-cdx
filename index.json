@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T01:08:49.097545+00:00",
-  "count": 118,
+  "generated_at": "2026-06-23T01:09:04.094522+00:00",
+  "count": 123,
   "items": [
     {
       "artifact_id": "VERSION_POLICY.md",
@@ -1525,6 +1525,32 @@
       "metadata_kind": "front_matter"
     },
     {
+      "artifact_id": "operativa/HISTORY_CONTINUOUS_EVOLUTION.md",
+      "categoria": "operativa",
+      "tipo": "reporte",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/HISTORY_CONTINUOUS_EVOLUTION.md",
+      "etiquetas": [
+        "runtime",
+        "g7",
+        "mejora-continua"
+      ],
+      "relacionados": [
+        "VERSION_STATE.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Timeline de auditoria, divergencias, reconciliaciones y ajustes G7.",
+      "metadata_source": "operativa/HISTORY_CONTINUOUS_EVOLUTION.md",
+      "metadata_kind": "front_matter"
+    },
+    {
       "artifact_id": "operativa/HISTORY_RUNTIME_EVOLUTION.md",
       "categoria": "operativa",
       "tipo": "reporte",
@@ -2938,6 +2964,90 @@
       "metadata_kind": "front_matter"
     },
     {
+      "artifact_id": "operativa/runtime-events/ACTA_G7_ADJUSTMENT_G7_20260623_0108.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_G7_ADJUSTMENT_G7_20260623_0108.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/g7/G7_20260623_0108_CONTINUOUS_CYCLE.json",
+        "operativa/g7/G7_20260623_0108_DIVERGENCE_MATRIX.csv",
+        "operativa/g7/G7_20260623_0108_SYSTEM_INDICATORS.csv",
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0108.json"
+      ],
+      "descripcion": "Acta runtime G7_ADJUSTMENT_G7_20260623_0108 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_G7_ADJUSTMENT_G7_20260623_0108.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/ACTA_G7_AUDIT_G7_20260623_0108.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_G7_AUDIT_G7_20260623_0108.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/g7/G7_20260623_0108_CONTINUOUS_CYCLE.json",
+        "operativa/g7/G7_20260623_0108_DIVERGENCE_MATRIX.csv",
+        "operativa/g7/G7_20260623_0108_SYSTEM_INDICATORS.csv",
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0108.json"
+      ],
+      "descripcion": "Acta runtime G7_AUDIT_G7_20260623_0108 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_G7_AUDIT_G7_20260623_0108.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/ACTA_G7_RECONCILIATION_G7_20260623_0108.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_G7_RECONCILIATION_G7_20260623_0108.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/g7/G7_20260623_0108_CONTINUOUS_CYCLE.json",
+        "operativa/g7/G7_20260623_0108_DIVERGENCE_MATRIX.csv",
+        "operativa/g7/G7_20260623_0108_SYSTEM_INDICATORS.csv",
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0108.json"
+      ],
+      "descripcion": "Acta runtime G7_RECONCILIATION_G7_20260623_0108 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_G7_RECONCILIATION_G7_20260623_0108.md",
+      "metadata_kind": "front_matter"
+    },
+    {
       "artifact_id": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0019.md",
       "categoria": "operativa",
       "tipo": "acta",
@@ -3117,6 +3227,32 @@
       ],
       "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0105 generada por operacion continua.",
       "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0105.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0108.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0108.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0108.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0108 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0108.md",
       "metadata_kind": "front_matter"
     }
   ]
