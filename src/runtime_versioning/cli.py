@@ -102,19 +102,18 @@ def _tracked_tree_hash(root: Path, ref: str) -> dict[str, Any]:
     return {"tracked_file_count": len(entries), "tree_hash": digest.hexdigest()}
 
 
-def _top_level_structure(root: Path) -> dict[str, Any]:
-    directories: list[str] = []
-    files: list[str] = []
-    for child in sorted(root.iterdir(), key=lambda item: item.name.lower()):
-        if child.name == ".git":
+def _top_level_structure(root: Path, ref: str) -> dict[str, Any]:
+    directories: set[str] = set()
+    files: set[str] = set()
+    for line in _git(root, "ls-tree", "-r", "--name-only", ref).splitlines():
+        if not line:
             continue
-        if child.name.startswith(".env"):
-            continue
-        if child.is_dir():
-            directories.append(child.name)
-        elif child.is_file():
-            files.append(child.name)
-    return {"directories": directories, "files": files}
+        parts = line.replace("\\", "/").split("/")
+        if len(parts) == 1:
+            files.add(parts[0])
+        else:
+            directories.add(parts[0])
+    return {"directories": sorted(directories), "files": sorted(files)}
 
 
 def _metadata_summary(root: Path) -> dict[str, Any]:
@@ -205,7 +204,7 @@ def _snapshot_payload(root: Path, ref: str, allow_dirty: bool) -> dict[str, Any]
             "dirty": bool(status_lines),
             "status": status_lines,
         },
-        "structure": _top_level_structure(root),
+        "structure": _top_level_structure(root, commit),
         "metadata": _metadata_summary(root),
         "ci": _ci_summary(root),
         "watched_hashes": watched,
