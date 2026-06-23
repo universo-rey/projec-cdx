@@ -1,0 +1,59 @@
+schema_version: 1
+contract_mode: ORGANISMO_VIVO_ENABLEMENT
+base_contract_commit: 607d29c4ec77074c048c234941cc641be78608fe
+principle: "Top 0.01 percent as governed SDU capabilities, not opaque installation."
+capability_layer:
+  specialized_agents:
+    enabled_status: declared
+    config: ".cabina/organizacion-total/config/top001-specialized-agents.v1.yaml"
+    can_execute_now: true
+    requires_gate: false
+    evidence: ".cabina/organizacion-total/out/TOP001_SPECIALIZED_AGENTS_AFTER_EXPANSION.md"
+    rollback: remove_config_or_revert_commit
+    owner_decision_required: false
+  agent_teams:
+    enabled_status: declared
+    config: ".cabina/organizacion-total/config/top001-agent-teams.v1.yaml"
+    can_execute_now: true_for_design_and_readback
+    requires_gate: manual_runtime_activation_if_needed
+    evidence: ".cabina/organizacion-total/out/TOP001_AGENT_TEAMS_AFTER_EXPANSION.md"
+    rollback: remove_config_or_revert_commit
+    owner_decision_required: true_if_experimental_runtime_activation
+  mcp:
+    enabled_status: modeled
+    config: ".cabina/organizacion-total/config/top001-mcp-capabilities.v1.yaml"
+    can_execute_now: declarative_inventory_only
+    requires_gate: true_for_secret_or_live_connector
+    evidence: ".cabina/organizacion-total/out/TOP001_MCP_AFTER_EXPANSION.md"
+    rollback: remove_config_or_revert_commit
+    owner_decision_required: true_for_install_or_credential
+  monitoring:
+    enabled_status: declared
+    config: ".cabina/organizacion-total/config/top001-monitoring.v1.yaml"
+    can_execute_now: true
+    requires_gate: false_if_sanitized_readback_only
+    evidence: ".cabina/organizacion-total/out/TOP001_MONITORING_AFTER_EXPANSION.md"
+    rollback: remove_config_or_revert_commit
+    owner_decision_required: false
+  automation:
+    enabled_status: review_queue_prepared
+    config: ".cabina/organizacion-total/config/top001-automations.v1.yaml"
+    can_execute_now: true_for_manual_queue_generation
+    requires_gate: true_for_scheduler_or_external_automation
+    evidence: ".cabina/organizacion-total/out/TOP001_AUTOMATION_AFTER_EXPANSION.md"
+    rollback: remove_config_or_revert_commit
+    owner_decision_required: true_for_activation
+  wrapper_harness:
+    enabled_status: explicit_first_wrapper_later_with_gate
+    config: ".cabina/organizacion-total/out/TOP001_WRAPPER_HARNESS_DECISION.md"
+    can_execute_now: false_for_install
+    requires_gate: true
+    evidence: ".cabina/organizacion-total/out/TOP001_WRAPPER_HARNESS_DECISION.md"
+    rollback: not_applicable_no_install
+    owner_decision_required: true
+forbidden:
+  - install_opaque_wrapper_without_gate
+  - write_real_credentials
+  - connect_remote_or_live_without_gate
+  - create_external_automation_without_gate
+  - version_raw_traces_or_logs

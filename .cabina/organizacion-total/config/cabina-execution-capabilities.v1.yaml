@@ -1,0 +1,101 @@
+schema_version: 1
+contract_id: SDU_CABINA_CONTRACT_G1_20260623
+contract_mode: ENABLEMENT_WITH_INTELLIGENT_CONTROL
+baseline: SDU_ORG_TOTAL_G1_V3_BASELINE_CANDIDATE_20260623
+capabilities:
+  - capability_id: READ_STATUS
+    mode: OBSERVE
+    agents: [SESHAT, HORUS, MAAT]
+    can_execute_now: true
+    required_gate: none
+    evidence_required: [status_readback]
+    rollback_required: false
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: CLASSIFY_LOCAL_SURFACES
+    mode: PLAN
+    agents: [SESHAT, THOT, ANUBIS]
+    can_execute_now: true
+    required_gate: none
+    evidence_required: [triage_matrix]
+    rollback_required: false
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: GENERATE_EVIDENCE
+    mode: PLAN
+    agents: [MAAT, HORUS]
+    can_execute_now: true
+    required_gate: none
+    evidence_required: [readback_or_matrix]
+    rollback_required: false
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: REPAIR_LOCAL_CONFIG
+    mode: LOCAL_CONFIG_REPAIR
+    agents: [THOT, ANUBIS, MAAT]
+    can_execute_now: true_if_backup_and_validation
+    required_gate: backup_and_validation
+    evidence_required: [backup_path, diff_check, validation_readback]
+    rollback_required: true
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: UPDATE_VSCODE_TASKS
+    mode: LOCAL_CONFIG_REPAIR
+    agents: [THOT, ANUBIS]
+    can_execute_now: true_if_workspace_only
+    required_gate: workspace_only
+    evidence_required: [backup_path, task_parse, workspace_scope]
+    rollback_required: true
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: UPDATE_AGENT_SKILLS
+    mode: LOCAL_CONFIG_REPAIR
+    agents: [SESHAT, THOT, MAAT]
+    can_execute_now: true_if_declarative_only
+    required_gate: declarative_only
+    evidence_required: [registry_readback]
+    rollback_required: false
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: GENERATE_MOVE_PLAN
+    mode: PLAN
+    agents: [SESHAT, THOT, ANUBIS, HORUS]
+    can_execute_now: true
+    required_gate: none
+    evidence_required: [move_plan_dry_run]
+    rollback_required: false
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: APPLY_LOCAL_MOVE_PLAN
+    mode: LOCAL_APPLY
+    agents: [ANUBIS, MAAT, HORUS]
+    can_execute_now: false_until_owner_gate
+    required_gate: owner_apply_gate
+    evidence_required: [owner_approval_ref, target, rollback, postcheck]
+    rollback_required: true
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: LOCAL_COMMIT
+    mode: LOCAL_COMMIT
+    agents: [THOT, ANUBIS, MAAT]
+    can_execute_now: true_if_pathspec_and_staging_scope_ok
+    required_gate: pathspec_and_staging_scope
+    evidence_required: [staged_path_list, forbidden_path_scan, diff_check]
+    rollback_required: true
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: REMOTE_PUSH
+    mode: REMOTE_PREP
+    agents: [ANUBIS, MAAT]
+    can_execute_now: false_until_remote_gate
+    required_gate: remote_gate
+    evidence_required: [owner_approval_ref, remote_target, pr_plan]
+    rollback_required: true
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: OPEN_PR
+    mode: PR_GOVERNED
+    agents: [ANUBIS, MAAT, NARRADOR]
+    can_execute_now: false_until_owner_gate
+    required_gate: owner_pr_gate
+    evidence_required: [owner_approval_ref, branch, pr_body]
+    rollback_required: true
+    validator: Test-CabinaExecutionGate.ps1
+  - capability_id: LIVE_WRITE
+    mode: LIVE_GATED
+    agents: [ANUBIS, MAAT, HORUS]
+    can_execute_now: false_until_G4_G5
+    required_gate: G4_G5_live_gate
+    evidence_required: [owner_approval_ref, tenant_env_site, rollback, postcheck]
+    rollback_required: true
+    validator: Test-CabinaExecutionGate.ps1

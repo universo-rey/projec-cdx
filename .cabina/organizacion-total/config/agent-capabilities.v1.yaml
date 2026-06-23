@@ -1,0 +1,41 @@
+schema_version: 1
+baseline: SDU_ORG_TOTAL_G1_V3_BASELINE_CANDIDATE_20260623
+mode: declarative_only_no_live
+agents:
+  - agent_id: SESHAT
+    role: ROUTER_CANONICO
+    capabilities:
+      - classification_skills
+      - manual_review_skills
+      - multiple_triage_skills
+      - baseline_management_skills
+    status: active_declarative
+  - agent_id: THOT
+    role: ARQUITECTO_TECNICO
+    capabilities:
+      - registry_skills
+      - vscode_operator_skills
+      - hardening_skills
+      - git_hygiene_skills
+    status: active_declarative
+  - agent_id: ANUBIS
+    role: GUARD_GATE
+    capabilities:
+      - guardrail_skills
+      - git_hygiene_skills
+      - baseline_management_skills
+    status: active_declarative
+  - agent_id: MAAT
+    role: EVIDENCIA_AUDITORIA
+    capabilities:
+      - evidence_skills
+      - reporting_skills
+      - baseline_management_skills
+    status: active_declarative
+  - agent_id: HORUS
+    role: OBSERVABILIDAD_DRIFT
+    capabilities:
+      - drift_detection_skills
+      - multiple_triage_skills
+      - risk_reporting_skills
+    status: active_declarative

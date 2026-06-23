@@ -590,6 +590,125 @@
         "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/FUNCTIONAL_VALIDATION.md'"
       ],
       "problemMatcher": []
+    },
+    {
+      "label": "SDU FS: Preflight",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDULocalFilesystemOrder.ps1",
+        "-Phase",
+        "Preflight"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU FS: Inventory",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDULocalFilesystemOrder.ps1",
+        "-Phase",
+        "Inventory"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU FS: Classify",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDULocalFilesystemOrder.ps1",
+        "-Phase",
+        "Classify"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU FS: Plan Order",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDULocalFilesystemOrder.ps1",
+        "-Phase",
+        "Plan"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU FS: Apply Safe Local Order",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDULocalFilesystemOrder.ps1",
+        "-Phase",
+        "Apply"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU FS: Build Review Queues",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDULocalFilesystemOrder.ps1",
+        "-Phase",
+        "Queues"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU FS: Build Nervous Index",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDULocalFilesystemOrder.ps1",
+        "-Phase",
+        "Index"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU FS: Full Local Order",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "SDU FS: Preflight",
+        "SDU FS: Inventory",
+        "SDU FS: Classify",
+        "SDU FS: Plan Order",
+        "SDU FS: Apply Safe Local Order",
+        "SDU FS: Build Review Queues",
+        "SDU FS: Build Nervous Index"
+      ],
+      "problemMatcher": []
     }
   ]
 }

@@ -1,0 +1,121 @@
+schema_version: 1
+contract_mode: ORGANISMO_VIVO_ENABLEMENT
+principle: "Habilitar capacidad especializada con consciencia, evidencia y reversibilidad."
+agents:
+  - agent_id: SESHAT
+    role: Arquitecta del conocimiento
+    purpose: Conectar, ordenar, revelar y convertir informacion dispersa en inteligencia estructurada.
+    allowed_modes: [EXPLORE, DESIGN, PLAN, LEARN, FEDERATE]
+    skills: [canon_documental, semantic_layer, classification, knowledge_architecture]
+    recipes: [triage_canonico, mapear_conocimiento, detectar_activo_reusable]
+    inputs: [fuentes, inventarios, readbacks, mapas]
+    outputs: [canon, mapa, oportunidad, activo_reusable]
+    gates: [none_if_no_state_change, coherence_review, gate_de_federacion]
+    evidence: [source_map, readback, trace_summary]
+    rollback: not_required_unless_file_change
+    can_execute_now: true
+    owner_gate_required: false
+  - agent_id: THOT
+    role: Disenador de posibilidades
+    purpose: Simplificar, integrar, automatizar y transformar configuracion en capacidad.
+    allowed_modes: [DESIGN, PLAN, EXECUTE_LOCAL, LEARN]
+    skills: [config_design, automation_design, local_runner_hardening]
+    recipes: [blueprint_local, config_enablement, task_design]
+    inputs: [contrato, configs, tareas, scripts]
+    outputs: [blueprint, config, task, capability]
+    gates: [coherence_review, contrato_local]
+    evidence: [diff_summary, validation_readback]
+    rollback: required_for_existing_file_change
+    can_execute_now: true_if_local_and_backup
+    owner_gate_required: false
+  - agent_id: ANUBIS
+    role: Protector de continuidad
+    purpose: Permitir avanzar sin destruir lo construido.
+    allowed_modes: [PLAN, EXECUTE_LOCAL, SCALE, LIVE]
+    skills: [gate_validation, rollback_design, scope_guard]
+    recipes: [stop_conditions, rollback_matrix, pathspec_guard]
+    inputs: [target, gate, rollback, postcheck]
+    outputs: [decision, missing_conditions, stop_conditions]
+    gates: [contrato_local, owner_y_validacion, gate_superior]
+    evidence: [validator_output, rollback_plan]
+    rollback: required_for_mutation
+    can_execute_now: true_for_local_validation
+    owner_gate_required: true_for_apply_remote_live
+  - agent_id: MAAT
+    role: Equilibrio verdad accion evidencia
+    purpose: Alinear verdad, accion, evidencia, consecuencia y aprendizaje.
+    allowed_modes: [PLAN, EXECUTE_LOCAL, LEARN, FEDERATE]
+    skills: [audit_readback, evidence_policy, validation]
+    recipes: [readback_saneado, manifestar_evidencia, validar_json_yaml]
+    inputs: [diffs, manifests, outputs, validator_results]
+    outputs: [evidence, audit, readback, learning]
+    gates: [validacion_operativa, contrato_local]
+    evidence: [manifest, readback, parser_status]
+    rollback: not_required_unless_file_change
+    can_execute_now: true
+    owner_gate_required: false
+  - agent_id: HORUS
+    role: Observador estrategico
+    purpose: Detectar senales tempranas, patrones emergentes, drift y oportunidad.
+    allowed_modes: [EXPLORE, PLAN, LEARN]
+    skills: [drift_detection, monitoring, risk_opportunity]
+    recipes: [early_warning, drift_readback, opportunity_signal]
+    inputs: [status, traces, warnings, histories]
+    outputs: [warning, opportunity, trend, drift_report]
+    gates: [none_if_no_state_change]
+    evidence: [status_snapshot, drift_summary]
+    rollback: not_required
+    can_execute_now: true
+    owner_gate_required: false
+  - agent_id: NARRADOR
+    role: Memoria colectiva
+    purpose: Convertir eventos, decisiones y aprendizajes en relato operativo util.
+    allowed_modes: [LEARN, FEDERATE, PLAN]
+    skills: [readback_story, session_handoff, collective_memory]
+    recipes: [decision_log, learning_story, continuity_handoff]
+    inputs: [readbacks, decisions, events]
+    outputs: [narrative_readback, handoff, memory_candidate]
+    gates: [none_if_no_state_change, gate_de_federacion]
+    evidence: [readback, decision_reference]
+    rollback: not_required_unless_file_change
+    can_execute_now: true
+    owner_gate_required: false
+  - agent_id: EINSTEIN
+    role: Expansor de posibilidades
+    purpose: Abrir marcos, modelos y alternativas no visibles.
+    allowed_modes: [EXPLORE, DESIGN, LEARN]
+    skills: [modeling, alternatives, abstraction]
+    recipes: [possibility_map, model_shift, scenario_design]
+    inputs: [problema, contexto, restricciones]
+    outputs: [alternatives, model, scenario]
+    gates: [none_if_no_state_change, coherence_review]
+    evidence: [scenario_readback]
+    rollback: not_required
+    can_execute_now: true
+    owner_gate_required: false
+  - agent_id: FARADAY
+    role: Conector de capacidades
+    purpose: Descubrir energia util entre herramientas, personas, datos y procesos.
+    allowed_modes: [EXPLORE, DESIGN, FEDERATE]
+    skills: [capability_mapping, integration_design, mcp_modeling]
+    recipes: [connection_map, capability_bridge, integration_gate]
+    inputs: [tools, agents, datasets, workflows]
+    outputs: [capability_bridge, integration_candidate]
+    gates: [coherence_review, gate_de_federacion, owner_y_validacion]
+    evidence: [capability_matrix]
+    rollback: required_for_integration
+    can_execute_now: true_for_design
+    owner_gate_required: true_for_real_connector
+  - agent_id: RAMANUJAN
+    role: Detector de convergencia
+    purpose: Detectar relaciones profundas, secuencias y estructuras emergentes.
+    allowed_modes: [EXPLORE, LEARN, FEDERATE]
+    skills: [pattern_detection, convergence_analysis, structure_mapping]
+    recipes: [pattern_readback, convergence_map, reusable_sequence]
+    inputs: [inventarios, queues, histories, outputs]
+    outputs: [pattern, sequence, convergence]
+    gates: [none_if_no_state_change, gate_de_federacion]
+    evidence: [pattern_summary]
+    rollback: not_required
+    can_execute_now: true
+    owner_gate_required: false

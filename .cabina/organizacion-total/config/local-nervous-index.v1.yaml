@@ -1,0 +1,27 @@
+schema: local-nervous-index.v1
+generated_at: "2026-06-23T04:18:35"
+repo: "C:/Users/enzo1/PROJEC CDX"
+runner_root: "C:/Users/enzo1/PROJEC CDX/.cabina/organizacion-total"
+baseline_commit: "c9d848a225802000701fb4fa97b077d0dcec4bd6"
+artifacts:
+  inventory_csv: ".cabina/organizacion-total/out/LOCAL_FILESYSTEM_INVENTORY.csv"
+  classification_csv: ".cabina/organizacion-total/out/LOCAL_FILE_CLASSIFICATION.csv"
+  order_plan: ".cabina/organizacion-total/out/LOCAL_ORDER_PLAN.md"
+  folder_map: ".cabina/organizacion-total/config/local-folder-map.v1.yaml"
+counts:
+  roots: 14
+  files: 26398
+  folders: 5473
+  owner_review: 2619
+  multiple_review: 3540
+  sensitive_review: 2619
+  temp_retention: 95
+  backup_retention: 371
+  conflicts: 0
+  directories_created: 0
+  directories_ensured: 21
+gates:
+  move_gate_required: true
+  delete_gate_required: true
+  live_gate_required: true
+  remote_gate_required: true

@@ -1,0 +1,1032 @@
+{
+  "schema": "dirty-tree-delta-classification.v1",
+  "generated_at": "2026-06-23T09:39:10",
+  "branch": "codex/runtime-versioning-snapshots",
+  "head": "c9d848a225802000701fb4fa97b077d0dcec4bd6",
+  "summary": [
+    {
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "count": 33
+    },
+    {
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "count": 73
+    },
+    {
+      "category": "RUNTIME_STATE_DELTA",
+      "count": 12
+    },
+    {
+      "category": "TEMP_BACKUP_RETENTION",
+      "count": 7
+    }
+  ],
+  "items": [
+    {
+      "path": ".cabina/organizacion-total/.vscode/tasks.json",
+      "git_status": "M",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "workspace interface selected"
+    },
+    {
+      "path": ".cabina/organizacion-total/CABINA_CONTRACT_G1.md",
+      "git_status": "M",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "contract/policy canon"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/agent-capabilities.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/agent-raci.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/agent-recipes.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/agent-risk-controls.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/agent-skills.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/cabina-execution-capabilities.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/cabina-top001-settings.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/local-file-classification-rules.v1.json",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/local-folder-map.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/local-nervous-index.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/top001-agent-teams.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/top001-automations.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/top001-mcp-capabilities.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/top001-monitoring.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/top001-specialized-agents.v1.yaml",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "declarative cabina config"
+    },
+    {
+      "path": ".cabina/organizacion-total/docs/LOCAL_FOLDER_MASTER_MAP.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "cabina documentation"
+    },
+    {
+      "path": ".cabina/organizacion-total/docs/TOP001_MONITORING_RUNBOOK.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "cabina documentation"
+    },
+    {
+      "path": ".cabina/organizacion-total/EVIDENCE_RETENTION_POLICY.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "contract/policy canon"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/DIRTY_TREE_DELTA_CLASSIFICATION.json",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "sanitized dirty tree classification json"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/DIRTY_TREE_DELTA_CLASSIFICATION.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "selected sanitized final readback"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_MASTER_READBACK_SDU_COMPLETION_CHAIN_20260623.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "selected sanitized final readback"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_CABINA_CONTRACT_AND_CONFIG_REPAIR_G1.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "selected sanitized final readback"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_CABINA_ENABLEMENT_INTELLIGENT_EXECUTION_G1.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "selected sanitized final readback"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_CABINA_EXPANSION_LOCAL_CANONIZATION_G1.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "selected sanitized final readback"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_LOCAL_FILESYSTEM_TOTAL_ORDER_G1.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "selected sanitized final readback"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_NERVOUS_SYSTEM_LOCAL_CANONIZATION_G1.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "selected sanitized final readback"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_TOP001_CODEX_CONFIG_ENABLEMENT_G1.md",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "selected sanitized final readback"
+    },
+    {
+      "path": ".cabina/organizacion-total/scripts/Invoke-CabinaPwsh.ps1",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "active cabina script explicitly selected"
+    },
+    {
+      "path": ".cabina/organizacion-total/scripts/Invoke-SDULocalFilesystemOrder.ps1",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "active cabina script explicitly selected"
+    },
+    {
+      "path": ".cabina/organizacion-total/scripts/Test-CabinaExecutionGate.ps1",
+      "git_status": "A",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "active cabina script explicitly selected"
+    },
+    {
+      "path": ".gitignore",
+      "git_status": "M",
+      "category": "CABINA_ORG_TOTAL_CANON_VERSIONABLE",
+      "stage_candidate": true,
+      "safe_to_stage": true,
+      "rationale": "supporting ignore policy for cabina local-only evidence"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/classification-rules.v3.1.proposed.json",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "proposal not adopted for this canonization"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/AGENT_REGISTRY.patch.yaml",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/AGENT_REGISTRY.v2.patch.yaml",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/AGENT_SKILLS_DIFF.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/agent-coverage-analysis.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/agent-role-map.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/agent-role-map.v2.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/ALLOWED_LOCAL_HARDENING_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CABINA_CONFIG_REPAIR_PLAN_G1.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CABINA_CONFIG_VALIDATION_G1.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CABINA_CONTRACT_ENABLEMENT_DIFF.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CABINA_CONTRACT_ENABLEMENT_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CABINA_ENABLEMENT_COMMIT_PLAN.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CABINA_EXECUTION_CAPABILITY_MATRIX.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CABINA_EXECUTION_GATE_VALIDATOR_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CABINA_EXPANSION_CANONIZATION_PREFLIGHT.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CABINA_TOP001_CONTRACT_INTEGRATION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CABINA_WORKSPACE_PORTABILITY_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CARRIL_0_PREFLIGHT_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CARRIL_2_EVIDENCE_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CARRIL_3_AGENT_SKILLS_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CARRIL_4_HARDENING_REPORT.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CARRIL_5_VSCODE_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CARRIL_6_MANUAL_REVIEW_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CARRIL_7_MULTIPLE_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CARRIL_8_DELTAS_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CODEX_CLOUD_FUNCTIONAL_LINK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/CODEX_CLOUD_HANDOFF_PROTOCOL_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/DATAVERSE_AGENT_MEMORY_BRIDGE.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/DELTA_VERSION_STATE_INDEX_ANALYSIS.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/DIRTY_TREE_CLASSIFICATION_PREFLIGHT.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_PENDING_LOCAL_SURFACES_TRIAGE.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1_V3_PATHSPEC_CANONIZATION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FUNCTIONAL_AGENT_RUNTIME_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FUNCTIONAL_VALIDATION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FUTURE_DELTAS_PLAN.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/HARDENING_PATCH_PLAN.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/LOCAL_FS_PREFLIGHT.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/LOCAL_NERVOUS_INDEX.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/LOCAL_ORDER_APPLY_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/LOCAL_ORDER_PLAN.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/LOCAL_ORDER_VALIDATION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/MANUAL_REVIEW_QUEUE_G1_V3.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/manual-review-analysis.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/MULTIPLE_QUEUE_G1_V3.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/multiple-resolution-candidates.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/multiple-triage.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/NERVOUS_SYSTEM_MAP_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/NERVOUS_SYSTEM_PREFLIGHT.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/NS_CANONIZATION_PREFLIGHT.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/org-report.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/PENDING_DELTAS_PROPOSAL.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/PENDING_LOCAL_SURFACES_STATUS.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/PENDING_LOCAL_SURFACES_TRIAGE.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/preflight-readback.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/rules-v3-diff.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/rules-v3-to-v3.1-proposal.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/TOP001_AGENT_TEAMS_AFTER_EXPANSION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/TOP001_AUTOMATION_AFTER_EXPANSION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/TOP001_MCP_AFTER_EXPANSION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/TOP001_MONITORING_AFTER_EXPANSION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/TOP001_NERVOUS_SYSTEM_BINDING.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/TOP001_PREFLIGHT_AFTER_EXPANSION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/TOP001_SPECIALIZED_AGENTS_AFTER_EXPANSION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/TOP001_VSCODE_TASKS_AFTER_EXPANSION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/TOP001_WRAPPER_HARNESS_DECISION.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/validation-readback.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/validation-readback.pathspec-canonization.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/validation-readback.v3.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/VERSION_STATE_INDEX_DECISION_MATRIX.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/VSCODE_LOCAL_ORDER_INTERFACE_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/VSCODE_NERVOUS_INTERFACE_READBACK.md",
+      "git_status": "??",
+      "category": "CABINA_ORG_TOTAL_LOCAL_ONLY",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "non-selected out evidence local only"
+    },
+    {
+      "path": "index.json",
+      "git_status": "M",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "operativa/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
+      "git_status": "??",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv",
+      "git_status": "??",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv.meta.json",
+      "git_status": "??",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "operativa/HISTORY_RUNTIME_EVOLUTION.md",
+      "git_status": "M",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "operativa/index.json",
+      "git_status": "M",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0246.md",
+      "git_status": "??",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0247.md",
+      "git_status": "??",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "operativa/snapshots/SNAPSHOT_INDEX.json",
+      "git_status": "M",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0246.json",
+      "git_status": "??",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0247.json",
+      "git_status": "??",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": "VERSION_STATE.json",
+      "git_status": "M",
+      "category": "RUNTIME_STATE_DELTA",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "runtime state/index/snapshot surface excluded from cabina canonization"
+    },
+    {
+      "path": ".cabina/organizacion-total/CABINA_CONTRACT_G1.md.previous-20260623_031305",
+      "git_status": "??",
+      "category": "TEMP_BACKUP_RETENTION",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "temporary or backup retention surface"
+    },
+    {
+      "path": ".cabina/organizacion-total/CABINA_CONTRACT_G1.md.previous-20260623_033229",
+      "git_status": "??",
+      "category": "TEMP_BACKUP_RETENTION",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "temporary or backup retention surface"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/cabina-contract.v1.json.previous-20260623_031305",
+      "git_status": "??",
+      "category": "TEMP_BACKUP_RETENTION",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "temporary or backup retention surface"
+    },
+    {
+      "path": ".cabina/organizacion-total/scripts/Invoke-SDUAgentDiscovery.ps1.previous-20260623_015727",
+      "git_status": "??",
+      "category": "TEMP_BACKUP_RETENTION",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "temporary or backup retention surface"
+    },
+    {
+      "path": ".cabina/organizacion-total/scripts/Invoke-SDUOrgClassifyMultiAgent.ps1.previous-20260623_020749",
+      "git_status": "??",
+      "category": "TEMP_BACKUP_RETENTION",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "temporary or backup retention surface"
+    },
+    {
+      "path": ".gitignore.previous-20260623_022041",
+      "git_status": "??",
+      "category": "TEMP_BACKUP_RETENTION",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "temporary or backup retention surface"
+    },
+    {
+      "path": ".gitignore.previous-20260623_093750",
+      "git_status": "??",
+      "category": "TEMP_BACKUP_RETENTION",
+      "stage_candidate": false,
+      "safe_to_stage": false,
+      "rationale": "temporary or backup retention surface"
+    }
+  ],
+  "frontier": {
+    "push": false,
+    "pr": false,
+    "secret_exposure": false,
+    "live": false
+  }
+}

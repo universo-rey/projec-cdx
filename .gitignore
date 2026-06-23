@@ -14,6 +14,8 @@ operativa/PAC_*_HUBDESARROLLO_*.txt
 operativa/backup-*.reg
 operativa/sentinel/SENTINEL_REPORT.json
 operativa/sentinel/DRIFT_LOG.json
+.tmp_sdu_org_total/
+work/
 
 # Local workspace tooling overlays.
 .opencode
@@ -28,6 +30,7 @@ operativa/sentinel/DRIFT_LOG.json
 .cabina/organizacion-total/out/*.csv
 .cabina/organizacion-total/out/*.json
 .cabina/organizacion-total/logs/
+!.cabina/organizacion-total/out/DIRTY_TREE_DELTA_CLASSIFICATION.json
 !.cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1_V3.md
 !.cabina/organizacion-total/out/BASELINE_DECISION_G1_V3.md
 !.cabina/organizacion-total/out/G1_V2_V3_COMPARATIVE_REPORT.md

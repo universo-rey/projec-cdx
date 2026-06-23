@@ -1,0 +1,104 @@
+schema: local-folder-map.v1
+generated_at: "2026-06-23T04:18:32"
+mode: LOCAL_FILESYSTEM_TOTAL_ORDER_METADATA_ONLY
+canonical_taxonomy:
+  control_plane: "C:/CEO/00_CONTROL_PLANE"
+  cabina_sdu: "C:/CEO/01_CABINA_SDU"
+  runtime_operativa: "C:/CEO/02_RUNTIME_OPERATIVA"
+  codex_local: "C:/CEO/03_CODEX_LOCAL"
+  config_and_registries: "C:/CEO/04_CONFIG_AND_REGISTRIES"
+  tools_and_automation: "C:/CEO/05_TOOLS_AND_AUTOMATION"
+  evidence_and_readbacks: "C:/CEO/06_EVIDENCE_AND_READBACKS"
+  raw_and_local_only: "C:/CEO/07_RAW_AND_LOCAL_ONLY"
+  agent_systems: "C:/CEO/08_AGENT_SYSTEMS"
+  vscode_interface: "C:/CEO/09_VSCODE_INTERFACE"
+  sharepoint_dataverse_references: "C:/CEO/10_SHAREPOINT_DATAVERSE_REFERENCES"
+  handoffs_and_deltas: "C:/CEO/11_HANDOFFS_AND_DELTAS"
+  archive: "C:/CEO/12_ARCHIVE"
+  owner_review: "C:/CEO/98_OWNER_REVIEW"
+  conflicts: "C:/CEO/99_CONFLICTS"
+repo_taxonomy:
+  filesystem_order: ".cabina/organizacion-total/filesystem-order"
+  evidence: ".cabina/organizacion-total/evidence"
+  handoff: ".cabina/organizacion-total/handoff"
+  queues: ".cabina/organizacion-total/queues"
+  deltas: ".cabina/organizacion-total/deltas"
+  nervous_system: ".cabina/organizacion-total/nervous-system"
+roots:
+  - root_id: CEO_ROOT
+    path: "C:/CEO"
+    role: control_plane_facade
+    exists: true
+    scan_scope: bounded_metadata
+  - root_id: PROJECT_CDX
+    path: "C:/Users/enzo1/PROJEC CDX"
+    role: repo_physical_root
+    exists: true
+    scan_scope: repo_metadata
+  - root_id: CODEX_HOME
+    path: "C:/Users/enzo1/.codex"
+    role: codex_local_state
+    exists: true
+    scan_scope: bounded_metadata
+  - root_id: DOWNLOADS
+    path: "C:/Users/enzo1/Downloads"
+    role: ingress_surface
+    exists: true
+    scan_scope: bounded_metadata
+  - root_id: DOCUMENTS
+    path: "C:/Users/enzo1/Documents"
+    role: documents_surface
+    exists: true
+    scan_scope: bounded_metadata
+  - root_id: DESKTOP
+    path: "C:/Users/enzo1/Desktop"
+    role: desktop_surface
+    exists: true
+    scan_scope: bounded_metadata
+  - root_id: OPERATIVA
+    path: "C:/Users/enzo1/PROJEC CDX/operativa"
+    role: operational_surface
+    exists: true
+    scan_scope: repo_metadata
+  - root_id: WORK
+    path: "C:/Users/enzo1/PROJEC CDX/work"
+    role: working_backups_surface
+    exists: true
+    scan_scope: repo_metadata
+  - root_id: TMP_SDU_ORG_TOTAL
+    path: "C:/Users/enzo1/PROJEC CDX/.tmp_sdu_org_total"
+    role: temporary_surface
+    exists: true
+    scan_scope: repo_metadata
+  - root_id: CABINA_OUT
+    path: "C:/Users/enzo1/PROJEC CDX/.cabina/organizacion-total/out"
+    role: evidence_output_surface
+    exists: true
+    scan_scope: repo_metadata
+  - root_id: CABINA_LOGS
+    path: "C:/Users/enzo1/PROJEC CDX/.cabina/organizacion-total/logs"
+    role: logs_surface
+    exists: true
+    scan_scope: repo_metadata
+  - root_id: ONEDRIVE_ONEDRIVE
+    path: "C:/Users/enzo1/OneDrive"
+    role: onedrive_local_sync_surface
+    exists: true
+    scan_scope: bounded_metadata
+  - root_id: ONEDRIVE_ONEDRIVE___ESCRIBANIA_BITSCH
+    path: "C:/Users/enzo1/OneDrive - ESCRIBANIA BITSCH"
+    role: onedrive_local_sync_surface
+    exists: true
+    scan_scope: bounded_metadata
+  - root_id: ONEDRIVE_ONEDRIVE___MODO_ON
+    path: "C:/Users/enzo1/OneDrive - Modo On"
+    role: onedrive_local_sync_surface
+    exists: true
+    scan_scope: bounded_metadata
+policies:
+  no_delete: true
+  no_unapproved_move: true
+  metadata_only_for_sensitive: true
+  raw_evidence_local_only: true
+  live_disabled: true
+  remote_disabled: true

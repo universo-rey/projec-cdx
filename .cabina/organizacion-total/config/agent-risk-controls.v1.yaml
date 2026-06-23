@@ -1,0 +1,23 @@
+schema_version: 1
+baseline: SDU_ORG_TOTAL_G1_V3_BASELINE_CANDIDATE_20260623
+controls:
+  - control_id: no_delete_no_move
+    owner: ANUBIS
+    applies_to: [all_carriles]
+    forbidden_operations: [Remove-Item, Move-Item, git_clean, git_reset_hard]
+    evidence: gate_readback
+  - control_id: no_remote_no_live
+    owner: ANUBIS
+    applies_to: [all_carriles]
+    forbidden_operations: [git_push, gh_pr_create, live_write, apply_real]
+    evidence: final_readback
+  - control_id: raw_evidence_guard
+    owner: MAAT
+    applies_to: [out, logs, queues]
+    forbidden_operations: [version_raw_csv, version_raw_json, expose_secret]
+    evidence: evidence_retention_matrix
+  - control_id: cross_universe_guard
+    owner: HORUS
+    applies_to: [manual_review, multiple_queue]
+    forbidden_operations: [auto_resolve_multiple, lower_protection_without_gate]
+    evidence: multiple_queue

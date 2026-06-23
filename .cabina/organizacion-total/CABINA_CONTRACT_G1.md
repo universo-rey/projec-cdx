@@ -460,3 +460,25 @@ Debe devolver JSON con:
 | push remoto | true | remote gate |
 | abrir PR | true | PR governed gate |
 | live write | true | G4/G5 live gate |
+
+## TOP001 Capability Layer
+
+La capa TOP001 traduce los cinco ajustes de operacion superior a capacidades SDU gobernadas. No instala herramientas por moda y no bloquea por miedo: habilita capacidad con consciencia, evidencia y reversibilidad.
+
+| Capability | Enabled Status | Can Execute Now | Requires Gate | Evidence | Rollback | Owner Decision Required |
+|---|---|---|---|---|---|---|
+| specialized_agents | declared | true | false | `TOP001_SPECIALIZED_AGENTS_AFTER_EXPANSION.md` | revertir config o commit | false |
+| agent_teams | declared | true para diseno/readback | true si requiere runtime experimental | `TOP001_AGENT_TEAMS_AFTER_EXPANSION.md` | revertir config o commit | true si hay activacion runtime |
+| mcp | modeled | declarative_inventory_only | true para secreto, instalacion o conector live | `TOP001_MCP_AFTER_EXPANSION.md` | revertir config o commit | true para instalacion/credencial |
+| monitoring | declared | true | false si es readback saneado | `TOP001_MONITORING_AFTER_EXPANSION.md` | revertir config o commit | false |
+| automation | review_queue_prepared | true para cola manual | true para scheduler o automatizacion externa | `TOP001_AUTOMATION_AFTER_EXPANSION.md` | revertir config o commit | true para activacion |
+| wrapper_harness | explicit_first_wrapper_later_with_gate | false para instalacion | true | `TOP001_WRAPPER_HARNESS_DECISION.md` | no aplica, no instalado | true |
+
+Reglas TOP001:
+
+- Primero configuracion explicita propia.
+- Wrappers despues, solo con owner gate.
+- MCP es capa de capacidades, no conector opaco.
+- Automatizacion recurrente termina en cola de revision humana.
+- Monitorizacion produce readbacks saneados, no logs crudos versionados.
+- Cualquier secreto, remoto o live requiere gate separado.

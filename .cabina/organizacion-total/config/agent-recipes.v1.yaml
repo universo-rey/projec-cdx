@@ -1,0 +1,18 @@
+schema_version: 1
+baseline: SDU_ORG_TOTAL_G1_V3_BASELINE_CANDIDATE_20260623
+recipes:
+  - recipe_id: sdu_g1_pathspec_local_canonization
+    purpose: canonizar baseline local por pathspec sin remoto
+    agents: [SESHAT, ANUBIS, MAAT]
+    gate: local_commit_only_when_authorized
+    status: executed
+  - recipe_id: sdu_pending_local_surfaces_triage
+    purpose: clasificar pendientes por metadata sin tocar activos
+    agents: [SESHAT, THOT, ANUBIS, MAAT, HORUS]
+    gate: review_only
+    status: executed
+  - recipe_id: sdu_completion_chain_carriles
+    purpose: cerrar etapa local por carriles con readbacks y colas
+    agents: [SESHAT, THOT, ANUBIS, MAAT, HORUS]
+    gate: no_live_no_remote
+    status: active
