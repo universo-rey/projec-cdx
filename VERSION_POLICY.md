@@ -71,8 +71,10 @@ descripcion: Politica de versionado continuo, snapshots y restauracion gobernada
 - `ceo-runtime-list`: listar snapshots disponibles.
 - `ceo-runtime-restore`: restaurar o simular restauracion desde snapshot.
 - `ceo-runtime-sentinel`: generar reporte de watchdog runtime.
+- `ceo-runtime-status`: mostrar estado ejecutivo del runtime.
 - `ceo-runtime-index`: regenerar indice de snapshots.
 - `ceo-runtime-state`: regenerar estado dinamico de version.
+- `ceo runtime <comando>`: alias instalable para la familia runtime.
 
 ## Frontera
 

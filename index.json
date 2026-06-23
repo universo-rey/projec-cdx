@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T00:21:52.403360+00:00",
-  "count": 105,
+  "generated_at": "2026-06-23T00:30:21.741460+00:00",
+  "count": 108,
   "items": [
     {
       "artifact_id": "VERSION_POLICY.md",
@@ -795,6 +795,34 @@
       "metadata_kind": "front_matter"
     },
     {
+      "artifact_id": "docs/runtime-cli.md",
+      "categoria": "procesos",
+      "tipo": "plan",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/runtime-cli.md",
+      "etiquetas": [
+        "runtime",
+        "cli",
+        "snapshots",
+        "restore"
+      ],
+      "relacionados": [
+        "VERSION_POLICY.md",
+        "VERSION_STATE.json",
+        "operativa/ACTA_RUNTIME_CLI_REAL_20260622.md"
+      ],
+      "descripcion": "Guia operativa de comandos runtime para snapshots, restore, sentinel y status.",
+      "metadata_source": "docs/runtime-cli.md",
+      "metadata_kind": "front_matter"
+    },
+    {
       "artifact_id": "docs/workbooks/index.md",
       "categoria": "packages",
       "tipo": "indice",
@@ -868,6 +896,34 @@
       ],
       "descripcion": "Acta de activacion de operacion continua gobernada con version, snapshot, restore y watchdog.",
       "metadata_source": "operativa/ACTA_OPERACION_CONTINUA_GOBERNADA_20260622.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/ACTA_RUNTIME_CLI_REAL_20260622.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/ACTA_RUNTIME_CLI_REAL_20260622.md",
+      "etiquetas": [
+        "runtime",
+        "cli",
+        "snapshots",
+        "sentinel"
+      ],
+      "relacionados": [
+        "docs/runtime-cli.md",
+        "operativa/RUNTIME_CLI_MATRIX_20260622.csv",
+        "VERSION_POLICY.md"
+      ],
+      "descripcion": "Acta de implementacion del CLI runtime real para snapshots, restore, sentinel y status.",
+      "metadata_source": "operativa/ACTA_RUNTIME_CLI_REAL_20260622.md",
       "metadata_kind": "front_matter"
     },
     {
@@ -2072,6 +2128,34 @@
       "descripcion": "Readback de G1 remote repo preflight para v0.6.0-rc1, con stop por labels de gobierno faltantes.",
       "fecha_evento": "2026-06-22",
       "metadata_source": "operativa/READBACK_REMOTE_REPO_PREFLIGHT_v0.6.0-rc1_20260622.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/READBACK_RUNTIME_CLI_REAL_20260622.md",
+      "categoria": "operativa",
+      "tipo": "readback",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/READBACK_RUNTIME_CLI_REAL_20260622.md",
+      "etiquetas": [
+        "runtime",
+        "cli",
+        "readback",
+        "restore"
+      ],
+      "relacionados": [
+        "operativa/ACTA_RUNTIME_CLI_REAL_20260622.md",
+        "operativa/RUNTIME_CLI_MATRIX_20260622.csv",
+        "docs/runtime-cli.md"
+      ],
+      "descripcion": "Readback de cierre para CLI runtime real integrado al repo y validado localmente.",
+      "metadata_source": "operativa/READBACK_RUNTIME_CLI_REAL_20260622.md",
       "metadata_kind": "front_matter"
     },
     {

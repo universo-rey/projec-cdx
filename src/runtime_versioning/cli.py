@@ -728,6 +728,43 @@ def build_sentinel_report(root: Path = ROOT, output: Path | None = None) -> dict
     return report
 
 
+def runtime_status(root: Path = ROOT) -> dict[str, Any]:
+    root = root.resolve()
+    status_lines = _git_status(root)
+    snapshots = list_snapshots(root)
+    latest_snapshot = snapshots[-1] if snapshots else None
+    state_payload = _load_json(root / "VERSION_STATE.json")
+    if not isinstance(state_payload, dict):
+        state_payload = _version_state_payload(root, latest_snapshot=latest_snapshot)
+    return {
+        "status": "OK" if not status_lines else "WARN",
+        "version": state_payload.get("version_actual") or _nearest_version(root),
+        "branch": _current_branch(root),
+        "commit": _current_commit(root),
+        "workspace": {
+            "root": str(root),
+            "clean": not bool(status_lines),
+            "status": status_lines,
+        },
+        "latest_snapshot": latest_snapshot,
+        "drift_detected": bool(status_lines),
+        "validaciones_disponibles": {
+            "metadata": "python -m tools.validate",
+            "sdu_sentinel_scan": "python tools/sdu_sentinel.py scan",
+            "sdu_auto_remediation": "python tools/sdu_auto_remediation.py analyze",
+            "sdu_sentinel_check": "python tools/sdu_sentinel.py check",
+            "pytest": "python -m pytest -q",
+            "git_diff_check": "git diff --check",
+        },
+        "frontera": {
+            "no_external": True,
+            "no_live": True,
+            "no_secret_read": True,
+            "status_is_read_only": True,
+        },
+    }
+
+
 def _print_table(rows: list[dict[str, Any]]) -> None:
     if not rows:
         print("No snapshots found.")
@@ -783,10 +820,14 @@ def build_parser() -> argparse.ArgumentParser:
     restore.add_argument("snapshot_id", help="Snapshot id or path")
     restore.add_argument("--apply", action="store_true", help="Apply checkout to snapshot commit")
     restore.add_argument("--yes", action="store_true", help="Required with --apply")
+    restore.add_argument("--confirm", action="store_true", help="Alias for --yes")
     restore.add_argument("--json", action="store_true", help="Print JSON payload")
 
     sentinel = subparsers.add_parser("sentinel", help="Write runtime sentinel report")
     sentinel.add_argument("--json", action="store_true", help="Print JSON payload")
+
+    status = subparsers.add_parser("status", help="Show governed runtime status")
+    status.add_argument("--json", action="store_true", help="Print JSON payload")
 
     return parser
 
@@ -830,7 +871,12 @@ def _main(args: argparse.Namespace) -> int:
             print(f"Version state: {payload['path']} version={payload['version_actual']}")
         return 0
     if args.command == "restore":
-        payload = restore_snapshot(args.snapshot_id, root=root, apply=args.apply, yes=args.yes)
+        payload = restore_snapshot(
+            args.snapshot_id,
+            root=root,
+            apply=args.apply,
+            yes=args.yes or args.confirm,
+        )
         if args.json:
             print(json.dumps(payload, indent=2, ensure_ascii=False))
         else:
@@ -842,6 +888,19 @@ def _main(args: argparse.Namespace) -> int:
             print(json.dumps(payload, indent=2, ensure_ascii=False))
         else:
             print(f"Sentinel report: {payload['path']} status={payload['status']}")
+        return 0
+    if args.command == "status":
+        payload = runtime_status(root=root)
+        if args.json:
+            print(json.dumps(payload, indent=2, ensure_ascii=False))
+        else:
+            latest = payload.get("latest_snapshot") or {}
+            print(f"Runtime status: {payload['status']}")
+            print(f"Version: {payload['version']}")
+            print(f"Branch: {payload['branch']}")
+            print(f"Commit: {payload['commit']}")
+            print(f"Workspace clean: {payload['workspace']['clean']}")
+            print(f"Latest snapshot: {latest.get('snapshot_id', 'NONE')}")
         return 0
     return 1
 
@@ -878,6 +937,18 @@ def index_main() -> int:
 
 def state_main() -> int:
     return main(["state", *sys.argv[1:]])
+
+
+def status_main() -> int:
+    return main(["status", *sys.argv[1:]])
+
+
+def ceo_main() -> int:
+    args = sys.argv[1:]
+    if args[:1] == ["runtime"]:
+        return main(args[1:])
+    print("Uso: ceo runtime <save|list|restore|sentinel|status|index|state>", file=sys.stderr)
+    return 1
 
 
 if __name__ == "__main__":

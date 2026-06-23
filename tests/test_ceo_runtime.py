@@ -97,3 +97,36 @@ def test_version_state_records_governance_rules(tmp_path: Path) -> None:
     assert state["version_actual"] == "v0.6.0-rc1"
     assert state["rules"]["no_version_without_snapshot"] is True
     assert "sentinel-runtime" in state["agents_active"]
+
+
+def test_runtime_status_outputs_core_fields(tmp_path: Path) -> None:
+    _seed_repo(tmp_path)
+    payload = cli.save_snapshot(root=tmp_path, version="v0.6.0-rc1")
+    _commit_all(tmp_path, "snapshot")
+    status = cli.runtime_status(root=tmp_path)
+
+    assert status["status"] == "OK"
+    assert status["version"] == "v0.6.0-rc1"
+    assert status["workspace"]["clean"] is True
+    assert status["latest_snapshot"]["snapshot_id"] == payload["snapshot_id"]
+    assert status["drift_detected"] is False
+
+
+def test_powershell_wrappers_exist_or_documented() -> None:
+    root = Path(__file__).resolve().parents[1]
+    expected = [
+        "ceo-runtime-save.ps1",
+        "ceo-runtime-list.ps1",
+        "ceo-runtime-restore.ps1",
+        "ceo-runtime-sentinel.ps1",
+        "ceo-runtime-status.ps1",
+        "ceo-runtime-index.ps1",
+        "ceo-runtime-state.ps1",
+    ]
+
+    for name in expected:
+        path = root / "tools" / name
+        assert path.exists(), f"missing wrapper: {name}"
+        content = path.read_text(encoding="utf-8")
+        assert ".venv\\Scripts\\python.exe" in content
+        assert "runtime_versioning.cli" in content
