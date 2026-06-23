@@ -1,0 +1,268 @@
+schema_version: 1
+contract_mode: ORGANISMO_VIVO_ENABLEMENT
+principle: "Sistema nervioso primero; degradar inteligentemente antes de bloquear."
+nodes:
+  - node_id: CEO_RUNTIME
+    purpose: Fachada operativa local y arranque del organismo.
+    path_or_endpoint: "C:/CEO"
+    current_status: CONNECTED
+    read_capability: true
+    write_capability: local_with_gate
+    execution_capability: start_scripts_available
+    evidence_output: "NERVOUS_SYSTEM_PREFLIGHT"
+    connected_to: [CEO_CORE, CEO_POLICY, CEO_EVIDENCE, CEO_SNAPSHOTS, CEO_WATCHDOG, PROJECT_CDX]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: CEO_CORE
+    purpose: Capa core del runtime CEO.
+    path_or_endpoint: "C:/CEO/core"
+    current_status: CONNECTED
+    read_capability: true
+    write_capability: local_with_gate
+    execution_capability: local
+    evidence_output: "NERVOUS_SYSTEM_MAP"
+    connected_to: [CEO_RUNTIME, CEO_POLICY]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: CEO_POLICY
+    purpose: Politica local del runtime.
+    path_or_endpoint: "C:/CEO/policy.json"
+    current_status: CONNECTED
+    read_capability: metadata_only
+    write_capability: owner_gate_required
+    execution_capability: policy_reference
+    evidence_output: "NERVOUS_SYSTEM_MAP"
+    connected_to: [CEO_RUNTIME, CABINA_CONTRACT]
+    missing_links: []
+    can_execute_now: true_for_read
+    required_configuration: []
+  - node_id: CEO_EVIDENCE
+    purpose: Evidencia local del runtime.
+    path_or_endpoint: "C:/CEO/evidence"
+    current_status: CONNECTED
+    read_capability: true
+    write_capability: local_sanitized_only
+    execution_capability: evidence_sink
+    evidence_output: "FUNCTIONAL_VALIDATION"
+    connected_to: [MONITORING_TRACES, CABINA_ORG_TOTAL]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: CEO_SNAPSHOTS
+    purpose: Snapshots de runtime.
+    path_or_endpoint: "C:/CEO/snapshots"
+    current_status: CONNECTED
+    read_capability: true
+    write_capability: snapshot_gate_required
+    execution_capability: snapshot_reference
+    evidence_output: "FUNCTIONAL_VALIDATION"
+    connected_to: [CEO_RUNTIME, CEO_WATCHDOG]
+    missing_links: []
+    can_execute_now: true_for_read
+    required_configuration: []
+  - node_id: CEO_WATCHDOG
+    purpose: Vigilancia local del runtime.
+    path_or_endpoint: "C:/CEO/watch"
+    current_status: CONNECTED
+    read_capability: true
+    write_capability: owner_gate_for_watch_activation
+    execution_capability: watchdog_candidate
+    evidence_output: "FUNCTIONAL_VALIDATION"
+    connected_to: [CEO_RUNTIME, AUTOMATION_QUEUE, MONITORING_TRACES]
+    missing_links: []
+    can_execute_now: true_for_read
+    required_configuration: []
+  - node_id: PROJECT_CDX
+    purpose: Workbench fisico y canon tecnico local.
+    path_or_endpoint: "C:/Users/enzo1/PROJEC CDX"
+    current_status: CONNECTED
+    read_capability: true
+    write_capability: local_git_worktree
+    execution_capability: local_repo
+    evidence_output: "NERVOUS_SYSTEM_MAP"
+    connected_to: [CABINA_ORG_TOTAL, CODEX_LOCAL, VSCODE_INSIDERS, GITHUB_TECHNICAL_CANON]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: CABINA_ORG_TOTAL
+    purpose: Runner SDU de organizacion total.
+    path_or_endpoint: ".cabina/organizacion-total"
+    current_status: FUNCTIONAL
+    read_capability: true
+    write_capability: local_versionable_with_backup
+    execution_capability: local_scripts_and_tasks
+    evidence_output: "CABINA_OUT"
+    connected_to: [CABINA_CONTRACT, AGENT_CELL, MCP_LAYER, MONITORING_TRACES, AUTOMATION_QUEUE]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: CABINA_CONTRACT
+    purpose: Constitucion operativa expansion-first.
+    path_or_endpoint: ".cabina/organizacion-total/CABINA_CONTRACT_G1.md"
+    current_status: FUNCTIONAL
+    read_capability: true
+    write_capability: owner_commit_gate_for_canon
+    execution_capability: governs_modes
+    evidence_output: "CABINA_TOP001_CONTRACT_INTEGRATION"
+    connected_to: [FUNCTIONAL_AGENT_RUNTIME, TOP001_LAYER, CODEX_CLOUD]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: CODEX_LOCAL
+    purpose: Ejecucion local asistida por Codex CLI y app.
+    path_or_endpoint: "codex-cli 0.142.0-alpha.6"
+    current_status: FUNCTIONAL
+    read_capability: true
+    write_capability: local_workspace
+    execution_capability: local_agent
+    evidence_output: "CODEX_CLOUD_FUNCTIONAL_LINK"
+    connected_to: [CODEX_CONFIG_GLOBAL, CODEX_CONFIG_PROJECT, CODEX_CLOUD, PROJECT_CDX]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: CODEX_CLOUD
+    purpose: Memoria rapida, handoff y ejecucion asistida.
+    path_or_endpoint: "codex cloud"
+    current_status: FUNCTIONAL_REMOTE_READ_TESTED_REDACTED
+    read_capability: redacted_task_list_test_ok
+    write_capability: cloud_to_local_patch_with_review
+    execution_capability: cloud_exec_available_with_owner_intent
+    evidence_output: "CODEX_CLOUD_FUNCTIONAL_LINK"
+    connected_to: [CODEX_LOCAL, CABINA_CONTRACT, CODEX_CLOUD_HANDOFF, TOP001_LAYER]
+    missing_links: []
+    can_execute_now: true_for_read_status_and_handoff_package
+    required_configuration: []
+  - node_id: CODEX_CONFIG_GLOBAL
+    purpose: Configuracion global Codex.
+    path_or_endpoint: "C:/Users/enzo1/.codex/config.toml"
+    current_status: CONNECTED_REDACTED
+    read_capability: sections_and_keys_only
+    write_capability: owner_gate_required
+    execution_capability: config_reference
+    evidence_output: "NERVOUS_SYSTEM_PREFLIGHT"
+    connected_to: [CODEX_LOCAL, MCP_LAYER]
+    missing_links: []
+    can_execute_now: true_for_metadata
+    required_configuration: []
+  - node_id: CODEX_CONFIG_PROJECT
+    purpose: Configuracion local del proyecto.
+    path_or_endpoint: ".codex/config.toml"
+    current_status: CONNECTED_REDACTED
+    read_capability: sections_and_keys_only
+    write_capability: local_with_backup
+    execution_capability: config_reference
+    evidence_output: "NERVOUS_SYSTEM_PREFLIGHT"
+    connected_to: [CODEX_LOCAL, PROJECT_CDX]
+    missing_links: []
+    can_execute_now: true_for_metadata
+    required_configuration: []
+  - node_id: VSCODE_INSIDERS
+    purpose: Interfaz operativa del sistema nervioso.
+    path_or_endpoint: ".cabina/organizacion-total/.vscode/sdu-organizacion-total.code-workspace"
+    current_status: FUNCTIONAL
+    read_capability: true
+    write_capability: workspace_local_with_backup
+    execution_capability: tasks
+    evidence_output: "VSCODE_NERVOUS_INTERFACE_READBACK"
+    connected_to: [PROJECT_CDX, CABINA_ORG_TOTAL, CEO_RUNTIME]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: AGENT_CELL
+    purpose: Celula funcional de agentes expansivos.
+    path_or_endpoint: ".cabina/organizacion-total/config/top001-specialized-agents.v1.yaml"
+    current_status: FUNCTIONAL
+    read_capability: true
+    write_capability: local_config
+    execution_capability: declarative_runtime
+    evidence_output: "FUNCTIONAL_AGENT_RUNTIME_READBACK"
+    connected_to: [AGENT_SKILLS, FUNCTIONAL_AGENT_RUNTIME, TOP001_LAYER]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: AGENT_SKILLS
+    purpose: Skills, recipes y capacidades declarativas.
+    path_or_endpoint: ".cabina/organizacion-total/config/agent-skills.v1.yaml"
+    current_status: FUNCTIONAL
+    read_capability: true
+    write_capability: local_config
+    execution_capability: skill_reference
+    evidence_output: "FUNCTIONAL_AGENT_RUNTIME_READBACK"
+    connected_to: [AGENT_CELL, FUNCTIONAL_AGENT_RUNTIME]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: MCP_LAYER
+    purpose: Capa de conexion de capacidades.
+    path_or_endpoint: ".cabina/organizacion-total/config/top001-mcp-capabilities.v1.yaml"
+    current_status: FUNCTIONAL_DECLARATIVE
+    read_capability: true
+    write_capability: declarative_only_without_gate
+    execution_capability: local_files_now_external_connectors_gated
+    evidence_output: "TOP001_MCP_AFTER_EXPANSION"
+    connected_to: [CODEX_LOCAL, CODEX_CLOUD, EXTERNAL_CAPABILITIES]
+    missing_links: [real_secret_backed_connectors]
+    can_execute_now: true_for_local_files
+    required_configuration: [owner_gate_for_secret_or_live_connector]
+  - node_id: MONITORING_TRACES
+    purpose: Observabilidad operativa y readbacks saneados.
+    path_or_endpoint: ".cabina/organizacion-total/config/top001-monitoring.v1.yaml"
+    current_status: FUNCTIONAL
+    read_capability: true
+    write_capability: sanitized_readback
+    execution_capability: monitoring_readback
+    evidence_output: "TOP001_MONITORING_AFTER_EXPANSION"
+    connected_to: [CEO_EVIDENCE, CABINA_ORG_TOTAL, CEO_WATCHDOG]
+    missing_links: []
+    can_execute_now: true
+    required_configuration: []
+  - node_id: AUTOMATION_QUEUE
+    purpose: Automatizaciones con cola de revision humana.
+    path_or_endpoint: ".cabina/organizacion-total/config/top001-automations.v1.yaml"
+    current_status: FUNCTIONAL_DECLARATIVE
+    read_capability: true
+    write_capability: queue_only
+    execution_capability: manual_queue_preparation
+    evidence_output: "TOP001_AUTOMATION_AFTER_EXPANSION"
+    connected_to: [CEO_WATCHDOG, VSCODE_INSIDERS, CODEX_CLOUD_HANDOFF]
+    missing_links: [scheduler_activation]
+    can_execute_now: true_for_manual_queue
+    required_configuration: [owner_gate_for_scheduler]
+  - node_id: DATAVERSE_MEMORY
+    purpose: Memoria estructural futura de agentes, herramientas, temas y fuentes.
+    path_or_endpoint: "future Dataverse"
+    current_status: LOCAL_DECLARED
+    read_capability: local_bridge
+    write_capability: live_sync_not_active
+    execution_capability: local_memory_active
+    evidence_output: "DATAVERSE_AGENT_MEMORY_BRIDGE"
+    connected_to: [AGENT_CELL, AGENT_SKILLS, FUNCTIONAL_AGENT_RUNTIME]
+    missing_links: [dataverse_owner_gate, live_sync]
+    can_execute_now: true_local_memory_active
+    required_configuration: [OWNER_APPROVAL_REQUIRED]
+  - node_id: SHAREPOINT_VISIBLE_MEMORY
+    purpose: Memoria visible documental gobernada.
+    path_or_endpoint: "future SharePoint"
+    current_status: OWNER_INPUT_REQUIRED
+    read_capability: not_tested_this_lane
+    write_capability: live_sync_not_active
+    execution_capability: handoff_candidate
+    evidence_output: "FINAL_READBACK_NERVOUS_SYSTEM"
+    connected_to: [NARRADOR, GITHUB_TECHNICAL_CANON]
+    missing_links: [site_owner_gate]
+    can_execute_now: false_for_live
+    required_configuration: [OWNER_AND_TENANT_GATE]
+  - node_id: GITHUB_TECHNICAL_CANON
+    purpose: Canon tecnico versionado.
+    path_or_endpoint: "local git repo; remote gated"
+    current_status: FUNCTIONAL_LOCAL
+    read_capability: true
+    write_capability: local_commit_with_pathspec
+    execution_capability: local_git
+    evidence_output: "FINAL_READBACK_NERVOUS_SYSTEM"
+    connected_to: [PROJECT_CDX, CODEX_CLOUD, CABINA_CONTRACT]
+    missing_links: [remote_gate_for_push_pr]
+    can_execute_now: true_local_only
+    required_configuration: [owner_gate_for_remote]

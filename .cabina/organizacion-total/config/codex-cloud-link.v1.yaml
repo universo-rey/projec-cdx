@@ -1,0 +1,58 @@
+schema_version: 1
+contract_mode: ORGANISMO_VIVO_ENABLEMENT
+node_id: CODEX_CLOUD
+role: memoria_rapida_y_ejecucion_asistida
+status:
+  cli_command_available: true
+  login_status: LOGGED_IN_CHATGPT
+  redacted_cloud_list_test: OK
+  task_content_exposed: false
+purpose:
+  - handoff entre sesiones
+  - continuidad de agentes
+  - memoria operativa rapida
+  - ejecucion asistida
+  - sincronizacion de contexto saneado
+local_source_of_truth:
+  - ".cabina/organizacion-total/CABINA_CONTRACT_G1.md"
+  - ".cabina/organizacion-total/config/sdu-nervous-system.v1.yaml"
+  - ".cabina/organizacion-total/config/top001-specialized-agents.v1.yaml"
+  - ".cabina/organizacion-total/config/top001-agent-teams.v1.yaml"
+  - ".cabina/organizacion-total/config/top001-mcp-capabilities.v1.yaml"
+  - ".cabina/organizacion-total/config/top001-monitoring.v1.yaml"
+  - ".cabina/organizacion-total/config/top001-automations.v1.yaml"
+  - evidence_manifests_sanitized
+cloud_payload_policy:
+  allowed:
+    - baseline_ids
+    - commit_ids
+    - non_sensitive_paths
+    - contracts
+    - sanitized_manifests
+    - readbacks
+    - skills
+    - recipes
+    - task_plans
+    - error_summaries
+  forbidden:
+    - secretos
+    - tokens
+    - credenciales
+    - D3_D7_raw
+    - documentos_notariales_raw
+    - evidencia_SGIN_cruda
+    - datos_personales_no_saneados
+functional_mode:
+  - READ_CONTEXT
+  - RECEIVE_HANDOFF
+  - RETURN_PLAN
+  - RETURN_PATCH
+  - RETURN_READBACK
+write_modes:
+  - LOCAL_ONLY_BY_DEFAULT
+  - CLOUD_TO_LOCAL_PATCH_WITH_REVIEW
+  - CLOUD_EXECUTION_ONLY_IF_AVAILABLE
+degradation:
+  if_cloud_missing: CLOUD_READY_PACKAGE
+  if_owner_missing: OWNER_INPUT_NEEDED_PLUS_PLAN_READY
+  if_secret_missing: SECRET_REQUIRED_READBACK_PLUS_CONTINUE_LOCAL

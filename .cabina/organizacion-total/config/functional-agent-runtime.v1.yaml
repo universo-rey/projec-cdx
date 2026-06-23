@@ -1,0 +1,52 @@
+schema_version: 1
+contract_mode: ORGANISMO_VIVO_ENABLEMENT
+agent_runtime_id: SDU_FUNCTIONAL_AGENT_RUNTIME_G1
+principle: "El agente no queda gateado; adapta el modo y produce camino ejecutable."
+active_cell:
+  - SESHAT
+  - THOT
+  - ANUBIS
+  - MAAT
+  - HORUS
+  - NARRADOR
+  - EINSTEIN
+  - FARADAY
+  - RAMANUJAN
+default_mode: EXECUTE_LOCAL
+discovery_mode: EXPLORE
+design_mode: DESIGN
+planning_mode: PLAN
+learning_mode: LEARN
+federation_mode: FEDERATE
+scale_mode: SCALE
+live_mode: LIVE_WITH_OWNER
+functional_capabilities:
+  - leer_estado
+  - clasificar_superficie
+  - disenar_solucion
+  - proponer_plan
+  - crear_artefacto_local
+  - actualizar_config_local
+  - generar_evidencia
+  - preparar_patch
+  - preparar_commit_local
+  - preparar_handoff_cloud
+  - preparar_pr_plan
+  - detectar_oportunidad
+  - proponer_automatizacion
+  - convertir_hallazgo_en_skill_receta_capability
+mode_adaptation_rules:
+  live_unavailable: EXECUTE_LOCAL_PLUS_PREPARE_SCALE
+  remote_unavailable: PREPARE_PR_PLAN
+  secret_unavailable: SECRET_REQUIRED_READBACK_PLUS_CONTINUE_LOCAL
+  cross_universe_unavailable: FEDERATION_CANDIDATE
+  execution_unavailable: PRODUCE_EXECUTABLE_PATH
+  cloud_unavailable: CLOUD_READY_PACKAGE
+  dataverse_live_unavailable: LOCAL_MEMORY_ACTIVE
+evidence_required:
+  - readback
+  - validator_summary
+  - missing_conditions
+  - next_reversible_action
+can_execute_now: true
+not_gate_blocked: true

@@ -217,6 +217,379 @@
         "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgFullDryRunV3.ps1"
       ],
       "problemMatcher": []
+    },
+    {
+      "label": "SDU Carril 0 Preflight",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "if (Test-Path -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_0_PREFLIGHT_READBACK.md') { Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_0_PREFLIGHT_READBACK.md' } else { Write-Host 'Readback pendiente: CARRIL_0_PREFLIGHT_READBACK.md' }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Carril 1 Triage Pendientes",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "if (Test-Path -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/PENDING_LOCAL_SURFACES_TRIAGE.md') { Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/PENDING_LOCAL_SURFACES_TRIAGE.md' } else { Write-Host 'Readback pendiente: PENDING_LOCAL_SURFACES_TRIAGE.md' }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Carril 2 Evidence Retention",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "if (Test-Path -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_2_EVIDENCE_READBACK.md') { Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_2_EVIDENCE_READBACK.md' } else { Write-Host 'Readback pendiente: CARRIL_2_EVIDENCE_READBACK.md' }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Carril 3 Agent Skills Registry",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "if (Test-Path -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_3_AGENT_SKILLS_READBACK.md') { Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_3_AGENT_SKILLS_READBACK.md' } else { Write-Host 'Readback pendiente: CARRIL_3_AGENT_SKILLS_READBACK.md' }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Carril 4 Runner Hardening",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "if (Test-Path -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_4_HARDENING_REPORT.md') { Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_4_HARDENING_REPORT.md' } else { Write-Host 'Readback pendiente: CARRIL_4_HARDENING_REPORT.md' }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Carril 5 VS Code Operability",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "if (Test-Path -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_5_VSCODE_READBACK.md') { Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_5_VSCODE_READBACK.md' } else { Write-Host 'Readback pendiente: CARRIL_5_VSCODE_READBACK.md' }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Carril 6 Manual Review Queue",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "if (Test-Path -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_6_MANUAL_REVIEW_READBACK.md') { Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_6_MANUAL_REVIEW_READBACK.md' } else { Write-Host 'Readback pendiente: CARRIL_6_MANUAL_REVIEW_READBACK.md' }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Carril 7 Multiple Queue",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "if (Test-Path -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_7_MULTIPLE_READBACK.md') { Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_7_MULTIPLE_READBACK.md' } else { Write-Host 'Readback pendiente: CARRIL_7_MULTIPLE_READBACK.md' }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Carril 8 Future Deltas",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "if (Test-Path -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_8_DELTAS_READBACK.md') { Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CARRIL_8_DELTAS_READBACK.md' } else { Write-Host 'Readback pendiente: CARRIL_8_DELTAS_READBACK.md' }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Carril 9 Final Closure",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "if (Test-Path -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/FINAL_MASTER_READBACK_SDU_COMPLETION_CHAIN_20260623.md') { Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/FINAL_MASTER_READBACK_SDU_COMPLETION_CHAIN_20260623.md' } else { Write-Host 'Readback pendiente: FINAL_MASTER_READBACK_SDU_COMPLETION_CHAIN_20260623.md' }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Cabina: Validate Contract Gate",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-CabinaPwsh.ps1",
+        "-ScriptPath",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Test-CabinaExecutionGate.ps1",
+        "-OperationId",
+        "READ_STATUS",
+        "-Mode",
+        "OBSERVE"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU TOP001: Preflight",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/TOP001_PREFLIGHT_AFTER_EXPANSION.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU TOP001: Specialized Agents",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/TOP001_SPECIALIZED_AGENTS_AFTER_EXPANSION.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU TOP001: Agent Teams",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/TOP001_AGENT_TEAMS_AFTER_EXPANSION.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU TOP001: MCP Inventory",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/TOP001_MCP_AFTER_EXPANSION.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU TOP001: Monitoring",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/TOP001_MONITORING_AFTER_EXPANSION.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU TOP001: Automations",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/TOP001_AUTOMATION_AFTER_EXPANSION.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU TOP001: Wrapper Decision",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/TOP001_WRAPPER_HARNESS_DECISION.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU TOP001: Full Readback",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "SDU TOP001: Preflight",
+        "SDU TOP001: Specialized Agents",
+        "SDU TOP001: Agent Teams",
+        "SDU TOP001: MCP Inventory",
+        "SDU TOP001: Monitoring",
+        "SDU TOP001: Automations",
+        "SDU TOP001: Wrapper Decision"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NS: Preflight",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/NERVOUS_SYSTEM_PREFLIGHT.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NS: Map Nervous System",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/NERVOUS_SYSTEM_MAP_READBACK.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NS: Codex Cloud Link",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CODEX_CLOUD_FUNCTIONAL_LINK.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NS: Functional Agent Runtime",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/FUNCTIONAL_AGENT_RUNTIME_READBACK.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NS: TOP001 Binding",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/TOP001_NERVOUS_SYSTEM_BINDING.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NS: Full Functional Check",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "SDU NS: Preflight",
+        "SDU NS: Map Nervous System",
+        "SDU NS: Codex Cloud Link",
+        "SDU NS: Functional Agent Runtime",
+        "SDU NS: TOP001 Binding",
+        "SDU NS: Cloud Handoff Prepare",
+        "SDU NS: Agent Execute Local",
+        "SDU NS: Learn and Federate"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NS: Cloud Handoff Prepare",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/CODEX_CLOUD_HANDOFF_PROTOCOL_READBACK.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NS: Agent Execute Local",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/FUNCTIONAL_VALIDATION.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NS: Learn and Federate",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder:ORG_TOTAL_RUNNER}/out/FUNCTIONAL_VALIDATION.md'"
+      ],
+      "problemMatcher": []
     }
   ]
 }

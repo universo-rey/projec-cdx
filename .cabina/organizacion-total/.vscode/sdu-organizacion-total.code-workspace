@@ -33,6 +33,10 @@
       "**/__pycache__": true
     },
     "explorer.compactFolders": false,
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "sdu.nervousSystem.contractMode": "ORGANISMO_VIVO_ENABLEMENT",
+    "sdu.nervousSystem.defaultMode": "EXECUTE_LOCAL",
+    "sdu.nervousSystem.degradationPolicy": "degradar_inteligentemente",
+    "sdu.nervousSystem.cloudHandoff": "CLOUD_READY_PACKAGE"
   }
 }
