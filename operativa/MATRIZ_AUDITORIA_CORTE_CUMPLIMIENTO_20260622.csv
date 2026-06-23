@@ -1,0 +1,10 @@
+agent,control,status,evidence,decision,observation
+maat-cumplimiento,release_tag_commit,Cumple,"remote release v0.6.0-rc1 targets 56a4eda1dd36c545c12546bb37fc2046dbb7fb05","OK","tag annotated object dereferences to target commit"
+maat-cumplimiento,snapshot_before_audit,Cumple,"CEORUNTIME_20260623_0051","OK","snapshot previo valido creado"
+maat-cumplimiento,metadata_traceability,Cumple,"114 metadatos validos","OK","metadata and indexes validate"
+maat-cumplimiento,gates_g1_g6,Cumple,"G1/G2/G3/G4 artifacts and release readbacks present","OK","release cycle has traceability"
+maat-cumplimiento,gates_g1_g31_registry,Observado,"no single G1-G31 registry found; multiple gate packets 0.2.x-0.5.x present","NEXT_DELTA","create consolidated G1-G31 registry if it is now mandatory"
+maat-cumplimiento,no_live_policy,Cumple,"sentinel no_external true; frontera live false","OK","no live execution in audit"
+maat-cumplimiento,restore_policy,Cumple,"runtime restore requires clean workspace and explicit yes","OK","unsafe restore blocked by policy"
+maat-cumplimiento,workflow_permissions,Observado,"promote.yml has contents: write and workflow_dispatch","GATED_OK","expected for promotion; keep owner gate"
+maat-cumplimiento,evidence_density,Cumple,"operativa matrices/readbacks/snapshots present","OK","evidence complete for current release line"

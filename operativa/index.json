@@ -1,7 +1,37 @@
 {
-  "generated_at": "2026-06-23T00:52:20.372939+00:00",
-  "count": 77,
+  "generated_at": "2026-06-23T00:54:29.278695+00:00",
+  "count": 78,
   "items": [
+    {
+      "artifact_id": "operativa/ACTA_AUDITORIA_INTEGRAL_CORTE_20260622.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "Mixto",
+      "ubicacion_repo": "operativa/ACTA_AUDITORIA_INTEGRAL_CORTE_20260622.md",
+      "etiquetas": [
+        "auditoria",
+        "corte",
+        "runtime",
+        "sentinel"
+      ],
+      "relacionados": [
+        "operativa/MATRIX_REPO_STRUCTURE_AUDITORIA_CORTE_20260622.csv",
+        "operativa/MATRIZ_AUDITORIA_CORTE_TECNICA_20260622.csv",
+        "operativa/MATRIZ_AUDITORIA_CORTE_CUMPLIMIENTO_20260622.csv",
+        "operativa/MATRIZ_AUDITORIA_CORTE_RIESGO_20260622.csv",
+        "operativa/MATRIZ_AUDITORIA_CORTE_RUNTIME_20260622.csv"
+      ],
+      "descripcion": "Acta de auditoria integral de corte sobre PROJEC CDX v0.6.0-rc1.",
+      "metadata_source": "operativa/ACTA_AUDITORIA_INTEGRAL_CORTE_20260622.md",
+      "metadata_kind": "front_matter"
+    },
     {
       "artifact_id": "operativa/ACTA_CLOUD_CODEX_GOVERNED_20260622.md",
       "categoria": "operativa",
