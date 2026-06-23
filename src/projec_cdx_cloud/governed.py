@@ -44,6 +44,11 @@ GOVERNED_AGENTS: tuple[GovernedAgent, ...] = (
         role="evidencia",
         decision_rule="consolidar outputs JSON, readbacks y trazabilidad del run",
     ),
+    GovernedAgent(
+        name="EATOMIC",
+        role="operador de resultado",
+        decision_rule="ejecutar un eslabon, verificar resultado, registrar evidencia y avanzar solo si corresponde",
+    ),
 )
 
 

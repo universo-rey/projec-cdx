@@ -56,6 +56,7 @@ El workflow usa `contents: read`. No tiene permisos para comentar PRs, crear ram
 - `horus-riesgo`: riesgo tecnico, operativo y de gobierno.
 - `anubis-gate`: frontera, secrets y live.
 - `seshat-normativa`: evidencia y trazabilidad.
+- `EATOMIC`: operador de resultado ya existente; ejecuta un eslabon, verifica, registra evidencia y solo despues habilita el siguiente.
 
 ## Frontera
 

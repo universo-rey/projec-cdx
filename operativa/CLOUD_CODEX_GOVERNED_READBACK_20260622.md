@@ -32,7 +32,8 @@ descripcion: Readback de cierre para activacion cloud gobernada sin writes exter
 
 - Workflow read-only `codex-governed`.
 - Runner `--governed-check`.
-- Agentes `thot`, `maat`, `horus`, `anubis`, `seshat`.
+- Agentes `thot`, `maat`, `horus`, `anubis`, `seshat` y `EATOMIC`.
+- `EATOMIC` se toma de `operativa/SETUP_APERTURA_CODEX_UI.md` como agente existente, no como runtime nuevo.
 - Evidencia JSON en artifact.
 - Snapshot gate y runtime status integrados.
 

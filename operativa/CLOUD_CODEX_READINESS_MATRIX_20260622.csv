@@ -13,5 +13,6 @@ cloud_agents,maat-cumplimiento,READY,src/projec_cdx_cloud/governed.py,ACTIVE_DET
 cloud_agents,horus-riesgo,READY,src/projec_cdx_cloud/governed.py,ACTIVE_DETERMINISTIC
 cloud_agents,anubis-gate,READY,src/projec_cdx_cloud/governed.py,ACTIVE_DETERMINISTIC
 cloud_agents,seshat-normativa,READY,src/projec_cdx_cloud/governed.py,ACTIVE_DETERMINISTIC
+cloud_agents,EATOMIC,READY,operativa/SETUP_APERTURA_CODEX_UI.md,ACTIVE_EXISTING_AGENT
 pr_comments,automatic_comments,PARTIAL,docs/cloud-codex-governed.md,BLOCKED_UNTIL_WRITE_GATE
 external_live,dataverse_microsoft_openai,READY,docs/cloud-codex-governed.md,BLOCKED_BY_FRONTIER

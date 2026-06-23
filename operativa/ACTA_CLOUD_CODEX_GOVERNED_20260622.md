@@ -31,6 +31,7 @@ descripcion: Acta de activacion del flujo Codex Cloud gobernado como analisis re
 
 - Workflow `codex-governed`.
 - Agentes gobernados determinísticos.
+- `EATOMIC` reconciliado como agente operativo existente de la cabina.
 - Evidencia JSON como artifact.
 - Snapshot gate por índice existente.
 - Runtime sentinel pre/post.
