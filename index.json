@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T00:59:20.956753+00:00",
-  "count": 116,
+  "generated_at": "2026-06-23T01:01:31.922419+00:00",
+  "count": 117,
   "items": [
     {
       "artifact_id": "VERSION_POLICY.md",
@@ -870,6 +870,36 @@
       "relacionados": [],
       "descripcion": "Indice de workbooks documentados sin mover archivos binarios.",
       "metadata_source": "docs/workbooks/index.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/ACTA_AJUSTES_POST_AUDITORIA_20260622.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "Mixto",
+      "ubicacion_repo": "operativa/ACTA_AJUSTES_POST_AUDITORIA_20260622.md",
+      "etiquetas": [
+        "auditoria",
+        "ajustes",
+        "gates",
+        "versionado"
+      ],
+      "relacionados": [
+        "operativa/ACTA_AUDITORIA_INTEGRAL_CORTE_20260622.md",
+        "operativa/MATRIZ_AJUSTES_POST_AUDITORIA_20260622.csv",
+        "operativa/GATE_REGISTRY_G1_G31_20260622.csv",
+        "VERSION_POLICY.md",
+        ".github/workflows/promote.yml"
+      ],
+      "descripcion": "Acta de cierre de ajustes estructurados posteriores a la auditoria integral de corte.",
+      "metadata_source": "operativa/ACTA_AJUSTES_POST_AUDITORIA_20260622.md",
       "metadata_kind": "front_matter"
     },
     {
