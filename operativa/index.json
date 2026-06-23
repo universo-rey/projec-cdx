@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T01:36:59.872661+00:00",
-  "count": 90,
+  "generated_at": "2026-06-23T12:47:42.279184+00:00",
+  "count": 97,
   "items": [
     {
       "artifact_id": "operativa/ACTA_AJUSTES_POST_AUDITORIA_20260622.md",
@@ -399,6 +399,64 @@
       "descripcion": "Pagina madre operativa de la cadena runtime, entornos, agentes y control-plane gobernado.",
       "metadata_source": "operativa/CADENA_OPERATIVA_RUNTIME_AGENTES_ENTORNOS_20260622.md",
       "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
+      "categoria": "operativa",
+      "tipo": "readback",
+      "estado": "en_revision",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
+      "etiquetas": [
+        "runtime",
+        "environment",
+        "governance",
+        "local-only"
+      ],
+      "relacionados": [
+        "operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv",
+        "operativa/RUNTIME_CLI_MATRIX_20260622.csv",
+        "operativa/SDU_RUNTIME_BOUNDARY_MATRIX.json",
+        "VERSION_STATE.json"
+      ],
+      "descripcion": "Contrato local del entorno runtime CEO, entrypoint canonico, snapshot baseline y estrategia de divergencia sin live.",
+      "metadata_source": "operativa/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623",
+      "categoria": "operativa",
+      "tipo": "matriz",
+      "estado": "en_revision",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv",
+      "etiquetas": [
+        "runtime",
+        "environment",
+        "governance",
+        "local-only"
+      ],
+      "relacionados": [
+        "operativa/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
+        "operativa/RUNTIME_CLI_MATRIX_20260622.csv",
+        "operativa/SDU_RUNTIME_BOUNDARY_MATRIX.json",
+        "VERSION_STATE.json"
+      ],
+      "descripcion": "Matriz minima de gobierno para contrato runtime CEO: agentes, tools, runners, recetas y mapping local-only.",
+      "metadata_source": "operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv.meta.json",
+      "metadata_kind": "meta_json"
     },
     {
       "artifact_id": "operativa/CLOUD_CODEX_GOVERNED_READBACK_20260622.md",
@@ -2489,6 +2547,136 @@
       ],
       "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0129 generada por operacion continua.",
       "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0129.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0246.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0246.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0246.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0246 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0246.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0247.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0247.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0247.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0247 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0247.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_1246.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_1246.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_1246.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_1246 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_1246.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/RUNTIME_STATE_DELTA_CLASSIFICATION_20260623.md",
+      "categoria": "operativa",
+      "tipo": "reporte",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/RUNTIME_STATE_DELTA_CLASSIFICATION_20260623.md",
+      "etiquetas": [
+        "runtime",
+        "classification",
+        "snapshot"
+      ],
+      "relacionados": [
+        "operativa/runtime-events/RUNTIME_STATE_DELTA_PREFLIGHT_20260623.md",
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_1246.json"
+      ],
+      "descripcion": "Clasificacion metadata-only del dirty tree para delta runtime state separado.",
+      "metadata_source": "operativa/runtime-events/RUNTIME_STATE_DELTA_CLASSIFICATION_20260623.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/RUNTIME_STATE_DELTA_PREFLIGHT_20260623.md",
+      "categoria": "operativa",
+      "tipo": "reporte",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/RUNTIME_STATE_DELTA_PREFLIGHT_20260623.md",
+      "etiquetas": [
+        "runtime",
+        "preflight",
+        "snapshot"
+      ],
+      "relacionados": [
+        "VERSION_STATE.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Preflight del delta runtime state y alineacion de snapshot con commit cabina.",
+      "metadata_source": "operativa/runtime-events/RUNTIME_STATE_DELTA_PREFLIGHT_20260623.md",
       "metadata_kind": "front_matter"
     }
   ]

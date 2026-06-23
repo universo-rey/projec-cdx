@@ -1,14 +1,12 @@
 {
-  "schema_version": "1.0",
-  "mode": "OPERACION_CONTINUA_GOBERNADA",
-  "version_actual": "v0.6.0-rc1",
-  "baseline_version": "v0.6.0-rc1",
+  "schema": "runtime-state-delta-preflight.v1",
+  "generated_at": "2026-06-23T09:46:40",
   "branch": "codex/runtime-versioning-snapshots",
-  "commit": "0bf5189f889fa557c9fcf497a76c24bd30c08f4b",
-  "commits_ahead_baseline": 39,
-  "generated_at_utc": "2026-06-23T12:48:00Z",
-  "dirty": true,
-  "status": [
+  "head": "0bf5189f889fa557c9fcf497a76c24bd30c08f4b",
+  "cabina_commit": "0bf5189f889fa557c9fcf497a76c24bd30c08f4b",
+  "staging_empty": true,
+  "dirty_residual": [
+    " M VERSION_STATE.json",
     " M index.json",
     " M operativa/HISTORY_RUNTIME_EVOLUTION.md",
     " M operativa/index.json",
@@ -99,75 +97,15 @@
     "?? operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv.meta.json",
     "?? operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0246.md",
     "?? operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0247.md",
-    "?? operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_1246.md",
-    "?? operativa/runtime-events/RUNTIME_STATE_DELTA_CLASSIFICATION_20260623.json",
-    "?? operativa/runtime-events/RUNTIME_STATE_DELTA_CLASSIFICATION_20260623.md",
-    "?? operativa/runtime-events/RUNTIME_STATE_DELTA_PREFLIGHT_20260623.json",
-    "?? operativa/runtime-events/RUNTIME_STATE_DELTA_PREFLIGHT_20260623.md",
     "?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0246.json",
-    "?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0247.json",
-    "?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_1246.json"
+    "?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0247.json"
   ],
-  "rules": {
-    "merge_to_main": "PATCH",
-    "structural_change_agents_gates_runtime": "MINOR",
-    "architecture_model_change": "MAJOR",
-    "codex_branch": "RC_AUTOMATICO",
-    "no_version_without_snapshot": true,
-    "no_merge_without_snapshot": true,
-    "no_release_without_snapshot_and_checks": true
-  },
-  "snapshot_policy": {
-    "pre_merge": "REQUIRED",
-    "post_merge": "REQUIRED",
-    "pre_release": "REQUIRED",
-    "pre_restore": "REQUIRED",
-    "config_change": "REQUIRED"
-  },
-  "restore_policy": {
-    "requires_clean_workspace": true,
-    "requires_explicit_yes": true,
-    "creates_pre_restore_backup": true,
-    "validates_after_apply": true
-  },
-  "watchdog": {
-    "metadata_drift": "ALERTA_DRIFT",
-    "structure_drift": "ALERTA_DRIFT",
-    "ci_config_drift": "ALERTA_DRIFT",
-    "dependency_drift": "ALERTA_DRIFT"
-  },
-  "agents_active": [
-    "thot-tecnico",
-    "maat-cumplimiento",
-    "horus-riesgo",
-    "anubis-gate",
-    "seshat-normativa",
-    "sentinel-runtime",
-    "narrador-normativo",
-    "EATOMIC"
-  ],
-  "latest_snapshot": {
-    "snapshot_id": "CEORUNTIME_20260623_1246",
-    "version": "v0.6.0-rc1",
-    "commit": "0bf5189f889fa557c9fcf497a76c24bd30c08f4b",
-    "branch": "codex/runtime-versioning-snapshots",
-    "fecha": "2026-06-23T12:46:53Z",
-    "tipo": "runtime-state-alignment-cabina-delta",
-    "dirty": true,
-    "global_hash": "c6dd27e80d835c7c6030018a837591747bcf0a3370d17de0b482b73901e82f0d",
-    "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_1246.json"
-  },
-  "cabina_delta_commit": "0bf5189f889fa557c9fcf497a76c24bd30c08f4b",
-  "runtime_state_alignment": {
-    "operation": "CEO_RUNTIME_STATE_DELTA_AND_SNAPSHOT_ALIGNMENT_G1",
-    "snapshot_id": "CEORUNTIME_20260623_1246",
-    "snapshot_aligned_to_head": true,
-    "previous_snapshot_id": "CEORUNTIME_20260623_0247",
-    "previous_snapshot_status": "superseded",
-    "remote": {
-      "push": false,
-      "pr": false,
-      "live": false
-    }
+  "current_snapshot": "CEORUNTIME_20260623_0247",
+  "current_snapshot_commit": "c2630a1cbf9f01ab7922b585704ff655d7898220",
+  "frontier": {
+    "push": false,
+    "pr": false,
+    "live": false,
+    "secret_exposure": false
   }
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-06-23T01:29:24Z",
-  "total": 11,
+  "generated_at_utc": "2026-06-23T12:48:00Z",
+  "total": 14,
   "snapshots": [
     {
       "snapshot_id": "CEORUNTIME_20260623_0008",
@@ -123,6 +123,39 @@
       "dirty": false,
       "global_hash": "0b19114c1cd19a6a1ab4bb7cffb286195296e44dee87db0a1e8cd1158113a7a4",
       "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0129.json"
+    },
+    {
+      "snapshot_id": "CEORUNTIME_20260623_0246",
+      "version": "v0.6.0-rc1",
+      "commit": "c2630a1cbf9f01ab7922b585704ff655d7898220",
+      "branch": "codex/runtime-versioning-snapshots",
+      "fecha": "2026-06-23T02:46:24Z",
+      "tipo": "runtime-env-contract",
+      "dirty": true,
+      "global_hash": "bde4de60c994bd741e91901d9e523af8ee3fdc1eb5eda770843e16bee0699f42",
+      "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0246.json"
+    },
+    {
+      "snapshot_id": "CEORUNTIME_20260623_0247",
+      "version": "v0.6.0-rc1",
+      "commit": "c2630a1cbf9f01ab7922b585704ff655d7898220",
+      "branch": "codex/runtime-versioning-snapshots",
+      "fecha": "2026-06-23T02:47:58Z",
+      "tipo": "runtime-env-contract-final",
+      "dirty": true,
+      "global_hash": "67582e27f28e17db499098e8d5ccaa01f8aa2c8ae57c6b8dcd52e5b0809493ca",
+      "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0247.json"
+    },
+    {
+      "snapshot_id": "CEORUNTIME_20260623_1246",
+      "version": "v0.6.0-rc1",
+      "commit": "0bf5189f889fa557c9fcf497a76c24bd30c08f4b",
+      "branch": "codex/runtime-versioning-snapshots",
+      "fecha": "2026-06-23T12:46:53Z",
+      "tipo": "runtime-state-alignment-cabina-delta",
+      "dirty": true,
+      "global_hash": "c6dd27e80d835c7c6030018a837591747bcf0a3370d17de0b482b73901e82f0d",
+      "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_1246.json"
     }
   ]
 }
