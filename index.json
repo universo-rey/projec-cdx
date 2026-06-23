@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T01:25:46.878823+00:00",
-  "count": 125,
+  "generated_at": "2026-06-23T01:36:59.872661+00:00",
+  "count": 127,
   "items": [
     {
       "artifact_id": "VERSION_POLICY.md",
@@ -2269,6 +2269,34 @@
       "metadata_kind": "front_matter"
     },
     {
+      "artifact_id": "operativa/READBACK_MULTIREPO_SNAPSHOT_REFRESH_20260623.md",
+      "categoria": "operativa",
+      "tipo": "readback",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "Mixto",
+      "ubicacion_repo": "operativa/READBACK_MULTIREPO_SNAPSHOT_REFRESH_20260623.md",
+      "etiquetas": [
+        "sdu",
+        "multirepo",
+        "snapshot",
+        "corte"
+      ],
+      "relacionados": [
+        "operativa/MULTIREPO_SNAPSHOT_STATUS_20260623.csv",
+        "operativa/snapshots/multirepo/SDU_MULTIREPO_SNAPSHOT_20260623_0135.json",
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0129.json"
+      ],
+      "descripcion": "Readback de snapshot central multirepo posterior a reconciliacion de orquestador G7.",
+      "metadata_source": "operativa/READBACK_MULTIREPO_SNAPSHOT_REFRESH_20260623.md",
+      "metadata_kind": "front_matter"
+    },
+    {
       "artifact_id": "operativa/READBACK_REMOTE_PUBLICATION_PLAN_v0.6.0-rc1_20260622.md",
       "categoria": "operativa",
       "tipo": "readback",
@@ -3307,6 +3335,32 @@
       ],
       "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0117 generada por operacion continua.",
       "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0117.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0129.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0129.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0129.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0129 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0129.md",
       "metadata_kind": "front_matter"
     }
   ]
