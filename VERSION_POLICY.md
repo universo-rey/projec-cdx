@@ -51,6 +51,14 @@ descripcion: Politica de versionado continuo, snapshots y restauracion gobernada
 - Todo release requiere snapshot asociado al commit objetivo.
 - Todo cambio de configuracion runtime requiere snapshot previo o acta de excepcion.
 
+## Version de paquete Python
+
+- La version institucional usa tags Git con prefijo `v`, por ejemplo `v0.6.0-rc1`.
+- La version Python en `pyproject.toml` usa formato PEP 440 equivalente, sin `v` y sin guion de pre-release: `0.6.0rc1`.
+- Para un release candidate, `vX.Y.Z-rcN` corresponde a paquete `X.Y.ZrcN`.
+- Si el repo publica paquete, `pyproject.toml` debe alinearse al tag institucional objetivo antes de release.
+- Si el repo no publica paquete, cualquier divergencia debe quedar explicitamente documentada en acta de version.
+
 ## Eventos de versionado continuo
 
 - Merge a `main`: incrementa `PATCH`.
