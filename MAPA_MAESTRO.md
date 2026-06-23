@@ -3,15 +3,64 @@
 Punto unico para entrar a las superficies visibles de `PROJEC CDX`.
 Para activar solo el sistema nervioso, usar [MAPA_CAPAS.md](MAPA_CAPAS.md).
 
-La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
+## Vigencia 20260623
 
-## Vigencia 20260618
+```text
+estado: CABINA_FRONTDOOR_CONVERGED_LOCAL_ONLY
+version: v0.6.0-rc1
+workspace canonico: C:\CEO\project-cdx
+alias fisico: C:\Users\enzo1\PROJEC CDX
+politica: una raiz viva, sin SDU_RUNTIME_ROOT paralelo
+```
+
+## Frente vivo
+
+- Entrada corta: [README.md](README.md)
+- Sistema nervioso: [MAPA_CAPAS.md](MAPA_CAPAS.md)
+- Estado actual: [operativa/CURRENT.md](operativa/CURRENT.md)
+- Siguiente delta: [operativa/NEXT.md](operativa/NEXT.md)
+- Trazabilidad: [operativa/TRACE.md](operativa/TRACE.md)
+- Runtime/cabina: [.cabina/organizacion-total](.cabina/organizacion-total)
+- Organismo vivo: [.cabina/organizacion-total/organismo-vivo/README.md](.cabina/organizacion-total/organismo-vivo/README.md)
+- Versionado: [VERSION_STATE.json](VERSION_STATE.json), [VERSION_POLICY.md](VERSION_POLICY.md)
+- Metadata: [schema.json](schema.json), [index.json](index.json), [live-manifest.json](live-manifest.json)
+
+## Capas canonicas
+
+| Capa | Ruta | Rol |
+|---|---|---|
+| Entrada | [README.md](README.md) | puerta humana corta |
+| Navegacion | [MAPA_MAESTRO.md](MAPA_MAESTRO.md) | mapa vivo unico |
+| Sistema nervioso | [MAPA_CAPAS.md](MAPA_CAPAS.md) | cadena entrada-salida |
+| Canon vivo | [operativa](operativa) | decisiones, readbacks finales, colas vivas |
+| Runtime | [.cabina/organizacion-total](.cabina/organizacion-total) | cabina, VS Code Insiders, organismo vivo |
+| Motor | [src](src), [tools](tools), [tests](tests) | codigo, validadores, pruebas |
+| Referencia | [docs](docs) | documentacion estable |
+| Indices | [inventarios](inventarios) | catalogos y matrices |
+| Historia | [hitos](hitos) | paquetes versionados |
+| Generado | [outputs](outputs) | salidas historicas |
+| Scratch | [work](work) | backups y trabajo transitorio |
+
+## Reglas de frente
+
+- Lo vivo entra por `README.md`, `MAPA_MAESTRO.md` y `MAPA_CAPAS.md`.
+- Lo operativo final vive en `operativa/`.
+- Lo runtime y la cabina visual viven en `.cabina/organizacion-total/`.
+- Lo historico no se borra: se conserva en `hitos/` y `outputs/`.
+- El paquete organismo vivo queda injertado en `.cabina/organizacion-total/organismo-vivo/`.
+
+## Referencia historica
+
+La historia versionada se consulta desde [hitos/INDICE_MAESTRO.md](hitos/INDICE_MAESTRO.md).
+El archivo masivo `operativa/archive` queda en `HOLD_ARCHIVE_REVIEW` y no forma parte de esta promocion chica.
+
+### Vigencia 20260618
 
 - [Estado actual](operativa/CURRENT.md): `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`.
 - [Siguiente movimiento](operativa/NEXT.md): publicar `main` solo como repo/local-only preparado.
 - [Validacion Launch Desk](launch-desk/VALIDATION.md): `local-only/prepared`, no end-to-end live.
-- [Pendientes normalizados](operativa/PENDIENTES_HOY_20260617.md): carriles vivos, supersedidos y senal no vigente.
-- [Maximo estado real](operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md): fan-in de superficies.
+- Pendientes normalizados historicos: `HOLD_ARCHIVE_REVIEW`.
+- Maximo estado real historico: `HOLD_ARCHIVE_REVIEW`.
 - [Indice maestro de hitos](hitos/INDICE_MAESTRO.md): fuente unica de paquetes versionados.
 
 ## Al Frente
@@ -38,19 +87,8 @@ La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_202
 - [operativa/README_CORTO.md](operativa/README_CORTO.md)
 - [operativa/MAPA_CORTO.md](operativa/MAPA_CORTO.md)
 - [operativa/MAPA.md](operativa/MAPA.md)
-- [operativa/START_HERE.md](operativa/START_HERE.md)
 - [operativa/CONTROL.md](operativa/CONTROL.md)
-- [operativa/PROMPT_NUEVO_HILO.md](operativa/PROMPT_NUEVO_HILO.md)
-- [operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md](operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md)
-- [operativa/PLAN_COMPLETAR_ESTRUCTURA.md](operativa/PLAN_COMPLETAR_ESTRUCTURA.md)
-- [operativa/MANIFESTS.md](operativa/MANIFESTS.md)
-- [operativa/RETENCION.md](operativa/RETENCION.md)
-- [operativa/READBACK_CIERRE_20260615.md](operativa/READBACK_CIERRE_20260615.md)
-- [operativa/TODO_20260615.md](operativa/TODO_20260615.md)
-- [operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md](operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md)
-- [operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md](operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md)
-- [operativa/CONTROL_TOTAL_20260615.md](operativa/CONTROL_TOTAL_20260615.md)
-- [operativa/POLITICA_RAMAS_VERSIONADO_20260615.md](operativa/POLITICA_RAMAS_VERSIONADO_20260615.md)
+- Archivo legacy de operativa: `HOLD_ARCHIVE_REVIEW`.
 - [recipes/README.md](recipes/README.md)
 - [recipes/MAPA.md](recipes/MAPA.md)
 - [playbooks/README.md](playbooks/README.md)

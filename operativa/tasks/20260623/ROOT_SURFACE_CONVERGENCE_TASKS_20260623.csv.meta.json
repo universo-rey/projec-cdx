@@ -1,0 +1,33 @@
+{
+  "artifact_id": "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_GOBIERNO_TOTAL"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv",
+  "etiquetas": [
+    "convergencia",
+    "raiz",
+    "surface-map",
+    "local-only"
+  ],
+  "relacionados": [
+    "README.md",
+    "MAPA_MAESTRO.md",
+    "MAPA_CAPAS.md",
+    ".cabina/organizacion-total",
+    ".cabina/organizacion-total/organismo-vivo/README.md",
+    ".cabina/organizacion-total/evidence/manifests/20260623/ROOT_RELOCATION_MANIFEST_20260623.csv",
+    "operativa/tasks/20260623/ORGANISMO_VIVO_PACKAGE_ASSIMILATION_MATRIX_20260623.csv",
+    "operativa/tasks/20260623/ROOT_GAP_RESOLUTION_DELEGATION_MATRIX_20260623.csv",
+    "operativa/tasks/20260623/READBACK_ROOT_FRONTDOOR_CONVERGENCE_20260623.md",
+    "operativa/tasks/20260623/READBACK_ROOT_SURFACE_CONVERGENCE_TASKS_20260623.md"
+  ],
+  "descripcion": "Matriz de tareas para converger la raiz visible, operativa y runtime sin crear raices paralelas."
+}

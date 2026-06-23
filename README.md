@@ -1,7 +1,39 @@
 # Despierta PROJEC CDX: Circuito Vivo
 ![meta-validate](https://github.com/universo-rey/projec-cdx/actions/workflows/meta-validate.yml/badge.svg?branch=main)
 
-Snapshot liviano de la cabina.
+Entrada corta de la cabina.
+
+## Frontdoor vivo 20260623
+
+```text
+estado: CABINA_FRONTDOOR_CONVERGED_LOCAL_ONLY
+version: v0.6.0-rc1
+workspace canonico: C:\CEO\project-cdx
+alias fisico: C:\Users\enzo1\PROJEC CDX
+regla: una raiz viva, sin SDU_RUNTIME_ROOT paralelo
+```
+
+## Puertas
+
+- Navegacion: [MAPA_MAESTRO.md](MAPA_MAESTRO.md)
+- Sistema nervioso: [MAPA_CAPAS.md](MAPA_CAPAS.md)
+- Canon vivo: [operativa/CURRENT.md](operativa/CURRENT.md), [operativa/NEXT.md](operativa/NEXT.md), [operativa/TRACE.md](operativa/TRACE.md)
+- Runtime/cabina: [.cabina/organizacion-total](.cabina/organizacion-total)
+- Organismo vivo: [.cabina/organizacion-total/organismo-vivo/README.md](.cabina/organizacion-total/organismo-vivo/README.md)
+- Versionado continuo: [VERSION_STATE.json](VERSION_STATE.json), [VERSION_POLICY.md](VERSION_POLICY.md)
+- Evidencia versionada: [hitos/INDICE_MAESTRO.md](hitos/INDICE_MAESTRO.md)
+
+## Regla de convergencia
+
+```text
+README.md        -> entrada humana corta
+MAPA_MAESTRO.md  -> navegacion viva unica
+MAPA_CAPAS.md    -> sistema nervioso y capas
+operativa/       -> canon vivo y decisiones finales
+.cabina/         -> runtime, VS Code Insiders y organismo vivo
+hitos/outputs    -> historia y salidas, no frente principal
+work/            -> scratch/backups
+```
 
 ## Launch Desk
 
@@ -13,14 +45,13 @@ Snapshot liviano de la cabina.
 - [Trace](operativa/TRACE.md)
 
 ## Vigente
-- Estado: `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`.
+- Estado vigente de esta puerta: `CABINA_FRONTDOOR_CONVERGED_LOCAL_ONLY`.
+- Estado historico anterior: `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`.
 - Workbook: [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx).
 - Control operativo: [control_operativo.xlsx](workbooks/control_operativo.xlsx).
 - Tracker: [tracker.xlsx](workbooks/tracker.xlsx).
-- Evidencia Dataverse viva: [DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json](operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json).
-- Evidencia de binding: [READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md](operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md).
-- Evidencia superficies/workspace/ramas: [READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md](operativa/READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md), [READBACK_BRANCH_ORGANIZATION_20260618.md](operativa/READBACK_BRANCH_ORGANIZATION_20260618.md).
-- Evidencia corta: [READBACK_CIERRE_PESO_REDUCIDO_20260617.md](operativa/READBACK_CIERRE_PESO_REDUCIDO_20260617.md).
+- Evidencia historica: `HOLD_ARCHIVE_REVIEW` hasta reconciliar `operativa/archive`.
+- Evidencia versionada vigente: [hitos/INDICE_MAESTRO.md](hitos/INDICE_MAESTRO.md).
 
 ## Regla
 - No rehidratar, no reempaquetar y no releer SGIN si ya existe evidencia vigente.

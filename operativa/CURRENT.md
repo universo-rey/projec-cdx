@@ -1,21 +1,112 @@
+---
+artifact_id: operativa/CURRENT.md
+categoria: operativa
+tipo: reporte
+estado: en_revision
+version: v0.6.0-rc1
+fecha_evento: '2026-06-23'
+autoridad:
+  tipo: sistema
+  referencia: CABINA_GOBIERNO_TOTAL
+origen: GitHub
+ubicacion_repo: operativa/CURRENT.md
+etiquetas:
+  - current
+  - frontdoor
+  - convergencia
+  - local-only
+relacionados:
+  - README.md
+  - MAPA_MAESTRO.md
+  - MAPA_CAPAS.md
+  - operativa/NEXT.md
+  - operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv
+descripcion: Estado vivo actual de PROJEC CDX tras convergencia local del frontdoor.
+---
+
 # Current
 
 Estado vivo resumido de `PROJEC CDX`.
 
-## Fuente Maestra
-- La secuencia completa vive en [CRONOLOGIA_MAESTRA_20260617.md](CRONOLOGIA_MAESTRA_20260617.md).
+## Estado Actual
 
-## Vigente
-- Estado: `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`.
-- Consumidor aplicado: [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](../workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx).
-- Hojas nuevas: `Workspace Actual`, `Superficies Locales` y `Ramas Organizadas`.
-- Evidencia viva: [DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json](DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json).
-- Evidencia de binding: [READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md](READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md).
-- Evidencia de superficies/workspace: [READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md](READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md).
-- Evidencia de ramas: [READBACK_BRANCH_ORGANIZATION_20260618.md](READBACK_BRANCH_ORGANIZATION_20260618.md).
-- Evidencia corta: [READBACK_CIERRE_PESO_REDUCIDO_20260617.md](READBACK_CIERRE_PESO_REDUCIDO_20260617.md).
+```text
+CABINA_FRONTDOOR_CONVERGED_LOCAL_ONLY
+ORGANISMO_VIVO_LANGUAGE_AND_POLICY_INJERTADO_EN_CABINA
+ROOT_SURFACE_CONVERGENCE_TASKS_READY_LOCAL_ONLY
+```
 
-## Regla
-- Dataverse y los paquetes se consumen desde evidencia vigente antes de abrir una nueva preparacion.
-- `D:\`, `CodexLocal` y `Documents\Codex*` son superficies con owner-gate.
-- Si hace falta historia, abrir la cronologia maestra; no duplicarla aca.
+## Version
+
+```text
+v0.6.0-rc1
+```
+
+## Entrada Canonica
+
+```text
+C:\CEO\project-cdx
+```
+
+Alias fisico:
+
+```text
+C:\Users\enzo1\PROJEC CDX
+```
+
+Regla:
+
+```text
+No tratar el alias fisico como segundo workspace activo.
+No crear SDU_RUNTIME_ROOT.
+```
+
+## Puertas Vivas
+
+- [README.md](../README.md)
+- [MAPA_MAESTRO.md](../MAPA_MAESTRO.md)
+- [MAPA_CAPAS.md](../MAPA_CAPAS.md)
+
+## Canon Vivo
+
+- [NEXT.md](NEXT.md)
+- [TRACE.md](TRACE.md)
+- [ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv](tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv)
+- [READBACK_ROOT_FRONTDOOR_CONVERGENCE_20260623.md](tasks/20260623/READBACK_ROOT_FRONTDOOR_CONVERGENCE_20260623.md)
+- [READBACK_ORGANISMO_VIVO_PACKAGE_ASSIMILATION_20260623.md](tasks/20260623/READBACK_ORGANISMO_VIVO_PACKAGE_ASSIMILATION_20260623.md)
+
+## Runtime / Cabina
+
+- [.cabina/organizacion-total](../.cabina/organizacion-total)
+- [.cabina/organizacion-total/organismo-vivo/README.md](../.cabina/organizacion-total/organismo-vivo/README.md)
+- [.cabina/organizacion-total/vscode-insiders-profiles/README.md](../.cabina/organizacion-total/vscode-insiders-profiles/README.md)
+
+## Pendientes Vivos
+
+```text
+RST-05: clasificar .cabina/organizacion-total/out
+RST-10: resolver identidad de rutas y puente de gobernanza
+RST-11: refrescar metadata/index si se decide versionar la convergencia
+RST-12: cerrar readback final de convergencia
+```
+
+## Historico Reubicado
+
+El estado historico `WORKBOOK_SURFACES_WORKSPACE_REFRESHED` queda preservado como antecedente.
+
+Fuente maestra historica:
+
+```text
+HOLD_ARCHIVE_REVIEW
+```
+
+La cronologia historica queda fuera de esta promocion chica hasta reconciliar el archivo masivo.
+
+## Frontera
+
+- No live por inferencia.
+- No secretos.
+- No DB/cache mutation.
+- No push.
+- No PR.
+- No stage/commit sin decision.
