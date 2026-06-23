@@ -108,6 +108,8 @@ def _top_level_structure(root: Path) -> dict[str, Any]:
     for child in sorted(root.iterdir(), key=lambda item: item.name.lower()):
         if child.name == ".git":
             continue
+        if child.name.startswith(".env"):
+            continue
         if child.is_dir():
             directories.append(child.name)
         elif child.is_file():
@@ -118,7 +120,12 @@ def _top_level_structure(root: Path) -> dict[str, Any]:
 def _metadata_summary(root: Path) -> dict[str, Any]:
     index_payload = _load_json(root / "index.json")
     manifest_payload = _load_json(root / "live-manifest.json")
-    index_items = index_payload if isinstance(index_payload, list) else []
+    if isinstance(index_payload, list):
+        index_items = index_payload
+    elif isinstance(index_payload, dict) and isinstance(index_payload.get("items"), list):
+        index_items = index_payload["items"]
+    else:
+        index_items = []
     artifact_ids = [
         str(item.get("artifact_id"))
         for item in index_items
