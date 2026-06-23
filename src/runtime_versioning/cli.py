@@ -31,6 +31,7 @@ ACTIVE_AGENTS = [
     "seshat-normativa",
     "sentinel-runtime",
     "narrador-normativo",
+    "EATOMIC",
 ]
 
 WATCHED_RUNTIME_FILES = [
