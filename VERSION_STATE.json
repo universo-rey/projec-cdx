@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "mode": "OPERACION_CONTINUA_GOBERNADA",
+  "version_actual": "v0.6.0-rc1",
+  "baseline_version": "v0.6.0-rc1",
+  "branch": "codex/runtime-versioning-snapshots",
+  "commit": "5f51508e70768128e4cadeac6ab60257e4c041df",
+  "commits_ahead_baseline": 9,
+  "generated_at_utc": "2026-06-23T00:22:11Z",
+  "dirty": false,
+  "status": [],
+  "rules": {
+    "merge_to_main": "PATCH",
+    "structural_change_agents_gates_runtime": "MINOR",
+    "architecture_model_change": "MAJOR",
+    "codex_branch": "RC_AUTOMATICO",
+    "no_version_without_snapshot": true,
+    "no_merge_without_snapshot": true,
+    "no_release_without_snapshot_and_checks": true
+  },
+  "snapshot_policy": {
+    "pre_merge": "REQUIRED",
+    "post_merge": "REQUIRED",
+    "pre_release": "REQUIRED",
+    "pre_restore": "REQUIRED",
+    "config_change": "REQUIRED"
+  },
+  "restore_policy": {
+    "requires_clean_workspace": true,
+    "requires_explicit_yes": true,
+    "creates_pre_restore_backup": true,
+    "validates_after_apply": true
+  },
+  "watchdog": {
+    "metadata_drift": "ALERTA_DRIFT",
+    "structure_drift": "ALERTA_DRIFT",
+    "ci_config_drift": "ALERTA_DRIFT",
+    "dependency_drift": "ALERTA_DRIFT"
+  },
+  "agents_active": [
+    "thot-tecnico",
+    "maat-cumplimiento",
+    "horus-riesgo",
+    "anubis-gate",
+    "seshat-normativa",
+    "sentinel-runtime",
+    "narrador-normativo"
+  ],
+  "latest_snapshot": {
+    "snapshot_id": "CEORUNTIME_20260623_0021",
+    "version": "v0.6.0-rc1",
+    "commit": "c572698f03869734da51ac64d1208992235f5875",
+    "branch": "codex/runtime-versioning-snapshots",
+    "fecha": "2026-06-23T00:21:44Z",
+    "tipo": "post-fix",
+    "dirty": false,
+    "global_hash": "d2e064c3af7b33bd3e77fadc3dbe50e273c4de833ec8fab4c05eb9a18eaef15a",
+    "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0021.json"
+  }
+}
