@@ -821,7 +821,7 @@ def _main(args: argparse.Namespace) -> int:
             print(f"Snapshot index: operativa/snapshots/SNAPSHOT_INDEX.json total={payload['total']}")
         return 0
     if args.command == "state":
-        index = build_snapshot_index(root=root, write=True)
+        index = build_snapshot_index(root=root, write=False)
         latest = index["snapshots"][-1] if index["snapshots"] else None
         payload = write_version_state(root=root, version=args.version, latest_snapshot=latest)
         if args.json:
