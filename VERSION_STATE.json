@@ -4,11 +4,14 @@
   "version_actual": "v0.6.0-rc1",
   "baseline_version": "v0.6.0-rc1",
   "branch": "codex/runtime-versioning-snapshots",
-  "commit": "ab64074c6512ccf344902630f7c255f41c8300f9",
-  "commits_ahead_baseline": 27,
-  "generated_at_utc": "2026-06-23T01:02:01Z",
-  "dirty": false,
-  "status": [],
+  "commit": "acd00a9196262ff418535bebead9ae195243530d",
+  "commits_ahead_baseline": 28,
+  "generated_at_utc": "2026-06-23T01:05:42Z",
+  "dirty": true,
+  "status": [
+    " M operativa/snapshots/SNAPSHOT_INDEX.json",
+    "?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0105.json"
+  ],
   "rules": {
     "merge_to_main": "PATCH",
     "structural_change_agents_gates_runtime": "MINOR",
@@ -48,14 +51,14 @@
     "EATOMIC"
   ],
   "latest_snapshot": {
-    "snapshot_id": "CEORUNTIME_20260623_0059",
+    "snapshot_id": "CEORUNTIME_20260623_0105",
     "version": "v0.6.0-rc1",
-    "commit": "1cc8b1d80ac038ae964503a0f68d8287eefb31ac",
+    "commit": "acd00a9196262ff418535bebead9ae195243530d",
     "branch": "codex/runtime-versioning-snapshots",
-    "fecha": "2026-06-23T00:59:03Z",
-    "tipo": "ajustes-post-auditoria",
+    "fecha": "2026-06-23T01:05:41Z",
+    "tipo": "g7-pre-execution",
     "dirty": false,
-    "global_hash": "64aaf0ed4782f7017f0e5b656c9b751fee96bd6d8d83d2b623553bd7a62dc221",
-    "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0059.json"
+    "global_hash": "695b68c05219204a9cbe9b1b5843a68e7077d5eb3a2fa6ea3fea893760f2b210",
+    "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0105.json"
   }
 }
