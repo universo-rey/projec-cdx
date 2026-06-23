@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T00:18:52.501302+00:00",
-  "count": 102,
+  "generated_at": "2026-06-23T00:19:48.540501+00:00",
+  "count": 104,
   "items": [
     {
       "artifact_id": "VERSION_POLICY.md",
@@ -1322,6 +1322,32 @@
       "descripcion": "Acta tecnica de estabilizacion de checks remotos del PR gobernado v0.6.0-rc1.",
       "fecha_evento": "2026-06-22",
       "metadata_source": "operativa/G4_REMOTE_CHECKS_STABILIZATION_v0.6.0-rc1_20260622.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/HISTORY_RUNTIME_EVOLUTION.md",
+      "categoria": "operativa",
+      "tipo": "reporte",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/HISTORY_RUNTIME_EVOLUTION.md",
+      "etiquetas": [
+        "runtime",
+        "historytelling",
+        "snapshots"
+      ],
+      "relacionados": [
+        "VERSION_POLICY.md",
+        "VERSION_STATE.json"
+      ],
+      "descripcion": "Timeline de versiones, snapshots y eventos criticos del runtime gobernado.",
+      "metadata_source": "operativa/HISTORY_RUNTIME_EVOLUTION.md",
       "metadata_kind": "front_matter"
     },
     {
@@ -2681,6 +2707,32 @@
       "descripcion": "Frontera de seguridad W6 para OpenAI Developers, API key y eval harness.",
       "fecha_evento": "2026-06-22",
       "metadata_source": "operativa/W6_OPENAI_SECURITY_BOUNDARY_20260622.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0019.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0019.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0019.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0019 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0019.md",
       "metadata_kind": "front_matter"
     }
   ]
