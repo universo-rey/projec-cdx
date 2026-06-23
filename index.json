@@ -1,7 +1,33 @@
 {
-  "generated_at": "2026-06-22T21:19:18.998917+00:00",
-  "count": 99,
+  "generated_at": "2026-06-23T00:08:05.532943+00:00",
+  "count": 101,
   "items": [
+    {
+      "artifact_id": "VERSION_POLICY.md",
+      "categoria": "procesos",
+      "tipo": "plan",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "VERSION_POLICY.md",
+      "etiquetas": [
+        "versionado",
+        "snapshots",
+        "runtime",
+        "rollback"
+      ],
+      "relacionados": [
+        "operativa/ACTA_RUNTIME_VERSIONING_SNAPSHOTS_20260622.md"
+      ],
+      "descripcion": "Politica de versionado continuo, snapshots y restauracion gobernada de runtime.",
+      "metadata_source": "VERSION_POLICY.md",
+      "metadata_kind": "front_matter"
+    },
     {
       "artifact_id": "docs/MAPA.md",
       "categoria": "playbooks",
@@ -814,6 +840,32 @@
       "descripcion": "Acta constitutiva de cierre con trazabilidad parcial.",
       "fecha_evento": "2026-06-15",
       "metadata_source": "operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/ACTA_RUNTIME_VERSIONING_SNAPSHOTS_20260622.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/ACTA_RUNTIME_VERSIONING_SNAPSHOTS_20260622.md",
+      "etiquetas": [
+        "runtime-save",
+        "runtime-restore",
+        "sentinel",
+        "versionado"
+      ],
+      "relacionados": [
+        "VERSION_POLICY.md"
+      ],
+      "descripcion": "Acta base del sistema gobernado de versionado continuo, snapshots y recuperacion.",
+      "metadata_source": "operativa/ACTA_RUNTIME_VERSIONING_SNAPSHOTS_20260622.md",
       "metadata_kind": "front_matter"
     },
     {
