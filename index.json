@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T01:09:04.094522+00:00",
-  "count": 123,
+  "generated_at": "2026-06-23T01:18:11.465270+00:00",
+  "count": 125,
   "items": [
     {
       "artifact_id": "VERSION_POLICY.md",
@@ -984,6 +984,34 @@
       "descripcion": "Acta constitutiva de cierre con trazabilidad parcial.",
       "fecha_evento": "2026-06-15",
       "metadata_source": "operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/ACTA_DETECCION_G7_MULTIREPO_20260623.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "Mixto",
+      "ubicacion_repo": "operativa/ACTA_DETECCION_G7_MULTIREPO_20260623.md",
+      "etiquetas": [
+        "g7",
+        "multirepo",
+        "auditoria",
+        "reconciliacion"
+      ],
+      "relacionados": [
+        "operativa/MATRIZ_G7_MULTIREPO_20260623.csv",
+        "inventarios/MULTIREPO_ALIGNMENT_16_20260621.csv",
+        "inventarios/GITHUB_REPOS_CANONICAL_20260615.csv"
+      ],
+      "descripcion": "Acta de deteccion de flujo G7 distribuido e implicito en repos del ecosistema.",
+      "metadata_source": "operativa/ACTA_DETECCION_G7_MULTIREPO_20260623.md",
       "metadata_kind": "front_matter"
     },
     {
@@ -3253,6 +3281,32 @@
       ],
       "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0108 generada por operacion continua.",
       "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0108.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0117.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-23",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0117.md",
+      "etiquetas": [
+        "runtime",
+        "snapshot",
+        "watchdog"
+      ],
+      "relacionados": [
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0117.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260623_0117 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0117.md",
       "metadata_kind": "front_matter"
     }
   ]

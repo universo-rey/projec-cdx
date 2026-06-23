@@ -4,13 +4,13 @@
   "version_actual": "v0.6.0-rc1",
   "baseline_version": "v0.6.0-rc1",
   "branch": "codex/runtime-versioning-snapshots",
-  "commit": "d15285ec8c114675d03de2798d82313f67d4c602",
-  "commits_ahead_baseline": 30,
-  "generated_at_utc": "2026-06-23T01:08:54Z",
+  "commit": "bfbd5019a509e5b95e90b6ccb26ba89597cacd24",
+  "commits_ahead_baseline": 31,
+  "generated_at_utc": "2026-06-23T01:17:05Z",
   "dirty": true,
   "status": [
     " M operativa/snapshots/SNAPSHOT_INDEX.json",
-    "?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0108.json"
+    "?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0117.json"
   ],
   "rules": {
     "merge_to_main": "PATCH",
@@ -51,14 +51,14 @@
     "EATOMIC"
   ],
   "latest_snapshot": {
-    "snapshot_id": "CEORUNTIME_20260623_0108",
+    "snapshot_id": "CEORUNTIME_20260623_0117",
     "version": "v0.6.0-rc1",
-    "commit": "d15285ec8c114675d03de2798d82313f67d4c602",
+    "commit": "bfbd5019a509e5b95e90b6ccb26ba89597cacd24",
     "branch": "codex/runtime-versioning-snapshots",
-    "fecha": "2026-06-23T01:08:54Z",
-    "tipo": "g7-manual_governed_audit",
+    "fecha": "2026-06-23T01:17:04Z",
+    "tipo": "g7-multirepo-detection-pre",
     "dirty": false,
-    "global_hash": "44ec31c7f3cdbb52f3afe487fcfcbee529a868c134d95ef6b397a19c6d7c729b",
-    "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0108.json"
+    "global_hash": "f59356e610bf693f5acb4318300db260dcf7672a9d16b6d09f3c3385b9c5e3be",
+    "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0117.json"
   }
 }
