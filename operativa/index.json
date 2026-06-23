@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T01:18:11.465270+00:00",
+  "generated_at": "2026-06-23T01:25:46.878823+00:00",
   "count": 88,
   "items": [
     {
@@ -138,7 +138,7 @@
         "inventarios/MULTIREPO_ALIGNMENT_16_20260621.csv",
         "inventarios/GITHUB_REPOS_CANONICAL_20260615.csv"
       ],
-      "descripcion": "Acta de deteccion de flujo G7 distribuido e implicito en repos del ecosistema.",
+      "descripcion": "Acta de deteccion de flujo G7 distribuido, con orquestador existente en cabina-universal-d.",
       "metadata_source": "operativa/ACTA_DETECCION_G7_MULTIREPO_20260623.md",
       "metadata_kind": "front_matter"
     },
