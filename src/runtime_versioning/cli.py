@@ -233,7 +233,9 @@ def _version_state_payload(
     latest_snapshot: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     root = root.resolve()
-    status_lines = _git_status(root)
+    status_lines = [
+        line for line in _git_status(root) if not line.strip().endswith("VERSION_STATE.json")
+    ]
     current_version = version or _nearest_version(root)
     branch = _current_branch(root)
     commit = _current_commit(root)
