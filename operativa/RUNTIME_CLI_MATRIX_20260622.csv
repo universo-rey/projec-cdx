@@ -6,4 +6,5 @@ ceo-runtime-sentinel,runtime_versioning.cli:sentinel_main,tools/ceo-runtime-sent
 ceo-runtime-status,runtime_versioning.cli:status_main,tools/ceo-runtime-status.ps1,ACTIVE,none,no,status_json,VERSION_STATE.json
 ceo-runtime-index,runtime_versioning.cli:index_main,tools/ceo-runtime-index.ps1,ACTIVE,operativa/snapshots/SNAPSHOT_INDEX.json,no,index_json,operativa/snapshots/SNAPSHOT_INDEX.json
 ceo-runtime-state,runtime_versioning.cli:state_main,tools/ceo-runtime-state.ps1,ACTIVE,VERSION_STATE.json,no,state_json,VERSION_STATE.json
+ceo-runtime-continuous,runtime_versioning.cli:continuous_main,tools/ceo-runtime-continuous.ps1,ACTIVE,operativa/g7 + operativa/snapshots + runtime-events,no,g7_json,operativa/g7
 ceo runtime <command>,runtime_versioning.cli:ceo_main,project.scripts ceo,ACTIVE,delegated,no,delegated_json,docs/runtime-cli.md

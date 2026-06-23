@@ -112,6 +112,23 @@ def test_runtime_status_outputs_core_fields(tmp_path: Path) -> None:
     assert status["drift_detected"] is False
 
 
+def test_continuous_cycle_creates_snapshot_and_g7_evidence(tmp_path: Path) -> None:
+    _seed_repo(tmp_path)
+    result = cli.run_continuous_cycle(
+        root=tmp_path,
+        event="workflow_dispatch",
+        version="v0.6.0-rc1",
+    )
+
+    assert result["modo"] == "G7_MEJORA_CONTINUA_ACTIVO"
+    assert result["drift"] == "NO_DRIFT"
+    assert result["snapshot_base"].startswith("CEORUNTIME_")
+    assert result["frontera"]["external_writes"] is False
+    assert result["evidencia"]["report"].startswith("operativa/g7/")
+    assert (tmp_path / result["evidencia"]["report"]).exists()
+    assert (tmp_path / "operativa" / "HISTORY_CONTINUOUS_EVOLUTION.md").exists()
+
+
 def test_powershell_wrappers_exist_or_documented() -> None:
     root = Path(__file__).resolve().parents[1]
     expected = [
@@ -122,6 +139,7 @@ def test_powershell_wrappers_exist_or_documented() -> None:
         "ceo-runtime-status.ps1",
         "ceo-runtime-index.ps1",
         "ceo-runtime-state.ps1",
+        "ceo-runtime-continuous.ps1",
     ]
 
     for name in expected:

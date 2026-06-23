@@ -15,6 +15,7 @@ etiquetas:
   - snapshots
   - runtime
   - rollback
+  - g7
 relacionados:
   - operativa/ACTA_RUNTIME_VERSIONING_SNAPSHOTS_20260622.md
 descripcion: Politica de versionado continuo, snapshots y restauracion gobernada de runtime.
@@ -50,6 +51,7 @@ descripcion: Politica de versionado continuo, snapshots y restauracion gobernada
 - Todo merge a `main` requiere snapshot previo valido.
 - Todo release requiere snapshot asociado al commit objetivo.
 - Todo cambio de configuracion runtime requiere snapshot previo o acta de excepcion.
+- Todo ciclo G7 requiere snapshot previo, reporte de divergencias e indicadores.
 
 ## Version de paquete Python
 
@@ -71,6 +73,7 @@ descripcion: Politica de versionado continuo, snapshots y restauracion gobernada
 - `VERSION_STATE.json`: estado gobernado de version, branch, commit, reglas y ultimo snapshot.
 - `operativa/snapshots/SNAPSHOT_INDEX.json`: indice versionado de snapshots reproducibles.
 - `operativa/HISTORY_RUNTIME_EVOLUTION.md`: timeline narrativo de eventos runtime.
+- `operativa/HISTORY_CONTINUOUS_EVOLUTION.md`: timeline de auditorias G7, divergencias y reconciliaciones.
 - `operativa/sentinel/DRIFT_LOG.json`: log local de alertas, ignorado por Git hasta decision explicita.
 
 ## Comandos canonicos
@@ -82,7 +85,15 @@ descripcion: Politica de versionado continuo, snapshots y restauracion gobernada
 - `ceo-runtime-status`: mostrar estado ejecutivo del runtime.
 - `ceo-runtime-index`: regenerar indice de snapshots.
 - `ceo-runtime-state`: regenerar estado dinamico de version.
+- `ceo-runtime-continuous`: ejecutar ciclo G7 de mejora continua.
 - `ceo runtime <comando>`: alias instalable para la familia runtime.
+
+## G7 mejora continua
+
+- Cada evento gobernado puede ejecutar `ceo-runtime-continuous`.
+- El ciclo G7 crea snapshot previo, clasifica divergencias, calcula indicadores y deja evidencia.
+- Si hay divergencias, prevalece el estado mas cercano al actual con gates completos y evidencia.
+- G7 no autoriza live, writes externos, merge, tag ni release por si mismo.
 
 ## Frontera
 

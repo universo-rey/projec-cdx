@@ -57,6 +57,10 @@ jobs:
         run: |
           python main.py --governed-check --json --output "$CODEX_GOVERNED_REPORT_DIR/governed-report.json"
 
+      - name: G7 continuous governance cycle
+        run: |
+          python main.py runtime continuous --event "$GITHUB_EVENT_NAME" --no-persist --json --output "$CODEX_GOVERNED_REPORT_DIR/g7-continuous.json"
+
       - name: Tests
         run: pytest -q
 

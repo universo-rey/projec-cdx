@@ -44,6 +44,7 @@ ceo-runtime-sentinel = "runtime_versioning.cli:sentinel_main"
 ceo-runtime-index = "runtime_versioning.cli:index_main"
 ceo-runtime-state = "runtime_versioning.cli:state_main"
 ceo-runtime-status = "runtime_versioning.cli:status_main"
+ceo-runtime-continuous = "runtime_versioning.cli:continuous_main"
 ceo = "runtime_versioning.cli:ceo_main"
 
 [tool.pytest.ini_options]

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import os
@@ -20,6 +21,7 @@ VERSION_STATE_PATH = ROOT / "VERSION_STATE.json"
 SNAPSHOT_INDEX_PATH = SNAPSHOT_DIR / "SNAPSHOT_INDEX.json"
 DRIFT_LOG_PATH = SENTINEL_DIR / "DRIFT_LOG.json"
 HISTORY_PATH = ROOT / "operativa" / "HISTORY_RUNTIME_EVOLUTION.md"
+CONTINUOUS_HISTORY_PATH = ROOT / "operativa" / "HISTORY_CONTINUOUS_EVOLUTION.md"
 SNAPSHOT_PREFIX = "CEORUNTIME"
 DEFAULT_VERSION = "v0.6.0-rc1"
 
@@ -100,6 +102,15 @@ def _load_json(path: Path) -> Any:
 def _write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({field: row.get(field, "") for field in fieldnames})
 
 
 def _relative(path: Path, root: Path) -> str:
@@ -500,6 +511,27 @@ def _append_history(root: Path, line: str, version: str) -> None:
     path.write_text(content, encoding="utf-8")
 
 
+def _append_continuous_history(root: Path, line: str, version: str) -> None:
+    path = root / "operativa" / "HISTORY_CONTINUOUS_EVOLUTION.md"
+    if not path.exists():
+        content = _front_matter(
+            artifact_id="operativa/HISTORY_CONTINUOUS_EVOLUTION.md",
+            tipo="reporte",
+            descripcion="Timeline de auditoria, divergencias, reconciliaciones y ajustes G7.",
+            etiquetas=["runtime", "g7", "mejora-continua"],
+            relacionados=["VERSION_STATE.json", "operativa/snapshots/SNAPSHOT_INDEX.json"],
+            version=version,
+        )
+        content += "# HISTORY CONTINUOUS EVOLUTION\n\n"
+    else:
+        content = path.read_text(encoding="utf-8")
+        if not content.endswith("\n"):
+            content += "\n"
+    content += line.rstrip() + "\n"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+
+
 def save_snapshot(
     root: Path = ROOT,
     ref: str = "HEAD",
@@ -768,6 +800,249 @@ def runtime_status(root: Path = ROOT) -> dict[str, Any]:
     }
 
 
+def _g7_event_policy(event: str) -> dict[str, Any]:
+    normalized = event.strip() or "manual"
+    trigger_map = {
+        "pull_request": "PR_OPENED_OR_UPDATED",
+        "push": "MERGE_OR_MAIN_PUSH",
+        "release": "TAG_OR_RELEASE",
+        "workflow_dispatch": "MANUAL_GOVERNED_AUDIT",
+        "manual": "MANUAL_GOVERNED_AUDIT",
+    }
+    return {
+        "event": normalized,
+        "trigger": trigger_map.get(normalized, "MANUAL_GOVERNED_AUDIT"),
+        "requires_snapshot": True,
+        "requires_postcheck": True,
+        "external_writes_allowed": False,
+        "live_allowed": False,
+    }
+
+
+def _g7_divergences(root: Path, status_lines: list[str]) -> list[dict[str, Any]]:
+    divergences: list[dict[str, Any]] = []
+    if status_lines:
+        divergences.append(
+            {
+                "divergence_case_id": "G7-DIV-001",
+                "origenes": "git_status",
+                "diferencias": "; ".join(status_lines),
+                "severidad": "MEDIA",
+                "version_dominante": "workspace_actual_con_snapshot",
+                "version_obsoleta": "ultimo_commit_limpio",
+                "unified_canonical_rule": (
+                    "prevalece el estado limpio versionado; cambios locales requieren "
+                    "readback, snapshot y commit logico"
+                ),
+                "decision": "REQUIERE_RECONCILIACION",
+            }
+        )
+    state_payload = _load_json(root / "VERSION_STATE.json")
+    if not isinstance(state_payload, dict):
+        divergences.append(
+            {
+                "divergence_case_id": "G7-DIV-002",
+                "origenes": "VERSION_STATE.json",
+                "diferencias": "VERSION_STATE_MISSING_OR_INVALID",
+                "severidad": "MAYOR",
+                "version_dominante": "runtime_cli_state",
+                "version_obsoleta": "missing_state_file",
+                "unified_canonical_rule": "VERSION_STATE.json debe existir antes de merge/release",
+                "decision": "REQUIERE_AJUSTE",
+            }
+        )
+    return divergences
+
+
+def _g7_indicators(divergence_count: int, adjustment_count: int, drift: str) -> dict[str, Any]:
+    return {
+        "drift_rate": 0 if drift == "NO_DRIFT" else 1,
+        "divergence_count": divergence_count,
+        "ajuste_rate": adjustment_count,
+        "estabilidad_runtime": (
+            "ALTA" if drift == "NO_DRIFT" and divergence_count == 0 else "CONTROLADA"
+        ),
+    }
+
+
+def run_continuous_cycle(
+    root: Path = ROOT,
+    event: str = "manual",
+    version: str | None = None,
+    output: Path | None = None,
+    persist: bool = True,
+) -> dict[str, Any]:
+    root = root.resolve()
+    status_before = _git_status(root)
+    if status_before:
+        raise RuntimeErrorMessage("G7_BLOCKED_DIRTY_WORKSPACE")
+    resolved_version = version or _nearest_version(root)
+    cycle_id = f"G7_{_timestamp_id()}"
+    event_policy = _g7_event_policy(event)
+    snapshot = save_snapshot(
+        root=root,
+        ref="HEAD",
+        allow_dirty=False,
+        version=resolved_version,
+        event_type=f"g7-{event_policy['trigger'].lower()}",
+        write_acta=persist,
+    )
+    divergences = _g7_divergences(root, status_before)
+    divergence_count = len(divergences)
+    resolved_count = sum(1 for item in divergences if item.get("decision") == "AUTO_RESOLVED")
+    adjustment_count = 0
+    drift = "NO_DRIFT" if divergence_count == 0 else "CONTROLADO"
+    indicators = _g7_indicators(divergence_count, adjustment_count, drift)
+    risk = "Bajo" if drift == "NO_DRIFT" else "Medio"
+    status = "ESTABLE" if drift == "NO_DRIFT" else "EN_AJUSTE"
+
+    report = {
+        "modo": "G7_MEJORA_CONTINUA_ACTIVO",
+        "cycle_id": cycle_id,
+        "event": event_policy,
+        "snapshot_base": snapshot.get("snapshot_id"),
+        "snapshot_path": snapshot.get("path"),
+        "divergencias_detectadas": divergence_count,
+        "divergencias_resueltas": resolved_count,
+        "ajustes_aplicados": adjustment_count,
+        "drift": drift,
+        "estado_sistema": status,
+        "riesgo_evolutivo": risk,
+        "agentes": ACTIVE_AGENTS,
+        "indicadores": indicators,
+        "frontera": {
+            "no_external": True,
+            "no_live": True,
+            "no_secret_read": True,
+            "external_writes": False,
+            "workflow_dispatch_controlled": event_policy["event"] == "workflow_dispatch",
+        },
+        "observaciones": [
+            "G7 crea snapshot previo y clasifica divergencias antes de proponer ajustes.",
+            "La regla canonica es prevalecer por estado actual con gates completos y evidencia.",
+            "No se ejecutan writes externos, live surfaces ni lectura de secretos.",
+        ],
+    }
+
+    if persist:
+        g7_dir = root / "operativa" / "g7"
+        report_path = g7_dir / f"{cycle_id}_CONTINUOUS_CYCLE.json"
+        divergence_path = g7_dir / f"{cycle_id}_DIVERGENCE_MATRIX.csv"
+        indicators_path = g7_dir / f"{cycle_id}_SYSTEM_INDICATORS.csv"
+        _write_json(report_path, report)
+        _write_csv(
+            divergence_path,
+            divergences,
+            [
+                "divergence_case_id",
+                "origenes",
+                "diferencias",
+                "severidad",
+                "version_dominante",
+                "version_obsoleta",
+                "unified_canonical_rule",
+                "decision",
+            ],
+        )
+        _write_csv(
+            indicators_path,
+            [indicators],
+            ["drift_rate", "divergence_count", "ajuste_rate", "estabilidad_runtime"],
+        )
+        related = [
+            _relative(report_path, root),
+            _relative(divergence_path, root),
+            _relative(indicators_path, root),
+            str(snapshot.get("path")),
+        ]
+        audit_path = _write_runtime_event_acta(
+            root=root,
+            event_name=f"G7_AUDIT_{cycle_id}",
+            title=f"ACTA G7 AUDIT {cycle_id}",
+            body_lines=[
+                "## Estado",
+                "",
+                "`G7_AUDIT_COMPLETED`",
+                "",
+                "## Snapshot base",
+                "",
+                f"`{snapshot.get('snapshot_id')}`",
+                "",
+                "## Divergencias detectadas",
+                "",
+                f"`{divergence_count}`",
+            ],
+            version=resolved_version,
+            relacionados=related,
+        )
+        reconciliation_path = _write_runtime_event_acta(
+            root=root,
+            event_name=f"G7_RECONCILIATION_{cycle_id}",
+            title=f"ACTA G7 RECONCILIATION {cycle_id}",
+            body_lines=[
+                "## Estado",
+                "",
+                "`G7_RECONCILIATION_COMPLETED`",
+                "",
+                "## Regla canonica",
+                "",
+                "`prevalece estado actual + gates completos + evidencia`",
+                "",
+                "## Divergencias resueltas",
+                "",
+                f"`{resolved_count}`",
+            ],
+            version=resolved_version,
+            relacionados=related,
+        )
+        adjustment_path = _write_runtime_event_acta(
+            root=root,
+            event_name=f"G7_ADJUSTMENT_{cycle_id}",
+            title=f"ACTA G7 ADJUSTMENT {cycle_id}",
+            body_lines=[
+                "## Estado",
+                "",
+                "`G7_ADJUSTMENT_COMPLETED`",
+                "",
+                "## Ajustes aplicados",
+                "",
+                f"`{adjustment_count}`",
+                "",
+                "## Frontera",
+                "",
+                "`NO_EXTERNAL_NO_LIVE_NO_SECRETS`",
+            ],
+            version=resolved_version,
+            relacionados=related,
+        )
+        _append_continuous_history(
+            root,
+            (
+                f"- `{_utc_now().isoformat(timespec='seconds').replace('+00:00', 'Z')}` "
+                f"ciclo `{cycle_id}` evento `{event_policy['trigger']}` "
+                f"snapshot `{snapshot.get('snapshot_id')}` drift `{drift}` "
+                f"divergencias `{divergence_count}` ajustes `{adjustment_count}`."
+            ),
+            resolved_version,
+        )
+        report["evidencia"] = {
+            "report": _relative(report_path, root),
+            "divergence_matrix": _relative(divergence_path, root),
+            "indicators": _relative(indicators_path, root),
+            "audit_acta": _relative(audit_path, root),
+            "reconciliation_acta": _relative(reconciliation_path, root),
+            "adjustment_acta": _relative(adjustment_path, root),
+            "history": "operativa/HISTORY_CONTINUOUS_EVOLUTION.md",
+        }
+    else:
+        report["evidencia"] = {"report": "stdout_or_output_file"}
+
+    if output:
+        _write_json(output if output.is_absolute() else root / output, report)
+        report["output"] = str(output)
+    return report
+
+
 def _print_table(rows: list[dict[str, Any]]) -> None:
     if not rows:
         print("No snapshots found.")
@@ -833,6 +1108,15 @@ def build_parser() -> argparse.ArgumentParser:
 
     status = subparsers.add_parser("status", help="Show governed runtime status")
     status.add_argument("--json", action="store_true", help="Print JSON payload")
+
+    continuous = subparsers.add_parser("continuous", help="Run G7 continuous governance cycle")
+    continuous.add_argument("--event", default="manual", help="Trigger event name")
+    continuous.add_argument("--version", default=None, help="Version bucket for the cycle")
+    continuous.add_argument("--output", type=Path, default=None, help="Optional JSON output path")
+    continuous.add_argument(
+        "--no-persist", action="store_true", help="Do not write G7 actas/matrices"
+    )
+    continuous.add_argument("--json", action="store_true", help="Print JSON payload")
 
     return parser
 
@@ -909,6 +1193,19 @@ def _main(args: argparse.Namespace) -> int:
             print(f"Workspace clean: {payload['workspace']['clean']}")
             print(f"Latest snapshot: {latest.get('snapshot_id', 'NONE')}")
         return 0
+    if args.command == "continuous":
+        payload = run_continuous_cycle(
+            root=root,
+            event=args.event,
+            version=args.version,
+            output=args.output,
+            persist=not args.no_persist,
+        )
+        if args.json:
+            print(json.dumps(payload, indent=2, ensure_ascii=False))
+        else:
+            print(f"G7 continuous cycle: {payload['cycle_id']} drift={payload['drift']}")
+        return 0
     return 1
 
 
@@ -950,11 +1247,18 @@ def status_main() -> int:
     return main(["status", *sys.argv[1:]])
 
 
+def continuous_main() -> int:
+    return main(["continuous", *sys.argv[1:]])
+
+
 def ceo_main() -> int:
     args = sys.argv[1:]
     if args[:1] == ["runtime"]:
         return main(args[1:])
-    print("Uso: ceo runtime <save|list|restore|sentinel|status|index|state>", file=sys.stderr)
+    print(
+        "Uso: ceo runtime <save|list|restore|sentinel|status|index|state|continuous>",
+        file=sys.stderr,
+    )
     return 1
 
 
