@@ -12,11 +12,13 @@ workbooks/_backups/
 workbooks/~$*.xlsx
 operativa/PAC_*_HUBDESARROLLO_*.txt
 operativa/backup-*.reg
+operativa/sentinel/SENTINEL_REPORT.json
 
 # Local workspace tooling overlays.
 .opencode
 .agent/
 .bookmarks/
+.cursor/
 .github/agents/
 .github/skills/
 .vscode/
