@@ -1,0 +1,69 @@
+name: codex-governed
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  governed:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .[dev]
+
+      - name: Prepare report directory
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/codex-governed"
+          echo "CODEX_GOVERNED_REPORT_DIR=$RUNNER_TEMP/codex-governed" >> "$GITHUB_ENV"
+
+      - name: Runtime status
+        run: |
+          python main.py runtime status --json | tee "$CODEX_GOVERNED_REPORT_DIR/runtime-status.json"
+
+      - name: Metadata validate
+        run: python -m tools.validate
+
+      - name: Metadata index freshness
+        run: |
+          python -m tools.build_index
+          git diff --exit-code -- index.json operativa/index.json
+
+      - name: Runtime sentinel
+        run: |
+          python main.py runtime sentinel --json | tee "$CODEX_GOVERNED_REPORT_DIR/runtime-sentinel.json"
+
+      - name: Governed cloud agents
+        run: |
+          python main.py --governed-check --json --output "$CODEX_GOVERNED_REPORT_DIR/governed-report.json"
+
+      - name: Tests
+        run: pytest -q
+
+      - name: Upload governed evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: codex-governed-report
+          if-no-files-found: error
+          path: ${{ env.CODEX_GOVERNED_REPORT_DIR }}/*.json

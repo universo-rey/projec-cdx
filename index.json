@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T00:31:23.459533+00:00",
-  "count": 109,
+  "generated_at": "2026-06-23T00:39:27.638858+00:00",
+  "count": 112,
   "items": [
     {
       "artifact_id": "VERSION_POLICY.md",
@@ -212,6 +212,33 @@
       "relacionados": [],
       "descripcion": "Mapa arquitectonico de la nueva organizacion documental.",
       "metadata_source": "docs/arquitectura/mapa.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "docs/cloud-codex-governed.md",
+      "categoria": "procesos",
+      "tipo": "plan",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "docs/cloud-codex-governed.md",
+      "etiquetas": [
+        "cloud",
+        "codex",
+        "agents",
+        "github-actions"
+      ],
+      "relacionados": [
+        ".github/workflows/codex-governed.yml",
+        "operativa/CLOUD_CODEX_GOVERNED_READBACK_20260622.md"
+      ],
+      "descripcion": "Flujo Codex Cloud gobernado para validacion analitica read-only con agentes y evidencia JSON.",
+      "metadata_source": "docs/cloud-codex-governed.md",
       "metadata_kind": "front_matter"
     },
     {
@@ -846,6 +873,33 @@
       "metadata_kind": "front_matter"
     },
     {
+      "artifact_id": "operativa/ACTA_CLOUD_CODEX_GOVERNED_20260622.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/ACTA_CLOUD_CODEX_GOVERNED_20260622.md",
+      "etiquetas": [
+        "cloud",
+        "codex",
+        "github-actions",
+        "agents"
+      ],
+      "relacionados": [
+        "docs/cloud-codex-governed.md",
+        "operativa/CLOUD_CODEX_READINESS_MATRIX_20260622.csv"
+      ],
+      "descripcion": "Acta de activacion del flujo Codex Cloud gobernado como analisis read-only.",
+      "metadata_source": "operativa/ACTA_CLOUD_CODEX_GOVERNED_20260622.md",
+      "metadata_kind": "front_matter"
+    },
+    {
       "artifact_id": "operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md",
       "categoria": "operativa",
       "tipo": "acta",
@@ -1126,6 +1180,34 @@
       ],
       "descripcion": "Pagina madre operativa de la cadena runtime, entornos, agentes y control-plane gobernado.",
       "metadata_source": "operativa/CADENA_OPERATIVA_RUNTIME_AGENTES_ENTORNOS_20260622.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/CLOUD_CODEX_GOVERNED_READBACK_20260622.md",
+      "categoria": "operativa",
+      "tipo": "readback",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/CLOUD_CODEX_GOVERNED_READBACK_20260622.md",
+      "etiquetas": [
+        "cloud",
+        "codex",
+        "readback",
+        "sentinel"
+      ],
+      "relacionados": [
+        "operativa/ACTA_CLOUD_CODEX_GOVERNED_20260622.md",
+        ".github/workflows/codex-governed.yml",
+        "src/projec_cdx_cloud/governed.py"
+      ],
+      "descripcion": "Readback de cierre para activacion cloud gobernada sin writes externos.",
+      "metadata_source": "operativa/CLOUD_CODEX_GOVERNED_READBACK_20260622.md",
       "metadata_kind": "front_matter"
     },
     {

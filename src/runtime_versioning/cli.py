@@ -150,7 +150,7 @@ def _tracked_tree_hash(root: Path, ref: str) -> dict[str, Any]:
                 "object": object_hash,
             }
         )
-        digest.update(f"{mode} {object_type} {object_hash}\t{normalized}\n".encode("utf-8"))
+        digest.update(f"{mode} {object_type} {object_hash}\t{normalized}\n".encode())
     return {"tracked_file_count": len(entries), "tree_hash": digest.hexdigest()}
 
 
@@ -319,9 +319,7 @@ def _snapshot_payload(
     resolved_version = version or (version_tags[-1] if version_tags else _nearest_version(root))
     tree = _tracked_tree_hash(root, commit)
     watched = {
-        path: _sha256_file(root / path)
-        for path in WATCHED_RUNTIME_FILES
-        if (root / path).exists()
+        path: _sha256_file(root / path) for path in WATCHED_RUNTIME_FILES if (root / path).exists()
     }
 
     payload: dict[str, Any] = {
@@ -723,7 +721,9 @@ def build_sentinel_report(root: Path = ROOT, output: Path | None = None) -> dict
     }
     output_path = output or root / "operativa" / "sentinel" / "SENTINEL_REPORT.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    output_path.write_text(
+        json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
     if report["status"] != "PASS" or report["drift_detected"]:
         _append_drift_log(root, report)
     report["path"] = _relative(output_path, root)
@@ -776,9 +776,11 @@ def _print_table(rows: list[dict[str, Any]]) -> None:
         header: max(
             len(header),
             *[
-                len(",".join(str(x) for x in row.get(header, [])))
-                if isinstance(row.get(header), list)
-                else len(str(row.get(header, "")))
+                (
+                    len(",".join(str(x) for x in row.get(header, [])))
+                    if isinstance(row.get(header), list)
+                    else len(str(row.get(header, "")))
+                )
                 for row in rows
             ],
         )
@@ -861,7 +863,9 @@ def _main(args: argparse.Namespace) -> int:
         if args.json:
             print(json.dumps(payload, indent=2, ensure_ascii=False))
         else:
-            print(f"Snapshot index: operativa/snapshots/SNAPSHOT_INDEX.json total={payload['total']}")
+            print(
+                f"Snapshot index: operativa/snapshots/SNAPSHOT_INDEX.json total={payload['total']}"
+            )
         return 0
     if args.command == "state":
         index = build_snapshot_index(root=root, write=False)
