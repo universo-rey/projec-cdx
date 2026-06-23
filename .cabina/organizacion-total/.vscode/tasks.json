@@ -1,0 +1,222 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "SDU: Preflight",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgPreflight.ps1"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Discover Agents",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUAgentDiscovery.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Inventory",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgInventory.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Classify MultiAgent",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgClassifyMultiAgent.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Plan",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgPlan.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Validate",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgValidate.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Report",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgReport.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Full DryRun",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "SDU: Preflight",
+        "SDU: Discover Agents",
+        "SDU: Inventory",
+        "SDU: Classify MultiAgent",
+        "SDU: Plan",
+        "SDU: Validate",
+        "SDU: Report"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Analyze Agent Coverage",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgAnalyzeAgentCoverage.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Refine Rules V3",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgRefineRulesV3.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Classify MultiAgent V3",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgClassifyMultiAgent.ps1",
+        "-RulesPath",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/config/classification-rules.v3.json",
+        "-OutCsv",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/out/classification.v3.csv",
+        "-ManualReviewCsv",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/out/manual-review.v3.csv",
+        "-RiskCsv",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/out/risk-register.v3.csv"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Plan V3",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgPlan.ps1",
+        "-ClassificationCsv",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/out/classification.v3.csv",
+        "-OutCsv",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/out/move-plan.v3.csv",
+        "-OutJson",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/out/move-plan.v3.json"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Validate V3",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgValidate.ps1",
+        "-PlanCsv",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/out/move-plan.v3.csv",
+        "-ClassificationCsv",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/out/classification.v3.csv",
+        "-ValidationOut",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/out/validation-readback.v3.md"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Comparative Report V3",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgComparativeReportV3.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU: Full DryRun V3",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder:ORG_TOTAL_RUNNER}/scripts/Invoke-SDUOrgFullDryRunV3.ps1"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

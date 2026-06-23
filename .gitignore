@@ -23,3 +23,14 @@ operativa/sentinel/DRIFT_LOG.json
 .github/agents/
 .github/skills/
 .vscode/
+
+# SDU organizacion-total runner: keep raw/generated evidence local.
+.cabina/organizacion-total/out/*.csv
+.cabina/organizacion-total/out/*.json
+.cabina/organizacion-total/logs/
+!.cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1_V3.md
+!.cabina/organizacion-total/out/BASELINE_DECISION_G1_V3.md
+!.cabina/organizacion-total/out/G1_V2_V3_COMPARATIVE_REPORT.md
+!.cabina/organizacion-total/out/G1_V3_V31_SIM_COMPARATIVE_REPORT.md
+!.cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1_MULTIPLE_TRIAGE.md
+!.cabina/organizacion-total/out/FOREIGN_CHANGES_PREEXISTING_READBACK.md

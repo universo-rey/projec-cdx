@@ -1,0 +1,88 @@
+{
+  "baseline_id": "SDU_ORG_TOTAL_G1_V3_BASELINE_CANDIDATE_20260623",
+  "runner_id": "SDU_ORG_TOTAL_MULTIAGENTE_VSCODE_INSIDERS_G1_20260623",
+  "runner_path": ".cabina/organizacion-total",
+  "decision": "A_ADOPTAR_V3_AS_BASELINE_CANDIDATE",
+  "rules_version": "v3",
+  "v31_sim_decision": "no_promote",
+  "ideal_satisfied": true,
+  "manual_review": 234,
+  "unknown": 54,
+  "multiple": 144,
+  "risks": 196,
+  "protection_loss": 0,
+  "secret_loss": 0,
+  "apply": false,
+  "no_delete": true,
+  "no_overwrite": true,
+  "no_live": true,
+  "no_push": true,
+  "no_pr": true,
+  "evidence_mode": "metadata_hash_redacted",
+  "source_reports": [
+    ".cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1_V3.md",
+    ".cabina/organizacion-total/out/BASELINE_DECISION_G1_V3.md",
+    ".cabina/organizacion-total/out/G1_V2_V3_COMPARATIVE_REPORT.md",
+    ".cabina/organizacion-total/out/G1_V3_V31_SIM_COMPARATIVE_REPORT.md",
+    ".cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1_MULTIPLE_TRIAGE.md",
+    ".cabina/organizacion-total/out/FOREIGN_CHANGES_PREEXISTING_READBACK.md"
+  ],
+  "file_hashes_sha256": [
+    {
+      "path": ".cabina/organizacion-total/00_README_OPERATIVO.md",
+      "sha256": "e839b2cbd112195d5479cf618020deed27e34a10c0c0fabb3e64445a3a05afa2"
+    },
+    {
+      "path": ".cabina/organizacion-total/01_PROMPT_RECTOR_CODEX.md",
+      "sha256": "c1e31d58eef655f34b5e3cab5e36d3eb6d9cf9a5d4916487d132a8f17eeae209"
+    },
+    {
+      "path": ".cabina/organizacion-total/RUNNER_KNOWLEDGE.md",
+      "sha256": "075f14cfd0748f61180e799a983a29c26effbe5dbc7cc3ffe08ad99bb7d88a0f"
+    },
+    {
+      "path": ".cabina/organizacion-total/VERSIONING_POLICY.md",
+      "sha256": "b6f6e05b8c32b1f683ab5e0520ee00ece00262fc84f52cc119f25bdc7f2826af"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/sdu-org-policy.json",
+      "sha256": "7aa532f32bc76d779c92d4bd9e784493eac0623582b82e31c7fdaf2e1baef18e"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/classification-rules.v2.json",
+      "sha256": "700cc207bbe63d8cb20f9ef81076e39103de1cb8dac59913dd9527fc4fb10642"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/classification-rules.v3.json",
+      "sha256": "1a933224b44c1b2c2b464d0d6c6812a9e064a2506b369cc80d6d185eedab987e"
+    },
+    {
+      "path": ".cabina/organizacion-total/config/agent-role-map.yaml",
+      "sha256": "ca070067396504d761281c6aa78a1c4c33f5fcdf199d14883549675f338adddb"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1_V3.md",
+      "sha256": "115debbd096b2922c96b2839c1ca5d0a15cca2fa65c38ad9b40b91d2a7ed7bbb"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/BASELINE_DECISION_G1_V3.md",
+      "sha256": "12c79d152bddf6a0db7cd60951e61de6dd70e56ac5d9f8981f3d5304138b6623"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/G1_V2_V3_COMPARATIVE_REPORT.md",
+      "sha256": "7af556a61a957c0e9cad38eaaeeeed664e89a5207e0f5c2950d9f926f11db49e"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/G1_V3_V31_SIM_COMPARATIVE_REPORT.md",
+      "sha256": "6e963fe9bdbd9df76ef3b1e20c228fac63b036747f56ce7592cac1806ba035a3"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1_MULTIPLE_TRIAGE.md",
+      "sha256": "8e3fa4af44924844c93d7886af3696e348877da7ae967067a6da96d113aec57d"
+    },
+    {
+      "path": ".cabina/organizacion-total/out/FOREIGN_CHANGES_PREEXISTING_READBACK.md",
+      "sha256": "df2335d9a2d1d97550b9dd942a39d5f5beff1e043dcad5e51c6d8410a7be9bcc"
+    }
+  ]
+}
