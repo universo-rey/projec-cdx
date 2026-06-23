@@ -4,9 +4,9 @@
   "version_actual": "v0.6.0-rc1",
   "baseline_version": "v0.6.0-rc1",
   "branch": "codex/runtime-versioning-snapshots",
-  "commit": "d3a56bb17d889fa964cb96891d5604d10294ee9e",
-  "commits_ahead_baseline": 22,
-  "generated_at_utc": "2026-06-23T00:54:47Z",
+  "commit": "ab64074c6512ccf344902630f7c255f41c8300f9",
+  "commits_ahead_baseline": 27,
+  "generated_at_utc": "2026-06-23T01:02:01Z",
   "dirty": false,
   "status": [],
   "rules": {
@@ -48,14 +48,14 @@
     "EATOMIC"
   ],
   "latest_snapshot": {
-    "snapshot_id": "CEORUNTIME_20260623_0051",
+    "snapshot_id": "CEORUNTIME_20260623_0059",
     "version": "v0.6.0-rc1",
-    "commit": "392bc7bb35c4f5e0d38b884f3a95aeeac8e5480c",
+    "commit": "1cc8b1d80ac038ae964503a0f68d8287eefb31ac",
     "branch": "codex/runtime-versioning-snapshots",
-    "fecha": "2026-06-23T00:51:36Z",
-    "tipo": "auditoria-integral-corte",
+    "fecha": "2026-06-23T00:59:03Z",
+    "tipo": "ajustes-post-auditoria",
     "dirty": false,
-    "global_hash": "9ba141cbd3f857f75b5a060255c071cf054df7bfc4953c1dbc09e06b1314aa9d",
-    "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0051.json"
+    "global_hash": "64aaf0ed4782f7017f0e5b656c9b751fee96bd6d8d83d2b623553bd7a62dc221",
+    "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0059.json"
   }
 }
