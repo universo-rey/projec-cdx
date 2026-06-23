@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-06-23T01:17:05Z",
-  "total": 10,
+  "generated_at_utc": "2026-06-23T01:29:24Z",
+  "total": 11,
   "snapshots": [
     {
       "snapshot_id": "CEORUNTIME_20260623_0008",
@@ -112,6 +112,17 @@
       "dirty": false,
       "global_hash": "f59356e610bf693f5acb4318300db260dcf7672a9d16b6d09f3c3385b9c5e3be",
       "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0117.json"
+    },
+    {
+      "snapshot_id": "CEORUNTIME_20260623_0129",
+      "version": "v0.6.0-rc1",
+      "commit": "e7085a53705653350f24b59201751958542a4b3f",
+      "branch": "codex/runtime-versioning-snapshots",
+      "fecha": "2026-06-23T01:29:24Z",
+      "tipo": "g7-orchestrator-reconciled",
+      "dirty": false,
+      "global_hash": "0b19114c1cd19a6a1ab4bb7cffb286195296e44dee87db0a1e8cd1158113a7a4",
+      "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0129.json"
     }
   ]
 }
