@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T00:08:05.532943+00:00",
-  "count": 66,
+  "generated_at": "2026-06-23T00:18:52.501302+00:00",
+  "count": 67,
   "items": [
     {
       "artifact_id": "operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md",
@@ -25,6 +25,34 @@
       "descripcion": "Acta constitutiva de cierre con trazabilidad parcial.",
       "fecha_evento": "2026-06-15",
       "metadata_source": "operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md",
+      "metadata_kind": "front_matter"
+    },
+    {
+      "artifact_id": "operativa/ACTA_OPERACION_CONTINUA_GOBERNADA_20260622.md",
+      "categoria": "operativa",
+      "tipo": "acta",
+      "estado": "aprobado",
+      "version": "v0.6.0-rc1",
+      "fecha_evento": "2026-06-22",
+      "autoridad": {
+        "tipo": "sistema",
+        "referencia": "CABINA_GOBIERNO_TOTAL"
+      },
+      "origen": "GitHub",
+      "ubicacion_repo": "operativa/ACTA_OPERACION_CONTINUA_GOBERNADA_20260622.md",
+      "etiquetas": [
+        "runtime",
+        "snapshots",
+        "sentinel",
+        "versionado-continuo"
+      ],
+      "relacionados": [
+        "VERSION_POLICY.md",
+        "VERSION_STATE.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
+      ],
+      "descripcion": "Acta de activacion de operacion continua gobernada con version, snapshot, restore y watchdog.",
+      "metadata_source": "operativa/ACTA_OPERACION_CONTINUA_GOBERNADA_20260622.md",
       "metadata_kind": "front_matter"
     },
     {

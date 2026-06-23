@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-06-23T00:18:49Z",
+  "total": 1,
+  "snapshots": [
+    {
+      "snapshot_id": "CEORUNTIME_20260623_0008",
+      "version": null,
+      "commit": "5ee158063f9e47c7512f4c42d0519ce5c93d0192",
+      "branch": "codex/runtime-versioning-snapshots",
+      "fecha": "2026-06-23T00:08:21Z",
+      "tipo": "manual",
+      "dirty": false,
+      "global_hash": "101ee004b87f337a2497b7800b3711b3b250b3e498888d8fb2ae4b682da4c140",
+      "path": "operativa/snapshots/CEORUNTIME_20260623_0008.json"
+    }
+  ]
+}

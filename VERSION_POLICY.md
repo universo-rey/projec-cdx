@@ -47,6 +47,23 @@ descripcion: Politica de versionado continuo, snapshots y restauracion gobernada
 - Todo tag apunta al commit final publicado, no a un candidato intermedio.
 - Todo release requiere checks verdes y evidencia de frontera.
 - Todo restore requiere workspace limpio y confirmacion explicita.
+- Todo merge a `main` requiere snapshot previo valido.
+- Todo release requiere snapshot asociado al commit objetivo.
+- Todo cambio de configuracion runtime requiere snapshot previo o acta de excepcion.
+
+## Eventos de versionado continuo
+
+- Merge a `main`: incrementa `PATCH`.
+- Cambio estructural en agentes, gates o runtime: incrementa `MINOR`.
+- Cambio de modelo o arquitectura: incrementa `MAJOR`.
+- Rama `codex/*`: queda asociada a un candidato `rc`.
+
+## Estado dinamico
+
+- `VERSION_STATE.json`: estado gobernado de version, branch, commit, reglas y ultimo snapshot.
+- `operativa/snapshots/SNAPSHOT_INDEX.json`: indice versionado de snapshots reproducibles.
+- `operativa/HISTORY_RUNTIME_EVOLUTION.md`: timeline narrativo de eventos runtime.
+- `operativa/sentinel/DRIFT_LOG.json`: log local de alertas, ignorado por Git hasta decision explicita.
 
 ## Comandos canonicos
 
@@ -54,6 +71,8 @@ descripcion: Politica de versionado continuo, snapshots y restauracion gobernada
 - `ceo-runtime-list`: listar snapshots disponibles.
 - `ceo-runtime-restore`: restaurar o simular restauracion desde snapshot.
 - `ceo-runtime-sentinel`: generar reporte de watchdog runtime.
+- `ceo-runtime-index`: regenerar indice de snapshots.
+- `ceo-runtime-state`: regenerar estado dinamico de version.
 
 ## Frontera
 

@@ -15,7 +15,23 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 SNAPSHOT_DIR = ROOT / "operativa" / "snapshots"
 SENTINEL_DIR = ROOT / "operativa" / "sentinel"
+RUNTIME_EVENTS_DIR = ROOT / "operativa" / "runtime-events"
+VERSION_STATE_PATH = ROOT / "VERSION_STATE.json"
+SNAPSHOT_INDEX_PATH = SNAPSHOT_DIR / "SNAPSHOT_INDEX.json"
+DRIFT_LOG_PATH = SENTINEL_DIR / "DRIFT_LOG.json"
+HISTORY_PATH = ROOT / "operativa" / "HISTORY_RUNTIME_EVOLUTION.md"
 SNAPSHOT_PREFIX = "CEORUNTIME"
+DEFAULT_VERSION = "v0.6.0-rc1"
+
+ACTIVE_AGENTS = [
+    "thot-tecnico",
+    "maat-cumplimiento",
+    "horus-riesgo",
+    "anubis-gate",
+    "seshat-normativa",
+    "sentinel-runtime",
+    "narrador-normativo",
+]
 
 WATCHED_RUNTIME_FILES = [
     "schema.json",
@@ -39,6 +55,10 @@ def _utc_now() -> datetime:
 
 def _timestamp_id(now: datetime | None = None) -> str:
     return (now or _utc_now()).strftime("%Y%m%d_%H%M")
+
+
+def _today_iso(now: datetime | None = None) -> str:
+    return (now or _utc_now()).date().isoformat()
 
 
 def _run(command: list[str], root: Path) -> subprocess.CompletedProcess[str]:
@@ -76,8 +96,40 @@ def _load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _write_json(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def _relative(path: Path, root: Path) -> str:
     return path.resolve().relative_to(root.resolve()).as_posix()
+
+
+def _safe_version_segment(version: str) -> str:
+    return "".join(ch if ch.isalnum() or ch in ".-_" else "_" for ch in version) or DEFAULT_VERSION
+
+
+def _nearest_version(root: Path) -> str:
+    exact_tags = [line for line in _git(root, "tag", "--points-at", "HEAD").splitlines() if line]
+    version_tags = sorted(tag for tag in exact_tags if tag.startswith("v"))
+    if version_tags:
+        return version_tags[-1]
+    result = _run(["git", "describe", "--tags", "--abbrev=0", "--match", "v*"], root)
+    if result.returncode == 0 and result.stdout.strip():
+        return result.stdout.strip()
+    return DEFAULT_VERSION
+
+
+def _snapshot_version_dir(root: Path, version: str) -> Path:
+    return root / "operativa" / "snapshots" / _safe_version_segment(version)
+
+
+def _current_branch(root: Path) -> str:
+    return _git(root, "branch", "--show-current")
+
+
+def _current_commit(root: Path) -> str:
+    return _git(root, "rev-parse", "HEAD")
 
 
 def _tracked_tree_hash(root: Path, ref: str) -> dict[str, Any]:
@@ -175,7 +227,84 @@ def _environment_summary(root: Path) -> dict[str, Any]:
     }
 
 
-def _snapshot_payload(root: Path, ref: str, allow_dirty: bool) -> dict[str, Any]:
+def _version_state_payload(
+    root: Path,
+    version: str | None = None,
+    latest_snapshot: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    root = root.resolve()
+    status_lines = _git_status(root)
+    current_version = version or _nearest_version(root)
+    branch = _current_branch(root)
+    commit = _current_commit(root)
+    baseline = _nearest_version(root)
+    ahead_count = 0
+    if baseline:
+        ahead_result = _run(["git", "rev-list", "--count", f"{baseline}..HEAD"], root)
+        if ahead_result.returncode == 0 and ahead_result.stdout.strip().isdigit():
+            ahead_count = int(ahead_result.stdout.strip())
+    return {
+        "schema_version": "1.0",
+        "mode": "OPERACION_CONTINUA_GOBERNADA",
+        "version_actual": current_version,
+        "baseline_version": baseline,
+        "branch": branch,
+        "commit": commit,
+        "commits_ahead_baseline": ahead_count,
+        "generated_at_utc": _utc_now().isoformat(timespec="seconds").replace("+00:00", "Z"),
+        "dirty": bool(status_lines),
+        "status": status_lines,
+        "rules": {
+            "merge_to_main": "PATCH",
+            "structural_change_agents_gates_runtime": "MINOR",
+            "architecture_model_change": "MAJOR",
+            "codex_branch": "RC_AUTOMATICO",
+            "no_version_without_snapshot": True,
+            "no_merge_without_snapshot": True,
+            "no_release_without_snapshot_and_checks": True,
+        },
+        "snapshot_policy": {
+            "pre_merge": "REQUIRED",
+            "post_merge": "REQUIRED",
+            "pre_release": "REQUIRED",
+            "pre_restore": "REQUIRED",
+            "config_change": "REQUIRED",
+        },
+        "restore_policy": {
+            "requires_clean_workspace": True,
+            "requires_explicit_yes": True,
+            "creates_pre_restore_backup": True,
+            "validates_after_apply": True,
+        },
+        "watchdog": {
+            "metadata_drift": "ALERTA_DRIFT",
+            "structure_drift": "ALERTA_DRIFT",
+            "ci_config_drift": "ALERTA_DRIFT",
+            "dependency_drift": "ALERTA_DRIFT",
+        },
+        "agents_active": ACTIVE_AGENTS,
+        "latest_snapshot": latest_snapshot,
+    }
+
+
+def write_version_state(
+    root: Path = ROOT,
+    version: str | None = None,
+    latest_snapshot: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    payload = _version_state_payload(root.resolve(), version, latest_snapshot)
+    _write_json(root / "VERSION_STATE.json", payload)
+    payload["path"] = "VERSION_STATE.json"
+    return payload
+
+
+def _snapshot_payload(
+    root: Path,
+    ref: str,
+    allow_dirty: bool,
+    version: str | None = None,
+    event_type: str = "manual",
+) -> dict[str, Any]:
     status_lines = _git_status(root)
     if status_lines and not allow_dirty:
         raise RuntimeErrorMessage(
@@ -184,6 +313,8 @@ def _snapshot_payload(root: Path, ref: str, allow_dirty: bool) -> dict[str, Any]
     commit = _git(root, "rev-parse", ref)
     branch = _git(root, "branch", "--show-current")
     tags = [line for line in _git(root, "tag", "--points-at", commit).splitlines() if line]
+    version_tags = sorted(tag for tag in tags if tag.startswith("v"))
+    resolved_version = version or (version_tags[-1] if version_tags else _nearest_version(root))
     tree = _tracked_tree_hash(root, commit)
     watched = {
         path: _sha256_file(root / path)
@@ -194,6 +325,8 @@ def _snapshot_payload(root: Path, ref: str, allow_dirty: bool) -> dict[str, Any]
     payload: dict[str, Any] = {
         "schema_version": "1.0",
         "snapshot_id": f"{SNAPSHOT_PREFIX}_{_timestamp_id()}",
+        "version": resolved_version,
+        "event_type": event_type,
         "created_at_utc": _utc_now().isoformat(timespec="seconds").replace("+00:00", "Z"),
         "repo_root": str(root),
         "git": {
@@ -210,10 +343,18 @@ def _snapshot_payload(root: Path, ref: str, allow_dirty: bool) -> dict[str, Any]
         "watched_hashes": watched,
         "tree": tree,
         "environment": _environment_summary(root),
+        "agents_active": ACTIVE_AGENTS,
+        "gates": {
+            "merge_requires_snapshot": True,
+            "release_requires_snapshot_and_checks": True,
+            "restore_requires_clean_workspace": True,
+            "live_requires_explicit_gate": True,
+        },
         "restore_policy": {
             "requires_clean_workspace": True,
             "requires_explicit_yes": True,
             "default_mode": "DRY_RUN",
+            "pre_restore_backup": True,
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
@@ -234,25 +375,180 @@ def _next_snapshot_path(snapshot_dir: Path, snapshot_id: str) -> Path:
         idx += 1
 
 
+def _snapshot_files(root: Path, snapshot_dir: Path | None = None) -> list[Path]:
+    directory = snapshot_dir or root / "operativa" / "snapshots"
+    if not directory.exists():
+        return []
+    return sorted(
+        path
+        for path in directory.rglob(f"{SNAPSHOT_PREFIX}_*.json")
+        if path.name != "SNAPSHOT_INDEX.json"
+    )
+
+
+def build_snapshot_index(root: Path = ROOT, write: bool = True) -> dict[str, Any]:
+    root = root.resolve()
+    rows: list[dict[str, Any]] = []
+    for path in _snapshot_files(root):
+        payload = _load_json(path)
+        if not isinstance(payload, dict):
+            continue
+        rows.append(
+            {
+                "snapshot_id": payload.get("snapshot_id", path.stem),
+                "version": payload.get("version"),
+                "commit": payload.get("git", {}).get("commit"),
+                "branch": payload.get("git", {}).get("branch"),
+                "fecha": payload.get("created_at_utc"),
+                "tipo": payload.get("event_type", "manual"),
+                "dirty": payload.get("git", {}).get("dirty"),
+                "global_hash": payload.get("global_hash"),
+                "path": _relative(path, root),
+            }
+        )
+    payload = {
+        "schema_version": "1.0",
+        "generated_at_utc": _utc_now().isoformat(timespec="seconds").replace("+00:00", "Z"),
+        "total": len(rows),
+        "snapshots": sorted(rows, key=lambda item: str(item.get("fecha") or "")),
+    }
+    if write:
+        _write_json(root / "operativa" / "snapshots" / "SNAPSHOT_INDEX.json", payload)
+    return payload
+
+
+def _front_matter(
+    artifact_id: str,
+    tipo: str,
+    descripcion: str,
+    etiquetas: list[str],
+    relacionados: list[str] | None = None,
+    version: str = DEFAULT_VERSION,
+) -> str:
+    related = relacionados or []
+    lines = [
+        "---",
+        f"artifact_id: {artifact_id}",
+        "categoria: operativa",
+        f"tipo: {tipo}",
+        "estado: aprobado",
+        f"version: {version}",
+        f"fecha_evento: '{_today_iso()}'",
+        "autoridad:",
+        "  tipo: sistema",
+        "  referencia: CABINA_GOBIERNO_TOTAL",
+        "origen: GitHub",
+        f"ubicacion_repo: {artifact_id}",
+        "etiquetas:",
+        *[f"  - {item}" for item in etiquetas],
+        "relacionados:",
+        *([f"  - {item}" for item in related] if related else []),
+        f"descripcion: {descripcion}",
+        "---",
+        "",
+    ]
+    if not related:
+        insert_at = lines.index("relacionados:") + 1
+        lines.insert(insert_at, "  []")
+    return "\n".join(lines)
+
+
+def _write_runtime_event_acta(
+    root: Path,
+    event_name: str,
+    title: str,
+    body_lines: list[str],
+    version: str,
+    relacionados: list[str] | None = None,
+) -> Path:
+    safe_event = "".join(ch if ch.isalnum() or ch in "_-" else "_" for ch in event_name.upper())
+    artifact_id = f"operativa/runtime-events/ACTA_{safe_event}.md"
+    path = root / artifact_id
+    path.parent.mkdir(parents=True, exist_ok=True)
+    content = _front_matter(
+        artifact_id=artifact_id,
+        tipo="acta",
+        descripcion=f"Acta runtime {event_name} generada por operacion continua.",
+        etiquetas=["runtime", "snapshot", "watchdog"],
+        relacionados=relacionados,
+        version=version,
+    )
+    content += f"# {title}\n\n" + "\n".join(body_lines).rstrip() + "\n"
+    path.write_text(content, encoding="utf-8")
+    return path
+
+
+def _append_history(root: Path, line: str, version: str) -> None:
+    path = root / "operativa" / "HISTORY_RUNTIME_EVOLUTION.md"
+    if not path.exists():
+        content = _front_matter(
+            artifact_id="operativa/HISTORY_RUNTIME_EVOLUTION.md",
+            tipo="reporte",
+            descripcion="Timeline de versiones, snapshots y eventos criticos del runtime gobernado.",
+            etiquetas=["runtime", "historytelling", "snapshots"],
+            relacionados=["VERSION_POLICY.md", "VERSION_STATE.json"],
+            version=version,
+        )
+        content += "# HISTORY RUNTIME EVOLUTION\n\n"
+    else:
+        content = path.read_text(encoding="utf-8")
+        if not content.endswith("\n"):
+            content += "\n"
+    content += line.rstrip() + "\n"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+
+
 def save_snapshot(
     root: Path = ROOT,
     ref: str = "HEAD",
     allow_dirty: bool = False,
     snapshot_dir: Path | None = None,
+    version: str | None = None,
+    event_type: str = "manual",
+    write_acta: bool = True,
 ) -> dict[str, Any]:
-    payload = _snapshot_payload(root.resolve(), ref, allow_dirty)
-    output_dir = snapshot_dir or root / "operativa" / "snapshots"
+    root = root.resolve()
+    payload = _snapshot_payload(root, ref, allow_dirty, version=version, event_type=event_type)
+    output_dir = snapshot_dir or _snapshot_version_dir(root, str(payload["version"]))
     path = _next_snapshot_path(output_dir, str(payload["snapshot_id"]))
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    _write_json(path, payload)
     payload["path"] = _relative(path, root)
+    index = build_snapshot_index(root, write=True)
+    latest = index["snapshots"][-1] if index["snapshots"] else None
+    write_version_state(root, version=str(payload["version"]), latest_snapshot=latest)
+    if write_acta:
+        acta_path = _write_runtime_event_acta(
+            root=root,
+            event_name=f"SNAPSHOT_{payload['snapshot_id']}",
+            title=f"ACTA SNAPSHOT {payload['snapshot_id']}",
+            body_lines=[
+                "## Estado",
+                "",
+                "`SNAPSHOT_CREATED`",
+                "",
+                "## Version",
+                "",
+                f"`{payload['version']}`",
+                "",
+                "## Commit",
+                "",
+                f"`{payload['git']['commit']}`",
+                "",
+                "## Resultado",
+                "",
+                "`SNAPSHOT_INDEX_UPDATED`",
+            ],
+            version=str(payload["version"]),
+            relacionados=[payload["path"], "operativa/snapshots/SNAPSHOT_INDEX.json"],
+        )
+        payload["acta_path"] = _relative(acta_path, root)
+    _append_history(
+        root,
+        f"- `{payload['created_at_utc']}` snapshot `{payload['snapshot_id']}` version `{payload['version']}` commit `{payload['git']['commit']}`.",
+        str(payload["version"]),
+    )
     return payload
-
-
-def _snapshot_files(root: Path, snapshot_dir: Path | None = None) -> list[Path]:
-    directory = snapshot_dir or root / "operativa" / "snapshots"
-    if not directory.exists():
-        return []
-    return sorted(directory.glob(f"{SNAPSHOT_PREFIX}_*.json"))
 
 
 def list_snapshots(root: Path = ROOT, snapshot_dir: Path | None = None) -> list[dict[str, Any]]:
@@ -264,7 +560,9 @@ def list_snapshots(root: Path = ROOT, snapshot_dir: Path | None = None) -> list[
         rows.append(
             {
                 "snapshot_id": payload.get("snapshot_id", path.stem),
+                "version": payload.get("version"),
                 "created_at_utc": payload.get("created_at_utc"),
+                "event_type": payload.get("event_type", "manual"),
                 "commit": payload.get("git", {}).get("commit"),
                 "branch": payload.get("git", {}).get("branch"),
                 "tags": payload.get("git", {}).get("tags", []),
@@ -324,11 +622,70 @@ def restore_snapshot(
         return result
     if not yes:
         raise RuntimeErrorMessage("RESTORE_REQUIRES_EXPLICIT_YES")
+    backup = save_snapshot(
+        root=root,
+        ref="HEAD",
+        allow_dirty=False,
+        version=str(payload.get("version") or _nearest_version(root)),
+        event_type="pre-restore",
+    )
     checkout = _run(["git", "checkout", "--detach", commit], root)
     if checkout.returncode != 0:
         raise RuntimeErrorMessage(checkout.stderr.strip() or "git checkout failed")
     result["result"] = "restored_detached_head"
+    result["backup_snapshot_id"] = backup.get("snapshot_id")
+    result["backup_snapshot_path"] = backup.get("path")
+    post_validate = _run([sys.executable, "-m", "tools.validate"], root)
+    result["post_restore_validation"] = {
+        "metadata_validate": "PASS" if post_validate.returncode == 0 else "FAIL",
+    }
+    event_path = _write_runtime_event_acta(
+        root=root,
+        event_name=f"RESTORE_{payload.get('snapshot_id', path.stem)}",
+        title=f"ACTA RESTORE {payload.get('snapshot_id', path.stem)}",
+        body_lines=[
+            "## Estado",
+            "",
+            "`RESTORE_APPLIED_DETACHED_HEAD`",
+            "",
+            "## Snapshot",
+            "",
+            f"`{payload.get('snapshot_id', path.stem)}`",
+            "",
+            "## Backup previo",
+            "",
+            f"`{backup.get('snapshot_id')}`",
+            "",
+            "## Validacion",
+            "",
+            f"`{result['post_restore_validation']['metadata_validate']}`",
+        ],
+        version=str(payload.get("version") or _nearest_version(root)),
+        relacionados=[_relative(path, root), str(backup.get("path"))],
+    )
+    result["acta_path"] = _relative(event_path, root)
     return result
+
+
+def _append_drift_log(root: Path, report: dict[str, Any]) -> None:
+    log_path = root / "operativa" / "sentinel" / "DRIFT_LOG.json"
+    existing = _load_json(log_path)
+    if not isinstance(existing, dict):
+        existing = {"schema_version": "1.0", "events": []}
+    events = existing.setdefault("events", [])
+    if isinstance(events, list):
+        events.append(
+            {
+                "report_id": report.get("report_id"),
+                "created_at_utc": report.get("created_at_utc"),
+                "status": report.get("status"),
+                "drift_detected": report.get("drift_detected"),
+                "checks": report.get("checks"),
+                "git_status": report.get("git_status", []),
+                "alert": "ALERTA_DRIFT",
+            }
+        )
+    _write_json(log_path, existing)
 
 
 def build_sentinel_report(root: Path = ROOT, output: Path | None = None) -> dict[str, Any]:
@@ -337,6 +694,7 @@ def build_sentinel_report(root: Path = ROOT, output: Path | None = None) -> dict
     validate_result = _run([sys.executable, "-m", "tools.validate"], root)
     snapshots = list_snapshots(root)
     latest_snapshot = snapshots[-1] if snapshots else None
+    version_state = _version_state_payload(root, latest_snapshot=latest_snapshot)
     report = {
         "report_id": f"SENTINEL_RUNTIME_{_timestamp_id()}",
         "created_at_utc": _utc_now().isoformat(timespec="seconds").replace("+00:00", "Z"),
@@ -349,6 +707,11 @@ def build_sentinel_report(root: Path = ROOT, output: Path | None = None) -> dict
         },
         "git_status": status_lines,
         "latest_snapshot": latest_snapshot,
+        "version_state": {
+            "version_actual": version_state.get("version_actual"),
+            "branch": version_state.get("branch"),
+            "commit": version_state.get("commit"),
+        },
         "watched_hashes": {
             path: _sha256_file(root / path)
             for path in WATCHED_RUNTIME_FILES
@@ -359,6 +722,8 @@ def build_sentinel_report(root: Path = ROOT, output: Path | None = None) -> dict
     output_path = output or root / "operativa" / "sentinel" / "SENTINEL_REPORT.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    if report["status"] != "PASS" or report["drift_detected"]:
+        _append_drift_log(root, report)
     report["path"] = _relative(output_path, root)
     return report
 
@@ -367,7 +732,7 @@ def _print_table(rows: list[dict[str, Any]]) -> None:
     if not rows:
         print("No snapshots found.")
         return
-    headers = ["snapshot_id", "created_at_utc", "commit", "tags", "dirty", "path"]
+    headers = ["snapshot_id", "version", "event_type", "created_at_utc", "commit", "dirty", "path"]
     widths = {
         header: max(
             len(header),
@@ -399,11 +764,20 @@ def build_parser() -> argparse.ArgumentParser:
 
     save = subparsers.add_parser("save", help="Create a governed runtime snapshot")
     save.add_argument("--ref", default="HEAD", help="Git ref to snapshot")
+    save.add_argument("--version", default=None, help="Version bucket for the snapshot")
+    save.add_argument("--event-type", default="manual", help="Snapshot event type")
     save.add_argument("--allow-dirty", action="store_true", help="Allow diagnostic dirty snapshot")
     save.add_argument("--json", action="store_true", help="Print JSON payload")
 
     list_parser = subparsers.add_parser("list", help="List available snapshots")
     list_parser.add_argument("--json", action="store_true", help="Print JSON payload")
+
+    index_parser = subparsers.add_parser("index", help="Rebuild governed snapshot index")
+    index_parser.add_argument("--json", action="store_true", help="Print JSON payload")
+
+    state_parser = subparsers.add_parser("state", help="Write governed version state")
+    state_parser.add_argument("--version", default=None, help="Version to record")
+    state_parser.add_argument("--json", action="store_true", help="Print JSON payload")
 
     restore = subparsers.add_parser("restore", help="Restore or dry-run restore from a snapshot")
     restore.add_argument("snapshot_id", help="Snapshot id or path")
@@ -420,7 +794,13 @@ def build_parser() -> argparse.ArgumentParser:
 def _main(args: argparse.Namespace) -> int:
     root = args.root.resolve()
     if args.command == "save":
-        payload = save_snapshot(root=root, ref=args.ref, allow_dirty=args.allow_dirty)
+        payload = save_snapshot(
+            root=root,
+            ref=args.ref,
+            allow_dirty=args.allow_dirty,
+            version=args.version,
+            event_type=args.event_type,
+        )
         if args.json:
             print(json.dumps(payload, indent=2, ensure_ascii=False))
         else:
@@ -432,6 +812,22 @@ def _main(args: argparse.Namespace) -> int:
             print(json.dumps(rows, indent=2, ensure_ascii=False))
         else:
             _print_table(rows)
+        return 0
+    if args.command == "index":
+        payload = build_snapshot_index(root=root, write=True)
+        if args.json:
+            print(json.dumps(payload, indent=2, ensure_ascii=False))
+        else:
+            print(f"Snapshot index: operativa/snapshots/SNAPSHOT_INDEX.json total={payload['total']}")
+        return 0
+    if args.command == "state":
+        index = build_snapshot_index(root=root, write=True)
+        latest = index["snapshots"][-1] if index["snapshots"] else None
+        payload = write_version_state(root=root, version=args.version, latest_snapshot=latest)
+        if args.json:
+            print(json.dumps(payload, indent=2, ensure_ascii=False))
+        else:
+            print(f"Version state: {payload['path']} version={payload['version_actual']}")
         return 0
     if args.command == "restore":
         payload = restore_snapshot(args.snapshot_id, root=root, apply=args.apply, yes=args.yes)
@@ -474,6 +870,14 @@ def restore_main() -> int:
 
 def sentinel_main() -> int:
     return main(["sentinel", *sys.argv[1:]])
+
+
+def index_main() -> int:
+    return main(["index", *sys.argv[1:]])
+
+
+def state_main() -> int:
+    return main(["state", *sys.argv[1:]])
 
 
 if __name__ == "__main__":

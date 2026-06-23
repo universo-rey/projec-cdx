@@ -13,6 +13,7 @@ workbooks/~$*.xlsx
 operativa/PAC_*_HUBDESARROLLO_*.txt
 operativa/backup-*.reg
 operativa/sentinel/SENTINEL_REPORT.json
+operativa/sentinel/DRIFT_LOG.json
 
 # Local workspace tooling overlays.
 .opencode

@@ -41,6 +41,8 @@ ceo-runtime-save = "runtime_versioning.cli:save_main"
 ceo-runtime-list = "runtime_versioning.cli:list_main"
 ceo-runtime-restore = "runtime_versioning.cli:restore_main"
 ceo-runtime-sentinel = "runtime_versioning.cli:sentinel_main"
+ceo-runtime-index = "runtime_versioning.cli:index_main"
+ceo-runtime-state = "runtime_versioning.cli:state_main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

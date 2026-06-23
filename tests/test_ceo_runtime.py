@@ -26,6 +26,11 @@ def _seed_repo(repo: Path) -> None:
     _git(repo, "commit", "-m", "baseline")
 
 
+def _commit_all(repo: Path, message: str) -> None:
+    _git(repo, "add", ".")
+    _git(repo, "commit", "-m", message)
+
+
 def test_save_snapshot_records_commit_and_hash(tmp_path: Path) -> None:
     _seed_repo(tmp_path)
     payload = cli.save_snapshot(root=tmp_path)
@@ -36,6 +41,9 @@ def test_save_snapshot_records_commit_and_hash(tmp_path: Path) -> None:
     assert saved["git"]["commit"] == _git(tmp_path, "rev-parse", "HEAD").stdout.strip()
     assert saved["global_hash"]
     assert saved["tree"]["tracked_file_count"] >= 4
+    assert saved["version"]
+    assert (tmp_path / "operativa" / "snapshots" / "SNAPSHOT_INDEX.json").exists()
+    assert (tmp_path / "VERSION_STATE.json").exists()
 
 
 def test_list_snapshots_reads_saved_payload(tmp_path: Path) -> None:
@@ -63,9 +71,29 @@ def test_restore_blocks_dirty_workspace(tmp_path: Path) -> None:
 def test_restore_dry_run_reports_commit(tmp_path: Path) -> None:
     _seed_repo(tmp_path)
     payload = cli.save_snapshot(root=tmp_path)
-    _git(tmp_path, "add", payload["path"])
-    _git(tmp_path, "commit", "-m", "snapshot")
+    _commit_all(tmp_path, "snapshot")
     result = cli.restore_snapshot(str(payload["snapshot_id"]), root=tmp_path)
 
     assert result["mode"] == "DRY_RUN"
     assert result["commit"] == payload["git"]["commit"]
+
+
+def test_snapshot_index_records_nested_snapshots(tmp_path: Path) -> None:
+    _seed_repo(tmp_path)
+    payload = cli.save_snapshot(root=tmp_path, version="v0.6.0-rc1", event_type="pre-merge")
+    index = cli.build_snapshot_index(root=tmp_path)
+
+    assert index["total"] == 1
+    assert index["snapshots"][0]["snapshot_id"] == payload["snapshot_id"]
+    assert index["snapshots"][0]["version"] == "v0.6.0-rc1"
+    assert "v0.6.0-rc1" in index["snapshots"][0]["path"]
+
+
+def test_version_state_records_governance_rules(tmp_path: Path) -> None:
+    _seed_repo(tmp_path)
+    state = cli.write_version_state(root=tmp_path, version="v0.6.0-rc1")
+
+    assert state["mode"] == "OPERACION_CONTINUA_GOBERNADA"
+    assert state["version_actual"] == "v0.6.0-rc1"
+    assert state["rules"]["no_version_without_snapshot"] is True
+    assert "sentinel-runtime" in state["agents_active"]
