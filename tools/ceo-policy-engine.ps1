@@ -27,11 +27,14 @@ $reasons = @()
 $decision = "ALLOW"
 
 $policy = Get-CeoEventBusProperty -InputObject $event -Name "policy" -Default ([PSCustomObject]@{})
-$payloadText = ConvertTo-CeoEventBusJson -InputObject (Get-CeoEventBusProperty -InputObject $event -Name "payload" -Default ([PSCustomObject]@{}))
+$payload = Get-CeoEventBusProperty -InputObject $event -Name "payload" -Default ([PSCustomObject]@{})
+$payloadText = ConvertTo-CeoEventBusJson -InputObject $payload
 $forbidden = @(Test-CeoEventBusForbiddenReferences -Text ($raw + $payloadText))
 $eventType = [string](Get-CeoEventBusProperty -InputObject $event -Name "event_type" -Default "")
 $risk = [string](Get-CeoEventBusProperty -InputObject $event -Name "risk" -Default "low")
-$action = [string](Get-CeoEventBusProperty -InputObject (Get-CeoEventBusProperty -InputObject $event -Name "payload" -Default ([PSCustomObject]@{})) -Name "action" -Default "")
+$action = [string](Get-CeoEventBusProperty -InputObject $payload -Name "action" -Default "")
+$actionType = [string](Get-CeoEventBusProperty -InputObject $payload -Name "action_type" -Default "")
+$actionMode = [string](Get-CeoEventBusProperty -InputObject $payload -Name "mode" -Default "")
 $evidence = Get-CeoEventBusProperty -InputObject $event -Name "evidence" -Default ([PSCustomObject]@{})
 
 if ([bool](Get-CeoEventBusProperty -InputObject $policy -Name "allows_live" -Default $false)) {
@@ -49,6 +52,33 @@ if ($forbidden.Count -gt 0) {
 if ($action -match "(?i)\b(push|pr|live-write)\b") {
     $decision = "BLOCK"
     $reasons += "forbidden_action:$action"
+}
+if (-not [string]::IsNullOrWhiteSpace($actionType)) {
+    $registryEntry = Get-CeoActionRegistryEntry -ActionType $actionType
+    if ($null -eq $registryEntry) {
+        $decision = "BLOCK"
+        $reasons += "unknown_action_type:$actionType"
+    }
+    elseif (-not [string]::IsNullOrWhiteSpace($actionMode) -and $actionMode -notin @($registryEntry.allowed_modes)) {
+        $decision = "BLOCK"
+        $reasons += "action_mode_not_allowed:$actionMode"
+    }
+}
+if ([bool](Get-CeoEventBusProperty -InputObject $payload -Name "live_write" -Default $false)) {
+    $decision = "BLOCK"
+    $reasons += "payload_live_write_true"
+}
+if ([bool](Get-CeoEventBusProperty -InputObject $payload -Name "external" -Default $false)) {
+    $decision = "BLOCK"
+    $reasons += "payload_external_true"
+}
+if ([bool](Get-CeoEventBusProperty -InputObject $payload -Name "delete" -Default $false)) {
+    $decision = "BLOCK"
+    $reasons += "payload_delete_true"
+}
+if ($eventType -match "(?i)ACTION" -and [string]::IsNullOrWhiteSpace($actionType)) {
+    $decision = "BLOCK"
+    $reasons += "action_event_missing_action_type"
 }
 if ([bool](Get-CeoEventBusProperty -InputObject $evidence -Name "required" -Default $false) -ne $true) {
     $decision = "BLOCK"

@@ -2523,3 +2523,104 @@ function Add-CeoTraceIntelligenceCount {
     }
     $Map[$Key] = [int]$Map[$Key] + 1
 }
+
+function Get-CeoActionRuntimeRoot {
+    param(
+        [string] $ActionRoot,
+        [string] $StateRoot
+    )
+
+    $candidate = $ActionRoot
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $candidate = $env:SDU_ACTION_RUNTIME_ROOT
+    }
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $repo = Get-CeoSuiteRoot
+        $candidate = Join-Path (Join-Path (Join-Path $repo ".cabina") "runtime") "actions"
+    }
+
+    $resolved = Resolve-CeoSuitePath -Path $candidate
+    $repoRoot = [System.IO.Path]::GetFullPath((Get-CeoSuiteRoot))
+    if (-not $resolved.StartsWith($repoRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+        throw "ACTION_RUNTIME_ROOT_OUTSIDE_REPO:$resolved"
+    }
+
+    return $resolved
+}
+
+function Initialize-CeoActionRuntimeState {
+    param(
+        [string] $ActionRoot,
+        [string] $StateRoot
+    )
+
+    $root = Get-CeoActionRuntimeRoot -ActionRoot $ActionRoot -StateRoot $StateRoot
+    $paths = [ordered]@{
+        Root = $root
+        Requests = Join-Path $root "requests"
+        Authorizations = Join-Path $root "authorizations"
+        Approvals = Join-Path $root "approvals"
+        Executions = Join-Path $root "executions"
+        Results = Join-Path $root "results"
+        Evidence = Join-Path $root "evidence"
+        State = Join-Path $root "state"
+    }
+
+    foreach ($dir in $paths.Values) {
+        New-Item -ItemType Directory -Force -Path $dir | Out-Null
+    }
+
+    return [PSCustomObject]$paths
+}
+
+function Get-CeoActionRegistry {
+    $registryPath = Resolve-CeoSuitePath -Path "contracts/action-registry.json"
+    if (-not (Test-Path -LiteralPath $registryPath -PathType Leaf)) {
+        throw "ACTION_REGISTRY_MISSING"
+    }
+
+    return (Get-Content -LiteralPath $registryPath -Raw | ConvertFrom-Json)
+}
+
+function Get-CeoActionRegistryEntry {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $ActionType
+    )
+
+    $registry = Get-CeoActionRegistry
+    foreach ($entry in @($registry.actions)) {
+        if ([string]$entry.action_type -eq $ActionType) {
+            return $entry
+        }
+    }
+
+    return $null
+}
+
+function Get-CeoActionRiskOrder {
+    return @{
+        LOW = 1
+        MEDIUM = 2
+        HIGH = 3
+        CRITICAL = 4
+    }
+}
+
+function Resolve-CeoActionRisk {
+    param(
+        [string] $DeclaredRisk,
+        [string] $RegistryRisk
+    )
+
+    $order = Get-CeoActionRiskOrder
+    $declared = if ([string]::IsNullOrWhiteSpace($DeclaredRisk)) { "LOW" } else { $DeclaredRisk.ToUpperInvariant() }
+    $registered = if ([string]::IsNullOrWhiteSpace($RegistryRisk)) { "LOW" } else { $RegistryRisk.ToUpperInvariant() }
+    if (-not $order.ContainsKey($declared)) { $declared = "CRITICAL" }
+    if (-not $order.ContainsKey($registered)) { $registered = "CRITICAL" }
+
+    if ([int]$order[$declared] -ge [int]$order[$registered]) {
+        return $declared
+    }
+    return $registered
+}

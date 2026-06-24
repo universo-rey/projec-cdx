@@ -176,6 +176,36 @@ Validacion:
 .\tests\run-policy-feedback-tests.ps1
 ```
 
+## G4_CONTROLLED_ACTION_LAYER
+
+G4 habilita accion controlada local sobre recomendaciones y señales de G3:
+
+- Riesgo: `tools\ceo-risk-engine.ps1`.
+- Autorizacion: `tools\ceo-action-authorize.ps1`.
+- Owner gate local: `tools\ceo-owner-approval.ps1`.
+- Ejecucion segura: `tools\ceo-action-executor.ps1`.
+- Registry allowlist: `contracts\action-registry.json`.
+
+Reglas:
+
+- Default: `DENY`.
+- Acciones desconocidas: `BLOCK`.
+- Riesgo alto o critico: `HOLD_OWNER`.
+- Ejecucion: `DRY_RUN` por defecto.
+- Sin accion externa.
+- Sin efectos laterales productivos.
+- Evidencia en runtime local.
+
+Validacion:
+
+```powershell
+.\tests\run-action-contract-tests.ps1
+.\tests\run-authorization-tests.ps1
+.\tests\run-owner-gate-tests.ps1
+.\tests\run-execution-dry-run-tests.ps1
+.\tests\run-policy-block-tests.ps1
+```
+
 Skill: `repo-agent-tool-governance`.
 Recetas: `agentes-atomicos-algoritmicos-en-waves`, `cierre-wave-documental`.
 Stop condition: cualquier secreto, live write, mutacion fuera del repo o perdida de fail-closed.

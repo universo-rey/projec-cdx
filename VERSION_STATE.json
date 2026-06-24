@@ -153,6 +153,17 @@
     "push": false,
     "pr": false
   },
+  "g4": {
+    "state": "CONTROLLED_ACTION_LAYER",
+    "mode": "LOCAL_FIRST",
+    "authorization": "REQUIRED",
+    "policy_strict": "ENFORCED",
+    "owner_gate": "ENABLED",
+    "execution_mode": "DRY_RUN_DEFAULT",
+    "live_write": false,
+    "push": false,
+    "pr": false
+  },
   "delta_count": 56,
   "integrity": "PENDING_STAGE"
 }
