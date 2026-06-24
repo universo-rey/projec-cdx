@@ -45,7 +45,7 @@ Revertir cambios remotos en prompt, enum o matriz si el owner autoriza ejecucion
 - Dataverse no interpreta la orden como mandato live.
 
 ## Evidencia local
-- operativa/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
 - docs/referencia/semantic-layer.md
 
 ## Resultado

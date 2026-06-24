@@ -1,0 +1,6 @@
+server_or_tool,config_path,status,agent,use,risk,gate,next_action
+agent-pipeline,.cursor/mcp.json,configured,Anubis,mcp_tool_surface,requires_gate_before_execution,mcp_execution_gate,verify_command_resolution_only
+VS Code Insiders settings,.vscode/settings.json,observed,Thot,ide_local_config,workspace_identity_overlay,workspace_config_gate,keep_workspace_rector_canonical
+federal.tasks.json,.cabina/SDU_RUNTIME_ROOT/03_PROVIDERS/VSCODE_INSIDERS/TASKS/federal.tasks.json,configured,Thot,vscode_task_surface,tasks_read_only_until_gate,workspace_only_gate,register_tasks_as_command_candidates
+cabina-contract.v1.json,.cabina/SDU_RUNTIME_ROOT/05_CONFIG/cabina-contract.v1.json,configured,Maat,authority_contract,stale_if_not_indexed,coherence_review,use_as_canonical_agent_source
+

@@ -11,7 +11,7 @@ Cuando aparece un delta documental que:
 - debe reflejarse en `operativa`, `hitos`, `recipes` o `procesos`;
 - puede reaparecer en futuras waves con la misma forma.
 
-Se abre desde `operativa/ANCLAS_ON_DEMAND.md` cuando el delta pide la receta y no antes.
+Se abre desde `operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md` cuando el delta pide la receta y no antes.
 
 ## Derivación
 

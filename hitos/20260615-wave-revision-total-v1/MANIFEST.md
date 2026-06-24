@@ -17,8 +17,8 @@
 
 ## Artefactos Vinculados
 
-- `operativa/TAXONOMIA_NOMENCLATURA_20260615.md`
-- `operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md`
+- `operativa/archive/legacy-root/20260615/TAXONOMIA_NOMENCLATURA_20260615.md`
+- `operativa/archive/legacy-root/20260615/NOMENCLATURA_CADENA_OPERATIVA_20260615.md`
 - `dataverse/MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md`
 - `dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv`
 - `Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/README.md`

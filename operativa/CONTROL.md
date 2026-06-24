@@ -7,7 +7,7 @@ Estado compacto para continuar sin arrastrar historico pesado.
 - Estado vivo: [CURRENT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md)
 - Siguiente paso: [NEXT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md)
 - Trazabilidad: [TRACE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TRACE.md)
-- Evidencia corta: [READBACK_CIERRE_PESO_REDUCIDO_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_CIERRE_PESO_REDUCIDO_20260617.md)
+- Evidencia corta: [READBACK_CIERRE_PESO_REDUCIDO_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260617/READBACK_CIERRE_PESO_REDUCIDO_20260617.md)
 - Workbook vigente: [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx)
 - Hitos: [INDICE_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md)
 

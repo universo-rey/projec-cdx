@@ -1,0 +1,35 @@
+{
+  "artifact_id": "operativa/tasks/20260623/IDE_CONTROL_INDEX_G1_STEP1_20260623",
+  "categoria": "operativa",
+  "tipo": "indice",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_IDE_CONTROL_PLANE_VSCODE_INSIDERS_G1_STEP1_IDE_INDEX"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/IDE_CONTROL_INDEX_G1_STEP1_20260623.json",
+  "etiquetas": [
+    "vscode-insiders",
+    "ide-control-plane",
+    "step1",
+    "index",
+    "local-only"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/READBACK_IDE_CONTROL_INDEX_G1_STEP1_20260623.md",
+    "operativa/tasks/20260623/READBACK_CEO_IDE_CONTROL_PLANE_VSCODE_INSIDERS_G1_20260623.md",
+    "operativa/tasks/20260623/IDE_SKILL_RECIPE_PROMOTION_PACK_G1_INDEX_20260623.json",
+    "tools/ceo-vscode-insiders-status.ps1",
+    "tools/ceo-ide-workspace-status.ps1",
+    "tools/ceo-ide-terminal-status.ps1",
+    "tools/ceo-ide-command-index.ps1",
+    "tools/ceo-ide-tasks-status.ps1",
+    "tools/ceo-ide-extension-policy.ps1",
+    "tools/ceo-ide-evidence-status.ps1",
+    "tools/ceo-ide-telemetry-status.ps1"
+  ],
+  "descripcion": "Indice operativo STEP1 de control sobre Visual Studio Code Insiders como sistema nervioso de cabina."
+}

@@ -3,7 +3,7 @@
 ## PR-001 - Abrir Hilo Con Contexto
 
 - Entrada: nuevo hilo sobre `PROJEC CDX`.
-- Pasos: leer `README.md`, `MAPA_MAESTRO.md`, `operativa/START_HERE.md`, `operativa/CONTROL.md`, `CURRENT`, `NEXT`, `BLOCKERS`.
+- Pasos: leer `README.md`, `MAPA_MAESTRO.md`, `operativa/archive/legacy-root/undated/START_HERE.md`, `operativa/CONTROL.md`, `CURRENT`, `NEXT`, `BLOCKERS`.
 - Salida: semaforo, superficie y proximo movimiento unico.
 - Validador: `playbooks/00-preflight-gobernado.md`.
 - Stop condition: `workspace_root_mismatch`.
@@ -43,7 +43,7 @@
 ## PR-006 - Compactar Sin Perder Evidencia
 
 - Entrada: pedido de limpieza, compactacion, mover o borrar.
-- Pasos: leer `operativa/RETENCION.md`, listar rutas exactas, declarar rollback y postcheck, no borrar sin orden explicita.
+- Pasos: leer `operativa/archive/legacy-root/undated/RETENCION.md`, listar rutas exactas, declarar rollback y postcheck, no borrar sin orden explicita.
 - Salida: evidencia preservada o movimiento documentado.
 - Validador: `tools/validate_proj_cdx_workbench.ps1`.
 - Stop condition: `unexpected_external_write`.

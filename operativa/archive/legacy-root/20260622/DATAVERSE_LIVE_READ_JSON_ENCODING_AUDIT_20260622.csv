@@ -1,0 +1,4 @@
+source_path,exists,has_utf8_bom,parse_utf8,parse_utf8_sig,action,status
+operativa/archive/legacy-root/20260617/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json,true,false,OK,OK,no_file_rewrite_needed,CLOSED_LOCAL
+tools/update_codex_config_workbook.py,true,n/a,n/a,n/a,json_helpers_hardened_to_utf8_sig,CLOSED_LOCAL
+tests/test_dataverse_json_encoding.py,true,n/a,n/a,n/a,added_utf8_sig_regression_test,CLOSED_LOCAL

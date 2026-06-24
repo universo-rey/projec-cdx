@@ -1,0 +1,25 @@
+{
+  "artifact_id": "operativa/tasks/20260623/IDE_WORKSPACE_CONTROL_MATRIX_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "IDE_WORKSPACE_CONTROL"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/IDE_WORKSPACE_CONTROL_MATRIX_20260623.csv",
+  "etiquetas": [
+    "vscode-insiders",
+    "workspace-governance",
+    "local-only",
+    "productiva"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/READBACK_IDE_WORKSPACE_CONTROL_20260623.md",
+    "tools/ceo-ide-workspace-status.ps1"
+  ],
+  "descripcion": "Matriz minima del carril IDE_WORKSPACE_CONTROL para fijar entrada canonica y evitar doble identidad de workspace."
+}

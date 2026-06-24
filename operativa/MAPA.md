@@ -3,148 +3,58 @@ artifact_id: operativa/MAPA.md
 categoria: operativa
 tipo: mapa
 estado: live
-version: 2026.06.21
+version: v0.6.0-rc1
+fecha_evento: '2026-06-23'
 autoridad:
-  tipo: owner
-  referencia: '@SeshatSgin'
+  tipo: sistema
+  referencia: CABINA_GOBIERNO_TOTAL
 origen: GitHub
 ubicacion_repo: operativa/MAPA.md
 etiquetas:
-- operativa
-- mapa
-- metadata
+  - operativa
+  - mapa
+  - frontdoor
+  - clean-root
 relacionados:
-- operativa/MAPA_CORTO.md
-- operativa/README.md
-descripcion: Mapa operativo principal de la carpeta operativa.
+  - operativa/README.md
+  - operativa/CURRENT.md
+  - operativa/NEXT.md
+  - operativa/archive/README.md
+descripcion: Mapa corto de la mesa operativa despues de archivar la historia suelta.
 ---
 
-# Mapa de Operativa
+# Mapa Operativo
 
-Mesa viva para el trabajo punta a punta de `PROJEC CDX`.
+## Frente Vivo
 
-La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
+```text
+CURRENT -> NEXT -> CONTROL -> TRACE
+```
 
-## Vigencia 20260617
+- [CURRENT.md](CURRENT.md)
+- [NEXT.md](NEXT.md)
+- [CONTROL.md](CONTROL.md)
+- [TRACE.md](TRACE.md)
 
-- [CURRENT.md](CURRENT.md): estado vigente y cadena de deltas.
-- [NEXT.md](NEXT.md): unico proximo movimiento.
-- [PENDIENTES_HOY_20260617.md](PENDIENTES_HOY_20260617.md): carriles vivos, supersedidos y senal no vigente.
-- [READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md](READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md): Dataverse live read confirmado.
-- [READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md](READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md): revision de paquetes preparados.
-- [READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md](READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md): SGIN ya leido y paquetizado.
+## Navegacion Corta
 
-La matriz corta de skills, tools y recetas queda en [MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md](MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md).
-
-La orden preliminar para Microsoft live read queda en [ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md](ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md) y el plan en [PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md](PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md).
-
-El readback vivo del universo Microsoft queda en [READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md](READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md).
-
-El arranque corto para waves de cierre queda en [START_HERE_CIERRE_WAVE.md](START_HERE_CIERRE_WAVE.md).
-
-El prompt corto para reanudar una wave queda en [PROMPT_CIERRE_WAVE.md](PROMPT_CIERRE_WAVE.md).
-
-Las anclas on-demand quedan en [ANCLAS_ON_DEMAND.md](ANCLAS_ON_DEMAND.md).
-
-El diagnostico de limpieza queda en [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md).
-
-Las notas de limpieza de esta wave quedan en:
-
-- [20260616-limpieza-repos-findings.md](20260616-limpieza-repos-findings.md)
-- [20260616-limpieza-repos-progress.md](20260616-limpieza-repos-progress.md)
-- [20260616-limpieza-repos-task-plan.md](20260616-limpieza-repos-task-plan.md)
-
-El cierre de repos Git queda en [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md).
-
-El archivo de ramas historicas queda en [ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md](ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md).
-
-La matriz historica en Excel queda en [MATRIZ_RAMAS_HISTORICAS_20260615.xlsx](MATRIZ_RAMAS_HISTORICAS_20260615.xlsx).
-
-La matriz por repo queda en [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md).
-
-La version CSV queda en [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.csv](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.csv).
-
-La version Excel queda en [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.xlsx](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.xlsx).
-
-La politica de ramas y versionado queda en [POLITICA_RAMAS_VERSIONADO_20260615.md](POLITICA_RAMAS_VERSIONADO_20260615.md).
-
-La wave base absorbida sigue siendo [20260615-pr-cierre-atomico-v1](../hitos/20260615-pr-cierre-atomico-v1/README.md).
-
+- [README.md](README.md)
 - [README_CORTO.md](README_CORTO.md)
 - [MAPA_CORTO.md](MAPA_CORTO.md)
 
-## Piezas
+## Archivo Gobernado
 
-- [CONTROL.md](CONTROL.md)
-- [METODO.md](METODO.md)
-- [START_HERE.md](START_HERE.md)
-- [START_HERE_CIERRE_WAVE.md](START_HERE_CIERRE_WAVE.md)
-- [PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md](PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md)
-- [ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md](ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md)
-- [READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md](READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md)
-- [PROMPT_CIERRE_WAVE.md](PROMPT_CIERRE_WAVE.md)
-- [ANCLAS_ON_DEMAND.md](ANCLAS_ON_DEMAND.md)
-- [PROMPT_NUEVO_HILO.md](PROMPT_NUEVO_HILO.md)
-- [PLAN_COMPLETAR_ESTRUCTURA.md](PLAN_COMPLETAR_ESTRUCTURA.md)
-- [CURRENT.md](CURRENT.md)
-- [NEXT.md](NEXT.md)
-- [BLOCKERS.md](BLOCKERS.md)
-- [TRACE.md](TRACE.md)
-- [MANIFESTS.md](MANIFESTS.md)
-- [RETENCION.md](RETENCION.md)
-- [READBACK_CIERRE_20260615.md](READBACK_CIERRE_20260615.md)
-- [TODO_20260615.md](TODO_20260615.md)
-- [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md)
-- [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md)
-- [ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md](ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md)
-- [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md)
-- [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.csv](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.csv)
-- [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.xlsx](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.xlsx)
-- [ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md](ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md)
-- [ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md](ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md)
-- [CONTROL_TOTAL_20260615.md](CONTROL_TOTAL_20260615.md)
-- [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md)
-- [MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md](MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md)
-- [CODEX_ROOT_CONTROL_20260615.md](CODEX_ROOT_CONTROL_20260615.md)
-- [CODEX_ROOT_DIFF_20260615.md](CODEX_ROOT_DIFF_20260615.md)
-- [CODEX_ROOT_LIGHTENING_20260615.md](CODEX_ROOT_LIGHTENING_20260615.md)
-- [TAXONOMIA_NOMENCLATURA_20260615.md](TAXONOMIA_NOMENCLATURA_20260615.md)
-- [NOMENCLATURA_CADENA_OPERATIVA_20260615.md](NOMENCLATURA_CADENA_OPERATIVA_20260615.md)
-- [ACTA_CORTE_EJECUTORA_20260615.md](ACTA_CORTE_EJECUTORA_20260615.md)
-- [DICCIONARIO_VERSIONADOS.md](DICCIONARIO_VERSIONADOS.md)
-- [DICCIONARIO_VERSIONADOS_MAESTRO_20260615.md](DICCIONARIO_VERSIONADOS_MAESTRO_20260615.md)
-- [POLITICA_RAMAS_VERSIONADO_20260615.md](POLITICA_RAMAS_VERSIONADO_20260615.md)
-- [EXTRACCION_PRIORITARIA_20260615.md](EXTRACCION_PRIORITARIA_20260615.md)
-- [ORDEN_RESOLUCION_SUPERFICIES_20260615.md](ORDEN_RESOLUCION_SUPERFICIES_20260615.md)
-- [CIERRE_SUPERFICIES_20260615.md](CIERRE_SUPERFICIES_20260615.md)
-- [ROOT_SWEEP_RESIDUALS_20260615.md](ROOT_SWEEP_RESIDUALS_20260615.md)
+- [archive/README.md](archive/README.md)
+- [archive/legacy-root](archive/legacy-root)
+- [tasks/20260623/OPERATIVA_ROOT_ARCHIVE_MANIFEST_20260623.csv](tasks/20260623/OPERATIVA_ROOT_ARCHIVE_MANIFEST_20260623.csv)
 
-## Lectura
+## Runtime
 
-- `CONTROL.md` es el punto unico desde donde se controla todo.
-- `METODO.md` condensa la secuencia corta de trabajo.
-- `START_HERE.md` es la entrada obligatoria para hilos nuevos.
-- `PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md` y `ORDEN_AGENTES_MICROSOFT_PRELIMINAR_20260616.md` gobiernan la pasada Microsoft preliminar sin writes.
-- `PROMPT_NUEVO_HILO.md` contiene la seccion lista para continuar sin perder contexto.
-- `PLAN_COMPLETAR_ESTRUCTURA.md` define el orden para terminar la estructura.
-- `CURRENT.md` dice que se esta haciendo ahora.
-- `NEXT.md` deja un unico paso siguiente.
-- `BLOCKERS.md` marca lo que frena.
-- `TRACE.md` conecta fuente, proceso, salida y hito.
-- `CODEX_ROOT_DIFF_20260615.md` compara el root vivo de `.codex` con el layer visible.
-- `CODEX_ROOT_LIGHTENING_20260615.md` propone el recorte para dejar la raiz mas liviana.
-- `TAXONOMIA_NOMENCLATURA_20260615.md` gobierna nombres nuevos, niveles, subniveles y aliases historicos.
-- `NOMENCLATURA_CADENA_OPERATIVA_20260615.md` gobierna filas del indice puente repo-agente-skill-receta-tool-evidencia.
-- `ACTA_CORTE_EJECUTORA_20260615.md` fija el roster y la mesa de corte ejecutora.
-- `MANIFESTS.md` define el minimo para salidas durables.
-- `RETENCION.md` define que queda al frente, que queda como evidencia y que no se toca sin orden.
-- `READBACK_CIERRE_20260615.md` deja el cierre verificable para continuidad entre hilos.
-- `TODO_20260615.md` deja los pendientes minimos sin abrir trabajo ambiguo.
-- `ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md` cierra la ronda `CodexLocal -> GitHub -> Auditar`.
-- `ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md` baja amarillos historicos a verde gobernado con revision live read-only.
-- `CONTROL_TOTAL_20260615.md` registra el semaforo rapido del control total.
-- La vista compacta queda en [MAPA_CORTO.md](MAPA_CORTO.md).
+- [runtime-events](runtime-events)
+- [snapshots](snapshots)
+- [SENTINEL_STATE.md](SENTINEL_STATE.md)
+- [SENTINEL_EVENTS.jsonl](SENTINEL_EVENTS.jsonl)
 
 ## Regla
 
-- Mantener una sola cosa activa por vez en esta mesa.
+La raiz de `operativa` no aloja historia ni matrices sueltas. Lo historico vive en `archive/legacy-root`; lo nuevo de trabajo vive en `tasks/YYYYMMDD`.

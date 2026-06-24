@@ -25,4 +25,4 @@ denegacion humana expresa.
 
 ## Evidencia
 
-`operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`
+`operativa/archive/legacy-root/20260616/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`

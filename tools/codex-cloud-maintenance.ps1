@@ -45,9 +45,9 @@ function Get-GitValue {
 
 $repoRoot = (Resolve-Path -LiteralPath $RepoRoot).Path
 $workspaceRoot = (Resolve-Path -LiteralPath $WorkspaceRoot).Path
-if (-not $ContractPath) { $ContractPath = Join-Path $repoRoot 'operativa/CODEX_CLOUD_CONTRACT_20260615.md' }
+if (-not $ContractPath) { $ContractPath = Join-Path $repoRoot 'operativa/archive/legacy-root/20260615/CODEX_CLOUD_CONTRACT_20260615.md' }
 if (-not $RegistryPath) { $RegistryPath = Join-Path $repoRoot 'dataverse/REGISTRO_CODEX_CLOUD_20260615.md' }
-if (-not $MaintenanceLogPath) { $MaintenanceLogPath = Join-Path $repoRoot 'operativa/CODEX_CLOUD_MAINTENANCE_20260615.md' }
+if (-not $MaintenanceLogPath) { $MaintenanceLogPath = Join-Path $repoRoot 'operativa/archive/legacy-root/20260615/CODEX_CLOUD_MAINTENANCE_20260615.md' }
 
 $gitBranch = (git -C $workspaceRoot branch --show-current 2>$null | Out-String).Trim()
 if ([string]::IsNullOrWhiteSpace($gitBranch)) { $gitBranch = 'DETACHED' }
@@ -109,7 +109,7 @@ $registryRefresh = @'
 
 ## Identidad
 
-- contract: `operativa/CODEX_CLOUD_CONTRACT_20260615.md`
+- contract: `operativa/archive/legacy-root/20260615/CODEX_CLOUD_CONTRACT_20260615.md`
 - bootstrap: `tools/codex-cloud-bootstrap.ps1`
 - maintenance: `tools/codex-cloud-maintenance.ps1`
 - mode: `__MODE__`

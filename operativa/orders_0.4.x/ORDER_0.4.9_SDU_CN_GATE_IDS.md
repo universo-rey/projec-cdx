@@ -45,7 +45,7 @@ Revertir cambios remotos en prompt, manifest, `gates/gates.yaml` o CI si el owne
 - La inconsistencia G16/G27 queda resuelta sin crear IDs nuevos.
 
 ## Evidencia local
-- operativa/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
 - operativa/orders_0.2.x/ORDER_0.2.4_SDU_CN_ISSUE_PREP_REMOTE_ALIGNMENT.md
 
 ## Resultado

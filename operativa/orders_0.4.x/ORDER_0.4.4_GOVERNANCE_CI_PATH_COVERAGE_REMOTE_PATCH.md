@@ -22,8 +22,8 @@ Revertir cambios de workflow.
 Cambios en rutas declaradas activan validacion.
 
 ## Evidencia
-- operativa/GATE_0.3.16_GOVERNANCE_CI_PATH_COVERAGE_PACKET_20260622.md
-- operativa/GATE_0.3.16_GOVERNANCE_CI_PATH_COVERAGE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/GATE_0.3.16_GOVERNANCE_CI_PATH_COVERAGE_PACKET_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.16_GOVERNANCE_CI_PATH_COVERAGE_MATRIX_20260622.csv
 
 ## Estado final
 READY_FOR_REMOTE_PATCH_AUTHORIZATION

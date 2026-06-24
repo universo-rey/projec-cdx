@@ -41,9 +41,9 @@ Revertir evidencia regenerada si no coincide con target commit o indice registra
 - PASS queda bloqueado si el array registra menos archivos que el commit evidenciado.
 
 ## Evidencia local
-- operativa/GATE_0.3.20_CHANGE_AWARE_EVIDENCE_REFRESH_PACKET_20260622.md
-- operativa/GATE_0.3.20_CHANGE_AWARE_EVIDENCE_REFRESH_MATRIX_20260622.csv
-- operativa/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/GATE_0.3.20_CHANGE_AWARE_EVIDENCE_REFRESH_PACKET_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.20_CHANGE_AWARE_EVIDENCE_REFRESH_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
 
 ## Resultado
 GATE_0.4.8_READY_FOR_REMOTE_REGEN_AUTHORIZATION

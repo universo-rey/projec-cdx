@@ -13,7 +13,7 @@ Cuando el pedido requiera:
 
 ## Derivación
 
-1. Leer `operativa/COMPLEMENTOS_ON_DEMAND.md`.
+1. Leer `operativa/archive/legacy-root/undated/COMPLEMENTOS_ON_DEMAND.md`.
 2. Confirmar la fuente canonica en `.codex/CAPACIDADES.md`.
 3. Diferenciar `MCP directos` de `Plugins activos`.
 4. Abrir solo el complemento pedido por el delta.

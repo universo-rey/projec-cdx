@@ -32,7 +32,7 @@ descripcion: Clasificacion metadata-only del dirty tree para delta runtime state
 - [M] VERSION_STATE.json
 - [M] index.json
 - [M] operativa/HISTORY_RUNTIME_EVOLUTION.md
-- [M] operativa/index.json
+- [M] operativa/archive/legacy-root/undated/index.json
 - [M] operativa/snapshots/SNAPSHOT_INDEX.json
 - [??] operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0246.md
 - [??] operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0247.md
@@ -126,8 +126,8 @@ descripcion: Clasificacion metadata-only del dirty tree para delta runtime state
 - [??] .cabina/organizacion-total/scripts/Invoke-SDUOrgClassifyMultiAgent.ps1.previous-20260623_020749 :: NO_VERSIONAR_EN_ESTE_DELTA :: excluded non-runtime or retention surface
 - [??] .gitignore.previous-20260623_022041 :: NO_VERSIONAR_EN_ESTE_DELTA :: excluded non-runtime or retention surface
 - [??] .gitignore.previous-20260623_093750 :: NO_VERSIONAR_EN_ESTE_DELTA :: excluded non-runtime or retention surface
-- [??] operativa/CEO_RUNTIME_ENV_CONTRACT_20260623.md :: OWNER_DECISION_REQUIRED :: runtime-adjacent path outside stage allowlist
-- [??] operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv :: OWNER_DECISION_REQUIRED :: runtime-adjacent path outside stage allowlist
-- [??] operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv.meta.json :: OWNER_DECISION_REQUIRED :: runtime-adjacent path outside stage allowlist
+- [??] operativa/tasks/20260623/CEO_RUNTIME_ENV_CONTRACT_20260623.md :: OWNER_DECISION_REQUIRED :: runtime-adjacent path outside stage allowlist
+- [??] operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv :: OWNER_DECISION_REQUIRED :: runtime-adjacent path outside stage allowlist
+- [??] operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv.meta.json :: OWNER_DECISION_REQUIRED :: runtime-adjacent path outside stage allowlist
 - [??] operativa/runtime-events/RUNTIME_STATE_DELTA_CLASSIFICATION_20260623.json :: OWNER_DECISION_REQUIRED :: runtime-adjacent path outside stage allowlist
 - [??] operativa/runtime-events/RUNTIME_STATE_DELTA_PREFLIGHT_20260623.json :: OWNER_DECISION_REQUIRED :: runtime-adjacent path outside stage allowlist

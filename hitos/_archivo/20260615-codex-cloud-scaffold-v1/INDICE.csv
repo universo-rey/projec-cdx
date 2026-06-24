@@ -2,4 +2,4 @@ id,tipo,estado,evidencia
 H-001,codex_environment_ui,closed,.codex/environments/environment.toml
 H-002,codex_environment_scripts,closed,tools/codex-environment-setup.ps1
 H-003,codex_runner_scaffold,closed,pyproject.toml
-H-004,codex_cloud_contract,closed,operativa/CODEX_CLOUD_CONTRACT_20260615.md
+H-004,codex_cloud_contract,closed,operativa/archive/legacy-root/20260615/CODEX_CLOUD_CONTRACT_20260615.md

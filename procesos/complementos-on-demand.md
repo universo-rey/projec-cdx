@@ -6,8 +6,8 @@ Pedido de acceso, listado o verificacion de complementos disponibles en la sesio
 
 ## Pasos
 
-1. Leer `operativa/COMPLEMENTOS_ON_DEMAND.md`.
-2. Leer `operativa/ANCLAS_ON_DEMAND.md` si el complemento se usa dentro de una wave.
+1. Leer `operativa/archive/legacy-root/undated/COMPLEMENTOS_ON_DEMAND.md`.
+2. Leer `operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md` si el complemento se usa dentro de una wave.
 3. Abrir `CAPACIDADES.md` y `CAPACIDADES.reference.md` como canon de capacidad.
 4. Clasificar si el pedido necesita MCP directo o plugin.
 5. Abrir solo el complemento minimo necesario.

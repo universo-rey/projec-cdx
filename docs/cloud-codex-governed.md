@@ -17,7 +17,7 @@ etiquetas:
   - github-actions
 relacionados:
   - .github/workflows/codex-governed.yml
-  - operativa/CLOUD_CODEX_GOVERNED_READBACK_20260622.md
+  - operativa/archive/legacy-root/20260622/CLOUD_CODEX_GOVERNED_READBACK_20260622.md
 descripcion: Flujo Codex Cloud gobernado para validacion analitica read-only con agentes y evidencia JSON.
 ---
 

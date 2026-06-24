@@ -13,8 +13,8 @@ Revision de `codex-root` y `agents-root` como repos raiz fuera de `Documents/Git
 
 ## Evidencia
 
-- `operativa/READBACK_ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.md`
-- `operativa/ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.csv`
+- `operativa/archive/legacy-root/20260617/READBACK_ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.md`
+- `operativa/archive/legacy-root/20260617/ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.csv`
 - `READBACK.md`
 - `EVIDENCIA.md`
 - `MANIFEST.yaml`

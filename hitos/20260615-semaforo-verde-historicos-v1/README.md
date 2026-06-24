@@ -14,8 +14,8 @@ GREEN_LOCAL.
 
 ## Evidencia Principal
 
-- `operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md`.
-- `operativa/CONTROL_TOTAL_20260615.md`.
+- `operativa/archive/legacy-root/20260615/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md`.
+- `operativa/archive/legacy-root/20260615/CONTROL_TOTAL_20260615.md`.
 - `outputs/live_repo_review_20260615/READBACK.md`.
 - `hitos/INDICE_MAESTRO.csv`.
 - `hitos/INDICE_MAESTRO.md`.

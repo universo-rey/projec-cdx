@@ -1,6 +1,6 @@
 item,tipo,estado,evidencia
-acta,readback,GREEN_LOCAL,operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md
-control_total,guardrail,GREEN_OPERABLE,operativa/CONTROL_TOTAL_20260615.md
+acta,readback,GREEN_LOCAL,operativa/archive/legacy-root/20260615/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md
+control_total,guardrail,GREEN_OPERABLE,operativa/archive/legacy-root/20260615/CONTROL_TOTAL_20260615.md
 hilo_anterior,historico,GREEN_ARCHIVED,hitos/20260614-hilo-anterior-v1/README.md
 otros_repos,historico,GREEN_ARCHIVED,hitos/20260614-hitos-otros-repos-v1/README.md
 codexlocal,referencia,GREEN_REFERENCE_CLOSED,hitos/20260615-codexlocal-base-v1/README.md

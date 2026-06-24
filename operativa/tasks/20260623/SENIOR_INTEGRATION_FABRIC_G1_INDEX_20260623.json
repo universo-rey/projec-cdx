@@ -1,0 +1,235 @@
+{
+  "fabric_id": "CABINA_SENIOR_INTEGRATION_FABRIC_G1",
+  "status": "SENIOR_INTEGRATION_FABRIC_READY_LOCAL_ONLY",
+  "version": "v0.6.0-rc1",
+  "date": "2026-06-23",
+  "workspace": "C:\\CEO\\project-cdx",
+  "source_map": "operativa\\tasks\\20260623\\SENIOR_INTEGRATION_FABRIC_G1_MAP_20260623.csv",
+  "readback": "operativa\\tasks\\20260623\\READBACK_SENIOR_INTEGRATION_FABRIC_G1_20260623.md",
+  "principle": "VS Code Insiders ejecuta. Codex Cloud propone. GitHub versiona. Dataverse recuerda. Power Platform automatiza. SharePoint gobierna y evidencia. Teams coordina. M365 distribuye.",
+  "planes": [
+    {
+      "id": "ide",
+      "system": "VS Code Insiders",
+      "function": "mando operativo local",
+      "input": "orden local, workspace, terminal, tasks",
+      "output": "salida JSON local, evidencia minima, backlog",
+      "gate": "IDE_GATE",
+      "owner_agent": "THOT_INTEGRATION_ARCHITECT",
+      "status": "READY_LOCAL"
+    },
+    {
+      "id": "agent_execution",
+      "system": "Codex Cloud",
+      "function": "ejecucion asistida y propuesta tecnica",
+      "input": "orden normalizada, carril, limites, evidencia esperada",
+      "output": "diff propuesto, readback tecnico, riesgos, proxima accion",
+      "gate": "AGENT_GATE",
+      "owner_agent": "CODEX_CLOUD_OPERATOR",
+      "status": "CANDIDATE_GATE_REQUIRED"
+    },
+    {
+      "id": "technical_canon",
+      "system": "GitHub",
+      "function": "verdad tecnica versionable",
+      "input": "cambio aprobado y version target",
+      "output": "branch, commit, PR pack, tag o release bajo gate",
+      "gate": "REMOTE_GATE",
+      "owner_agent": "THOT_INTEGRATION_ARCHITECT",
+      "status": "CANDIDATE_GATE_REQUIRED"
+    },
+    {
+      "id": "memory",
+      "system": "Dataverse",
+      "function": "memoria estructurada metadata-only",
+      "input": "metadata versionable, entidades, relaciones",
+      "output": "delta metadata-only y sync run candidato",
+      "gate": "MEMORY_GATE",
+      "owner_agent": "DATAVERSE_MEMORY_KEEPER",
+      "status": "CANDIDATE_METADATA_ONLY"
+    },
+    {
+      "id": "automation",
+      "system": "Power Platform",
+      "function": "automatizacion, apps, flows y paneles candidatos",
+      "input": "metadata estructurada, gate, owner, rollback",
+      "output": "blueprint de flow/app, run log esperado, postcheck",
+      "gate": "AUTOMATION_GATE",
+      "owner_agent": "POWER_PLATFORM_AUTOMATOR",
+      "status": "CANDIDATE_BLUEPRINT_ONLY"
+    },
+    {
+      "id": "governance",
+      "system": "SharePoint",
+      "function": "gobierno visible, bitacora y evidencia institucional",
+      "input": "commit, tag, release, readback, evidence pack",
+      "output": "pagina, lista, biblioteca o bitacora candidata",
+      "gate": "GOVERNANCE_GATE",
+      "owner_agent": "SESHAT_GOVERNANCE_EVIDENCE",
+      "status": "CANDIDATE_NO_PUBLISH"
+    },
+    {
+      "id": "ops",
+      "system": "Teams",
+      "function": "coordinacion operativa, avisos, handoffs y decisiones",
+      "input": "evidencia, readback, gate, decision owner",
+      "output": "mensaje tipo, hilo, canal, handoff candidato",
+      "gate": "OPS_GATE",
+      "owner_agent": "TEAMS_OPS_COORDINATOR",
+      "status": "CANDIDATE_NO_POST"
+    },
+    {
+      "id": "collaboration",
+      "system": "Microsoft 365",
+      "function": "documentos, comunicacion y distribucion",
+      "input": "decision, documento, evidencia, colaboracion humana",
+      "output": "documento, enlace o artefacto distribuible",
+      "gate": "COLLAB_GATE",
+      "owner_agent": "MAAT_COMPLIANCE_TRACE",
+      "status": "CANDIDATE_GATE_REQUIRED"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "IDE_TO_CODEX",
+      "input": "orden normalizada + carril + limites",
+      "output": "propuesta tecnica + diff/readback",
+      "gate": "AGENT_GATE",
+      "status": "PACKET_ONLY"
+    },
+    {
+      "id": "CODEX_TO_GITHUB",
+      "input": "cambio aprobado",
+      "output": "branch/commit/PR pack candidato",
+      "gate": "REMOTE_GATE",
+      "status": "NO_REMOTE_WRITE"
+    },
+    {
+      "id": "GITHUB_TO_SHAREPOINT",
+      "input": "commit/tag/release/readback",
+      "output": "evidencia visible/bitacora/pagina",
+      "gate": "GOVERNANCE_GATE",
+      "status": "NO_PUBLISH"
+    },
+    {
+      "id": "GITHUB_TO_DATAVERSE",
+      "input": "metadata versionable",
+      "output": "registros metadata-only candidatos",
+      "gate": "MEMORY_GATE",
+      "status": "NO_TABLE_WRITE"
+    },
+    {
+      "id": "DATAVERSE_TO_POWER_PLATFORM",
+      "input": "metadata estructurada",
+      "output": "app/flow/vistas/logs candidatos",
+      "gate": "AUTOMATION_GATE",
+      "status": "BLUEPRINT_ONLY"
+    },
+    {
+      "id": "SHAREPOINT_TO_TEAMS",
+      "input": "evidencia/readback/decision",
+      "output": "aviso operativo/handoff/cierre",
+      "gate": "OPS_GATE",
+      "status": "NO_POST"
+    },
+    {
+      "id": "TEAMS_TO_IDE",
+      "input": "decision/handoff",
+      "output": "proxima ejecucion local",
+      "gate": "IDE_GATE",
+      "status": "LOCAL_ONLY"
+    }
+  ],
+  "commands": [
+    "ceo-integration-map",
+    "ceo-integration-status",
+    "ceo-ide-to-codex-pack",
+    "ceo-codex-readback-ingest",
+    "ceo-github-pr-pack",
+    "ceo-dataverse-memory-delta",
+    "ceo-powerplatform-flow-candidates",
+    "ceo-sharepoint-evidence-pack",
+    "ceo-teams-readback-pack",
+    "ceo-integration-gates-status"
+  ],
+  "implemented_commands": [
+    "tools\\ceo-integration-map.ps1",
+    "tools\\ceo-integration-status.ps1",
+    "tools\\ceo-ide-to-codex-pack.ps1",
+    "tools\\ceo-github-pr-pack.ps1",
+    "tools\\ceo-dataverse-memory-delta.ps1",
+    "tools\\ceo-sharepoint-evidence-pack.ps1",
+    "tools\\ceo-integration-gates-status.ps1"
+  ],
+  "tasks": [
+    "CEO: Integration Map",
+    "CEO: Integration Status",
+    "CEO: Senior Integration Fabric G1",
+    "CEO: IDE to Codex Pack",
+    "CEO: GitHub PR Pack",
+    "CEO: Dataverse Memory Delta",
+    "CEO: SharePoint Evidence Pack",
+    "CEO: Integration Gates Status",
+    "CEO: Senior Integration Fabric G1 Step2"
+  ],
+  "dataverse_entities_metadata_only": [
+    "sdu_system",
+    "sdu_integration_endpoint",
+    "sdu_agent",
+    "sdu_skill",
+    "sdu_recipe",
+    "sdu_command",
+    "sdu_task",
+    "sdu_tool",
+    "sdu_mcp_server",
+    "sdu_repo",
+    "sdu_workspace",
+    "sdu_gate",
+    "sdu_evidence",
+    "sdu_decision",
+    "sdu_risk",
+    "sdu_runbook",
+    "sdu_capability",
+    "sdu_product_candidate",
+    "sdu_sync_run"
+  ],
+  "sharepoint_candidates": [
+    "Pagina Madre: Cabina Senior Integration Fabric",
+    "Lista: Integration Gates",
+    "Lista: Integration Evidence",
+    "Lista: Integration Decisions",
+    "Lista: Integration Risks",
+    "Biblioteca: Runbooks Cabina",
+    "Biblioteca: Evidence Packs"
+  ],
+  "teams_pattern": [
+    "Gates",
+    "Readbacks",
+    "Incidencias",
+    "Publicacion remota",
+    "Agentes",
+    "Power Platform",
+    "SharePoint Evidence",
+    "Dataverse Memory"
+  ],
+  "power_platform_blueprints": [
+    "GitHub commit/tag -> SharePoint evidence draft",
+    "SharePoint evidence approved -> Teams notification",
+    "Dataverse sync run failed -> Teams alert",
+    "Integration gate changed -> Teams readback",
+    "New skill/recipe approved -> Dataverse registry update",
+    "Evidence pack created -> SharePoint bitacora entry"
+  ],
+  "frontier": {
+    "no_push": true,
+    "no_pr": true,
+    "no_live": true,
+    "no_secret_read": true,
+    "no_mcp_execution": true,
+    "no_dataverse_write": true,
+    "no_sharepoint_publish": true,
+    "no_teams_post": true,
+    "no_power_platform_mutation": true
+  },
+  "next_step": "SENIOR_INTEGRATION_FABRIC_G1_STEP3_OWNER_GATE_DECISIONS"
+}

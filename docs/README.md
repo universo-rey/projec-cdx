@@ -7,7 +7,7 @@ Entrada corta a la documentacion canonica de `PROJEC CDX`.
 1. [Indice documental](index.md)
 2. [Mapa arquitectonico](arquitectura/mapa.md)
 3. [Gobernanza](gobernanza/index.md)
-4. [Operativa](operativa/index.md)
+4. [Operativa](operativa/archive/legacy-root/undated/index.md)
 5. [Referencia](referencia/index.md)
 
 ## Superficies existentes

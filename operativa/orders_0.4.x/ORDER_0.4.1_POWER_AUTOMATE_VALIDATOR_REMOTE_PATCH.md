@@ -24,8 +24,8 @@ Revertir wiring del validator o restaurar readback previo si el owner lo ordena.
 - No se ejecuta Power Platform mutation.
 
 ## Evidencia
-- operativa/GATE_0.3.5_POWER_AUTOMATE_VALIDATOR_PATCH_PACKET_20260622.md
-- operativa/GATE_0.3.5_POWER_AUTOMATE_VALIDATOR_PATCH_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/GATE_0.3.5_POWER_AUTOMATE_VALIDATOR_PATCH_PACKET_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.5_POWER_AUTOMATE_VALIDATOR_PATCH_MATRIX_20260622.csv
 
 ## Estado final
 READY_FOR_REMOTE_PATCH_AUTHORIZATION

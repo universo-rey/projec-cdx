@@ -40,9 +40,9 @@ Revertir wiring del validator, fixture negativo y cambios de manifest/suite en e
 - Fixture no conforme hace fallar el validator.
 
 ## Evidencia local
-- operativa/GATE_0.3.17_NO_PS_VALIDATOR_WIRING_PACKET_20260622.md
-- operativa/GATE_0.3.17_NO_PS_VALIDATOR_WIRING_MATRIX_20260622.csv
-- operativa/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/GATE_0.3.17_NO_PS_VALIDATOR_WIRING_PACKET_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.17_NO_PS_VALIDATOR_WIRING_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
 
 ## Resultado
 GATE_0.4.5_READY_FOR_REMOTE_PATCH_AUTHORIZATION

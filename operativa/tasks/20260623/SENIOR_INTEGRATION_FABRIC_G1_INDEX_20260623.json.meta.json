@@ -1,0 +1,27 @@
+{
+  "artifact_id": "operativa/tasks/20260623/SENIOR_INTEGRATION_FABRIC_G1_INDEX_20260623",
+  "categoria": "operativa",
+  "tipo": "indice",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_SENIOR_INTEGRATION_FABRIC_G1"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/SENIOR_INTEGRATION_FABRIC_G1_INDEX_20260623.json",
+  "etiquetas": [
+    "integration-fabric",
+    "json-index",
+    "local-only",
+    "governed"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/SENIOR_INTEGRATION_FABRIC_G1_MAP_20260623.csv",
+    "operativa/tasks/20260623/READBACK_SENIOR_INTEGRATION_FABRIC_G1_20260623.md",
+    "tools/ceo-integration-map.ps1",
+    "tools/ceo-integration-status.ps1"
+  ],
+  "descripcion": "Indice JSON del Senior Integration Fabric G1 para lectura operativa por Codex y tasks de VS Code Insiders."
+}

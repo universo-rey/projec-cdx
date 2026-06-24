@@ -42,7 +42,7 @@
       "reason": "runtime state/index canonical file"
     },
     {
-      "path": "operativa/index.json",
+      "path": "operativa/archive/legacy-root/undated/index.json",
       "git_status": "M",
       "category": "VERSIONABLE_RUNTIME_STATE",
       "stage_candidate": true,
@@ -623,21 +623,21 @@
       "reason": "excluded non-runtime or retention surface"
     },
     {
-      "path": "operativa/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
+      "path": "operativa/tasks/20260623/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
       "git_status": "??",
       "category": "OWNER_DECISION_REQUIRED",
       "stage_candidate": false,
       "reason": "runtime-adjacent path outside stage allowlist"
     },
     {
-      "path": "operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv",
+      "path": "operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv",
       "git_status": "??",
       "category": "OWNER_DECISION_REQUIRED",
       "stage_candidate": false,
       "reason": "runtime-adjacent path outside stage allowlist"
     },
     {
-      "path": "operativa/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv.meta.json",
+      "path": "operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv.meta.json",
       "git_status": "??",
       "category": "OWNER_DECISION_REQUIRED",
       "stage_candidate": false,

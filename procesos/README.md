@@ -31,7 +31,7 @@ La skill formal asociada queda en [documentos-canon-atomico](C:/Users/enzo1/.cod
 
 El proceso de rehidratacion Dataverse queda en [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/procesos/dataverse-rehidratacion.md).
 
-Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
+Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md).
 
 ## Indice
 

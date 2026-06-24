@@ -4,7 +4,7 @@ superficie: PROJEC CDX
 tipo: agentes_atomicos_algoritmicos_en_waves
 estado: GREEN_LOCAL
 fuente:
-  - operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md
+  - operativa/archive/legacy-root/undated/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md
   - recipes/agentes-atomicos-algoritmicos-en-waves.md
   - procesos/agentes-atomicos-algoritmicos-en-waves.md
 salida:

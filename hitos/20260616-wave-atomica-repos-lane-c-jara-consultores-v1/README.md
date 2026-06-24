@@ -17,7 +17,7 @@ Microatom siguiente de la lane C para el repo `jara-consultores`, tomado como tr
 
 - [C:/Users/enzo1/Documents/GitHub/jara-consultores/README.md](C:/Users/enzo1/Documents/GitHub/jara-consultores/README.md)
 - [C:/Users/enzo1/Documents/GitHub/jara-consultores/AGENTS.md](C:/Users/enzo1/Documents/GitHub/jara-consultores/AGENTS.md)
-- [operativa/WAVE_ATOMICA_REPOS_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/WAVE_ATOMICA_REPOS_20260616.md)
+- [operativa/archive/legacy-root/20260616/WAVE_ATOMICA_REPOS_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260616/WAVE_ATOMICA_REPOS_20260616.md)
 - [operativa/TRACE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TRACE.md)
 
 ## Regla

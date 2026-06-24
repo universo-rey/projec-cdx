@@ -13,7 +13,7 @@ Aplicar en cierres, readbacks, hitos y handoffs.
 ## Fuente
 
 - `operativa/TRACE.md`
-- `operativa/READBACK_CIERRE_20260615.md`
+- `operativa/archive/legacy-root/20260615/READBACK_CIERRE_20260615.md`
 
 ## Salida
 

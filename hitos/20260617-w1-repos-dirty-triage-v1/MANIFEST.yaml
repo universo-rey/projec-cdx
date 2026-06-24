@@ -6,7 +6,7 @@ surface: C:/Users/enzo1/Documents/GitHub
 workbench: C:/Users/enzo1/PROJEC CDX
 mode: read-only
 artifacts:
-  - operativa/READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md
+  - operativa/archive/legacy-root/20260617/READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md
   - inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv
   - inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.json
   - hitos/20260617-w1-repos-dirty-triage-v1/READBACK.md

@@ -16,10 +16,10 @@ Versiona el scaffold completo de Codex Cloud para `PROJEC CDX`: entorno seleccio
 - `src/projec_cdx_cloud/cli.py`
 - `src/projec_cdx_cloud/agent.py`
 - `src/projec_cdx_cloud/__main__.py`
-- `operativa/CODEX_CLOUD_CONTRACT_20260615.md`
-- `operativa/SETUP_APERTURA_CODEX_UI.md`
+- `operativa/archive/legacy-root/20260615/CODEX_CLOUD_CONTRACT_20260615.md`
+- `operativa/archive/legacy-root/undated/SETUP_APERTURA_CODEX_UI.md`
 - `recipes/configuracion-entorno-codex-ui.md`
-- `README_ARRANQUE_CODEX_CLOUD.md`
+- `operativa/archive/root-loose/20260618/README_ARRANQUE_CODEX_CLOUD.md`
 
 ## Evidencia
 

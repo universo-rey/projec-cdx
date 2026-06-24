@@ -22,8 +22,8 @@ Revertir evidencia regenerada si no coincide con target commit o indice registra
 Archivos registrados y archivos reales coinciden.
 
 ## Evidencia
-- operativa/GATE_0.3.20_CHANGE_AWARE_EVIDENCE_REFRESH_PACKET_20260622.md
-- operativa/GATE_0.3.20_CHANGE_AWARE_EVIDENCE_REFRESH_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/GATE_0.3.20_CHANGE_AWARE_EVIDENCE_REFRESH_PACKET_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.20_CHANGE_AWARE_EVIDENCE_REFRESH_MATRIX_20260622.csv
 
 ## Estado final
 READY_FOR_REMOTE_REGEN_AUTHORIZATION

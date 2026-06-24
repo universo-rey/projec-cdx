@@ -6,8 +6,8 @@ HECHO_VERIFICADO: wave de revision total consolidada localmente.
 
 ## Sistemas Tocados
 
-- `PROJEC CDX/operativa/TAXONOMIA_NOMENCLATURA_20260615.md`
-- `PROJEC CDX/operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md`
+- `PROJEC CDX/operativa/archive/legacy-root/20260615/TAXONOMIA_NOMENCLATURA_20260615.md`
+- `PROJEC CDX/operativa/archive/legacy-root/20260615/NOMENCLATURA_CADENA_OPERATIVA_20260615.md`
 - `PROJEC CDX/hitos/20260615-wave-revision-total-v1`
 - `Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/README.md`
 - `Documents/Codex/2026-06-14/projec-cdx-handoff-20260614/outputs`

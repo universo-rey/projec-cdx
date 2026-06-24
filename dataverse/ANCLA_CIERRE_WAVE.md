@@ -2,14 +2,14 @@
 
 Ancla corta para waves de cierre cuando el frente toca Dataverse.
 
-Se abre solo desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md) cuando el delta pide Dataverse.
+Se abre solo desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md) cuando el delta pide Dataverse.
 
 ## Orden
 
 1. Leer `dataverse/GATE.md`.
 2. Leer `dataverse/README.md`.
 3. Leer `dataverse/MAPA.md`.
-4. Leer `operativa/START_HERE_CIERRE_WAVE.md`.
+4. Leer `operativa/archive/legacy-root/undated/START_HERE_CIERRE_WAVE.md`.
 5. Leer `recipes/cierre-wave-documental.md`.
 6. Leer `procesos/cierre-wave-documental.md`.
 

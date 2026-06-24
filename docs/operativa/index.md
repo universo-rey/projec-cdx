@@ -1,5 +1,5 @@
 ---
-artifact_id: docs/operativa/index.md
+artifact_id: docs/operativa/archive/legacy-root/undated/index.md
 categoria: operativa
 tipo: indice
 estado: en_revision
@@ -9,7 +9,7 @@ autoridad:
   tipo: owner
   referencia: CEO
 origen: GitHub
-ubicacion_repo: docs/operativa/index.md
+ubicacion_repo: docs/operativa/archive/legacy-root/undated/index.md
 etiquetas:
   - docs
   - operativa

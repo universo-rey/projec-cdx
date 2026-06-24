@@ -5,7 +5,7 @@ Estado: `LOCAL_DOCUMENTAL_CONSOLIDATED`
 
 ## Resultado
 
-Se consolido la cronologia distribuida en `operativa/CRONOLOGIA_MAESTRA_20260617.md` y se registro el delta en `operativa/TRACE.md`.
+Se consolido la cronologia distribuida en `operativa/archive/legacy-root/20260617/CRONOLOGIA_MAESTRA_20260617.md` y se registro el delta en `operativa/TRACE.md`.
 
 ## Alcance
 
@@ -20,4 +20,4 @@ Se consolido la cronologia distribuida en `operativa/CRONOLOGIA_MAESTRA_20260617
 
 ## Rollback
 
-Revertir `operativa/CRONOLOGIA_MAESTRA_20260617.md` y la seccion `Cronologia Maestra` de `operativa/TRACE.md`.
+Revertir `operativa/archive/legacy-root/20260617/CRONOLOGIA_MAESTRA_20260617.md` y la seccion `Cronologia Maestra` de `operativa/TRACE.md`.

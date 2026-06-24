@@ -15,10 +15,10 @@ authority_boundary:
 inputs:
   - voluntad_rectora_owner_20260616
 outputs:
-  - operativa/ORDEN_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md
-  - operativa/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md
-  - operativa/READBACK_FAN_IN_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md
-  - operativa/MATRIZ_HUELLA_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.csv
+  - operativa/archive/legacy-root/20260616/ORDEN_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md
+  - operativa/archive/legacy-root/20260616/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md
+  - operativa/archive/legacy-root/20260616/READBACK_FAN_IN_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md
+  - operativa/archive/legacy-root/20260616/MATRIZ_HUELLA_AGENTES_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.csv
 validator:
   command: pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/validate_proj_cdx_workbench.ps1"
   status: PASS_OBSERVED

@@ -31,7 +31,7 @@ El proceso de Microsoft live read preliminar queda en [microsoft-live-read-preli
 
 El proceso SDU Dataverse metadata wave queda en [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md).
 
-Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
+Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md).
 
 ## Piezas
 

@@ -19,7 +19,7 @@ etiquetas:
 relacionados:
   - VERSION_POLICY.md
   - VERSION_STATE.json
-  - operativa/ACTA_RUNTIME_CLI_REAL_20260622.md
+  - operativa/archive/legacy-root/20260622/ACTA_RUNTIME_CLI_REAL_20260622.md
 descripcion: Guia operativa de comandos runtime para snapshots, restore, sentinel, status y G7.
 ---
 

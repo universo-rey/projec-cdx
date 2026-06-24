@@ -12,7 +12,7 @@
 
 ## Evidencia
 
-- `operativa/INVENTARIO_FINAL_PC_20260615.md`
+- `operativa/archive/legacy-root/20260615/INVENTARIO_FINAL_PC_20260615.md`
 - `operativa/CURRENT.md`
 - `operativa/TRACE.md`
 

@@ -1,0 +1,11 @@
+scope_id,scope_name,included,status,evidence,version_decision,notes
+S01,0.4.x remote patch wave,true,READY_LOCAL_ONLY,operativa/archive/legacy-root/20260622/READBACK_0.4.x_REMOTE_PATCH_WAVE_CLOSEOUT_20260622.md,include_candidate,Remote patch wave preparada sin push PR ni live.
+S02,0.5.0 bridge auth fail closed,true,REALIZED_NO_LIVE,operativa/archive/legacy-root/20260622/READBACK_GATE_0.5.0_REMOTE_PATCH_EXECUTION_20260622.md,include_candidate,Patch remoto controlado preparado en repo hijo sin PR ni live.
+S03,0.5.1 bridge loopback MCP gating,true,REALIZED_NO_LIVE,operativa/archive/legacy-root/20260622/READBACK_GATE_0.5.1_BRIDGE_LOOPBACK_MCP_GATING_20260622.md,include_candidate,Patch remoto controlado preparado en repo hijo sin PR ni live.
+S04,metadata overlay repair,true,PASS,operativa/archive/legacy-root/20260622/READBACK_CABINA_OPERATING_SYSTEM_CONSOLIDATED_TO_PR96_20260622.md,include_candidate,Metadata y pagina madre versionadas en control plane local.
+S05,local drift closure,true,NO_DRIFT,operativa/CABINA_LOCAL_DRIFT_CLASSIFICATION_20260622.csv,include_candidate,Workspace local cerrado con drift cero tras clasificacion.
+S06,path runtime canonico,true,DOCUMENTED,operativa/archive/legacy-root/20260622/CABINA_IDE_CONTROL_PLANE_20260622.md,include_candidate,Runtime canonico bajo C:/CEO/project-cdx y control-plane IDE.
+S07,total stack audit,true,WARNINGS_CLOSED,operativa/archive/legacy-root/20260622/READBACK_CABINA_TOTAL_STACK_WARNINGS_CLOSEOUT_20260622.md,include_candidate,Warnings cerrados como decisiones gobernadas local-only.
+S08,gobierno total plan,true,PLAN_READY,operativa/archive/legacy-root/20260622/CABINA_GOBIERNO_TOTAL_PLAN_20260622.md,include_candidate,Plan rector de gobierno total preparado sin abrir live.
+S09,IDE control-plane,true,READY,operativa/archive/legacy-root/20260622/READBACK_CABINA_IDE_CONTROL_PLANE_20260622.md,include_candidate,VS Code Insiders como superficie de mando local.
+S10,W0 nervous system inventory,true,READY,operativa/archive/legacy-root/20260622/READBACK_W0_IDE_CONTROLLED_NERVOUS_SYSTEM_INVENTORY_20260622.md,include_candidate,Inventario W0 del sistema nervioso local.

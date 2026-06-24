@@ -28,7 +28,7 @@ El atomo `INDICE_CORTE_AGENTES_20260617.md` queda preparado para registrarse en 
 - Dataverse evidence pointer: `evidence:sharepoint:corte-agent-index:20260617:v1`.
 - Mode: `LIVE_METADATA_POINTER_WRITE`.
 - Postcheck: `source_count=1`, `evidence_count=1`.
-- Resultado: `operativa/DATAVERSE_PROMOTION_INDICE_CORTE_AGENTES_20260617.json`.
+- Resultado: `operativa/archive/legacy-root/20260617/DATAVERSE_PROMOTION_INDICE_CORTE_AGENTES_20260617.json`.
 
 ## No Ejecutado
 

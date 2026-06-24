@@ -1,0 +1,25 @@
+{
+  "artifact_id": "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_MEMORY_DELTA_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_GOBERNADA_PRODUCTIVA_G1"
+  },
+  "origen": "Dataverse",
+  "ubicacion_repo": "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_MEMORY_DELTA_20260623.csv",
+  "etiquetas": [
+    "dataverse",
+    "metadata-only",
+    "memory",
+    "local-only"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_CAPABILITY_MATRIX_20260623.csv"
+  ],
+  "descripcion": "Delta local metadata-only para memoria Dataverse de agentes, herramientas, comandos y capacidades."
+}
+

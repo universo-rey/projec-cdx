@@ -10,8 +10,8 @@ Bitsch y a Dataverse como metadata pointer viva.
 
 ## Evidencia
 
-- `operativa/READBACK_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md`
-- `operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`
+- `operativa/archive/legacy-root/20260616/READBACK_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md`
+- `operativa/archive/legacy-root/20260616/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`
 - `dataverse/HUELLA_ATOMICA_SDU_OWNER_APPROVED_20260616.md`
 - `tools/promote_sdu_manifesto_dataverse.ps1`
 

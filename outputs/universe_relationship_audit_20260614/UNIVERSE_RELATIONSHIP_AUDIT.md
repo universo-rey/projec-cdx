@@ -1292,7 +1292,7 @@ Relaciones de auditoria: origen -> tipo -> destino -> dependencia -> estado.
 | CodexLocal | C:/Users/enzo1/CodexLocal/TCU_LOCAL/.gitignore | file | C:/Users/enzo1/CodexLocal/TCU_LOCAL/AGENTS.md | C:/Users/enzo1/.codex/README.md | activo | CodexLocal/README.md |
 | CodexLocal | C:/Users/enzo1/CodexLocal/TCU_LOCAL/AGENTS.md | governance | C:/Users/enzo1/CodexLocal/TCU_LOCAL/AGENTS.md | C:/Users/enzo1/.codex/README.md | referencia | CodexLocal/README.md |
 | CodexLocal | C:/Users/enzo1/CodexLocal/TCU_LOCAL/TCU_LOCAL.code-workspace | file | C:/Users/enzo1/CodexLocal/TCU_LOCAL/AGENTS.md | C:/Users/enzo1/.codex/README.md | activo | CodexLocal/README.md |
-| CodexLocal | C:/Users/enzo1/CodexLocal/TCU_LOCAL/error.log | file | C:/Users/enzo1/CodexLocal/TCU_LOCAL/AGENTS.md | C:/Users/enzo1/.codex/README.md | activo | CodexLocal/README.md |
+| CodexLocal | C:/Users/enzo1/CodexLocal/TCU_LOCAL/operativa/archive/root-loose/20260623/error.log | file | C:/Users/enzo1/CodexLocal/TCU_LOCAL/AGENTS.md | C:/Users/enzo1/.codex/README.md | activo | CodexLocal/README.md |
 | CodexLocal | C:/Users/enzo1/CodexLocal/TCU_LOCAL/00_LEER_PRIMERO | folder | C:/Users/enzo1/CodexLocal/TCU_LOCAL/AGENTS.md | C:/Users/enzo1/.codex/README.md | activo | CodexLocal/README.md |
 | CodexLocal | C:/Users/enzo1/CodexLocal/TCU_LOCAL/00_LEER_PRIMERO/2026-05-12__TCU_LOCAL__DICTAMEN__completitud-cabina-local__v01.md | doc | C:/Users/enzo1/CodexLocal/TCU_LOCAL/AGENTS.md | C:/Users/enzo1/.codex/README.md | activo | CodexLocal/README.md |
 | CodexLocal | C:/Users/enzo1/CodexLocal/TCU_LOCAL/00_LEER_PRIMERO/2026-05-12__TCU_LOCAL__ESTADO__aprovisionamiento-inicial__v01.md | doc | C:/Users/enzo1/CodexLocal/TCU_LOCAL/AGENTS.md | C:/Users/enzo1/.codex/README.md | activo | CodexLocal/README.md |

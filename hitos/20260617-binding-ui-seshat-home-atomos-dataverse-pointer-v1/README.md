@@ -21,10 +21,10 @@ El objetivo es que Dataverse contenga la memoria larga estructural del binding U
 
 ## Evidencia
 
-- `operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`
-- `operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`
+- `operativa/archive/legacy-root/20260617/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`
+- `operativa/archive/legacy-root/20260617/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`
 - `tools/promote_binding_ui_seshat_home_atomos_dataverse.ps1`
-- `operativa/DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json`
-- `operativa/READBACK_DATAVERSE_POINTER_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`
+- `operativa/archive/legacy-root/20260617/DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json`
+- `operativa/archive/legacy-root/20260617/READBACK_DATAVERSE_POINTER_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`
 - `METADATA_HYDRATION_MATRIX.csv`
 - `METADATA_HYDRATION_MATRIX.json`

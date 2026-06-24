@@ -2,49 +2,47 @@
 
 Vista compacta de acceso a `PROJEC CDX`.
 
-Identidad operativa: `CEO`; perfil fisico/ruta tecnica: `C:/Users/enzo1`.
+```text
+workspace canonico: C:\CEO\project-cdx
+alias fisico: C:\Users\enzo1\PROJEC CDX
+```
 
-## Al Frente
+## Frente
 
-- [Identidad operativa](C:/Users/enzo1/.codex/environment/IDENTIDAD_OPERATIVA.md)
-- [Accesos correctos](C:/Users/enzo1/.codex/environment/ACCESOS_CORRECTOS.md)
-- [cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md)
-- [dataverse-rehidratacion.md](C:/Users/enzo1/PROJEC%20CDX/recipes/dataverse-rehidratacion.md)
-- [normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/recipes/normalizacion-perfil-windows.md)
-- [agentes-atomicos-algoritmicos-en-waves.md](C:/Users/enzo1/PROJEC%20CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md)
-- [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
-
-## Arranque
-
-- [README_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/README_CORTO.md)
-- [README_ARRANQUE_CODEX_CLOUD.md](C:/Users/enzo1/PROJEC%20CDX/README_ARRANQUE_CODEX_CLOUD.md)
-
-## Mapa Base
-
-- [README.md](C:/Users/enzo1/PROJEC%20CDX/README.md)
-- [MAPA_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_MAESTRO.md)
-- [MAPA_CAPAS.md](C:/Users/enzo1/PROJEC%20CDX/MAPA_CAPAS.md)
+- [README.md](README.md)
+- [MAPA_MAESTRO.md](MAPA_MAESTRO.md)
+- [MAPA_CAPAS.md](MAPA_CAPAS.md)
 
 ## Trabajo Vivo
 
-- [operativa/README_CORTO.md](C:/Users/enzo1/PROJEC%20CDX/operativa/README_CORTO.md)
-- [launch-desk/MAPA.md](C:/Users/enzo1/PROJEC%20CDX/launch-desk/MAPA.md)
-- [tools/README.md](C:/Users/enzo1/PROJEC%20CDX/tools/README.md)
-- [dataverse/README.md](C:/Users/enzo1/PROJEC%20CDX/dataverse/README.md)
-- [atomic/README.md](C:/Users/enzo1/PROJEC%20CDX/atomic/README.md)
-- [src/README.md](C:/Users/enzo1/PROJEC%20CDX/src/README.md)
+- [operativa/CURRENT.md](operativa/CURRENT.md)
+- [operativa/NEXT.md](operativa/NEXT.md)
+- [operativa/TRACE.md](operativa/TRACE.md)
+- [operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv](operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv)
 
-## Evidencia
+## Cabina / Runtime
 
-- [hitos/README.md](C:/Users/enzo1/PROJEC%20CDX/hitos/README.md)
-- [outputs/README.md](C:/Users/enzo1/PROJEC%20CDX/outputs/README.md)
-- [inventarios/README.md](C:/Users/enzo1/PROJEC%20CDX/inventarios/README.md)
+- [.cabina/organizacion-total](.cabina/organizacion-total)
+- [.cabina/organizacion-total/organismo-vivo/README.md](.cabina/organizacion-total/organismo-vivo/README.md)
+- [.cabina/organizacion-total/vscode-insiders-profiles/README.md](.cabina/organizacion-total/vscode-insiders-profiles/README.md)
 
-## Residual
+## Motor
 
-- [operativa/ROOT_SWEEP_RESIDUALS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ROOT_SWEEP_RESIDUALS_20260615.md)
+- [src/README.md](src/README.md)
+- [tools/README.md](tools/README.md)
+- [tests](tests)
 
-## Gate
+## Evidencia e Historia
 
-- `metadata-only`
-- el arranque vivo usa `pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"`
+- [inventarios/README.md](inventarios/README.md)
+- [hitos/INDICE_MAESTRO.md](hitos/INDICE_MAESTRO.md)
+- [outputs/README.md](outputs/README.md)
+
+## Frontera
+
+```text
+No live sin gate.
+No secretos.
+No DB/cache mutation.
+No raiz paralela.
+```

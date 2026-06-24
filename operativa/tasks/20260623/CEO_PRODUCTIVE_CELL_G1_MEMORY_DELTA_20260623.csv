@@ -1,0 +1,17 @@
+entity,minimal_fields,source,status,gate,next_action
+Agent,agent_id role responsibilities,.cabina/SDU_RUNTIME_ROOT/05_CONFIG/cabina-contract.v1.json,observed,metadata_only_gate,prepare_dataverse_entity_mapping
+AgentVersion,agent_id version source_commit,git HEAD and cabina contract,candidate,metadata_only_gate,derive_from_commit_and_contract
+Skill,skill_name source_path owner_agent,skills registry and available skills,observed,metadata_only_gate,normalize_skill_registry
+Recipe,recipe_id path use_case,recipes/INDICE_RECETAS.md,observed,metadata_only_gate,normalize_recipe_registry
+Tool,tool_name path status,tools/ and pyproject scripts,observed,metadata_only_gate,build_tool_registry
+MCPServer,name config_path command_status,.cursor/mcp.json,configured,mcp_execution_gate,verify_without_execution
+Command,command_name invocation status,tools/ceo-*.ps1,implemented,none_readonly,register_command_surface
+Repo,repo_name branch commit,git metadata,observed,remote_gate_for_publication,prepare_remote_pack
+Carril,lane owner capability,CEO_PRODUCTIVE_CELL_G1_CAPABILITY_MATRIX_20260623.csv,implemented,coherence_review,use_for_dispatch
+Gate,gate_id required_for risk,cabina contract and capability matrix,observed,owner_gate,align_gate_registry
+Evidence,path type status,operativa/tasks/20260623,implemented,none_readonly,validate_metadata
+Decision,decision_id status rationale,readback and backlog,candidate,owner_decision_gate,prepare_next_order
+Risk,risk_id severity mitigation,backlog and MCP registry,observed,coherence_review,rank_risks
+Capability,capability_id command skill recipe,capability matrix,implemented,coherence_review,promote_capability
+ProductCandidate,candidate_id scope gate,capability matrix,candidate,productization_gate,prepare_product_pack
+

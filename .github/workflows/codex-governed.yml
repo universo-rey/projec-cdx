@@ -47,7 +47,7 @@ jobs:
       - name: Metadata index freshness
         run: |
           python -m tools.build_index
-          git diff --exit-code -- index.json operativa/index.json
+          git diff --exit-code -- index.json operativa/archive/legacy-root/undated/index.json
 
       - name: Runtime sentinel
         run: |

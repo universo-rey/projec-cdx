@@ -1,0 +1,11 @@
+slot,task_label,status,output,evidence,decision
+status,CEO Command: Status,READY,composite,.vscode/tasks.json,enabled_productive
+validate,CEO Command: Validate Metadata,READY,terminal_json_capable,.vscode/tasks.json,enabled_productive
+watchdog,CEO Command: Watchdog,READY,json,.vscode/tasks.json,enabled_productive
+telemetry,CEO Command: Telemetry,READY,json,.vscode/tasks.json,enabled_productive
+command-index,CEO Command: Index,READY,json,.vscode/tasks.json,enabled_productive
+path-doctor,CEO Command: Doctor,READY,json,.vscode/tasks.json,covered_by_doctor
+agent-dispatch,CEO Command: Agent Map,READY,json,.vscode/tasks.json,covered_as_map_not_live_dispatch
+mcp-status,CEO Command: MCP Status,READY,json,.vscode/tasks.json,enabled_productive
+task-runner-status,CEO IDE: Tasks Status,READY,json,tools/ceo-ide-tasks-status.ps1,enabled_productive
+remote-ready,CEO Command: Remote Ready,CANDIDATE_MISSING,none,tools/ceo-ide-tasks-status.ps1,defer_to_remote_publication_delta

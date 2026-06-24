@@ -1,0 +1,25 @@
+{
+  "artifact_id": "operativa/tasks/20260623/SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS_INDEX_20260623",
+  "categoria": "operativa",
+  "tipo": "indice",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS_INDEX_20260623.json",
+  "etiquetas": [
+    "integration-fabric",
+    "json-index",
+    "packet-commands",
+    "local-only"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS_20260623.csv",
+    "operativa/tasks/20260623/READBACK_SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS_20260623.md"
+  ],
+  "descripcion": "Indice JSON de comandos packet-only STEP2 del Senior Integration Fabric G1 para tasks de VS Code Insiders."
+}

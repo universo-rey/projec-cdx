@@ -1,0 +1,28 @@
+{
+  "artifact_id": "operativa/tasks/20260623/CABINA_EXECUTION_FIRST_REPO_AGENT_SDK_RECONCILIATION_G1_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_EXECUTION_FIRST_REPO_AGENT_SDK_RECONCILIATION_G1"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/CABINA_EXECUTION_FIRST_REPO_AGENT_SDK_RECONCILIATION_G1_20260623.csv",
+  "etiquetas": [
+    "cabina",
+    "repo-fleet",
+    "agent-reconciliation",
+    "agents-sdk",
+    "dataverse"
+  ],
+  "relacionados": [
+    ".cabina/execution-g1/out/repo-fleet-inventory.json",
+    ".cabina/execution-g1/out/agent-reconciliation-map.json",
+    ".cabina/execution-g1/out/sdk-active-status.json",
+    ".cabina/execution-g1/out/dataverse-active-memory-map.json"
+  ],
+  "descripcion": "Matriz de capacidades G1 para ejecucion real de cabina, repos, agentes, SDK observado y memoria Dataverse activa."
+}

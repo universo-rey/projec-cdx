@@ -19,9 +19,9 @@ Nomenclatura viva:
 
 ## Evidencia
 
-- `operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`
-- `operativa/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv`
-- `operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`
+- `operativa/archive/legacy-root/20260617/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md`
+- `operativa/archive/legacy-root/20260617/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv`
+- `operativa/archive/legacy-root/20260617/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`
 - `tools/read_dataverse_rehydration_live.ps1`
 - `dataverse/ANCLA_REHIDRATACION.md`
 - `dataverse/GATE.md`

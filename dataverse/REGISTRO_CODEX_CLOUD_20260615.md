@@ -6,7 +6,7 @@
 
 ## Identidad
 
-- contract: `operativa/CODEX_CLOUD_CONTRACT_20260615.md`
+- contract: `operativa/archive/legacy-root/20260615/CODEX_CLOUD_CONTRACT_20260615.md`
 - bootstrap: `tools/codex-cloud-bootstrap.ps1`
 - maintenance: `tools/codex-cloud-maintenance.ps1`
 - mode: `cloud`

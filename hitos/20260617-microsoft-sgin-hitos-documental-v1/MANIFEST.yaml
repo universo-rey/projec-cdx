@@ -23,9 +23,9 @@ classification:
   sdu_runtime: metadata_confirmada
   dataverse_hydration: metadata_only_or_hitos_propios
 evidence:
-  - operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md
-  - operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv
-  - operativa/MAPA_SGIN_SPGOVERNANCE_SDU_DATAVERSE_WAVE_20260616.md
+  - operativa/archive/legacy-root/20260617/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md
+  - operativa/archive/legacy-root/20260617/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv
+  - operativa/archive/legacy-root/20260616/MAPA_SGIN_SPGOVERNANCE_SDU_DATAVERSE_WAVE_20260616.md
 non_execution:
   - no_live_refresh
   - no_document_open

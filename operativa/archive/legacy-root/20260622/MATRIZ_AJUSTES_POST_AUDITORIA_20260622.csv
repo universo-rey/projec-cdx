@@ -1,0 +1,4 @@
+ajuste_id,hallazgo_original,tipo,severidad,prioridad,agente_responsable,accion_requerida,evidencia_esperada,estado
+APA-001,"promote.yml conserva contents: write y workflow_dispatch",pipeline,MEDIA,PRIORIDAD_2,anubis-gate,"exigir owner_gate_id y confirm_owner_gate antes de promover",".github/workflows/promote.yml",IMPLEMENTADO
+APA-002,"pyproject.toml version 0.1.0 difiere de release v0.6.0-rc1",gobierno,MEDIA,PRIORIDAD_2,maat-cumplimiento,"alinear paquete a PEP 440 0.6.0rc1 y documentar mapeo vX.Y.Z-rcN -> X.Y.ZrcN","pyproject.toml; VERSION_POLICY.md",IMPLEMENTADO
+APA-003,"no existe tabla unica G1-G31",gobierno,MEDIA,PRIORIDAD_3,seshat-normativa,"crear registry G1-G31 con G1-G6 cerrados y G7-G31 reservados no asignados","operativa/archive/legacy-root/20260622/GATE_REGISTRY_G1_G31_20260622.csv",IMPLEMENTADO

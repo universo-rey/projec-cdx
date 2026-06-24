@@ -18,7 +18,7 @@
 | P-004 | Gate antes de live | Separar local, metadata-only y live | `dataverse/GATE.md` | [procesos/dataverse-gobernado.md](C:/Users/enzo1/PROJEC%20CDX/procesos/dataverse-gobernado.md) | - |
 | P-005 | Workbook al frente | Volver seguimiento documental en tablero | `workbooks/`, `outputs/` | - | - |
 | P-006 | Hito versionado | Congelar cierres durables | `hitos/YYYYMMDD-nombre-vN/` | [procesos/hito-versionado.md](C:/Users/enzo1/PROJEC%20CDX/procesos/hito-versionado.md) | [recipes/cierre-wave-documental.md](C:/Users/enzo1/PROJEC%20CDX/recipes/cierre-wave-documental.md) |
-| P-007 | Retencion gobernada | No limpiar evidencia a ciegas | `operativa/RETENCION.md`, `outputs/RETENCION.md` | [procesos/retencion-gobernada.md](C:/Users/enzo1/PROJEC%20CDX/procesos/retencion-gobernada.md) | [recipes/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md) |
+| P-007 | Retencion gobernada | No limpiar evidencia a ciegas | `operativa/archive/legacy-root/undated/RETENCION.md`, `outputs/RETENCION.md` | [procesos/retencion-gobernada.md](C:/Users/enzo1/PROJEC%20CDX/procesos/retencion-gobernada.md) | [recipes/limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/recipes/limpieza-pc-local-segura.md) |
 | P-008 | Validador antes de cierre | No declarar verde sin postcheck | `tools/validate_proj_cdx_workbench.ps1` | [procesos/postcheck-local.md](C:/Users/enzo1/PROJEC%20CDX/procesos/postcheck-local.md) | - |
 | P-009 | Agente revisor read-only | Encontrar huecos sin mezclar escrituras | `operativa/READBACK_*` | - | - |
 | P-010 | Amarillo guardrail | Distinguir riesgo gobernado de bloqueo real | `operativa/CONTROL_TOTAL_*.md` | - | - |

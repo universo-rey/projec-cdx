@@ -11,18 +11,18 @@ Orden:
 
 | clase | fecha | superficie | artefacto | proposito |
 | --- | --- | --- | --- | --- |
-| acta | 2026-06-15 | `operativa` | [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](../operativa/ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md) | Diagnostico local de limpieza PC con gate pendiente. |
-| acta | 2026-06-15 | `operativa` | [ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md](../operativa/ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md) | Segunda pasada de Dataverse con frontera y cierre. |
-| acta | 2026-06-15 | `operativa` | [ACTA_CORTE_EJECUTORA_20260615.md](../operativa/ACTA_CORTE_EJECUTORA_20260615.md) | Mesa de corte ejecutora y continuidad local. |
+| acta | 2026-06-15 | `operativa` | [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md) | Diagnostico local de limpieza PC con gate pendiente. |
+| acta | 2026-06-15 | `operativa` | [ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md) | Segunda pasada de Dataverse con frontera y cierre. |
+| acta | 2026-06-15 | `operativa` | [ACTA_CORTE_EJECUTORA_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_CORTE_EJECUTORA_20260615.md) | Mesa de corte ejecutora y continuidad local. |
 | acta | 2026-06-15 | `dataverse` | [ACTA_CORTE_EJECUTORA_20260615.md](../dataverse/ACTA_CORTE_EJECUTORA_20260615.md) | Acta del canal Dataverse para la corte ejecutora. |
-| acta | 2026-06-15 | `operativa` | [ACTA_COBERTURA_ATOMICA_ENERGETICA_20260615.md](../operativa/ACTA_COBERTURA_ATOMICA_ENERGETICA_20260615.md) | Cobertura atomica energetica como contrato visible. |
-| acta | 2026-06-15 | `operativa` | [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](../operativa/ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md) | Cierre de repos Git en `main`. |
-| acta | 2026-06-15 | `operativa` | [ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md](../operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md) | Cierre de la cadena GitHub + Auditar. |
-| acta | 2026-06-15 | `operativa` | [ACTA_AUDITAR_CLASIFICACION_20260615.md](../operativa/ACTA_AUDITAR_CLASIFICACION_20260615.md) | Clasificacion fina de `Auditar` y sus hijos. |
-| acta | 2026-06-15 | `operativa` | [ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md](../operativa/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md) | Archivo de ramas historicas. |
-| acta | 2026-06-15 | `operativa` | [ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md](../operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md) | Reclasificacion de historicos a verde gobernado. |
-| acta | 2026-06-15 | `operativa` | [ACTA_REPOS_SURFACE_GITHUB_20260615.md](../operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md) | Versionado de `.codex` y `.agents` como repos. |
-| acta | 2026-06-15 | `operativa` | [ACTA_REMANENTE_SUPERFICIES_20260615.md](../operativa/ACTA_REMANENTE_SUPERFICIES_20260615.md) | Remanentes de superficies tras la absorcion inicial. |
+| acta | 2026-06-15 | `operativa` | [ACTA_COBERTURA_ATOMICA_ENERGETICA_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_COBERTURA_ATOMICA_ENERGETICA_20260615.md) | Cobertura atomica energetica como contrato visible. |
+| acta | 2026-06-15 | `operativa` | [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md) | Cierre de repos Git en `main`. |
+| acta | 2026-06-15 | `operativa` | [ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md) | Cierre de la cadena GitHub + Auditar. |
+| acta | 2026-06-15 | `operativa` | [ACTA_AUDITAR_CLASIFICACION_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_AUDITAR_CLASIFICACION_20260615.md) | Clasificacion fina de `Auditar` y sus hijos. |
+| acta | 2026-06-15 | `operativa` | [ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md) | Archivo de ramas historicas. |
+| acta | 2026-06-15 | `operativa` | [ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md) | Reclasificacion de historicos a verde gobernado. |
+| acta | 2026-06-15 | `operativa` | [ACTA_REPOS_SURFACE_GITHUB_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_REPOS_SURFACE_GITHUB_20260615.md) | Versionado de `.codex` y `.agents` como repos. |
+| acta | 2026-06-15 | `operativa` | [ACTA_REMANENTE_SUPERFICIES_20260615.md](../operativa/archive/legacy-root/20260615/ACTA_REMANENTE_SUPERFICIES_20260615.md) | Remanentes de superficies tras la absorcion inicial. |
 
 ## Handoff
 
@@ -34,8 +34,8 @@ Orden:
 
 | clase | fecha | superficie | artefacto | proposito |
 | --- | --- | --- | --- | --- |
-| workpaper | 2026-06-16 | `operativa` | [WAVE_ATOMICA_REPOS_20260616.md](../operativa/WAVE_ATOMICA_REPOS_20260616.md) | Packet de la wave atomica de repositorios. |
-| workpaper | 2026-06-15 | `operativa` | [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](../operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md) | Consolidacion operativa por waves cortas. |
+| workpaper | 2026-06-16 | `operativa` | [WAVE_ATOMICA_REPOS_20260616.md](../operativa/archive/legacy-root/20260616/WAVE_ATOMICA_REPOS_20260616.md) | Packet de la wave atomica de repositorios. |
+| workpaper | 2026-06-15 | `operativa` | [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](../operativa/archive/legacy-root/20260615/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md) | Consolidacion operativa por waves cortas. |
 | workpaper | 2026-06-15 | `operativa` | [TRACE.md](../operativa/TRACE.md) | Traza operativa fuente-proceso-salida-hito-cierre. |
 | workpaper | 2026-06-16 | `inventarios` | [AGENTES_SKILLS_RECETAS_20260616.md](../inventarios/AGENTES_SKILLS_RECETAS_20260616.md) | Mapa corto de conexiones entre agentes, skills y recetas. |
 | workpaper | 2026-06-15 | `inventarios` | [HILOS_A_CANON_20260615.md](../inventarios/HILOS_A_CANON_20260615.md) | Cruce de hilos con canon reusable. |
@@ -45,7 +45,7 @@ Orden:
 
 | clase | fecha | superficie | artefacto | proposito |
 | --- | --- | --- | --- | --- |
-| readback | 2026-06-15 | `operativa` | [READBACK_CIERRE_20260615.md](../operativa/READBACK_CIERRE_20260615.md) | Readback de cierre del workbench. |
+| readback | 2026-06-15 | `operativa` | [READBACK_CIERRE_20260615.md](../operativa/archive/legacy-root/20260615/READBACK_CIERRE_20260615.md) | Readback de cierre del workbench. |
 | readback | 2026-06-15 | `atomic` | [CODEX_ATOMIC_READBACK.md](../atomic/CODEX_ATOMIC_READBACK.md) | Readback atomico de superficie de codex. |
 | readback | 2026-06-15 | `dataverse` | [READBACK_EXCEL_BLOCKER_FRONTIER.md](../dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md) | Readback de la frontera blocker de Excel/Dataverse. |
 | readback | 2026-06-15 | `outputs/live_repo_review_20260615` | [READBACK.md](../outputs/live_repo_review_20260615/READBACK.md) | Readback del review vivo de repos. |

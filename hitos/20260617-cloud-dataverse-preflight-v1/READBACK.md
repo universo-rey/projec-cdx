@@ -12,8 +12,8 @@ Se releyo el hilo F y se reejecutaron los chequeos permitidos sobre el HEAD actu
 
 ## Salida
 
-- Readback operativo en `operativa/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md`.
-- Matriz corta en `operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617.csv`.
+- Readback operativo en `operativa/archive/legacy-root/20260617/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md`.
+- Matriz corta en `operativa/archive/legacy-root/20260617/CLOUD_DATAVERSE_PREFLIGHT_20260617.csv`.
 - Hito versionado en `hitos/20260617-cloud-dataverse-preflight-v1`.
 
 ## Validacion

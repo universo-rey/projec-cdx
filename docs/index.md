@@ -25,7 +25,7 @@ Esta carpeta concentra la documentacion canonica del proyecto y enlaza la eviden
 
 - [Arquitectura](arquitectura/index.md)
 - [Gobernanza](gobernanza/index.md)
-- [Operativa](operativa/index.md)
+- [Operativa](operativa/archive/legacy-root/undated/index.md)
 - [Datos](datos/index.md)
 - [Herramientas](herramientas/index.md)
 - [Modelos](modelos/index.md)

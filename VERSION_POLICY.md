@@ -17,7 +17,7 @@ etiquetas:
   - rollback
   - g7
 relacionados:
-  - operativa/ACTA_RUNTIME_VERSIONING_SNAPSHOTS_20260622.md
+  - operativa/archive/legacy-root/20260622/ACTA_RUNTIME_VERSIONING_SNAPSHOTS_20260622.md
 descripcion: Politica de versionado continuo, snapshots y restauracion gobernada de runtime.
 ---
 

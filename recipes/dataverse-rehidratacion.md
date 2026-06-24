@@ -11,7 +11,7 @@ Cuando el frente Dataverse ya tiene evidencia local, pero el hilo necesita volve
 1. Leer `hitos/20260615-sincronizacion-tiempo-real-v1/README.md`.
 2. Leer `dataverse/INDICE_DATAVERSE.md`.
 3. Leer `dataverse/GATE.md`, `dataverse/README.md` y `dataverse/MAPA.md`.
-4. Leer `operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md` si la wave se va a repartir en agentes.
+4. Leer `operativa/archive/legacy-root/undated/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md` si la wave se va a repartir en agentes.
 5. Si el delta toca archivo, leer `hitos/INDICE_MAESTRO.md` y `hitos/_archivo/README.md` antes de mover nada.
 6. Clasificar el estado como `local_evidence`, `metadata_only`, `prepared_not_executed`, `live_rows_confirmed` o `blocked`.
 7. Si el siguiente paso sigue abierto, volver a la ancla corta y a `operativa/TRACE.md`.

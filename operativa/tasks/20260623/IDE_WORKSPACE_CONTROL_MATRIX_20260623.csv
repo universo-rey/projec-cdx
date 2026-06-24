@@ -1,0 +1,9 @@
+surface,path,status,classification,action,gate_required,evidence
+workspace_root,C:\CEO\project-cdx,READY,CORE_CANONICAL_ROOT,use_as_vscode_insiders_entrypoint,false,tools/ceo-ide-workspace-status.ps1
+physical_alias,C:\Users\enzo1\PROJEC CDX,READY,ALIAS_NOT_SECOND_WORKSPACE,do_not_open_as_second_project,false,tools/ceo-ide-workspace-status.ps1
+code_workspace,.cabina\SDU_RUNTIME_ROOT\03_PROVIDERS\VSCODE_INSIDERS\WORKSPACES\SDU-FEDERAL-CONTROL.code-workspace,OBSERVED,OBSERVED_NO_CORE,read_only_no_absorb,false,tools/ceo-ide-workspace-status.ps1
+code_workspace,.cabina\SDU_RUNTIME_ROOT\03_PROVIDERS\VSCODE_INSIDERS\WORKSPACES\sdu-organizacion-total.code-workspace,OBSERVED,OBSERVED_NO_CORE,read_only_no_absorb,false,tools/ceo-ide-workspace-status.ps1
+nested_repo,.cabina,OBSERVED,OBSERVED_NO_ABSORB,do_not_absorb_nested_repo,true,tools/ceo-ide-workspace-status.ps1
+local_config,.vscode\settings.json,READY,LOCAL_CONFIG,keep_terminal_canonical,false,.vscode/settings.json
+local_config,.vscode\tasks.json,READY,LOCAL_CONFIG,invoke_workspace_control_task,false,.vscode/tasks.json
+command,tools\ceo-ide-workspace-status.ps1,READY,COMMAND_CANDIDATE,promote_as_ceo_ide_workspace_status,false,tools/ceo-ide-workspace-status.ps1

@@ -1,0 +1,25 @@
+{
+  "artifact_id": "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_CAPABILITY_MATRIX_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_GOBERNADA_PRODUCTIVA_G1"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_CAPABILITY_MATRIX_20260623.csv",
+  "etiquetas": [
+    "productiva",
+    "capabilities",
+    "sdu",
+    "local-only"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/READBACK_CEO_PRODUCTIVE_CELL_G1_20260623.md"
+  ],
+  "descripcion": "Matriz de capacidades productivas G1 para convertir la cabina en fabrica operativa reutilizable."
+}
+

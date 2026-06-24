@@ -1,0 +1,33 @@
+{
+  "estado_final": "SUCCESS_LOCAL_COMMIT_WITH_CLASSIFIED_DIRTY_RESIDUAL",
+  "cabina_commit": "0bf5189f889fa557c9fcf497a76c24bd30c08f4b",
+  "runtime_state_commit": "e019422734f40419fbbc2f28585c0e408b01537d",
+  "snapshot_id": "CEORUNTIME_20260623_1246",
+  "snapshot_aligned_to_head": true,
+  "runtime_status_after": "WARN_DIRTY_RESIDUAL_LOCAL_ONLY",
+  "dirty_residual": [
+    "84 untracked residual paths remained after the runtime commit, excluding the accidental verifier basetemp",
+    "86 untracked residual paths remain after generating this final readback pair",
+    ".cabina/organizacion-total/* local outputs, proposals and .previous backups remain unversioned",
+    ".gitignore.previous-* backups remain unversioned",
+    "operativa/tasks/20260623/CEO_RUNTIME_ENV_CONTRACT_20260623.md remains unversioned",
+    "operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv remains unversioned",
+    "operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv.meta.json remains unversioned",
+    "operativa/runtime-events/FINAL_READBACK_RUNTIME_STATE_AND_SNAPSHOT_ALIGNMENT_G1.md generated post-commit",
+    "operativa/runtime-events/FINAL_READBACK_RUNTIME_STATE_AND_SNAPSHOT_ALIGNMENT_G1.json generated post-commit"
+  ],
+  "staging_final": "EMPTY",
+  "validaciones": {
+    "tools_validate": "PASS - 135 metadatos validos",
+    "sdu_sentinel_check": "PASS - temp externo dedicado",
+    "git_diff_check": "PASS",
+    "ceo_runtime_status": "WARN - dirty residual local clasificado"
+  },
+  "remote": {
+    "push": false,
+    "pr": false,
+    "live": false
+  },
+  "nota_tecnica": "Se retiro un basetemp accidental de pytest creado durante la verificacion con ruta sanitizada dentro del repo; no era superficie objetivo de usuario, cabina, runtime, snapshot ni evidencia.",
+  "siguiente_accion": "Abrir carril separado de decision owner para superficies locales residuales no incluidas en el pathspec runtime."
+}

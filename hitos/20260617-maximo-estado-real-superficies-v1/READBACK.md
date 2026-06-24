@@ -16,9 +16,9 @@ todas las superficies.
 
 ## Salida
 
-- `operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md`
-- `operativa/MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.csv`
-- `operativa/FAN_IN_AGENTES_MAXIMO_ESTADO_REAL_20260617.csv`
+- `operativa/archive/legacy-root/20260617/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md`
+- `operativa/archive/legacy-root/20260617/MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.csv`
+- `operativa/archive/legacy-root/20260617/FAN_IN_AGENTES_MAXIMO_ESTADO_REAL_20260617.csv`
 - `hitos/20260617-maximo-estado-real-superficies-v1`
 
 ## Cierre

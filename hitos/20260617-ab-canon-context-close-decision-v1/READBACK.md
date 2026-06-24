@@ -12,8 +12,8 @@ Se relevaron los contratos vivos de `HILO_A_CABINA_CANON` y `HILO_B_SDU_CANON`, 
 
 ## Salida
 
-- Readback operativo en `operativa/READBACK_AB_CANON_CONTEXT_CLOSE_DECISION_20260617.md`.
-- Matriz de PRs en `operativa/AB_CANON_CONTEXT_PR_MATRIX_20260617.csv`.
+- Readback operativo en `operativa/archive/legacy-root/20260617/READBACK_AB_CANON_CONTEXT_CLOSE_DECISION_20260617.md`.
+- Matriz de PRs en `operativa/archive/legacy-root/20260617/AB_CANON_CONTEXT_PR_MATRIX_20260617.csv`.
 - Hito versionado en `hitos/20260617-ab-canon-context-close-decision-v1`.
 
 ## Validacion
