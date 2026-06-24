@@ -46,12 +46,21 @@ $toolScripts = Get-ChildItem -LiteralPath (Join-Path $Root 'tools') -File |
 
 $payload = [PSCustomObject]@{
     command = 'ceo-command-index'
-    root = $Root
+    root = '<REPO_ROOT>'
     generated_at = (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ssZ')
     tools_count = @($toolScripts).Count
     project_scripts_count = @(Get-ProjectScripts).Count
     project_scripts = @(Get-ProjectScripts)
     tool_scripts = @($toolScripts)
+    g3_trace_intelligence_commands = @(
+        'ceo-trace-indexer.ps1',
+        'ceo-trace-query.ps1',
+        'ceo-trace-dashboard.ps1',
+        'ceo-anomaly-detector.ps1',
+        'ceo-alert-engine.ps1',
+        'ceo-replay-control.ps1',
+        'ceo-policy-feedback.ps1'
+    )
     frontera = @{
         no_external = $true
         no_secret_read = $true
@@ -62,4 +71,3 @@ $payload = [PSCustomObject]@{
 if ($Json -or $true) {
     $payload | ConvertTo-Json -Depth 8
 }
-

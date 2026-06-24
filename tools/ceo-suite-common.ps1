@@ -2417,3 +2417,109 @@ function Get-CeoBusMetrics {
         invalid = $invalid.Count
     }
 }
+
+function Get-CeoTraceIntelligenceRoot {
+    param(
+        [string] $TraceRoot,
+        [string] $EventStoreRoot,
+        [string] $StateRoot
+    )
+
+    $candidate = $TraceRoot
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $candidate = $env:SDU_TRACE_INTELLIGENCE_ROOT
+    }
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $repo = Get-CeoSuiteRoot
+        $candidate = Join-Path (Join-Path (Join-Path $repo ".cabina") "runtime") "trace-intelligence"
+    }
+
+    $resolved = Resolve-CeoSuitePath -Path $candidate
+    $repoRoot = [System.IO.Path]::GetFullPath((Get-CeoSuiteRoot))
+    if (-not $resolved.StartsWith($repoRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+        throw "TRACE_INTELLIGENCE_ROOT_OUTSIDE_REPO:$resolved"
+    }
+
+    return $resolved
+}
+
+function Initialize-CeoTraceIntelligenceState {
+    param(
+        [string] $TraceRoot,
+        [string] $EventStoreRoot,
+        [string] $StateRoot
+    )
+
+    $root = Get-CeoTraceIntelligenceRoot -TraceRoot $TraceRoot -EventStoreRoot $EventStoreRoot -StateRoot $StateRoot
+    $paths = [ordered]@{
+        Root = $root
+        Dashboard = Join-Path $root "dashboard"
+        Index = Join-Path $root "index"
+        Queries = Join-Path $root "queries"
+        Anomalies = Join-Path $root "anomalies"
+        Alerts = Join-Path $root "alerts"
+        Recommendations = Join-Path $root "recommendations"
+        Views = Join-Path $root "views"
+        Evidence = Join-Path $root "evidence"
+        State = Join-Path $root "state"
+        IndexFile = Join-Path (Join-Path $root "index") "trace-index.json"
+        DashboardStateFile = Join-Path (Join-Path $root "dashboard") "dashboard-state.json"
+        DashboardMarkdownFile = Join-Path (Join-Path $root "dashboard") "dashboard.md"
+        DashboardHtmlFile = Join-Path (Join-Path $root "dashboard") "dashboard.html"
+        AnomalyConfigFile = Join-Path (Join-Path $root "state") "anomaly-config.json"
+        AnomaliesFile = Join-Path (Join-Path $root "anomalies") "anomalies.json"
+        AlertsFile = Join-Path (Join-Path $root "alerts") "alerts.json"
+        AlertsMarkdownFile = Join-Path (Join-Path $root "alerts") "alerts.md"
+        RecommendationsFile = Join-Path (Join-Path $root "recommendations") "recommendations.json"
+        ReplayControlFile = Join-Path (Join-Path $root "views") "replay-control.json"
+        ReplayControlMarkdownFile = Join-Path (Join-Path $root "views") "replay-control.md"
+    }
+
+    foreach ($key in @("Root", "Dashboard", "Index", "Queries", "Anomalies", "Alerts", "Recommendations", "Views", "Evidence", "State")) {
+        New-Item -ItemType Directory -Force -Path $paths[$key] | Out-Null
+    }
+
+    return [PSCustomObject]$paths
+}
+
+function ConvertTo-CeoRuntimePlaceholder {
+    param(
+        [string] $Path,
+        [string] $Placeholder = "<RUNTIME_PATH>"
+    )
+
+    if ([string]::IsNullOrWhiteSpace($Path)) {
+        return $Placeholder
+    }
+
+    return $Placeholder
+}
+
+function Get-CeoTraceIntelligenceSeverityValues {
+    return @("LOW", "MEDIUM", "HIGH", "CRITICAL")
+}
+
+function Get-CeoTraceIntelligenceAlertStatusValues {
+    return @("OPEN", "ACKNOWLEDGED", "SUPPRESSED", "CLOSED")
+}
+
+function Get-CeoTraceIntelligenceAlertChannelValues {
+    return @("LOCAL_CONSOLE", "LOCAL_JSON", "LOCAL_MARKDOWN", "DASHBOARD_HIGHLIGHT")
+}
+
+function Add-CeoTraceIntelligenceCount {
+    param(
+        [Parameter(Mandatory = $true)]
+        [hashtable] $Map,
+        [Parameter(Mandatory = $true)]
+        [string] $Key
+    )
+
+    if ([string]::IsNullOrWhiteSpace($Key)) {
+        $Key = "UNKNOWN"
+    }
+    if (-not $Map.ContainsKey($Key)) {
+        $Map[$Key] = 0
+    }
+    $Map[$Key] = [int]$Map[$Key] + 1
+}

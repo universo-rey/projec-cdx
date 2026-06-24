@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/anomaly.schema.json",
+  "title": "CEO G3 Trace Anomaly",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "anomaly_id",
+    "detected_at",
+    "type",
+    "severity",
+    "event_ids",
+    "correlation_ids",
+    "evidence_path",
+    "recommendation"
+  ],
+  "properties": {
+    "anomaly_id": { "type": "string", "minLength": 1 },
+    "detected_at": { "type": "string", "format": "date-time" },
+    "type": {
+      "type": "string",
+      "enum": [
+        "RETRY_LOOP",
+        "DLQ_BUILDUP",
+        "POLICY_BLOCK_SPIKE",
+        "PROCESSING_STUCK",
+        "REPLAY_FAILURE"
+      ]
+    },
+    "severity": { "$ref": "#/$defs/severity" },
+    "event_ids": { "type": "array", "items": { "type": "string" } },
+    "correlation_ids": { "type": "array", "items": { "type": "string" } },
+    "evidence_path": { "type": "string", "minLength": 1 },
+    "recommendation": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "severity": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+    }
+  }
+}

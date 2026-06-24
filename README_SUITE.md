@@ -144,6 +144,38 @@ Flujo visible:
 trace -> chain -> decisions -> conflictResolution -> finalState -> executionPath
 ```
 
+## G3_TRACE_INTELLIGENCE_LAYER
+
+G3 agrega observabilidad local sobre el event bus persistente de G2:
+
+- Indexacion: `tools\ceo-trace-indexer.ps1`.
+- Consulta: `tools\ceo-trace-query.ps1`.
+- Dashboard local: `tools\ceo-trace-dashboard.ps1`.
+- Deteccion de anomalias: `tools\ceo-anomaly-detector.ps1`.
+- Alertas locales: `tools\ceo-alert-engine.ps1`.
+- Control de replay: `tools\ceo-replay-control.ps1`.
+- Feedback de policy: `tools\ceo-policy-feedback.ps1`.
+
+Limites:
+
+- Alertas: `LOCAL_ONLY`.
+- Recomendaciones: `SUGGESTION_ONLY`.
+- Replay: `DRY_RUN_ONLY`.
+- Dashboard: solo runtime local, no publica superficie web.
+- Rutas visibles: placeholders como `<EVENT_STORE_PATH>`, `<TRACE_INDEX_PATH>`, `<DASHBOARD_DATA_PATH>` y `<EVIDENCE_PATH>`.
+
+Validacion:
+
+```powershell
+.\tests\run-trace-indexer-tests.ps1
+.\tests\run-trace-query-tests.ps1
+.\tests\run-trace-dashboard-smoke.ps1
+.\tests\run-anomaly-detection-tests.ps1
+.\tests\run-alert-engine-tests.ps1
+.\tests\run-replay-control-tests.ps1
+.\tests\run-policy-feedback-tests.ps1
+```
+
 Skill: `repo-agent-tool-governance`.
 Recetas: `agentes-atomicos-algoritmicos-en-waves`, `cierre-wave-documental`.
 Stop condition: cualquier secreto, live write, mutacion fuera del repo o perdida de fail-closed.

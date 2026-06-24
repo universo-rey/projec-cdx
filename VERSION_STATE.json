@@ -4,7 +4,7 @@
   "version_actual": "v0.6.0-rc1",
   "baseline_version": "v0.6.0-rc1",
   "branch": "codex/runtime-versioning-snapshots",
-  "commit": "3cf7a92f",
+  "commit": "c856fa9b",
   "commits_ahead_baseline": 47,
   "generated_at_utc": "2026-06-24T17:37:11Z",
   "dirty": true,
@@ -136,6 +136,22 @@
     "traceability": "ENABLED",
     "replay": "DRY_RUN_ENABLED",
     "runtime_isolation": "REQUIRED"
+  },
+  "g3": {
+    "state": "TRACE_INTELLIGENCE_LAYER",
+    "mode": "LOCAL_FIRST",
+    "dashboard": "ENABLED_LOCAL",
+    "timeline": "ENABLED",
+    "trace_graph": "ENABLED",
+    "query_engine": "ENABLED",
+    "anomaly_detection": "ENABLED_LOCAL",
+    "alerts": "LOCAL_ONLY",
+    "policy_feedback": "SUGGESTION_ONLY",
+    "replay_control": "DRY_RUN_ONLY",
+    "runtime_isolation": "REQUIRED",
+    "live_write": false,
+    "push": false,
+    "pr": false
   },
   "delta_count": 56,
   "integrity": "PENDING_STAGE"
