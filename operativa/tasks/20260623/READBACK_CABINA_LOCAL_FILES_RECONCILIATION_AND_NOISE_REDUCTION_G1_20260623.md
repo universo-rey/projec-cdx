@@ -33,47 +33,22 @@ CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_READY
 
 ## 2. Resumen del inventario
 
-- git status entries: 1387
+- git status entries: 7
 - repos boundaries observed: 2
 - agent asset groups: 8
 - sdk matches: 6
-- safe ignore candidates: 3
-- gate candidates: 200
+- safe ignore candidates: 0
+- gate candidates: 2
 
 ## 3. Categorias principales
 
-- EVIDENCE: 638
-- UNKNOWN_REVIEW: 323
-- LEGACY_READONLY: 256
-- CONFIG: 75
-- TOOL: 62
-- SNAPSHOT: 15
-- RECIPE: 8
-- CORE_REPO: 6
-- OUT: 3
-- BUSINESS_DOCUMENT: 1
+- SNAPSHOT: 4
+- UNKNOWN_REVIEW: 2
+- EVIDENCE: 1
 
 ## 4. Raices y superficies
 
-- operativa: 1094
-- hitos: 165
-- tools: 63
-- procesos: 10
-- docs: 9
-- dataverse: 8
-- inventarios: 7
-- recipes: 7
-- patrones: 6
-- .github: 3
-- playbooks: 3
-- outputs: 3
-- workbooks: 2
-- MAPA_CORTO.md: 1
-- README_ARRANQUE_CODEX_CLOUD.md: 1
-- README_CORTO.md: 1
-- live-manifest.json: 1
-- index.json: 1
-- VERSION_POLICY.md: 1
+- operativa: 6
 - VERSION_STATE.json: 1
 
 ## 5. Ruido operativo detectado
@@ -106,17 +81,11 @@ CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_READY
 
 ## 8. Candidatos a quarantine / hold
 
-- README_ARRANQUE_CODEX_CLOUD.md => DEFERRED_WITH_REASON
-- operativa/20260616-limpieza-repos-findings.md => DEFERRED_WITH_REASON
-- operativa/20260616-limpieza-repos-progress.md => DEFERRED_WITH_REASON
-- operativa/20260616-limpieza-repos-task-plan.md => DEFERRED_WITH_REASON
-- operativa/ACTA_AJUSTES_POST_AUDITORIA_20260622.md => DEFERRED_WITH_REASON
+- operativa/HISTORY_RUNTIME_EVOLUTION.md => BLOCKED_NEEDS_OWNER
+- operativa/tasks/20260623/CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_20260623.csv => BLOCKED_NEEDS_OWNER
 
 ## 9. Acciones seguras propuestas
 
-- outputs/control_operativo_20260615/MANIFEST.json => GENERATED_CACHE
-- outputs/universe_relationship_audit_20260614/UNIVERSE_RELATIONSHIP_AUDIT.csv => GENERATED_CACHE
-- outputs/universe_relationship_audit_20260614/UNIVERSE_RELATIONSHIP_AUDIT.md => GENERATED_CACHE
 
 ## 10. Acciones que requieren gate
 
