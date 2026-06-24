@@ -166,7 +166,7 @@ function Get-StatusEntries {
                 class = $class
                 decision = $decision
                 tracked_kind = if ($status -match '^\?\?') { 'untracked' } elseif ($status -match '^ D|^D') { 'deleted' } elseif ($status -match '^ M|^M |^A|^AM|^MM|^R') { 'tracked' } else { 'other' }
-                owner_gate = if ($decision -in @('BLOCKED_NEEDS_OWNER', 'DEFERRED_WITH_REASON')) { $true } else { $false }
+                owner_gate = if ($decision -in @('BLOCKED_NEEDS_OWNER', 'DEFERRED_WITH_REASON', 'OWNER_HOLD_GOVERNED')) { $true } else { $false }
                 safe_to_ignore = if ($decision -in @('GENERATED_CACHE', 'SCRATCH')) { $true } else { $false }
                 safe_to_version = if ($decision -in @('VERSIONABLE_CANON', 'VERSIONABLE_READBACK', 'LOCAL_CONFIG')) { $true } else { $false }
                 safe_to_delete = $false
@@ -241,6 +241,10 @@ function Get-LocalDecision {
         [string] $Class
     )
 
+    if (Test-OwnerHoldDecision -Path $Path) {
+        return 'OWNER_HOLD_GOVERNED'
+    }
+
     switch ($Class) {
         'SENSITIVE_DOCUMENT' { return 'BLOCKED_NEEDS_OWNER' }
         'CACHE' { return 'GENERATED_CACHE' }
@@ -269,6 +273,24 @@ function Get-LocalDecision {
         'LEGACY_READONLY' { return 'DEFERRED_WITH_REASON' }
         default { return 'BLOCKED_NEEDS_OWNER' }
     }
+}
+
+function Test-OwnerHoldDecision {
+    param([string] $Path)
+
+    $normalized = ($Path -replace '\\', '/')
+    $gateCsv = 'operativa/tasks/20260623/CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_20260623.csv'
+    if ($normalized -ne $gateCsv) {
+        return $false
+    }
+
+    $decisionRoot = Join-Path $Root 'operativa/tasks/20260624'
+    if (-not (Test-Path -LiteralPath $decisionRoot)) {
+        return $false
+    }
+
+    $decisionFiles = @(Get-ChildItem -LiteralPath $decisionRoot -Recurse -File -Filter 'OWNER_DECISION_CLEANUP_GATE_HOLD_20260624.md' -ErrorAction SilentlyContinue)
+    return ($decisionFiles.Count -gt 0)
 }
 
 function Get-RepoBoundaries {
@@ -414,6 +436,7 @@ function Get-NoisePlan {
 
     $safeCandidates = @($Entries | Where-Object { $_.decision -in @('GENERATED_CACHE', 'SCRATCH') } | Select-Object -First 200)
     $gateCandidates = @($Entries | Where-Object { $_.decision -in @('BLOCKED_NEEDS_OWNER', 'DEFERRED_WITH_REASON') } | Select-Object -First 200)
+    $holdCandidates = @($Entries | Where-Object { $_.decision -eq 'OWNER_HOLD_GOVERNED' } | Select-Object -First 200)
     $versionable = @($Entries | Where-Object { $_.decision -in @('VERSIONABLE_CANON', 'VERSIONABLE_READBACK', 'LOCAL_CONFIG') } | Select-Object -First 200)
     $neverDelete = @(
         'Evidence readbacks',
@@ -430,6 +453,7 @@ function Get-NoisePlan {
         safe_ignore_patterns = $safeIgnorePatterns
         safe_candidates = $safeCandidates
         gate_candidates = $gateCandidates
+        hold_candidates = $holdCandidates
         versionable = $versionable
         never_delete = $neverDelete
     }
@@ -454,6 +478,14 @@ function Get-CleanupDryRun {
         }
     })
 
+    $hold = @($NoisePlan.hold_candidates | ForEach-Object {
+        [PSCustomObject]@{
+            path = $_.path
+            decision = $_.decision
+            reason = 'Owner decision already recorded; keep as governed hold'
+        }
+    })
+
     $versionable = @($NoisePlan.versionable | ForEach-Object {
         [PSCustomObject]@{
             path = $_.path
@@ -466,6 +498,7 @@ function Get-CleanupDryRun {
         dryrun_status = 'DRYRUN_ONLY_NO_ACTION'
         safe = $safe
         requires_gate = $gate
+        hold_governed = $hold
         versionable = $versionable
         reversal = [PSCustomObject]@{
             method = 'No destructive actions executed; revert by removing generated outputs only if owner asks.'
@@ -840,11 +873,12 @@ function Write-Outputs {
 
     $gateStatus = [PSCustomObject]@{
         command = 'ceo-cleanup-gate-status'
-        status = if ($cleanup.requires_gate.Count -gt 0) { 'CABINA_CLEANUP_GATE_PENDING' } else { 'CABINA_CLEANUP_GATE_CLEAR' }
+        status = if ($cleanup.requires_gate.Count -gt 0) { 'CABINA_CLEANUP_GATE_PENDING' } elseif ($cleanup.hold_governed.Count -gt 0) { 'CABINA_CLEANUP_GATE_HOLD_GOVERNED' } else { 'CABINA_CLEANUP_GATE_CLEAR' }
         generated_at = $inventory.generated_at
         owner_decisions_required = @($cleanup.requires_gate | Select-Object -First 25)
+        owner_holds_governed = @($cleanup.hold_governed | Select-Object -First 25)
         safe_candidates = @($cleanup.safe | Select-Object -First 25)
-        next_action = if ($cleanup.requires_gate.Count -gt 0) { 'hold_until_owner_decision' } else { 'safe_to_prepare_archive_candidates_only' }
+        next_action = if ($cleanup.requires_gate.Count -gt 0) { 'hold_until_owner_decision' } elseif ($cleanup.hold_governed.Count -gt 0) { 'owner_hold_governed_no_auto_resolution' } else { 'safe_to_prepare_archive_candidates_only' }
         frontier = [PSCustomObject]@{
             no_delete = $true
             no_move = $true
@@ -964,6 +998,7 @@ If the owner later authorizes an apply pass, reversal is:
         sdk_assets = $sdkMap
         noise_plan = $noise
         cleanup_dryrun = $dryrun
+        cleanup_gate_status = $gateStatus
         frontier = [PSCustomObject]@{
             no_delete = $true
             no_move = $true
@@ -983,7 +1018,7 @@ $payload = switch ($Mode) {
     'sdk-assets' { (Write-Outputs).sdk_assets }
     'noise-plan' { (Write-Outputs).noise_plan }
     'cleanup-dryrun' { (Write-Outputs).cleanup_dryrun }
-    'cleanup-gate-status' { [PSCustomObject]@{ command = 'ceo-cleanup-gate-status'; status = 'CABINA_CLEANUP_GATE_PENDING'; details = (Write-Outputs).cleanup_dryrun } }
+    'cleanup-gate-status' { (Write-Outputs).cleanup_gate_status }
     'all' { Write-Outputs }
 }
 

@@ -38,16 +38,17 @@ CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_READY
 - agent asset groups: 8
 - sdk matches: 6
 - safe ignore candidates: 0
-- gate candidates: 1
+- gate candidates: 0
 
 ## 3. Categorias principales
 
-- EVIDENCE: 1
+- TOOL: 1
 - UNKNOWN_REVIEW: 1
 
 ## 4. Raices y superficies
 
-- operativa: 2
+- operativa: 1
+- tools: 1
 
 ## 5. Ruido operativo detectado
 
@@ -79,7 +80,6 @@ CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_READY
 
 ## 8. Candidatos a quarantine / hold
 
-- operativa/tasks/20260623/CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_20260623.csv => BLOCKED_NEEDS_OWNER
 
 ## 9. Acciones seguras propuestas
 
