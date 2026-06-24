@@ -28,6 +28,12 @@ if (Test-Path -LiteralPath $trace.AlertsFile -PathType Leaf) {
 
 $dlqCount = [int](Get-CeoEventBusProperty -InputObject $index.dlq_summary -Name "count" -Default 0)
 $failedCount = [int](Get-CeoEventBusProperty -InputObject $index.queue_summary -Name "failed" -Default 0)
+$liveRoot = Initialize-CeoLiveOperationsState
+$liveRequested = @(Get-ChildItem -LiteralPath $liveRoot.Requests -Filter "*.json" -File -ErrorAction SilentlyContinue).Count
+$liveApprovals = @(Get-ChildItem -LiteralPath $liveRoot.Approvals -Filter "*.json" -File -ErrorAction SilentlyContinue).Count
+$liveSimulated = @(Get-ChildItem -LiteralPath $liveRoot.Simulations -Filter "*.json" -File -ErrorAction SilentlyContinue).Count
+$liveRollback = @(Get-ChildItem -LiteralPath $liveRoot.Rollback -Filter "*.json" -File -ErrorAction SilentlyContinue).Count
+$liveAuditReady = Test-Path -LiteralPath $liveRoot.AuditJson -PathType Leaf
 $health = "OK"
 if ($dlqCount -gt 0 -or $failedCount -gt 0 -or $alertCount -gt 0) {
     $health = "WARN"
@@ -58,6 +64,16 @@ $state = [ordered]@{
     alerts = [ordered]@{
         count = $alertCount
     }
+    live_operations = [ordered]@{
+        requested = $liveRequested
+        blocked = 0
+        hold_owner = 0
+        multi_owner_pending = [Math]::Max(0, $liveRequested - $liveApprovals)
+        simulated = $liveSimulated
+        rollback_validated = $liveRollback
+        audit_ready = [bool]$liveAuditReady
+        live_real_enabled = $false
+    }
     timeline = @($index.events_by_time | Select-Object -Last 20)
 }
 Save-CeoEventBusJson -Path $trace.DashboardStateFile -InputObject $state
@@ -79,6 +95,14 @@ $md = @(
     "",
     "## Alerts",
     "- open/local: $alertCount",
+    "",
+    "## Live Operations",
+    "- requested: $liveRequested",
+    "- multi_owner_pending: $([Math]::Max(0, $liveRequested - $liveApprovals))",
+    "- simulated: $liveSimulated",
+    "- rollback_validated: $liveRollback",
+    "- audit_ready: $([bool]$liveAuditReady)",
+    "- live_real_enabled: false",
     "",
     "## Replay",
     "- dry_run_only: true",

@@ -35,6 +35,7 @@ $risk = [string](Get-CeoEventBusProperty -InputObject $event -Name "risk" -Defau
 $action = [string](Get-CeoEventBusProperty -InputObject $payload -Name "action" -Default "")
 $actionType = [string](Get-CeoEventBusProperty -InputObject $payload -Name "action_type" -Default "")
 $actionMode = [string](Get-CeoEventBusProperty -InputObject $payload -Name "mode" -Default "")
+$environment = [string](Get-CeoEventBusProperty -InputObject $payload -Name "environment" -Default "")
 $evidence = Get-CeoEventBusProperty -InputObject $event -Name "evidence" -Default ([PSCustomObject]@{})
 
 if ([bool](Get-CeoEventBusProperty -InputObject $policy -Name "allows_live" -Default $false)) {
@@ -79,6 +80,35 @@ if ([bool](Get-CeoEventBusProperty -InputObject $payload -Name "delete" -Default
 if ($eventType -match "(?i)ACTION" -and [string]::IsNullOrWhiteSpace($actionType)) {
     $decision = "BLOCK"
     $reasons += "action_event_missing_action_type"
+}
+if (-not [string]::IsNullOrWhiteSpace($environment)) {
+    $envEntry = Get-CeoEnvironmentRegistryEntry -Environment $environment
+    if ($null -eq $envEntry) {
+        $decision = "BLOCK"
+        $reasons += "unknown_environment:$environment"
+    }
+    else {
+        if ([bool]$envEntry.external_write_allowed) {
+            $decision = "BLOCK"
+            $reasons += "environment_external_write_true"
+        }
+        if ($actionMode -eq "LIVE_CONTROLLED_REAL") {
+            $decision = "BLOCK"
+            $reasons += "live_controlled_real_blocked"
+        }
+        if ($actionMode -eq "LIVE_CONTROLLED_SIMULATED" -and $environment -eq "LIVE_CONTROLLED") {
+            $rollback = Get-CeoEventBusProperty -InputObject $payload -Name "rollback" -Default ([PSCustomObject]@{})
+            $approvals = Get-CeoEventBusProperty -InputObject $payload -Name "approvals" -Default ([PSCustomObject]@{})
+            if ([bool](Get-CeoEventBusProperty -InputObject $rollback -Name "required" -Default $false) -ne $true) {
+                $decision = "BLOCK"
+                $reasons += "live_rollback_missing"
+            }
+            elseif ([string](Get-CeoEventBusProperty -InputObject $approvals -Name "approval_status" -Default "") -ne "COMPLETE") {
+                $decision = "HOLD_OWNER"
+                $reasons += "live_multi_owner_pending"
+            }
+        }
+    }
 }
 if ([bool](Get-CeoEventBusProperty -InputObject $evidence -Name "required" -Default $false) -ne $true) {
     $decision = "BLOCK"

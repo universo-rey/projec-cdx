@@ -164,6 +164,21 @@
     "push": false,
     "pr": false
   },
+  "g5": {
+    "state": "CONTROLLED_LIVE_OPERATIONS",
+    "mode": "LOCAL_FIRST_WITH_LIVE_SIMULATION",
+    "live_real_enabled": false,
+    "live_state": "LIVE_ARMED_NOT_ENABLED",
+    "authorization": "REQUIRED",
+    "multi_owner": "REQUIRED",
+    "policy_strict": "ENFORCED",
+    "rollback": "MANDATORY",
+    "external_connectors": "BLOCKED_BY_DEFAULT",
+    "execution_mode": "LIVE_CONTROLLED_SIMULATED_ONLY",
+    "push": false,
+    "pr": false,
+    "live_write": false
+  },
   "delta_count": 56,
   "integrity": "PENDING_STAGE"
 }

@@ -2624,3 +2624,107 @@ function Resolve-CeoActionRisk {
     }
     return $registered
 }
+
+function Get-CeoLiveOperationsRoot {
+    param(
+        [string] $LiveRoot,
+        [string] $StateRoot
+    )
+
+    $candidate = $LiveRoot
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $candidate = $env:SDU_LIVE_OPERATIONS_ROOT
+    }
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $repo = Get-CeoSuiteRoot
+        $candidate = Join-Path (Join-Path (Join-Path $repo ".cabina") "runtime") "live-operations"
+    }
+
+    $resolved = Resolve-CeoSuitePath -Path $candidate
+    $repoRoot = [System.IO.Path]::GetFullPath((Get-CeoSuiteRoot))
+    if (-not $resolved.StartsWith($repoRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+        throw "LIVE_OPERATIONS_ROOT_OUTSIDE_REPO:$resolved"
+    }
+
+    return $resolved
+}
+
+function Initialize-CeoLiveOperationsState {
+    param(
+        [string] $LiveRoot,
+        [string] $StateRoot
+    )
+
+    $root = Get-CeoLiveOperationsRoot -LiveRoot $LiveRoot -StateRoot $StateRoot
+    $paths = [ordered]@{
+        Root = $root
+        Requests = Join-Path $root "requests"
+        Approvals = Join-Path $root "approvals"
+        Preflight = Join-Path $root "preflight"
+        Simulations = Join-Path $root "simulations"
+        Evidence = Join-Path $root "evidence"
+        Rollback = Join-Path $root "rollback"
+        Audit = Join-Path $root "audit"
+        Traces = Join-Path $root "traces"
+        State = Join-Path $root "state"
+        AuditJson = Join-Path (Join-Path $root "audit") "live-audit.json"
+        AuditMarkdown = Join-Path (Join-Path $root "audit") "live-audit.md"
+    }
+
+    foreach ($dir in $paths.Values) {
+        if ($dir -is [string] -and -not [System.IO.Path]::HasExtension($dir)) {
+            New-Item -ItemType Directory -Force -Path $dir | Out-Null
+        }
+    }
+
+    return [PSCustomObject]$paths
+}
+
+function Get-CeoEnvironmentRegistry {
+    $registryPath = Resolve-CeoSuitePath -Path "contracts/environment-registry.json"
+    if (-not (Test-Path -LiteralPath $registryPath -PathType Leaf)) {
+        throw "ENVIRONMENT_REGISTRY_MISSING"
+    }
+
+    return (Get-Content -LiteralPath $registryPath -Raw | ConvertFrom-Json)
+}
+
+function Get-CeoEnvironmentRegistryEntry {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $Environment
+    )
+
+    $registry = Get-CeoEnvironmentRegistry
+    foreach ($entry in @($registry.environments)) {
+        if ([string]$entry.name -eq $Environment) {
+            return $entry
+        }
+    }
+
+    return $null
+}
+
+function Test-CeoSanitizedTarget {
+    param(
+        [string] $Target
+    )
+
+    if ([string]::IsNullOrWhiteSpace($Target)) {
+        return $false
+    }
+
+    $forbidden = @(Test-CeoEventBusForbiddenReferences -Text $Target)
+    if ($forbidden.Count -gt 0) {
+        return $false
+    }
+    if ($Target -match "^[A-Za-z]:[\\/]" -or $Target -match "LIVE_CONTROLLED_REAL") {
+        return $false
+    }
+
+    return $true
+}
+
+function Get-CeoRequiredLiveOwnerRoles {
+    return @("OWNER_OPERATIONAL", "OWNER_CONTROL")
+}

@@ -206,6 +206,48 @@ Validacion:
 .\tests\run-policy-block-tests.ps1
 ```
 
+## G5_CONTROLLED_LIVE_OPERATIONS
+
+G5 prepara operaciones live controladas sin habilitar live real.
+
+Estado inicial:
+
+```text
+LIVE_ARMED_NOT_ENABLED
+```
+
+Componentes:
+
+- Environment registry: `contracts\environment-registry.json`.
+- Live authorization: `tools\ceo-live-authorize.ps1`.
+- Multi-owner gate: `tools\ceo-live-owner-gate.ps1`.
+- Preflight guardrails: `tools\ceo-live-preflight.ps1`.
+- Executor simulado: `tools\ceo-live-executor.ps1`.
+- Rollback dry-run: `tools\ceo-live-rollback.ps1`.
+- Audit local: `tools\ceo-live-audit.ps1`.
+
+Reglas:
+
+- Live real: disabled.
+- External write: disabled.
+- Multi-owner obligatorio para `LIVE_CONTROLLED`.
+- Rollback obligatorio.
+- Toda ejecucion inicial es `LIVE_CONTROLLED_SIMULATED`.
+- Dashboard sigue local y no escribe en `web/`.
+
+Validacion:
+
+```powershell
+.\tests\run-live-contract-tests.ps1
+.\tests\run-live-authorization-tests.ps1
+.\tests\run-multi-owner-tests.ps1
+.\tests\run-live-preflight-tests.ps1
+.\tests\run-live-execution-simulated-tests.ps1
+.\tests\run-rollback-tests.ps1
+.\tests\run-live-policy-block-tests.ps1
+.\tests\run-live-audit-tests.ps1
+```
+
 Skill: `repo-agent-tool-governance`.
 Recetas: `agentes-atomicos-algoritmicos-en-waves`, `cierre-wave-documental`.
 Stop condition: cualquier secreto, live write, mutacion fuera del repo o perdida de fail-closed.
