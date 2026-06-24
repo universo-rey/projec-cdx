@@ -516,6 +516,29 @@ function Get-CleanupDryRun {
     }
 }
 
+function Get-CleanupGateStatusOnly {
+    $entries = Get-StatusEntries
+    $noisePlan = Get-NoisePlan -Entries $entries
+    $cleanup = Get-CleanupDryRun -Inventory $entries -NoisePlan $noisePlan
+
+    [PSCustomObject]@{
+        command = 'ceo-cleanup-gate-status'
+        status = if ($cleanup.requires_gate.Count -gt 0) { 'CABINA_CLEANUP_GATE_PENDING' } elseif ($cleanup.hold_governed.Count -gt 0) { 'CABINA_CLEANUP_GATE_HOLD_GOVERNED' } else { 'CABINA_CLEANUP_GATE_CLEAR' }
+        generated_at = (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ssZ')
+        owner_decisions_required = @($cleanup.requires_gate | Select-Object -First 25)
+        owner_holds_governed = @($cleanup.hold_governed | Select-Object -First 25)
+        safe_candidates = @($cleanup.safe | Select-Object -First 25)
+        next_action = if ($cleanup.requires_gate.Count -gt 0) { 'hold_until_owner_decision' } elseif ($cleanup.hold_governed.Count -gt 0) { 'owner_hold_governed_no_auto_resolution' } else { 'safe_to_prepare_archive_candidates_only' }
+        frontier = [PSCustomObject]@{
+            no_delete = $true
+            no_move = $true
+            no_push = $true
+            no_pr = $true
+            no_live = $true
+        }
+    }
+}
+
 function New-InventoryText {
     param([object[]] $Entries)
 
@@ -1018,7 +1041,7 @@ $payload = switch ($Mode) {
     'sdk-assets' { (Write-Outputs).sdk_assets }
     'noise-plan' { (Write-Outputs).noise_plan }
     'cleanup-dryrun' { (Write-Outputs).cleanup_dryrun }
-    'cleanup-gate-status' { (Write-Outputs).cleanup_gate_status }
+    'cleanup-gate-status' { Get-CleanupGateStatusOnly }
     'all' { Write-Outputs }
 }
 

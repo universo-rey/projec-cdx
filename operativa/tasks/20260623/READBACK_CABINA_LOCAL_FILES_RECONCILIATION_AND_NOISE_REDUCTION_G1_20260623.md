@@ -42,13 +42,12 @@ CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_READY
 
 ## 3. Categorias principales
 
-- TOOL: 1
+- EVIDENCE: 1
 - UNKNOWN_REVIEW: 1
 
 ## 4. Raices y superficies
 
-- operativa: 1
-- tools: 1
+- operativa: 2
 
 ## 5. Ruido operativo detectado
 
