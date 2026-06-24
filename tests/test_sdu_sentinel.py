@@ -46,6 +46,19 @@ def test_drift_classifier_detects_critical_files() -> None:
     assert sdu_sentinel.classify_status_lines([]) == "NO_DRIFT"
 
 
+def test_governed_local_residual_filter_keeps_tracked_runtime_drift() -> None:
+    filtered = sdu_sentinel._filter_governed_local_residuals(
+        [
+            "?? .agents/",
+            "?? web/",
+            " M tools/sdu_boot.ps1",
+        ]
+    )
+
+    assert filtered == [" M tools/sdu_boot.ps1"]
+    assert sdu_sentinel.classify_status_lines(filtered) == "UNEXPECTED_RUNTIME_DRIFT"
+
+
 def test_event_jsonl_valid_and_secret_free(tmp_path: Path) -> None:
     event_path = tmp_path / "events.jsonl"
     event = sdu_sentinel.make_event(
@@ -66,3 +79,28 @@ def test_scan_reports_boundary_present() -> None:
     payload = sdu_sentinel.scan()
     names = {check["name"]: check for check in payload["checks"]}
     assert names["boundary_matrix_present"]["status"] == "PASS"
+
+
+def test_blocked_pattern_scan_skips_generated_outputs_and_tasks(tmp_path: Path) -> None:
+    placeholder_token = "DEV_AUTH_" + "PLACEHOLDER_ONLY"
+    (tmp_path / "outputs" / "suite").mkdir(parents=True)
+    (tmp_path / "operativa" / "tasks" / "20260623").mkdir(parents=True)
+    (tmp_path / "tools").mkdir(parents=True)
+    (tmp_path / "outputs" / "suite" / "event.json").write_text(
+        f'{{"token":"{placeholder_token}"}}',
+        encoding="utf-8",
+    )
+    (tmp_path / "operativa" / "tasks" / "20260623" / "event.json").write_text(
+        f'{{"token":"{placeholder_token}"}}',
+        encoding="utf-8",
+    )
+    config = {"blocked_patterns": [placeholder_token]}
+
+    assert sdu_sentinel._scan_blocked_patterns(config, tmp_path) == []
+
+    (tmp_path / "tools" / "active.json").write_text(
+        f'{{"token":"{placeholder_token}"}}',
+        encoding="utf-8",
+    )
+
+    assert sdu_sentinel._scan_blocked_patterns(config, tmp_path) == ["tools/active.json"]

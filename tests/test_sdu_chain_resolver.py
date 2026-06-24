@@ -81,6 +81,8 @@ def test_sdu_chain_resolver_builds_local_chain(tmp_path: Path) -> None:
     )
     assert payload["agents"][0]["agent"] == "seshat-normativa"
     assert "tools/sdu_boot.ps1" in payload["agents"][0]["tools"]
+    checks = {check["name"]: check for check in payload["checks"]}
+    assert checks["salida:runtime_endpoint"]["status"] == "PASS"
 
 
 def test_cloud_smoke_does_not_load_local_env(monkeypatch, capsys) -> None:

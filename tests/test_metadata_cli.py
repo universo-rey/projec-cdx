@@ -195,6 +195,15 @@ contenido
 """,
     )
     _write(
+        repo / ".agents" / "skills" / "agileagentcanvas-help" / "SKILL.md",
+        """---
+name: help
+description: local Agile Agent Canvas router
+---
+overlay
+""",
+    )
+    _write(
         repo / ".agent" / "schemas-location.md",
         """---
 description: local extension schema pointer
@@ -218,6 +227,69 @@ name: help
 description: external skill router
 ---
 overlay
+""",
+    )
+
+    result = validate_repository(repo, repo / "schema.json")
+
+    assert result.is_valid
+    assert [record.source_path for record in result.records] == ["operativa/MAPA.md"]
+
+
+def test_validate_repository_ignores_non_authoritative_runtime_outputs(tmp_path: Path) -> None:
+    repo = _seed_repo(tmp_path)
+    _write(
+        repo / "operativa" / "MAPA.md",
+        """---
+artifact_id: operativa/MAPA.md
+categoria: operativa
+tipo: mapa
+estado: live
+version: "1"
+autoridad: {tipo: owner, referencia: "@seshat"}
+origen: GitHub
+ubicacion_repo: operativa/MAPA.md
+etiquetas: [operativa]
+relacionados: []
+descripcion: mapa
+---
+contenido
+""",
+    )
+    _write(
+        repo / "outputs" / "pytest" / "operativa" / "MAPA.md",
+        """---
+artifact_id: operativa/MAPA.md
+categoria: operativa
+tipo: mapa
+estado: live
+version: "1"
+autoridad: {tipo: owner, referencia: "@seshat"}
+origen: GitHub
+ubicacion_repo: outputs/pytest/operativa/MAPA.md
+etiquetas: [generated]
+relacionados: []
+descripcion: generated duplicate
+---
+generated
+""",
+    )
+    _write(
+        repo / "operativa" / "tasks" / "20260623" / "MAPA.md",
+        """---
+artifact_id: operativa/MAPA.md
+categoria: operativa
+tipo: mapa
+estado: live
+version: "1"
+autoridad: {tipo: owner, referencia: "@seshat"}
+origen: GitHub
+ubicacion_repo: operativa/tasks/20260623/MAPA.md
+etiquetas: [task]
+relacionados: []
+descripcion: task duplicate
+---
+task
 """,
     )
 

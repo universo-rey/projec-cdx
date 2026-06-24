@@ -102,6 +102,8 @@ ARCHIVED_ROOT_ALIASES = {
     ),
 }
 
+ABSTRACT_ENDPOINT_PREFIXES = ("<RUNTIME_PATH>/",)
+
 
 @dataclass(frozen=True)
 class Check:
@@ -138,6 +140,8 @@ def _existing_path(root: Path, value: str) -> Path | None:
 
 
 def _exists(root: Path, value: str) -> bool:
+    if value.startswith(ABSTRACT_ENDPOINT_PREFIXES):
+        return True
     return _existing_path(root, value) is not None
 
 
