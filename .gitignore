@@ -29,6 +29,7 @@ work/
 # Local cabina runtime surface. It may contain machine-specific runners,
 # evidence, profiles, backups, and operator state; repo canon lives outside it.
 .cabina/
+.cabina/runtime/event-bus/
 
 # Generated local suite/graph artifacts. Keep canonical outputs tracked by path;
 # only ignore transient CEO suite and graphify work products.

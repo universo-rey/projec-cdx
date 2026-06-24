@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/event-replay.schema.json",
+  "title": "CEO G2 Event Replay",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "replay_requested",
+    "dry_run",
+    "original_event_id",
+    "replay_event_id",
+    "evidence_path"
+  ],
+  "properties": {
+    "replay_requested": {
+      "type": "boolean",
+      "const": true
+    },
+    "dry_run": {
+      "type": "boolean",
+      "const": true
+    },
+    "original_event_id": {
+      "type": "string"
+    },
+    "replay_event_id": {
+      "type": "string"
+    },
+    "evidence_path": {
+      "type": "string"
+    }
+  }
+}

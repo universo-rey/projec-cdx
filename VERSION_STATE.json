@@ -4,7 +4,7 @@
   "version_actual": "v0.6.0-rc1",
   "baseline_version": "v0.6.0-rc1",
   "branch": "codex/runtime-versioning-snapshots",
-  "commit": "00dca63a8543c2d11a6149c0f0aa87e9716ad2e2",
+  "commit": "3cf7a92f",
   "commits_ahead_baseline": 47,
   "generated_at_utc": "2026-06-24T17:37:11Z",
   "dirty": true,
@@ -123,6 +123,19 @@
     "no_push": true,
     "no_pr": true,
     "no_live": true
+  },
+  "g2": {
+    "state": "EVENT_BUS_PERSISTENT_ENABLEMENT",
+    "mode": "LOCAL_FIRST",
+    "live_write": false,
+    "push": false,
+    "pr": false,
+    "event_store": "<RUNTIME_PATH>",
+    "policy_gate": "REQUIRED",
+    "owner_gate": "REQUIRED_FOR_HIGH_RISK",
+    "traceability": "ENABLED",
+    "replay": "DRY_RUN_ENABLED",
+    "runtime_isolation": "REQUIRED"
   },
   "delta_count": 56,
   "integrity": "PENDING_STAGE"

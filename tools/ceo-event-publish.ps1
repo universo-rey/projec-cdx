@@ -1,16 +1,22 @@
 param(
-    [Parameter(Mandatory = $true)]
-    [string] $Type,
-
-    [string] $Domain = "runtime",
-
+    [string] $EventFile,
+    [string] $EventJson,
+    [string] $Type = "G2_TEST_EVENT",
+    [string] $Payload = "{}",
+    [string] $Producer = "ceo-event-publish",
+    [string] $CorrelationId,
+    [string] $CausationId,
     [ValidateSet("low", "medium", "high", "critical")]
     [string] $Priority = "medium",
-
-    [string] $Payload = "{}",
-    [string] $CabinaId = "CABINA_LOCAL",
-    [Alias("WorkerId")]
-    [string] $ExecutionAdapterId = "ceo-execution-adapter.ps1",
+    [ValidateSet("low", "medium", "high", "critical")]
+    [string] $Risk = "low",
+    [switch] $RequiresOwnerGate,
+    [switch] $AllowsWrite,
+    [switch] $AllowsLive,
+    [switch] $AllowsDelete,
+    [switch] $NoDryRunRequired,
+    [string] $EvidencePath = "<EVIDENCE_PATH>",
+    [string] $EventStoreRoot,
     [string] $StateRoot
 )
 
@@ -19,55 +25,96 @@ $ErrorActionPreference = "Stop"
 
 . (Join-Path $PSScriptRoot "ceo-suite-common.ps1")
 
-$state = Initialize-CeoSuiteState -StateRoot $StateRoot
+$bus = Initialize-CeoEventBusState -EventStoreRoot $EventStoreRoot -StateRoot $StateRoot
 
-try {
-    $payloadObj = $Payload | ConvertFrom-Json
+function ConvertTo-EventObject {
+    if (-not [string]::IsNullOrWhiteSpace($EventFile)) {
+        return (Get-Content -LiteralPath $EventFile -Raw | ConvertFrom-Json)
+    }
+    if (-not [string]::IsNullOrWhiteSpace($EventJson)) {
+        return ($EventJson | ConvertFrom-Json)
+    }
+
+    $payloadObject = $Payload | ConvertFrom-Json
+    return [PSCustomObject]@{
+        event_type = $Type
+        producer = $Producer
+        priority = $Priority
+        risk = $Risk
+        payload = $payloadObject
+        policy = [PSCustomObject]@{
+            requires_owner_gate = [bool]$RequiresOwnerGate
+            allows_write = [bool]$AllowsWrite
+            allows_live = [bool]$AllowsLive
+            allows_delete = [bool]$AllowsDelete
+            dry_run_required = -not [bool]$NoDryRunRequired
+        }
+        evidence = [PSCustomObject]@{
+            required = $true
+            path = $EvidencePath
+        }
+    }
 }
-catch {
-    Add-Content -LiteralPath $state.InvalidLog -Value "[$((Get-Date).ToUniversalTime().ToString('o'))] INVALID_PAYLOAD_JSON type=$Type error=$($_.Exception.Message)" -Encoding UTF8
-    Write-Output "EVENT_REJECTED:INVALID_PAYLOAD_JSON"
-    exit 30
+
+$inputEvent = ConvertTo-EventObject
+$eventId = [string](Get-CeoEventBusProperty -InputObject $inputEvent -Name "event_id" -Default "")
+if ([string]::IsNullOrWhiteSpace($eventId)) {
+    $eventId = [guid]::NewGuid().ToString()
+}
+
+$correlation = [string](Get-CeoEventBusProperty -InputObject $inputEvent -Name "correlation_id" -Default $CorrelationId)
+if ([string]::IsNullOrWhiteSpace($correlation)) {
+    $correlation = $eventId
+}
+
+$policy = Get-CeoEventBusProperty -InputObject $inputEvent -Name "policy" -Default $null
+if ($null -eq $policy) {
+    $policy = [PSCustomObject]@{
+        requires_owner_gate = [bool]$RequiresOwnerGate
+        allows_write = [bool]$AllowsWrite
+        allows_live = [bool]$AllowsLive
+        allows_delete = [bool]$AllowsDelete
+        dry_run_required = -not [bool]$NoDryRunRequired
+    }
+}
+
+$evidence = Get-CeoEventBusProperty -InputObject $inputEvent -Name "evidence" -Default $null
+if ($null -eq $evidence) {
+    $evidence = [PSCustomObject]@{
+        required = $true
+        path = $EvidencePath
+    }
 }
 
 $event = [ordered]@{
-    eventId = [guid]::NewGuid().ToString()
-    traceId = [guid]::NewGuid().ToString()
-    spanId = [guid]::NewGuid().ToString()
-    parentSpanId = $null
-    type = $Type
-    domain = $Domain
-    timestamp = (Get-Date).ToUniversalTime().ToString("o")
-    status = "queued"
-    priority = $Priority
-    schemaVersion = "v1.0"
-    executionSurface = (Get-CeoExecutionSurface -AdapterId "local")
-    payload = $payloadObj
-    metadata = [ordered]@{
-        cabinaId = $CabinaId
-        executionAdapterId = $ExecutionAdapterId
-        source = "ceo-event-publish"
-        governance = (Get-CeoDefaultGovernance -Agent "bus_agent" -Tool "ceo-event-publish.ps1" -Evidence "<RUNTIME_PATH>/bus/queue.jsonl" -Validator "ceo-validate-event.ps1")
+    event_id = $eventId
+    event_type = [string](Get-CeoEventBusProperty -InputObject $inputEvent -Name "event_type" -Default (Get-CeoEventBusProperty -InputObject $inputEvent -Name "type" -Default $Type))
+    version = [string](Get-CeoEventBusProperty -InputObject $inputEvent -Name "version" -Default "G2.0")
+    timestamp = [string](Get-CeoEventBusProperty -InputObject $inputEvent -Name "timestamp" -Default (Get-Date).ToUniversalTime().ToString("o"))
+    producer = [string](Get-CeoEventBusProperty -InputObject $inputEvent -Name "producer" -Default $Producer)
+    correlation_id = $correlation
+    causation_id = (Get-CeoEventBusProperty -InputObject $inputEvent -Name "causation_id" -Default $CausationId)
+    priority = [string](Get-CeoEventBusProperty -InputObject $inputEvent -Name "priority" -Default $Priority)
+    risk = [string](Get-CeoEventBusProperty -InputObject $inputEvent -Name "risk" -Default $Risk)
+    state = "PERSISTED"
+    policy = $policy
+    payload = (Get-CeoEventBusProperty -InputObject $inputEvent -Name "payload" -Default ([PSCustomObject]@{}))
+    evidence = $evidence
+    retry = [ordered]@{
+        attempt = 0
+        max_attempts = 3
+        last_error = $null
+        next_action = "none"
     }
 }
 
-$tempEvent = New-CeoSuiteTempFile -StateRoot $state.StateRoot -Prefix "publish-event"
-try {
-    $event | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $tempEvent -Encoding UTF8
-    $result = Test-CeoEventFile -EventFile $tempEvent -StateRoot $state.StateRoot
-    $line = ConvertTo-CeoJsonLine -InputObject $event
+$eventPath = Join-Path $bus.Inbox "$eventId.json"
+Save-CeoEventBusJson -Path $eventPath -InputObject $event
+Write-CeoEventBusTrace -Bus $bus -EventId $eventId -State "PERSISTED" -CorrelationId $correlation -Message "event persisted to inbox" -Evidence @($evidence.path) | Out-Null
 
-    if ($result.Status -eq "VALID_EVENT") {
-        Add-CeoJsonlLine -Path $state.QueueFile -Line $line
-        Write-Output "EVENT_QUEUED"
-        exit 0
-    }
-
-    Add-CeoJsonlLine -Path $state.FailedFile -Line $line
-    Add-Content -LiteralPath $state.InvalidLog -Value "[$((Get-Date).ToUniversalTime().ToString('o'))] INVALID_EVENT type=$Type reason=$($result.Status)" -Encoding UTF8
-    Write-Output "EVENT_REJECTED:$($result.Status)"
-    exit 30
-}
-finally {
-    Remove-Item -LiteralPath $tempEvent -ErrorAction SilentlyContinue
-}
+[ordered]@{
+    published = $true
+    event_id = $eventId
+    state = "PERSISTED"
+    path = "<EVENT_STORE_PATH>"
+} | ConvertTo-Json -Depth 10

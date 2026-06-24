@@ -60,6 +60,210 @@ function Ensure-CeoFile {
     }
 }
 
+function Get-CeoEventBusRoot {
+    param(
+        [string] $EventStoreRoot,
+        [string] $StateRoot
+    )
+
+    $candidate = $EventStoreRoot
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $candidate = $env:SDU_EVENT_STORE
+    }
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $candidate = $env:SDU_RUNTIME_ROOT
+    }
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $candidate = $StateRoot
+    }
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $repo = Get-CeoSuiteRoot
+        $candidate = Join-Path (Join-Path (Join-Path $repo ".cabina") "runtime") "event-bus"
+    }
+
+    $resolved = Resolve-CeoSuitePath -Path $candidate
+    $repoRoot = [System.IO.Path]::GetFullPath((Get-CeoSuiteRoot))
+    if (-not $resolved.StartsWith($repoRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+        throw "EVENT_STORE_OUTSIDE_REPO:$resolved"
+    }
+
+    return $resolved
+}
+
+function Initialize-CeoEventBusState {
+    param(
+        [string] $EventStoreRoot,
+        [string] $StateRoot
+    )
+
+    $root = Get-CeoEventBusRoot -EventStoreRoot $EventStoreRoot -StateRoot $StateRoot
+    $paths = [ordered]@{
+        Root = $root
+        Inbox = Join-Path $root "inbox"
+        Processing = Join-Path $root "processing"
+        Completed = Join-Path $root "completed"
+        Failed = Join-Path $root "failed"
+        Dlq = Join-Path $root "dlq"
+        Traces = Join-Path $root "traces"
+        Replay = Join-Path $root "replay"
+        Evidence = Join-Path $root "evidence"
+        State = Join-Path $root "state"
+    }
+
+    foreach ($dir in $paths.Values) {
+        New-Item -ItemType Directory -Force -Path $dir | Out-Null
+    }
+
+    return [PSCustomObject]$paths
+}
+
+function Get-CeoEventBusValidStates {
+    return @(
+        "CREATED",
+        "PERSISTED",
+        "VALIDATED",
+        "POLICY_ALLOWED",
+        "POLICY_BLOCKED",
+        "HOLD_OWNER",
+        "DISPATCHED",
+        "PROCESSING",
+        "COMPLETED",
+        "FAILED_RETRYABLE",
+        "FAILED_FINAL",
+        "DLQ",
+        "REPLAY_REQUESTED",
+        "REPLAYED",
+        "CLOSED"
+    )
+}
+
+function Get-CeoEventBusForbiddenPatterns {
+    return @(
+        ("out" + "puts/"),
+        ("out" + "puts\"),
+        ("graphify" + "-out"),
+        ("web/data" + ".json"),
+        ("web\data" + ".json"),
+        (".bmad" + "-backup"),
+        ("C:" + "/Users/"),
+        ("C:" + "\Users\")
+    )
+}
+
+function Test-CeoEventBusForbiddenReferences {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $Text
+    )
+
+    $hits = @()
+    foreach ($pattern in Get-CeoEventBusForbiddenPatterns) {
+        if ($Text.Contains($pattern)) {
+            $hits += $pattern
+        }
+    }
+
+    return @($hits | Select-Object -Unique)
+}
+
+function Get-CeoEventBusProperty {
+    param(
+        $InputObject,
+        [Parameter(Mandatory = $true)]
+        [string] $Name,
+        $Default = $null
+    )
+
+    if ($null -eq $InputObject) {
+        return $Default
+    }
+
+    $property = $InputObject.PSObject.Properties[$Name]
+    if ($property) {
+        return $property.Value
+    }
+
+    return $Default
+}
+
+function ConvertTo-CeoEventBusJson {
+    param(
+        [Parameter(Mandatory = $true)]
+        $InputObject,
+        [int] $Depth = 30
+    )
+
+    return ($InputObject | ConvertTo-Json -Depth $Depth)
+}
+
+function Save-CeoEventBusJson {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $Path,
+        [Parameter(Mandatory = $true)]
+        $InputObject
+    )
+
+    $dir = Split-Path -Parent $Path
+    New-Item -ItemType Directory -Force -Path $dir | Out-Null
+    ConvertTo-CeoEventBusJson -InputObject $InputObject | Set-Content -LiteralPath $Path -Encoding UTF8
+}
+
+function Read-CeoEventBusJson {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $Path
+    )
+
+    return (Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json)
+}
+
+function New-CeoEventBusTraceRecord {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $EventId,
+        [Parameter(Mandatory = $true)]
+        [string] $State,
+        [string] $CorrelationId = "",
+        [string] $PolicyDecision = "",
+        [string] $Message = "",
+        [array] $Evidence = @()
+    )
+
+    return [ordered]@{
+        trace_id = [guid]::NewGuid().ToString()
+        event_id = $EventId
+        correlation_id = $CorrelationId
+        timestamp = (Get-Date).ToUniversalTime().ToString("o")
+        state = $State
+        nodes = @()
+        edges = @()
+        policy_decision = $PolicyDecision
+        evidence = @($Evidence)
+        message = $Message
+    }
+}
+
+function Write-CeoEventBusTrace {
+    param(
+        [Parameter(Mandatory = $true)]
+        $Bus,
+        [Parameter(Mandatory = $true)]
+        [string] $EventId,
+        [Parameter(Mandatory = $true)]
+        [string] $State,
+        [string] $CorrelationId = "",
+        [string] $PolicyDecision = "",
+        [string] $Message = "",
+        [array] $Evidence = @()
+    )
+
+    $record = New-CeoEventBusTraceRecord -EventId $EventId -State $State -CorrelationId $CorrelationId -PolicyDecision $PolicyDecision -Message $Message -Evidence $Evidence
+    $tracePath = Join-Path $Bus.Traces "$EventId.trace.jsonl"
+    ConvertTo-CeoEventBusJson -InputObject $record -Depth 20 | Add-Content -LiteralPath $tracePath -Encoding UTF8
+    return $record
+}
+
 function Initialize-CeoSuiteState {
     param(
         [string] $StateRoot
