@@ -20,10 +20,10 @@ politica: una raiz viva, sin SDU_RUNTIME_ROOT paralelo
 - Estado actual: [operativa/CURRENT.md](operativa/CURRENT.md)
 - Siguiente delta: [operativa/NEXT.md](operativa/NEXT.md)
 - Trazabilidad: [operativa/TRACE.md](operativa/TRACE.md)
-- Runtime/cabina: [.cabina/organizacion-total](.cabina/organizacion-total)
-- Organismo vivo: [.cabina/organizacion-total/organismo-vivo/README.md](.cabina/organizacion-total/organismo-vivo/README.md)
+- Runtime/cabina: [.cabina/SDU_RUNTIME_ROOT/00_START_HERE/SYSTEM_FRONTDOOR.md](.cabina/SDU_RUNTIME_ROOT/00_START_HERE/SYSTEM_FRONTDOOR.md)
+- Organismo vivo: [.cabina/SDU_RUNTIME_ROOT/00_START_HERE/README_ORGANISMO_VIVO.md](.cabina/SDU_RUNTIME_ROOT/00_START_HERE/README_ORGANISMO_VIVO.md)
 - Versionado: [VERSION_STATE.json](VERSION_STATE.json), [VERSION_POLICY.md](VERSION_POLICY.md)
-- Metadata: [schema.json](schema.json), [index.json](index.json), [live-manifest.json](live-manifest.json)
+- Indices/SNS: [schema.json](schema.json), [index.json](index.json), [operativa/index.json](operativa/index.json), [SYSTEM_NERVOUS_INDEX.json](SYSTEM_NERVOUS_INDEX.json), [live-manifest.json](live-manifest.json)
 
 ## Capas canonicas
 
@@ -33,7 +33,7 @@ politica: una raiz viva, sin SDU_RUNTIME_ROOT paralelo
 | Navegacion | [MAPA_MAESTRO.md](MAPA_MAESTRO.md) | mapa vivo unico |
 | Sistema nervioso | [MAPA_CAPAS.md](MAPA_CAPAS.md) | cadena entrada-salida |
 | Canon vivo | [operativa](operativa) | decisiones, readbacks finales, colas vivas |
-| Runtime | [.cabina/organizacion-total](.cabina/organizacion-total) | cabina, VS Code Insiders, organismo vivo |
+| Runtime | [.cabina/SDU_RUNTIME_ROOT](.cabina/SDU_RUNTIME_ROOT) | runtime canonico, VS Code Insiders, organismo vivo |
 | Motor | [src](src), [tools](tools), [tests](tests) | codigo, validadores, pruebas |
 | Referencia | [docs](docs) | documentacion estable |
 | Indices | [inventarios](inventarios) | catalogos y matrices |
@@ -45,9 +45,10 @@ politica: una raiz viva, sin SDU_RUNTIME_ROOT paralelo
 
 - Lo vivo entra por `README.md`, `MAPA_MAESTRO.md` y `MAPA_CAPAS.md`.
 - Lo operativo final vive en `operativa/`.
-- Lo runtime y la cabina visual viven en `.cabina/organizacion-total/`.
+- Lo runtime y la cabina visual viven en `.cabina/SDU_RUNTIME_ROOT/`.
 - Lo historico no se borra: se conserva en `hitos/` y `outputs/`.
-- El paquete organismo vivo queda injertado en `.cabina/organizacion-total/organismo-vivo/`.
+- El paquete organismo vivo queda promovido en `.cabina/SDU_RUNTIME_ROOT/`.
+- `.cabina/organizacion-total/` y `C:\CEO\project-cdx\SDU_RUNTIME_ROOT` son referencias historicas, no rutas activas.
 
 ## Referencia historica
 

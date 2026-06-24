@@ -58,7 +58,8 @@ Regla:
 
 ```text
 No tratar el alias fisico como segundo workspace activo.
-No crear SDU_RUNTIME_ROOT.
+No crear SDU_RUNTIME_ROOT paralelo.
+Usar siempre C:\CEO\project-cdx\.cabina\SDU_RUNTIME_ROOT.
 ```
 
 ## Puertas Vivas
@@ -77,16 +78,16 @@ No crear SDU_RUNTIME_ROOT.
 
 ## Runtime / Cabina
 
-- [.cabina/organizacion-total](../.cabina/organizacion-total)
-- [.cabina/organizacion-total/organismo-vivo/README.md](../.cabina/organizacion-total/organismo-vivo/README.md)
-- [.cabina/organizacion-total/vscode-insiders-profiles/README.md](../.cabina/organizacion-total/vscode-insiders-profiles/README.md)
+- [.cabina/SDU_RUNTIME_ROOT/00_START_HERE/SYSTEM_FRONTDOOR.md](../.cabina/SDU_RUNTIME_ROOT/00_START_HERE/SYSTEM_FRONTDOOR.md)
+- [.cabina/SDU_RUNTIME_ROOT/00_START_HERE/README_ORGANISMO_VIVO.md](../.cabina/SDU_RUNTIME_ROOT/00_START_HERE/README_ORGANISMO_VIVO.md)
+- [.cabina/SDU_RUNTIME_ROOT/03_PROVIDERS/VSCODE_INSIDERS/README.md](../.cabina/SDU_RUNTIME_ROOT/03_PROVIDERS/VSCODE_INSIDERS/README.md)
 
 ## Pendientes Vivos
 
 ```text
-RST-05: clasificar .cabina/organizacion-total/out
-RST-10: resolver identidad de rutas y puente de gobernanza
-RST-11: refrescar metadata/index si se decide versionar la convergencia
+RST-05: documentar .cabina/organizacion-total como ruta historica
+RST-10: federation/SNS extendidos a 16 repos con runtime pointer canonico
+RST-11: refrescar indices/SNS si se decide versionar la convergencia
 RST-12: cerrar readback final de convergencia
 ```
 

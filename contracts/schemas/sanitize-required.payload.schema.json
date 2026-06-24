@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ceo://contracts/sanitize-required.payload.schema.json",
+  "title": "CEO Sanitize Required Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "findingId",
+    "scanId",
+    "scannedAt",
+    "repoId",
+    "repoPath",
+    "severity",
+    "category",
+    "status",
+    "path",
+    "evidence",
+    "reason",
+    "recommendation",
+    "resolutionStatus",
+    "sensitiveContentDetected",
+    "liveWrite"
+  ],
+  "properties": {
+    "findingId": { "type": "string", "minLength": 1 },
+    "scanId": { "type": "string", "minLength": 1 },
+    "scannedAt": { "type": "string", "format": "date-time" },
+    "repoId": { "type": "string", "minLength": 1 },
+    "repoPath": { "type": "string", "minLength": 1 },
+    "severity": { "type": "string", "enum": ["info", "warning", "critical"] },
+    "category": {
+      "type": "string",
+      "enum": ["drive-root", "junction", "root-drift", "path-separator", "legacy-root", "duplicate-root", "no-finding"]
+    },
+    "status": { "type": "string", "enum": ["observed", "held", "blocked"] },
+    "path": { "type": "string", "minLength": 1 },
+    "evidence": { "type": "string", "minLength": 1 },
+    "reason": { "type": "string", "minLength": 1 },
+    "recommendation": { "type": "string", "minLength": 1 },
+    "resolutionStatus": { "type": "string", "enum": ["observed", "sanitize-required", "blocked-by-path-guard"] },
+    "sensitiveContentDetected": { "type": "boolean", "enum": [false] },
+    "liveWrite": { "type": "boolean", "enum": [false] }
+  }
+}

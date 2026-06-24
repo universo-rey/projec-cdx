@@ -81,7 +81,7 @@ $requiredFiles = @(
   "dataverse\README.md",
   "dataverse\MAPA.md",
   "dataverse\PLAN_SEGUNDA_PASADA.md",
-  "outputs\dataverse_blocker_frontier_20260614\README.md",
+  "<RUNTIME_PATH>\dataverse_blocker_frontier_20260614\README.md",
   "workbooks\EXCEL_AL_FRENTE.md",
   "tools\validate_proj_cdx_workbench.ps1"
 )
@@ -180,7 +180,7 @@ $dataverseRequiredFiles = @(
   "dataverse\MAPA.md",
   "dataverse\GATE.md",
   "dataverse\PLAN_SEGUNDA_PASADA.md",
-  "outputs\dataverse_blocker_frontier_20260614\README.md"
+  "<RUNTIME_PATH>\dataverse_blocker_frontier_20260614\README.md"
 )
 foreach ($relative in $dataverseRequiredFiles) {
   $path = Join-Path $Root $relative

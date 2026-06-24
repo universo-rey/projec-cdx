@@ -281,7 +281,7 @@ def build_graph(
         "evidencia:hitos_index": "hitos/INDICE_MAESTRO.md",
         "evidencia:source_map": "dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
         "evidencia:atomic_matrix": "atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
-        "salida:outputs": "outputs/README.md",
+        "salida:runtime_endpoint": "<RUNTIME_PATH>/README.md",
         "salida:cli_metadata_doc": "docs/herramientas/cli-metadata.md",
     }
     for name, relative in required_files.items():
@@ -359,7 +359,7 @@ def build_graph(
             "modelo": "schema.json, index.json, live-manifest.json",
             "dataverse": "dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
             "atomic": "atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
-            "salida": "outputs/README.md, docs/herramientas/cli-metadata.md",
+            "salida": "<RUNTIME_PATH>/README.md, docs/herramientas/cli-metadata.md",
         },
     }
 

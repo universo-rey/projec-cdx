@@ -52,6 +52,20 @@ function Get-PathIndex {
     return -1
 }
 
+function Add-PathHead {
+    param([string] $Path)
+
+    if ([string]::IsNullOrWhiteSpace($Path) -or -not (Test-Path -LiteralPath $Path)) {
+        return
+    }
+
+    $current = @($env:PATH -split ';' | Where-Object { $_ })
+    $alreadyPresent = @($current | Where-Object { $_.TrimEnd('\') -ieq $Path.TrimEnd('\') }).Count -gt 0
+    if (-not $alreadyPresent) {
+        $env:PATH = @($Path) + $current -join ';'
+    }
+}
+
 function Get-ToolRole {
     param(
         [string] $Name,
@@ -82,6 +96,10 @@ function Get-ToolRole {
         return 'NODE_CANONICAL_AVAILABLE'
     }
 
+    if ($Name -eq 'codeburn' -and ($Source -like '*\WinGet\Packages\OpenJS.NodeJS*\codeburn*' -or $Source -like '*\nodejs\codeburn*')) {
+        return 'CODEBURN_CANONICAL_AVAILABLE'
+    }
+
     if ($Name -eq 'pwsh' -and $Source -like 'C:\Program Files\PowerShell\7\pwsh.exe') {
         return 'POWERSHELL_7_CANONICAL'
     }
@@ -94,18 +112,15 @@ $tasksState = Test-JsonFile -Path $TasksPath
 $settings = if ($settingsState -eq 'ok') { Get-Content -LiteralPath $SettingsPath -Raw | ConvertFrom-Json } else { $null }
 $profileName = if ($settings) { $settings.'terminal.integrated.defaultProfile.windows' } else { $null }
 $profile = if ($settings -and $profileName) { $settings.'terminal.integrated.profiles.windows'.$profileName } else { $null }
+$codeburnPath = if ($settings) { [string] $settings.'agileagentcanvas.codeburn.path' } else { $null }
+$codeburnDir = if (-not [string]::IsNullOrWhiteSpace($codeburnPath)) { Split-Path -Parent $codeburnPath } else { $null }
 
 $oldPath = $env:PATH
 try {
-    if (Test-Path -LiteralPath $VenvScripts) {
-        $current = @($env:PATH -split ';' | Where-Object { $_ })
-        $hasVenv = @($current | Where-Object { $_.TrimEnd('\') -ieq $VenvScripts.TrimEnd('\') }).Count -gt 0
-        if (-not $hasVenv) {
-            $env:PATH = @($VenvScripts) + $current -join ';'
-        }
-    }
+    Add-PathHead -Path $codeburnDir
+    Add-PathHead -Path $VenvScripts
 
-    $toolNames = @('python', 'node', 'codex', 'pwsh')
+    $toolNames = @('python', 'node', 'codeburn', 'codex', 'pwsh')
     $toolResolution = foreach ($toolName in $toolNames) {
         $sources = @(Get-CommandSources -Name $toolName)
         $first = if ($sources.Count -gt 0) { $sources[0].source } else { $null }
@@ -126,10 +141,14 @@ $effectivePath = @()
 if (Test-Path -LiteralPath $VenvScripts) {
     $effectivePath += $VenvScripts
 }
+if (-not [string]::IsNullOrWhiteSpace($codeburnDir) -and (Test-Path -LiteralPath $codeburnDir)) {
+    $effectivePath += $codeburnDir
+}
 $effectivePath += @($oldPath -split ';' | Where-Object { $_ })
 $windowsApps = Join-Path $env:LOCALAPPDATA 'Microsoft\WindowsApps'
 $pathIndices = @{
     venvScripts = Get-PathIndex -Paths $effectivePath -Needle $VenvScripts
+    codeburnDir = if (-not [string]::IsNullOrWhiteSpace($codeburnDir)) { Get-PathIndex -Paths $effectivePath -Needle $codeburnDir } else { -1 }
     windowsApps = Get-PathIndex -Paths $effectivePath -Needle $windowsApps
 }
 
@@ -142,6 +161,8 @@ $usesEnterScript = @($profileArgs | Where-Object { $_ -ieq $EnterScriptPath }).C
 $cwdReady = ($settings -and $settings.'terminal.integrated.cwd' -eq $Root)
 $defaultReady = ($profileName -eq 'CEO PowerShell')
 $pythonReady = @($toolResolution | Where-Object { $_.name -eq 'python' -and $_.role -eq 'CEO_VENV_CANONICAL' }).Count -gt 0
+$nodeReady = @($toolResolution | Where-Object { $_.name -eq 'node' -and $_.role -eq 'NODE_CANONICAL_AVAILABLE' }).Count -gt 0
+$codeburnReady = @($toolResolution | Where-Object { $_.name -eq 'codeburn' -and $_.role -eq 'CODEBURN_CANONICAL_AVAILABLE' }).Count -gt 0
 $windowsAppsBehindRuntime = ($pathIndices.windowsApps -eq -1) -or (($pathIndices.venvScripts -ge 0) -and ($pathIndices.venvScripts -lt $pathIndices.windowsApps))
 
 $processes = @(Get-Process -ErrorAction SilentlyContinue | Where-Object {
@@ -172,7 +193,7 @@ $processes = @(Get-Process -ErrorAction SilentlyContinue | Where-Object {
         }
     })
 
-$status = if ($settingsState -eq 'ok' -and $tasksState -eq 'ok' -and $defaultReady -and $cwdReady -and $usesNoProfile -and $usesEnterScript -and $pythonReady -and $windowsAppsBehindRuntime) {
+$status = if ($settingsState -eq 'ok' -and $tasksState -eq 'ok' -and $defaultReady -and $cwdReady -and $usesNoProfile -and $usesEnterScript -and $pythonReady -and $nodeReady -and $codeburnReady -and $windowsAppsBehindRuntime) {
     'IDE_TERMINAL_GOVERNED_READY'
 }
 else {
@@ -204,6 +225,8 @@ $payload = [PSCustomObject]@{
     }
     path_control = @{
         windows_apps = $windowsApps
+        codeburn_path = $codeburnPath
+        codeburn_dir = $codeburnDir
         indices = $pathIndices
         windows_apps_behind_runtime = $windowsAppsBehindRuntime
     }

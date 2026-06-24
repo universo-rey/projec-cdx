@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ceo://contracts/optimization-command.payload.schema.json",
+  "title": "Optimization Command Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "recommendation",
+    "scope",
+    "sensitiveMutation"
+  ],
+  "properties": {
+    "recommendation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "local-runtime",
+        "event-bus",
+        "dashboard",
+        "observability"
+      ]
+    },
+    "sensitiveMutation": {
+      "type": "boolean",
+      "enum": [
+        false
+      ]
+    }
+  }
+}

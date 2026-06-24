@@ -84,6 +84,16 @@ function Read-JsonFile {
     }
 }
 
+function Read-CachedArtifact {
+    param([string] $Name)
+
+    if ($Refresh) {
+        return $null
+    }
+
+    return Read-JsonFile -Path (Join-Path $OutDir $Name)
+}
+
 function ConvertTo-RepoPath {
     param([string] $Path)
 
@@ -872,12 +882,24 @@ $payload = switch ($Mode) {
         (Get-AgentReconciliation -RepoFleet $fleet).duplicates
     }
     'sdk-status' {
-        $fleet = Get-RepoFleet
-        Get-SdkStatus -RepoFleet $fleet
+        $cached = Read-CachedArtifact -Name 'sdk-active-status.json'
+        if ($cached) {
+            $cached
+        }
+        else {
+            $fleet = Get-RepoFleet
+            Get-SdkStatus -RepoFleet $fleet
+        }
     }
     'sdk-agent-routes' {
-        $fleet = Get-RepoFleet
-        (Get-SdkStatus -RepoFleet $fleet).routes
+        $cached = Read-CachedArtifact -Name 'sdk-agent-routes.json'
+        if ($cached) {
+            $cached
+        }
+        else {
+            $fleet = Get-RepoFleet
+            (Get-SdkStatus -RepoFleet $fleet).routes
+        }
     }
     'dataverse-active-memory' { Get-DataverseActiveMemory }
     'capability-map' {

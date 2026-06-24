@@ -1,6 +1,7 @@
 $Root = 'C:\CEO\project-cdx'
 $Venv = Join-Path $Root '.venv'
 $VenvScripts = Join-Path $Venv 'Scripts'
+$SettingsPath = Join-Path $Root '.vscode\settings.json'
 
 function Add-PathHead {
     param([string] $Path)
@@ -27,6 +28,27 @@ function Get-CommandSource {
     return $null
 }
 
+function Get-ConfiguredToolPath {
+    param([string] $SettingName)
+
+    if (-not (Test-Path -LiteralPath $SettingsPath)) {
+        return $null
+    }
+
+    try {
+        $settings = Get-Content -LiteralPath $SettingsPath -Raw | ConvertFrom-Json
+        $property = $settings.PSObject.Properties[$SettingName]
+        if ($property) {
+            return [string] $property.Value
+        }
+    }
+    catch {
+        return $null
+    }
+
+    return $null
+}
+
 if (Test-Path -LiteralPath $Root) {
     Set-Location -LiteralPath $Root
 }
@@ -43,16 +65,26 @@ if (Test-Path -LiteralPath $VenvScripts) {
     Add-PathHead -Path $VenvScripts
 }
 
+$codeburnConfigured = Get-ConfiguredToolPath -SettingName 'agileagentcanvas.codeburn.path'
+if (-not [string]::IsNullOrWhiteSpace($codeburnConfigured)) {
+    Add-PathHead -Path (Split-Path -Parent $codeburnConfigured)
+}
+
 $python = Get-CommandSource -Name 'python'
 $node = Get-CommandSource -Name 'node'
+$codeburn = Get-CommandSource -Name 'codeburn'
 $codex = Get-CommandSource -Name 'codex'
-$state = if ($python -and $python.StartsWith($VenvScripts, [System.StringComparison]::OrdinalIgnoreCase)) { 'READY' } else { 'WARN' }
+$pythonReady = ($python -and $python.StartsWith($VenvScripts, [System.StringComparison]::OrdinalIgnoreCase))
+$nodeReady = -not [string]::IsNullOrWhiteSpace($node)
+$codeburnReady = -not [string]::IsNullOrWhiteSpace($codeburn)
+$state = if ($pythonReady -and $nodeReady -and $codeburnReady) { 'READY' } else { 'WARN' }
 
 Write-Host ("CEO GOVERNED RUNTIME: {0} | root={1}" -f $state, $Root)
 Write-Host ("python={0}" -f ($(if ($python) { $python } else { 'not_found' })))
 Write-Host ("node={0}" -f ($(if ($node) { $node } else { 'not_found' })))
+Write-Host ("codeburn={0}" -f ($(if ($codeburn) { $codeburn } else { 'not_found' })))
 Write-Host ("codex={0}" -f ($(if ($codex) { $codex } else { 'not_found' })))
 
 if ($state -ne 'READY') {
-    Write-Warning 'Terminal opened, but Python is not resolving from .venv. Run tools/ceo-ide-terminal-status.ps1 -Json for details.'
+    Write-Warning 'Terminal opened, but one or more governed runtime tools are not resolving. Run tools/ceo-ide-terminal-status.ps1 -Json for details.'
 }

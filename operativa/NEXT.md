@@ -44,8 +44,8 @@ Resolver las brechas detectadas bajo la convergencia de raiz:
 1. estado vivo alineado;
 2. puertas cortas sin alias fisico como workspace principal;
 3. ubicacion de matrices de gobierno reconciliada;
-4. `.cabina/organizacion-total/out` clasificado por familias;
-5. metadata/index refrescable sin drift;
+4. rutas legacy `.cabina/organizacion-total` documentadas como historicas;
+5. federation/SNS extendidos a 16 repos sin copiar runtime;
 6. cierre con readback y decision de versionado.
 
 ## Carriles Delegados
@@ -53,8 +53,8 @@ Resolver las brechas detectadas bajo la convergencia de raiz:
 ```text
 Seshat -> estado vivo CURRENT/NEXT
 Anubis -> rutas, identidad y gobernanza
-Horus -> staging .cabina/out
-Maat -> metadata/index y criterio de validacion
+Horus -> evidencia de rutas normalizadas
+Maat -> indices/SNS y criterio de validacion liviana
 Narrador -> cierre/readback
 ```
 

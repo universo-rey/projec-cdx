@@ -1,0 +1,22 @@
+{
+  "adapterId": "codex",
+  "label": "Codex review adapter",
+  "executionSurface": "codex",
+  "mode": "read-only-review",
+  "status": "placeholder",
+  "allowedActions": [
+    "read-only-review",
+    "routing-note"
+  ],
+  "blockedActions": [
+    "live-write",
+    "secret-read",
+    "production-mutation",
+    "openai-api-live",
+    "authority-source"
+  ],
+  "tool": "NO_DISPONIBLE",
+  "validator": "tests/run-contract-tests.ps1",
+  "evidence": "contracts/agent-map.json",
+  "stopCondition": "codex adapter requested as write surface"
+}

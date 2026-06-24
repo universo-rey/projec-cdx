@@ -1,0 +1,65 @@
+{
+  "eventId": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+  "traceId": "dddddddd-dddd-dddd-dddd-dddddddddddd",
+  "spanId": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+  "parentSpanId": null,
+  "type": "RUNTIME_DIAGNOSIS",
+  "domain": "diagnostic",
+  "timestamp": "2026-06-24T04:55:00Z",
+  "status": "queued",
+  "priority": "high",
+  "schemaVersion": "v1.0",
+  "executionSurface": {
+    "surfaceId": "local",
+    "adapterId": "local",
+    "decisionEngine": "ceo-decision-engine",
+    "runtimeRouter": "ceo-runtime-router.ps1",
+    "executionAdapter": "ceo-execution-adapter.ps1",
+    "executionPath": [
+      "ceo-decision-engine",
+      "ceo-runtime-router.ps1",
+      "ceo-execution-adapter.ps1",
+      "local"
+    ],
+    "mode": "local-only",
+    "liveWrite": false,
+    "secretAccess": false
+  },
+  "payload": {
+    "diagnosisId": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+    "diagnosedAt": "2026-06-24T04:55:00Z",
+    "scope": "repo-local-runtime",
+    "status": "DEGRADED",
+    "probableCause": "warning in dashboard-loopback-8795",
+    "signals": [
+      {
+        "name": "dashboard-data",
+        "status": "PASS",
+        "evidence": "VALID"
+      },
+      {
+        "name": "dashboard-loopback-8795",
+        "status": "WARN",
+        "evidence": "listening=false"
+      }
+    ],
+    "recommendation": "inspect failing or warning signal before enabling live actions",
+    "sensitiveContentDetected": false,
+    "liveWrite": false
+  },
+  "metadata": {
+    "cabinaId": "CABINA_LOCAL",
+    "executionAdapterId": "ceo-execution-adapter.ps1",
+    "source": "examples",
+    "governance": {
+      "agent": "diagnostic_agent",
+      "skill": "repo-agent-tool-governance",
+      "recipe": "agentes-atomicos-algoritmicos-en-waves",
+      "tool": "ceo-runtime-diagnose.ps1",
+      "evidence": "<RUNTIME_PATH>/diagnostics/runtime-diagnosis.jsonl",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "runtime degradation not emitted as diagnosis",
+      "authorityLevel": "local-only"
+    }
+  }
+}
