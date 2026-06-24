@@ -33,23 +33,21 @@ CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_READY
 
 ## 2. Resumen del inventario
 
-- git status entries: 7
+- git status entries: 2
 - repos boundaries observed: 2
 - agent asset groups: 8
 - sdk matches: 6
 - safe ignore candidates: 0
-- gate candidates: 2
+- gate candidates: 1
 
 ## 3. Categorias principales
 
-- SNAPSHOT: 4
-- UNKNOWN_REVIEW: 2
 - EVIDENCE: 1
+- UNKNOWN_REVIEW: 1
 
 ## 4. Raices y superficies
 
-- operativa: 6
-- VERSION_STATE.json: 1
+- operativa: 2
 
 ## 5. Ruido operativo detectado
 
@@ -81,7 +79,6 @@ CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_READY
 
 ## 8. Candidatos a quarantine / hold
 
-- operativa/HISTORY_RUNTIME_EVOLUTION.md => BLOCKED_NEEDS_OWNER
 - operativa/tasks/20260623/CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_20260623.csv => BLOCKED_NEEDS_OWNER
 
 ## 9. Acciones seguras propuestas

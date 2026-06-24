@@ -4,15 +4,14 @@
   "version_actual": "v0.6.0-rc1",
   "baseline_version": "v0.6.0-rc1",
   "branch": "codex/runtime-versioning-snapshots",
-  "commit": "b7bbe376998ef908773e6c379e1e9950601e9123",
-  "commits_ahead_baseline": 43,
-  "generated_at_utc": "2026-06-24T00:45:06Z",
+  "commit": "e2417ca82c9fa465413f431aeae0890f98e38911",
+  "commits_ahead_baseline": 44,
+  "generated_at_utc": "2026-06-24T00:56:22Z",
   "dirty": true,
   "status": [
-    " M operativa/snapshots/SNAPSHOT_INDEX.json",
     " M operativa/tasks/20260623/CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_20260623.csv",
     " M operativa/tasks/20260623/READBACK_CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_20260623.md",
-    "?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260624_0045.json"
+    "?? operativa/tasks/20260624/"
   ],
   "rules": {
     "merge_to_main": "PATCH",

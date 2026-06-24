@@ -1,0 +1,849 @@
+[
+  {
+    "Scope": "Machine",
+    "Name": "CODEX_CABINA_ROOT",
+    "Value": "C:\\CEO",
+    "Redacted": false,
+    "Length": 6
+  },
+  {
+    "Scope": "Machine",
+    "Name": "CODEX_METADATA_ROOT",
+    "Value": "C:\\CEO\\.metadata",
+    "Redacted": false,
+    "Length": 16
+  },
+  {
+    "Scope": "Machine",
+    "Name": "CODEX_OPERATOR",
+    "Value": "CEO",
+    "Redacted": false,
+    "Length": 3
+  },
+  {
+    "Scope": "Machine",
+    "Name": "CODEX_PAC_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 60
+  },
+  {
+    "Scope": "Machine",
+    "Name": "CODEX_PROJECT_ROOT",
+    "Value": "C:\\CEO\\project-cdx",
+    "Redacted": false,
+    "Length": 18
+  },
+  {
+    "Scope": "Machine",
+    "Name": "CODEX_RUNTIME_SURFACE",
+    "Value": "local-desktop",
+    "Redacted": false,
+    "Length": 13
+  },
+  {
+    "Scope": "Machine",
+    "Name": "CODEX_SOURCE_TREE_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 12
+  },
+  {
+    "Scope": "Machine",
+    "Name": "CODEX_START_ROOT",
+    "Value": "C:\\",
+    "Redacted": false,
+    "Length": 3
+  },
+  {
+    "Scope": "Machine",
+    "Name": "CODEX_WORKBENCH_ROOT",
+    "Value": "C:\\CEO\\project-cdx",
+    "Redacted": false,
+    "Length": 18
+  },
+  {
+    "Scope": "Machine",
+    "Name": "CODEX_WORKTREE_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 16
+  },
+  {
+    "Scope": "Machine",
+    "Name": "ComSpec",
+    "Value": "C:\\WINDOWS\\system32\\cmd.exe",
+    "Redacted": false,
+    "Length": 27
+  },
+  {
+    "Scope": "Machine",
+    "Name": "DriverData",
+    "Value": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "Redacted": false,
+    "Length": 38
+  },
+  {
+    "Scope": "Machine",
+    "Name": "NUMBER_OF_PROCESSORS",
+    "Value": "16",
+    "Redacted": false,
+    "Length": 2
+  },
+  {
+    "Scope": "Machine",
+    "Name": "OnlineServices",
+    "Value": "Online Services",
+    "Redacted": false,
+    "Length": 15
+  },
+  {
+    "Scope": "Machine",
+    "Name": "OS",
+    "Value": "Windows_NT",
+    "Redacted": false,
+    "Length": 10
+  },
+  {
+    "Scope": "Machine",
+    "Name": "Path",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 310
+  },
+  {
+    "Scope": "Machine",
+    "Name": "PATHEXT",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 53
+  },
+  {
+    "Scope": "Machine",
+    "Name": "platformcode",
+    "Value": "KV",
+    "Redacted": false,
+    "Length": 2
+  },
+  {
+    "Scope": "Machine",
+    "Name": "POWERSHELL_DISTRIBUTION_CHANNEL",
+    "Value": "MSI:Windows 10 Home Single Language",
+    "Redacted": false,
+    "Length": 35
+  },
+  {
+    "Scope": "Machine",
+    "Name": "POWERSHELL_TELEMETRY_OPTOUT",
+    "Value": "1",
+    "Redacted": false,
+    "Length": 1
+  },
+  {
+    "Scope": "Machine",
+    "Name": "PROCESSOR_ARCHITECTURE",
+    "Value": "AMD64",
+    "Redacted": false,
+    "Length": 5
+  },
+  {
+    "Scope": "Machine",
+    "Name": "PROCESSOR_IDENTIFIER",
+    "Value": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "Redacted": false,
+    "Length": 49
+  },
+  {
+    "Scope": "Machine",
+    "Name": "PROCESSOR_LEVEL",
+    "Value": "25",
+    "Redacted": false,
+    "Length": 2
+  },
+  {
+    "Scope": "Machine",
+    "Name": "PROCESSOR_REVISION",
+    "Value": "5000",
+    "Redacted": false,
+    "Length": 4
+  },
+  {
+    "Scope": "Machine",
+    "Name": "PSModulePath",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 93
+  },
+  {
+    "Scope": "Machine",
+    "Name": "RegionCode",
+    "Value": "LA",
+    "Redacted": false,
+    "Length": 2
+  },
+  {
+    "Scope": "Machine",
+    "Name": "TEMP",
+    "Value": "C:\\WINDOWS\\TEMP",
+    "Redacted": false,
+    "Length": 15
+  },
+  {
+    "Scope": "Machine",
+    "Name": "TMP",
+    "Value": "C:\\WINDOWS\\TEMP",
+    "Redacted": false,
+    "Length": 15
+  },
+  {
+    "Scope": "Machine",
+    "Name": "USERNAME",
+    "Value": "SYSTEM",
+    "Redacted": false,
+    "Length": 6
+  },
+  {
+    "Scope": "Machine",
+    "Name": "windir",
+    "Value": "C:\\WINDOWS",
+    "Redacted": false,
+    "Length": 10
+  },
+  {
+    "Scope": "Process",
+    "Name": "APPDATA",
+    "Value": "C:\\Users\\enzo1\\AppData\\Roaming",
+    "Redacted": false,
+    "Length": 30
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CABINA_REPO_ROOT",
+    "Value": "C:\\Users\\enzo1\\Documents\\GitHub\\cabina-universal-d",
+    "Redacted": false,
+    "Length": 50
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLI_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 72
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_BRANCH",
+    "Value": "codex/consume-bound-workbook-next-delta",
+    "Redacted": false,
+    "Length": 39
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_CONTRACT",
+    "Value": "C:\\CEO\\project-cdx\\operativa\\CODEX_CLOUD_CONTRACT_20260615.md",
+    "Redacted": false,
+    "Length": 61
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_DATAVERSE_BLOCKERS",
+    "Value": "C:\\CEO\\project-cdx\\dataverse\\REGISTRO_BLOQUEOS.md",
+    "Redacted": false,
+    "Length": 49
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_DATAVERSE_GATE",
+    "Value": "C:\\CEO\\project-cdx\\dataverse\\GATE.md",
+    "Redacted": false,
+    "Length": 36
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_DATAVERSE_PLAN",
+    "Value": "C:\\CEO\\project-cdx\\dataverse\\PLAN_SEGUNDA_PASADA.md",
+    "Redacted": false,
+    "Length": 51
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_DATAVERSE_REGISTRY",
+    "Value": "C:\\CEO\\project-cdx\\dataverse\\REGISTRO_CODEX_CLOUD_20260615.md",
+    "Redacted": false,
+    "Length": 61
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_DATAVERSE_SOURCE_MAP",
+    "Value": "C:\\CEO\\project-cdx\\dataverse\\MAPA_CONEXIONES_DATAVERSE.md",
+    "Redacted": false,
+    "Length": 57
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_ENABLED",
+    "Value": "0",
+    "Redacted": false,
+    "Length": 1
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_GATE",
+    "Value": "local-only",
+    "Redacted": false,
+    "Length": 10
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_MAINTENANCE_LOG",
+    "Value": "C:\\CEO\\project-cdx\\operativa\\CODEX_CLOUD_MAINTENANCE_20260615.md",
+    "Redacted": false,
+    "Length": 64
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_METADATA_ROOT",
+    "Value": "C:\\CEO\\.metadata",
+    "Redacted": false,
+    "Length": 16
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_MODE",
+    "Value": "local",
+    "Redacted": false,
+    "Length": 5
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_PROFILE",
+    "Value": "projec-cdx",
+    "Redacted": false,
+    "Length": 10
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_REPO_ROOT",
+    "Value": "C:\\Users\\enzo1\\Documents\\GitHub\\cabina-universal-d",
+    "Redacted": false,
+    "Length": 50
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_CLOUD_WORKTREE",
+    "Value": "C:\\CEO\\worktrees",
+    "Redacted": false,
+    "Length": 16
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_GIT_CMD",
+    "Value": "C:\\Program Files\\Git\\cmd\\git.exe",
+    "Redacted": false,
+    "Length": 32
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_HOME",
+    "Value": "C:\\Users\\enzo1\\.codex",
+    "Redacted": false,
+    "Length": 21
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_METADATA_ROOT",
+    "Value": "C:\\CEO\\.metadata",
+    "Redacted": false,
+    "Length": 16
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_PAC_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 60
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_POWERSHELL_PROFILE",
+    "Value": "C:\\Users\\enzo1\\.codex\\profiles\\powershell\\CodexProfile.ps1",
+    "Redacted": false,
+    "Length": 58
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_PROJECT_ROOT",
+    "Value": "C:\\CEO\\project-cdx",
+    "Redacted": false,
+    "Length": 18
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_PWSH_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 38
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_PYTHON_CMD",
+    "Value": "C:\\CEO\\project-cdx\\.venv\\Scripts\\python.exe",
+    "Redacted": false,
+    "Length": 43
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_REPOS_ROOT",
+    "Value": "C:\\CEO\\repos",
+    "Redacted": false,
+    "Length": 12
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_RUNTIME_SURFACE",
+    "Value": "local-desktop",
+    "Redacted": false,
+    "Length": 13
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_SANDBOX_NETWORK_DISABLED",
+    "Value": "1",
+    "Redacted": false,
+    "Length": 1
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_SOURCE_TREE_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 12
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_THREAD_ID",
+    "Value": "019ecdcf-786e-70b0-b717-ba6aa11cadd6",
+    "Redacted": false,
+    "Length": 36
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_WORKBENCH_ROOT",
+    "Value": "C:\\CEO\\project-cdx",
+    "Redacted": false,
+    "Length": 18
+  },
+  {
+    "Scope": "Process",
+    "Name": "CODEX_WORKTREE_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 16
+  },
+  {
+    "Scope": "Process",
+    "Name": "ComSpec",
+    "Value": "C:\\WINDOWS\\system32\\cmd.exe",
+    "Redacted": false,
+    "Length": 27
+  },
+  {
+    "Scope": "Process",
+    "Name": "HOMEDRIVE",
+    "Value": "C:",
+    "Redacted": false,
+    "Length": 2
+  },
+  {
+    "Scope": "Process",
+    "Name": "HOMEPATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 12
+  },
+  {
+    "Scope": "Process",
+    "Name": "LOCALAPPDATA",
+    "Value": "C:\\Users\\enzo1\\AppData\\Local",
+    "Redacted": false,
+    "Length": 28
+  },
+  {
+    "Scope": "Process",
+    "Name": "OPENAI_MODEL",
+    "Value": "gpt-5.5",
+    "Redacted": false,
+    "Length": 7
+  },
+  {
+    "Scope": "Process",
+    "Name": "PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 614
+  },
+  {
+    "Scope": "Process",
+    "Name": "PATHEXT",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 58
+  },
+  {
+    "Scope": "Process",
+    "Name": "ProgramData",
+    "Value": "C:\\ProgramData",
+    "Redacted": false,
+    "Length": 14
+  },
+  {
+    "Scope": "Process",
+    "Name": "ProgramFiles",
+    "Value": "C:\\Program Files",
+    "Redacted": false,
+    "Length": 16
+  },
+  {
+    "Scope": "Process",
+    "Name": "ProgramFiles(x86)",
+    "Value": "C:\\Program Files (x86)",
+    "Redacted": false,
+    "Length": 22
+  },
+  {
+    "Scope": "Process",
+    "Name": "ProgramW6432",
+    "Value": "C:\\Program Files",
+    "Redacted": false,
+    "Length": 16
+  },
+  {
+    "Scope": "Process",
+    "Name": "PSModulePath",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 212
+  },
+  {
+    "Scope": "Process",
+    "Name": "SystemDrive",
+    "Value": "C:",
+    "Redacted": false,
+    "Length": 2
+  },
+  {
+    "Scope": "Process",
+    "Name": "SystemRoot",
+    "Value": "C:\\WINDOWS",
+    "Redacted": false,
+    "Length": 10
+  },
+  {
+    "Scope": "Process",
+    "Name": "TEMP",
+    "Value": "C:\\Users\\enzo1\\AppData\\Local\\Temp",
+    "Redacted": false,
+    "Length": 33
+  },
+  {
+    "Scope": "Process",
+    "Name": "TMP",
+    "Value": "C:\\Users\\enzo1\\AppData\\Local\\Temp",
+    "Redacted": false,
+    "Length": 33
+  },
+  {
+    "Scope": "Process",
+    "Name": "USERDOMAIN",
+    "Value": "CEO",
+    "Redacted": false,
+    "Length": 3
+  },
+  {
+    "Scope": "Process",
+    "Name": "USERNAME",
+    "Value": "enzo1",
+    "Redacted": false,
+    "Length": 5
+  },
+  {
+    "Scope": "Process",
+    "Name": "USERPROFILE",
+    "Value": "C:\\Users\\enzo1",
+    "Redacted": false,
+    "Length": 14
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_AGENTS_ROOT",
+    "Value": "C:\\CEO\\agents",
+    "Redacted": false,
+    "Length": 13
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_CHAINS_ROOT",
+    "Value": "C:\\CEO\\chains",
+    "Redacted": false,
+    "Length": 13
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_DATAVERSE_ROOT",
+    "Value": "C:\\CEO\\dataverse",
+    "Redacted": false,
+    "Length": 16
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_INBOX_ROOT",
+    "Value": "C:\\CEO\\inbox",
+    "Redacted": false,
+    "Length": 12
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_M365_ROOT",
+    "Value": "C:\\CEO\\m365",
+    "Redacted": false,
+    "Length": 11
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_METADATA_ROOT",
+    "Value": "C:\\CEO\\.metadata",
+    "Redacted": false,
+    "Length": 16
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_PROJECT_CDX_ROOT",
+    "Value": "C:\\CEO\\project-cdx",
+    "Redacted": false,
+    "Length": 18
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_PROJECT_ROOT",
+    "Value": "C:\\CEO\\project-cdx",
+    "Redacted": false,
+    "Length": 18
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_REPOS_ROOT",
+    "Value": "C:\\CEO\\repos",
+    "Redacted": false,
+    "Length": 12
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_ROOT",
+    "Value": "C:\\CEO",
+    "Redacted": false,
+    "Length": 6
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_RUNTIME_ROOT",
+    "Value": "C:\\CEO\\runtime",
+    "Redacted": false,
+    "Length": 14
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_SKILLS_ROOT",
+    "Value": "C:\\CEO\\skills",
+    "Redacted": false,
+    "Length": 13
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_TOOLS_ROOT",
+    "Value": "C:\\CEO\\tools",
+    "Redacted": false,
+    "Length": 12
+  },
+  {
+    "Scope": "User",
+    "Name": "CEO_WORKTREES_ROOT",
+    "Value": "C:\\CEO\\worktrees",
+    "Redacted": false,
+    "Length": 16
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_AGENTS_ROOT",
+    "Value": "",
+    "Redacted": false,
+    "Length": 0
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_CABINA_ROOT",
+    "Value": "",
+    "Redacted": false,
+    "Length": 0
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_CHAINS_ROOT",
+    "Value": "",
+    "Redacted": false,
+    "Length": 0
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_CLI_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 72
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_DATAVERSE_ROOT",
+    "Value": "",
+    "Redacted": false,
+    "Length": 0
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_HOME",
+    "Value": "C:\\Users\\enzo1\\.codex",
+    "Redacted": false,
+    "Length": 21
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_INBOX_ROOT",
+    "Value": "",
+    "Redacted": false,
+    "Length": 0
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_M365_ROOT",
+    "Value": "",
+    "Redacted": false,
+    "Length": 0
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_METADATA_ROOT",
+    "Value": "C:\\CEO\\.metadata",
+    "Redacted": false,
+    "Length": 16
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_OPERATOR",
+    "Value": "CEO",
+    "Redacted": false,
+    "Length": 3
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_PAC_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 60
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_PROJECT_ROOT",
+    "Value": "C:\\CEO\\project-cdx",
+    "Redacted": false,
+    "Length": 18
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_REPOS_ROOT",
+    "Value": "",
+    "Redacted": false,
+    "Length": 0
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_RUNTIME_ROOT",
+    "Value": "",
+    "Redacted": false,
+    "Length": 0
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_RUNTIME_SURFACE",
+    "Value": "local-desktop",
+    "Redacted": false,
+    "Length": 13
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_SKILLS_ROOT",
+    "Value": "",
+    "Redacted": false,
+    "Length": 0
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_SOURCE_TREE_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 12
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_START_ROOT",
+    "Value": "C:\\CEO",
+    "Redacted": false,
+    "Length": 6
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_TOOLS_ROOT",
+    "Value": "",
+    "Redacted": false,
+    "Length": 0
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_WORKBENCH_ROOT",
+    "Value": "C:\\CEO\\project-cdx",
+    "Redacted": false,
+    "Length": 18
+  },
+  {
+    "Scope": "User",
+    "Name": "CODEX_WORKTREE_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 16
+  },
+  {
+    "Scope": "User",
+    "Name": "Path",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 713
+  },
+  {
+    "Scope": "User",
+    "Name": "SOURCE_TREE_PATH",
+    "Value": "[REDACTED]",
+    "Redacted": true,
+    "Length": 12
+  },
+  {
+    "Scope": "User",
+    "Name": "TEMP",
+    "Value": "C:\\Users\\enzo1\\AppData\\Local\\Temp",
+    "Redacted": false,
+    "Length": 33
+  },
+  {
+    "Scope": "User",
+    "Name": "TMP",
+    "Value": "C:\\Users\\enzo1\\AppData\\Local\\Temp",
+    "Redacted": false,
+    "Length": 33
+  }
+]
