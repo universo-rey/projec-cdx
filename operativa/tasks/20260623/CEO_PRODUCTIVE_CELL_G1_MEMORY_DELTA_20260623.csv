@@ -14,4 +14,3 @@ Decision,decision_id status rationale,readback and backlog,candidate,owner_decis
 Risk,risk_id severity mitigation,backlog and MCP registry,observed,coherence_review,rank_risks
 Capability,capability_id command skill recipe,capability matrix,implemented,coherence_review,promote_capability
 ProductCandidate,candidate_id scope gate,capability matrix,candidate,productization_gate,prepare_product_pack
-

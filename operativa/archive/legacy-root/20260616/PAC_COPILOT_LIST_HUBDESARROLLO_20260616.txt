@@ -37,5 +37,3 @@ Sales Opportunity Agent - Custom Research  c2d18815-b47a-4ae1-b416-1795ad080eee 
 Sales Opportunity Agent - Stakeholder      b9847a3f-d6ad-42aa-97ee-1c6f662ffe80 Published       Administrado    04036319-5896-4772-86b6-99efae7e9189 Active      Deprovisioned
 SESHAT HD                                  4307a4c6-297d-44b2-9949-29e7ac51984f Published       No administrado fd140aae-4df4-11dd-bd17-0019b9312238 Active      Deprovisioned
 D365 Sales Agent - TCP Prefill Agent       6d9a768c-1e9d-44b0-8aca-2920adad0ed0 Published       Administrado    528a2aab-9fa3-40d2-bdab-b21ec5d43108 Active      Deprovisioned
-
-

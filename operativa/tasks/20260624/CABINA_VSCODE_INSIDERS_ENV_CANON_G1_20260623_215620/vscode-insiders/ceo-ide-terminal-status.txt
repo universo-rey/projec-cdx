@@ -9,4 +9,3 @@ path_control    : {[indices, System.Collections.Hashtable], [windows_apps_behind
 tool_resolution : {@{name=python; first=C:\CEO\project-cdx\.venv\Scripts\python.exe; role=CEO_VENV_CANONICAL; count=1; sources=System.Object[]}, @{name=node; first=C:\Users\enzo1\AppData\Local\Microsoft\WinGet\Packages\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\node-v24.17.0-win-x64\node.exe; role=NODE_CANONICAL_AVAILABLE; count=1; sources=System.Object[]}, @{name=codex; first=C:\Users\enzo1\AppData\Local\OpenAI\Codex\bin\8e55c2dd143b6354\codex.exe; role=CODEX_CLI_CANONICAL; count=1; sources=System.Object[]}, @{name=pwsh; first=C:\Program Files\PowerShell\7\pwsh.exe; role=POWERSHELL_7_CANONICAL; count=1; sources=System.Object[]}}
 processes       : {[count, 38], [observed, System.Object[]]}
 frontera        : {[no_push, True], [no_global_profile_edit, True], [no_mcp_execution, True], [no_live, True], [no_secret_read, True], [no_pr, True]}
-

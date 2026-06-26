@@ -1,7 +1,7 @@
 # SDU_GOVERNANCE_REFINEMENT
 
-Fecha: 2026-06-25  
-Modo: READ + LOCAL STATE ONLY  
+Fecha: 2026-06-25
+Modo: READ + LOCAL STATE ONLY
 Dictamen: PASS
 
 ## Resultado

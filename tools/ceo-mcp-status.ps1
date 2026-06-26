@@ -67,4 +67,3 @@ $payload = [PSCustomObject]@{
 if ($Json -or $true) {
     $payload | ConvertTo-Json -Depth 8
 }
-

@@ -10,5 +10,3 @@ SDUCapabilityControlPlane SDU Capability Control Plane          0.1.0.0 False
 sdu_runtime_control_plane SDU Runtime Control Plane             1.0.1.0 False
 Default                   Solución predeterminada               1.0     False
 SPGovernanceModel         SP Governance Model                   1.0.0.0 False
-
-

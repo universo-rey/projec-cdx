@@ -10,7 +10,8 @@ G5.2C confirmó que el DocumentLocation funciona: AbsoluteUrl existe, Graph resu
 
 ## Lógica Anterior
 
-- SiteCollectionUrl vacío hacía etrieve_absolute_url -> ok=false, severity=HIGH.
+- SiteCollectionUrl vacío hacía
+etrieve_absolute_url -> ok=false, severity=HIGH.
 - Eso impedía la validación Graph.
 - Resultado anterior: DEGRADED, locationsReviewed=1.
 

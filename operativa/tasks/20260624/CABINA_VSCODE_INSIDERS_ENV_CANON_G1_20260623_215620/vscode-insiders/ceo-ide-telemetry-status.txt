@@ -12,4 +12,3 @@ task_statuses         : {@{label=CEO Command: Telemetry; status=READY}, @{label=
 warnings              : {}
 policy                : {[do_not_create_noisy_logs, True], [use_json_outputs, True], [read_existing_reports, True]}
 frontera              : {[no_mcp_execution, True], [no_pr, True], [no_live, True], [no_push, True], [no_secret_read, True]}
-
