@@ -1,0 +1,382 @@
+{
+  "schema_version": "1.0",
+  "matrix_id": "BRANCH_GOVERNANCE_PR_MATRIX_20260626",
+  "generated_at_utc": "2026-06-26T10:57:39.0006602Z",
+  "generated_local_date": "2026-06-26",
+  "root": "C:\\CEO\\project-cdx",
+  "agent": "contracts_agent + narrador-normativo",
+  "recipe": "BRANCH_GOVERNANCE_PR_MATRIX",
+  "mode": "LOCAL_READ_ONLY_EXCEPT_NEW_EVIDENCE",
+  "remote_mode": "READ_ONLY_LS_REMOTE_ONLY",
+  "live": {
+    "branch": "codex/live-state-g10-governed-20260626",
+    "head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+    "worktree_before_evidence": "CLEAN"
+  },
+  "freeze": {
+    "branch": "codex/version-freeze-state-20260626",
+    "remote_head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+    "tag": "freeze/2026-06-26-g10-reconciled",
+    "tag_remote_head": "0291d185fc27de7e6d7c4b86a4614de2e182705f"
+  },
+  "readbacks": {
+    "branch": "codex/version-readbacks-and-sdu-package-20260626",
+    "remote_head": "e2477509295b672330acec5649108fa942f357ac",
+    "published": true
+  },
+  "decision": {
+    "NO_MERGE_DIRECTO": true,
+    "NO_PR_MASIVO": true,
+    "FAN_IN_SOLO_CON_MATRIZ": true,
+    "OWNER_GATE_REQUIRED_FOR_PR": true,
+    "OWNER_GATE_REQUIRED_FOR_MERGE": true,
+    "G11_REVIEW_ONLY_NO_APPLY": true,
+    "PR_CREATION_NOT_AUTHORIZED": true,
+    "MERGE_NOT_AUTHORIZED": true,
+    "next_lane": "SNAPSHOT_VERSION_DECISION_OWNER_ONLY"
+  },
+  "branches": [
+    {
+      "branch": "codex/version-core-g10-20260626",
+      "local_head": "63b983447d40442f2cfe214b3d00be53771c5323",
+      "remote_head": "63b983447d40442f2cfe214b3d00be53771c5323",
+      "local_remote_match": true,
+      "merge_base": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "merge_base_status": "BASE_LIVE_HEAD",
+      "last_commit_subject": "chore: split core G10 canon 20260626",
+      "changed_files_summary": "M:10 A:2; core canon, SDU contract/state, docs, operativa indexes",
+      "file_count": 12,
+      "shortstat": "12 files changed, 347 insertions(+), 77 deletions(-)",
+      "lane_type": "MERGE_CANDIDATE",
+      "recommended_target": "codex/live-state-g10-governed-20260626",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "requires_owner_gate": true,
+      "dependencies": [
+        "OWNER_SNAPSHOT_DECISION"
+      ],
+      "risks": [
+        "Cambia canon SDU y operativa; debe liderar fan-in."
+      ],
+      "evidence_basis": [
+        "git rev-parse",
+        "git show",
+        "git diff",
+        "git merge-base",
+        "git ls-remote"
+      ]
+    },
+    {
+      "branch": "codex/version-control-plane-canvas-20260626",
+      "local_head": "1ffafe291bae5f61e4e29c45db6cc87cce06d3ae",
+      "remote_head": "1ffafe291bae5f61e4e29c45db6cc87cce06d3ae",
+      "local_remote_match": true,
+      "merge_base": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "merge_base_status": "BASE_LIVE_HEAD",
+      "last_commit_subject": "chore: split control plane canvas 20260626",
+      "changed_files_summary": "M:5 A:1; AgileAgentCanvas SDU context and artifact export",
+      "file_count": 6,
+      "shortstat": "6 files changed, 52 insertions(+), 5 deletions(-)",
+      "lane_type": "MERGE_CANDIDATE_DEPENDS_CORE",
+      "recommended_target": "codex/live-state-g10-governed-20260626",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "requires_owner_gate": true,
+      "dependencies": [
+        "codex/version-core-g10-20260626"
+      ],
+      "risks": [
+        "Canvas depende del canon core; riesgo de publicar representacion antes de autoridad."
+      ],
+      "evidence_basis": [
+        "git rev-parse",
+        "git show",
+        "git diff",
+        "git merge-base",
+        "git ls-remote"
+      ]
+    },
+    {
+      "branch": "codex/version-total-reconciliation-evidence-20260626",
+      "local_head": "68ac60ad6d500e066b1b8cb72bff5dd341522554",
+      "remote_head": "68ac60ad6d500e066b1b8cb72bff5dd341522554",
+      "local_remote_match": true,
+      "merge_base": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "merge_base_status": "BASE_LIVE_HEAD",
+      "last_commit_subject": "docs: split total reconciliation evidence 20260626",
+      "changed_files_summary": "A:14; total reading, 47-entry plan, API agents plan, reconciliation matrix",
+      "file_count": 14,
+      "shortstat": "14 files changed, 3512 insertions(+)",
+      "lane_type": "EVIDENCE_ONLY",
+      "recommended_target": "evidence archive / selective doc intake",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "requires_owner_gate": true,
+      "dependencies": [
+        "CORE_DECISION_CONTEXT"
+      ],
+      "risks": [
+        "Volumen documental alto; no debe mezclarse como runtime."
+      ],
+      "evidence_basis": [
+        "git rev-parse",
+        "git show",
+        "git diff",
+        "git merge-base",
+        "git ls-remote"
+      ]
+    },
+    {
+      "branch": "codex/version-local-reconciliation-evidence-20260626",
+      "local_head": "82b25d121d729b42195fb941768998370a02ece8",
+      "remote_head": "82b25d121d729b42195fb941768998370a02ece8",
+      "local_remote_match": true,
+      "merge_base": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "merge_base_status": "BASE_LIVE_HEAD",
+      "last_commit_subject": "docs: split local reconciliation evidence 20260626",
+      "changed_files_summary": "A:11; local file inventory, classification, cleanup dry-run, asset maps",
+      "file_count": 11,
+      "shortstat": "11 files changed, 99340 insertions(+)",
+      "lane_type": "EVIDENCE_ONLY",
+      "recommended_target": "evidence archive / selective doc intake",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "requires_owner_gate": true,
+      "dependencies": [
+        "NOISE_CLASSIFICATION_REVIEW"
+      ],
+      "risks": [
+        "Evidencia muy grande; riesgo de inflar repo si se integra sin curacion."
+      ],
+      "evidence_basis": [
+        "git rev-parse",
+        "git show",
+        "git diff",
+        "git merge-base",
+        "git ls-remote"
+      ]
+    },
+    {
+      "branch": "codex/version-ceo-watchdog-evidence-20260626",
+      "local_head": "1014aa2b90c16c819039c7d37d046ca0976c53af",
+      "remote_head": "1014aa2b90c16c819039c7d37d046ca0976c53af",
+      "local_remote_match": true,
+      "merge_base": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "merge_base_status": "BASE_LIVE_HEAD",
+      "last_commit_subject": "docs: split CEO watchdog evidence 20260626",
+      "changed_files_summary": "A:7; C:\\CEO, watch, watchdog, metadata readbacks and inventory",
+      "file_count": 7,
+      "shortstat": "7 files changed, 5612 insertions(+)",
+      "lane_type": "EVIDENCE_ONLY",
+      "recommended_target": "evidence archive / selective doc intake",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "requires_owner_gate": true,
+      "dependencies": [
+        "CEO_SURFACE_REVIEW"
+      ],
+      "risks": [
+        "Evidencia de superficies locales; no implica activar watchdog/live."
+      ],
+      "evidence_basis": [
+        "git rev-parse",
+        "git show",
+        "git diff",
+        "git merge-base",
+        "git ls-remote"
+      ]
+    },
+    {
+      "branch": "codex/version-branch-governance-evidence-20260626",
+      "local_head": "a83e2037e838f0b87920186b8ed0fd1a8b64e81e",
+      "remote_head": "a83e2037e838f0b87920186b8ed0fd1a8b64e81e",
+      "local_remote_match": true,
+      "merge_base": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "merge_base_status": "BASE_LIVE_HEAD",
+      "last_commit_subject": "docs: split branch governance evidence 20260626",
+      "changed_files_summary": "A:8; prior branch review plan, taxonomy, fan-in, plugin gate matrix",
+      "file_count": 8,
+      "shortstat": "8 files changed, 1077 insertions(+)",
+      "lane_type": "EVIDENCE_ONLY",
+      "recommended_target": "evidence archive / selective doc intake",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "requires_owner_gate": true,
+      "dependencies": [
+        "MATRIX_REVIEW"
+      ],
+      "risks": [
+        "Documento de governance previo; debe evitar recursividad de decision."
+      ],
+      "evidence_basis": [
+        "git rev-parse",
+        "git show",
+        "git diff",
+        "git merge-base",
+        "git ls-remote"
+      ]
+    },
+    {
+      "branch": "codex/version-readbacks-and-sdu-package-20260626",
+      "local_head": "e2477509295b672330acec5649108fa942f357ac",
+      "remote_head": "e2477509295b672330acec5649108fa942f357ac",
+      "local_remote_match": true,
+      "merge_base": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "merge_base_status": "BASE_LIVE_HEAD",
+      "last_commit_subject": "readback(post-remote): record verified remote publication state 20260626",
+      "changed_files_summary": "M:1 A:4; SDU readbacks, final package, post-remote readback MD/JSON",
+      "file_count": 5,
+      "shortstat": "5 files changed, 987 insertions(+)",
+      "lane_type": "MERGE_CANDIDATE_EVIDENCE_PACKAGE",
+      "recommended_target": "codex/live-state-g10-governed-20260626",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "requires_owner_gate": true,
+      "dependencies": [
+        "codex/version-core-g10-20260626"
+      ],
+      "risks": [
+        "Puede formalizar narrativa final; debe alinearse con core aprobado."
+      ],
+      "evidence_basis": [
+        "git rev-parse",
+        "git show",
+        "git diff",
+        "git merge-base",
+        "git ls-remote"
+      ]
+    },
+    {
+      "branch": "codex/version-validator-tooling-20260626",
+      "local_head": "8af84c815285253376662b22733c540d2dfa708d",
+      "remote_head": "8af84c815285253376662b22733c540d2dfa708d",
+      "local_remote_match": true,
+      "merge_base": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "merge_base_status": "BASE_LIVE_HEAD",
+      "last_commit_subject": "chore: split validator tooling 20260626",
+      "changed_files_summary": "M:2; project sync/workbench validators",
+      "file_count": 2,
+      "shortstat": "2 files changed, 27 insertions(+), 18 deletions(-)",
+      "lane_type": "MERGE_CANDIDATE_SUPPORT",
+      "recommended_target": "codex/live-state-g10-governed-20260626",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "requires_owner_gate": true,
+      "dependencies": [
+        "CORE_DECISION_CONTEXT"
+      ],
+      "risks": [
+        "Toca validadores; requiere postcheck antes de entrar a base."
+      ],
+      "evidence_basis": [
+        "git rev-parse",
+        "git show",
+        "git diff",
+        "git merge-base",
+        "git ls-remote"
+      ]
+    },
+    {
+      "branch": "codex/version-g11-review-only-20260626",
+      "local_head": "cf2a2cc4dc49256a8f409374faae2b0068541b0a",
+      "remote_head": "cf2a2cc4dc49256a8f409374faae2b0068541b0a",
+      "local_remote_match": true,
+      "merge_base": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "merge_base_status": "BASE_LIVE_HEAD",
+      "last_commit_subject": "docs: split G11 review-only proposal 20260626",
+      "changed_files_summary": "A:1; policy adjustment proposal",
+      "file_count": 1,
+      "shortstat": "1 file changed, 238 insertions(+)",
+      "lane_type": "REVIEW_ONLY",
+      "recommended_target": "NO_APPLY_REVIEW_ONLY",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "requires_owner_gate": true,
+      "dependencies": [
+        "G11_OWNER_DECISION"
+      ],
+      "risks": [
+        "Propuesta de politica; prohibido aplicar por inferencia."
+      ],
+      "evidence_basis": [
+        "git rev-parse",
+        "git show",
+        "git diff",
+        "git merge-base",
+        "git ls-remote"
+      ]
+    },
+    {
+      "branch": "codex/version-freeze-state-20260626",
+      "local_head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "remote_head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "local_remote_match": true,
+      "merge_base": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "merge_base_status": "BASE_LIVE_HEAD",
+      "last_commit_subject": "freeze(state): VERSION_STATE reconciled + evidence 20260626",
+      "changed_files_summary": "M:1 A:1; VERSION_STATE reconciled plus evidence snapshot",
+      "file_count": 2,
+      "shortstat": "2 files changed, 235 insertions(+), 67 deletions(-)",
+      "lane_type": "FREEZE_REFERENCE",
+      "recommended_target": "FREEZE_REFERENCE_ONLY",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "requires_owner_gate": true,
+      "dependencies": [
+        "TAG_FREEZE_PUBLISHED"
+      ],
+      "risks": [
+        "Referencia congelada; no merge directo, tag ya formalizado."
+      ],
+      "evidence_basis": [
+        "git rev-parse",
+        "git show",
+        "git diff",
+        "git merge-base",
+        "git ls-remote"
+      ]
+    }
+  ],
+  "recommended_fan_in_order": [
+    "FREEZE_REFERENCE_ONLY",
+    "codex/version-core-g10-20260626",
+    "codex/version-validator-tooling-20260626",
+    "codex/version-control-plane-canvas-20260626",
+    "codex/version-readbacks-and-sdu-package-20260626",
+    "EVIDENCE_ONLY_SELECTIVE_INTAKE",
+    "codex/version-g11-review-only-20260626"
+  ],
+  "risks": [
+    "NO_PR_MASIVO: ramas mezclan canon, evidencia, tooling, canvas y propuesta G11.",
+    "CORE_FIRST: core G10 debe resolver la autoridad antes de dependientes.",
+    "EVIDENCE_VOLUME: local reconciliation contiene evidencia grande y requiere curacion.",
+    "VALIDATOR_IMPACT: validator-tooling cambia herramientas de verificacion.",
+    "G11_REVIEW_ONLY: propuesta de politica no se aplica sin gate owner.",
+    "FREEZE_REFERENCE_ONLY: freeze/tag no son merge directo."
+  ],
+  "forbidden_actions": [
+    "checkout",
+    "switch",
+    "fetch",
+    "pull",
+    "push",
+    "pr",
+    "merge",
+    "rebase",
+    "reset",
+    "clean",
+    "restore",
+    "commit",
+    "tag",
+    "live_write",
+    "microsoft_live",
+    "sharepoint_live",
+    "dataverse_live",
+    "power_platform_live",
+    "secrets_access"
+  ],
+  "success_state": "BRANCH_GOVERNANCE_PR_MATRIX_WRITTEN",
+  "postcheck_expected": "EXPECTED_DIRTY_MATRIX_ONLY",
+  "stop_condition": "No PR, no merge, no push, no live write; esperar owner gate para SNAPSHOT_VERSION_DECISION_OWNER_ONLY.",
+  "next_lane": "SNAPSHOT_VERSION_DECISION_OWNER_ONLY"
+}
