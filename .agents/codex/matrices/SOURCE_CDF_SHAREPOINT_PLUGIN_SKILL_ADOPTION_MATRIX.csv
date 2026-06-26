@@ -1,0 +1,8 @@
+plugin_skill,source_url,cdf_agent,adopted_as,allowed_now,gate_required_for_live,notes
+sharepoint,https://github.com/openai/plugins/tree/main/plugins/sharepoint,cdf.sharepoint_information_architect,site and information architecture planning,yes,yes,General SharePoint planning surface adapted to CDF.
+sharepoint-site-discovery,https://github.com/openai/plugins/tree/main/plugins/sharepoint/skills,cdf.sharepoint_site_discovery_agent,site library and folder discovery workflow,yes,yes,First live step must be read-only inventory.
+sharepoint-shared-doc-maintenance,https://github.com/openai/plugins/tree/main/plugins/sharepoint/skills,cdf.sharepoint_shared_doc_maintainer,shared governance document maintenance,yes,yes,No whole-document overwrites without explicit plan.
+sharepoint-word-docs,https://github.com/openai/plugins/tree/main/plugins/sharepoint/skills,cdf.sharepoint_word_doc_agent,Word document preservation workflow,yes,yes,Preserve docx structure and style.
+sharepoint-spreadsheets,https://github.com/openai/plugins/tree/main/plugins/sharepoint/skills,cdf.sharepoint_spreadsheet_agent,workbook analysis and safe update planning,yes,yes,Preserve sheets formulas and formatting.
+sharepoint-spreadsheet-formula-builder,https://github.com/openai/plugins/tree/main/plugins/sharepoint/skills,cdf.sharepoint_formula_agent,formula design repair and rollout,yes,yes,Requires test matrix before live workbook update.
+sharepoint-powerpoint,https://github.com/openai/plugins/tree/main/plugins/sharepoint/skills,cdf.sharepoint_powerpoint_agent,deck update planning and fidelity checks,yes,yes,Requires content plus fidelity verification.

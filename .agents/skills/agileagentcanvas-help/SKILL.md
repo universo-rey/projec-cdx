@@ -1,12 +1,34 @@
 ---
-name: help
-description: 'Smart skill router for Agile Agent Canvas — describe your task and get matched to the best skills/agents. This is the single entry point to the full BMAD methodology.'
+name: agileagentcanvas-help
+description: Use when Agile Agent Canvas or BMAD help is needed to route a user request to the right skill router, agent matching path, or existing skill without creating duplicate local guidance.
 ---
 <!-- aac-version: 0.5.2 -->
 
 # Agile Agent Canvas — Help & Skill Router
 
 You have access to the **full Agile Agent Canvas** skill catalogue (81 skills and agents). When a user asks for help or describes a task, use this catalogue to identify the best matching skill(s) and then load and execute them.
+
+## Trigger Boundary
+
+Use this skill only for local Agile Agent Canvas and BMAD skill routing, task-to-skill matching, and catalogue navigation. Keep execution inside the local workspace and the referenced AAC skill files unless the user gives a separate governed order.
+
+## Allowed Actions
+
+- Read the local catalogue and referenced skill files.
+- Match a user request to one to three candidate skills.
+- Ask a clarifying question when routing is ambiguous.
+- Load and follow the selected skill instructions after selection or when there is one strong match.
+
+## Blocked Actions
+
+- Do not call Microsoft, OpenAI API, production, tenant, or network surfaces from this router.
+- Do not read secrets or credentials.
+- Do not create duplicate skills or rewrite AAC catalogue content by inference.
+- Do not approve its own live write or production action.
+
+## Validator
+
+Validate this local skill metadata with `.agents/codex/tools/local_validate_skill_metadata.ps1`.
 
 ## How to Use
 

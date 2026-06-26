@@ -1,0 +1,7 @@
+level_id,agent_count,primary_capabilities,default_read_weight,can_write_local,can_call_external,escalation_default
+00_ROUTER,1,intake|classification|dispatch,light,yes,no,01_AUTORIDAD_Y_GATES
+01_AUTORIDAD_Y_GATES,3,frontier|canon|gates|stop_conditions,medium,yes,no,HUMAN_APPROVAL
+02_REGISTRO_Y_CARTOGRAFIA,3,registry|repo_map|migration_plan,medium,yes,no,01_AUTORIDAD_Y_GATES
+03_CORTE_EJECUTORA,3,prompts|recipes|tools|evals|evidence,medium,yes,only_with_order,01_AUTORIDAD_Y_GATES
+04_TORRES_DE_UNIVERSO,2,universe_routing|tower_readbacks,medium,yes,only_with_order,01_AUTORIDAD_Y_GATES
+05_SOPORTE_TECNICO,2,references|workspace|local_tooling,light,yes,no,01_AUTORIDAD_Y_GATES

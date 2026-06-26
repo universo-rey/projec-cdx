@@ -1,0 +1,8 @@
+"lineage_id","source","derived","derivation","owner_agent","validator"
+"repo_governance_to_inventory","REPO_GOVERNANCE_ASSIGNMENT_MATRIX.csv","GOVERNED_ASSET_CANONICAL_INVENTORY.csv","repo rows become canonical inventory repo assets","rey.repo_cartographer","tool.local_validate_agent_layer"
+"agent_governance_to_inventory","AGENT_GOVERNANCE_MATRIX.csv","GOVERNED_ASSET_CANONICAL_INVENTORY.csv","agent rows become canonical inventory agent assets","rey.authority_canonist","tool.local_validate_agent_layer"
+"tool_governance_to_inventory","TOOL_GOVERNANCE_MATRIX.csv","GOVERNED_ASSET_CANONICAL_INVENTORY.csv","tool rows become canonical inventory tool assets","codex.workspace_guardian","tool.local_validate_agent_layer"
+"matrix_index_governs_all","MATRIX_INDEX.csv","VALIDATION_COVERAGE_MATRIX.csv","index rows require validator coverage for governance matrices","rey.governance_registrar","tool.local_validate_agent_layer"
+"api_review_to_local_delta","OPENAI_D_DRIVE_GOVERNANCE_REVIEW_20260601.json","STOP_CONDITION_GLOSSARY.csv|COVERAGE_EXCEPTION_REGISTRY.csv|CANONICAL_INDEX_LINEAGE_AUDIT.csv","API review recommendations converted to local documentary artifacts","court.seshat_evidence","tool.local_validate_agent_layer"
+"agents_json_to_workpapers","agents.json","AGENT_WORKPAPERS_MATRIX.csv|WORKPAPER_INDEX.csv|workpapers/<agent_id>","agent registry materializes workpaper folders and index rows","court.seshat_evidence","tool.local_validate_agent_layer"
+"plugins_to_purpose_surface_capability","PLUGIN_USAGE_MATRIX.csv","PURPOSE_SURFACE_CAPABILITY_MATRIX.csv","plugin boundaries become agent purpose surface capability refs","codex.workspace_guardian","tool.local_validate_agent_layer"
