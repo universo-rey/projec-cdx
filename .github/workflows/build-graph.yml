@@ -58,7 +58,7 @@ jobs:
           python main.py graph --output outputs/metadata-graph.dot --format dot
 
       - name: Upload graph artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: metadata-graph
           if-no-files-found: error
