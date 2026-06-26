@@ -7,6 +7,9 @@ Estado compacto para continuar sin arrastrar historico pesado.
 - Estado vivo: [CURRENT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md)
 - Siguiente paso: [NEXT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md)
 - Trazabilidad: [TRACE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TRACE.md)
+- Certificacion SDU: [SDU_SYSTEM_CERTIFICATION.md](C:/Users/enzo1/PROJEC%20CDX/docs/SDU_FINAL_PACKAGE/SDU_SYSTEM_CERTIFICATION.md)
+- Contrato SDU: [SDU_CONTRACT_FORMAL.md](C:/Users/enzo1/PROJEC%20CDX/docs/SDU_FINAL_PACKAGE/SDU_CONTRACT_FORMAL.md)
+- Estado G10: [SDU_STATE_G10.md](C:/Users/enzo1/PROJEC%20CDX/SDU_STATE_G10.md)
 - Evidencia corta: [READBACK_CIERRE_PESO_REDUCIDO_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260617/READBACK_CIERRE_PESO_REDUCIDO_20260617.md)
 - Workbook vigente: [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx)
 - Hitos: [INDICE_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md)
@@ -23,7 +26,9 @@ Una sola unidad activa por vez:
 7. validar con `tools/validate_proj_cdx_workbench.ps1`
 
 ## Estado
-- Rama liviana alineada con el binding Dataverse del workbook.
-- Un workbook vigente.
-- Un readback corto.
-- Un solo delta vivo.
+- Maximo nivel vivo: `SDU_DOCUMENTAL_PRODUCTION_READY_GOVERNED`.
+- Live total: armado y gobernado, no automatico.
+- Runtime externo: bloqueado sin gate literal.
+- Evidencia rectora: `docs/SDU_FINAL_PACKAGE` + `08_READBACKS` + `C:\CEO\watchdog\evidence`.
+- Un solo delta vivo: promocion local de marcadores operativos.
+- No stage, no commit, no push, no PR por defecto.

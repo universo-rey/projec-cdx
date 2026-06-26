@@ -2,9 +2,9 @@
 artifact_id: operativa/NEXT.md
 categoria: operativa
 tipo: plan
-estado: en_revision
+estado: aprobado
 version: v0.6.0-rc1
-fecha_evento: '2026-06-23'
+fecha_evento: '2026-06-26'
 autoridad:
   tipo: sistema
   referencia: CABINA_GOBIERNO_TOTAL
@@ -12,14 +12,15 @@ origen: GitHub
 ubicacion_repo: operativa/NEXT.md
 etiquetas:
   - next
-  - convergencia
-  - delegacion
-  - local-only
+  - production-ready
+  - live-total-governed
+  - next
 relacionados:
   - operativa/CURRENT.md
-  - operativa/tasks/20260623/ROOT_GAP_RESOLUTION_DELEGATION_MATRIX_20260623.csv
-  - operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv
-descripcion: Siguiente movimiento vivo para resolver brechas de convergencia de raiz.
+  - docs/SDU_FINAL_PACKAGE/SDU_OPERATION_PLAYBOOK.md
+  - docs/SDU_FINAL_PACKAGE/SDU_RISK_MODEL.md
+  - policy-adjustment-proposal.json
+descripcion: Siguiente movimiento vivo tras elevar el estado al maximo nivel SDU certificado.
 ---
 
 # Next
@@ -27,52 +28,58 @@ descripcion: Siguiente movimiento vivo para resolver brechas de convergencia de 
 Movimiento unico:
 
 ```text
-EXECUTE_ROOT_GAP_RESOLUTION_AND_DELEGATION_20260623
+ADOPT_SDU_DOCUMENTAL_PRODUCTION_READY_GOVERNED_AND_PREPARE_MULTI_DOMAIN_EXPANSION
 ```
 
 ## Estado de Entrada
 
 ```text
-CABINA_FRONTDOOR_CONVERGED_LOCAL_ONLY
-ORGANISMO_VIVO_LANGUAGE_AND_POLICY_INJERTADO_EN_CABINA
+SDU_DOCUMENTAL_PRODUCTION_READY_GOVERNED
+LIVE_TOTAL_GOVERNED_ARMED_NOT_AUTOMATIC
+REPO_CANONICAL_BOUNDARY_ESTABLISHED_G10
 ```
 
 ## Objetivo
 
-Resolver las brechas detectadas bajo la convergencia de raiz:
+Sostener el maximo nivel alcanzado sin abrir ejecucion automatica:
 
-1. estado vivo alineado;
-2. puertas cortas sin alias fisico como workspace principal;
-3. ubicacion de matrices de gobierno reconciliada;
-4. rutas legacy `.cabina/organizacion-total` documentadas como historicas;
-5. federation/SNS extendidos a 16 repos sin copiar runtime;
-6. cierre con readback y decision de versionado.
+1. mantener `PRODUCTION READY` como estado institucional del carril documental;
+2. operar NOC/watchdog/intelligence como observacion y recomendacion;
+3. revisar G11 policy tuning sin aplicar automaticamente;
+4. preparar expansion multi-dominio con fuente de estado, rollback, postcheck y evidencia por dominio;
+5. dejar `PRE_FIX_DUPLICATE` solo bajo decision `CLEANUP GATE`;
+6. cerrar versionado/snapshot/stage solo si el owner lo ordena.
 
 ## Carriles Delegados
 
 ```text
-Seshat -> estado vivo CURRENT/NEXT
-Anubis -> rutas, identidad y gobernanza
-Horus -> evidencia de rutas normalizadas
-Maat -> indices/SNS y criterio de validacion liviana
-Narrador -> cierre/readback
+Seshat -> contrato y estado vivo CURRENT/NEXT
+Anubis -> gates, rollback y owner decision
+Horus -> evidencia watchdog/NOC/intelligence
+Maat -> validacion fail-closed y no-inference guard
+Narrador -> readback y trazabilidad institucional
 ```
 
 ## Siguiente Orden Tecnica
 
 ```text
-RST-10 -> RST-05 -> RST-11 -> RST-12
+G11_REVIEW_NO_APPLY
+DOMAIN_SOURCE_CONTRACTS
+CLEANUP_GATE_DECISION_OPTIONAL
+SNAPSHOT_VERSION_DECISION_OWNER_ONLY
 ```
 
-`RST-01` y `RST-04` ya quedaron aplicados local-only.
+No hay accion live implicita en este `NEXT`.
 
 ## Frontera
 
 - No live.
 - No secretos.
 - No DB/cache.
-- No mover historia.
-- No borrar outputs.
+- No scheduler.
+- No flows.
+- No cleanup automatico.
+- No Microsoft/Dataverse/SharePoint/Power Platform por inferencia.
 - No push.
 - No PR.
 - No stage/commit sin decision.
