@@ -1,0 +1,90 @@
+{
+  "command": "CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1",
+  "status": "SDK_ASSETS_READY",
+  "generated_at": "2026-06-26T07:07:32Z",
+  "sdk_match_count": 6,
+  "sdk_matches": [
+    {
+      "path": "pyproject.toml",
+      "kind": "python_project_manifest",
+      "exists": true,
+      "package": "projec-cdx",
+      "version": "0.6.0rc1",
+      "dependency_matches": [
+        "openai-agents>=0.17.5",
+        "openai-agents>=0.17.5"
+      ],
+      "decision": "VERSIONABLE_CANON_NO_INSTALL"
+    },
+    {
+      "path": "src",
+      "kind": "python_source_root",
+      "exists": true,
+      "packages": [
+        "launch_desk",
+        "metadata",
+        "projec_cdx_cloud",
+        "projec_cdx_common",
+        "runtime_versioning"
+      ],
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "CEO_CONTROL_PLANE.code-workspace",
+      "kind": "workspace_descriptor",
+      "exists": true,
+      "decision": "LOCAL_CONFIG_REVIEW"
+    },
+    {
+      "path": ".vscode\\tasks.json",
+      "kind": "editor_task_surface",
+      "exists": true,
+      "decision": "LOCAL_CONFIG_REVIEW"
+    },
+    {
+      "path": ".cursor\\mcp.json",
+      "kind": "editor_mcp_surface",
+      "exists": true,
+      "decision": "LOCAL_CONFIG_REVIEW"
+    },
+    {
+      "path": "node_modules",
+      "kind": "dependency_junction_boundary",
+      "exists": true,
+      "decision": "NO_INSTALL_DO_NOT_TRAVERSE"
+    }
+  ],
+  "command_candidates": [
+    "projec-cdx-cloud",
+    "launch-desk",
+    "cdx",
+    "ceo-runtime-save",
+    "ceo-runtime-list",
+    "ceo-runtime-restore",
+    "ceo-runtime-sentinel",
+    "ceo-runtime-index",
+    "ceo-runtime-state",
+    "ceo-runtime-status",
+    "ceo-runtime-continuous",
+    "ceo"
+  ],
+  "policy": [
+    "no_install",
+    "no_openai_api_call",
+    "no_secret_read",
+    "no_parallel_runtime"
+  ],
+  "frontier": {
+    "local_first": true,
+    "no_delete": true,
+    "no_move": true,
+    "no_overwrite": true,
+    "no_git_write": true,
+    "no_remote": true,
+    "no_live": true,
+    "no_secret_read": true,
+    "no_sdk_install": true,
+    "no_core_worktree_change": true,
+    "safe_apply_executed": false
+  }
+}

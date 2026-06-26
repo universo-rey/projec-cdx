@@ -1,0 +1,128 @@
+{
+  "command": "CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1",
+  "status": "DRYRUN_ONLY_NO_ACTION",
+  "generated_at": "2026-06-26T07:07:32Z",
+  "safe": [
+    {
+      "id": "SAFE_INFO_EXCLUDE_CANDIDATES_ONLY",
+      "type": "proposal_only",
+      "targets": [
+        ".ruff_cache/",
+        ".venv_clean/",
+        ".venv_test/",
+        ".codex_tmp/",
+        "tmp-owner-action-layer/",
+        "out/"
+      ],
+      "reason": "local-only noise already excluded or safe to exclude after review",
+      "executed": false,
+      "reversal": "remove proposed line from future patch if owner rejects"
+    },
+    {
+      "id": "SAFE_KEEP_IGNORED_SURFACES",
+      "type": "no_action",
+      "targets": [
+        ".cache/",
+        ".pytest_cache/",
+        ".cabina/",
+        "outputs/ceo-suite*/",
+        "graphify-out/"
+      ],
+      "reason": "existing ignore coverage or runtime boundary",
+      "executed": false,
+      "reversal": "none because no action executed"
+    }
+  ],
+  "requires_gate": [
+    {
+      "id": "GATE_QUARANTINE_CACHE_TEMP",
+      "targets": [
+        "__pycache__/",
+        ".ruff_cache/",
+        ".codex_tmp/",
+        "out/",
+        "graphify-out/"
+      ],
+      "owner_gate_required": true,
+      "reason": "candidate noise, but G1 is dry-run only",
+      "rollback": "restore from quarantine manifest in later apply pass",
+      "postcheck": "rerun inventory and import/test validators"
+    },
+    {
+      "id": "GATE_LEGACY_READONLY",
+      "targets": [
+        "operativa/archive/root-dirs/",
+        "operativa/archive/root-loose/",
+        ".bmad-backup/",
+        "workbooks/_backups/"
+      ],
+      "owner_gate_required": true,
+      "reason": "historical evidence/backup retention needs owner decision",
+      "rollback": "preserve exact path map before any future move",
+      "postcheck": "readback still resolves and git status isolated"
+    },
+    {
+      "id": "GATE_AGENT_SKILL_DUPLICATE",
+      "targets": [
+        ".agents/skills/agileagentcanvas-help/SKILL.md",
+        ".cursor/skills/agileagentcanvas-help/SKILL.md"
+      ],
+      "owner_gate_required": true,
+      "reason": "duplicate skill bridge needs canonical owner decision",
+      "rollback": "keep both until canonical owner selected",
+      "postcheck": "skill discovery still resolves one canonical path"
+    },
+    {
+      "id": "BLOCKED_RUNTIME_AND_SENSITIVE",
+      "targets": [
+        ".env.local",
+        ".cabina/",
+        "node_modules/",
+        "reparse points",
+        "outputs/ceo-suite-test temp repos"
+      ],
+      "owner_gate_required": true,
+      "reason": "sensitive/runtime/junction/nested repo surfaces",
+      "rollback": "not applicable in G1 because no action allowed",
+      "postcheck": "no action in G1"
+    }
+  ],
+  "versionable": [
+    {
+      "target": "operativa/tasks/20260626/CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1",
+      "reason": "new evidence package",
+      "action": "keep as readback evidence",
+      "executed": false
+    },
+    {
+      "target": "tools validators patched earlier in session",
+      "reason": "pre-existing active delta, not cleanup",
+      "action": "do not mix with noise cleanup",
+      "executed": false
+    }
+  ],
+  "reversal": {
+    "g1_action_state": "no cleanup apply executed",
+    "restore_needed_now": false,
+    "future_apply_requires": [
+      "owner literal gate",
+      "target list",
+      "rollback path map",
+      "postcheck validators",
+      "evidence readback"
+    ]
+  },
+  "frontier": {
+    "local_first": true,
+    "no_delete": true,
+    "no_move": true,
+    "no_overwrite": true,
+    "no_git_write": true,
+    "no_remote": true,
+    "no_live": true,
+    "no_secret_read": true,
+    "no_sdk_install": true,
+    "no_core_worktree_change": true,
+    "safe_apply_executed": false
+  }
+}

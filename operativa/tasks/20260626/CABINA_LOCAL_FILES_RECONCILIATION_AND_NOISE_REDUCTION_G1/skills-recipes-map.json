@@ -1,0 +1,206 @@
+{
+  "command": "CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1",
+  "status": "SKILLS_RECIPES_MAP_READY",
+  "generated_at": "2026-06-26T07:07:32Z",
+  "roots": [
+    ".agents\\skills",
+    ".cursor\\skills",
+    "recipes",
+    "inventarios",
+    ".cabina\\SDU_RUNTIME_ROOT\\05_CONFIG"
+  ],
+  "items": [
+    {
+      "path": ".agents\\skills\\agileagentcanvas-help\\SKILL.md",
+      "kind": "skill",
+      "surface": ".agents\\skills",
+      "canonical_role": "repo_local_or_editor_bridge",
+      "decision": "REVIEW_CANONICAL_OWNER"
+    },
+    {
+      "path": ".cabina\\SDU_RUNTIME_ROOT\\05_CONFIG\\agent-recipes.v1.yaml",
+      "kind": "recipe-config",
+      "surface": ".cabina",
+      "canonical_role": "skill_recipe_governance_index",
+      "decision": "VERSIONABLE_READBACK_OR_RUNTIME_BOUNDARY"
+    },
+    {
+      "path": ".cabina\\SDU_RUNTIME_ROOT\\05_CONFIG\\agent-skills.v1.yaml",
+      "kind": "skill-index",
+      "surface": ".cabina",
+      "canonical_role": "skill_recipe_governance_index",
+      "decision": "VERSIONABLE_READBACK_OR_RUNTIME_BOUNDARY"
+    },
+    {
+      "path": ".cursor\\skills\\agileagentcanvas-help\\SKILL.md",
+      "kind": "skill",
+      "surface": ".cursor\\skills",
+      "canonical_role": "repo_local_or_editor_bridge",
+      "decision": "REVIEW_CANONICAL_OWNER"
+    },
+    {
+      "path": "inventarios\\PATRONES_A_SKILLS_20260615.md",
+      "kind": "skill-index",
+      "surface": "inventarios",
+      "canonical_role": "skill_recipe_governance_index",
+      "decision": "VERSIONABLE_READBACK_OR_RUNTIME_BOUNDARY"
+    },
+    {
+      "path": "inventarios\\SKILLS_UNIFIED_TABLE.csv",
+      "kind": "skill-index",
+      "surface": "inventarios",
+      "canonical_role": "skill_recipe_governance_index",
+      "decision": "VERSIONABLE_READBACK_OR_RUNTIME_BOUNDARY"
+    },
+    {
+      "path": "recipes\\agentes-atomicos-algoritmicos-en-waves.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\canon-documental.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\cierre-wave-documental.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\complementos-on-demand.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\configuracion-entorno-codex-ui.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\dataverse-rehidratacion.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\documentos-canon-atomico.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\INDICE_RECETAS.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\limpieza-pc-local-segura.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\MAPA.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\microsoft-live-read-preliminar.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\normalizacion-perfil-windows.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\procedencia-layout-on-demand.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\promocion-huella-tenant-dataverse.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\promocion-seshat-home-sharepoint.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\README.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "recipes\\sdu-dataverse-metadata-wave.md",
+      "kind": "recipe",
+      "surface": "recipes",
+      "canonical_role": "recipe_index_or_operational_recipe",
+      "decision": "VERSIONABLE_CANON"
+    }
+  ],
+  "duplicates": [
+    {
+      "name": "agileagentcanvas-help",
+      "paths": [
+        ".agents\\skills\\agileagentcanvas-help\\SKILL.md",
+        ".cursor\\skills\\agileagentcanvas-help\\SKILL.md"
+      ],
+      "status": "exact_duplicate_copy_from_agent_scan",
+      "decision": "review_single_canonical_owner_before_cleanup"
+    }
+  ],
+  "summary": {
+    "item_count": 23,
+    "skill_count": 2,
+    "recipe_count": 17,
+    "duplicate_count": 1,
+    "recommendation": "usar inventarios + recipes/INDICE_RECETAS.md + agent-skills/agent-recipes como mapa rector; Agile Agent Canvas queda como puente externo hasta gate de canon"
+  },
+  "frontier": {
+    "local_first": true,
+    "no_delete": true,
+    "no_move": true,
+    "no_overwrite": true,
+    "no_git_write": true,
+    "no_remote": true,
+    "no_live": true,
+    "no_secret_read": true,
+    "no_sdk_install": true,
+    "no_core_worktree_change": true,
+    "safe_apply_executed": false
+  }
+}

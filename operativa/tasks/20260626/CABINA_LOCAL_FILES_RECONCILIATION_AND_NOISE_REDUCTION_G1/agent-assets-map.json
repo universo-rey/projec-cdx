@@ -1,0 +1,117 @@
+{
+  "command": "CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1",
+  "status": "AGENT_ASSETS_READY",
+  "generated_at": "2026-06-26T07:07:32Z",
+  "agent_assets": [
+    {
+      "path": "SYSTEM_NERVOUS_INDEX.json",
+      "role": "primary runtime/event agent map",
+      "exists": true,
+      "active_event_agents_count": 14,
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": "contracts\\agent-map.json",
+      "role": "agent owner skill recipe tool evidence validator stopCondition map",
+      "exists": true,
+      "decision": "VERSIONABLE_CANON"
+    },
+    {
+      "path": ".cabina\\SDU_RUNTIME_ROOT\\05_CONFIG\\cabina-contract.v1.json",
+      "role": "base cabina governance roster",
+      "exists": true,
+      "agents": [
+        "SESHAT",
+        "THOT",
+        "ANUBIS",
+        "MAAT",
+        "HORUS"
+      ],
+      "decision": "OWNER_HOLD_GOVERNED_RUNTIME_BOUNDARY"
+    },
+    {
+      "path": "inventarios\\AGENTES_SKILLS_RECETAS_20260616.md",
+      "role": "semantic SDU roster and skill recipe bridge",
+      "exists": true,
+      "agents": [
+        "seshat-normativa",
+        "thot-tecnico",
+        "anubis-gate",
+        "maat-cumplimiento",
+        "horus-riesgo",
+        "narrador-normativo"
+      ],
+      "decision": "VERSIONABLE_READBACK"
+    },
+    {
+      "path": ".agileagentcanvas-context",
+      "role": "external canvas context bridge",
+      "exists": true,
+      "decision": "OWNER_HOLD_GOVERNED"
+    },
+    {
+      "path": ".agents\\skills\\agileagentcanvas-help\\SKILL.md",
+      "role": "repo-local skill bridge",
+      "exists": true,
+      "decision": "REVIEW_CANONICAL_OWNER"
+    },
+    {
+      "path": ".cursor\\skills\\agileagentcanvas-help\\SKILL.md",
+      "role": "cursor-local duplicate skill bridge",
+      "exists": true,
+      "decision": "REVIEW_CANONICAL_OWNER"
+    }
+  ],
+  "active_event_agents": [
+    "orchestrator_agent",
+    "contracts_agent",
+    "validation_agent",
+    "bus_agent",
+    "observability_agent",
+    "evidence_agent",
+    "optimization_agent",
+    "sanitizer_agent",
+    "diagnostic_agent",
+    "path_sanitizer_agent",
+    "federation_enforcer_agent",
+    "sns_agent",
+    "vsi_execution_guard",
+    "control_plane_agent"
+  ],
+  "duplicates": [
+    {
+      "type": "exact_skill_duplicate",
+      "items": [
+        ".agents\\skills\\agileagentcanvas-help\\SKILL.md",
+        ".cursor\\skills\\agileagentcanvas-help\\SKILL.md"
+      ],
+      "decision": "review_single_canonical_owner_before_cleanup",
+      "action_executed": false
+    },
+    {
+      "type": "wrapper_alias_cluster",
+      "items": [
+        "tools\\ceo-agent-assets-map.ps1",
+        "tools\\ceo-sdk-assets-map.ps1",
+        "tools\\ceo-agent-reconcile.ps1",
+        "tools\\ceo-sdk-agent-routes.ps1"
+      ],
+      "decision": "preserve_command_facade_wrappers_write_outputs_when_run",
+      "action_executed": false
+    }
+  ],
+  "duplicate_count": 2,
+  "frontier": {
+    "local_first": true,
+    "no_delete": true,
+    "no_move": true,
+    "no_overwrite": true,
+    "no_git_write": true,
+    "no_remote": true,
+    "no_live": true,
+    "no_secret_read": true,
+    "no_sdk_install": true,
+    "no_core_worktree_change": true,
+    "safe_apply_executed": false
+  }
+}
