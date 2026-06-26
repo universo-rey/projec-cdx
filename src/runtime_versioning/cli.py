@@ -545,6 +545,12 @@ def save_snapshot(
     payload = _snapshot_payload(root, ref, allow_dirty, version=version, event_type=event_type)
     output_dir = snapshot_dir or _snapshot_version_dir(root, str(payload["version"]))
     path = _next_snapshot_path(output_dir, str(payload["snapshot_id"]))
+    final_snapshot_id = path.stem
+    if final_snapshot_id != payload["snapshot_id"]:
+        payload["snapshot_id"] = final_snapshot_id
+        payload.pop("global_hash", None)
+        canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
+        payload["global_hash"] = _sha256_bytes(canonical)
     _write_json(path, payload)
     payload["path"] = _relative(path, root)
     index = build_snapshot_index(root, write=True)
@@ -1105,6 +1111,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     sentinel = subparsers.add_parser("sentinel", help="Write runtime sentinel report")
     sentinel.add_argument("--json", action="store_true", help="Print JSON payload")
+    sentinel.add_argument("--output", type=Path, default=None, help="Optional JSON output path")
 
     status = subparsers.add_parser("status", help="Show governed runtime status")
     status.add_argument("--json", action="store_true", help="Print JSON payload")
@@ -1174,7 +1181,7 @@ def _main(args: argparse.Namespace) -> int:
             print(f"Restore {payload['mode']}: {payload['commit']}")
         return 0
     if args.command == "sentinel":
-        payload = build_sentinel_report(root=root)
+        payload = build_sentinel_report(root=root, output=args.output)
         if args.json:
             print(json.dumps(payload, indent=2, ensure_ascii=False))
         else:

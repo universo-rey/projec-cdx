@@ -47,11 +47,11 @@ jobs:
       - name: Metadata index freshness
         run: |
           python -m tools.build_index
-          git diff --exit-code -- index.json operativa/archive/legacy-root/undated/index.json
+          git diff --exit-code -- index.json operativa/index.json
 
       - name: Runtime sentinel
         run: |
-          python main.py runtime sentinel --json | tee "$CODEX_GOVERNED_REPORT_DIR/runtime-sentinel.json"
+          python main.py runtime sentinel --json --output "$CODEX_GOVERNED_REPORT_DIR/runtime-sentinel.json"
 
       - name: Governed cloud agents
         run: |

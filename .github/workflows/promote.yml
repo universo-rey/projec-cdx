@@ -124,6 +124,6 @@ jobs:
           add-paths: |
             live-manifest.json
             index.json
-            operativa/archive/legacy-root/undated/index.json
+            operativa/index.json
             **/*.md
             **/*.meta.json

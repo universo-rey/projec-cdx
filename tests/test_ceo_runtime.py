@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+from datetime import datetime, timezone
 from pathlib import Path
 
 from runtime_versioning import cli
@@ -53,6 +54,23 @@ def test_list_snapshots_reads_saved_payload(tmp_path: Path) -> None:
 
     assert rows[0]["snapshot_id"] == payload["snapshot_id"]
     assert rows[0]["commit"] == payload["git"]["commit"]
+
+
+def test_save_snapshot_disambiguates_duplicate_minute_ids(monkeypatch, tmp_path: Path) -> None:
+    _seed_repo(tmp_path)
+    fixed_now = datetime(2026, 6, 26, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(cli, "_utc_now", lambda: fixed_now)
+
+    first = cli.save_snapshot(root=tmp_path, write_acta=False)
+    second = cli.save_snapshot(root=tmp_path, allow_dirty=True, write_acta=False)
+    saved_second = json.loads((tmp_path / second["path"]).read_text(encoding="utf-8"))
+    rows = cli.build_snapshot_index(root=tmp_path)["snapshots"]
+    ids = [row["snapshot_id"] for row in rows]
+
+    assert first["snapshot_id"] == "CEORUNTIME_20260626_1200"
+    assert second["snapshot_id"] == "CEORUNTIME_20260626_1200_02"
+    assert saved_second["snapshot_id"] == second["snapshot_id"]
+    assert len(ids) == len(set(ids))
 
 
 def test_restore_blocks_dirty_workspace(tmp_path: Path) -> None:
