@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0",
+  "mode": "TOTAL_READING_RECONCILIATION_G1",
+  "created_at_local": "2026-06-26T06:40:00-03:00",
+  "created_at_utc": "2026-06-26T09:40:00Z",
+  "scope": "C:\\CEO\\project-cdx",
+  "branch": "codex/live-state-g10-governed-20260626",
+  "head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "ahead_origin_main": 54,
+  "version": "v0.6.0-rc1",
+  "max_level": {
+    "state": "SDU_DOCUMENTAL_PRODUCTION_READY_GOVERNED",
+    "level": "G10_REPO_CANONICAL_BOUNDARY_WITH_G8_5_DOCUMENTAL_CERTIFICATION",
+    "mode": "LIVE_TOTAL_GOVERNED_ARMED_NOT_AUTOMATIC",
+    "production_ready": true,
+    "automatic_execution": false,
+    "external_send": false,
+    "scheduler_enabled": false,
+    "g11_status": "REVIEW_ONLY_NOT_APPLIED"
+  },
+  "git": {
+    "input_status_count": 62,
+    "version_state_status_count": 61,
+    "missing_in_version_state_count": 1,
+    "stale_in_version_state_count": 0,
+    "preexisting_staged_count": 3,
+    "preexisting_staged": [
+      "A .agileagentcanvas-context/sdu/artifacts/sdu-system.json",
+      "A SDU_STATE_G10.md",
+      "A SDU_SYSTEM_CONTRACT.md"
+    ],
+    "stage_executed_by_this_phase": false,
+    "missing_in_version_state": [
+      "?? docs/superpowers/plans/2026-06-26-total-reading-reconciliation.md"
+    ],
+    "dictamen": "VERSION_STATE_DYNAMIC_DRIFT_MINIMAL_PLAN_FILE_ONLY"
+  },
+  "dirty_classification": {
+    "CORE_G10_VERSIONABLE": 20,
+    "EVIDENCE_VERSIONABLE": 14,
+    "PLAN_OR_AUDIT_SUPPORT": 25,
+    "LOCAL_RUNTIME_SUPPORT": 2,
+    "REVIEW_ONLY_G11": 1,
+    "SENSITIVE_NO_TOUCH": 0,
+    "GENERATED_NOISE": 0,
+    "UNKNOWN_REQUIRES_OWNER": 0,
+    "total": 62
+  },
+  "canonical_sources": {
+    "primary": [
+      "VERSION_STATE.json",
+      "SYSTEM_NERVOUS_INDEX.json",
+      "operativa/CURRENT.md",
+      "operativa/NEXT.md",
+      "SDU_STATE_G10.md",
+      "SDU_SYSTEM_CONTRACT.md"
+    ],
+    "supporting": [
+      "docs/SDU_FINAL_PACKAGE/README.md",
+      "08_READBACKS/20260626_SDU_MAX_LEVEL_PROMOTION.md",
+      "operativa/tasks/20260626/READBACK_LECTURA_47_ENTRADAS_20260626.md",
+      "operativa/tasks/20260626/READBACK_BUS_TELEMETRY_WATCHDOG_RUNNER_SDK_AGENTS_20260626.md",
+      "operativa/tasks/20260626/READBACK_CEO_ROOT_READING_20260626.md"
+    ]
+  },
+  "system_nervous_index": {
+    "parse": "PASS",
+    "system_type": "EVENT_DRIVEN_MULTI_AGENT_RUNTIME",
+    "repo_id": "project-cdx",
+    "canonical_root": "C:\\CEO\\project-cdx",
+    "federation_id": "ceo-local-federation",
+    "agents": 14,
+    "routes": 15,
+    "policy": {
+      "fail_closed": true,
+      "live_write": false,
+      "secret_access": false,
+      "required_for_execution": true
+    }
+  },
+  "bus_runner_contracts": {
+    "dictamen": [
+      "BUS_CAPABILITY_PRESENT",
+      "RUNNER_PRESENT_NOT_EXECUTED",
+      "CONTRACTS_PARSE_PASS"
+    ],
+    "tools_present": [
+      "tools/ceo-event-publish.ps1",
+      "tools/ceo-event-dispatcher.ps1",
+      "tools/ceo-event-worker.ps1",
+      "tools/ceo-event-runner.ps1",
+      "tools/ceo-execution-adapter.ps1",
+      "tools/ceo-runtime-router.ps1"
+    ],
+    "contracts_parse": {
+      "contracts/agent-map.json": "PASS",
+      "contracts/contract-map.json": "PASS",
+      "contracts/federation-map.json": "PASS",
+      "contracts/schemas/event-envelope.schema.json": "PASS"
+    },
+    "observed_bus_surfaces": [
+      {
+        "path": ".cabina/runtime/event-bus",
+        "state": "VALIDATED",
+        "direct_queue_files": 0,
+        "notes": "historical/test evidence present"
+      },
+      {
+        "path": ".cabina/runtime/suite/bus",
+        "queue_lines": 1,
+        "processed_lines": 40,
+        "failed_lines": 0,
+        "execution_adapter_log_lines": 0,
+        "invalid_events_log_lines": 0
+      }
+    ],
+    "unreconciled_observation": "SNS references <RUNTIME_PATH>/bus while live evidence is under .cabina/runtime/event-bus and .cabina/runtime/suite/bus"
+  },
+  "watchdog": {
+    "dictamen": "WATCHDOG_AUTHORITY_RECONCILED_READ_ONLY",
+    "primary": "C:\\CEO\\watchdog",
+    "legacy_preserve": "C:\\CEO\\watch",
+    "watch_policy_residual": "policy.json still declares watch.enabled=true and action=Kill",
+    "score": 68,
+    "health": "YELLOW",
+    "risk": "HIGH",
+    "graph_ok": true,
+    "telemetry": {
+      "resume_status": "OK",
+      "healthy": true,
+      "last_timestamp": "2026-06-26T06:34:51.3949451-03:00"
+    },
+    "systems": {
+      "DOCUMENTAL": "ACTIVE/YELLOW/required",
+      "EXPEDIENTES": "STUB/CONFIG_ONLY",
+      "FIRMAS": "STUB/CONFIG_ONLY",
+      "COMUNICACIONES": "STUB/CONFIG_ONLY",
+      "RUNTIME": "STUB/CONFIG_ONLY"
+    },
+    "alerts_jsonl_lines": 103,
+    "action_execution_jsonl_lines": 5,
+    "system_auto_observed": {
+      "action": "CHECK_ALERT_SOURCE",
+      "timestamp": "2026-06-26T01:55:14-03:00",
+      "impact": "READ_ONLY",
+      "runtime_mutation": false,
+      "external_writes": false,
+      "dataverse_impact": false,
+      "sharepoint_impact": false
+    }
+  },
+  "agents_sdk": {
+    "dictamen": "SDK_READY_METADATA_ONLY",
+    "agents_sdk_installed": true,
+    "agents_sdk_version": "0.17.7",
+    "model": "gpt-5.5",
+    "smoke_gate": "local-only",
+    "smoke_mode": "local",
+    "context_ok": true,
+    "sdu_sdk_agents_defined": 6,
+    "sdu_sdk_agents": [
+      "seshat-normativa",
+      "thot-tecnico",
+      "anubis-gate",
+      "maat-cumplimiento",
+      "horus-riesgo",
+      "narrador-normativo"
+    ],
+    "api_activation_by_controller": {
+      "status": "api_activation_complete",
+      "ok_count": 6,
+      "gate": "metadata-only",
+      "mode": "cloud"
+    },
+    "surfaces": [
+      "src/projec_cdx_cloud",
+      "src/launch_desk"
+    ]
+  },
+  "validators": {
+    "validate_proj_cdx_sync": "PASS",
+    "validate_proj_cdx_workbench": "OBSERVED_NO_FAIL",
+    "validate_proj_cdx_operational_chain": "PASS",
+    "validate_sdu_dataverse_metadata_wave": "PASS",
+    "sdu_boot_no_external_dry_run": "PASS",
+    "system_nervous_index_schema": "VALID",
+    "git_diff_check": "PASS_WITH_KNOWN_LF_CRLF_WARNINGS"
+  },
+  "gates": {
+    "version_state_reconcile": "OWNER_GATE_VERSION_STATE_RECONCILE_AND_FREEZE",
+    "stage_commit": "OWNER_GATE_STAGE_COMMIT_TOTAL_RECONCILIATION",
+    "g11_apply": "ALLOW_G11_POLICY_TUNING_APPLY",
+    "bus_drain": "OWNER_GATE_BUS_DRAIN",
+    "watchdog_runtime": "OWNER_GATE_WATCHDOG_RUNTIME",
+    "openai_api_fanin": "OWNER_GATE_OPENAI_API_FANIN_METADATA_ONLY"
+  },
+  "not_executed": [
+    "git stage by this phase",
+    "git commit",
+    "git fetch",
+    "git push",
+    "pull request",
+    "bus drain",
+    "event replay",
+    "runner execution",
+    "Start-CEO.ps1",
+    "watch start",
+    "watchdog start",
+    "scheduler validation against OS",
+    "NOC server",
+    "owner_actions_server.py",
+    "Microsoft live",
+    "Dataverse live",
+    "SharePoint live",
+    "Power Platform live",
+    "Codex Cloud task creation",
+    "G11 policy apply",
+    "cleanup",
+    "secret read"
+  ],
+  "stop_conditions": [
+    "secret_read_required",
+    "external_write_required",
+    "bus_mutation_required",
+    "watch_or_watchdog_runtime_start_required",
+    "git_remote_required",
+    "g11_apply_required",
+    "scheduler_or_service_required",
+    "destructive_cleanup_required"
+  ],
+  "next_gate": "OWNER_GATE_VERSION_STATE_RECONCILE_AND_FREEZE"
+}
