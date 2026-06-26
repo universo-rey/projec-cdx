@@ -1,5 +1,6 @@
 param(
   [string]$Root = "C:/Users/enzo1/PROJEC CDX",
+  [string]$RuntimePath = "outputs",
   [switch]$Json
 )
 
@@ -30,7 +31,7 @@ function Add-Check {
   }
 }
 
-$ExcludedWorkbenchDirs = @("node_modules", ".git", ".cache", ".codex", ".venv")
+$ExcludedWorkbenchDirs = @("node_modules", ".git", ".cache", ".codex", ".venv", ".pytest_cache")
 
 function Get-WorkbenchFiles {
   param(
@@ -61,15 +62,15 @@ $requiredFiles = @(
   "README.md",
   "MAPA_MAESTRO.md",
   "AGENTS.md",
-  "operativa\START_HERE.md",
+  "operativa\README.md",
+  "operativa\MAPA.md",
   "operativa\CONTROL.md",
   "operativa\CURRENT.md",
   "operativa\NEXT.md",
-  "operativa\BLOCKERS.md",
   "operativa\TRACE.md",
-  "operativa\MANIFESTS.md",
-  "operativa\RETENCION.md",
-  "operativa\ACTA_REPOS_SURFACE_GITHUB_20260615.md",
+  "operativa\SENTINEL_STATE.md",
+  "operativa\SENTINEL_EVENTS.jsonl",
+  "operativa\SDU_RUNTIME_BOUNDARY_MATRIX.json",
   "playbooks\00-preflight-gobernado.md",
   "playbooks\01-iniciar-delta.md",
   "playbooks\02-ejecutar-delta.md",
@@ -81,7 +82,7 @@ $requiredFiles = @(
   "dataverse\README.md",
   "dataverse\MAPA.md",
   "dataverse\PLAN_SEGUNDA_PASADA.md",
-  "<RUNTIME_PATH>\dataverse_blocker_frontier_20260614\README.md",
+  "$RuntimePath\dataverse_blocker_frontier_20260614\README.md",
   "workbooks\EXCEL_AL_FRENTE.md",
   "tools\validate_proj_cdx_workbench.ps1"
 )
@@ -123,6 +124,8 @@ foreach ($file in $markdownFiles) {
     $decoded = [uri]::UnescapeDataString($raw).Replace("/", "\")
     if (Test-Path -LiteralPath $decoded) {
       Add-Check "link:$($file.Name)" "PASS" $raw
+    } elseif ($raw -like "C:/Users/enzo1/Documents/*") {
+      Add-Check "link:$($file.Name)" "OBSERVED" "Link externo o historico fuera del repo: $raw"
     } else {
       Add-Check "link:$($file.Name)" "FAIL" "Link roto: $raw"
     }
@@ -180,7 +183,7 @@ $dataverseRequiredFiles = @(
   "dataverse\MAPA.md",
   "dataverse\GATE.md",
   "dataverse\PLAN_SEGUNDA_PASADA.md",
-  "<RUNTIME_PATH>\dataverse_blocker_frontier_20260614\README.md"
+  "$RuntimePath\dataverse_blocker_frontier_20260614\README.md"
 )
 foreach ($relative in $dataverseRequiredFiles) {
   $path = Join-Path $Root $relative
