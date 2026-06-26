@@ -61,4 +61,6 @@ Vistas creadas:
 
 ## Cierre
 
+System is now fully declared via SNS + Event Bus + Agent Routing.
+
 Agile Agent Canvas operativo completo.
