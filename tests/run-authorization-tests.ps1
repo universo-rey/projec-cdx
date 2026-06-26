@@ -37,7 +37,9 @@ $highAuth = (& (Join-Path $root "tools\ceo-action-authorize.ps1") -ActionJson ($
 if ([string]$highAuth.decision -ne "HOLD_OWNER") { throw "HIGH_ACTION_NOT_HELD" }
 
 $unknown = New-ActionDoc -ActionType "UNKNOWN_ACTION" -Risk "LOW"
-$unknownRaw = & pwsh -NoProfile -ExecutionPolicy Bypass -File (Join-Path $root "tools\ceo-action-authorize.ps1") -ActionJson ($unknown | ConvertTo-Json -Depth 20) -ActionRoot $actionRoot
+$unknownPath = Join-Path $caseRoot "unknown-action.json"
+$unknown | ConvertTo-Json -Depth 20 | Set-Content -LiteralPath $unknownPath -Encoding UTF8
+$unknownRaw = & pwsh -NoProfile -ExecutionPolicy Bypass -File (Join-Path $root "tools\ceo-action-authorize.ps1") -ActionFile $unknownPath -ActionRoot $actionRoot
 $unknownAuth = $unknownRaw | ConvertFrom-Json
 if ([string]$unknownAuth.decision -ne "BLOCK") { throw "UNKNOWN_ACTION_NOT_BLOCKED" }
 

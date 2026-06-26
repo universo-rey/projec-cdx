@@ -1,0 +1,10 @@
+[
+  {
+    "key": "ctrl+alt+shift+c",
+    "command": "SDU.commandC"
+  },
+  {
+    "key": "ctrl+alt+shift+a",
+    "command": "SDU.commandA"
+  }
+]

@@ -251,3 +251,44 @@ Validacion:
 Skill: `repo-agent-tool-governance`.
 Recetas: `agentes-atomicos-algoritmicos-en-waves`, `cierre-wave-documental`.
 Stop condition: cualquier secreto, live write, mutacion fuera del repo o perdida de fail-closed.
+
+## G6_FORMAL_LIVE_ENABLEMENT
+
+G6 habilita live real solo como capacidad formal controlada. No ejecuta live por defecto.
+
+Estado:
+
+```text
+FORMAL_LIVE_ENABLEMENT
+```
+
+Componentes:
+
+- Live session control: `tools\ceo-live-session.ps1`.
+- Formal authorization: `tools\ceo-live-authorize-formal.ps1`.
+- Strict guardrails: `tools\ceo-live-guardrails-strict.ps1`.
+- Real executor gated: `tools\ceo-live-executor-real.ps1`.
+- Rollback manual obligatorio: `tools\ceo-live-rollback.ps1`.
+- Audit formal: `tools\ceo-live-audit.ps1`.
+- Accountability register: `operativa\accountability\live-actions-register.json`.
+
+Reglas:
+
+- Live real requiere sesion `ACTIVE`.
+- Roles requeridos para riesgo `HIGH` o `CRITICAL`: `OWNER_OPERATIONAL`, `OWNER_CONTROL`, `DIRECCION`.
+- `LIVE_CONTROLLED_REAL` requiere rollback, evidencia, policy strict y target sanitizado.
+- El executor real requiere `-MockApply` en validaciones Codex; sin ese flag bloquea fail-closed.
+- External write sigue deshabilitado por contrato.
+- Audit JSON/MD y accountability son obligatorios.
+
+Validacion:
+
+```powershell
+.\tests\run-live-session-tests.ps1
+.\tests\run-formal-authorization-tests.ps1
+.\tests\run-multi-actor-tests.ps1
+.\tests\run-live-execution-mocked.ps1
+.\tests\run-rollback-real-mock.ps1
+.\tests\run-audit-formal-tests.ps1
+.\tests\run-accountability-tests.ps1
+```

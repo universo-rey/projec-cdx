@@ -1,0 +1,376 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "epic",
+    "workflowName": "agileagentcanvas",
+    "projectName": "TaskFlow Pro",
+    "timestamps": {
+      "created": "2026-06-25T05:08:27.824Z",
+      "lastModified": "2026-06-25T05:08:27.824Z"
+    },
+    "status": "draft",
+    "_llmHint": "This file contains epic metadata and lightweight storyRefs. Full story content is at: stories/{storyId}.json (relative to this file). Do NOT add full story objects to this file — they belong in standalone story files."
+  },
+  "content": {
+    "id": "EPIC-4",
+    "title": "Integration Platform",
+    "goal": "Connect TaskFlow Pro with the tools teams already use — GitHub for code, Slack for communication — creating a seamless workflow without tab-switching.",
+    "valueDelivered": "Engineers manage tasks without leaving their IDE or chat. PRs auto-link to tasks. Slack commands create and update tasks. Focus mode syncs with Slack DND.",
+    "functionalRequirements": [
+      "FR-6"
+    ],
+    "nonFunctionalRequirements": [],
+    "additionalRequirements": [
+      "ADD-1"
+    ],
+    "status": "draft",
+    "priority": "should-have",
+    "storyCount": 3,
+    "epicDependencies": {
+      "upstream": [
+        {
+          "epicId": "EPIC-1",
+          "reason": "Integrations need task CRUD API and webhook infrastructure"
+        },
+        {
+          "epicId": "EPIC-3",
+          "reason": "Slack DND sync needs Focus Mode state"
+        }
+      ],
+      "downstream": [],
+      "relatedEpics": [
+        "EPIC-2"
+      ]
+    },
+    "effortEstimate": {
+      "totalSprints": 3,
+      "totalDays": 30,
+      "breakdown": [
+        {
+          "phase": "GitHub Integration",
+          "duration": "1.5 sprints",
+          "description": "GitHub App setup, webhook handler, PR-task linking"
+        },
+        {
+          "phase": "Slack Integration",
+          "duration": "2 sprints",
+          "description": "Slash commands, DND sync, message formatting"
+        },
+        {
+          "phase": "CLI Tool",
+          "duration": "1.5 sprints",
+          "description": "Commander.js setup, Ink UI, npm package"
+        }
+      ]
+    },
+    "implementationNotes": [
+      "GitHub integration uses GitHub Apps (not OAuth) for fine-grained repository permissions",
+      "Slack integration uses Bolt SDK with Socket Mode for development and HTTP for production",
+      "CLI tool published to npm as @taskflow/cli with auto-update via npm version checks",
+      "All integrations use the same internal task API — no direct database access"
+    ],
+    "acceptanceSummary": "Epic is complete when GitHub webhook processes PR events correctly, Slack slash commands work in all channel types, CLI is installable via npm with < 5 second startup, and integration tests cover happy path and error cases.",
+    "fitCriteria": {
+      "functional": [
+        {
+          "id": "FC-07",
+          "criterion": "GitHub webhook processes PR events within 5 seconds",
+          "verified": false,
+          "verificationMethod": "test",
+          "relatedRequirement": "FR-6"
+        },
+        {
+          "id": "FC-08",
+          "criterion": "Slack slash commands respond within 3 seconds",
+          "verified": false,
+          "verificationMethod": "test",
+          "relatedRequirement": "FR-6"
+        }
+      ],
+      "nonFunctional": [
+        {
+          "id": "NFC-05",
+          "category": "reliability",
+          "criterion": "Integration webhook delivery succeeds > 99.5% of the time",
+          "verified": false,
+          "verificationMethod": "monitoring",
+          "metric": {
+            "measure": "Webhook success rate",
+            "target": "99.5%",
+            "threshold": "99%",
+            "unit": "percentage"
+          }
+        }
+      ],
+      "security": [
+        {
+          "id": "SC-05",
+          "category": "authentication",
+          "criterion": "GitHub webhook payloads are verified via HMAC signature",
+          "verified": false,
+          "verificationMethod": "code-review"
+        },
+        {
+          "id": "SC-06",
+          "category": "authorization",
+          "criterion": "Slack commands only accessible to authenticated TaskFlow users",
+          "verified": false,
+          "verificationMethod": "security-audit",
+          "complianceStandard": "SOC2"
+        }
+      ],
+      "summary": {
+        "totalFunctional": 2,
+        "totalNonFunctional": 1,
+        "totalSecurity": 2,
+        "totalCriteria": 5,
+        "verifiedCount": 0,
+        "verificationPercentage": "0%"
+      }
+    },
+    "successMetrics": {
+      "codeQuality": [
+        {
+          "id": "CQ-05",
+          "metric": "Integration test coverage",
+          "target": "80%",
+          "measurement": "Istanbul coverage report",
+          "baseline": "0%",
+          "achieved": false
+        }
+      ],
+      "operational": [
+        {
+          "id": "OP-05",
+          "metric": "Webhook processing latency",
+          "target": "< 5 seconds",
+          "measurement": "Datadog APM",
+          "baseline": "N/A",
+          "achieved": false
+        }
+      ],
+      "customerImpact": [
+        {
+          "id": "CI-05",
+          "metric": "Manual task updates eliminated",
+          "target": "90% reduction",
+          "measurement": "Before/after comparison of manual status changes",
+          "baseline": "15 manual updates per developer per week",
+          "achieved": false
+        }
+      ],
+      "deployment": [
+        {
+          "id": "DP-05",
+          "metric": "CLI startup time",
+          "target": "< 5 seconds",
+          "achieved": false
+        }
+      ],
+      "business": [
+        {
+          "id": "BM-04",
+          "metric": "Integration adoption",
+          "target": "60% of teams connect GitHub within 1 month",
+          "measurement": "Integration connection analytics",
+          "achieved": false
+        }
+      ],
+      "summary": {
+        "totalMetrics": 5,
+        "achievedCount": 0,
+        "achievementPercentage": "0%",
+        "overallStatus": "not-started"
+      }
+    },
+    "risks": [
+      {
+        "id": "RISK-06",
+        "risk": "GitHub API rate limits during large monorepo pushes",
+        "category": "integration",
+        "probability": "medium",
+        "impact": "medium",
+        "riskScore": "medium",
+        "impactDescription": "Large monorepos with many PRs per day could exhaust GitHub API rate limits, delaying task-PR linking",
+        "mitigation": "Webhook-based approach (no polling), request queuing with exponential backoff",
+        "mitigationStrategies": [
+          {
+            "strategy": "Use webhook events instead of polling — eliminates most API calls",
+            "owner": "Backend Team",
+            "status": "implemented"
+          },
+          {
+            "strategy": "Queue webhook processing with rate-aware backoff",
+            "owner": "Backend Team",
+            "status": "planned"
+          }
+        ],
+        "contingencyPlan": "Implement a manual 'Sync Now' button for users to trigger re-sync if automatic linking is delayed",
+        "triggers": [
+          "GitHub API returns 429 status codes",
+          "PR linking delay exceeds 30 seconds"
+        ],
+        "owner": "Alex Rivera",
+        "status": "mitigating",
+        "residualRisk": "low"
+      },
+      {
+        "id": "RISK-07",
+        "risk": "Slack App approval process may delay launch",
+        "category": "schedule",
+        "probability": "low",
+        "impact": "high",
+        "riskScore": "medium",
+        "impactDescription": "Slack's App Directory review process can take 2-4 weeks, potentially delaying the integration launch",
+        "mitigation": "Submit for review 4 weeks before planned launch date",
+        "contingencyPlan": "Launch with direct install link (bypassing App Directory) for initial customers",
+        "triggers": [
+          "Slack review takes longer than 3 weeks",
+          "Review feedback requires significant changes"
+        ],
+        "owner": "Product Team",
+        "status": "identified",
+        "residualRisk": "low"
+      }
+    ],
+    "definitionOfDone": {
+      "items": [
+        {
+          "id": "DOD-15",
+          "item": "GitHub webhook processes PR events correctly",
+          "category": "testing",
+          "required": true,
+          "completed": false
+        },
+        {
+          "id": "DOD-16",
+          "item": "Slack slash commands work in all channel types",
+          "category": "testing",
+          "required": true,
+          "completed": false
+        },
+        {
+          "id": "DOD-17",
+          "item": "CLI tool installable via npm with < 5 second startup",
+          "category": "deployment",
+          "required": false,
+          "completed": false
+        },
+        {
+          "id": "DOD-18",
+          "item": "Integration tests cover happy path and error cases",
+          "category": "testing",
+          "required": true,
+          "completed": false
+        }
+      ],
+      "qualityGates": [
+        {
+          "id": "QG-05",
+          "gate": "Integration Test Gate",
+          "criteria": [
+            "All webhook event types tested",
+            "Slack commands tested in DM, channel, and thread",
+            "CLI tested on macOS, Linux, and Windows"
+          ],
+          "passed": false
+        }
+      ],
+      "acceptanceSummary": {
+        "totalCriteria": 7,
+        "passedCriteria": 0,
+        "failedCriteria": 0,
+        "blockedCriteria": 7,
+        "passPercentage": "0%"
+      },
+      "summary": {
+        "totalItems": 4,
+        "completedItems": 0,
+        "requiredItems": 3,
+        "requiredCompleted": 0,
+        "completionPercentage": "0%",
+        "allRequiredComplete": false,
+        "status": "not-started"
+      }
+    },
+    "technicalSummary": {
+      "architecturePattern": "Event-driven webhook processing with adapter pattern for each integration",
+      "components": [
+        {
+          "name": "GitHub Adapter",
+          "responsibility": "Webhook ingestion, PR-task linking, status sync",
+          "changes": "New module with GitHub App authentication"
+        },
+        {
+          "name": "Slack Adapter",
+          "responsibility": "Slash commands, DND sync, message formatting",
+          "changes": "New module using Slack Bolt SDK"
+        },
+        {
+          "name": "CLI Tool",
+          "responsibility": "Terminal-based task management",
+          "changes": "Standalone npm package with Commander.js and Ink"
+        }
+      ],
+      "filesChanged": [
+        {
+          "path": "src/integrations/github/github.adapter.ts",
+          "action": "new",
+          "description": "GitHub App webhook handler and PR-task linker"
+        },
+        {
+          "path": "src/integrations/slack/slack.adapter.ts",
+          "action": "new",
+          "description": "Slack Bolt app with slash commands and DND sync"
+        },
+        {
+          "path": "packages/cli/src/index.ts",
+          "action": "new",
+          "description": "CLI entry point with Commander.js subcommands"
+        }
+      ],
+      "configuration": {
+        "file": "config/integrations.json",
+        "settings": [
+          {
+            "key": "github.appId",
+            "value": "<from-env>",
+            "description": "GitHub App ID"
+          },
+          {
+            "key": "github.webhookSecret",
+            "value": "<from-env>",
+            "description": "GitHub webhook HMAC secret"
+          },
+          {
+            "key": "slack.botToken",
+            "value": "<from-env>",
+            "description": "Slack Bot OAuth token"
+          },
+          {
+            "key": "slack.signingSecret",
+            "value": "<from-env>",
+            "description": "Slack request signing secret"
+          }
+        ]
+      }
+    },
+    "storyRefs": [
+      {
+        "id": "S-4.1",
+        "title": "GitHub Integration",
+        "file": "stories/S-4.1.json"
+      },
+      {
+        "id": "S-4.2",
+        "title": "Slack Integration & DND Sync",
+        "file": "stories/S-4.2.json"
+      },
+      {
+        "id": "S-4.3",
+        "title": "CLI Tool for Developers",
+        "file": "stories/S-4.3.json"
+      }
+    ]
+  }
+}

@@ -37,7 +37,10 @@ $completeAuth = (& (Join-Path $root "tools\ceo-live-authorize.ps1") -LiveActionJ
 if ([string]$completeAuth.decision -ne "ALLOW_LIVE_SIMULATED") { throw "SIMULATION_NOT_ALLOWED" }
 
 $noRollback = New-LiveAction -Rollback $false
-$blockedRaw = & pwsh -NoProfile -ExecutionPolicy Bypass -File (Join-Path $root "tools\ceo-live-authorize.ps1") -LiveActionJson ($noRollback | ConvertTo-Json -Depth 30) -LiveRoot $liveRoot
+$noRollbackPath = Join-Path $liveRoot "no-rollback-action.json"
+New-Item -ItemType Directory -Force -Path $liveRoot | Out-Null
+$noRollback | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $noRollbackPath -Encoding UTF8
+$blockedRaw = & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $root "tools\ceo-live-authorize.ps1") -LiveActionFile $noRollbackPath -LiveRoot $liveRoot
 $blocked = $blockedRaw | ConvertFrom-Json
 if ([string]$blocked.decision -ne "BLOCK") { throw "MISSING_ROLLBACK_NOT_BLOCKED" }
 

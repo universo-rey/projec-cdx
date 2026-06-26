@@ -34,7 +34,7 @@ function Get-CeoSuiteStateRoot {
         $candidate = $env:SDU_RUNTIME_ROOT
     }
     if ([string]::IsNullOrWhiteSpace($candidate)) {
-        $candidate = Join-Path ([System.IO.Path]::GetTempPath()) "sdu-runtime"
+        $candidate = Join-Path (Join-Path (Join-Path (Get-CeoSuiteRoot) ".cabina") "runtime") "suite"
     }
 
     $resolved = Resolve-CeoSuitePath -Path $candidate
@@ -853,6 +853,53 @@ function Test-CeoAgentMapCoverage {
     }
 }
 
+function Invoke-CeoJsonSchemaValidator {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $JsonFile,
+        [Parameter(Mandatory = $true)]
+        [string] $SchemaFile
+    )
+
+    $root = Get-CeoSuiteRoot
+    $pythonCandidates = @(
+        (Join-Path $root ".venv\Scripts\python.exe"),
+        (Join-Path $root ".venv_test\Scripts\python.exe"),
+        (Join-Path $root ".venv_clean\Scripts\python.exe")
+    )
+    $python = $null
+    foreach ($candidate in $pythonCandidates) {
+        if (Test-Path -LiteralPath $candidate -PathType Leaf) {
+            $python = $candidate
+            break
+        }
+    }
+    if (-not $python) {
+        $pythonCommand = Get-Command python -ErrorAction SilentlyContinue
+        if ($pythonCommand) {
+            $python = $pythonCommand.Source
+        }
+    }
+    if (-not $python) {
+        return [PSCustomObject]@{ Status = "VALIDATOR_NOT_FOUND"; ExitCode = 5; Error = "python_not_found" }
+    }
+
+    $validatorScript = Join-Path $root "tools\ceo-jsonschema-validate.py"
+    if (-not (Test-Path -LiteralPath $validatorScript -PathType Leaf)) {
+        return [PSCustomObject]@{ Status = "VALIDATOR_NOT_FOUND"; ExitCode = 5; Error = "validator_script_not_found" }
+    }
+
+    $output = & $python $validatorScript $JsonFile $SchemaFile 2>&1
+    $text = (@($output) -join "`n")
+    if ($LASTEXITCODE -eq 0 -and $text.Trim() -eq "VALID") {
+        return [PSCustomObject]@{ Status = "VALID"; ExitCode = 0 }
+    }
+    if ($LASTEXITCODE -eq 5) {
+        return [PSCustomObject]@{ Status = "VALIDATOR_NOT_FOUND"; ExitCode = 5; Error = $text }
+    }
+    return [PSCustomObject]@{ Status = "INVALID"; ExitCode = 1; Error = $text }
+}
+
 function Test-CeoJsonFileAgainstSchema {
     param(
         [Parameter(Mandatory = $true)]
@@ -870,14 +917,27 @@ function Test-CeoJsonFileAgainstSchema {
 
     try {
         $raw = Get-Content -LiteralPath $JsonFile -Raw
-        if (-not ($raw | Test-Json)) {
+        try {
+            $raw | ConvertFrom-Json | Out-Null
+        }
+        catch {
             return [PSCustomObject]@{ Status = "INVALID_JSON"; ExitCode = 4 }
         }
-        if ($raw | Test-Json -SchemaFile $SchemaFile) {
-            return [PSCustomObject]@{ Status = "VALID"; ExitCode = 0 }
+
+        $schemaResult = Invoke-CeoJsonSchemaValidator -JsonFile $JsonFile -SchemaFile $SchemaFile
+        if ($schemaResult.Status -ne "VALIDATOR_NOT_FOUND") {
+            return $schemaResult
         }
 
-        return [PSCustomObject]@{ Status = "INVALID"; ExitCode = 1 }
+        if (Get-Command Test-Json -ErrorAction SilentlyContinue) {
+            if ($raw | Test-Json -SchemaFile $SchemaFile) {
+                return [PSCustomObject]@{ Status = "VALID"; ExitCode = 0 }
+            }
+
+            return [PSCustomObject]@{ Status = "INVALID"; ExitCode = 1 }
+        }
+
+        return $schemaResult
     }
     catch {
         return [PSCustomObject]@{ Status = "INVALID"; ExitCode = 1; Error = $_.Exception.Message }
@@ -1237,7 +1297,11 @@ function Test-CeoFederationGate {
         if ([string] $repo.repoId -eq "project-cdx") {
             $hasCoreRepo = $true
             $resolvedCanonical = [System.IO.Path]::GetFullPath($canonical)
-            if (-not $resolvedCanonical.Equals($repoRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+            $physicalAlias = [string] (Get-CeoObjectPropertyValue -InputObject $repo -Name "physicalAlias" -Default "")
+            $resolvedAlias = if (-not [string]::IsNullOrWhiteSpace($physicalAlias)) { [System.IO.Path]::GetFullPath($physicalAlias) } else { "" }
+            $repoMatchesCanonical = $resolvedCanonical.Equals($repoRoot, [System.StringComparison]::OrdinalIgnoreCase)
+            $repoMatchesAlias = (-not [string]::IsNullOrWhiteSpace($resolvedAlias) -and $resolvedAlias.Equals($repoRoot, [System.StringComparison]::OrdinalIgnoreCase))
+            if (-not ($repoMatchesCanonical -or $repoMatchesAlias)) {
                 $issues += "core-repo-canonical-mismatch:$canonical"
             }
         }
@@ -1342,8 +1406,13 @@ function Test-CeoPathSanitizerGate {
             }
 
             if ([string] $repo.repoId -eq "project-cdx") {
-                $canonicalMatch = ([System.IO.Path]::GetFullPath($canonical)).Equals($root, [System.StringComparison]::OrdinalIgnoreCase)
+                $resolvedCanonical = [System.IO.Path]::GetFullPath($canonical)
                 $physicalAlias = [string] (Get-CeoObjectPropertyValue -InputObject $repo -Name "physicalAlias" -Default "")
+                $resolvedAlias = if (-not [string]::IsNullOrWhiteSpace($physicalAlias)) { [System.IO.Path]::GetFullPath($physicalAlias) } else { "" }
+                $canonicalMatch = (
+                    $resolvedCanonical.Equals($root, [System.StringComparison]::OrdinalIgnoreCase) -or
+                    (-not [string]::IsNullOrWhiteSpace($resolvedAlias) -and $resolvedAlias.Equals($root, [System.StringComparison]::OrdinalIgnoreCase))
+                )
                 $junctionDeclared = ($isJunction -and -not [string]::IsNullOrWhiteSpace($physicalAlias))
                 if (-not $canonicalMatch) {
                     $issues += "project-cdx-canonical-mismatch:$canonical"
@@ -1466,8 +1535,9 @@ function Test-CeoSnsGate {
 
     $sns = Get-Content -LiteralPath $SnsFile -Raw | ConvertFrom-Json
     $agentMap = Get-CeoAgentMap
+    $canonicalGateRoot = ConvertTo-CeoCanonicalPathString -Path $root
     $canonicalRoot = ConvertTo-CeoCanonicalPathString -Path ([string] $sns.canonicalRoot)
-    if (-not $canonicalRoot.Equals($root, [System.StringComparison]::OrdinalIgnoreCase)) {
+    if (-not $canonicalRoot.Equals($canonicalGateRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
         $issues += "sns-canonical-root-mismatch:$canonicalRoot"
     }
 
@@ -1493,7 +1563,7 @@ function Test-CeoSnsGate {
             continue
         }
         $resolvedPath = ConvertTo-CeoCanonicalPathString -Path $canonicalPath
-        if ([System.IO.Path]::IsPathRooted($resolvedPath) -and -not $resolvedPath.StartsWith($root, [System.StringComparison]::OrdinalIgnoreCase)) {
+        if ([System.IO.Path]::IsPathRooted($resolvedPath) -and -not $resolvedPath.StartsWith($canonicalGateRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
             $issues += "sns-path-outside-canonical-root:$resolvedPath"
         }
     }
@@ -2660,15 +2730,21 @@ function Initialize-CeoLiveOperationsState {
         Root = $root
         Requests = Join-Path $root "requests"
         Approvals = Join-Path $root "approvals"
+        FormalApprovals = Join-Path (Join-Path $root "approvals") "formal"
         Preflight = Join-Path $root "preflight"
         Simulations = Join-Path $root "simulations"
+        Executions = Join-Path $root "executions"
         Evidence = Join-Path $root "evidence"
         Rollback = Join-Path $root "rollback"
         Audit = Join-Path $root "audit"
         Traces = Join-Path $root "traces"
+        Sessions = Join-Path $root "sessions"
+        Accountability = Join-Path $root "accountability"
         State = Join-Path $root "state"
         AuditJson = Join-Path (Join-Path $root "audit") "live-audit.json"
         AuditMarkdown = Join-Path (Join-Path $root "audit") "live-audit.md"
+        SessionState = Join-Path (Join-Path $root "sessions") "current-session.json"
+        AccountabilityLog = Join-Path (Join-Path $root "accountability") "live-actions.jsonl"
     }
 
     foreach ($dir in $paths.Values) {
@@ -2727,4 +2803,40 @@ function Test-CeoSanitizedTarget {
 
 function Get-CeoRequiredLiveOwnerRoles {
     return @("OWNER_OPERATIONAL", "OWNER_CONTROL")
+}
+
+function Get-CeoRequiredFormalLiveOwnerRoles {
+    return @("OWNER_OPERATIONAL", "OWNER_CONTROL", "DIRECCION")
+}
+
+function Get-CeoLiveSessionStatus {
+    param(
+        [string] $LiveRoot,
+        [string] $StateRoot
+    )
+
+    $runtime = Initialize-CeoLiveOperationsState -LiveRoot $LiveRoot -StateRoot $StateRoot
+    if (-not (Test-Path -LiteralPath $runtime.SessionState -PathType Leaf)) {
+        return [PSCustomObject]@{
+            session_id = ""
+            state = "DISABLED"
+            live_real_enabled = $false
+            kill_switch_available = $true
+        }
+    }
+
+    return Read-CeoEventBusJson -Path $runtime.SessionState
+}
+
+function Test-CeoLiveSessionActive {
+    param(
+        $Session
+    )
+
+    return (
+        $null -ne $Session -and
+        [string]$Session.state -eq "ACTIVE" -and
+        [bool]$Session.live_real_enabled -eq $true -and
+        [bool]$Session.kill_switch_available -eq $true
+    )
 }

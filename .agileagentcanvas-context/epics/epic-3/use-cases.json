@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "use-cases",
+    "epicId": "EPIC-3",
+    "timestamps": {
+      "lastModified": "2026-06-25T05:08:27.799Z",
+      "created": "2026-06-25T05:08:55.751Z"
+    }
+  },
+  "content": {
+    "useCases": [
+      {
+        "id": "UC-03",
+        "title": "Morning Deep Work Session",
+        "summary": "Engineer activates focus mode for a 2-hour deep work session",
+        "description": "Engineer activates focus mode for a 2-hour deep work session",
+        "scenario": {
+          "context": "Engineer has a complex feature to implement requiring uninterrupted concentration",
+          "before": "Engineer puts on headphones, mutes Slack, and hopes no one taps their shoulder",
+          "after": "Engineer clicks 'Start Focus', notifications are batched, team sees DND status, 2 hours of uninterrupted work",
+          "impact": "2x more code output during focus sessions, measurable via commit analytics"
+        },
+        "primaryActor": "Software Engineer",
+        "secondaryActors": [
+          "TaskFlow Notification Engine",
+          "Slack"
+        ],
+        "trigger": "Engineer selects a task and clicks the 'Start Focus' button",
+        "preconditions": [
+          "Engineer has at least one task assigned",
+          "Focus Mode feature is enabled for the workspace"
+        ],
+        "postconditions": [
+          "Focus session data recorded for analytics",
+          "Batched notifications delivered",
+          "Slack DND status cleared"
+        ],
+        "mainFlow": [
+          {
+            "step": 1,
+            "action": "Engineer selects the task to focus on from the priority queue",
+            "actor": "Software Engineer"
+          },
+          {
+            "step": 2,
+            "action": "Engineer clicks 'Start Focus' button",
+            "actor": "Software Engineer"
+          },
+          {
+            "step": 3,
+            "action": "System activates focus mode, batches notifications, and syncs DND status",
+            "actor": "System"
+          },
+          {
+            "step": 4,
+            "action": "Engineer works uninterrupted for the configured focus period",
+            "actor": "Software Engineer"
+          },
+          {
+            "step": 5,
+            "action": "System suggests a break after 25 minutes (Pomodoro)",
+            "actor": "System"
+          }
+        ],
+        "alternativeFlows": [
+          {
+            "id": "AF-03-1",
+            "name": "P0 Breakthrough",
+            "branchPoint": "Step 4",
+            "steps": [
+              "A P0 blocker is reported that affects the engineer's current work",
+              "System breaks through focus mode with a distinct alert sound and visual",
+              "Engineer acknowledges the alert and decides whether to exit focus mode"
+            ]
+          }
+        ],
+        "exceptionFlows": [
+          {
+            "id": "EF-03-1",
+            "name": "Slack DND Sync Failure",
+            "trigger": "Slack API returns an error when trying to set DND status",
+            "handling": "System logs the error, continues focus mode locally, and retries Slack sync in 30 seconds"
+          }
+        ],
+        "businessRules": [
+          "Only P0 notifications can break through focus mode by default",
+          "Focus sessions are tracked for minimum 5 minutes to count in analytics"
+        ],
+        "relatedRequirements": [
+          "FR-3"
+        ],
+        "relatedEpic": "EPIC-3",
+        "relatedStories": [
+          "S-3.1",
+          "S-3.2"
+        ],
+        "sourceDocument": "PRD.md#focus-mode",
+        "notes": "User research shows engineers lose 23 minutes of productive time per interruption."
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "v1.0",
   "sourceOfTruth": "SYSTEM_NERVOUS_INDEX",
-  "generatedAt": "2026-06-24T15:54:13.8098230Z",
+  "generatedAt": "2026-06-24T22:32:26.7690924Z",
   "repoId": "project-cdx",
   "canonicalRoot": "C:\\CEO\\project-cdx",
   "federationId": "ceo-local-federation",
@@ -41,37 +41,37 @@
     {
       "pathType": "root-index",
       "path": "index.json",
-      "canonicalPath": "C:\\CEO\\project-cdx\\index.json",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\index.json",
       "status": "READY"
     },
     {
       "pathType": "operativa-index",
       "path": "operativa\\index.json",
-      "canonicalPath": "C:\\CEO\\project-cdx\\operativa\\index.json",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\operativa\\index.json",
       "status": "READY"
     },
     {
       "pathType": "local-nervous-index",
       "path": ".cabina\\SDU_RUNTIME_ROOT\\05_CONFIG\\local-nervous-index.v1.yaml",
-      "canonicalPath": "C:\\CEO\\project-cdx\\.cabina\\SDU_RUNTIME_ROOT\\05_CONFIG\\local-nervous-index.v1.yaml",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\.cabina\\SDU_RUNTIME_ROOT\\05_CONFIG\\local-nervous-index.v1.yaml",
       "status": "READY"
     },
     {
       "pathType": "vsi-workspace",
       "path": "CEO_CONTROL_PLANE.code-workspace",
-      "canonicalPath": "C:\\CEO\\project-cdx\\CEO_CONTROL_PLANE.code-workspace",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\CEO_CONTROL_PLANE.code-workspace",
       "status": "READY"
     },
     {
       "pathType": "vsi-tasks",
       "path": ".vscode\\tasks.json",
-      "canonicalPath": "C:\\CEO\\project-cdx\\.vscode\\tasks.json",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\.vscode\\tasks.json",
       "status": "READY"
     },
     {
       "pathType": "agile-agent-canvas",
       "path": ".agileagentcanvas-context",
-      "canonicalPath": "C:\\CEO\\project-cdx\\.agileagentcanvas-context",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\.agileagentcanvas-context",
       "status": "READY"
     }
   ],
@@ -415,7 +415,7 @@
     },
     {
       "from": "Dashboard",
-      "to": "web\\data.json",
+      "to": "<RUNTIME_PATH>\\dashboard\\data.json",
       "type": "observes",
       "status": "READY"
     }

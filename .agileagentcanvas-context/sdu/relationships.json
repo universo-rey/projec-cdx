@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "relationships",
+    "workflowName": "agileagentcanvas",
+    "projectName": "SDU Operations Layer",
+    "timestamps": {
+      "created": "2026-06-26T00:00:00-03:00",
+      "lastModified": "2026-06-26T00:00:00-03:00"
+    },
+    "status": "active"
+  },
+  "content": {
+    "connections": [
+      {
+        "from": "SYSTEM_STATE",
+        "to": "WATCHDOG",
+        "relationship": "observed-by",
+        "critical": true
+      },
+      {
+        "from": "WATCHDOG",
+        "to": "ACTION_ENGINE",
+        "relationship": "recommends-actions-through",
+        "critical": true
+      },
+      {
+        "from": "ACTION_ENGINE",
+        "to": "COMMAND_LAYER",
+        "relationship": "dispatches-approved-command",
+        "critical": true
+      },
+      {
+        "from": "COMMAND_LAYER",
+        "to": "GRAPH_LAYER",
+        "relationship": "updates-trace-context-for",
+        "critical": true
+      }
+    ],
+    "taskEdges": [
+      {
+        "from": "ACTION_ENGINE",
+        "to": "check_alert_source",
+        "relationship": "offers-task"
+      },
+      {
+        "from": "ACTION_ENGINE",
+        "to": "evaluate_cleanup",
+        "relationship": "offers-task"
+      }
+    ],
+    "navigation": {
+      "focusModeShortcut": "F",
+      "rootNode": "SYSTEM_STATE",
+      "treeOrder": [
+        "SYSTEM_STATE",
+        "WATCHDOG",
+        "ACTION_ENGINE",
+        "COMMAND_LAYER",
+        "GRAPH_LAYER"
+      ]
+    }
+  }
+}

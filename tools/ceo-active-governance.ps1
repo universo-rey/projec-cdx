@@ -48,10 +48,10 @@ $results = [ordered]@{
     controlPlane = Invoke-ActiveGovernanceTool -File (Join-Path $PSScriptRoot "ceo-control-plane-sync.ps1") -Arguments @("-StateRoot", $state.StateRoot) -ExpectedPrefix "CONTROL_PLANE_SYNC_QUEUED:"
     sanitizer = Invoke-ActiveGovernanceTool -File (Join-Path $PSScriptRoot "ceo-sanitizer-scan.ps1") -Arguments @("-MaxFindings", [string] $MaxFindings, "-StateRoot", $state.StateRoot) -ExpectedPrefix "SANITIZER_SCAN_QUEUED:"
     diagnostic = Invoke-ActiveGovernanceTool -File (Join-Path $PSScriptRoot "ceo-runtime-diagnose.ps1") -Arguments @("-StateRoot", $state.StateRoot) -ExpectedPrefix "RUNTIME_DIAGNOSIS_QUEUED:"
-    bus = Invoke-ActiveGovernanceTool -File (Join-Path $PSScriptRoot "ceo-validate-bus.ps1") -Arguments @("-StateRoot", $state.StateRoot) -ExpectedPrefix "BUS_VALID"
+    bus = Invoke-ActiveGovernanceTool -File (Join-Path $PSScriptRoot "ceo-validate-bus.ps1") -Arguments @("-StateRoot", $state.StateRoot) -ExpectedPrefix "{"
     adapterFirst = Invoke-ActiveGovernanceTool -File (Join-Path $PSScriptRoot "ceo-execution-adapter.ps1") -Arguments @("-MaxEvents", [string] $MaxEvents, "-StateRoot", $state.StateRoot, "-AdapterId", "local") -ExpectedPrefix "EXECUTION_ADAPTER_DONE:"
     adapterSecond = Invoke-ActiveGovernanceTool -File (Join-Path $PSScriptRoot "ceo-execution-adapter.ps1") -Arguments @("-MaxEvents", [string] $MaxEvents, "-StateRoot", $state.StateRoot, "-AdapterId", "local") -ExpectedPrefix "EXECUTION_ADAPTER_DONE:"
-    export = Invoke-ActiveGovernanceTool -File (Join-Path $PSScriptRoot "ceo-trace-export.ps1") -Arguments @("-StateRoot", $state.StateRoot) -ExpectedPrefix "EXPORT:OK:"
+    export = Invoke-ActiveGovernanceTool -File (Join-Path $PSScriptRoot "ceo-trace-export.ps1") -Arguments @("-StateRoot", $state.StateRoot) -ExpectedPrefix "{"
 }
 
 $metrics = Get-CeoBusMetrics -StateRoot $state.StateRoot

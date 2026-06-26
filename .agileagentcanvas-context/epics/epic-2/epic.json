@@ -1,0 +1,329 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "epic",
+    "workflowName": "agileagentcanvas",
+    "projectName": "TaskFlow Pro",
+    "timestamps": {
+      "created": "2026-06-25T05:08:27.790Z",
+      "lastModified": "2026-06-25T05:08:27.790Z"
+    },
+    "status": "in-progress",
+    "_llmHint": "This file contains epic metadata and lightweight storyRefs. Full story content is at: stories/{storyId}.json (relative to this file). Do NOT add full story objects to this file — they belong in standalone story files."
+  },
+  "content": {
+    "id": "EPIC-2",
+    "title": "AI Prioritization Engine",
+    "goal": "Build an intelligent prioritization system that learns from team behavior and automatically ranks tasks by urgency, impact, and dependencies.",
+    "valueDelivered": "Teams spend 60% less time on manual prioritization. AI suggestions improve sprint planning accuracy by 30%. Blocked tasks are surfaced proactively.",
+    "functionalRequirements": [
+      "FR-2",
+      "FR-5"
+    ],
+    "nonFunctionalRequirements": [],
+    "additionalRequirements": [],
+    "status": "in-progress",
+    "priority": "must-have",
+    "storyCount": 3,
+    "epicDependencies": {
+      "upstream": [
+        {
+          "epicId": "EPIC-1",
+          "reason": "AI engine requires task data, dependency graph, and historical velocity from Core Platform"
+        }
+      ],
+      "downstream": [
+        {
+          "epicId": "EPIC-3",
+          "reason": "Focus Mode uses AI priority scores to filter and order the focus task queue"
+        }
+      ],
+      "relatedEpics": [
+        "EPIC-4"
+      ]
+    },
+    "effortEstimate": {
+      "totalSprints": 3,
+      "totalDays": 30,
+      "breakdown": [
+        {
+          "phase": "Scoring Algorithm",
+          "duration": "2 sprints",
+          "description": "ML model training pipeline, feature extraction, rule-based fallback"
+        },
+        {
+          "phase": "Dashboard & Insights",
+          "duration": "1.5 sprints",
+          "description": "Priority distribution charts, velocity trends, anomaly detection"
+        },
+        {
+          "phase": "Sprint Planning AI",
+          "duration": "2 sprints",
+          "description": "Capacity calculator, constraint solver, real-time forecast"
+        }
+      ]
+    },
+    "implementationNotes": [
+      "ML model trained on historical task completion data — needs minimum 50 completed tasks",
+      "Rule-based fallback uses deadline proximity, dependency blocking count, and manual priority",
+      "OpenAI API used for natural language priority inference — requires caching and rate limit handling",
+      "Priority scores recalculated on task mutation events from the Core Platform"
+    ],
+    "acceptanceSummary": "Epic is complete when AI scoring achieves > 80% accuracy vs. human-assigned priorities on golden dataset, fallback mode works without OpenAI, and sprint planning suggestions are accepted by EMs > 70% of the time.",
+    "fitCriteria": {
+      "functional": [
+        {
+          "id": "FC-03",
+          "criterion": "AI scoring completes within 2 seconds of task creation",
+          "verified": false,
+          "verificationMethod": "test",
+          "relatedRequirement": "FR-2"
+        },
+        {
+          "id": "FC-04",
+          "criterion": "Rule-based fallback activates when training data < 50 tasks",
+          "verified": false,
+          "verificationMethod": "test",
+          "relatedRequirement": "FR-2"
+        }
+      ],
+      "nonFunctional": [
+        {
+          "id": "NFC-03",
+          "category": "performance",
+          "criterion": "Priority recalculation for 1000 tasks completes in < 30 seconds",
+          "verified": false,
+          "verificationMethod": "benchmark",
+          "relatedRequirement": "NFR-1",
+          "metric": {
+            "measure": "Batch recalculation time",
+            "target": "30s",
+            "threshold": "60s",
+            "unit": "seconds"
+          }
+        }
+      ],
+      "security": [
+        {
+          "id": "SC-03",
+          "category": "data-protection",
+          "criterion": "Task data sent to OpenAI is anonymized (no PII)",
+          "verified": false,
+          "verificationMethod": "code-review",
+          "complianceStandard": "GDPR"
+        }
+      ],
+      "summary": {
+        "totalFunctional": 2,
+        "totalNonFunctional": 1,
+        "totalSecurity": 1,
+        "totalCriteria": 4,
+        "verifiedCount": 0,
+        "verificationPercentage": "0%"
+      }
+    },
+    "successMetrics": {
+      "codeQuality": [
+        {
+          "id": "CQ-03",
+          "metric": "AI model test coverage",
+          "target": "90%",
+          "measurement": "pytest coverage report",
+          "baseline": "0%",
+          "achieved": false
+        }
+      ],
+      "operational": [
+        {
+          "id": "OP-03",
+          "metric": "Scoring API latency",
+          "target": "< 2 seconds",
+          "measurement": "Datadog APM",
+          "baseline": "N/A",
+          "achieved": false
+        }
+      ],
+      "customerImpact": [
+        {
+          "id": "CI-03",
+          "metric": "Sprint planning time",
+          "target": "< 30 minutes",
+          "measurement": "User surveys post-sprint",
+          "baseline": "3+ hours",
+          "achieved": false
+        }
+      ],
+      "deployment": [
+        {
+          "id": "DP-03",
+          "metric": "AI model deployment",
+          "target": "Zero-downtime model updates",
+          "achieved": false
+        }
+      ],
+      "business": [
+        {
+          "id": "BM-02",
+          "metric": "AI suggestion acceptance rate",
+          "target": "> 70%",
+          "measurement": "Analytics tracking of accepted vs. modified suggestions",
+          "achieved": false
+        }
+      ],
+      "summary": {
+        "totalMetrics": 5,
+        "achievedCount": 0,
+        "achievementPercentage": "0%",
+        "overallStatus": "not-started"
+      }
+    },
+    "risks": [
+      {
+        "id": "RISK-03",
+        "risk": "AI scoring may be inaccurate for small teams (< 5 members)",
+        "category": "technical",
+        "probability": "medium",
+        "impact": "medium",
+        "riskScore": "medium",
+        "impactDescription": "Small teams may not generate enough training data for accurate ML scoring, leading to poor recommendations that erode trust",
+        "mitigation": "Minimum data threshold before enabling AI, transparent rule-based fallback",
+        "mitigationStrategies": [
+          {
+            "strategy": "Set minimum 50-task threshold before enabling ML scoring",
+            "owner": "Dr. Priya Sharma",
+            "status": "implemented"
+          },
+          {
+            "strategy": "Show confidence score alongside AI priority to set user expectations",
+            "owner": "Jordan Park",
+            "status": "planned"
+          }
+        ],
+        "contingencyPlan": "Allow teams to opt-out of AI scoring entirely and use manual priority only",
+        "triggers": [
+          "User override rate exceeds 50% for AI-assigned priorities",
+          "NPS survey feedback mentions inaccurate priorities"
+        ],
+        "owner": "Dr. Priya Sharma",
+        "status": "mitigating",
+        "residualRisk": "low",
+        "relatedRequirements": [
+          "FR-2"
+        ],
+        "notes": "Beta testing with 3 small teams to validate accuracy threshold"
+      },
+      {
+        "id": "RISK-04",
+        "risk": "OpenAI API rate limits during peak usage",
+        "category": "integration",
+        "probability": "high",
+        "impact": "high",
+        "riskScore": "high",
+        "impactDescription": "Rate limiting during peak hours (9-11am) could delay priority scoring for all users simultaneously",
+        "mitigation": "Response caching, request batching, fallback to local scoring",
+        "mitigationStrategies": [
+          {
+            "strategy": "Implement 5-minute response cache for OpenAI API calls",
+            "owner": "Backend Team",
+            "status": "in-progress"
+          },
+          {
+            "strategy": "Batch priority recalculation requests into single API calls",
+            "owner": "Backend Team",
+            "status": "planned"
+          },
+          {
+            "strategy": "Local XGBoost model as fallback when API is unavailable",
+            "owner": "Dr. Priya Sharma",
+            "status": "in-progress"
+          }
+        ],
+        "contingencyPlan": "Switch entirely to local XGBoost model if OpenAI costs exceed $500/month",
+        "triggers": [
+          "API error rate exceeds 5%",
+          "Average scoring latency exceeds 5 seconds"
+        ],
+        "owner": "Marcus Johnson",
+        "status": "mitigating",
+        "residualRisk": "medium"
+      }
+    ],
+    "definitionOfDone": {
+      "items": [
+        {
+          "id": "DOD-07",
+          "item": "AI scoring accuracy > 80% vs. human-assigned priorities (golden dataset)",
+          "category": "testing",
+          "required": true,
+          "completed": false
+        },
+        {
+          "id": "DOD-08",
+          "item": "Fallback mode works correctly when OpenAI is unavailable",
+          "category": "testing",
+          "required": true,
+          "completed": false
+        },
+        {
+          "id": "DOD-09",
+          "item": "Priority recalculation completes within 5 seconds",
+          "category": "performance",
+          "required": true,
+          "completed": false
+        },
+        {
+          "id": "DOD-10",
+          "item": "Dashboard loads in < 2 seconds with 1000+ tasks",
+          "category": "performance",
+          "required": false,
+          "completed": false
+        }
+      ],
+      "qualityGates": [
+        {
+          "id": "QG-03",
+          "gate": "AI Accuracy Gate",
+          "criteria": [
+            "Golden dataset accuracy > 80%",
+            "Fallback mode parity with manual scoring",
+            "No PII leaked to OpenAI API"
+          ],
+          "passed": false
+        }
+      ],
+      "acceptanceSummary": {
+        "totalCriteria": 7,
+        "passedCriteria": 0,
+        "failedCriteria": 0,
+        "blockedCriteria": 7,
+        "passPercentage": "0%"
+      },
+      "summary": {
+        "totalItems": 4,
+        "completedItems": 0,
+        "requiredItems": 3,
+        "requiredCompleted": 0,
+        "completionPercentage": "0%",
+        "allRequiredComplete": false,
+        "status": "not-started"
+      }
+    },
+    "storyRefs": [
+      {
+        "id": "S-2.1",
+        "title": "AI Priority Scoring Engine",
+        "file": "stories/S-2.1.json"
+      },
+      {
+        "id": "S-2.2",
+        "title": "Priority Dashboard & Insights",
+        "file": "stories/S-2.2.json"
+      },
+      {
+        "id": "S-2.3",
+        "title": "AI-Assisted Sprint Planning",
+        "file": "stories/S-2.3.json"
+      }
+    ]
+  }
+}

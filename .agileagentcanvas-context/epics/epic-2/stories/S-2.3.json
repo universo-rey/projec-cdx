@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "story",
+    "workflowName": "agileagentcanvas",
+    "projectName": "TaskFlow Pro",
+    "timestamps": {
+      "lastModified": "2026-06-25T05:08:27.708Z",
+      "created": "2026-06-25T05:08:26.786Z"
+    },
+    "status": "draft"
+  },
+  "content": {
+    "epicId": "EPIC-2",
+    "epicTitle": "AI Prioritization Engine",
+    "testCases": [
+      "TC-2.3.1",
+      "TC-2.3.2"
+    ],
+    "id": "S-2.3",
+    "title": "AI-Assisted Sprint Planning",
+    "userStory": {
+      "asA": "Engineering Manager",
+      "iWant": "AI to suggest an optimal sprint backlog based on team capacity and priorities",
+      "soThat": "sprint planning takes 30 minutes instead of 3 hours"
+    },
+    "acceptanceCriteria": [
+      {
+        "id": "AC-2.3.1",
+        "given": "I start sprint planning",
+        "when": "I click 'AI Suggest'",
+        "then": "the system proposes a sprint backlog respecting capacity, skills, and priority scores",
+        "and": []
+      },
+      {
+        "id": "AC-2.3.2",
+        "given": "the AI suggests a sprint",
+        "when": "I adjust assignments",
+        "then": "the forecast updates in real-time showing impact on delivery date",
+        "and": []
+      }
+    ],
+    "status": "draft",
+    "storyPoints": 13,
+    "priority": "should-have",
+    "implementationDetails": [
+      "Capacity calculator accounting for PTO, meeting load, and historical velocity",
+      "Constraint satisfaction algorithm for assignment optimization",
+      "Real-time forecast recalculation using Monte Carlo simulation"
+    ],
+    "requirementRefs": [
+      "FR-5"
+    ],
+    "dependencies": {
+      "blockedBy": [
+        {
+          "storyId": "S-2.1",
+          "title": "AI Priority Scoring Engine"
+        }
+      ],
+      "blocks": [],
+      "relatedStories": [
+        "S-1.2"
+      ]
+    },
+    "_sourceEpicId": "EPIC-2"
+  }
+}

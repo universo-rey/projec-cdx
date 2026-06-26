@@ -37,6 +37,13 @@
       "requires_owner_gate": true,
       "allowed_modes": ["DRY_RUN", "LOCAL_MANUAL_APPROVAL"],
       "description": "Requests owner review for policy changes without applying them."
+    },
+    {
+      "action_type": "CONTROLLED_LIVE_FORMAL",
+      "risk": "CRITICAL",
+      "requires_owner_gate": true,
+      "allowed_modes": ["LIVE_CONTROLLED_REAL"],
+      "description": "Formal live-controlled action, requiring active live session, three roles, rollback, evidence, strict policy and audit."
     }
   ]
 }

@@ -2,6 +2,7 @@ param(
     [string] $LiveActionFile,
     [string] $LiveActionJson,
     [string[]] $ApproveRole = @(),
+    [switch] $Formal,
     [switch] $Reject,
     [string] $LiveRoot,
     [string] $StateRoot
@@ -21,7 +22,7 @@ function Read-LiveAction {
 $runtime = Initialize-CeoLiveOperationsState -LiveRoot $LiveRoot -StateRoot $StateRoot
 $action = Read-LiveAction
 $liveActionId = [string]$action.live_action_id
-$required = @(Get-CeoRequiredLiveOwnerRoles)
+$required = if ($Formal) { @(Get-CeoRequiredFormalLiveOwnerRoles) } else { @(Get-CeoRequiredLiveOwnerRoles) }
 $approvals = @()
 foreach ($role in $ApproveRole) {
     if ($role -in $required) {
@@ -29,6 +30,7 @@ foreach ($role in $ApproveRole) {
             role = $role
             approved = (-not $Reject)
             approved_at = (Get-Date).ToUniversalTime().ToString("o")
+            evidence_path = "<EVIDENCE_PATH>"
         }
     }
 }
@@ -39,11 +41,13 @@ $status = if ($Reject) { "REJECTED" } elseif ($complete) { "COMPLETE" } else { "
 $approval = [ordered]@{
     approval_id = [guid]::NewGuid().ToString()
     live_action_id = $liveActionId
+    formal = [bool]$Formal
     required_roles = $required
     approvals = @($approvals)
     approval_status = $status
     approved_at = $(if ($complete -and -not $Reject) { (Get-Date).ToUniversalTime().ToString("o") } else { $null })
     evidence_path = "<EVIDENCE_PATH>"
 }
-Save-CeoEventBusJson -Path (Join-Path $runtime.Approvals "$liveActionId.approval.json") -InputObject $approval
+$approvalDir = if ($Formal) { $runtime.FormalApprovals } else { $runtime.Approvals }
+Save-CeoEventBusJson -Path (Join-Path $approvalDir "$liveActionId.approval.json") -InputObject $approval
 $approval | ConvertTo-Json -Depth 10

@@ -1,0 +1,207 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDU - Panel de Decision</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0f14;
+      --panel: #121922;
+      --panel-2: #17202b;
+      --text: #edf4fb;
+      --muted: #9fb1c3;
+      --green: #24c77a;
+      --yellow: #f5c451;
+      --orange: #ff9f43;
+      --red: #ff5d5d;
+      --border: #283543;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.45 Consolas, "Cascadia Mono", "Courier New", monospace;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+    }
+    main {
+      width: min(980px, 100%);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, .35);
+    }
+    header { border-bottom: 1px solid var(--border); padding-bottom: 18px; margin-bottom: 22px; }
+    h1 { margin: 0; font-size: 28px; letter-spacing: 0; }
+    .subtitle { color: var(--muted); margin-top: 6px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 18px; }
+    .label { color: var(--muted); font-size: 13px; text-transform: uppercase; margin-bottom: 8px; }
+    .value { font-size: 22px; font-weight: 700; }
+    .green { color: var(--green); }
+    .yellow { color: var(--yellow); }
+    .orange { color: var(--orange); }
+    .red { color: var(--red); }
+    .wide { grid-column: 1 / -1; }
+    .diagnosis { font-size: 18px; white-space: pre-line; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    a.button {
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: #0f151d;
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+    a.button:hover { border-color: #4a6074; }
+    .meta { margin-top: 18px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 760px) {
+      body { padding: 16px; }
+      main { padding: 20px; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 23px; }
+      .value { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>SDU - Panel de Decision</h1>
+      <div class="subtitle">Vista ejecutiva final para owner</div>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <div class="label">Estado</div>
+        <div id="state" class="value yellow">Cargando...</div>
+      </article>
+      <article class="card">
+        <div class="label">Riesgo</div>
+        <div id="risk" class="value orange">Cargando...</div>
+      </article>
+      <article class="card wide">
+        <div class="label">Diagnostico</div>
+        <div id="diagnosis" class="diagnosis">Leyendo fuentes locales.</div>
+      </article>
+      <article class="card wide">
+        <div class="label">Accion recomendada</div>
+        <div id="action" class="value green">No se requiere intervencion</div>
+      </article>
+      <article class="card wide">
+        <div class="label">Carriles</div>
+        <div id="systems">Cargando dominios...</div>
+      </article>
+    </section>
+
+    <nav>
+      <a class="button" href="./">Ver NOC completo</a>
+      <a class="button" href="/logs/alerts.jsonl">Ver alertas</a>
+      <a class="button" href="/logs/decision_log.jsonl">Ver decisiones</a>
+      <a class="button" href="/evidence/governance_refinement.json">Ver evidencia</a>
+    </nav>
+
+    <div id="meta" class="meta"></div>
+  </main>
+
+  <script>
+    const readJson = async (path) => {
+      try {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) return null;
+        return await response.json();
+      } catch {
+        return null;
+      }
+    };
+
+    const readJsonl = async (path) => {
+      try {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) return [];
+        const text = await response.text();
+        return text.split(/\r?\n/).filter(Boolean).map((line) => {
+          try { return JSON.parse(line); } catch { return { parseError: true, raw: line }; }
+        });
+      } catch {
+        return [];
+      }
+    };
+
+    const cls = (node, name) => {
+      node.className = "value " + name;
+    };
+
+    const latest = (items) => items.length ? items[items.length - 1] : null;
+
+    async function render() {
+      const [score, recommendations, alerts, fails, decisions, systemsStatus] = await Promise.all([
+        readJson("/state/predictive_score.json"),
+        readJson("/outbox/recommended_actions.json"),
+        readJsonl("/logs/alerts.jsonl"),
+        readJsonl("/logs/fails_index.jsonl"),
+        readJsonl("/logs/decision_log.jsonl"),
+        readJson("/state/systems_status.json")
+      ]);
+
+      const decision = latest(decisions) || {};
+      const health = (score && (score.effectiveHealth || score.health)) || recommendations?.effectiveHealth || "YELLOW";
+      const risk = (score && score.risk) || recommendations?.risk || "HIGH";
+      const graphOk = score ? score.graphOk !== false : true;
+      const hasNoise = alerts.some((a) => a.classification === "NOISE_CLUSTER" || a.mode === "LOG_ONLY");
+      const operationalState = decision.operationalState || (health === "DEGRADED" || !graphOk ? "ACTION_REQUIRED" : (risk === "HIGH" && !hasNoise ? "ATTENTION" : "STABLE"));
+
+      const stateNode = document.getElementById("state");
+      const riskNode = document.getElementById("risk");
+      const diagnosisNode = document.getElementById("diagnosis");
+      const actionNode = document.getElementById("action");
+
+      if (operationalState === "ACTION_REQUIRED") {
+        stateNode.textContent = "Accion requerida";
+        cls(stateNode, "red");
+        diagnosisNode.textContent = "El sistema requiere revision operativa antes de continuar.";
+        actionNode.textContent = "Revisar fallas del watchdog";
+        cls(actionNode, "red");
+      } else if (operationalState === "ATTENTION") {
+        stateNode.textContent = "Sistema en atencion";
+        cls(stateNode, "yellow");
+        diagnosisNode.textContent = "El sistema opera, pero hay senales que requieren analisis.";
+        actionNode.textContent = "Revisar origen de alertas";
+        cls(actionNode, "orange");
+      } else {
+        stateNode.textContent = "Sistema estable";
+        cls(stateNode, health === "HEALTHY" ? "green" : "yellow");
+        diagnosisNode.textContent = "El sistema funciona correctamente.\nEl riesgo proviene del volumen de alertas, no de fallos operativos.";
+        actionNode.textContent = "No se requiere intervencion";
+        cls(actionNode, "green");
+      }
+
+      if (risk === "HIGH" && hasNoise && graphOk) {
+        riskNode.textContent = "Alto (ruido, no incidente)";
+        cls(riskNode, "orange");
+      } else {
+        riskNode.textContent = risk;
+        cls(riskNode, risk === "HIGH" ? "red" : (risk === "MEDIUM" ? "orange" : "green"));
+      }
+
+      const systems = systemsStatus?.systems || score?.systems || [];
+      document.getElementById("systems").innerHTML = systems.map((s) => {
+        const status = s.status || s.state || "STUB";
+        const color = status === "ACTIVE" || status === "HEALTHY" ? "green" : (status === "YELLOW" ? "yellow" : "orange");
+        return `<div><span class="${color}">${s.name}</span> - ${status}</div>`;
+      }).join("") || "Sin configuracion de dominios.";
+
+      document.getElementById("meta").textContent = `Indice ${score?.score ?? "-"} | Registros ${score?.locationsReviewed ?? "-"} | Fallas historicas ${fails.length} | Ultima decision ${decision.decision || "sin registro"}`;
+    }
+
+    render();
+    setInterval(render, 3000);
+  </script>
+</body>
+</html>

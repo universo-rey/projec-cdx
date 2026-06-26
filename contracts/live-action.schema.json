@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "contracts/live-action.schema.json",
-  "title": "CEO G5 Live Action Request",
+  "title": "CEO G6 Live Action Request",
   "type": "object",
   "additionalProperties": true,
   "required": [
@@ -32,12 +32,13 @@
     "requested_by": { "type": "string", "minLength": 1 },
     "source": { "type": "string", "minLength": 1 },
     "risk": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
-    "mode": { "type": "string", "enum": ["DRY_RUN", "CONTROLLED_WRITE", "OWNER_APPROVED_WRITE", "LIVE_CONTROLLED_SIMULATED"] },
+    "mode": { "type": "string", "enum": ["DRY_RUN", "CONTROLLED_WRITE", "OWNER_APPROVED_WRITE", "LIVE_CONTROLLED_SIMULATED", "LIVE_CONTROLLED_REAL"] },
     "target": { "type": "string", "minLength": 1 },
     "policy": { "type": "object" },
     "rollback": { "type": "object" },
     "evidence": { "type": "object" },
     "approvals": { "type": "object" },
+    "live_session": { "type": "object" },
     "trace": { "type": "object" }
   }
 }

@@ -21,7 +21,10 @@ $okResult = (& (Join-Path $root "tools\ceo-live-preflight.ps1") -LiveActionJson 
 if (-not $okResult.preflight_ok) { throw "PREFLIGHT_SHOULD_PASS" }
 
 $bad = New-LiveAction (("web" + "/data") + ".json")
-$badRaw = & pwsh -NoProfile -ExecutionPolicy Bypass -File (Join-Path $root "tools\ceo-live-preflight.ps1") -LiveActionJson ($bad | ConvertTo-Json -Depth 30) -LiveRoot $liveRoot
+$badPath = Join-Path $liveRoot "bad-preflight-action.json"
+New-Item -ItemType Directory -Force -Path $liveRoot | Out-Null
+$bad | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $badPath -Encoding UTF8
+$badRaw = & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $root "tools\ceo-live-preflight.ps1") -LiveActionFile $badPath -LiveRoot $liveRoot
 $badResult = $badRaw | ConvertFrom-Json
 if ($badResult.preflight_ok) { throw "PREFLIGHT_SHOULD_FAIL" }
 

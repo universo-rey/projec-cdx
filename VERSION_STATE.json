@@ -179,6 +179,19 @@
     "pr": false,
     "live_write": false
   },
+  "g6": {
+    "state": "FORMAL_LIVE_ENABLEMENT",
+    "live_real_enabled": true,
+    "live_mode": "CONTROLLED",
+    "live_session": "REQUIRED",
+    "authorization_formal": "REQUIRED",
+    "multi_actor": "REQUIRED",
+    "rollback": "MANDATORY",
+    "audit": "MANDATORY",
+    "policy_strict": "ENFORCED",
+    "external_write_enabled": false,
+    "automatic_live_execution": false
+  },
   "delta_count": 56,
   "integrity": "PENDING_STAGE"
 }

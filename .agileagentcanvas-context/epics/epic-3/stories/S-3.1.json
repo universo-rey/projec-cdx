@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "story",
+    "workflowName": "agileagentcanvas",
+    "projectName": "TaskFlow Pro",
+    "timestamps": {
+      "lastModified": "2026-06-25T05:08:27.716Z",
+      "created": "2026-06-25T05:08:26.795Z"
+    },
+    "status": "draft"
+  },
+  "content": {
+    "epicId": "EPIC-3",
+    "epicTitle": "Focus Mode & Productivity",
+    "testCases": [
+      "TC-3.1.1",
+      "TC-3.1.2",
+      "TC-3.1.3"
+    ],
+    "id": "S-3.1",
+    "title": "Focus Mode Core Engine",
+    "userStory": {
+      "asA": "Software Engineer",
+      "iWant": "to activate a focus mode that filters my view to only the current task",
+      "soThat": "I can work without distraction for extended periods"
+    },
+    "acceptanceCriteria": [
+      {
+        "id": "AC-3.1.1",
+        "given": "I click 'Start Focus'",
+        "when": "focus mode activates",
+        "then": "the UI shows only my current task, related context, and a focus timer",
+        "and": []
+      },
+      {
+        "id": "AC-3.1.2",
+        "given": "I am in focus mode",
+        "when": "a notification arrives",
+        "then": "it is queued and batched for delivery when focus ends (unless P0 urgent)",
+        "and": []
+      },
+      {
+        "id": "AC-3.1.3",
+        "given": "focus mode is active for 25 minutes",
+        "when": "the timer triggers a break",
+        "then": "a gentle notification suggests a 5-minute break (Pomodoro-style)",
+        "and": []
+      }
+    ],
+    "status": "draft",
+    "storyPoints": 8,
+    "priority": "must-have",
+    "implementationDetails": [
+      "Focus state machine: idle -> focusing -> break -> focusing (loop) -> ended",
+      "Notification interceptor middleware that checks focus state before delivery",
+      "Focus session events published for analytics and Slack DND sync"
+    ],
+    "requirementRefs": [
+      "FR-3"
+    ],
+    "dependencies": {
+      "blockedBy": [
+        {
+          "storyId": "S-1.1",
+          "title": "Task CRUD API",
+          "status": "done"
+        }
+      ],
+      "blocks": [
+        {
+          "storyId": "S-3.2",
+          "title": "Focus Mode UI & Analytics"
+        }
+      ],
+      "relatedStories": [
+        "S-2.1"
+      ]
+    },
+    "assignee": "Alex Rivera",
+    "_sourceEpicId": "EPIC-3"
+  }
+}

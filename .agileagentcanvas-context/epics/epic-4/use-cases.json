@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "use-cases",
+    "epicId": "EPIC-4",
+    "timestamps": {
+      "lastModified": "2026-06-25T05:08:27.817Z",
+      "created": "2026-06-25T05:08:55.767Z"
+    }
+  },
+  "content": {
+    "useCases": [
+      {
+        "id": "UC-04",
+        "title": "PR-to-Task Auto-linking",
+        "summary": "Developer's PR automatically links to and closes the associated task on merge",
+        "description": "Developer's PR automatically links to and closes the associated task on merge",
+        "scenario": {
+          "context": "Developer finishes coding a feature and creates a PR",
+          "before": "Developer manually updates Jira ticket, copies PR link, changes status",
+          "after": "PR description mentions task ID, merge auto-closes the task, team sees update in real-time",
+          "impact": "Eliminates 5 minutes of manual bookkeeping per PR, ensures task board accuracy"
+        },
+        "primaryActor": "Software Engineer",
+        "secondaryActors": [
+          "GitHub",
+          "TaskFlow Webhook Service"
+        ],
+        "trigger": "Developer creates a pull request with a task ID reference in the description",
+        "preconditions": [
+          "GitHub App is installed on the repository",
+          "Developer has linked their GitHub account to TaskFlow"
+        ],
+        "postconditions": [
+          "Task linked to PR with clickable reference",
+          "Task moved to Done on merge",
+          "Real-time board updated for all viewers"
+        ],
+        "mainFlow": [
+          {
+            "step": 1,
+            "action": "Developer creates a PR with 'Fixes TF-123' in the description",
+            "actor": "Software Engineer"
+          },
+          {
+            "step": 2,
+            "action": "GitHub webhook notifies TaskFlow of the PR",
+            "actor": "GitHub"
+          },
+          {
+            "step": 3,
+            "action": "System links the PR to task TF-123 and shows it on the task card",
+            "actor": "System"
+          },
+          {
+            "step": 4,
+            "action": "PR is reviewed and merged",
+            "actor": "Software Engineer"
+          },
+          {
+            "step": 5,
+            "action": "System automatically moves task TF-123 to Done",
+            "actor": "System"
+          }
+        ],
+        "alternativeFlows": [
+          {
+            "id": "AF-04-1",
+            "name": "Multiple Tasks Referenced",
+            "branchPoint": "Step 1",
+            "steps": [
+              "PR description references multiple task IDs (e.g., 'Fixes TF-123, TF-124')",
+              "System links PR to all referenced tasks",
+              "On merge, all referenced tasks move to Done"
+            ]
+          }
+        ],
+        "exceptionFlows": [
+          {
+            "id": "EF-04-1",
+            "name": "Invalid Task ID",
+            "trigger": "PR references a task ID that doesn't exist in TaskFlow",
+            "handling": "System ignores the invalid reference and logs a warning. PR comment bot adds a note about the unrecognized ID."
+          }
+        ],
+        "businessRules": [
+          "Only merged PRs trigger task completion (not closed/abandoned)",
+          "Task ID pattern is case-insensitive (TF-123, tf-123, Tf-123 all match)"
+        ],
+        "relatedRequirements": [
+          "FR-6"
+        ],
+        "relatedEpic": "EPIC-4",
+        "relatedStories": [
+          "S-4.1"
+        ],
+        "sourceDocument": "PRD.md#github-integration",
+        "notes": "This is the #1 requested feature from our developer beta testers."
+      }
+    ]
+  }
+}

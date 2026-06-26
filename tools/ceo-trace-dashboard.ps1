@@ -32,8 +32,16 @@ $liveRoot = Initialize-CeoLiveOperationsState
 $liveRequested = @(Get-ChildItem -LiteralPath $liveRoot.Requests -Filter "*.json" -File -ErrorAction SilentlyContinue).Count
 $liveApprovals = @(Get-ChildItem -LiteralPath $liveRoot.Approvals -Filter "*.json" -File -ErrorAction SilentlyContinue).Count
 $liveSimulated = @(Get-ChildItem -LiteralPath $liveRoot.Simulations -Filter "*.json" -File -ErrorAction SilentlyContinue).Count
+$liveFormalApprovals = @(Get-ChildItem -LiteralPath $liveRoot.FormalApprovals -Filter "*.json" -File -ErrorAction SilentlyContinue).Count
+$liveRealExecutions = @(Get-ChildItem -LiteralPath $liveRoot.Executions -Filter "*.json" -File -ErrorAction SilentlyContinue).Count
 $liveRollback = @(Get-ChildItem -LiteralPath $liveRoot.Rollback -Filter "*.json" -File -ErrorAction SilentlyContinue).Count
 $liveAuditReady = Test-Path -LiteralPath $liveRoot.AuditJson -PathType Leaf
+$liveSession = Get-CeoLiveSessionStatus -LiveRoot $liveRoot.Root
+$liveSessionActive = Test-CeoLiveSessionActive -Session $liveSession
+$accountabilityRecords = 0
+if (Test-Path -LiteralPath $liveRoot.AccountabilityLog -PathType Leaf) {
+    $accountabilityRecords = @(Get-Content -LiteralPath $liveRoot.AccountabilityLog -ErrorAction SilentlyContinue).Count
+}
 $health = "OK"
 if ($dlqCount -gt 0 -or $failedCount -gt 0 -or $alertCount -gt 0) {
     $health = "WARN"
@@ -70,9 +78,14 @@ $state = [ordered]@{
         hold_owner = 0
         multi_owner_pending = [Math]::Max(0, $liveRequested - $liveApprovals)
         simulated = $liveSimulated
+        formal_approvals = $liveFormalApprovals
+        real_executions = $liveRealExecutions
         rollback_validated = $liveRollback
         audit_ready = [bool]$liveAuditReady
-        live_real_enabled = $false
+        session_state = [string](Get-CeoEventBusProperty -InputObject $liveSession -Name "state" -Default "DISABLED")
+        session_id = [string](Get-CeoEventBusProperty -InputObject $liveSession -Name "session_id" -Default "")
+        live_real_enabled = [bool]$liveSessionActive
+        accountability_records = $accountabilityRecords
     }
     timeline = @($index.events_by_time | Select-Object -Last 20)
 }
@@ -100,9 +113,13 @@ $md = @(
     "- requested: $liveRequested",
     "- multi_owner_pending: $([Math]::Max(0, $liveRequested - $liveApprovals))",
     "- simulated: $liveSimulated",
+    "- formal_approvals: $liveFormalApprovals",
+    "- real_executions: $liveRealExecutions",
     "- rollback_validated: $liveRollback",
     "- audit_ready: $([bool]$liveAuditReady)",
-    "- live_real_enabled: false",
+    "- session_state: $([string](Get-CeoEventBusProperty -InputObject $liveSession -Name "state" -Default "DISABLED"))",
+    "- live_real_enabled: $([bool]$liveSessionActive)",
+    "- accountability_records: $accountabilityRecords",
     "",
     "## Replay",
     "- dry_run_only: true",

@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "workflow",
+    "workflowName": "agileagentcanvas",
+    "projectName": "SDU Operations Layer",
+    "timestamps": {
+      "created": "2026-06-26T00:00:00-03:00",
+      "lastModified": "2026-06-26T00:00:00-03:00"
+    },
+    "status": "active"
+  },
+  "content": {
+    "trigger": "Start Dev (rocket)",
+    "mode": "OWNER_REVIEW_REQUIRED",
+    "mapsTo": [
+      {
+        "taskArtifact": "../tasks/check_alert_source.json",
+        "actionId": "check_alert_source",
+        "command": "C:\\CEO\\watchdog\\commands\\check-alert-source.ps1",
+        "risk": "LOW",
+        "preflight": [
+          "Show SYSTEM_STATE",
+          "Show WATCHDOG context",
+          "Show recommendation",
+          "Ask for explicit owner action"
+        ]
+      },
+      {
+        "taskArtifact": "../tasks/evaluate_cleanup.json",
+        "actionId": "evaluate_cleanup",
+        "command": "C:\\CEO\\watchdog\\commands\\cleanup-evaluation.ps1",
+        "risk": "MEDIUM",
+        "preflight": [
+          "Show SYSTEM_STATE",
+          "Show NO ACTION REQUIRED warning",
+          "Require owner approval",
+          "Record trace before dispatch"
+        ]
+      }
+    ],
+    "executionEndpoint": "POST /execute",
+    "autoExecution": false
+  }
+}

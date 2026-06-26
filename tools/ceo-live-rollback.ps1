@@ -1,6 +1,8 @@
 param(
     [string] $LiveActionFile,
     [string] $LiveActionJson,
+    [switch] $Formal,
+    [switch] $MockApply,
     [string] $LiveRoot,
     [string] $StateRoot
 )
@@ -23,10 +25,13 @@ $valid = ([bool](Get-CeoEventBusProperty -InputObject $rollback -Name "required"
 $doc = [ordered]@{
     rollback_id = [guid]::NewGuid().ToString()
     live_action_id = [string]$action.live_action_id
+    formal = [bool]$Formal
     required = $true
     strategy = [string](Get-CeoEventBusProperty -InputObject $rollback -Name "strategy" -Default "dry-run-compensating-action")
     compensating_action = [string](Get-CeoEventBusProperty -InputObject $rollback -Name "compensating_action" -Default "manual-review")
     validated = $valid
+    manual_executable = $valid
+    mock_apply = [bool]$MockApply
     rollback_executed_real = $false
     evidence_path = "<EVIDENCE_PATH>"
 }
@@ -34,6 +39,7 @@ Save-CeoEventBusJson -Path (Join-Path $runtime.Rollback "$($action.live_action_i
 [ordered]@{
     rollback_required = $true
     rollback_validated = $valid
+    rollback_manual_executable = $valid
     rollback_executed_real = $false
     rollback_evidence_path = "<EVIDENCE_PATH>"
 } | ConvertTo-Json -Depth 10
