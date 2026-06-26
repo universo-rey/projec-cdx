@@ -1,0 +1,92 @@
+{
+  "fix_id": "FIX_PR03_WORKBENCH_LINK_CONTROL_20260626",
+  "generated_at_local": "2026-06-26T10:08:10-03:00",
+  "generated_at_utc": "2026-06-26T13:08:10.4082961Z",
+  "live_branch": "codex/live-state-g10-governed-20260626",
+  "live_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "integration_branch": "codex/integration-g10-snapshot-20260626",
+  "integration_old_head": "b191ba07d7d9a0f1c535b8e35310c2f758c86867",
+  "repair_commit": "da9d05944a208128b62d1d6628f09b9e8adcf4dd",
+  "evidence_commit": "COMPUTED_AFTER_COMMIT_TREE",
+  "repaired_files": [
+    {
+      "path": "operativa/CONTROL.md",
+      "line_numbers": [
+        12
+      ],
+      "old_link_variants": [
+        "C:/Users/enzo1/PROJEC%20CDX/SDU_STATE_G10.md"
+      ],
+      "new_link": "../SDU_STATE_G10.md",
+      "mode": "100644",
+      "old_blob": "1f984ac2ac4e5fd14b62b7d0a4bdf1288c29d821",
+      "new_blob": "39c138a4d103f8ae6dc2bca9b8a4d6fe2441a372"
+    }
+  ],
+  "old_link_primary": "C:/Users/enzo1/PROJEC%20CDX/SDU_STATE_G10.md",
+  "repair_criterion": "replace only absolute broken SDU_STATE_G10.md target with relative path computed per Markdown file directory",
+  "validators": [
+    {
+      "name": "workbench",
+      "command": "tools/validate_proj_cdx_workbench.ps1 -Root <temp> -Json",
+      "status": "OBSERVED",
+      "exit_code": 0,
+      "output_excerpt": "{\n  \"root\": \"C:\\\\Users\\\\enzo1\\\\AppData\\\\Local\\\\Temp\\\\sdu_fix_pr03_validate_8120b0a3902b4510aa651a4597a033d3\",\n  \"status\": \"OBSERVED\",\n  \"checked_at\": \"2026-06-26T10:06:48\",\n  \"checks\": [\n    {\n      \"name\": \"root_exists\",\n      \"status\": \"PASS\",\n      \"detail\": \"Raiz encontrada.\"\n    },\n    {\n      \"name\": \"required_file:README.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required_file:MAPA_MAESTRO.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required_file:AGENTS.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required_file:operativa\\\\START_HERE.md\",\n      \"status\": \"OBSERVED\",\n      \"detail\": \"Requerido historico ausente; requiere decision documental explicita.\"\n    },\n    {\n      \"name\": \"required_file:operativa\\\\CONTROL.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required_file:operativa\\\\CURRENT.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required_file:operativa\\\\NEXT.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required_file:operativa\\\\BLOCKERS.md\",\n      \"status\": \"OBSERVED\",\n      \"detail\": \"Requerido historico ausente; requiere decision documental explicita.\"\n    },\n    {\n      \"name\": \"required_file:operativa\\\\TRACE.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required_file:operativa\\\\MANIFESTS.md\",\n      \"status\": \"OBSERVED\",\n      \"detail\": \"Requerido historico ausente; requiere decision documental explicita.\"\n    },\n    {\n      \"name\": \"required_file:operativa\\\\RETENCION.md\",\n      \"status\": \"OBSERVED\",\n      \"detail\": \"Requerido historico ausente; requiere decision documental explicita.\"\n    },\n    {\n      \"name\": \"required_file:operativa\\\\ACTA_REPOS_SURFACE_GITHUB_20260615.md\",\n      \"status\": \"OBSERVED\",\n      \"detail\": \"Requerido historico ausente; requiere decision documental explicita.\"\n    },\n    {\n      \"name\": \"required_file:playbooks\\\\00-preflight-gobernado.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required_file:playbooks\\\\01-iniciar-delta.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },"
+    },
+    {
+      "name": "sync",
+      "command": "tools/validate_proj_cdx_sync.ps1 -Root <temp> -Json",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_excerpt": "{\n  \"root\": \"C:\\\\Users\\\\enzo1\\\\AppData\\\\Local\\\\Temp\\\\sdu_fix_pr03_validate_8120b0a3902b4510aa651a4597a033d3\",\n  \"status\": \"PASS\",\n  \"checked_at\": \"2026-06-26T10:08:07\",\n  \"checks\": [\n    {\n      \"name\": \"required:README.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:MAPA_MAESTRO.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:operativa\\\\CONTROL.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:operativa\\\\TRACE.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:dataverse\\\\README.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:dataverse\\\\MAPA.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:dataverse\\\\GATE.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:dataverse\\\\REGISTRO_BLOQUEOS.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:dataverse\\\\PLAN_SEGUNDA_PASADA.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:dataverse\\\\READBACK_EXCEL_BLOCKER_FRONTIER.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:workbooks\\\\README.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:workbooks\\\\MAPA.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:workbooks\\\\EXCEL_AL_FRENTE.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:outputs\\\\README.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"required:outputs\\\\MAPA.md\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },"
+    },
+    {
+      "name": "operational_chain",
+      "command": "tools/validate_proj_cdx_operational_chain.ps1 -Root <temp> -ResolverPy <temp>/tools/sdu_chain_resolver.py -Json",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_excerpt": "{\n  \"root\": \"C:\\\\Users\\\\enzo1\\\\AppData\\\\Local\\\\Temp\\\\sdu_fix_pr03_validate_8120b0a3902b4510aa651a4597a033d3\",\n  \"chain_csv\": \"<RUNTIME_PATH>/PROJEC_CDX_CARRIL4_OPERATIONAL_CHAIN_INDEX.csv\",\n  \"schema_csv\": \"<RUNTIME_PATH>/PROJEC_CDX_OPERATIONAL_CHAIN_SCHEMA_20260615.csv\",\n  \"dataverse_source_map_csv\": \"C:/Users/enzo1/PROJEC CDX/dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv\",\n  \"atomic_matrix_csv\": \"C:/Users/enzo1/PROJEC CDX/atomic/CODEX_ATOMIC_ACTION_MATRIX.csv\",\n  \"status\": \"PASS\",\n  \"checked_at\": \"2026-06-26T10:08:08\",\n  \"checks\": [\n    {\n      \"name\": \"resolver_exists\",\n      \"status\": \"PASS\",\n      \"detail\": \"OK\"\n    },\n    {\n      \"name\": \"resolver_status\",\n      \"status\": \"PASS\",\n      \"detail\": \"Cadena local: entrada -> estado -> orden -> agentes -> semantica -> motor -> modelo -> evidencia -> salida\"\n    },\n    {\n      \"name\": \"resolver:repo_root_exists\",\n      \"status\": \"PASS\",\n      \"detail\": \"C:\\\\Users\\\\enzo1\\\\AppData\\\\Local\\\\Temp\\\\sdu_fix_pr03_validate_8120b0a3902b4510aa651a4597a033d3\"\n    },\n    {\n      \"name\": \"resolver:no_external_gate\",\n      \"status\": \"PASS\",\n      \"detail\": \"external surfaces disabled\"\n    },\n    {\n      \"name\": \"resolver:dry_run_gate\",\n      \"status\": \"PASS\",\n      \"detail\": \"no mutation requested\"\n    },\n    {\n      \"name\": \"resolver:env_local_read\",\n      \"status\": \"PASS\",\n      \"detail\": \".env.local not read by resolver\"\n    },\n    {\n      \"name\": \"resolver:entrada:readme\",\n      \"status\": \"PASS\",\n      \"detail\": \"README.md\"\n    },\n    {\n      \"name\": \"resolver:entrada:agents\",\n      \"status\": \"PASS\",\n      \"detail\": \"AGENTS.md\"\n    },\n    {\n      \"name\": \"resolver:entrada:mapa_maestro\",\n      \"status\": \"PASS\",\n      \"detail\": \"MAPA_MAESTRO.md\"\n    },\n    {\n      \"name\": \"resolver:estado:current\",\n      \"status\": \"PASS\",\n      \"detail\": \"operativa/CURRENT.md\"\n    },\n    {\n      \"name\": \"resolver:estado:next\",\n      \"status\": \"PASS\",\n      \"detail\": \"operativa/NEXT.md\"\n    },\n    {\n      \"name\": \"resolver:estado:trace\",\n      \"status\": \"PASS\",\n      \"detail\": \"operativa/TRACE.md\"\n    },\n    {\n      \"name\": \"resolver:orden:sdu_boot\",\n      \"status\": \"PASS\",\n      \"detail\": \"tools/sdu_boot.ps1\"\n    },\n    {\n      \"name\": \"resolver:orden:sdu_chain_resolver\",\n      \"status\": \"PASS\",\n      \"detail\": \"tools/sdu_chain_resolver.py\"\n    },\n    {"
+    },
+    {
+      "name": "sdu_boot",
+      "command": "tools/sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun -Json",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_excerpt": "{\n  \"status\": \"PASS\",\n  \"mode\": \"all\",\n  \"agent\": \"All\",\n  \"root\": \"C:\\\\Users\\\\enzo1\\\\AppData\\\\Local\\\\Temp\\\\sdu_fix_pr03_validate_8120b0a3902b4510aa651a4597a033d3\",\n  \"no_external\": true,\n  \"dry_run\": true,\n  \"chain\": \"entrada -> estado -> orden -> agentes -> semantica -> motor -> modelo -> evidencia -> salida\",\n  \"checks\": [\n    {\n      \"name\": \"repo_root_exists\",\n      \"status\": \"PASS\",\n      \"detail\": \"C:\\\\Users\\\\enzo1\\\\AppData\\\\Local\\\\Temp\\\\sdu_fix_pr03_validate_8120b0a3902b4510aa651a4597a033d3\"\n    },\n    {\n      \"name\": \"no_external_gate\",\n      \"status\": \"PASS\",\n      \"detail\": \"external surfaces disabled\"\n    },\n    {\n      \"name\": \"dry_run_gate\",\n      \"status\": \"PASS\",\n      \"detail\": \"no mutation requested\"\n    },\n    {\n      \"name\": \"env_local_read\",\n      \"status\": \"PASS\",\n      \"detail\": \".env.local not read by resolver\"\n    },\n    {\n      \"name\": \"entrada:readme\",\n      \"status\": \"PASS\",\n      \"detail\": \"README.md\"\n    },\n    {\n      \"name\": \"entrada:agents\",\n      \"status\": \"PASS\",\n      \"detail\": \"AGENTS.md\"\n    },\n    {\n      \"name\": \"entrada:mapa_maestro\",\n      \"status\": \"PASS\",\n      \"detail\": \"MAPA_MAESTRO.md\"\n    },\n    {\n      \"name\": \"estado:current\",\n      \"status\": \"PASS\",\n      \"detail\": \"operativa/CURRENT.md\"\n    },\n    {\n      \"name\": \"estado:next\",\n      \"status\": \"PASS\",\n      \"detail\": \"operativa/NEXT.md\"\n    },\n    {\n      \"name\": \"estado:trace\",\n      \"status\": \"PASS\",\n      \"detail\": \"operativa/TRACE.md\"\n    },\n    {\n      \"name\": \"orden:sdu_boot\",\n      \"status\": \"PASS\",\n      \"detail\": \"tools/sdu_boot.ps1\"\n    },\n    {\n      \"name\": \"orden:sdu_chain_resolver\",\n      \"status\": \"PASS\",\n      \"detail\": \"tools/sdu_chain_resolver.py\"\n    },\n    {\n      \"name\": \"orden:orden_sdu_viva\",\n      \"status\": \"PASS\",\n      \"detail\": \"dataverse/ORDEN_SDU_VIVA.md\"\n    },\n    {\n      \"name\": \"agentes:agent_skill_map\",\n      \"status\": \"PASS\",\n      \"detail\": \"inventarios/AGENTES_SKILLS_RECETAS_20260616.md\"\n    },\n    {"
+    },
+    {
+      "name": "dataverse_metadata_wave",
+      "command": "tools/validate_sdu_dataverse_metadata_wave.ps1 -Root <temp>",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_excerpt": "PASS | required:README.md | OK\nPASS | required:MANIFEST.yaml | OK\nPASS | required:READBACK.md | OK\nPASS | required:EVIDENCIA.md | OK\nPASS | required:INDICE.csv | OK\nPASS | required:METADATA_HYDRATION_MATRIX.csv | OK\nPASS | required:METADATA_HYDRATION_MATRIX.json | OK\nPASS | required:ROLLBACK.md | OK\nPASS | required:POSTCHECK.md | OK\nPASS | required:STOP_CONDITIONS.md | OK\nPASS | matrix_rows | 65\nPASS | matrix_status | METADATA_ONLY_PREPARED\nPASS | planner_sanitized | no_plan_title\nSTATUS: PASS\n"
+    },
+    {
+      "name": "git_diff_check_live_to_integration",
+      "command": "git diff --check e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11 codex/integration-g10-snapshot-20260626",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_excerpt": ""
+    }
+  ],
+  "decision": "PR03_WORKBENCH_LINK_FIXED_WITH_REVIEW",
+  "rollback": {
+    "integration": "b191ba07d7d9a0f1c535b8e35310c2f758c86867"
+  },
+  "forbidden_actions": [
+    "checkout",
+    "switch",
+    "fetch",
+    "pull",
+    "pr",
+    "merge_command",
+    "rebase",
+    "reset",
+    "clean",
+    "restore",
+    "tag",
+    "live",
+    "g11_apply"
+  ],
+  "recommended_next_lane": "OWNER_DECISION_AFTER_PR03_CORE_G10_FIXED"
+}
