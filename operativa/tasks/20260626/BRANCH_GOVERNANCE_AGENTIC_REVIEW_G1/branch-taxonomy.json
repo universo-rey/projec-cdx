@@ -1,0 +1,48 @@
+{
+  "command": "BRANCH_GOVERNANCE_AGENTIC_REVIEW_G1",
+  "status": "BASELINE_READY_NO_MUTATION",
+  "root": "C:\\CEO\\project-cdx",
+  "current_branch": "codex/m365-escribania-dataverse-restore",
+  "current_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "remote_state": "LOCAL_CACHE_ONLY_NO_FETCH",
+  "frontier": {
+    "no_checkout": true,
+    "no_merge": true,
+    "no_delete_branch": true,
+    "no_fetch": true,
+    "no_push": true,
+    "no_pr": true,
+    "no_secret_read": true,
+    "no_external_write": true
+  },
+  "absorbed": [
+    "main",
+    "codex/consume-bound-workbook-next-delta",
+    "codex/projec-cdx-docs-evidence-20260618",
+    "codex/projec-cdx-launch-desk-20260618",
+    "codex/runtime-versioning-snapshots"
+  ],
+  "light_review": [
+    "codex/pipeline-baseline-workflows-20260621",
+    "codex/projec-cdx-runtime-config-20260618",
+    "codex/projec-cdx-control-autostash-a-20260618",
+    "codex/projec-cdx-control-autostash-b-20260618",
+    "codex/audit-governance-hardening"
+  ],
+  "audit_only": [
+    "codex/multirepo-alignment-16",
+    "codex/dataverse-corte-ejecutora-v1",
+    "codex/cabina-canon-agents-runtime-audit",
+    "feature/docs-refactor",
+    "copilot/featureschema-validation",
+    "codex/mesa-archivo-20260620",
+    "codex/cloud-setup-ui-v1",
+    "codex/wave-mapas-uniformes-v1",
+    "codex/revisar-procesos-del-equipo"
+  ],
+  "duplicate_alias_group_a98ab81e": [
+    "backup/main-ahead-34-20260620-040104",
+    "codex/windows-boot-origin-normalization-v1",
+    "control-plane/verde-gobernado-20260620"
+  ]
+}

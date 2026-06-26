@@ -1,0 +1,57 @@
+{
+  "status": "AGENT_LANE_MAP_READY",
+  "source_files": [
+    "contracts/agent-map.json",
+    "SYSTEM_NERVOUS_INDEX.json",
+    "inventarios/AGENTES_SKILLS_RECETAS_20260616.md",
+    "recipes/INDICE_RECETAS.md",
+    "operativa/SDU_RUNTIME_BOUNDARY_MATRIX.json"
+  ],
+  "lanes": [
+    {
+      "lane": "BRANCH_LIGHT_REVIEW",
+      "owner_agent": "validation_agent",
+      "skill": "repo-agent-tool-governance",
+      "recipe": "agentes-atomicos-algoritmicos-en-waves",
+      "tool": "git diff local refs",
+      "validator": "validate_proj_cdx_operational_chain.ps1",
+      "evidence": "branch-review-matrix.csv",
+      "stop_condition": "branch requires checkout, merge, fetch or write"
+    },
+    {
+      "lane": "BRANCH_HEAVY_AUDIT",
+      "owner_agent": "horus-riesgo",
+      "skill": "parallel-agentic-repo-audit",
+      "recipe": "cierre-wave-documental",
+      "tool": "git rev-list and git diff local refs",
+      "validator": "manual owner gate checklist",
+      "evidence": "heavy-branches-audit-notes.md",
+      "stop_condition": "owner target or rollback missing"
+    },
+    {
+      "lane": "DATAVERSE_BRANCH_AUDIT",
+      "owner_agent": "seshat-normativa",
+      "skill": "dataverse-rehidratacion",
+      "recipe": "dataverse-rehidratacion",
+      "tool": "validate_sdu_dataverse_metadata_wave.ps1",
+      "validator": "metadata-only validator",
+      "evidence": "branch-review-matrix.csv",
+      "stop_condition": "live Dataverse read/write requested without gate"
+    },
+    {
+      "lane": "EVIDENCE_CLOSEOUT",
+      "owner_agent": "narrador-normativo",
+      "skill": "governed-readback-closeout",
+      "recipe": "cierre-wave-documental",
+      "tool": "manual-map-update",
+      "validator": "readback checklist",
+      "evidence": "FINAL_READBACK_BRANCH_GOVERNANCE_AGENTIC_REVIEW_G1.md",
+      "stop_condition": "missing commands, files touched, systems not touched, gates, risks or next action"
+    }
+  ],
+  "gaps": [
+    ".agents/codex/matrices/REPO_AGENT_TOOL_GOVERNANCE_MATRIX.csv not present in this checkout",
+    ".agents/codex/maps/SURFACE_BOUNDARY_MAP.csv not present in this checkout",
+    "agileagentcanvas-help duplicated in .agents and .cursor; cleanup requires owner decision"
+  ]
+}

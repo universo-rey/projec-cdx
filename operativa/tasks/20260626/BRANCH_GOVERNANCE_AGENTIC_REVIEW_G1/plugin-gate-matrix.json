@@ -1,0 +1,55 @@
+{
+  "status": "PLUGIN_GATE_MATRIX_READY",
+  "plugins": [
+    {
+      "name": "multi_agent_v1",
+      "state": "AVAILABLE",
+      "allowed_now": [
+        "spawn explorer read-only",
+        "wait for fan-in",
+        "close agents"
+      ],
+      "blocked_now": [
+        "worker file edits without owner write gate"
+      ],
+      "gate": "OWNER_GATE_SUBAGENT_WRITE"
+    },
+    {
+      "name": "github",
+      "state": "AVAILABLE",
+      "allowed_now": [
+        "read-only branch search or file fetch if GIT_REMOTE_READ_ONLY is opened"
+      ],
+      "blocked_now": [
+        "create_branch",
+        "update_ref",
+        "PR",
+        "workflow dispatch"
+      ],
+      "gate": "GIT_REMOTE_READ_ONLY for reads; separate literal gate for writes"
+    },
+    {
+      "name": "openai_developers",
+      "state": "AVAILABLE_ON_DEMAND",
+      "allowed_now": [],
+      "blocked_now": [
+        "api calls",
+        "keys",
+        "Codex Cloud execution"
+      ],
+      "gate": "OPENAI_API_LIVE_GATE"
+    },
+    {
+      "name": "microsoft_sharepoint_dataverse_power_platform",
+      "state": "AVAILABLE_ON_DEMAND",
+      "allowed_now": [],
+      "blocked_now": [
+        "tenant read/write",
+        "SharePoint write",
+        "Dataverse write",
+        "flow mutation"
+      ],
+      "gate": "MICROSOFT_LIVE_READ_GATE or literal write gate"
+    }
+  ]
+}
