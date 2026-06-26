@@ -120,19 +120,26 @@ foreach ($label in @("20260615-cierre-workbench-v1", "20260615-patrones-procesos
 }
 
 $linkChecks = @(
-  @{ file = "README.md"; pattern = "C:/Users/enzo1/PROJEC%20CDX/workbooks/tracker.xlsx" },
-  @{ file = "README.md"; pattern = "C:/Users/enzo1/PROJEC%20CDX/workbooks/control_operativo.xlsx" },
-  @{ file = "MAPA_MAESTRO.md"; pattern = "C:/Users/enzo1/PROJEC%20CDX/workbooks/tracker.xlsx" },
-  @{ file = "MAPA_MAESTRO.md"; pattern = "$ResolvedRuntimePath/tracker_general_20260613" },
-  @{ file = "workbooks/EXCEL_AL_FRENTE.md"; pattern = "$ResolvedRuntimePath/tracker_workbook_20260613/tracker_workbook.xlsx" }
+  @{ file = "README.md"; patterns = @("workbooks/tracker.xlsx", "C:/Users/enzo1/PROJEC%20CDX/workbooks/tracker.xlsx") },
+  @{ file = "README.md"; patterns = @("workbooks/control_operativo.xlsx", "C:/Users/enzo1/PROJEC%20CDX/workbooks/control_operativo.xlsx") },
+  @{ file = "MAPA_MAESTRO.md"; patterns = @("workbooks/tracker.xlsx", "C:/Users/enzo1/PROJEC%20CDX/workbooks/tracker.xlsx") },
+  @{ file = "MAPA_MAESTRO.md"; patterns = @("$ResolvedRuntimePath/tracker_general_20260613", "$ResolvedRuntimePath/tracker_general_20260613/README.md", "C:/Users/enzo1/PROJEC%20CDX/$ResolvedRuntimePath/tracker_general_20260613/README.md") },
+  @{ file = "workbooks/EXCEL_AL_FRENTE.md"; patterns = @("$ResolvedRuntimePath/tracker_workbook_20260613/tracker_workbook.xlsx", "C:/Users/enzo1/PROJEC%20CDX/$ResolvedRuntimePath/tracker_workbook_20260613/tracker_workbook.xlsx") }
 )
 
 foreach ($check in $linkChecks) {
   $text = Get-Content -LiteralPath (Join-Path $Root $check.file) -Raw
-  if ($text -match [regex]::Escape($check.pattern)) {
-    Add-Check "link:$($check.file)" "PASS" $check.pattern
+  $matched = $false
+  foreach ($pattern in $check.patterns) {
+    if ($text -match [regex]::Escape($pattern)) {
+      $matched = $true
+      break
+    }
+  }
+  if ($matched) {
+    Add-Check "link:$($check.file)" "PASS" "Link repo-local relativo o absoluto interno aceptado."
   } else {
-    Add-Check "link:$($check.file)" "FAIL" "Falta enlace: $($check.pattern)"
+    Add-Check "link:$($check.file)" "FAIL" "Falta enlace equivalente: $($check.patterns -join ' OR ')"
   }
 }
 
