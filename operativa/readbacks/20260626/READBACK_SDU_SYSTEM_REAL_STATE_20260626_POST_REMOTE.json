@@ -1,0 +1,491 @@
+{
+  "readback_id": "READBACK_SDU_SYSTEM_REAL_STATE_20260626_POST_REMOTE",
+  "generated_at_local": "2026-06-26T07:35:01.7862318-03:00",
+  "generated_at_utc": "2026-06-26T10:35:01.7856321Z",
+  "root_requested": "C:\\CEO\\project-cdx",
+  "root_resolved": "C:\\CEO\\project-cdx",
+  "mode": "local_readonly_remote_readonly",
+  "git": {
+    "branch": "codex/live-state-g10-governed-20260626",
+    "head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+    "status_count": 0,
+    "clean": true,
+    "diff_check": "PASS"
+  },
+  "version_state": {
+    "exists": true,
+    "branch": "codex/runtime-versioning-snapshots",
+    "commit": "c856fa9b",
+    "generated_at_utc": "2026-06-24T17:37:11Z",
+    "integrity": "PENDING_STAGE",
+    "dirty": true,
+    "delta_count": 56,
+    "status_length": 56,
+    "matches_live": false,
+    "match_state": "MISMATCH"
+  },
+  "remote_publication": {
+    "origin_exists": true,
+    "version_branches_expected_count": 10,
+    "version_branches_local_count": 10,
+    "version_branches_remote_count": 10,
+    "all_expected_remote": true
+  },
+  "version_branches": [
+    {
+      "name": "codex/version-branch-governance-evidence-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "a83e2037",
+      "remote_head": "a83e2037e838f0b87920186b8ed0fd1a8b64e81e",
+      "local_remote_match": true,
+      "is_freeze_branch": false,
+      "last_subject": "docs: split branch governance evidence 20260626",
+      "last_stat": "8 files changed, 1077 insertions(+)"
+    },
+    {
+      "name": "codex/version-ceo-watchdog-evidence-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "1014aa2b",
+      "remote_head": "1014aa2b90c16c819039c7d37d046ca0976c53af",
+      "local_remote_match": true,
+      "is_freeze_branch": false,
+      "last_subject": "docs: split CEO watchdog evidence 20260626",
+      "last_stat": "7 files changed, 5612 insertions(+)"
+    },
+    {
+      "name": "codex/version-control-plane-canvas-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "1ffafe29",
+      "remote_head": "1ffafe291bae5f61e4e29c45db6cc87cce06d3ae",
+      "local_remote_match": true,
+      "is_freeze_branch": false,
+      "last_subject": "chore: split control plane canvas 20260626",
+      "last_stat": "6 files changed, 52 insertions(+), 5 deletions(-)"
+    },
+    {
+      "name": "codex/version-core-g10-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "63b98344",
+      "remote_head": "63b983447d40442f2cfe214b3d00be53771c5323",
+      "local_remote_match": true,
+      "is_freeze_branch": false,
+      "last_subject": "chore: split core G10 canon 20260626",
+      "last_stat": "12 files changed, 347 insertions(+), 77 deletions(-)"
+    },
+    {
+      "name": "codex/version-freeze-state-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "0291d185",
+      "remote_head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "local_remote_match": true,
+      "is_freeze_branch": true,
+      "last_subject": "freeze(state): VERSION_STATE reconciled + evidence 20260626",
+      "last_stat": "2 files changed, 232 insertions(+), 171 deletions(-)"
+    },
+    {
+      "name": "codex/version-g11-review-only-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "cf2a2cc4",
+      "remote_head": "cf2a2cc4dc49256a8f409374faae2b0068541b0a",
+      "local_remote_match": true,
+      "is_freeze_branch": false,
+      "last_subject": "docs: split G11 review-only proposal 20260626",
+      "last_stat": "1 file changed, 238 insertions(+)"
+    },
+    {
+      "name": "codex/version-local-reconciliation-evidence-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "82b25d12",
+      "remote_head": "82b25d121d729b42195fb941768998370a02ece8",
+      "local_remote_match": true,
+      "is_freeze_branch": false,
+      "last_subject": "docs: split local reconciliation evidence 20260626",
+      "last_stat": "11 files changed, 99340 insertions(+)"
+    },
+    {
+      "name": "codex/version-readbacks-and-sdu-package-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "7d173e16",
+      "remote_head": "7d173e16fb1a4ccd42859307e037b4ebfd447fe1",
+      "local_remote_match": true,
+      "is_freeze_branch": false,
+      "last_subject": "docs: split SDU readbacks and package 20260626",
+      "last_stat": "3 files changed, 175 insertions(+)"
+    },
+    {
+      "name": "codex/version-total-reconciliation-evidence-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "68ac60ad",
+      "remote_head": "68ac60ad6d500e066b1b8cb72bff5dd341522554",
+      "local_remote_match": true,
+      "is_freeze_branch": false,
+      "last_subject": "docs: split total reconciliation evidence 20260626",
+      "last_stat": "14 files changed, 3512 insertions(+)"
+    },
+    {
+      "name": "codex/version-validator-tooling-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "8af84c81",
+      "remote_head": "8af84c815285253376662b22733c540d2dfa708d",
+      "local_remote_match": true,
+      "is_freeze_branch": false,
+      "last_subject": "chore: split validator tooling 20260626",
+      "last_stat": "2 files changed, 27 insertions(+), 18 deletions(-)"
+    }
+  ],
+  "freeze": {
+    "branch": "codex/version-freeze-state-20260626",
+    "expected_commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+    "local_commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+    "remote_commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+    "matches_expected": true,
+    "subject": "freeze(state): VERSION_STATE reconciled + evidence 20260626",
+    "touched_files": [
+      "VERSION_STATE.json",
+      "operativa/evidence/version_state/VERSION_STATE_RECON_20260626_070601.json"
+    ],
+    "includes_VERSION_STATE_json": true,
+    "includes_version_state_evidence": true
+  },
+  "tag": {
+    "name": "freeze/2026-06-26-g10-reconciled",
+    "expected_commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+    "local_exists": "EXISTS",
+    "remote_exists": "EXISTS",
+    "local_commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+    "remote_commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+    "matches_expected": true
+  },
+  "pr_candidates": [
+    {
+      "source_branch": "codex/version-branch-governance-evidence-20260626",
+      "target_sugerido": "origin/main",
+      "estado": "CANDIDATE_ONLY",
+      "riesgo": "fan-in prematuro si no existe matriz",
+      "recomendacion": "incluir en BRANCH_GOVERNANCE_PR_MATRIX antes de crear PR"
+    },
+    {
+      "source_branch": "codex/version-ceo-watchdog-evidence-20260626",
+      "target_sugerido": "origin/main",
+      "estado": "CANDIDATE_ONLY",
+      "riesgo": "fan-in prematuro si no existe matriz",
+      "recomendacion": "incluir en BRANCH_GOVERNANCE_PR_MATRIX antes de crear PR"
+    },
+    {
+      "source_branch": "codex/version-control-plane-canvas-20260626",
+      "target_sugerido": "origin/main",
+      "estado": "CANDIDATE_ONLY",
+      "riesgo": "fan-in prematuro si no existe matriz",
+      "recomendacion": "incluir en BRANCH_GOVERNANCE_PR_MATRIX antes de crear PR"
+    },
+    {
+      "source_branch": "codex/version-core-g10-20260626",
+      "target_sugerido": "origin/main",
+      "estado": "CANDIDATE_ONLY",
+      "riesgo": "fan-in prematuro si no existe matriz",
+      "recomendacion": "incluir en BRANCH_GOVERNANCE_PR_MATRIX antes de crear PR"
+    },
+    {
+      "source_branch": "codex/version-freeze-state-20260626",
+      "target_sugerido": "origin/main",
+      "estado": "CANDIDATE_ONLY",
+      "riesgo": "fan-in prematuro si no existe matriz",
+      "recomendacion": "incluir en BRANCH_GOVERNANCE_PR_MATRIX antes de crear PR"
+    },
+    {
+      "source_branch": "codex/version-g11-review-only-20260626",
+      "target_sugerido": "origin/main",
+      "estado": "CANDIDATE_ONLY",
+      "riesgo": "fan-in prematuro si no existe matriz",
+      "recomendacion": "incluir en BRANCH_GOVERNANCE_PR_MATRIX antes de crear PR"
+    },
+    {
+      "source_branch": "codex/version-local-reconciliation-evidence-20260626",
+      "target_sugerido": "origin/main",
+      "estado": "CANDIDATE_ONLY",
+      "riesgo": "fan-in prematuro si no existe matriz",
+      "recomendacion": "incluir en BRANCH_GOVERNANCE_PR_MATRIX antes de crear PR"
+    },
+    {
+      "source_branch": "codex/version-readbacks-and-sdu-package-20260626",
+      "target_sugerido": "origin/main",
+      "estado": "CANDIDATE_ONLY",
+      "riesgo": "fan-in prematuro si no existe matriz",
+      "recomendacion": "incluir en BRANCH_GOVERNANCE_PR_MATRIX antes de crear PR"
+    },
+    {
+      "source_branch": "codex/version-total-reconciliation-evidence-20260626",
+      "target_sugerido": "origin/main",
+      "estado": "CANDIDATE_ONLY",
+      "riesgo": "fan-in prematuro si no existe matriz",
+      "recomendacion": "incluir en BRANCH_GOVERNANCE_PR_MATRIX antes de crear PR"
+    },
+    {
+      "source_branch": "codex/version-validator-tooling-20260626",
+      "target_sugerido": "origin/main",
+      "estado": "CANDIDATE_ONLY",
+      "riesgo": "fan-in prematuro si no existe matriz",
+      "recomendacion": "incluir en BRANCH_GOVERNANCE_PR_MATRIX antes de crear PR"
+    }
+  ],
+  "validators": [
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "summary": "sin diferencias de formato"
+    },
+    {
+      "command": "tools/validate_proj_cdx_workbench.ps1 -Root C:\\CEO\\project-cdx -Json",
+      "status": "FAIL",
+      "summary": "faltan operativa\\START_HERE.md, operativa\\BLOCKERS.md, operativa\\MANIFESTS.md, operativa\\RETENCION.md, operativa\\ACTA_REPOS_SURFACE_GITHUB_20260615.md y <RUNTIME_PATH>\\dataverse_blocker_frontier_20260614\\README.md"
+    },
+    {
+      "command": "tools/validate_proj_cdx_sync.ps1 -Root C:\\CEO\\project-cdx -Json",
+      "status": "FAIL",
+      "summary": "intento de leer C:\\CEO\\project-cdx\\<RUNTIME_PATH>\\README.md no resuelto"
+    },
+    {
+      "command": "tools/validate_proj_cdx_operational_chain.ps1 -Root C:\\CEO\\project-cdx -ResolverPy C:\\CEO\\project-cdx\\tools\\sdu_chain_resolver.py -Json",
+      "status": "PASS",
+      "summary": "root=C:\\Users\\enzo1\\PROJEC CDX, no_external=true, dry_run=true, 6 profiles, inventory=128, recipes=17"
+    },
+    {
+      "command": "tools/validate_sdu_dataverse_metadata_wave.ps1 -Root C:\\CEO\\project-cdx",
+      "status": "PASS",
+      "summary": "PASS, matrix_rows=65, matrix_status=METADATA_ONLY_PREPARED, planner_sanitized=no_plan_title"
+    },
+    {
+      "command": "tools/sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun -Json",
+      "status": "PASS",
+      "summary": "no_external=true, dry_run=true, chain=entrada -> estado -> orden -> agentes -> semantica -> motor -> modelo -> evidencia -> salida, 6 profiles"
+    }
+  ],
+  "capabilities": {
+    "system_nervous_index": {
+      "source_of_truth": "SYSTEM_NERVOUS_INDEX",
+      "canonical_root": "C:\\CEO\\project-cdx",
+      "federation_id": "ceo-local-federation",
+      "sources": [
+        "index.json",
+        "operativa/index.json",
+        "local-nervous-index"
+      ],
+      "paths_count": 8,
+      "agents_count": 14,
+      "routes_count": 15,
+      "dependencies_count": 5,
+      "agile_agent_canvas": "referenced; .agileagentcanvas-context/sdu/artifacts/sdu-system.json not found",
+      "vsi_control_plane": [
+        "workspace",
+        "tasks",
+        "status"
+      ],
+      "policy": {
+        "failClosed": true,
+        "liveWrite": false,
+        "secretAccess": false,
+        "requiredForExecution": true
+      }
+    },
+    "agent_map": {
+      "schemaVersion": "v1.5",
+      "mode": "ACTIVE_GOVERNED_EXECUTION_BY_DEFAULT",
+      "priority_model": {
+        "rule": "lower-number-wins; policy hold and validation/contracts failures stop the chain fail-closed",
+        "tieBreaker": "sequence-then-agentId"
+      },
+      "agents": [
+        "orchestrator_agent",
+        "contracts_agent",
+        "validation_agent",
+        "bus_agent",
+        "observability_agent",
+        "evidence_agent",
+        "optimization_agent",
+        "sanitizer_agent",
+        "diagnostic_agent",
+        "path_sanitizer_agent",
+        "federation_enforcer_agent",
+        "sns_agent",
+        "vsi_execution_guard",
+        "control_plane_agent"
+      ],
+      "routes": [
+        "RUNTIME_DRIFT",
+        "VSCODE_DRIFT",
+        "ALERT_RAISED",
+        "SELF_HEAL_COMMAND",
+        "PREDICTIVE_SIGNAL",
+        "OPTIMIZATION_COMMAND",
+        "POLICY_DECISION",
+        "AGENT_DECISION",
+        "SANITIZATION_FINDING",
+        "RUNTIME_DIAGNOSIS",
+        "SANITIZE_REQUIRED",
+        "FEDERATION_DRIFT",
+        "SNS_UNIFIED_INDEX",
+        "VSI_GUARD_RESULT",
+        "CONTROL_PLANE_SYNC"
+      ]
+    },
+    "federation_map": {
+      "schemaVersion": "v1.1",
+      "federationId": "ceo-local-federation",
+      "duplicatePolicy": "C:\\CEO\\project-cdx is the canonical active entry; C:\\Users\\enzo1\\PROJEC CDX is physical alias only; do not create duplicate runtime roots; all federated repos reference C:\\CEO\\project-cdx\\.cabina\\SDU_RUNTIME_ROOT without copying it.",
+      "repos_count": 16,
+      "repos": [
+        { "repoId": "project-cdx", "remote": "universo-rey/projec-cdx", "status": "active", "alignmentStatus": "aligned" },
+        { "repoId": "agents-root", "remote": "universo-rey/agents-root", "status": "reference", "alignmentStatus": "partial" },
+        { "repoId": "codex-root", "remote": "universo-rey/codex-root", "status": "reference", "alignmentStatus": "partial" },
+        { "repoId": "cabina-universal-d", "remote": "universo-rey/cabina-universal-d", "status": "reference", "alignmentStatus": "partial" },
+        { "repoId": "cdf-soluciones", "remote": "SeshatSgin/cdf-soluciones", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "jara-consultores", "remote": "SeshatSgin/jara-consultores", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "microsoft-agents-governed-lab", "remote": "universo-rey/microsoft-agents-governed-lab", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "modo-on-foundation", "remote": "SeshatSgin/modo-on-foundation", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "organizacion", "remote": "universo-rey/organizacion", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "sdu-canon", "remote": "SeshatSgin/sdu-canon", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "seshat-bootstrap-sdu-cn", "remote": "SeshatSgin/seshat-bootstrap-sdu-cn", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "sgin", "remote": "universo-rey/Sgin", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "sgin-cumplimiento", "remote": "SeshatSgin/sgin-cumplimiento", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "tcu-agentic-runtime-control", "remote": "SeshatSgin/tcu-agentic-runtime-control", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "tge-agentic-runtime-control-escribania", "remote": "SeshatSgin/tge-agentic-runtime-control-escribania", "status": "reference", "alignmentStatus": "pending" },
+        { "repoId": "torre-gemela-escribania", "remote": "SeshatSgin/torre-gemela-escribania", "status": "reference", "alignmentStatus": "pending" }
+      ]
+    },
+    "operativa_current": {
+      "status_markers": [
+        "CABINA_FRONTDOOR_CONVERGED_LOCAL_ONLY",
+        "ORGANISMO_VIVO_LANGUAGE_AND_POLICY_INJERTADO_EN_CABINA",
+        "ROOT_SURFACE_CONVERGENCE_TASKS_READY_LOCAL_ONLY"
+      ],
+      "version": "v0.6.0-rc1",
+      "root": "C:\\CEO\\project-cdx",
+      "alias": "C:\\Users\\enzo1\\PROJEC CDX",
+      "pending": [
+        "RST-05",
+        "RST-10",
+        "RST-11",
+        "RST-12"
+      ]
+    },
+    "operativa_next": {
+      "order": "EXECUTE_ROOT_GAP_RESOLUTION_AND_DELEGATION_20260623",
+      "delegated_lanes": [
+        "Seshat",
+        "Anubis",
+        "Horus",
+        "Maat",
+        "Narrador"
+      ],
+      "next_order": "RST-10 -> RST-05 -> RST-11 -> RST-12"
+    },
+    "trace": {
+      "source_maestra": "CRONOLOGIA_MAESTRA_20260617.md",
+      "chain": "WORKBOOK_SURFACES_WORKSPACE_REFRESHED",
+      "next_delta": "delta_normalize_codexlocal_live_entrypoint"
+    },
+    "sdu_boot": {
+      "status": "PASS",
+      "no_external": true,
+      "dry_run": true,
+      "chain": "entrada -> estado -> orden -> agentes -> semantica -> motor -> modelo -> evidencia -> salida",
+      "profiles": [
+        "seshat-normativa",
+        "thot-tecnico",
+        "anubis-gate",
+        "maat-cumplimiento",
+        "horus-riesgo",
+        "narrador-normativo"
+      ],
+      "skills_resolved": 128,
+      "recipes_resolved": 17
+    }
+  },
+  "gates": [
+    {
+      "gate": "OWNER_GATE_PUSH_VERSION_BRANCHES",
+      "status": "APPLIED",
+      "evidence": "origin heads published",
+      "risk_if_out_of_order": "ramas sin fan-out controlado"
+    },
+    {
+      "gate": "OWNER_GATE_PUSH_VERSION_BRANCHES_AND_TAG_FREEZE",
+      "status": "APPLIED",
+      "evidence": "branches published + freeze tag verified",
+      "risk_if_out_of_order": "tag o freeze incompleto"
+    },
+    {
+      "gate": "READBACK_SDU_SYSTEM_REAL_STATE_20260626",
+      "status": "APPLIED",
+      "evidence": "previous readback in this sequence",
+      "risk_if_out_of_order": "lectura sin fijar estado"
+    },
+    {
+      "gate": "READBACK_SDU_SYSTEM_REAL_STATE_20260626_POST_REMOTE",
+      "status": "APPLIED",
+      "evidence": "operativa/readbacks/20260626/READBACK_SDU_SYSTEM_REAL_STATE_20260626_POST_REMOTE.md",
+      "risk_if_out_of_order": "readback sin verificacion remota"
+    },
+    {
+      "gate": "BRANCH_GOVERNANCE_PR_MATRIX",
+      "status": "OPEN",
+      "evidence": "pending",
+      "risk_if_out_of_order": "PRs sin matriz"
+    },
+    {
+      "gate": "SNAPSHOT_VERSION_DECISION_OWNER_ONLY",
+      "status": "OPEN",
+      "evidence": "pending",
+      "risk_if_out_of_order": "decision sin snapshot"
+    },
+    {
+      "gate": "G11_REVIEW_NO_APPLY",
+      "status": "REVIEW_REQUIRED",
+      "evidence": "codex/version-g11-review-only-20260626",
+      "risk_if_out_of_order": "tuning/aplicar sin review"
+    },
+    {
+      "gate": "ALLOW_G11_POLICY_TUNING_APPLY",
+      "status": "NOT_STARTED",
+      "evidence": "pending",
+      "risk_if_out_of_order": "mutacion prematura"
+    },
+    {
+      "gate": "CLEANUP_GATE_DECISION_OPTIONAL",
+      "status": "NOT_STARTED",
+      "evidence": "pending",
+      "risk_if_out_of_order": "limpieza antes de cerrar criterios"
+    }
+  ],
+  "controlled_gaps": [
+    "SDU_STATE_G10.md not found",
+    "SDU_SYSTEM_CONTRACT.md not found",
+    ".agileagentcanvas-context/sdu/artifacts/sdu-system.json not found",
+    "operativa/START_HERE.md missing per validator",
+    "operativa/BLOCKERS.md missing per validator",
+    "operativa/MANIFESTS.md missing per validator",
+    "operativa/RETENCION.md missing per validator",
+    "operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md missing per validator",
+    "<RUNTIME_PATH>/dataverse_blocker_frontier_20260614/README.md missing per validator",
+    "VERSION_STATE mismatch against live branch",
+    "G11 review pending",
+    "BRANCH_GOVERNANCE_PR_MATRIX pending"
+  ],
+  "recommended_next_lane": "BRANCH_GOVERNANCE_PR_MATRIX",
+  "forbidden_next_actions": [
+    "direct_merge_without_matrix",
+    "live_mutation_without_owner_gate",
+    "g11_apply_without_gate"
+  ],
+  "stop_condition": "no PR/no merge/no live/no G11 apply/no mutation without owner gate"
+}
