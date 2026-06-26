@@ -61,7 +61,7 @@
     "architecture.schema.json: NOT_FOUND_IN_BRANCH",
     "schema.json: FOUND",
     "Sensitive scan: pending post-commit diff validation",
-    "git diff --check: pending post-commit validation",
+    "git diff --check: corrected after LF normalization",
     "Mutation retry: PASS no force push, patch commit applied as fast-forward child"
   ],
   "thread": {
