@@ -6,13 +6,13 @@ HECHO_VERIFICADO: la wave reusable para agentes atomicos algoritmicos quedo vers
 
 ## Sistemas Tocados
 
-- `PROJEC CDX/operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md`.
+- `PROJEC CDX/operativa/archive/legacy-root/undated/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md`.
 - `PROJEC CDX/recipes/agentes-atomicos-algoritmicos-en-waves.md`.
 - `PROJEC CDX/procesos/agentes-atomicos-algoritmicos-en-waves.md`.
-- `PROJEC CDX/operativa/ANCLAS_ON_DEMAND.md`.
+- `PROJEC CDX/operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md`.
 - `PROJEC CDX/operativa/CURRENT.md`.
 - `PROJEC CDX/operativa/TRACE.md`.
-- `PROJEC CDX/operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md`.
+- `PROJEC CDX/operativa/archive/legacy-root/20260615/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md`.
 - `PROJEC CDX/recipes/README.md`.
 - `PROJEC CDX/recipes/MAPA.md`.
 - `PROJEC CDX/procesos/README.md`.

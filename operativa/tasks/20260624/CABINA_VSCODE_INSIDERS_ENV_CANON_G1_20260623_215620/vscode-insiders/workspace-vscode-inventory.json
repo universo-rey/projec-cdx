@@ -1,0 +1,18 @@
+[
+  {
+    "Scope": "WorkspaceVscode",
+    "Path": "C:\\CEO\\project-cdx\\.vscode\\settings.json",
+    "Name": "settings.json",
+    "Length": 1625,
+    "LastWriteTime": "2026-06-23T18:18:55",
+    "SHA256": "192069A6747BC0F9345B122A34FA0B6C1A97CFAFBD3C13881AA265F2FF9BE9C2"
+  },
+  {
+    "Scope": "WorkspaceVscode",
+    "Path": "C:\\CEO\\project-cdx\\.vscode\\tasks.json",
+    "Name": "tasks.json",
+    "Length": 21778,
+    "LastWriteTime": "2026-06-23T21:21:37",
+    "SHA256": "F177BC1A252369E2DB355C15E1B2ABA984FDEA0D40FB3EE90FCE6B8539F2522C"
+  }
+]

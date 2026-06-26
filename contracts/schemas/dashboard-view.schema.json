@@ -1,0 +1,337 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ceo://contracts/dashboard-view.schema.json",
+  "title": "Dashboard View",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "generatedAt",
+    "metrics",
+    "events",
+    "unifiedTrace"
+  ],
+  "properties": {
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "queue",
+        "processed",
+        "failed",
+        "invalid"
+      ],
+      "properties": {
+        "queue": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "processed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "invalid": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "unifiedTrace": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "traceId",
+          "sourceTypes",
+          "eventCount",
+          "conflict",
+          "decisionEngine",
+          "runtimeRouter",
+          "executionAdapter",
+          "executionSurface",
+          "executionPath",
+          "priorityRule",
+          "finalState",
+          "conflictResolution",
+          "chains",
+          "decisions",
+          "memory",
+          "timeline"
+        ],
+        "properties": {
+          "traceId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "eventCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "conflict": {
+            "type": "boolean"
+          },
+          "decisionEngine": {
+            "type": "string",
+            "minLength": 1
+          },
+          "runtimeRouter": {
+            "type": "string",
+            "minLength": 1
+          },
+          "executionAdapter": {
+            "type": "string",
+            "minLength": 1
+          },
+          "executionSurface": {
+            "type": "string",
+            "enum": [
+              "local",
+              "codex",
+              "cloud",
+              "UNKNOWN"
+            ]
+          },
+          "executionPath": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "priorityRule": {
+            "type": "string",
+            "minLength": 1
+          },
+          "finalState": {
+            "type": "object"
+          },
+          "conflictResolution": {
+            "type": "object"
+          },
+          "chains": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "decisions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "chainId",
+                "sourceType",
+                "sequence",
+                "priority",
+                "agentId",
+                "agentRole",
+                "decisionType",
+                "executionSurface",
+                "result",
+                "timestamp",
+                "validator",
+                "stopCondition"
+              ],
+              "properties": {
+                "chainId": {
+                  "type": "string"
+                },
+                "sourceType": {
+                  "type": "string"
+                },
+                "sequence": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "priority": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "agentId": {
+                  "type": "string"
+                },
+                "agentRole": {
+                  "type": "string"
+                },
+                "decisionType": {
+                  "type": "string"
+                },
+                "executionSurface": {
+                  "type": "string",
+                  "enum": [
+                    "local",
+                    "codex",
+                    "cloud"
+                  ]
+                },
+                "result": {
+                  "type": "string"
+                },
+                "timestamp": {
+                  "type": "string"
+                },
+                "validator": {
+                  "type": "string"
+                },
+                "stopCondition": {
+                  "type": "string"
+                },
+                "holdReason": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "memory": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "timeline": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "timestamp",
+                "itemType",
+                "label",
+                "eventId",
+                "status",
+                "busSource",
+                "spanId",
+                "parentSpanId",
+                "sequence",
+                "priority",
+                "agentRole",
+                "decisionType",
+                "decisionEngine",
+                "runtimeRouter",
+                "executionAdapter",
+                "executionSurface",
+                "executionPath",
+                "result"
+              ],
+              "properties": {
+                "timestamp": {
+                  "type": "string"
+                },
+                "itemType": {
+                  "type": "string",
+                  "enum": [
+                    "event",
+                    "decision",
+                    "memory"
+                  ]
+                },
+                "label": {
+                  "type": "string"
+                },
+                "eventId": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "busSource": {
+                  "type": "string"
+                },
+                "spanId": {
+                  "type": "string"
+                },
+                "parentSpanId": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "sequence": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "priority": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1
+                },
+                "agentRole": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "decisionType": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "decisionEngine": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "runtimeRouter": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "executionAdapter": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "executionSurface": {
+                  "type": "string",
+                  "enum": [
+                    "local",
+                    "codex",
+                    "cloud",
+                    "UNKNOWN"
+                  ]
+                },
+                "executionPath": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "result": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

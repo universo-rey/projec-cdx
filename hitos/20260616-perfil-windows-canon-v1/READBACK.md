@@ -9,7 +9,7 @@ HECHO_VERIFICADO: el bundle reune normalizacion, junctions, snapshots y la nota 
 - [patrones/normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/patrones/normalizacion-perfil-windows.md)
 - [patrones/perfil-windows-junctions-compatibilidad.md](C:/Users/enzo1/PROJEC%20CDX/patrones/perfil-windows-junctions-compatibilidad.md)
 - [patrones/perfil-windows-snapshots-gmt.md](C:/Users/enzo1/PROJEC%20CDX/patrones/perfil-windows-snapshots-gmt.md)
-- [operativa/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md)
+- [operativa/archive/legacy-root/undated/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/undated/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md)
 
 ## Sistemas No Tocados
 

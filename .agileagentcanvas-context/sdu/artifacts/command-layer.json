@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "component",
+    "workflowName": "agileagentcanvas",
+    "projectName": "SDU Operations Layer",
+    "timestamps": {
+      "created": "2026-06-26T00:00:00-03:00",
+      "lastModified": "2026-06-26T00:00:00-03:00"
+    },
+    "status": "active"
+  },
+  "content": {
+    "id": "COMMAND_LAYER",
+    "name": "SDU Command Layer",
+    "type": "Component",
+    "scripts": [
+      {
+        "id": "check_alert_source",
+        "path": "C:\\CEO\\watchdog\\commands\\check-alert-source.ps1",
+        "risk": "LOW"
+      },
+      {
+        "id": "evaluate_cleanup",
+        "path": "C:\\CEO\\watchdog\\commands\\cleanup-evaluation.ps1",
+        "risk": "MEDIUM"
+      }
+    ],
+    "context": "Commands are represented as Canvas TASK artifacts and remain gated by ACTION_ENGINE.",
+    "possibleAction": "Map Start Dev to the selected command artifact; do not auto-run from model transformation."
+  }
+}

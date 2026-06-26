@@ -1,0 +1,27 @@
+{
+  "artifact_id": "operativa/tasks/20260623/PROMOTE_ONLY_FRONTDOOR_MATRIX_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_GOBIERNO_TOTAL"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/PROMOTE_ONLY_FRONTDOOR_MATRIX_20260623.csv",
+  "etiquetas": [
+    "frontdoor",
+    "promote-only",
+    "archive-hold",
+    "local-only"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/READBACK_PROMOTE_ONLY_FRONTDOOR_20260623.md",
+    "README.md",
+    "MAPA_MAESTRO.md",
+    "MAPA_CAPAS.md"
+  ],
+  "descripcion": "Matriz de decision para promocion chica del frontdoor vivo sin absorber archive masivo."
+}

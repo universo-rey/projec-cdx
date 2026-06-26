@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "story",
+    "workflowName": "agileagentcanvas",
+    "projectName": "TaskFlow Pro",
+    "timestamps": {
+      "lastModified": "2026-06-25T05:08:27.742Z",
+      "created": "2026-06-25T05:08:26.836Z"
+    },
+    "status": "draft"
+  },
+  "content": {
+    "epicId": "EPIC-4",
+    "epicTitle": "Integration Platform",
+    "testCases": [
+      "TC-4.2.1",
+      "TC-4.2.2",
+      "TC-4.2.3"
+    ],
+    "id": "S-4.2",
+    "title": "Slack Integration & DND Sync",
+    "userStory": {
+      "asA": "Software Engineer",
+      "iWant": "to create tasks and check status via Slack slash commands, with Focus Mode syncing to Slack DND",
+      "soThat": "I can manage tasks without leaving my team chat"
+    },
+    "acceptanceCriteria": [
+      {
+        "id": "AC-4.2.1",
+        "given": "I type '/tf create Fix login bug'",
+        "when": "the command is processed",
+        "then": "a new task is created and I see a confirmation with a link",
+        "and": []
+      },
+      {
+        "id": "AC-4.2.2",
+        "given": "I activate Focus Mode in TaskFlow",
+        "when": "the sync runs",
+        "then": "my Slack status shows 'Focusing' and DND is enabled",
+        "and": []
+      },
+      {
+        "id": "AC-4.2.3",
+        "given": "I end Focus Mode",
+        "when": "the sync runs",
+        "then": "Slack DND is cleared and queued messages are delivered",
+        "and": []
+      }
+    ],
+    "status": "draft",
+    "storyPoints": 10,
+    "priority": "should-have",
+    "implementationDetails": [
+      "Slack Bolt SDK with slash command handlers for /tf create, /tf status, /tf focus",
+      "DND sync service that listens for focus session events and calls Slack API",
+      "Rate limiting: max 1 DND sync per minute to avoid Slack API throttling"
+    ],
+    "requirementRefs": [
+      "FR-6",
+      "FR-3"
+    ],
+    "dependencies": {
+      "blockedBy": [
+        {
+          "storyId": "S-3.3",
+          "title": "Smart Notification Rules"
+        }
+      ],
+      "blocks": [],
+      "relatedStories": [
+        "S-3.1"
+      ],
+      "externalDependencies": [
+        {
+          "dependency": "Slack App approval for workspace installation",
+          "status": "in-progress",
+          "owner": "Product Team"
+        }
+      ]
+    },
+    "assignee": "Jordan Park",
+    "_sourceEpicId": "EPIC-4"
+  }
+}

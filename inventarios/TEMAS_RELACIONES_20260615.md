@@ -15,7 +15,7 @@ Agrupar la raiz visible de `PROJEC CDX` por temas estables y relaciones reutiliz
 | Agentes y conexiones | Roster SDU, skills de gobierno y recetas de delegacion | `dataverse/MAPA_AGENTES_SDU.md`, `inventarios/AGENTES_SKILLS_RECETAS_20260616.md` | Une agentes, capas de gobierno y recetas visibles en una sola lectura. |
 | Raices e inventarios | Raiz del workbench, raiz de repos y raiz global/historica | `PROJEC_CDX_ROOT_INVENTORY`, `GITHUB_REPOS_CANONICAL_20260615`, `CODEX_ROOT_INVENTORY` | Separa trabajo actual, repos canonicos y `.codex`. |
 | Raiz fisica de disco | Carpetas visibles en `C:\` fuera de sistema y `Documents` | `RAIZ_DISCO_20260615` | Ayuda a llevar el disco a una forma limpia y accesible. |
-| Continuidad de hilo | Reanudacion, traces y prompts cortos | `operativa/TRACE.md`, `operativa/START_HERE.md`, `operativa/PROMPT_NUEVO_HILO.md` | Permite continuar sin replay del hilo completo. |
+| Continuidad de hilo | Reanudacion, traces y prompts cortos | `operativa/TRACE.md`, `operativa/archive/legacy-root/undated/START_HERE.md`, `operativa/archive/legacy-root/undated/PROMPT_NUEVO_HILO.md` | Permite continuar sin replay del hilo completo. |
 
 ## Relaciones Clave
 

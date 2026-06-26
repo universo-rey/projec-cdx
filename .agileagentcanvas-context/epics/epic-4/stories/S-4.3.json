@@ -1,0 +1,74 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "story",
+    "workflowName": "agileagentcanvas",
+    "projectName": "TaskFlow Pro",
+    "timestamps": {
+      "lastModified": "2026-06-25T05:08:27.750Z",
+      "created": "2026-06-25T05:08:26.844Z"
+    },
+    "status": "draft"
+  },
+  "content": {
+    "epicId": "EPIC-4",
+    "epicTitle": "Integration Platform",
+    "testCases": [
+      "TC-4.3.1",
+      "TC-4.3.2",
+      "TC-4.3.3"
+    ],
+    "id": "S-4.3",
+    "title": "CLI Tool for Developers",
+    "userStory": {
+      "asA": "Software Engineer",
+      "iWant": "a CLI tool to manage tasks from my terminal",
+      "soThat": "I never have to leave my IDE to update task status"
+    },
+    "acceptanceCriteria": [
+      {
+        "id": "AC-4.3.1",
+        "given": "I run 'tf list --mine'",
+        "when": "the CLI queries the API",
+        "then": "I see my tasks sorted by AI priority with status indicators",
+        "and": []
+      },
+      {
+        "id": "AC-4.3.2",
+        "given": "I run 'tf done TF-123'",
+        "when": "the API processes the update",
+        "then": "the task moves to Done and the board updates in real-time",
+        "and": []
+      },
+      {
+        "id": "AC-4.3.3",
+        "given": "I run 'tf focus'",
+        "when": "focus mode activates via API",
+        "then": "I see a terminal-based focus timer and my top task",
+        "and": []
+      }
+    ],
+    "status": "draft",
+    "storyPoints": 8,
+    "priority": "could-have",
+    "implementationDetails": [
+      "Commander.js for CLI argument parsing with subcommands",
+      "Ink (React for CLI) for the focus timer terminal UI",
+      "API token authentication stored in ~/.taskflowrc",
+      "npm package @taskflow/cli with postinstall setup wizard"
+    ],
+    "requirementRefs": [
+      "ADD-1"
+    ],
+    "notes": "CLI is a nice-to-have for v1.0 — could be deferred to v1.1 if timeline is tight.",
+    "dependencies": {
+      "blockedBy": [],
+      "blocks": [],
+      "relatedStories": [
+        "S-1.1",
+        "S-3.1"
+      ]
+    },
+    "_sourceEpicId": "EPIC-4"
+  }
+}

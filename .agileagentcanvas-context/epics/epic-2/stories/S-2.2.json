@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "story",
+    "workflowName": "agileagentcanvas",
+    "projectName": "TaskFlow Pro",
+    "timestamps": {
+      "lastModified": "2026-06-25T05:08:27.701Z",
+      "created": "2026-06-25T05:08:26.700Z"
+    },
+    "status": "draft"
+  },
+  "content": {
+    "epicId": "EPIC-2",
+    "epicTitle": "AI Prioritization Engine",
+    "testCases": [
+      "TC-2.2.1",
+      "TC-2.2.2"
+    ],
+    "id": "S-2.2",
+    "title": "Priority Dashboard & Insights",
+    "userStory": {
+      "asA": "Engineering Manager",
+      "iWant": "a dashboard showing AI-generated priority insights and team velocity trends",
+      "soThat": "I can make data-driven decisions about resource allocation"
+    },
+    "acceptanceCriteria": [
+      {
+        "id": "AC-2.2.1",
+        "given": "I am on the insights dashboard",
+        "when": "I view the priority distribution chart",
+        "then": "I see tasks grouped by AI-assigned priority with trend lines",
+        "and": []
+      },
+      {
+        "id": "AC-2.2.2",
+        "given": "the AI detects an anomaly",
+        "when": "velocity drops below 2-week average",
+        "then": "a warning banner appears with suggested actions",
+        "and": []
+      }
+    ],
+    "status": "draft",
+    "storyPoints": 8,
+    "priority": "should-have",
+    "implementationDetails": [
+      "Recharts library for interactive priority distribution and velocity trend charts",
+      "Anomaly detection using rolling 2-week velocity average with configurable threshold"
+    ],
+    "requirementRefs": [
+      "FR-2"
+    ],
+    "uxReferences": [
+      {
+        "type": "wireframe-priority-dashboard-v1.fig",
+        "reference": "",
+        "description": ""
+      }
+    ],
+    "dependencies": {
+      "blockedBy": [],
+      "blocks": [],
+      "relatedStories": [
+        "S-2.1",
+        "S-1.2",
+        "S-1.3"
+      ]
+    },
+    "assignee": "Jordan Park",
+    "_sourceEpicId": "EPIC-2"
+  }
+}

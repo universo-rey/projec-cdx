@@ -1,0 +1,128 @@
+---
+artifact_id: operativa/runtime-events/RUNTIME_STATE_DELTA_PREFLIGHT_20260623.md
+categoria: operativa
+tipo: reporte
+estado: aprobado
+version: v0.6.0-rc1
+fecha_evento: '2026-06-23'
+autoridad:
+  tipo: sistema
+  referencia: CABINA_GOBIERNO_TOTAL
+origen: GitHub
+ubicacion_repo: operativa/runtime-events/RUNTIME_STATE_DELTA_PREFLIGHT_20260623.md
+etiquetas:
+  - runtime
+  - preflight
+  - snapshot
+relacionados:
+  - VERSION_STATE.json
+  - operativa/snapshots/SNAPSHOT_INDEX.json
+descripcion: Preflight del delta runtime state y alineacion de snapshot con commit cabina.
+---
+# RUNTIME STATE DELTA PREFLIGHT 20260623
+
+- Branch: `codex/runtime-versioning-snapshots`
+- HEAD: `0bf5189f889fa557c9fcf497a76c24bd30c08f4b`
+- Cabina commit: `0bf5189f889fa557c9fcf497a76c24bd30c08f4b`
+- Snapshot actual: `CEORUNTIME_20260623_0247`
+- Snapshot commit: `c2630a1cbf9f01ab7922b585704ff655d7898220`
+- Staging vacio: `True`
+- Push/PR/live: `false`
+
+## Dirty residual
+
+```text
+ M VERSION_STATE.json
+ M index.json
+ M operativa/HISTORY_RUNTIME_EVOLUTION.md
+ M operativa/archive/legacy-root/undated/index.json
+ M operativa/snapshots/SNAPSHOT_INDEX.json
+?? .cabina/organizacion-total/CABINA_CONTRACT_G1.md.previous-20260623_031305
+?? .cabina/organizacion-total/CABINA_CONTRACT_G1.md.previous-20260623_033229
+?? .cabina/organizacion-total/config/cabina-contract.v1.json.previous-20260623_031305
+?? .cabina/organizacion-total/config/classification-rules.v3.1.proposed.json
+?? .cabina/organizacion-total/out/AGENT_REGISTRY.patch.yaml
+?? .cabina/organizacion-total/out/AGENT_REGISTRY.v2.patch.yaml
+?? .cabina/organizacion-total/out/AGENT_SKILLS_DIFF.md
+?? .cabina/organizacion-total/out/ALLOWED_LOCAL_HARDENING_READBACK.md
+?? .cabina/organizacion-total/out/CABINA_CONFIG_REPAIR_PLAN_G1.md
+?? .cabina/organizacion-total/out/CABINA_CONFIG_VALIDATION_G1.md
+?? .cabina/organizacion-total/out/CABINA_CONTRACT_ENABLEMENT_DIFF.md
+?? .cabina/organizacion-total/out/CABINA_CONTRACT_ENABLEMENT_READBACK.md
+?? .cabina/organizacion-total/out/CABINA_ENABLEMENT_COMMIT_PLAN.md
+?? .cabina/organizacion-total/out/CABINA_EXECUTION_CAPABILITY_MATRIX.md
+?? .cabina/organizacion-total/out/CABINA_EXECUTION_GATE_VALIDATOR_READBACK.md
+?? .cabina/organizacion-total/out/CABINA_EXPANSION_CANONIZATION_PREFLIGHT.md
+?? .cabina/organizacion-total/out/CABINA_TOP001_CONTRACT_INTEGRATION.md
+?? .cabina/organizacion-total/out/CABINA_WORKSPACE_PORTABILITY_READBACK.md
+?? .cabina/organizacion-total/out/CARRIL_0_PREFLIGHT_READBACK.md
+?? .cabina/organizacion-total/out/CARRIL_2_EVIDENCE_READBACK.md
+?? .cabina/organizacion-total/out/CARRIL_3_AGENT_SKILLS_READBACK.md
+?? .cabina/organizacion-total/out/CARRIL_4_HARDENING_REPORT.md
+?? .cabina/organizacion-total/out/CARRIL_5_VSCODE_READBACK.md
+?? .cabina/organizacion-total/out/CARRIL_6_MANUAL_REVIEW_READBACK.md
+?? .cabina/organizacion-total/out/CARRIL_7_MULTIPLE_READBACK.md
+?? .cabina/organizacion-total/out/CARRIL_8_DELTAS_READBACK.md
+?? .cabina/organizacion-total/out/CODEX_CLOUD_FUNCTIONAL_LINK.md
+?? .cabina/organizacion-total/out/CODEX_CLOUD_HANDOFF_PROTOCOL_READBACK.md
+?? .cabina/organizacion-total/out/DATAVERSE_AGENT_MEMORY_BRIDGE.md
+?? .cabina/organizacion-total/out/DELTA_VERSION_STATE_INDEX_ANALYSIS.md
+?? .cabina/organizacion-total/out/DIRTY_TREE_CLASSIFICATION_PREFLIGHT.md
+?? .cabina/organizacion-total/out/FINAL_READBACK_CABINA_DELTA_CANONIZATION_G1.md
+?? .cabina/organizacion-total/out/FINAL_READBACK_PENDING_LOCAL_SURFACES_TRIAGE.md
+?? .cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1.md
+?? .cabina/organizacion-total/out/FINAL_READBACK_SDU_ORG_TOTAL_G1_V3_PATHSPEC_CANONIZATION.md
+?? .cabina/organizacion-total/out/FUNCTIONAL_AGENT_RUNTIME_READBACK.md
+?? .cabina/organizacion-total/out/FUNCTIONAL_VALIDATION.md
+?? .cabina/organizacion-total/out/FUTURE_DELTAS_PLAN.md
+?? .cabina/organizacion-total/out/HARDENING_PATCH_PLAN.md
+?? .cabina/organizacion-total/out/LOCAL_FS_PREFLIGHT.md
+?? .cabina/organizacion-total/out/LOCAL_NERVOUS_INDEX.md
+?? .cabina/organizacion-total/out/LOCAL_ORDER_APPLY_READBACK.md
+?? .cabina/organizacion-total/out/LOCAL_ORDER_PLAN.md
+?? .cabina/organizacion-total/out/LOCAL_ORDER_VALIDATION.md
+?? .cabina/organizacion-total/out/MANUAL_REVIEW_QUEUE_G1_V3.md
+?? .cabina/organizacion-total/out/MULTIPLE_QUEUE_G1_V3.md
+?? .cabina/organizacion-total/out/NERVOUS_SYSTEM_MAP_READBACK.md
+?? .cabina/organizacion-total/out/NERVOUS_SYSTEM_PREFLIGHT.md
+?? .cabina/organizacion-total/out/NS_CANONIZATION_PREFLIGHT.md
+?? .cabina/organizacion-total/out/PENDING_DELTAS_PROPOSAL.md
+?? .cabina/organizacion-total/out/PENDING_LOCAL_SURFACES_STATUS.md
+?? .cabina/organizacion-total/out/PENDING_LOCAL_SURFACES_TRIAGE.md
+?? .cabina/organizacion-total/out/TOP001_AGENT_TEAMS_AFTER_EXPANSION.md
+?? .cabina/organizacion-total/out/TOP001_AUTOMATION_AFTER_EXPANSION.md
+?? .cabina/organizacion-total/out/TOP001_MCP_AFTER_EXPANSION.md
+?? .cabina/organizacion-total/out/TOP001_MONITORING_AFTER_EXPANSION.md
+?? .cabina/organizacion-total/out/TOP001_NERVOUS_SYSTEM_BINDING.md
+?? .cabina/organizacion-total/out/TOP001_PREFLIGHT_AFTER_EXPANSION.md
+?? .cabina/organizacion-total/out/TOP001_SPECIALIZED_AGENTS_AFTER_EXPANSION.md
+?? .cabina/organizacion-total/out/TOP001_VSCODE_TASKS_AFTER_EXPANSION.md
+?? .cabina/organizacion-total/out/TOP001_WRAPPER_HARNESS_DECISION.md
+?? .cabina/organizacion-total/out/VERSION_STATE_INDEX_DECISION_MATRIX.md
+?? .cabina/organizacion-total/out/VSCODE_LOCAL_ORDER_INTERFACE_READBACK.md
+?? .cabina/organizacion-total/out/VSCODE_NERVOUS_INTERFACE_READBACK.md
+?? .cabina/organizacion-total/out/agent-coverage-analysis.md
+?? .cabina/organizacion-total/out/agent-role-map.md
+?? .cabina/organizacion-total/out/agent-role-map.v2.md
+?? .cabina/organizacion-total/out/manual-review-analysis.md
+?? .cabina/organizacion-total/out/multiple-resolution-candidates.md
+?? .cabina/organizacion-total/out/multiple-triage.md
+?? .cabina/organizacion-total/out/org-report.md
+?? .cabina/organizacion-total/out/preflight-readback.md
+?? .cabina/organizacion-total/out/rules-v3-diff.md
+?? .cabina/organizacion-total/out/rules-v3-to-v3.1-proposal.md
+?? .cabina/organizacion-total/out/validation-readback.md
+?? .cabina/organizacion-total/out/validation-readback.pathspec-canonization.md
+?? .cabina/organizacion-total/out/validation-readback.v3.md
+?? .cabina/organizacion-total/scripts/Invoke-SDUAgentDiscovery.ps1.previous-20260623_015727
+?? .cabina/organizacion-total/scripts/Invoke-SDUOrgClassifyMultiAgent.ps1.previous-20260623_020749
+?? .gitignore.previous-20260623_022041
+?? .gitignore.previous-20260623_093750
+?? operativa/tasks/20260623/CEO_RUNTIME_ENV_CONTRACT_20260623.md
+?? operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv
+?? operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv.meta.json
+?? operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0246.md
+?? operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260623_0247.md
+?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0246.json
+?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_0247.json
+```

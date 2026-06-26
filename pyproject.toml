@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "projec-cdx"
-version = "0.1.0"
+version = "0.6.0rc1"
 requires-python = ">=3.10"
 dependencies = [
   "fastapi>=0.137.2",
@@ -37,6 +37,15 @@ reports = [
 projec-cdx-cloud = "projec_cdx_cloud.cli:main"
 launch-desk = "launch_desk.cli:main"
 cdx = "metadata.cli:main"
+ceo-runtime-save = "runtime_versioning.cli:save_main"
+ceo-runtime-list = "runtime_versioning.cli:list_main"
+ceo-runtime-restore = "runtime_versioning.cli:restore_main"
+ceo-runtime-sentinel = "runtime_versioning.cli:sentinel_main"
+ceo-runtime-index = "runtime_versioning.cli:index_main"
+ceo-runtime-state = "runtime_versioning.cli:state_main"
+ceo-runtime-status = "runtime_versioning.cli:status_main"
+ceo-runtime-continuous = "runtime_versioning.cli:continuous_main"
+ceo = "runtime_versioning.cli:ceo_main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

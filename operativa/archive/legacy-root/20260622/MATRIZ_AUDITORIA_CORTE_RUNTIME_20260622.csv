@@ -1,0 +1,11 @@
+agent,check,result,evidence,classification
+sentinel-runtime,snapshot_base,PASS,"CEORUNTIME_20260623_0051",NO_DRIFT
+sentinel-runtime,metadata_validate,PASS,"OK: 114 metadatos validos",NO_DRIFT
+sentinel-runtime,sentinel_scan,PASS,"status PASS; drift NO_DRIFT; no_external True",NO_DRIFT
+sentinel-runtime,auto_remediation,PASS,"recommended_action none; local_changes 0",NO_DRIFT
+sentinel-runtime,sentinel_check,PASS,"status PASS",NO_DRIFT
+sentinel-runtime,pytest,PASS,"53 passed; 1 skipped",NO_DRIFT
+sentinel-runtime,ruff,PASS,"All checks passed",NO_DRIFT
+sentinel-runtime,black,PASS,"51 files unchanged",NO_DRIFT
+sentinel-runtime,git_diff_check,PASS,"no whitespace errors",NO_DRIFT
+sentinel-runtime,governed_cloud_report,PASS,"agents include EATOMIC; riesgo Bajo",NO_DRIFT

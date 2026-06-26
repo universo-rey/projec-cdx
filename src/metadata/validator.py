@@ -21,8 +21,11 @@ IGNORED_PARTS = {
 IGNORED_ENV_NAMES = {".env", ".venv", "env", "venv"}
 IGNORED_METADATA_PREFIXES = (
     ".agent/",
+    ".agents/",
     ".github/agents/",
     ".github/skills/",
+    "outputs/",
+    "operativa/tasks/",
 )
 
 

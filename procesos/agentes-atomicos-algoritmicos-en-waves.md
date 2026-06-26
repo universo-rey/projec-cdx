@@ -4,12 +4,12 @@
 
 Delta que conviene partir en waves cortas con agentes disjuntos y retorno exacto.
 
-Se abre desde `operativa/ANCLAS_ON_DEMAND.md` cuando el pedido requiere delegacion gobernada.
+Se abre desde `operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md` cuando el pedido requiere delegacion gobernada.
 Tambien sirve como carril de entrenamiento: el agente aprende a operar en una sola wave, con fan-in claro y sin mezclar scopes.
 
 ## Pasos
 
-1. Leer `operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md`.
+1. Leer `operativa/archive/legacy-root/undated/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md`.
 2. Leer `recipes/agentes-atomicos-algoritmicos-en-waves.md`.
 3. Identificar el delta real y el fan-in esperado.
 4. Definir una sola wave util.

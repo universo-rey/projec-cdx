@@ -22,8 +22,8 @@ No aplica a lectura de logs; si se genera evidencia incorrecta, descartar eviden
 Logs recopilados, saneados y clasificados sin rerun, push ni PR.
 
 ## Evidencia
-- operativa/READBACK_GATE_0.3.13_CABINA_RUNTIME_CI_TRIAGE_20260622.md
-- operativa/GATE_0.3.13_CABINA_RUNTIME_CI_TRIAGE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/READBACK_GATE_0.3.13_CABINA_RUNTIME_CI_TRIAGE_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.13_CABINA_RUNTIME_CI_TRIAGE_MATRIX_20260622.csv
 
 ## Estado final
 READY_FOR_REMOTE_LOG_COLLECTION_GATE

@@ -1,6 +1,6 @@
 item,tipo,estado,evidencia
-acta,readback,GREEN_LOCAL,operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md
-todo,control,GREEN_LOCAL,operativa/TODO_20260615.md
+acta,readback,GREEN_LOCAL,operativa/archive/legacy-root/20260615/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md
+todo,control,GREEN_LOCAL,operativa/archive/legacy-root/20260615/TODO_20260615.md
 control_operativo,workbook,GREEN_LOCAL,workbooks/control_operativo.xlsx
 codexlocal,inventario,GREEN_LOCAL,inventarios/CODEXLOCAL_SURFACE_MAP_20260615.csv
 github_repos,inventario,GREEN_LOCAL,inventarios/GITHUB_REPOS_CANONICAL_20260615.csv

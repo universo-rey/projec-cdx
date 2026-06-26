@@ -19,7 +19,7 @@ fuente:
   - C:\Users\enzo1\PROJEC CDX\operativa\CODEX_CLOUD_CONTRACT_20260615.md
   - C:\Users\enzo1\PROJEC CDX\operativa\SETUP_APERTURA_CODEX_UI.md
   - C:\Users\enzo1\PROJEC CDX\recipes\configuracion-entorno-codex-ui.md
-  - C:\Users\enzo1\PROJEC CDX\README_ARRANQUE_CODEX_CLOUD.md
+  - C:\Users\enzo1\PROJEC CDX\operativa/archive/root-loose/20260618/README_ARRANQUE_CODEX_CLOUD.md
 salida:
   - C:\Users\enzo1\PROJEC CDX\hitos\20260615-codex-cloud-scaffold-v1\
 rollback: eliminar la carpeta versionada y revertir las referencias de traza y current

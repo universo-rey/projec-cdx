@@ -18,7 +18,7 @@ Queda como `delta_gobernado` para binding por UI o page API con permiso
 suficiente.
 
 El owner aprobo el binding posterior. Queda listo en
-`operativa/BINDING_HOME_SESHAT_UI_READY_20260616.md` con texto exacto, pasos UI,
+`operativa/archive/legacy-root/20260616/BINDING_HOME_SESHAT_UI_READY_20260616.md` con texto exacto, pasos UI,
 rollback y postcheck.
 
 ## Cierre

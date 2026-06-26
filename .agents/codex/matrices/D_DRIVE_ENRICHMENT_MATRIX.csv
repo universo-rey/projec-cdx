@@ -1,0 +1,6 @@
+lane_id,owner_agent,skill_id,recipe_id,tool_id,primary_matrix,evidence,stop_condition
+lane.matrix_enrichment,rey.governance_registrar,d-drive-agent-layer-enrichment,recipe.d_drive_agent_layer_enrichment,tool.local_validate_agent_layer,.agents\codex\matrices\MATRIX_INDEX.csv,.agents\codex\readbacks,missing_index_or_validator
+lane.skill_sync,court.thot_schema,matrix-recipe-skill-sync,recipe.matrix_recipe_skill_sync,tool.local_validate_agent_layer,.agents\codex\skills\SKILL_USAGE_MATRIX.csv,.agents\codex\readbacks,skill_without_index
+lane.recipe_sync,court.openai_dispatcher,matrix-recipe-skill-sync,recipe.matrix_recipe_skill_sync,tool.local_validate_agent_layer,.agents\codex\recipes\RECIPE_INDEX.csv,.agents\codex\readbacks,recipe_without_file
+lane.closeout,court.seshat_evidence,governed-readback-closeout,recipe.governed_readback_closeout,tool.readback_builder,.agents\codex\matrices\EVIDENCE_AND_VALIDATION_MATRIX.csv,.agents\codex\readbacks,readback_missing
+lane.workspace_guard,codex.workspace_guardian,d-drive-agent-layer-enrichment,recipe.workspace_reference_audit,tool.codex_workspace_audit,.agents\codex\maps\READING_MAP.csv,.agents\codex\readbacks,secret_or_global_state_write

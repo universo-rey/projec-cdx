@@ -4,7 +4,7 @@ superficie: PROJEC CDX
 tipo: normalizacion_perfil_windows
 estado: GREEN_LOCAL
 fuente:
-  - operativa/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md
+  - operativa/archive/legacy-root/undated/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md
   - recipes/normalizacion-perfil-windows.md
   - procesos/normalizacion-perfil-windows.md
   - patrones/normalizacion-perfil-windows.md

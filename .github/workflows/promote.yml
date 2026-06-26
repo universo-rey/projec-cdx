@@ -16,6 +16,14 @@ on:
           - en_revision
           - aprobado
           - live
+      owner_gate_id:
+        description: "ID del owner gate aprobado para esta promocion"
+        required: true
+        type: string
+      confirm_owner_gate:
+        description: "Confirmo que existe owner gate con rollback y postcheck"
+        required: true
+        type: boolean
 
 jobs:
   promote:
@@ -33,6 +41,21 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
+      - name: Enforce owner gate
+        shell: bash
+        env:
+          OWNER_GATE_ID: ${{ inputs.owner_gate_id }}
+          CONFIRM_OWNER_GATE: ${{ inputs.confirm_owner_gate }}
+        run: |
+          if [ "$CONFIRM_OWNER_GATE" != "true" ]; then
+            echo "confirm_owner_gate must be true before promotion"
+            exit 1
+          fi
+          if [ -z "$OWNER_GATE_ID" ]; then
+            echo "owner_gate_id is required before promotion"
+            exit 1
+          fi
 
       - name: Cache pip
         uses: actions/cache@v4
@@ -95,6 +118,7 @@ jobs:
 
             - artifact_id: `${{ inputs.artifact_id }}`
             - estado: `${{ inputs.estado }}`
+            - owner_gate_id: `${{ inputs.owner_gate_id }}`
             - cambia metadata local, `live-manifest.json` e indices si corresponde
             - requiere revision normal y `meta-validate / metadata`
           add-paths: |

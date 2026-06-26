@@ -1,0 +1,39 @@
+Connected as efigueroa@registronotarial8tdf.com.ar
+Connected to... HUBDesarrollo
+Name                                       Copilot ID                           Component State Is Managed      Solution ID                          Status Code State Code
+Customer Service Email Sentiment Generator 8e083323-9c95-4ef6-a151-fef4abb94d7e Published       Administrado    a37d210c-4e50-48d5-9b8a-c3f0b3071bc1 Active      Deprovisioned
+Sales Opportunity Agent                    6f66ff7e-55dc-4e0e-893e-fa8ccf97072b Published       Administrado    04036319-5896-4772-86b6-99efae7e9189 Active      Deprovisioned
+D365 Sales Agent - Outreach                9823fa51-33da-48e9-8497-eb2836241d52 Published       Administrado    528a2aab-9fa3-40d2-bdab-b21ec5d43108 Active      Deprovisioned
+D365 Sales - Data Enrichment               6cda1be1-32e6-41af-aa6a-eb1e92906738 Published       Administrado    a9a8f9ba-4c5f-4fd7-bba1-a5bf316c6a4c Active      Deprovisioned
+D365 Sales - Configuration Agent           84a580b7-8890-47ea-82de-e582eec54909 Published       Administrado    96b6e5cb-110b-496f-ac75-5363ea7de709 Active      Deprovisioned
+D365 Sales Agent - Research                008f58c2-a98e-4526-ba67-d1937b331bcc Published       Administrado    528a2aab-9fa3-40d2-bdab-b21ec5d43108 Active      Deprovisioned
+D365 Contact Center Admin AI Agent         04602041-56d4-47f3-9058-d11ec3b3ff91 Published       Administrado    1bc0ab96-fc3d-45c6-b433-72ed2ad3c858 Active      Deprovisioned
+Sales Opportunity Agent - Compete Research 1b7c4b32-c7be-4ec8-bc17-ce32c71521b1 Published       Administrado    04036319-5896-4772-86b6-99efae7e9189 Active      Deprovisioned
+D365 Sales Agent - Competitor              4394dc7c-a11b-42c2-87b0-c75a0bcc6429 Published       Administrado    528a2aab-9fa3-40d2-bdab-b21ec5d43108 Active      Deprovisioned
+Customer Service Copilot Bot               95b219a8-2711-4ff2-8652-be8daddaeb1e Published       Administrado    021325a8-3f5b-4cdb-812e-e159d80ee071 Active      Deprovisioned
+Customer Service Onboarding Agent          19430036-3e9c-48ea-82cf-b7214a242d14 Published       Administrado    021325a8-3f5b-4cdb-812e-e159d80ee071 Active      Deprovisioned
+Case Management Agent                      460d2064-d0bb-47ce-89f8-b6eb45dc7a3a Published       Administrado    20ff448f-56a1-4ae6-b79a-f5a976d42d02 Active      Deprovisioned
+Sales Qualification Agent Config Assistant a1584e19-9306-4660-acbc-b23c3c7fa29a Published       Administrado    96b6e5cb-110b-496f-ac75-5363ea7de709 Active      Deprovisioned
+Quality Evaluation Agent                   33973b71-f779-4b85-8c4d-b01392228cca Published       Administrado    31d210fb-31cd-4f43-900e-a321859a031a Active      Deprovisioned
+Sales Opportunity Agent - Account Research 96f71f4e-8f49-4e8a-adf9-a0ea5b9f63cd Published       Administrado    04036319-5896-4772-86b6-99efae7e9189 Active      Deprovisioned
+CustomerServiceKnowledgeHarvest            8b97a9f5-3c1d-409b-913f-9fd255a19c8e Published       Administrado    2f3255fe-5649-41a6-9788-3717ee2820b6 Active      Deprovisioned
+D365 Sales Agent - Email Validation        298f6936-cf7d-4e60-92b3-9f3ba8364032 Published       Administrado    fd140aae-4df4-11dd-bd17-0019b9312238 Active      Deprovisioned
+D365 Sales Agent - Company Resolver        f702e22b-8798-4a9e-a7cd-985ab074581f Published       Administrado    528a2aab-9fa3-40d2-bdab-b21ec5d43108 Active      Deprovisioned
+CustomerServiceKnowledgeHarvestDedupe      a141c5ba-92c0-4b04-af9f-93ff29b6cdb7 Published       Administrado    2f3255fe-5649-41a6-9788-3717ee2820b6 Active      Deprovisioned
+Case Enrichment Onboarding Agent           f19db00c-c7c4-4ab7-b6ef-924cdfc58282 Published       Administrado    96ba83fd-16b2-4d4d-a4c0-3b44c7a60156 Active      Deprovisioned
+QualityEvaluationAgentForConversation      29be1dc3-f17b-4575-8e74-87acfd5a87c5 Published       Administrado    fd140aae-4df4-11dd-bd17-0019b9312238 Active      Deprovisioned
+D365 Sales Agent - Engage Autonomous       d8121311-f5b6-458b-92bb-86246ca12d9a Published       Administrado    94a54314-1b53-4b72-bb71-6be2145c1726 Active      Deprovisioned
+Sales Profiler Agent                       88a41d95-4a9f-45bc-8ade-85fdb3d03d8e Published       Administrado    3f3e9760-c672-487f-9d62-3a34ed82f8ff Active      Deprovisioned
+D365 Sales Agent - Readiness               5351bbcf-89c0-422b-86b7-63c59c6621f1 Published       Administrado    528a2aab-9fa3-40d2-bdab-b21ec5d43108 Active      Deprovisioned
+Customer Service Operations Agent          1ec5d7b7-8b03-4dde-a1c1-570be945b02c Published       Administrado    021325a8-3f5b-4cdb-812e-e159d80ee071 Active      Deprovisioned
+Quality Evaluation Agent - Incident        97cc17d0-f45d-4bcd-9bfd-45f737956daa Published       Administrado    fd140aae-4df4-11dd-bd17-0019b9312238 Active      Deprovisioned
+D365 Sales Agent - Stakeholder Research    4d62a8dd-059c-4f1c-a53f-3cb0fa928923 Published       Administrado    528a2aab-9fa3-40d2-bdab-b21ec5d43108 Active      Deprovisioned
+D365 Sales Agent - Summary Synthesizer     90b1b3c7-63b8-43a7-9133-3c30ea614100 Published       Administrado    528a2aab-9fa3-40d2-bdab-b21ec5d43108 Active      Deprovisioned
+Copilot in Dynamics 365 Sales              52f325be-0fc6-442e-9d55-34cbe937cbe4 Published       Administrado    fd140aae-4df4-11dd-bd17-0019b9312238 Active      Deprovisioned
+Seshat Normativa                           9a19a46a-be63-f111-ab0d-00224805f8f9 Published       No administrado fd140aae-4df4-11dd-bd17-0019b9312238 Active      Deprovisioned
+Sales Close Agent                          e44a5349-d815-48fd-bfdd-2af6cf8d4372 Published       Administrado    a67146ef-4f9a-4591-a549-6629c9ee4e69 Active      Deprovisioned
+D365 Sales Agent - Custom Research         001d7d02-0e95-4461-bcf1-08d40fbe6977 Published       Administrado    528a2aab-9fa3-40d2-bdab-b21ec5d43108 Active      Deprovisioned
+Sales Opportunity Agent - Custom Research  c2d18815-b47a-4ae1-b416-1795ad080eee Published       Administrado    04036319-5896-4772-86b6-99efae7e9189 Active      Deprovisioned
+Sales Opportunity Agent - Stakeholder      b9847a3f-d6ad-42aa-97ee-1c6f662ffe80 Published       Administrado    04036319-5896-4772-86b6-99efae7e9189 Active      Deprovisioned
+SESHAT HD                                  4307a4c6-297d-44b2-9949-29e7ac51984f Published       No administrado fd140aae-4df4-11dd-bd17-0019b9312238 Active      Deprovisioned
+D365 Sales Agent - TCP Prefill Agent       6d9a768c-1e9d-44b0-8aca-2920adad0ed0 Published       Administrado    528a2aab-9fa3-40d2-bdab-b21ec5d43108 Active      Deprovisioned

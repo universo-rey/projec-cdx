@@ -10,9 +10,9 @@ El agente SDK ejecuto el bridge, confirmo `inspect_cloud_bridge => PASS` y dejo 
 
 ## Evidencia
 
-- `operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md`
-- `operativa/CODEX_CLOUD_SDK_LAUNCH_20260617.csv`
-- `operativa/READBACK_CODEX_CLOUD_BRIDGE_20260617.md`
+- `operativa/archive/legacy-root/20260617/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md`
+- `operativa/archive/legacy-root/20260617/CODEX_CLOUD_SDK_LAUNCH_20260617.csv`
+- `operativa/archive/legacy-root/20260617/READBACK_CODEX_CLOUD_BRIDGE_20260617.md`
 - `READBACK.md`
 - `EVIDENCIA.md`
 - `MANIFEST.yaml`

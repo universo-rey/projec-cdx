@@ -17,8 +17,8 @@ La wave Microsoft/SGIN ya tenia evidencia local en `operativa/` e
 
 ## Salida
 
-- `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`
-- `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv`
+- `operativa/archive/legacy-root/20260617/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`
+- `operativa/archive/legacy-root/20260617/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv`
 - `hitos/20260617-microsoft-sgin-hitos-documental-v1`
 
 ## Cierre

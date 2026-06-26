@@ -1,0 +1,430 @@
+{
+  "schemaVersion": "v1.0",
+  "sourceOfTruth": "SYSTEM_NERVOUS_INDEX",
+  "systemType": "EVENT_DRIVEN_MULTI_AGENT_RUNTIME",
+  "generatedAt": "2026-06-24T22:32:26.7690924Z",
+  "repoId": "project-cdx",
+  "canonicalRoot": "C:\\CEO\\project-cdx",
+  "federationId": "ceo-local-federation",
+  "sources": [
+    {
+      "name": "index.json",
+      "path": "index.json",
+      "count": 153,
+      "status": "READY"
+    },
+    {
+      "name": "operativa/index.json",
+      "path": "operativa\\index.json",
+      "count": 116,
+      "status": "READY"
+    },
+    {
+      "name": "local-nervous-index",
+      "path": ".cabina\\SDU_RUNTIME_ROOT\\05_CONFIG\\local-nervous-index.v1.yaml",
+      "count": 14,
+      "status": "READY"
+    }
+  ],
+  "paths": [
+    {
+      "pathType": "canonical-root",
+      "path": "C:\\CEO\\project-cdx",
+      "canonicalPath": "C:\\CEO\\project-cdx",
+      "status": "READY"
+    },
+    {
+      "pathType": "physical-alias",
+      "path": "C:\\Users\\enzo1\\PROJEC CDX",
+      "canonicalPath": "C:\\CEO\\project-cdx",
+      "status": "ALIAS_REWRITTEN"
+    },
+    {
+      "pathType": "root-index",
+      "path": "index.json",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\index.json",
+      "status": "READY"
+    },
+    {
+      "pathType": "operativa-index",
+      "path": "operativa\\index.json",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\operativa\\index.json",
+      "status": "READY"
+    },
+    {
+      "pathType": "local-nervous-index",
+      "path": ".cabina\\SDU_RUNTIME_ROOT\\05_CONFIG\\local-nervous-index.v1.yaml",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\.cabina\\SDU_RUNTIME_ROOT\\05_CONFIG\\local-nervous-index.v1.yaml",
+      "status": "READY"
+    },
+    {
+      "pathType": "vsi-workspace",
+      "path": "CEO_CONTROL_PLANE.code-workspace",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\CEO_CONTROL_PLANE.code-workspace",
+      "status": "READY"
+    },
+    {
+      "pathType": "vsi-tasks",
+      "path": ".vscode\\tasks.json",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\.vscode\\tasks.json",
+      "status": "READY"
+    },
+    {
+      "pathType": "agile-agent-canvas",
+      "path": ".agileagentcanvas-context",
+      "canonicalPath": "C:\\Users\\enzo1\\PROJEC CDX\\.agileagentcanvas-context",
+      "status": "READY"
+    }
+  ],
+  "agents": [
+    {
+      "agentId": "orchestrator_agent",
+      "owner": "thot-tecnico",
+      "surface": "repo-local",
+      "tool": "ceo-runtime-router.ps1",
+      "evidence": "<RUNTIME_PATH>/bus/queue.jsonl",
+      "validator": "ceo-validate-event.ps1",
+      "stopCondition": "invalid event rejected fail-closed",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "contracts_agent",
+      "owner": "seshat-normativa",
+      "surface": "contracts",
+      "tool": "ceo-validate-event.ps1",
+      "evidence": "contracts/contract-map.json",
+      "validator": "run-contract-tests.ps1",
+      "stopCondition": "schema critical missing",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "validation_agent",
+      "owner": "maat-cumplimiento",
+      "surface": "tools/validators",
+      "tool": "ceo-validate-bus.ps1",
+      "evidence": "<RUNTIME_PATH>/bus/failed.jsonl",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "fail-closed broken",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "bus_agent",
+      "owner": "sentinel-runtime",
+      "surface": "adapters/local + <RUNTIME_PATH>/bus",
+      "tool": "ceo-execution-adapter.ps1",
+      "evidence": "<RUNTIME_PATH>/bus/processed.jsonl",
+      "validator": "ceo-validate-bus.ps1",
+      "stopCondition": "invalid event processed",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "observability_agent",
+      "owner": "horus-riesgo",
+      "surface": "web",
+      "tool": "ceo-trace-export.ps1",
+      "evidence": "<RUNTIME_PATH>/dashboard/data.json",
+      "validator": "ceo-validate-json.ps1",
+      "stopCondition": "dashboard data invalid",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "evidence_agent",
+      "owner": "narrador-normativo",
+      "surface": "<RUNTIME_PATH>/watch",
+      "tool": "ceo-runtime-router.ps1",
+      "evidence": "<RUNTIME_PATH>/watch/events/dispatch.jsonl",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "evidence missing",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "optimization_agent",
+      "owner": "horus-riesgo",
+      "surface": "tools/optimization",
+      "tool": "ceo-auto-optimize.ps1",
+      "evidence": "<RUNTIME_PATH>/watch/events/dispatch.jsonl",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "optimization requires sensitive mutation",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "sanitizer_agent",
+      "owner": "maat-cumplimiento",
+      "surface": "repo-local-readonly-scan",
+      "tool": "ceo-sanitizer-scan.ps1",
+      "evidence": "<RUNTIME_PATH>/sanitization/findings.jsonl",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "legacy or governance gap executes without finding",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "diagnostic_agent",
+      "owner": "sentinel-runtime",
+      "surface": "repo-local-runtime-diagnostics",
+      "tool": "ceo-runtime-diagnose.ps1",
+      "evidence": "<RUNTIME_PATH>/diagnostics/runtime-diagnosis.jsonl",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "runtime degradation not emitted as diagnosis",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "path_sanitizer_agent",
+      "owner": "maat-cumplimiento",
+      "surface": "repo-local-path-guard",
+      "tool": "ceo-path-sanitizer.ps1",
+      "evidence": "<RUNTIME_PATH>/sanitization/path-sanitizer.jsonl",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "unsafe root executes without SANITIZE_REQUIRED",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "federation_enforcer_agent",
+      "owner": "seshat-normativa",
+      "surface": "contracts/federation-map.json",
+      "tool": "ceo-federation-enforcer.ps1",
+      "evidence": "<RUNTIME_PATH>/federation/federation-drift.jsonl",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "federation drift executes without HOLD evidence",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "sns_agent",
+      "owner": "seshat-normativa",
+      "surface": "system-nervous-index",
+      "tool": "ceo-sns-unify.ps1",
+      "evidence": "<RUNTIME_PATH>/sns/system-nervous-index.json",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "fragmented index used after SNS unification failure",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "vsi_execution_guard",
+      "owner": "sentinel-runtime",
+      "surface": "Visual Studio Code Insiders",
+      "tool": "ceo-vsi-execution-guard.ps1",
+      "evidence": "<RUNTIME_PATH>/vsi/vsi-guard.jsonl",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "execution continues outside valid VSI context",
+      "status": "ACTIVE"
+    },
+    {
+      "agentId": "control_plane_agent",
+      "owner": "thot-tecnico",
+      "surface": "Agile Agent Canvas",
+      "tool": "ceo-control-plane-sync.ps1",
+      "evidence": "<RUNTIME_PATH>/control-plane/agile-agent-canvas-map.json",
+      "validator": "run-integration-smoke.ps1",
+      "stopCondition": "control plane map missing or stale after sync",
+      "status": "ACTIVE"
+    }
+  ],
+  "routes": [
+    {
+      "eventType": "RUNTIME_DRIFT",
+      "chainId": "runtime-drift-chain-v1",
+      "agents": [
+        "validation_agent",
+        "contracts_agent",
+        "orchestrator_agent",
+        "bus_agent",
+        "observability_agent"
+      ]
+    },
+    {
+      "eventType": "VSCODE_DRIFT",
+      "chainId": "vscode-drift-chain-v1",
+      "agents": [
+        "validation_agent",
+        "orchestrator_agent",
+        "observability_agent"
+      ]
+    },
+    {
+      "eventType": "ALERT_RAISED",
+      "chainId": "alert-raised-chain-v1",
+      "agents": [
+        "observability_agent",
+        "evidence_agent",
+        "orchestrator_agent"
+      ]
+    },
+    {
+      "eventType": "SELF_HEAL_COMMAND",
+      "chainId": "self-heal-command-chain-v1",
+      "agents": [
+        "validation_agent",
+        "orchestrator_agent",
+        "evidence_agent"
+      ]
+    },
+    {
+      "eventType": "PREDICTIVE_SIGNAL",
+      "chainId": "predictive-signal-chain-v1",
+      "agents": [
+        "validation_agent",
+        "orchestrator_agent",
+        "optimization_agent",
+        "observability_agent"
+      ]
+    },
+    {
+      "eventType": "OPTIMIZATION_COMMAND",
+      "chainId": "optimization-command-chain-v1",
+      "agents": [
+        "validation_agent",
+        "orchestrator_agent",
+        "bus_agent",
+        "observability_agent"
+      ]
+    },
+    {
+      "eventType": "POLICY_DECISION",
+      "chainId": "policy-decision-chain-v1",
+      "agents": [
+        "validation_agent",
+        "orchestrator_agent",
+        "evidence_agent"
+      ]
+    },
+    {
+      "eventType": "AGENT_DECISION",
+      "chainId": "agent-decision-chain-v1",
+      "agents": [
+        "evidence_agent"
+      ]
+    },
+    {
+      "eventType": "SANITIZATION_FINDING",
+      "chainId": "sanitization-finding-chain-v1",
+      "agents": [
+        "validation_agent",
+        "contracts_agent",
+        "sanitizer_agent",
+        "observability_agent",
+        "evidence_agent"
+      ]
+    },
+    {
+      "eventType": "RUNTIME_DIAGNOSIS",
+      "chainId": "runtime-diagnosis-chain-v1",
+      "agents": [
+        "validation_agent",
+        "diagnostic_agent",
+        "orchestrator_agent",
+        "observability_agent",
+        "evidence_agent"
+      ]
+    },
+    {
+      "eventType": "SANITIZE_REQUIRED",
+      "chainId": "sanitize-required-chain-v1",
+      "agents": [
+        "validation_agent",
+        "contracts_agent",
+        "path_sanitizer_agent",
+        "observability_agent",
+        "evidence_agent"
+      ]
+    },
+    {
+      "eventType": "FEDERATION_DRIFT",
+      "chainId": "federation-drift-chain-v1",
+      "agents": [
+        "validation_agent",
+        "contracts_agent",
+        "federation_enforcer_agent",
+        "observability_agent",
+        "evidence_agent"
+      ]
+    },
+    {
+      "eventType": "SNS_UNIFIED_INDEX",
+      "chainId": "sns-unified-index-chain-v1",
+      "agents": [
+        "validation_agent",
+        "contracts_agent",
+        "sns_agent",
+        "observability_agent",
+        "evidence_agent"
+      ]
+    },
+    {
+      "eventType": "VSI_GUARD_RESULT",
+      "chainId": "vsi-guard-result-chain-v1",
+      "agents": [
+        "validation_agent",
+        "vsi_execution_guard",
+        "orchestrator_agent",
+        "observability_agent",
+        "evidence_agent"
+      ]
+    },
+    {
+      "eventType": "CONTROL_PLANE_SYNC",
+      "chainId": "control-plane-sync-chain-v1",
+      "agents": [
+        "validation_agent",
+        "contracts_agent",
+        "control_plane_agent",
+        "observability_agent",
+        "evidence_agent"
+      ]
+    }
+  ],
+  "vsiControlPlane": {
+    "workspace": "CEO_CONTROL_PLANE.code-workspace",
+    "tasks": ".vscode\\tasks.json",
+    "status": "READY"
+  },
+  "agileAgentCanvas": {
+    "root": ".agileagentcanvas-context",
+    "workflows": [
+      "vision.json",
+      "bmm",
+      "cis",
+      "discovery",
+      "planning",
+      "solutioning",
+      "testing"
+    ],
+    "status": "READY"
+  },
+  "dependencies": [
+    {
+      "from": "VS Code Insiders",
+      "to": "SYSTEM_NERVOUS_INDEX.json",
+      "type": "requires",
+      "status": "READY"
+    },
+    {
+      "from": "VS Code Insiders",
+      "to": "Agile Agent Canvas",
+      "type": "controls",
+      "status": "READY"
+    },
+    {
+      "from": "Active Governance Runner",
+      "to": "SYSTEM_NERVOUS_INDEX.json",
+      "type": "preflight",
+      "status": "READY"
+    },
+    {
+      "from": "Runtime Router",
+      "to": "contracts\\agent-map.json",
+      "type": "routes",
+      "status": "READY"
+    },
+    {
+      "from": "Dashboard",
+      "to": "<RUNTIME_PATH>\\dashboard\\data.json",
+      "type": "observes",
+      "status": "READY"
+    }
+  ],
+  "policy": {
+    "failClosed": true,
+    "liveWrite": false,
+    "secretAccess": false,
+    "requiredForExecution": true
+  }
+}

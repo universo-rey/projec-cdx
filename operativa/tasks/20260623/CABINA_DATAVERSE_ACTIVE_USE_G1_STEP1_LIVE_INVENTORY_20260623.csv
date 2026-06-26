@@ -1,0 +1,6 @@
+capability,command,status,environment,observed_solution,tables_observed,live_rows_confirmed,canon_delta,gate_required,next_action
+Dataverse Live Read Status,ceo-dataverse-status,DATAVERSE_TABLES_REAL_INDEX,https://org084965d9.crm.dynamics.com,SPGovernanceModel,8,true,CANON_NAME_DRIFT_WITH_REAL_TABLE_PRESENT,false,usar como entrada de memoria metadata-only y decidir reconciliacion de nombres
+Dataverse Solution Inventory,ceo-dataverse-solutions,READY,https://org084965d9.crm.dynamics.com,SPGovernanceModel,NA,NA,solution_unique_name_differs,false,registrar SPGovernanceModel como solucion real observada
+Dataverse Table Inventory,ceo-dataverse-tables,READY,https://org084965d9.crm.dynamics.com,SPGovernanceModel,8,true,expected_short_names_not_exact,false,mapear expected short names a logical names observados
+Dataverse Usable Memory Map,ceo-dataverse-memory,READY,https://org084965d9.crm.dynamics.com,SPGovernanceModel,8,true,usable_memory_ready,false,conectar agentes Seshat/Horus/Anubis/Dataverse Memory Keeper
+Dataverse Canon Delta,ceo-dataverse-canon-delta,READY,https://org084965d9.crm.dynamics.com,SPGovernanceModel,8,true,CANON_NAME_DRIFT_WITH_REAL_TABLE_PRESENT,true,owner decide si canon documenta alias o se corrige nomenclatura

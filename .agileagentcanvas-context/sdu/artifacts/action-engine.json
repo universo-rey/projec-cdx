@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "component",
+    "workflowName": "agileagentcanvas",
+    "projectName": "SDU Operations Layer",
+    "timestamps": {
+      "created": "2026-06-26T00:00:00-03:00",
+      "lastModified": "2026-06-26T00:00:00-03:00"
+    },
+    "status": "active"
+  },
+  "content": {
+    "id": "ACTION_ENGINE",
+    "name": "SDU Action Engine",
+    "type": "Component",
+    "executionMode": "HUMAN_IN_THE_LOOP",
+    "endpoint": "POST /execute",
+    "availableActions": [
+      {
+        "id": "check_alert_source",
+        "risk": "LOW",
+        "artifact": "tasks/check_alert_source.json"
+      },
+      {
+        "id": "evaluate_cleanup",
+        "risk": "MEDIUM",
+        "artifact": "tasks/evaluate_cleanup.json"
+      }
+    ],
+    "context": "Actions are modeled as TASK artifacts and are launched from the Canvas Start Dev workflow mapping, not from embedded HTML.",
+    "possibleAction": "Select a TASK and trigger Start Dev only after owner review."
+  }
+}

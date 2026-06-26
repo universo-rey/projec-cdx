@@ -1,0 +1,26 @@
+{
+  "artifact_id": "operativa/tasks/20260623/IDE_EXTENSION_CONTROL_MATRIX_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "IDE_EXTENSION_CONTROL"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/IDE_EXTENSION_CONTROL_MATRIX_20260623.csv",
+  "etiquetas": [
+    "vscode-insiders",
+    "extension-policy",
+    "local-only",
+    "productiva"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/READBACK_IDE_EXTENSION_CONTROL_20260623.md",
+    "tools/ceo-ide-extension-list.ps1",
+    "tools/ceo-ide-extension-policy.ps1"
+  ],
+  "descripcion": "Matriz minima del carril IDE_EXTENSION_CONTROL para clasificar extensiones de VS Code Insiders, proponer allowlist/holdlist y reducir ruido sin desinstalar."
+}

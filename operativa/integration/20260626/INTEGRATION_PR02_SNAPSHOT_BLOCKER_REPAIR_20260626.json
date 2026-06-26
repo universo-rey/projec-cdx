@@ -1,0 +1,53 @@
+{
+  "integration_id": "INTEGRATION_PR02_SNAPSHOT_BLOCKER_REPAIR_20260626",
+  "generated_at_local": "2026-06-26T09:48:03-03:00",
+  "generated_at_utc": "2026-06-26T12:48:03.1569748Z",
+  "live_branch": "codex/live-state-g10-governed-20260626",
+  "live_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "integration_branch": "codex/integration-g10-snapshot-20260626",
+  "integration_old_head": "38f81e6585cb11d305874a6c192d95e57df02adf",
+  "source_branch": "codex/version-snapshot-blocker-repair-20260626",
+  "source_old_head": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+  "source_repaired_head": "dc5f9747de82c94ea9ef65716122893a9321e8fe",
+  "fixed_diff_check_path": "operativa/repairs/20260626/MINIMAL_SNAPSHOT_BLOCKER_REPAIR_20260626.md",
+  "mode": "no_checkout_no_pr_no_merge_command",
+  "changed_files": [
+    {
+      "status": "M",
+      "path": "VERSION_STATE.json"
+    },
+    {
+      "status": "A",
+      "path": "operativa/repairs/20260626/MINIMAL_SNAPSHOT_BLOCKER_REPAIR_20260626.json"
+    },
+    {
+      "status": "A",
+      "path": "operativa/repairs/20260626/MINIMAL_SNAPSHOT_BLOCKER_REPAIR_20260626.md"
+    },
+    {
+      "status": "A",
+      "path": "operativa/repairs/20260626/WORKBENCH_SYNC_POLICY_PATCH_20260626.json"
+    },
+    {
+      "status": "A",
+      "path": "operativa/repairs/20260626/WORKBENCH_SYNC_POLICY_PATCH_20260626.md"
+    },
+    {
+      "status": "M",
+      "path": "tools/validate_proj_cdx_sync.ps1"
+    },
+    {
+      "status": "M",
+      "path": "tools/validate_proj_cdx_workbench.ps1"
+    }
+  ],
+  "forbidden_actions": [
+    "checkout",
+    "switch",
+    "pr",
+    "merge_command",
+    "live_write",
+    "g11_apply"
+  ],
+  "recommended_next_lane": "OWNER_GATE_VALIDATE_INTEGRATION_BRANCH_AFTER_PR02_NO_PR"
+}

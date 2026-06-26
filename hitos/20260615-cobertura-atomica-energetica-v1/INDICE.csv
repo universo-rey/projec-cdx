@@ -1,5 +1,5 @@
 id,tipo,estado,evidencia
-H-001,cobertura_atomica_energetica,closed,"operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md"
-H-002,ancla_energia_atomica,closed,"operativa/ANCLA_ENERGIA_ATOMICA.md"
+H-001,cobertura_atomica_energetica,closed,"operativa/archive/legacy-root/20260615/COBERTURA_ATOMICA_ENERGETICA_20260615.md"
+H-002,ancla_energia_atomica,closed,"operativa/archive/legacy-root/undated/ANCLA_ENERGIA_ATOMICA.md"
 H-003,contrato_atomico_base,closed,"atomic/CODEX_ATOMIC_OPERATING_CONTRACT.md"
-H-004,enlaces_gobierno,closed,"README.md; README_CORTO.md; MAPA_CORTO.md; operativa/README.md; operativa/CURRENT.md; operativa/TRACE.md; operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md; operativa/ANCLAS_ON_DEMAND.md"
+H-004,enlaces_gobierno,closed,"README.md; README_CORTO.md; MAPA_CORTO.md; operativa/README.md; operativa/CURRENT.md; operativa/TRACE.md; operativa/archive/legacy-root/20260615/NOMENCLATURA_CADENA_OPERATIVA_20260615.md; operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md"

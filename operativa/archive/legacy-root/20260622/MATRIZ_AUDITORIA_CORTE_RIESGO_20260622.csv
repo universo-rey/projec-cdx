@@ -1,0 +1,8 @@
+agent,risk_area,risk_level,evidence,impact,mitigation,decision
+horus-riesgo,technical_drift,Bajo,"sentinel scan/check PASS; NO_DRIFT after closeout","low","continue sentinel pre/post","ACCEPT"
+horus-riesgo,workflow_write_surface,Medio,"promote.yml contents: write; workflow_dispatch","manual promotion could write if misused","owner gate; no blind dispatch","CONTROLLED"
+horus-riesgo,version_semantics,Medio,"pyproject 0.1.0 vs release v0.6.0-rc1","could confuse package/release consumers","define package version policy in next delta","CONTROLLED"
+horus-riesgo,gate_registry_completeness,Medio,"G1-G6 visible; no single G1-G31 registry","future gate audit may lack one table","consolidate gate registry","CONTROLLED"
+horus-riesgo,dependency_warning,Bajo,"pytest warning: StarletteDeprecationWarning","non-blocking test noise","track dependency update","ACCEPT"
+horus-riesgo,local_overlays,Bajo,".cache/.pytest_cache/.ruff_cache/.vscode ignored","local noise not tracked","keep ignored","ACCEPT"
+horus-riesgo,external_live,Bajo,"no Dataverse/Microsoft/OpenAI live invoked","none","keep no-live gate","ACCEPT"

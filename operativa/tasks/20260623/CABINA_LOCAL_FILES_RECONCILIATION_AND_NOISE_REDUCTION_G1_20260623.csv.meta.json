@@ -1,0 +1,31 @@
+{
+  "artifact_id": "operativa/tasks/20260623/CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_20260623.csv",
+  "etiquetas": [
+    "cabina",
+    "local-files",
+    "reconciliation",
+    "noise-reduction",
+    "filesystem"
+  ],
+  "relacionados": [
+    ".cabina/local-reconcile/out/local-file-inventory.json",
+    ".cabina/local-reconcile/out/local-file-classification.json",
+    ".cabina/local-reconcile/out/repo-boundary-map.json",
+    ".cabina/local-reconcile/out/agent-assets-map.json",
+    ".cabina/local-reconcile/out/sdk-assets-map.json",
+    ".cabina/local-reconcile/out/noise-reduction-plan.md",
+    ".cabina/local-reconcile/out/cleanup-dryrun.json"
+  ],
+  "descripcion": "Matriz de reconciliacion local y reduccion de ruido para la cabina, sin borrar ni sobrescribir."
+}

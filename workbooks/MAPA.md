@@ -5,9 +5,9 @@ Vista unica de los libros de trabajo visibles de `PROJEC CDX`.
 ## Vigente
 - Workbook: `CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`
 - Estado: `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`
-- Fuente corta: `operativa/READBACK_CIERRE_PESO_REDUCIDO_20260617.md`
-- Evidencia de binding: `operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md`
-- Evidencia superficies/workspace: `operativa/READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md`
+- Fuente corta: `operativa/archive/legacy-root/20260617/READBACK_CIERRE_PESO_REDUCIDO_20260617.md`
+- Evidencia de binding: `operativa/archive/legacy-root/20260618/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md`
+- Evidencia superficies/workspace: `operativa/archive/legacy-root/20260618/READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md`
 
 ## Contenido
 - `CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`

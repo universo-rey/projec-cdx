@@ -24,8 +24,8 @@ Revertir patch de configuracion bridge/MCP.
 - No se abre bridge, Teams, MCP live ni Codex Cloud.
 
 ## Evidencia
-- operativa/GATE_0.3.15_BRIDGE_LOOPBACK_MCP_GATING_PACKET_20260622.md
-- operativa/GATE_0.3.15_BRIDGE_LOOPBACK_MCP_GATING_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/GATE_0.3.15_BRIDGE_LOOPBACK_MCP_GATING_PACKET_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.15_BRIDGE_LOOPBACK_MCP_GATING_MATRIX_20260622.csv
 
 ## Estado final
 READY_FOR_REMOTE_PATCH_AUTHORIZATION

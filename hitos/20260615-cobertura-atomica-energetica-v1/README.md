@@ -4,15 +4,15 @@ Versiona la introduccion del elemento atomico energetico en las superficies gobe
 
 ## Alcance
 
-- `operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md`.
-- `operativa/ANCLA_ENERGIA_ATOMICA.md`.
+- `operativa/archive/legacy-root/20260615/COBERTURA_ATOMICA_ENERGETICA_20260615.md`.
+- `operativa/archive/legacy-root/undated/ANCLA_ENERGIA_ATOMICA.md`.
 - `atomic/CODEX_ATOMIC_OPERATING_CONTRACT.md`.
 - `atomic/README.md`, `atomic/MAPA.md`.
 - `README.md`, `README_CORTO.md`, `MAPA_CORTO.md`.
 - `operativa/README.md`, `operativa/README_CORTO.md`, `operativa/MAPA_CORTO.md`.
 - `operativa/CURRENT.md`, `operativa/TRACE.md`.
-- `operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md`.
-- `operativa/ANCLAS_ON_DEMAND.md`.
+- `operativa/archive/legacy-root/20260615/NOMENCLATURA_CADENA_OPERATIVA_20260615.md`.
+- `operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md`.
 - `hitos/README.md`, `hitos/MAPA.md`, `hitos/INDICE_MAESTRO.md`, `hitos/INDICE_MAESTRO.csv`.
 
 ## Estado

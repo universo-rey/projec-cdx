@@ -45,9 +45,9 @@ Revertir cambios de checkout, fetch-depth o refspec en workflows remotos.
 - No se ejecuta workflow dispatch desde este gate.
 
 ## Evidencia local
-- operativa/GATE_0.3.18_MCP_CODEX_CLOUD_PREFLIGHT_CHECKOUT_PACKET_20260622.md
-- operativa/GATE_0.3.18_MCP_CODEX_CLOUD_PREFLIGHT_CHECKOUT_MATRIX_20260622.csv
-- operativa/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/GATE_0.3.18_MCP_CODEX_CLOUD_PREFLIGHT_CHECKOUT_PACKET_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.18_MCP_CODEX_CLOUD_PREFLIGHT_CHECKOUT_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
 
 ## Resultado
 GATE_0.4.6_READY_FOR_REMOTE_PATCH_AUTHORIZATION

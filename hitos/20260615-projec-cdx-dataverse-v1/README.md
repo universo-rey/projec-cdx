@@ -9,7 +9,7 @@ Versiona la segunda pasada de Dataverse dentro de `PROJEC CDX`: estados visibles
 - `outputs/control_operativo_20260615/`
 - `tools/build_control_workbook.mjs`
 - `tools/validate_proj_cdx_workbench.ps1`
-- `operativa/ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md`
+- `operativa/archive/legacy-root/20260615/ACTA_DATAVERSE_SEGUNDA_PASADA_20260615.md`
 
 ## Evidencia
 

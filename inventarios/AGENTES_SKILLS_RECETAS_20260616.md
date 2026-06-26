@@ -8,7 +8,7 @@ Mapa corto de conexiones visibles entre agentes, skills, recetas y procesos de `
 - [Tabla unificada de skills](../inventarios/SKILLS_UNIFIED_TABLE.md)
 - [Indice de recetas](../recipes/INDICE_RECETAS.md)
 - [Mapa de recetas](../recipes/MAPA.md)
-- [Matriz skills tools recetas](../operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md)
+- [Matriz skills tools recetas](../operativa/archive/legacy-root/20260615/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md)
 - [Patrones a skills](../inventarios/PATRONES_A_SKILLS_20260615.md)
 
 ## Roster SDU Confirmado

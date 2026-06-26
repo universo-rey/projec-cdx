@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-06-25T22:23:29.2432993-03:00",
+  "mode": "CEO_PATH_CANONICAL_FROM_00_ENV_10_ISOLATION",
+  "path": "C:\\Users\\enzo1\\AppData\\Local\\OpenAI\\Codex\\bin\\8e55c2dd143b6354;C:\\CEO\\tools\\bin;C:\\CEO\\project-cdx\\.venv\\Scripts;C:\\Users\\enzo1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\\node-v24.17.0-win-x64;C:\\CEO\\tools\\pac\\microsoft.powerapps.cli.2.8.1\\tools;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PowerShell\\7;C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0;C:\\WINDOWS\\System32\\OpenSSH;C:\\Users\\enzo1\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\enzo1\\.local\\bin;C:\\ProgramData\\enzo1\\GitHubDesktop\\bin;C:\\Users\\enzo1\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\enzo1\\AppData\\Local\\GitHubCopilotCLI;C:\\Users\\enzo1\\AppData\\Local\\Programs\\Microsoft VS Code Insiders\\bin",
+  "pathEntries": [
+    "C:\\Users\\enzo1\\AppData\\Local\\OpenAI\\Codex\\bin\\8e55c2dd143b6354",
+    "C:\\CEO\\tools\\bin",
+    "C:\\CEO\\project-cdx\\.venv\\Scripts",
+    "C:\\Users\\enzo1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\\node-v24.17.0-win-x64",
+    "C:\\CEO\\tools\\pac\\microsoft.powerapps.cli.2.8.1\\tools",
+    "C:\\Program Files\\Git\\cmd",
+    "C:\\Program Files\\PowerShell\\7",
+    "C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin",
+    "C:\\WINDOWS\\system32",
+    "C:\\WINDOWS",
+    "C:\\WINDOWS\\System32\\Wbem",
+    "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0",
+    "C:\\WINDOWS\\System32\\OpenSSH",
+    "C:\\Users\\enzo1\\AppData\\Local\\Microsoft\\WinGet\\Links",
+    "C:\\Users\\enzo1\\.local\\bin",
+    "C:\\ProgramData\\enzo1\\GitHubDesktop\\bin",
+    "C:\\Users\\enzo1\\AppData\\Local\\GitHubDesktop\\bin",
+    "C:\\Users\\enzo1\\AppData\\Local\\GitHubCopilotCLI",
+    "C:\\Users\\enzo1\\AppData\\Local\\Programs\\Microsoft VS Code Insiders\\bin"
+  ],
+  "node": {
+    "source": "C:\\Users\\enzo1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\\node-v24.17.0-win-x64\\node.exe",
+    "version": "v24.17.0",
+    "commandType": "Application"
+  },
+  "source": {
+    "envLayer": "C:\\CEO\\core\\00-Env.ps1",
+    "isolationLayer": "C:\\CEO\\core\\10-Isolation.ps1",
+    "policy": "C:\\CEO\\policy.json"
+  }
+}

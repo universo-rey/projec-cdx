@@ -1,0 +1,27 @@
+{
+  "artifact_id": "operativa/tasks/20260623/ROOT_GAP_RESOLUTION_DELEGATION_MATRIX_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_GOBIERNO_TOTAL"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/ROOT_GAP_RESOLUTION_DELEGATION_MATRIX_20260623.csv",
+  "etiquetas": [
+    "delegacion",
+    "convergencia",
+    "raiz",
+    "local-only"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv",
+    "operativa/CURRENT.md",
+    "operativa/NEXT.md",
+    ".cabina/organizacion-total/evidence/manifests/20260623/ROOT_RELOCATION_MANIFEST_20260623.csv"
+  ],
+  "descripcion": "Matriz de delegacion para resolver brechas de convergencia sin dejar archivos sueltos."
+}

@@ -4,7 +4,7 @@
 
 HECHO_VERIFICADO:
 
-- Se encontro una previa borrador: `operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md`.
+- Se encontro una previa borrador: `operativa/archive/legacy-root/20260615/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md`.
 - La mesa de seis agentes reviso en modo read-only y recomendo versionar como hito preliminar, no como cierre total.
 - La matriz preliminar fue reconciliada y clasificada contra el Git vivo posterior al paquete: `44` deltas trackeados, `85` entradas no versionadas, `129` entradas totales.
 - `BLOCKERS.md` no registra bloqueo operativo activo.
@@ -20,7 +20,7 @@ HECHO_VERIFICADO:
 - `PROJEC CDX/operativa/TRACE.md`
 - `PROJEC CDX/operativa/CURRENT.md`
 - `PROJEC CDX/operativa/NEXT.md`
-- `PROJEC CDX/operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv`
+- `PROJEC CDX/operativa/archive/legacy-root/20260616/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv`
 
 ## Sistemas No Tocados
 

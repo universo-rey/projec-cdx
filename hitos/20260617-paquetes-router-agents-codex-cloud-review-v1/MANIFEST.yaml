@@ -4,9 +4,9 @@ status: PACKAGES_ROUTER_AGENTS_CLOUD_REVIEWED
 date: 2026-06-17
 mode: READ_ONLY_LOCAL_PLUS_GITHUB_PR_READ
 sources:
-  - operativa/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md
-  - operativa/PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.csv
-  - operativa/CODEX_CLOUD_SMOKE_TASK_20260617.md
+  - operativa/archive/legacy-root/20260617/READBACK_PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.md
+  - operativa/archive/legacy-root/20260617/PAQUETES_ROUTER_AGENTS_CODEX_CLOUD_20260617.csv
+  - operativa/archive/legacy-root/20260617/CODEX_CLOUD_SMOKE_TASK_20260617.md
 external_writes: false
 cloud_task_created: false
 secrets_printed: false

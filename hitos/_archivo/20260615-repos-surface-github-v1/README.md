@@ -4,7 +4,7 @@ Versiona la acta local que deja cerrado el carril de `.codex` y `.agents` en Git
 
 ## Alcance
 
-- `operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md`
+- `operativa/archive/legacy-root/20260615/ACTA_REPOS_SURFACE_GITHUB_20260615.md`
 - `operativa/CURRENT.md`
 - `operativa/TRACE.md`
 

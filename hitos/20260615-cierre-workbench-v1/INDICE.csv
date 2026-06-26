@@ -1,7 +1,7 @@
 id,tipo,estado,evidencia
-H-001,entrada_gobernada,closed,"operativa/START_HERE.md; operativa/PROMPT_NUEVO_HILO.md"
+H-001,entrada_gobernada,closed,"operativa/archive/legacy-root/undated/START_HERE.md; operativa/archive/legacy-root/undated/PROMPT_NUEVO_HILO.md"
 H-002,playbooks_completos,closed,"playbooks/00-preflight-gobernado.md; playbooks/04-validar-delta.md; playbooks/05-promover-aprendizaje.md"
 H-003,validador_local,closed,tools/validate_proj_cdx_workbench.ps1
 H-004,workbook_real,closed,"workbooks/control_operativo.xlsx; outputs/control_operativo_20260615/MANIFEST.json"
-H-005,manifests_retencion,closed,"operativa/MANIFESTS.md; operativa/RETENCION.md; outputs/RETENCION.md"
+H-005,manifests_retencion,closed,"operativa/archive/legacy-root/undated/MANIFESTS.md; operativa/archive/legacy-root/undated/RETENCION.md; outputs/RETENCION.md"
 H-006,dataverse_gobernado,closed_local,"dataverse/GATE.md; dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md"

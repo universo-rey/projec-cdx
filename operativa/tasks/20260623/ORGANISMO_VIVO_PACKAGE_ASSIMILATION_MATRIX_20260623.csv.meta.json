@@ -1,0 +1,26 @@
+{
+  "artifact_id": "operativa/tasks/20260623/ORGANISMO_VIVO_PACKAGE_ASSIMILATION_MATRIX_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_GOBIERNO_TOTAL"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/ORGANISMO_VIVO_PACKAGE_ASSIMILATION_MATRIX_20260623.csv",
+  "etiquetas": [
+    "organismo-vivo",
+    "paquete",
+    "convergencia",
+    "local-only"
+  ],
+  "relacionados": [
+    ".cabina/organizacion-total/organismo-vivo/README.md",
+    "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv",
+    "operativa/tasks/20260623/READBACK_ORGANISMO_VIVO_PACKAGE_ASSIMILATION_20260623.md"
+  ],
+  "descripcion": "Matriz de asimilacion del paquete SDU Organismo Vivo dentro de .cabina sin crear SDU_RUNTIME_ROOT."
+}

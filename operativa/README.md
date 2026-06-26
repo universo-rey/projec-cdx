@@ -3,134 +3,60 @@ artifact_id: operativa/README.md
 categoria: operativa
 tipo: indice
 estado: live
-version: 2026.06.21
+version: v0.6.0-rc1
+fecha_evento: '2026-06-23'
 autoridad:
-  tipo: owner
-  referencia: '@SeshatSgin'
+  tipo: sistema
+  referencia: CABINA_GOBIERNO_TOTAL
 origen: GitHub
 ubicacion_repo: operativa/README.md
 etiquetas:
-- operativa
-- indice
-- metadata
+  - operativa
+  - indice
+  - frontdoor
+  - clean-root
 relacionados:
-- operativa/MAPA.md
-- operativa/START_HERE.md
-descripcion: Indice vivo de la carpeta operativa y su estado actual.
+  - operativa/MAPA.md
+  - operativa/CURRENT.md
+  - operativa/NEXT.md
+  - operativa/archive/README.md
+descripcion: Entrada corta de la mesa operativa; la historia queda archivada por fecha.
 ---
 
 # Operativa
 
-Carril vivo para organizar el trabajo punta a punta de `PROJEC CDX`.
+Mesa viva de `PROJEC CDX`.
 
-La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
+La raiz queda limpia: solo entradas vivas, Sentinel cableado y navegacion corta.
 
-## Vigencia 20260618
+## Entradas Vivas
 
-- Estado vigente: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.
-- Consumidor aplicado: `workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx`.
-- Movimiento unico: `delta_commit_dataverse_workbook_binding_branch`.
-- Reutilizar paquetes existentes: revisar primero [PENDIENTES_HOY_20260617.md](PENDIENTES_HOY_20260617.md) y [INDICE_MAESTRO.md](../hitos/INDICE_MAESTRO.md).
-- SGIN ya fue leido/paquetizado; `Sgin/torres` es paquete local preparado, no runtime activo.
-- `Home.aspx`, Cloud UI y carriles metadata quedan como espera gobernada con owner-gate.
+- [CURRENT.md](CURRENT.md): estado actual.
+- [NEXT.md](NEXT.md): siguiente movimiento.
+- [CONTROL.md](CONTROL.md): control operativo.
+- [TRACE.md](TRACE.md): trazabilidad viva.
+- [MAPA.md](MAPA.md): mapa operativo corto.
+- [README_CORTO.md](README_CORTO.md): lectura minima.
+- [MAPA_CORTO.md](MAPA_CORTO.md): navegacion minima.
 
-La cobertura atomica energetica queda en [COBERTURA_ATOMICA_ENERGETICA_20260615.md](COBERTURA_ATOMICA_ENERGETICA_20260615.md).
+## Archivo
 
-La matriz corta de skills, tools y recetas queda en [MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md](MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md).
+- [archive/README.md](archive/README.md): puerta del archivo operativo.
+- [archive/legacy-root](archive/legacy-root): historia reubicada por fecha.
+- [tasks/20260623/OPERATIVA_ROOT_ARCHIVE_MANIFEST_20260623.csv](tasks/20260623/OPERATIVA_ROOT_ARCHIVE_MANIFEST_20260623.csv): manifiesto de archivo.
 
-El arranque corto para waves de cierre queda en [START_HERE_CIERRE_WAVE.md](START_HERE_CIERRE_WAVE.md).
+## Superficies Vivas
 
-El prompt corto para reanudar una wave queda en [PROMPT_CIERRE_WAVE.md](PROMPT_CIERRE_WAVE.md).
+- [runtime-events](runtime-events): eventos y actas runtime.
+- [snapshots](snapshots): snapshots reproducibles.
+- [sentinel](sentinel): reportes auxiliares Sentinel.
+- [tasks](tasks): tareas gobernadas.
+- [orders_0.2.x](orders_0.2.x), [orders_0.3.x](orders_0.3.x), [orders_0.4.x](orders_0.4.x): ordenes versionadas.
 
-Las anclas on-demand quedan en [ANCLAS_ON_DEMAND.md](ANCLAS_ON_DEMAND.md).
+## Frontera
 
-El diagnostico de limpieza queda en [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md).
-
-Las notas de limpieza de repos de esta wave quedan en:
-
-- [20260616-limpieza-repos-findings.md](20260616-limpieza-repos-findings.md)
-- [20260616-limpieza-repos-progress.md](20260616-limpieza-repos-progress.md)
-- [20260616-limpieza-repos-task-plan.md](20260616-limpieza-repos-task-plan.md)
-
-El cierre de repos Git queda en [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md).
-
-El archivo de ramas historicas queda en [ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md](ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md).
-
-La matriz historica en Excel queda en [MATRIZ_RAMAS_HISTORICAS_20260615.xlsx](MATRIZ_RAMAS_HISTORICAS_20260615.xlsx).
-
-La matriz por repo queda en [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md).
-
-La version CSV queda en [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.csv](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.csv).
-
-La version Excel queda en [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.xlsx](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.xlsx).
-
-La wave base absorbida sigue siendo [20260615-pr-cierre-atomico-v1](../hitos/20260615-pr-cierre-atomico-v1/README.md).
-
-La cobertura atomica energetica introduce `atomic_energy_phase` y `atomic_next_impulse` como declaracion visible en superficies gobernadas.
-
-- [README_CORTO.md](README_CORTO.md)
-- [MAPA_CORTO.md](MAPA_CORTO.md)
-
-- [CONTROL.md](CONTROL.md)
-- [METODO.md](METODO.md)
-- [START_HERE.md](START_HERE.md)
-- [START_HERE_CIERRE_WAVE.md](START_HERE_CIERRE_WAVE.md)
-- [PROMPT_CIERRE_WAVE.md](PROMPT_CIERRE_WAVE.md)
-- [ANCLAS_ON_DEMAND.md](ANCLAS_ON_DEMAND.md)
-- [PROMPT_NUEVO_HILO.md](PROMPT_NUEVO_HILO.md)
-- [PLAN_COMPLETAR_ESTRUCTURA.md](PLAN_COMPLETAR_ESTRUCTURA.md)
-- [MANIFESTS.md](MANIFESTS.md)
-- [RETENCION.md](RETENCION.md)
-- [READBACK_CIERRE_20260615.md](READBACK_CIERRE_20260615.md)
-- [TODO_20260615.md](TODO_20260615.md)
-- [ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md](ACTA_DIAGNOSTICO_LIMPIEZA_PC_20260615.md)
-- [ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md](ACTA_CIERRE_REPOS_GIT_MAIN_ONLY_20260615.md)
-- [ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md](ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md)
-- [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md)
-- [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.csv](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.csv)
-- [MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.xlsx](MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.xlsx)
-- [ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md](ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md)
-- [ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md](ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md)
-- [CONTROL_TOTAL_20260615.md](CONTROL_TOTAL_20260615.md)
-- [CODEX_ROOT_CONTROL_20260615.md](CODEX_ROOT_CONTROL_20260615.md)
-- [CODEX_ROOT_DIFF_20260615.md](CODEX_ROOT_DIFF_20260615.md)
-- [CODEX_ROOT_LIGHTENING_20260615.md](CODEX_ROOT_LIGHTENING_20260615.md)
-- [TAXONOMIA_NOMENCLATURA_20260615.md](TAXONOMIA_NOMENCLATURA_20260615.md)
-- [NOMENCLATURA_CADENA_OPERATIVA_20260615.md](NOMENCLATURA_CADENA_OPERATIVA_20260615.md)
-- [ACTA_CORTE_EJECUTORA_20260615.md](ACTA_CORTE_EJECUTORA_20260615.md)
-- [DICCIONARIO_VERSIONADOS.md](DICCIONARIO_VERSIONADOS.md)
-- [DICCIONARIO_VERSIONADOS_MAESTRO_20260615.md](DICCIONARIO_VERSIONADOS_MAESTRO_20260615.md)
-- [EXTRACCION_PRIORITARIA_20260615.md](EXTRACCION_PRIORITARIA_20260615.md)
-- [ORDEN_RESOLUCION_SUPERFICIES_20260615.md](ORDEN_RESOLUCION_SUPERFICIES_20260615.md)
-- [CIERRE_SUPERFICIES_20260615.md](CIERRE_SUPERFICIES_20260615.md)
-- [MAPA.md](MAPA.md)
-
-## Regla
-
-- Cada paso debe caber en una sola decision o entrega.
-- Si algo crece, se parte en una pieza nueva antes de seguir.
-- La vista compacta queda en [README_CORTO.md](README_CORTO.md) y [MAPA_CORTO.md](MAPA_CORTO.md).
-- La entrada compacta queda en [README_CORTO.md](README_CORTO.md).
-
-## Metadatos
-
-Los artefactos Markdown de `operativa/` usan front matter YAML:
-
-```yaml
----
-artifact_id: operativa/README.md
-categoria: operativa
-tipo: indice
-estado: live
-version: 2026.06.21
-origen: GitHub
-ubicacion_repo: operativa/README.md
----
-```
-
-Para CSV/JSON se usa archivo hermano `*.meta.json` con el mismo esquema declarado en `/schema.json`.
-
-Convencion de `artifact_id` en `operativa/`:
-
-- Markdown (`.md`): ruta con extension (ej. `operativa/README.md`).
-- Datasets (`.csv`/`.json`): ruta sin extension en su sidecar `*.meta.json` (ej. `operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617`).
+- No live por inferencia.
+- No secretos.
+- No DB/cache mutation.
+- No push/PR sin gate.
+- No archivos sueltos nuevos en raiz.

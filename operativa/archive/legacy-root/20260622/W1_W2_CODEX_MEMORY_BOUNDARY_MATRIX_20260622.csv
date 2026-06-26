@@ -1,0 +1,5 @@
+"surface","classification","allowed","blocked","gate","evidence","decision"
+"C:\Users\enzo1\.codex","RUNTIME_MEMORY_DO_NOT_TOUCH","read maps/config only when ordered","db cache workspaceStorage cleanup secret print","owner_cleanup_gate","AGENTS local and W0/W4 matrices","NO_MUTATION"
+"C:\Users\enzo1\.codex\plugins\cache","PLUGIN_CACHE_REFERENCE","read SKILL.md and classify","delete install promote all cache","plugin_owner_gate","operativa/archive/legacy-root/20260622/W4_PLUGIN_CACHE_REFERENCE_MATRIX_20260622.csv","REFERENCE_ONLY"
+"VS Code Insiders workspaceStorage","RUNTIME_MEMORY_DO_NOT_TOUCH","status read only","delete repair mutate DB","ide_state_gate","tools/cabina/Invoke-CabinaGovernancePrecheck.ps1","NO_MUTATION"
+".env.local","SECRET_BOUNDARY","existence check only","read print copy upload","secret_safe_owner_gate","W6 security boundary pending","DO_NOT_READ"

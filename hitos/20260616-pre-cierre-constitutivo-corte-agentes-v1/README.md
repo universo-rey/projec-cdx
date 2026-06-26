@@ -37,12 +37,12 @@ Este paquete versiona la revision preliminar de la corte de agentes y la conecta
 - [READBACK.md](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1/READBACK.md)
 - [INDICE.csv](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1/INDICE.csv)
 - [MANIFEST.yaml](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-pre-cierre-constitutivo-corte-agentes-v1/MANIFEST.yaml)
-- [operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md)
-- [operativa/PLAN_CIERRE_UNIVERSAL_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PLAN_CIERRE_UNIVERSAL_20260616.md)
-- [operativa/INFORME_CRONOLOGICO_CIERRE_20260615_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/INFORME_CRONOLOGICO_CIERRE_20260615_20260616.md)
-- [operativa/PRELIMINARES_CIERRE_TOTAL_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/PRELIMINARES_CIERRE_TOTAL_20260616.md)
-- [operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md)
-- [operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv](C:/Users/enzo1/PROJEC%20CDX/operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv)
+- [operativa/archive/legacy-root/20260615/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260615/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md)
+- [operativa/archive/legacy-root/20260616/PLAN_CIERRE_UNIVERSAL_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260616/PLAN_CIERRE_UNIVERSAL_20260616.md)
+- [operativa/archive/legacy-root/20260615/INFORME_CRONOLOGICO_CIERRE_20260615_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260615/INFORME_CRONOLOGICO_CIERRE_20260615_20260616.md)
+- [operativa/archive/legacy-root/20260616/PRELIMINARES_CIERRE_TOTAL_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260616/PRELIMINARES_CIERRE_TOTAL_20260616.md)
+- [operativa/archive/legacy-root/20260616/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260616/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md)
+- [operativa/archive/legacy-root/20260616/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260616/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.csv)
 
 ## Condicion De Avance
 

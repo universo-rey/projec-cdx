@@ -1,0 +1,20 @@
+path,classification,decision,reason
+README.md,PROMOTE_NOW,STAGE,entrada humana corta y frontdoor vivo
+MAPA_MAESTRO.md,PROMOTE_NOW,STAGE,navegacion viva unica sin depender de archive masivo
+MAPA_CAPAS.md,PROMOTE_NOW,STAGE,sistema nervioso y cadena entrada-salida
+operativa/CURRENT.md,PROMOTE_NOW,STAGE,estado vivo actual de la cabina
+operativa/NEXT.md,PROMOTE_NOW,STAGE,siguiente delta vivo y carriles delegados
+operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv,PROMOTE_NOW,STAGE,matriz de tareas de convergencia de raiz
+operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv.meta.json,PROMOTE_NOW,STAGE,metadata de matriz de convergencia
+operativa/tasks/20260623/READBACK_ROOT_SURFACE_CONVERGENCE_TASKS_20260623.md,PROMOTE_NOW,STAGE,readback de preparacion de convergencia
+operativa/tasks/20260623/READBACK_ROOT_FRONTDOOR_CONVERGENCE_20260623.md,PROMOTE_NOW,STAGE,readback de frontdoor convergido
+operativa/tasks/20260623/ORGANISMO_VIVO_PACKAGE_ASSIMILATION_MATRIX_20260623.csv,PROMOTE_NOW,STAGE,matriz de asimilacion del paquete organismo vivo
+operativa/tasks/20260623/ORGANISMO_VIVO_PACKAGE_ASSIMILATION_MATRIX_20260623.csv.meta.json,PROMOTE_NOW,STAGE,metadata de matriz de asimilacion
+operativa/tasks/20260623/READBACK_ORGANISMO_VIVO_PACKAGE_ASSIMILATION_20260623.md,PROMOTE_NOW,STAGE,readback de asimilacion del lenguaje del paquete
+operativa/tasks/20260623/PROMOTE_ONLY_FRONTDOOR_MATRIX_20260623.csv,PROMOTE_NOW,STAGE,matriz de decision de promocion chica
+operativa/tasks/20260623/READBACK_PROMOTE_ONLY_FRONTDOOR_20260623.md,PROMOTE_NOW,STAGE,cierre de promocion chica sin archive masivo
+operativa/archive,HOLD_ARCHIVE_REVIEW,DO_NOT_STAGE,archivo masivo con 221 diferencias de hash pendientes
+operativa/* deleted,HOLD_ARCHIVE_REVIEW,DO_NOT_STAGE,bajas masivas no se promueven en commit chico
+hitos/* modified,HOLD_SECOND_PASS,DO_NOT_STAGE,historia versionada no pertenece al frontdoor chico
+outputs/* modified,HOLD_SECOND_PASS,DO_NOT_STAGE,salidas generadas no pertenecen al frontdoor chico
+operativa/snapshots/* modified,HOLD_SECOND_PASS,DO_NOT_STAGE,snapshots requieren carril propio

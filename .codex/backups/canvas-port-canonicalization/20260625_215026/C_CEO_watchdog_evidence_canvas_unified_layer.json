@@ -1,0 +1,58 @@
+{
+  "title": "SDU_AGILE_AGENT_CANVAS_UNIFIED_OPERATIONS_LAYER",
+  "status": "SAFE_APPLIED",
+  "mode": "LOCAL_UI_INTEGRATION_ONLY",
+  "panel": "C:\\CEO\\watchdog\\noc-web\\canvas.html",
+  "endpointReused": "POST /execute",
+  "newEndpoints": 0,
+  "graphPerformance": {
+    "fullGraphLoadedByUi": false,
+    "sourceGraph": "C:\\CEO\\project-cdx\\graphify-out\\graph.json",
+    "views": [
+      "C:\\CEO\\watchdog\\graphify-out\\views\\watchdog.json",
+      "C:\\CEO\\watchdog\\graphify-out\\views\\noc.json",
+      "C:\\CEO\\watchdog\\graphify-out\\views\\commands.json",
+      "C:\\CEO\\watchdog\\graphify-out\\views\\runtime.json"
+    ]
+  },
+  "integrations": {
+    "noc": [
+      "predictive_score.json",
+      "g6_loop_last.json",
+      "anomalies.jsonl"
+    ],
+    "actions": [
+      "actions_catalog.json",
+      "POST /execute",
+      "action_execution.jsonl"
+    ],
+    "history": [
+      "action_execution.jsonl",
+      "alerts.jsonl",
+      "anomalies.jsonl"
+    ]
+  },
+  "synchronization": {
+    "stateMs": 3000,
+    "graph": "on_demand",
+    "historyMs": 5000
+  },
+  "safeguards": [
+    "No Dataverse writes",
+    "No SharePoint writes",
+    "No watchdog core changes",
+    "No loop base changes",
+    "No automatic execution",
+    "Action execution requires modal confirmation"
+  ],
+  "generatedAt": "2026-06-25T21:44:27.1324768-03:00",
+  "backupRoot": "C:\\CEO\\project-cdx\\.codex\\backups\\canvas-layer\\20260625_214426",
+  "runtimeUrl": "http://127.0.0.1:8081/noc-web/canvas.html",
+  "validation": {
+    "canvasHttp": 200,
+    "graphIndexHttp": 200,
+    "executeProbe": "POST /execute with invalid actionId returned 404 action not found",
+    "actionExecutionLogBytesAfterValidation": 0,
+    "note": "Port 8080 serves existing static process; port 8081 runs owner_actions_server.py with POST /execute."
+  }
+}

@@ -1,0 +1,14 @@
+
+command               : ceo-ide-telemetry-status
+status                : IDE_TELEMETRY_STATUS_READY
+generated_at          : 2026-06-24T00:56:22Z
+root                  : C:\CEO\project-cdx
+runtime_state_command : {[path, tools/ceo-runtime-state.ps1], [status, READY]}
+runtime_summary       : @{mode=OPERACION_CONTINUA_GOBERNADA; version_actual=v0.6.0-rc1; baseline_version=v0.6.0-rc1; branch=codex/runtime-versioning-snapshots; commit=e2417ca82c9fa465413f431aeae0890f98e38911; dirty=True; status_count=3; generated_at_utc=24/6/2026 00:56:22}
+telemetry_json        : {@{path=telemetry.json; exists=False; status=MISSING; keys=System.Object[]; last_write_time=}, @{path=operativa/telemetry.json; exists=False; status=MISSING; keys=System.Object[]; last_write_time=}, @{path=operativa/runtime-events/telemetry.json; exists=False; status=MISSING; keys=System.Object[]; last_write_time=}, @{path=.vscode/telemetry.json; exists=False; status=MISSING; keys=System.Object[]; last_write_time=}, @{path=VERSION_STATE.json; exists=True; status=VALID; keys=System.Object[]; last_write_time=2026-06-23T21:56:22-03:00}}
+sentinel_command      : {[path, tools/ceo-runtime-sentinel.ps1], [status, READY]}
+sentinel_report       : {[path, operativa/sentinel/SENTINEL_REPORT.json], [status, VALID], [summary, @{status=WARN; drift_detected=True; report_id=SENTINEL_RUNTIME_20260624_0023; created_at_utc=24/6/2026 00:23:22; checks=}]}
+task_statuses         : {@{label=CEO Command: Telemetry; status=READY}, @{label=CEO Command: Watchdog; status=READY}, @{label=CEO IDE: Telemetry Status; status=READY}, @{label=CEO IDE: Evidence Status; status=READY}}
+warnings              : {}
+policy                : {[do_not_create_noisy_logs, True], [use_json_outputs, True], [read_existing_reports, True]}
+frontera              : {[no_mcp_execution, True], [no_pr, True], [no_live, True], [no_push, True], [no_secret_read, True]}

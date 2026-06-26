@@ -1,0 +1,80 @@
+{
+  "integration_id": "INTEGRATION_PR03_CORE_G10_20260626",
+  "generated_at_local": "2026-06-26T09:57:44-03:00",
+  "generated_at_utc": "2026-06-26T12:57:44.5419247Z",
+  "live_branch": "codex/live-state-g10-governed-20260626",
+  "live_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "integration_branch": "codex/integration-g10-snapshot-20260626",
+  "integration_old_head": "81e0d868abe7db6cc7aff66abb214fd3dd8c238d",
+  "source_branch": "codex/version-core-g10-20260626",
+  "source_head": "63b983447d40442f2cfe214b3d00be53771c5323",
+  "changed_files": [
+    {
+      "status": "M",
+      "path": "MAPA_MAESTRO.md"
+    },
+    {
+      "status": "A",
+      "path": "SDU_STATE_G10.md"
+    },
+    {
+      "status": "A",
+      "path": "SDU_SYSTEM_CONTRACT.md"
+    },
+    {
+      "status": "M",
+      "path": "SYSTEM_NERVOUS_INDEX.json"
+    },
+    {
+      "status": "M",
+      "path": "contracts/schemas/system-nervous-index.schema.json"
+    },
+    {
+      "status": "M",
+      "path": "docs/MAPA.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/README.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/index.md"
+    },
+    {
+      "status": "M",
+      "path": "operativa/CONTROL.md"
+    },
+    {
+      "status": "M",
+      "path": "operativa/CURRENT.md"
+    },
+    {
+      "status": "M",
+      "path": "operativa/NEXT.md"
+    },
+    {
+      "status": "M",
+      "path": "operativa/TRACE.md"
+    }
+  ],
+  "overlap_count": 0,
+  "source_diff_check": "PASS",
+  "mode": "no_checkout_no_pr_no_merge_command",
+  "forbidden_actions": [
+    "checkout",
+    "switch",
+    "fetch",
+    "pull",
+    "pr",
+    "merge_command",
+    "rebase",
+    "reset",
+    "clean",
+    "restore",
+    "tag",
+    "live",
+    "g11_apply"
+  ],
+  "recommended_next_lane": "OWNER_DECISION_AFTER_PR03_CORE_G10"
+}

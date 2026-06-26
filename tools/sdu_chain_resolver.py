@@ -88,10 +88,21 @@ CORE_VALIDATORS = [
 
 CORE_EVIDENCE = [
     "inventarios/SKILLS_UNIFIED_TABLE.csv",
-    "operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md",
+    "operativa/archive/legacy-root/20260615/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md",
     "dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
     "atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
 ]
+
+ARCHIVED_ROOT_ALIASES = {
+    "operativa/archive/legacy-root/20260615/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md": (
+        "operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md",
+    ),
+    "operativa/archive/legacy-root/20260616/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md": (
+        "operativa/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md",
+    ),
+}
+
+ABSTRACT_ENDPOINT_PREFIXES = ("<RUNTIME_PATH>/",)
 
 
 @dataclass(frozen=True)
@@ -116,8 +127,22 @@ def _path(root: Path, value: str) -> Path:
     return root.joinpath(*parts)
 
 
+def _path_candidates(value: str) -> tuple[str, ...]:
+    return (value, *ARCHIVED_ROOT_ALIASES.get(value, ()))
+
+
+def _existing_path(root: Path, value: str) -> Path | None:
+    for candidate in _path_candidates(value):
+        path = _path(root, candidate)
+        if path.exists():
+            return path
+    return None
+
+
 def _exists(root: Path, value: str) -> bool:
-    return _path(root, value).exists()
+    if value.startswith(ABSTRACT_ENDPOINT_PREFIXES):
+        return True
+    return _existing_path(root, value) is not None
 
 
 def _read_csv(path: Path) -> list[dict[str, str]]:
@@ -177,7 +202,12 @@ def _load_agent_profiles(root: Path) -> dict[str, str]:
 
 
 def _select_existing(root: Path, paths: list[str]) -> list[str]:
-    return [path for path in paths if _exists(root, path)]
+    selected = []
+    for path in paths:
+        existing = _existing_path(root, path)
+        if existing is not None:
+            selected.append(_rel(existing, root))
+    return selected
 
 
 def _select_existing_recipes(root: Path, names: list[str]) -> list[str]:
@@ -242,7 +272,7 @@ def build_graph(
         "agentes:skills_inventory": "inventarios/SKILLS_UNIFIED_TABLE.csv",
         "agentes:recipes_index": "recipes/INDICE_RECETAS.md",
         "semantica:semantic_layer_repo": "docs/referencia/semantic-layer.md",
-        "semantica:semantic_canon": "operativa/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md",
+        "semantica:semantic_canon": "operativa/archive/legacy-root/20260616/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md",
         "motor:metadata_cli": "src/metadata/cli.py",
         "motor:doc_report": "src/metadata/doc_report.py",
         "motor:validate": "tools/validate.py",
@@ -255,7 +285,7 @@ def build_graph(
         "evidencia:hitos_index": "hitos/INDICE_MAESTRO.md",
         "evidencia:source_map": "dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
         "evidencia:atomic_matrix": "atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
-        "salida:outputs": "outputs/README.md",
+        "salida:runtime_endpoint": "<RUNTIME_PATH>/README.md",
         "salida:cli_metadata_doc": "docs/herramientas/cli-metadata.md",
     }
     for name, relative in required_files.items():
@@ -329,11 +359,11 @@ def build_graph(
             "skills": "inventarios/SKILLS_UNIFIED_TABLE.csv",
             "recipes": "recipes/INDICE_RECETAS.md",
             "tools": "tools/",
-            "semantica": "docs/referencia/semantic-layer.md + projec-cdx-semantic-layer + operativa/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md",
+            "semantica": "docs/referencia/semantic-layer.md + projec-cdx-semantic-layer + operativa/archive/legacy-root/20260616/CANON_SEMANTICO_WAVE_ATOMICA_METADATA_20260616.md",
             "modelo": "schema.json, index.json, live-manifest.json",
             "dataverse": "dataverse/DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv",
             "atomic": "atomic/CODEX_ATOMIC_ACTION_MATRIX.csv",
-            "salida": "outputs/README.md, docs/herramientas/cli-metadata.md",
+            "salida": "<RUNTIME_PATH>/README.md, docs/herramientas/cli-metadata.md",
         },
     }
 

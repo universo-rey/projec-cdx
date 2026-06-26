@@ -1,0 +1,12 @@
+Connected as efigueroa@registronotarial8tdf.com.ar
+Connected to... HUBDesarrollo
+
+Listing all Solutions from the current Dataverse organization...
+Unique Name               Friendly Name                         Version Managed
+Cr54a74                   Common Data Services Default Solution 1.0.0.0 False
+GestordeCopilotos         Gestor de Copilotos                   1.0.0.0 False
+MDE                       MDE                                   1.0.0.0 False
+SDUCapabilityControlPlane SDU Capability Control Plane          0.1.0.0 False
+sdu_runtime_control_plane SDU Runtime Control Plane             1.0.1.0 False
+Default                   Solución predeterminada               1.0     False
+SPGovernanceModel         SP Governance Model                   1.0.0.0 False

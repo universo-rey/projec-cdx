@@ -3,7 +3,7 @@
 ## H-001 - Entrada Gobernada
 
 - Estado: `closed`
-- Evidencia: `operativa/START_HERE.md`, `operativa/PROMPT_NUEVO_HILO.md`
+- Evidencia: `operativa/archive/legacy-root/undated/START_HERE.md`, `operativa/archive/legacy-root/undated/PROMPT_NUEVO_HILO.md`
 - Resultado: hilos nuevos tienen orden de lectura, guardrails y preflight.
 
 ## H-002 - Playbooks Completos
@@ -27,7 +27,7 @@
 ## H-005 - Manifests Y Retencion
 
 - Estado: `closed`
-- Evidencia: `operativa/MANIFESTS.md`, `operativa/RETENCION.md`, `outputs/RETENCION.md`
+- Evidencia: `operativa/archive/legacy-root/undated/MANIFESTS.md`, `operativa/archive/legacy-root/undated/RETENCION.md`, `outputs/RETENCION.md`
 - Resultado: salidas durables y outputs tienen regla minima de gobierno.
 
 ## H-006 - Dataverse Gobernado

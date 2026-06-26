@@ -2,7 +2,7 @@
 
 Vista unica del archivo versionado de hitos operativos de `PROJEC CDX`.
 
-Si queres reanudar una wave de cierre, entrar por [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
+Si queres reanudar una wave de cierre, entrar por [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md).
 
 La capa de matrices, controles y otras superficies de gobierno vive en `C:\Users\enzo1\.codex`.
 Este mapa solo indexa los hitos versionados de este workbench.

@@ -1,0 +1,12 @@
+category,status,file_count,total_bytes,command_candidate,task_label,decision,evidence
+runtime,OBSERVED,38,350538,ceo-ide-telemetry-status,CEO IDE: Telemetry Status,"Usar runtime state como telemetria operativa; no crear logs ruidosos","tools/ceo-ide-telemetry-status.ps1 -Json"
+command,OBSERVED,155,1573458,ceo-ide-evidence-status,CEO IDE: Evidence Status,"Mantener comandos ceo-* y tasks como superficie de evidencia reutilizable","tools/ceo-ide-evidence-status.ps1 -Json"
+agent,OBSERVED,4,11038,ceo-ide-evidence-status,CEO IDE: Evidence Status,"Conservar evidencia de agent map y agent MCP hub en operativa/tasks","operativa/tasks/20260623/IDE_AGENT_MCP_CONTROL_MATRIX_20260623.csv"
+mcp,OBSERVED,3,11502,ceo-ide-evidence-status,CEO IDE: Evidence Status,"Registrar MCP como observado/configurado sin ejecutar servidores","tools/ceo-ide-mcp-status.ps1 -Json"
+git,OBSERVED,7,13064,ceo-ide-evidence-status,CEO IDE: Evidence Status,"Usar workflows y readbacks como evidencia git; no push/no PR","operativa/tasks/20260623/READBACK_IDE_COMMAND_CONTROL_20260623.md"
+watchdog,OBSERVED,5,776826,ceo-ide-telemetry-status,CEO IDE: Evidence Telemetry Control,"Sentinel report valido; WARN por dirty preexistente, metadata y snapshot PASS","operativa/sentinel/SENTINEL_REPORT.json"
+telemetry,OBSERVED,22,128561,ceo-ide-telemetry-status,CEO IDE: Telemetry Status,"No hay telemetry.json dedicado; VERSION_STATE.json valido actua como telemetria runtime","VERSION_STATE.json"
+remote,OBSERVED,76,364465,ceo-ide-evidence-status,CEO IDE: Evidence Status,"Registrar superficie remote como evidencia pasiva; no live/no push/no PR","operativa/tasks/20260623"
+decision,OBSERVED,71,483621,ceo-ide-evidence-status,CEO IDE: Evidence Status,"Readbacks y matrices quedan como decision log minimo por task","operativa/tasks/20260623"
+task_runner,READY,31,0,ceo-ide-tasks-status,CEO IDE: Evidence Telemetry Control,"31 tasks productivas, 0 rotas, 1 candidato remoto pendiente por gate","tools/ceo-ide-tasks-status.ps1 -Json"
+command_surface,READY,28,0,ceo-ide-command-test,CEO Command: Test,"28 herramientas ceo-* detectadas, 0 failures, 1 candidato remoto pendiente por gate","tools/ceo-ide-command-test.ps1 -Json"

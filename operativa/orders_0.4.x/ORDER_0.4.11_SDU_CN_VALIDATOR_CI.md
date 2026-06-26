@@ -42,7 +42,7 @@ Revertir registro en manifests, cableado en `ci/validate_repo.ps1` y cambios en 
 - Artefactos gobernados omitidos hacen fallar la validacion.
 
 ## Evidencia local
-- operativa/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
 - operativa/orders_0.2.x/ORDER_0.2.4_SDU_CN_ISSUE_PREP_REMOTE_ALIGNMENT.md
 
 ## Resultado

@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "kind": "FIX_G10_DIFFCHECK_AND_SENSITIVE_REVIEW",
+  "generated_at_utc": "2026-06-26T13:36:38.3889042Z",
+  "generated_at_local": "2026-06-26T10:36:38.3923175-03:00",
+  "root": null,
+  "live": {
+    "branch": "codex/live-state-g10-governed-20260626",
+    "head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11"
+  },
+  "integration": {
+    "branch": "codex/integration-g10-snapshot-20260626",
+    "old_head": "0ddef91c6c485de2f675121783f1c4206e528524",
+    "repair_commit": "892130a3f86221c32560845c2dd73d2b4429f557"
+  },
+  "origin_main": {
+    "head": "56a4eda1dd36c545c12546bb37fc2046dbb7fb05"
+  },
+  "initial_diffcheck": {
+    "status": "FAIL",
+    "issue_count": 78,
+    "trailing_whitespace": 57,
+    "blank_line_at_eof": 21,
+    "dominant_file": {
+      "file": "08_READBACKS/20260625_011725_SDU_G5_2D_WATCHDOG_PATCH.md",
+      "count": 52
+    }
+  },
+  "repaired_files": [
+    ".codex/backups/boot-unification/20260625_221726/windows-terminal-settings.after-first-attempt.json",
+    ".codex/backups/owner-panel/20260625_213107/C_CEO_project-cdx_08_READBACKS_SDU_GOVERNANCE_REFINEMENT.md",
+    ".github/copilot-instructions.md",
+    "08_READBACKS/20260625_004552_SDU_G5_2_DOCUMENTLOCATION_CREATE.md",
+    "08_READBACKS/20260625_011725_SDU_G5_2D_WATCHDOG_PATCH.md",
+    "08_READBACKS/SDU_GOVERNANCE_REFINEMENT.md",
+    "operativa/archive/legacy-root/20260616/PAC_COPILOT_LIST_HUBDESARROLLO_20260616.txt",
+    "operativa/archive/legacy-root/20260616/PAC_SOLUTION_LIST_HUBDESARROLLO_20260616.txt",
+    "operativa/tasks/20260623/CEO_IDE_CONTROL_PLANE_VSCODE_INSIDERS_G1_20260623.csv.meta.json",
+    "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_AGENT_CHAIN_20260623.csv",
+    "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_AGENT_CHAIN_20260623.csv.meta.json",
+    "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_BACKLOG_20260623.csv.meta.json",
+    "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_CAPABILITY_MATRIX_20260623.csv.meta.json",
+    "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_MCP_REGISTRY_20260623.csv",
+    "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_MCP_REGISTRY_20260623.csv.meta.json",
+    "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_MEMORY_DELTA_20260623.csv",
+    "operativa/tasks/20260623/CEO_PRODUCTIVE_CELL_G1_MEMORY_DELTA_20260623.csv.meta.json",
+    "operativa/tasks/20260624/CABINA_VSCODE_INSIDERS_ENV_CANON_G1_20260623_215620/environment/powershell-version.txt",
+    "operativa/tasks/20260624/CABINA_VSCODE_INSIDERS_ENV_CANON_G1_20260623_215620/vscode-insiders/ceo-ide-command-index.txt",
+    "operativa/tasks/20260624/CABINA_VSCODE_INSIDERS_ENV_CANON_G1_20260623_215620/vscode-insiders/ceo-ide-telemetry-status.txt",
+    "operativa/tasks/20260624/CABINA_VSCODE_INSIDERS_ENV_CANON_G1_20260623_215620/vscode-insiders/ceo-ide-terminal-status.txt",
+    "tools/ceo-agent-map.ps1",
+    "tools/ceo-cabina-doctor.ps1",
+    "tools/ceo-intelligence-loop.ps1",
+    "tools/ceo-mcp-status.ps1"
+  ],
+  "sensitive_review": {
+    "changed_file_count": 1374,
+    "secret_word_policy_files": [
+      {
+        "file": "operativa/archive/legacy-root/20260622/READBACK_SECRET_SAFE_EXCEPTION_CODE_HARDENING_V1_20260622.md",
+        "classification": "SECRET_WORD_IN_POLICY_OR_READBACK_NAME",
+        "value": "NO_SECRET_VALUE"
+      },
+      {
+        "file": "operativa/archive/legacy-root/20260622/READBACK_SECRET_SAFE_EXCEPTION_REPORTING_20260622.md",
+        "classification": "SECRET_WORD_IN_POLICY_OR_READBACK_NAME",
+        "value": "NO_SECRET_VALUE"
+      },
+      {
+        "file": "operativa/archive/legacy-root/20260622/SDU_MAX_BASELINE_LIVE_SECRET_POLICY_20260622.md",
+        "classification": "SECRET_WORD_IN_POLICY_OR_READBACK_NAME",
+        "value": "NO_SECRET_VALUE"
+      },
+      {
+        "file": "operativa/archive/legacy-root/20260622/SECRET_SAFE_EXCEPTION_CODE_HARDENING_V1_20260622.csv",
+        "classification": "SECRET_WORD_IN_POLICY_OR_READBACK_NAME",
+        "value": "NO_SECRET_VALUE"
+      },
+      {
+        "file": "operativa/archive/legacy-root/20260622/SECRET_SAFE_EXCEPTION_REPORTING_AUDIT_20260622.csv",
+        "classification": "SECRET_WORD_IN_POLICY_OR_READBACK_NAME",
+        "value": "NO_SECRET_VALUE"
+      }
+    ],
+    "negative_test": {
+      "file": "tests/run-contract-tests.ps1",
+      "classification": "INTENTIONAL_NEGATIVE_TEST_PLACEHOLDER",
+      "value": "NO_SECRET_VALUE_EXPOSED"
+    },
+    "real_secret_candidate_files": [],
+    "no_real_secret": true,
+    "summary": {
+      "SECRET_WORD_IN_POLICY_OR_READBACK_NAME": 5,
+      "INTENTIONAL_NEGATIVE_TEST_PLACEHOLDER": 1,
+      "NO_SECRET_VALUE_EXPOSED": true,
+      "REAL_SECRET_CANDIDATE_BLOCKER": 0
+    }
+  },
+  "post_repair_diffcheck": {
+    "status": "PASS",
+    "issue_count": 0
+  },
+  "validators": [
+    {
+      "name": "sync",
+      "status": "PASS",
+      "exit_code": 0,
+      "real_fail_count": 0,
+      "observed_count": 0,
+      "parseable_json": true
+    },
+    {
+      "name": "workbench",
+      "status": "OBSERVED",
+      "exit_code": 0,
+      "real_fail_count": 0,
+      "observed_count": 50,
+      "parseable_json": true
+    },
+    {
+      "name": "operational_chain",
+      "status": "PASS",
+      "exit_code": 0,
+      "real_fail_count": 0,
+      "observed_count": 0,
+      "parseable_json": true
+    },
+    {
+      "name": "sdu_boot",
+      "status": "PASS",
+      "exit_code": 0,
+      "real_fail_count": 0,
+      "observed_count": 0,
+      "parseable_json": true
+    },
+    {
+      "name": "dataverse_metadata_wave",
+      "status": "PASS",
+      "exit_code": 0,
+      "real_fail_count": 0,
+      "observed_count": 0,
+      "parseable_json": false
+    }
+  ],
+  "rollback": {
+    "integration_ref": "0ddef91c6c485de2f675121783f1c4206e528524"
+  },
+  "declaration": "PR real sigue bloqueado hasta revalidacion PASS; este gate habilita el siguiente carril si el postcheck queda PASS.",
+  "decision": "G10_PR_PREP_BLOCKERS_FIXED_WITH_REVIEW",
+  "prohibitions_respected": [
+    "no_checkout",
+    "no_switch",
+    "no_fetch",
+    "no_pull",
+    "no_merge",
+    "no_rebase",
+    "no_reset",
+    "no_clean",
+    "no_restore",
+    "no_tag",
+    "no_pr",
+    "no_live",
+    "no_g11",
+    "no_graph",
+    "no_sharepoint",
+    "no_dataverse_live",
+    "no_power_platform",
+    "no_secret_exposure",
+    "no_force_push",
+    "no_branch_delete"
+  ]
+}

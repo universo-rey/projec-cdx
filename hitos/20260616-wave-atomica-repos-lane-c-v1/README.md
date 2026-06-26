@@ -20,9 +20,9 @@ Paquete corto para dejar preparada la lane C de la wave atomica de repositorios,
 
 ## Evidencia Minima
 
-- [operativa/WAVE_ATOMICA_REPOS_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/WAVE_ATOMICA_REPOS_20260616.md)
+- [operativa/archive/legacy-root/20260616/WAVE_ATOMICA_REPOS_20260616.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260616/WAVE_ATOMICA_REPOS_20260616.md)
 - [operativa/TRACE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TRACE.md)
-- [operativa/MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md)
+- [operativa/archive/legacy-root/20260615/MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260615/MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md)
 - [docs/superpowers/plans/2026-06-16-wave-atomica-repositorios.md](C:/Users/enzo1/PROJEC%20CDX/docs/superpowers/plans/2026-06-16-wave-atomica-repositorios.md)
 
 ## Regla

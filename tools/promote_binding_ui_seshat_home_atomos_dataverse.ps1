@@ -156,7 +156,7 @@ else {
 }
 
 $sourcePatchBody = @{
-    mon_source_path       = "PROJEC CDX/operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md"
+    mon_source_path       = "PROJEC CDX/operativa/archive/legacy-root/20260617/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md"
     mon_source_hash       = $sourceHash
     mon_source_system     = "SHAREPOINT_SESHATHUB_BINDING_ATOM"
     mon_tenant_scope      = "escribaniabitsch.sharepoint.com"

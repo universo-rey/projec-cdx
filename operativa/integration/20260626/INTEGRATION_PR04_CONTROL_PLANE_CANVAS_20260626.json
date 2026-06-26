@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "kind": "PR04_CONTROL_PLANE_CANVAS_INTEGRATION_EVIDENCE",
+  "generated_at_utc": "2026-06-26T13:14:21.8872055Z",
+  "mode": "OWNER_GATE_INTEGRATE_PR04_CONTROL_PLANE_CANVAS_AND_VALIDATE_NO_PR",
+  "root": "C:\\CEO\\project-cdx",
+  "live": {
+    "branch": "codex/live-state-g10-governed-20260626",
+    "head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11"
+  },
+  "integration_before": {
+    "branch": "codex/integration-g10-snapshot-20260626",
+    "head": "cf6d30edd7ca14185ad63bec9530c51d4827fa01",
+    "remote": "cf6d30edd7ca14185ad63bec9530c51d4827fa01"
+  },
+  "source": {
+    "branch": "codex/version-control-plane-canvas-20260626",
+    "head": "1ffafe291bae5f61e4e29c45db6cc87cce06d3ae",
+    "remote": "1ffafe291bae5f61e4e29c45db6cc87cce06d3ae"
+  },
+  "delta_vs_live": [
+    "M\t.agileagentcanvas-context/sdu/README.md",
+    "A\t.agileagentcanvas-context/sdu/artifacts/sdu-system.json",
+    "M\t.agileagentcanvas-context/sdu/exports/sdu-native-project.json",
+    "M\t.agileagentcanvas-context/sdu/exports/sdu-native-project.md",
+    "M\t.agileagentcanvas-context/sdu/project.json",
+    "M\t.agileagentcanvas-context/sdu/relationships.json"
+  ],
+  "source_files": [
+    ".agileagentcanvas-context/sdu/README.md",
+    ".agileagentcanvas-context/sdu/artifacts/sdu-system.json",
+    ".agileagentcanvas-context/sdu/exports/sdu-native-project.json",
+    ".agileagentcanvas-context/sdu/exports/sdu-native-project.md",
+    ".agileagentcanvas-context/sdu/project.json",
+    ".agileagentcanvas-context/sdu/relationships.json"
+  ],
+  "overlap_count": 0,
+  "overlap_conflicts": [],
+  "method": "GIT_INDEX_FILE + read-tree + update-index + write-tree + commit-tree + update-ref",
+  "restrictions": [
+    "no_checkout",
+    "no_switch",
+    "no_fetch",
+    "no_pull",
+    "no_merge",
+    "no_rebase",
+    "no_reset",
+    "no_clean",
+    "no_restore",
+    "no_pr",
+    "no_tag",
+    "no_live",
+    "no_g11"
+  ]
+}

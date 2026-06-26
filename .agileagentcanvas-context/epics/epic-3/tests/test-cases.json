@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "test-cases",
+    "workflowName": "agileagentcanvas",
+    "projectName": "TaskFlow Pro",
+    "timestamps": {
+      "created": "2026-06-25T05:08:27.872Z",
+      "lastModified": "2026-06-25T05:08:27.872Z"
+    },
+    "status": "draft"
+  },
+  "content": {
+    "testCases": [
+      {
+        "id": "3.1-ACC-001",
+        "title": "Focus mode activates and batches notifications",
+        "description": "Activating focus mode suppresses non-urgent notifications and shows only the current task",
+        "type": "acceptance",
+        "status": "draft",
+        "priority": "P0",
+        "storyId": "3.1",
+        "epicId": "3",
+        "relatedRequirements": [
+          "FR-3"
+        ],
+        "tags": [
+          "focus-mode",
+          "notifications"
+        ]
+      }
+    ]
+  }
+}

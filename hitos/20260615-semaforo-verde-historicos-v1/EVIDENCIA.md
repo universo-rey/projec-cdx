@@ -2,7 +2,7 @@
 
 ## Acta
 
-- `operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md`.
+- `operativa/archive/legacy-root/20260615/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md`.
 - `outputs/live_repo_review_20260615/READBACK.md`.
 
 ## Indices

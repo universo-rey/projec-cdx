@@ -1,10 +1,10 @@
-param(
+	param(
     [string]$EnvironmentUrl = "https://org084965d9.crm.dynamics.com",
     [string]$TenantId = "858a0852-44a1-413e-a0fe-f053949797d6",
     [string]$EnvironmentId = "7f65fc04-c27a-ea0d-bd2d-266aa9203c1e",
-    [string]$ManifestoPath = "operativa/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md",
-    [string]$ReadbackPath = "operativa/READBACK_FAN_IN_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md",
-    [string]$OutputPath = "operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json"
+    [string]$ManifestoPath = "operativa/archive/legacy-root/20260616/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md",
+    [string]$ReadbackPath = "operativa/archive/legacy-root/20260616/READBACK_FAN_IN_MANIFIESTO_SDU_ESCRIBANIA_BITSCH_20260616.md",
+    [string]$OutputPath = "operativa/archive/legacy-root/20260616/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json"
 )
 
 # MANUAL-ONLY LIVE WRITE: Dataverse POST/PATCH capable. Requires explicit target, rollback, postcheck, and operator approval.

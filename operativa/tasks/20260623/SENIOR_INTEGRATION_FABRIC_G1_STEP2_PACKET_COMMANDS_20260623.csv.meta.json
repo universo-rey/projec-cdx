@@ -1,0 +1,28 @@
+{
+  "artifact_id": "operativa/tasks/20260623/SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS_20260623.csv",
+  "etiquetas": [
+    "integration-fabric",
+    "packet-commands",
+    "local-only",
+    "vscode-insiders"
+  ],
+  "relacionados": [
+    "tools/ceo-ide-to-codex-pack.ps1",
+    "tools/ceo-github-pr-pack.ps1",
+    "tools/ceo-dataverse-memory-delta.ps1",
+    "tools/ceo-sharepoint-evidence-pack.ps1",
+    "tools/ceo-integration-gates-status.ps1"
+  ],
+  "descripcion": "Matriz de comandos packet-only STEP2 para Senior Integration Fabric G1 sin ejecutar remoto, live ni secretos."
+}

@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDU - Panel de Decision</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0f14;
+      --panel: #121922;
+      --panel-2: #17202b;
+      --panel-3: #0f151d;
+      --text: #edf4fb;
+      --muted: #9fb1c3;
+      --green: #24c77a;
+      --yellow: #f5c451;
+      --orange: #ff9f43;
+      --red: #ff5d5d;
+      --blue: #78a6ff;
+      --border: #283543;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.45 Consolas, "Cascadia Mono", "Courier New", monospace;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+    }
+    main {
+      width: min(980px, 100%);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, .35);
+    }
+    header { border-bottom: 1px solid var(--border); padding-bottom: 18px; margin-bottom: 22px; }
+    h1 { margin: 0; font-size: 28px; letter-spacing: 0; }
+    h2 { margin: 0 0 14px; font-size: 18px; letter-spacing: 0; }
+    .subtitle { color: var(--muted); margin-top: 6px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 18px; }
+    .label { color: var(--muted); font-size: 13px; text-transform: uppercase; margin-bottom: 8px; }
+    .value { font-size: 22px; font-weight: 700; }
+    .green { color: var(--green); }
+    .yellow { color: var(--yellow); }
+    .orange { color: var(--orange); }
+    .red { color: var(--red); }
+    .blue { color: var(--blue); }
+    .wide { grid-column: 1 / -1; }
+    .diagnosis { font-size: 18px; white-space: pre-line; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    a.button, button.button {
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--panel-3);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font: inherit;
+      cursor: pointer;
+    }
+    a.button:hover, button.button:hover { border-color: #4a6074; }
+    button.button:disabled { color: #697887; cursor: not-allowed; border-color: #202a35; }
+    .meta { margin-top: 18px; color: var(--muted); font-size: 13px; }
+    .action-list { display: grid; gap: 10px; }
+    .action-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid var(--border);
+      background: rgba(15, 21, 29, .65);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .action-title { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-weight: 700; }
+    .action-description { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .tag.low { color: var(--green); border-color: rgba(36, 199, 122, .45); }
+    .tag.medium { color: var(--orange); border-color: rgba(255, 159, 67, .45); }
+    .tag.high { color: var(--red); border-color: rgba(255, 93, 93, .45); }
+    .feedback {
+      margin-top: 12px;
+      color: var(--green);
+      min-height: 24px;
+      white-space: pre-line;
+    }
+    .history-list { display: grid; gap: 8px; }
+    .history-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 10px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      font-size: 14px;
+    }
+    .history-item:last-child { border-bottom: 0; }
+    .muted { color: var(--muted); }
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(3, 6, 10, .72);
+      padding: 20px;
+      z-index: 10;
+    }
+    .modal-backdrop[hidden] { display: none; }
+    .modal-panel {
+      width: min(620px, 100%);
+      background: #111923;
+      border: 1px solid #344557;
+      border-radius: 8px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .45);
+      padding: 22px;
+    }
+    .modal-panel h2 { font-size: 22px; }
+    .modal-body { display: grid; gap: 12px; margin-top: 12px; }
+    .context-box {
+      border: 1px solid var(--border);
+      background: #0d131a;
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--muted);
+    }
+    .warning-box {
+      border: 1px solid rgba(255, 159, 67, .55);
+      color: var(--orange);
+      background: rgba(255, 159, 67, .08);
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+    @media (max-width: 760px) {
+      body { padding: 16px; }
+      main { padding: 20px; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 23px; }
+      .value { font-size: 19px; }
+      .action-item, .history-item { grid-template-columns: 1fr; }
+      .modal-actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>SDU - Panel de Decision</h1>
+      <div class="subtitle">Vista ejecutiva final para owner</div>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <div class="label">Estado</div>
+        <div id="state" class="value yellow">Cargando...</div>
+      </article>
+      <article class="card">
+        <div class="label">Riesgo</div>
+        <div id="risk" class="value orange">Cargando...</div>
+      </article>
+      <article class="card wide">
+        <div class="label">Diagnostico</div>
+        <div id="diagnosis" class="diagnosis">Leyendo fuentes locales.</div>
+      </article>
+      <article class="card wide">
+        <div class="label">Accion recomendada</div>
+        <div id="action" class="value green">No se requiere intervencion</div>
+      </article>
+      <article class="card wide">
+        <div class="label">Carriles</div>
+        <div id="systems">Cargando dominios...</div>
+      </article>
+      <article class="card wide">
+        <h2>⚙ ACCIONES OPERATIVAS</h2>
+        <div id="actionsContext" class="context-box">Leyendo contexto local...</div>
+        <div id="actionsList" class="action-list" aria-live="polite"></div>
+        <div id="actionFeedback" class="feedback" aria-live="polite"></div>
+      </article>
+      <article class="card wide">
+        <h2>📜 HISTORIAL DE ACCIONES</h2>
+        <div id="actionHistory" class="history-list">Sin ejecuciones registradas.</div>
+      </article>
+    </section>
+
+    <nav>
+      <a class="button" href="./">Ver NOC completo</a>
+      <a class="button" href="/logs/alerts.jsonl">Ver alertas</a>
+      <a class="button" href="/logs/decision_log.jsonl">Ver decisiones</a>
+      <a class="button" href="/evidence/governance_refinement.json">Ver evidencia</a>
+    </nav>
+
+    <div id="meta" class="meta"></div>
+  </main>
+
+  <div id="confirmModal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+    <div class="modal-panel">
+      <h2 id="confirmTitle">Confirmar accion</h2>
+      <div class="modal-body">
+        <div><span class="label">Accion</span><div id="modalActionName" class="value">-</div></div>
+        <div><span class="label">Riesgo</span><div id="modalRisk" class="value">-</div></div>
+        <div><span class="label">Impacto esperado</span><div id="modalImpact" class="diagnosis">-</div></div>
+        <div class="context-box"><strong>🔎 CONTEXTO</strong><div id="modalContext">-</div></div>
+        <div id="modalWarning" class="warning-box" hidden>Esta accion no es necesaria segun el sistema.</div>
+      </div>
+      <div class="modal-actions">
+        <button id="cancelExecution" class="button" type="button">Cancelar</button>
+        <button id="confirmExecution" class="button" type="button">Confirmar ejecucion</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const readJson = async (path) => {
+      try {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) return null;
+        return await response.json();
+      } catch {
+        return null;
+      }
+    };
+
+    const readJsonl = async (path) => {
+      try {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) return [];
+        const text = await response.text();
+        return text.split(/\r?\n/).filter(Boolean).map((line) => {
+          try { return JSON.parse(line); } catch { return { parseError: true, raw: line }; }
+        });
+      } catch {
+        return [];
+      }
+    };
+
+    const cls = (node, name) => {
+      node.className = "value " + name;
+    };
+
+    const latest = (items) => items.length ? items[items.length - 1] : null;
+    const riskClass = (risk) => String(risk || "LOW").toLowerCase();
+    const escapeHtml = (value) => String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+    let actionCatalog = [];
+    let ownerContext = {};
+    let pendingActionId = null;
+
+    function firstRecommendation(recommendations) {
+      const recs = Array.isArray(recommendations?.recommendations) ? recommendations.recommendations : [];
+      return recs[0]?.action || recommendations?.recommendation || recommendations?.action || "Sin recomendacion";
+    }
+
+    function noActionRequired(recommendations) {
+      return String(firstRecommendation(recommendations)).toUpperCase().includes("NO ACTION REQUIRED");
+    }
+
+    function contextText(score, recommendations) {
+      const recommendation = firstRecommendation(recommendations);
+      const parts = [
+        `Indice ${score?.score ?? "-"}`,
+        `Riesgo ${score?.risk || recommendations?.risk || "-"}`,
+        `Health ${score?.effectiveHealth || score?.health || recommendations?.effectiveHealth || "-"}`,
+        `Recomendacion ${recommendation}`
+      ];
+      if (noActionRequired(recommendations)) {
+        parts.push("El sistema indica NO ACTION REQUIRED. Esta accion es opcional.");
+      }
+      return parts.join(" | ");
+    }
+
+    function renderActions(actions, score, recommendations) {
+      actionCatalog = Array.isArray(actions) ? actions : [];
+      ownerContext = { score, recommendations };
+      document.getElementById("actionsContext").textContent = contextText(score, recommendations);
+      const list = document.getElementById("actionsList");
+      if (!actionCatalog.length) {
+        list.textContent = "Sin catalogo de acciones.";
+        return;
+      }
+      list.innerHTML = actionCatalog.map((action) => {
+        const risk = String(action.risk || "LOW").toUpperCase();
+        const disabled = risk === "HIGH";
+        const riskLabel = risk === "MEDIUM" ? "MEDIUM ⚠" : risk;
+        const safety = risk === "LOW" ? "accion informativa" : (risk === "MEDIUM" ? "requiere revision" : "deshabilitado");
+        return `<div class="action-item">
+          <div>
+            <div class="action-title"><span>${escapeHtml(action.label)}</span><span class="tag ${riskClass(risk)}">${escapeHtml(riskLabel)}</span><span class="muted">⛔ ${escapeHtml(safety)}</span></div>
+            <div class="action-description">${escapeHtml(action.description || "Accion local controlada desde catalogo.")}</div>
+          </div>
+          <button class="button" type="button" data-action-id="${escapeHtml(action.id)}" ${disabled ? "disabled" : ""}>Ejecutar</button>
+        </div>`;
+      }).join("");
+      list.querySelectorAll("button[data-action-id]").forEach((button) => {
+        button.addEventListener("click", () => executeAction(button.dataset.actionId));
+      });
+    }
+
+    function renderHistory(items) {
+      const history = document.getElementById("actionHistory");
+      const rows = (Array.isArray(items) ? items : []).slice(-8).reverse();
+      if (!rows.length) {
+        history.textContent = "Sin ejecuciones registradas.";
+        return;
+      }
+      history.innerHTML = rows.map((entry) => {
+        const name = entry.actionLabel || entry.actionId || "accion";
+        const result = entry.result || entry.status || "UNKNOWN";
+        const stamp = entry.timestamp || entry.executedAt || "sin fecha";
+        const color = String(result).toUpperCase().includes("FAIL") ? "red" : "green";
+        return `<div class="history-item"><span>${escapeHtml(name)}</span><span class="muted">${escapeHtml(stamp)}</span><span class="${color}">${escapeHtml(result)}</span></div>`;
+      }).join("");
+    }
+
+    function executeAction(actionId) {
+      openModal(actionId);
+    }
+
+    function openModal(actionId) {
+      const action = actionCatalog.find((item) => item.id === actionId);
+      if (!action || String(action.risk || "").toUpperCase() === "HIGH") return;
+      pendingActionId = actionId;
+      const risk = String(action.risk || "LOW").toUpperCase();
+      document.getElementById("modalActionName").textContent = action.label;
+      document.getElementById("modalRisk").textContent = risk;
+      cls(document.getElementById("modalRisk"), risk === "MEDIUM" ? "orange" : "green");
+      document.getElementById("modalImpact").textContent = action.expectedImpact || action.explanation || "Esta accion no modifica datos. Se utilizara para evaluar el estado actual del sistema.";
+      document.getElementById("modalContext").textContent = contextText(ownerContext.score, ownerContext.recommendations);
+      document.getElementById("modalWarning").hidden = !noActionRequired(ownerContext.recommendations);
+      document.getElementById("confirmModal").hidden = false;
+    }
+
+    function closeModal() {
+      pendingActionId = null;
+      document.getElementById("confirmModal").hidden = true;
+    }
+
+    async function confirmExecution(actionId) {
+      const id = actionId || pendingActionId;
+      if (!id) return;
+      const action = actionCatalog.find((item) => item.id === id);
+      const feedback = document.getElementById("actionFeedback");
+      feedback.textContent = "Ejecutando accion local controlada...";
+      try {
+        const response = await fetch("/execute", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ actionId: id })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || result.ok === false) throw new Error(result.error || `HTTP ${response.status}`);
+        const stamp = result.timestamp || new Date().toISOString();
+        feedback.textContent = `✅ Accion ejecutada correctamente\n${stamp} | ${action?.label || id}`;
+        closeModal();
+        render();
+      } catch (error) {
+        feedback.textContent = `Error de ejecucion controlada: ${error.message || error}`;
+      }
+    }
+
+    document.getElementById("cancelExecution").addEventListener("click", closeModal);
+    document.getElementById("confirmExecution").addEventListener("click", () => confirmExecution(pendingActionId));
+    document.getElementById("confirmModal").addEventListener("click", (event) => {
+      if (event.target.id === "confirmModal") closeModal();
+    });
+
+    async function render() {
+      const [score, recommendations, alerts, fails, decisions, systemsStatus, actions, actionHistory] = await Promise.all([
+        readJson("/state/predictive_score.json"),
+        readJson("/outbox/recommended_actions.json"),
+        readJsonl("/logs/alerts.jsonl"),
+        readJsonl("/logs/fails_index.jsonl"),
+        readJsonl("/logs/decision_log.jsonl"),
+        readJson("/state/systems_status.json"),
+        readJson("/config/actions_catalog.json"),
+        readJsonl("/logs/action_execution.jsonl")
+      ]);
+
+      const decision = latest(decisions) || {};
+      const health = (score && (score.effectiveHealth || score.health)) || recommendations?.effectiveHealth || "YELLOW";
+      const risk = (score && score.risk) || recommendations?.risk || "HIGH";
+      const graphOk = score ? score.graphOk !== false : true;
+      const hasNoise = alerts.some((a) => a.classification === "NOISE_CLUSTER" || a.mode === "LOG_ONLY");
+      const operationalState = decision.operationalState || (health === "DEGRADED" || !graphOk ? "ACTION_REQUIRED" : (risk === "HIGH" && !hasNoise ? "ATTENTION" : "STABLE"));
+
+      const stateNode = document.getElementById("state");
+      const riskNode = document.getElementById("risk");
+      const diagnosisNode = document.getElementById("diagnosis");
+      const actionNode = document.getElementById("action");
+
+      if (operationalState === "ACTION_REQUIRED") {
+        stateNode.textContent = "Accion requerida";
+        cls(stateNode, "red");
+        diagnosisNode.textContent = "El sistema requiere revision operativa antes de continuar.";
+        actionNode.textContent = "Revisar fallas del watchdog";
+        cls(actionNode, "red");
+      } else if (operationalState === "ATTENTION") {
+        stateNode.textContent = "Sistema en atencion";
+        cls(stateNode, "yellow");
+        diagnosisNode.textContent = "El sistema opera, pero hay senales que requieren analisis.";
+        actionNode.textContent = "Revisar origen de alertas";
+        cls(actionNode, "orange");
+      } else {
+        stateNode.textContent = "Sistema estable";
+        cls(stateNode, health === "HEALTHY" ? "green" : "yellow");
+        diagnosisNode.textContent = "El sistema funciona correctamente.\nEl riesgo proviene del volumen de alertas, no de fallos operativos.";
+        actionNode.textContent = "No se requiere intervencion";
+        cls(actionNode, "green");
+      }
+
+      if (risk === "HIGH" && hasNoise && graphOk) {
+        riskNode.textContent = "Alto (ruido, no incidente)";
+        cls(riskNode, "orange");
+      } else {
+        riskNode.textContent = risk;
+        cls(riskNode, risk === "HIGH" ? "red" : (risk === "MEDIUM" ? "orange" : "green"));
+      }
+
+      const systems = systemsStatus?.systems || score?.systems || [];
+      document.getElementById("systems").innerHTML = systems.map((s) => {
+        const status = s.status || s.state || "STUB";
+        const color = status === "ACTIVE" || status === "HEALTHY" ? "green" : (status === "YELLOW" ? "yellow" : "orange");
+        return `<div><span class="${color}">${escapeHtml(s.name)}</span> - ${escapeHtml(status)}</div>`;
+      }).join("") || "Sin configuracion de dominios.";
+
+      renderActions(actions, score, recommendations);
+      renderHistory(actionHistory);
+
+      document.getElementById("meta").textContent = `Indice ${score?.score ?? "-"} | Registros ${score?.locationsReviewed ?? "-"} | Fallas historicas ${fails.length} | Ultima decision ${decision.decision || "sin registro"}`;
+    }
+
+    render();
+    setInterval(render, 3000);
+  </script>
+</body>
+</html>

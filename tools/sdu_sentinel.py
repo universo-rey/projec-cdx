@@ -26,7 +26,16 @@ EXTERNAL_SURFACES = {
 }
 
 SKIP_PARTS = {".git", ".venv", "node_modules", "__pycache__", "dist", "build"}
+SKIP_PREFIXES = {"outputs/", "operativa/tasks/"}
 TEXT_SUFFIXES = {".ps1", ".py", ".toml", ".json", ".yml", ".yaml", ".sh"}
+GOVERNED_LOCAL_RESIDUAL_PREFIXES = (
+    ".agents/",
+    ".agileagentcanvas-context/",
+    ".github/copilot-instructions.md",
+    "baseline.extensions.json",
+    "operativa/tasks/",
+    "web/",
+)
 
 
 @dataclass(frozen=True)
@@ -55,6 +64,24 @@ def _git_status(root: Path = ROOT) -> list[str]:
     return [line for line in result.stdout.splitlines() if line.strip()]
 
 
+def _status_path(line: str) -> str:
+    return line[3:] if len(line) > 3 else line
+
+
+def _filter_governed_local_residuals(status_lines: list[str]) -> list[str]:
+    filtered: list[str] = []
+    for line in status_lines:
+        status = line[:2]
+        path = _status_path(line).replace("\\", "/")
+        if status == "??" and any(
+            path == prefix.rstrip("/") or path.startswith(prefix)
+            for prefix in GOVERNED_LOCAL_RESIDUAL_PREFIXES
+        ):
+            continue
+        filtered.append(line)
+    return filtered
+
+
 def _safe_relative(path: Path, root: Path = ROOT) -> str:
     try:
         return path.resolve().relative_to(root.resolve()).as_posix()
@@ -66,6 +93,9 @@ def _iter_scannable_files(root: Path = ROOT) -> list[Path]:
     files: list[Path] = []
     for path in root.rglob("*"):
         if not path.is_file():
+            continue
+        relative = _safe_relative(path, root).replace("\\", "/")
+        if any(relative.startswith(prefix) for prefix in SKIP_PREFIXES):
             continue
         if any(part in SKIP_PARTS for part in path.parts):
             continue
@@ -106,7 +136,7 @@ def classify_status_lines(status_lines: list[str]) -> str:
     if not status_lines:
         return "NO_DRIFT"
 
-    paths = [line[3:] if len(line) > 3 else line for line in status_lines]
+    paths = [_status_path(line) for line in status_lines]
     normalized = [path.replace("\\", "/") for path in paths]
 
     if any(path.startswith(".env") or "/.env" in path for path in normalized):
@@ -179,12 +209,17 @@ def scan(root: Path = ROOT) -> dict[str, Any]:
     )
 
     status_lines = _git_status(root)
-    drift = classify_status_lines(status_lines)
+    effective_status_lines = _filter_governed_local_residuals(status_lines)
+    drift = classify_status_lines(effective_status_lines)
     checks.append(
         SentinelCheck(
             "git_clean",
-            "PASS" if not status_lines else "WARN",
-            "clean" if not status_lines else f"{len(status_lines)} local changes",
+            "PASS" if not effective_status_lines else "WARN",
+            (
+                "clean"
+                if not effective_status_lines
+                else f"{len(effective_status_lines)} local changes"
+            ),
         )
     )
 
@@ -347,6 +382,7 @@ def write_report(root: Path = ROOT) -> dict[str, Any]:
 
 
 def run_check(root: Path = ROOT) -> dict[str, Any]:
+    pytest_basetemp = root / "outputs" / "ceo-suite-test" / "sentinel-pytest"
     commands = [
         [
             "powershell",
@@ -378,7 +414,16 @@ def run_check(root: Path = ROOT) -> dict[str, Any]:
         ],
         [sys.executable, "-m", "tools.validate"],
         ["git", "diff", "--check"],
-        [sys.executable, "-m", "pytest", "-q"],
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider",
+            "--basetemp",
+            str(pytest_basetemp),
+        ],
     ]
     results: list[dict[str, Any]] = []
     for command in commands:

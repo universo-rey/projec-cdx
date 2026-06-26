@@ -1,0 +1,10 @@
+{
+  "status": "RUNTIME_BRIDGE_APPLIED",
+  "conflicts": 0,
+  "strategy": "TERMINAL_SEND_SEQUENCE",
+  "scripts": [
+    "C:\\CEO\\watchdog\\commands\\commandC.ps1",
+    "C:\\CEO\\watchdog\\commands\\commandA.ps1"
+  ],
+  "backup": "C:\\CEO\\project-cdx\\.codex\\backups\\vscode-insiders\\keybindings_runtime_bridge_20260625_211855.json"
+}

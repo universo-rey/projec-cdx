@@ -2,7 +2,7 @@
 
 Vista unica de las herramientas locales de `PROJEC CDX`.
 
-La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
+La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260615/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
 ## Incluye
 

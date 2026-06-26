@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/trace-intelligence-state.schema.json",
+  "title": "CEO G3 Trace Intelligence State",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "state",
+    "mode",
+    "runtime_isolation",
+    "live_write",
+    "push",
+    "pr",
+    "components"
+  ],
+  "properties": {
+    "state": { "type": "string", "const": "TRACE_INTELLIGENCE_LAYER" },
+    "mode": { "type": "string", "const": "LOCAL_FIRST" },
+    "runtime_isolation": { "type": "string", "const": "REQUIRED" },
+    "live_write": { "type": "boolean", "const": false },
+    "push": { "type": "boolean", "const": false },
+    "pr": { "type": "boolean", "const": false },
+    "components": { "type": "object" }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "gate": "OWNER_GATE_FIX_G10_LOCAL_ABSOLUTE_LINKS_NO_PR",
+  "decision": "G10_LOCAL_ABSOLUTE_LINKS_FIXED_PENDING_VALIDATION",
+  "generated_at_utc": "2026-06-26T13:48:09.4820153Z",
+  "live": {
+    "branch": "codex/live-state-g10-governed-20260626",
+    "head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11"
+  },
+  "integration": {
+    "branch": "codex/integration-g10-snapshot-20260626",
+    "old_head": "e0c1bdefcb0ef540a3f8099a01289cbd0e569549",
+    "repair_commit": "8d6e050270f22cc3a3f71b4ca599190c86e8b97a"
+  },
+  "origin_main": "56a4eda1dd36c545c12546bb37fc2046dbb7fb05",
+  "repaired_files": [
+    "operativa/CONTROL.md",
+    "operativa/TRACE.md"
+  ],
+  "replacements": [
+    {
+      "file": "operativa/CONTROL.md",
+      "old_pattern": "C:/Users/enzo1/PROJEC%20CDX/*",
+      "target": "operativa/CURRENT.md",
+      "target_exists": true,
+      "new_link": "CURRENT.md"
+    },
+    {
+      "file": "operativa/CONTROL.md",
+      "old_pattern": "C:/Users/enzo1/PROJEC%20CDX/*",
+      "target": "operativa/NEXT.md",
+      "target_exists": true,
+      "new_link": "NEXT.md"
+    },
+    {
+      "file": "operativa/CONTROL.md",
+      "old_pattern": "C:/Users/enzo1/PROJEC%20CDX/*",
+      "target": "operativa/TRACE.md",
+      "target_exists": true,
+      "new_link": "TRACE.md"
+    },
+    {
+      "file": "operativa/CONTROL.md",
+      "old_pattern": "C:/Users/enzo1/PROJEC%20CDX/*",
+      "target": "docs/SDU_FINAL_PACKAGE/SDU_SYSTEM_CERTIFICATION.md",
+      "target_exists": true,
+      "new_link": "../docs/SDU_FINAL_PACKAGE/SDU_SYSTEM_CERTIFICATION.md"
+    },
+    {
+      "file": "operativa/CONTROL.md",
+      "old_pattern": "C:/Users/enzo1/PROJEC%20CDX/*",
+      "target": "docs/SDU_FINAL_PACKAGE/SDU_CONTRACT_FORMAL.md",
+      "target_exists": true,
+      "new_link": "../docs/SDU_FINAL_PACKAGE/SDU_CONTRACT_FORMAL.md"
+    },
+    {
+      "file": "operativa/CONTROL.md",
+      "old_pattern": "C:/Users/enzo1/PROJEC%20CDX/*",
+      "target": "operativa/archive/legacy-root/20260617/READBACK_CIERRE_PESO_REDUCIDO_20260617.md",
+      "target_exists": true,
+      "new_link": "archive/legacy-root/20260617/READBACK_CIERRE_PESO_REDUCIDO_20260617.md"
+    },
+    {
+      "file": "operativa/CONTROL.md",
+      "old_pattern": "C:/Users/enzo1/PROJEC%20CDX/*",
+      "target": "workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx",
+      "target_exists": true,
+      "new_link": "../workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx"
+    },
+    {
+      "file": "operativa/CONTROL.md",
+      "old_pattern": "C:/Users/enzo1/PROJEC%20CDX/*",
+      "target": "hitos/INDICE_MAESTRO.md",
+      "target_exists": true,
+      "new_link": "../hitos/INDICE_MAESTRO.md"
+    },
+    {
+      "file": "operativa/TRACE.md",
+      "old_pattern": "C:/Users/enzo1/PROJEC%20CDX/*",
+      "target": "operativa/archive/legacy-root/20260617/CRONOLOGIA_MAESTRA_20260617.md",
+      "target_exists": true,
+      "new_link": "archive/legacy-root/20260617/CRONOLOGIA_MAESTRA_20260617.md"
+    },
+    {
+      "file": "operativa/TRACE.md",
+      "old_pattern": "C:/Users/enzo1/PROJEC%20CDX/*",
+      "target": "docs/SDU_FINAL_PACKAGE/SDU_SYSTEM_CERTIFICATION.md",
+      "target_exists": true,
+      "new_link": "../docs/SDU_FINAL_PACKAGE/SDU_SYSTEM_CERTIFICATION.md"
+    }
+  ],
+  "diffcheck": {
+    "before": "PASS",
+    "after_repair": "PASS"
+  },
+  "sensitive_review": "NO_REAL_SECRET_EXPOSED",
+  "rollback": {
+    "integration": "e0c1bdefcb0ef540a3f8099a01289cbd0e569549"
+  },
+  "declarations": {
+    "no_pr": true,
+    "no_merge": true,
+    "no_live": true,
+    "no_g11_apply": true,
+    "no_tag": true,
+    "no_real_index": true
+  },
+  "governance": {
+    "matrices": "NO_DISPONIBLE",
+    "target_ref": "refs/heads/codex/integration-g10-snapshot-20260626",
+    "allowed_push_only": "codex/integration-g10-snapshot-20260626"
+  }
+}

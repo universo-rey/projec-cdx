@@ -6,8 +6,8 @@ Se resolvio el stop condition `evidence_identity_ambiguous` del hilo D con lectu
 
 ## Evidencia
 
-- `operativa/READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md`
-- `operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv`
+- `operativa/archive/legacy-root/20260617/READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md`
+- `operativa/archive/legacy-root/20260617/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv`
 
 ## Cierre
 

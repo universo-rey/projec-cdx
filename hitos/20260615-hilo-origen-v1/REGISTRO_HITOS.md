@@ -15,7 +15,7 @@
 ## H-003 - Workbench Local Cerrado
 
 - Estado: `closed`
-- Evidencia: `hitos/20260615-cierre-workbench-v1/EVIDENCIA.md`, `operativa/CONTROL_TOTAL_20260615.md`
+- Evidencia: `hitos/20260615-cierre-workbench-v1/EVIDENCIA.md`, `operativa/archive/legacy-root/20260615/CONTROL_TOTAL_20260615.md`
 - Resultado: la raiz operativa queda navegable, versionada y validable.
 
 ## H-004 - Patrones Y Procesos Promovidos

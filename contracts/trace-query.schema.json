@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/trace-query.schema.json",
+  "title": "CEO G3 Trace Query",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "query_id",
+    "timestamp",
+    "filter",
+    "result_count",
+    "results"
+  ],
+  "properties": {
+    "query_id": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "filter": { "type": "object" },
+    "result_count": { "type": "integer", "minimum": 0 },
+    "results": { "type": "array" }
+  }
+}

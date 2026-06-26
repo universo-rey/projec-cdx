@@ -42,7 +42,7 @@ cdx doc-report --json-output outputs/documental/doc-report.json --md-output outp
 ## Salidas Documentales
 
 - `index.json`: indice raiz de artefactos con metadata valida.
-- `operativa/index.json`: subindice operativo.
+- `operativa/archive/legacy-root/undated/index.json`: subindice operativo.
 - `metadata-graph.json`: grafo de relaciones entre `artifact_id`.
 - `outputs/documental/doc-report.json`: resumen documental para herramientas visuales.
 - `outputs/documental/doc-report.md`: lectura Markdown del reporte.

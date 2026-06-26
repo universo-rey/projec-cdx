@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/alert.schema.json",
+  "title": "CEO G3 Local Alert",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "alert_id",
+    "created_at",
+    "severity",
+    "source",
+    "anomaly_id",
+    "event_ids",
+    "status",
+    "channel",
+    "evidence_path"
+  ],
+  "properties": {
+    "alert_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "severity": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+    },
+    "source": { "type": "string", "minLength": 1 },
+    "anomaly_id": { "type": "string", "minLength": 1 },
+    "event_ids": { "type": "array", "items": { "type": "string" } },
+    "status": {
+      "type": "string",
+      "enum": ["OPEN", "ACKNOWLEDGED", "SUPPRESSED", "CLOSED"]
+    },
+    "channel": {
+      "type": "string",
+      "enum": ["LOCAL_CONSOLE", "LOCAL_JSON", "LOCAL_MARKDOWN", "DASHBOARD_HIGHLIGHT"]
+    },
+    "evidence_path": { "type": "string", "minLength": 1 }
+  }
+}

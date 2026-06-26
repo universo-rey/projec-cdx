@@ -17,14 +17,14 @@ Indice visible de los libros Excel principales de `PROJEC CDX`.
 - Estado: `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`.
 - Hoja: `Dataverse Fuentes`.
 - Fila viva: `DATAVERSE_LIVE_ROWS_CONSUMER_SELECTED`.
-- Evidencia: `operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md`.
+- Evidencia: `operativa/archive/legacy-root/20260618/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md`.
 
 ## Estado Workspace Y Superficies
 - Hoja: `Workspace Actual`.
 - Hoja: `Superficies Locales`.
 - Hoja: `Ramas Organizadas`.
-- Evidencia: `operativa/READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md`.
-- Evidencia: `operativa/READBACK_BRANCH_ORGANIZATION_20260618.md`.
+- Evidencia: `operativa/archive/legacy-root/20260618/READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md`.
+- Evidencia: `operativa/archive/legacy-root/20260618/READBACK_BRANCH_ORGANIZATION_20260618.md`.
 
 ## Regla
 - `workbooks/` contiene fuentes vivas o libros de uso operativo.

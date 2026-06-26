@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .agent import DEFAULT_MODEL, align_runtime_context, build_sdu_agents, run_agent, smoke_report
 from .cloud_bridge import cloud_bridge_packet, run_cloud_bridge_agent, write_cloud_bridge_readback
+from .governed import build_governed_cloud_report, write_governed_cloud_report
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -75,6 +76,17 @@ def build_parser() -> argparse.ArgumentParser:
         help="Use Agents SDK to review the governed Codex Cloud smoke packet.",
     )
     parser.add_argument(
+        "--governed-check",
+        action="store_true",
+        help="Run governed cloud readiness checks without external writes or API calls.",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=None,
+        help="Optional JSON output path for governed cloud reports.",
+    )
+    parser.add_argument(
         "--write-readback",
         action="store_true",
         help="Write a local readback for cloud bridge mode.",
@@ -89,7 +101,7 @@ def _print_json(payload: dict[str, object]) -> None:
 def main(argv: Iterable[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(list(argv) if argv is not None else None)
-    local_only_mode = args.smoke or args.activate_sdu or args.cloud_bridge
+    local_only_mode = args.smoke or args.activate_sdu or args.cloud_bridge or args.governed_check
     if not args.no_local_env and not local_only_mode:
         load_local_env()
     align_runtime_context()
@@ -137,6 +149,24 @@ def main(argv: Iterable[str] | None = None) -> int:
             print(f"next_delta: {packet['next_delta']}")
             if "readback_path" in packet:
                 print(f"readback_path: {packet['readback_path']}")
+        return 0
+
+    if args.governed_check:
+        packet = (
+            write_governed_cloud_report(args.output)
+            if args.output
+            else build_governed_cloud_report()
+        )
+        if args.json:
+            _print_json(packet)
+        else:
+            print(f"status: {packet['status']}")
+            print(f"event: {packet['event']}")
+            print(f"snapshot_gate: {packet['snapshot_gate']['status']}")
+            print(f"agents: {len(packet['agents'])}")
+            print(f"external_writes: {packet['frontera']['external_writes']}")
+            if "path" in packet:
+                print(f"path: {packet['path']}")
         return 0
 
     if args.agentic_cloud_bridge:

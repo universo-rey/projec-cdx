@@ -1,0 +1,24 @@
+{
+  "artifact_id": "operativa/tasks/20260623/CEO_IDE_CONTROL_PLANE_VSCODE_INSIDERS_G1_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "CABINA_IDE_CONTROL_PLANE_VSCODE_INSIDERS_G1"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/CEO_IDE_CONTROL_PLANE_VSCODE_INSIDERS_G1_20260623.csv",
+  "etiquetas": [
+    "vscode-insiders",
+    "ide-control-plane",
+    "productiva",
+    "local-only"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/READBACK_CEO_IDE_CONTROL_PLANE_VSCODE_INSIDERS_G1_20260623.md"
+  ],
+  "descripcion": "Matriz productiva del control plane IDE G1 para Visual Studio Code Insiders."
+}

@@ -16,8 +16,8 @@ Preflight read-only del carril Codex Cloud + Dataverse sobre el HEAD actual de `
 
 ## Evidencia
 
-- `operativa/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md`
-- `operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617.csv`
+- `operativa/archive/legacy-root/20260617/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md`
+- `operativa/archive/legacy-root/20260617/CLOUD_DATAVERSE_PREFLIGHT_20260617.csv`
 - `READBACK.md`
 - `EVIDENCIA.md`
 - `MANIFEST.yaml`

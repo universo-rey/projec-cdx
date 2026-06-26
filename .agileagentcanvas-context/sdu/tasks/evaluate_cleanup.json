@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "task",
+    "workflowName": "agileagentcanvas",
+    "projectName": "SDU Operations Layer",
+    "timestamps": {
+      "created": "2026-06-26T00:00:00-03:00",
+      "lastModified": "2026-06-26T00:00:00-03:00"
+    },
+    "status": "ready"
+  },
+  "content": {
+    "id": "evaluate_cleanup",
+    "title": "Evaluar limpieza controlada",
+    "artifactType": "TASK",
+    "risk": "MEDIUM",
+    "impact": "Esta accion no ejecuta limpieza. Solo calcula contexto local y deja trazabilidad para revision.",
+    "script": "C:\\CEO\\watchdog\\commands\\cleanup-evaluation.ps1",
+    "relatedNode": "cleanup_evaluation",
+    "startDevTrigger": "rocket",
+    "requiresApproval": true,
+    "stateContext": "SYSTEM_STATE recommendation is NO ACTION REQUIRED, so this remains optional and review-gated.",
+    "possibleAction": "Use Start Dev after explicit owner review if cleanup evaluation is still desired."
+  }
+}

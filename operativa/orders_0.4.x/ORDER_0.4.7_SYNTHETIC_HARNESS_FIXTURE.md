@@ -46,9 +46,9 @@ Revertir patch de import, fixture y test local en el repo destino.
 - Harness local corre con fixture sanitizado sin datos live.
 
 ## Evidencia local
-- operativa/GATE_0.3.19_LOCAL_SYNTHETIC_HARNESS_PACKET_20260622.md
-- operativa/GATE_0.3.19_LOCAL_SYNTHETIC_HARNESS_MATRIX_20260622.csv
-- operativa/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/GATE_0.3.19_LOCAL_SYNTHETIC_HARNESS_PACKET_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.19_LOCAL_SYNTHETIC_HARNESS_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
 
 ## Resultado
 GATE_0.4.7_READY_FOR_REMOTE_PATCH_AUTHORIZATION

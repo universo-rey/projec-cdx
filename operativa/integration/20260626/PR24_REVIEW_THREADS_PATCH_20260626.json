@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-06-26T15:40:00.0000000Z",
+  "mode": "PATCH_PR24_REVIEW_THREADS",
+  "pr": {
+    "number": 24,
+    "url": "https://github.com/universo-rey/projec-cdx/pull/24",
+    "base": {
+      "branch": "main",
+      "sha": "56a4eda1dd36c545c12546bb37fc2046dbb7fb05"
+    },
+    "head_before": {
+      "branch": "codex/integration-g10-snapshot-20260626",
+      "sha": "46ca76cb00029718e64bfc3b8f3d55cad4e26bb9"
+    }
+  },
+  "live_guard": {
+    "branch": "codex/live-state-g10-governed-20260626",
+    "sha": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+    "status": "INTACT"
+  },
+  "threads": [
+    {
+      "severity": "P1",
+      "topic": "sentinel dirty workspace",
+      "path": ".github/workflows/codex-governed.yml",
+      "resolution": "runtime sentinel writes to governed report dir with --output"
+    },
+    {
+      "severity": "P2",
+      "topic": "meta validates legacy index path",
+      "path": ".github/workflows/meta-validate.yml",
+      "resolution": "metadata diff check targets index.json and operativa/index.json"
+    },
+    {
+      "severity": "P2",
+      "topic": "promote stages legacy index path",
+      "path": ".github/workflows/promote.yml",
+      "resolution": "promote path list targets operativa/index.json"
+    },
+    {
+      "severity": "P2",
+      "topic": "duplicate snapshot id in same minute",
+      "path": "src/runtime_versioning/cli.py",
+      "resolution": "snapshot_id follows disambiguated path stem and global_hash is recomputed"
+    }
+  ],
+  "files_changed": [
+    ".github/workflows/codex-governed.yml",
+    ".github/workflows/meta-validate.yml",
+    ".github/workflows/promote.yml",
+    "src/runtime_versioning/cli.py",
+    "tests/test_ceo_runtime.py",
+    "operativa/integration/20260626/PR24_REVIEW_THREADS_PATCH_20260626.md",
+    "operativa/integration/20260626/PR24_REVIEW_THREADS_PATCH_20260626.json"
+  ],
+  "validation": [
+    {
+      "name": "python -m tools.build_index",
+      "status": "PASS",
+      "detail": "executed twice; index.json and operativa/index.json idempotent"
+    },
+    {
+      "name": "python -m tools.validate",
+      "status": "PASS"
+    },
+    {
+      "name": "python -m py_compile src/runtime_versioning/cli.py",
+      "status": "PASS"
+    },
+    {
+      "name": "python -m pytest tests/test_ceo_runtime.py -q --basetemp <external-temp>",
+      "status": "PASS",
+      "detail": "11 passed"
+    },
+    {
+      "name": "tools/validate_proj_cdx_sync.ps1 -Root <patch> -Json",
+      "status": "PASS"
+    },
+    {
+      "name": "tools/validate_proj_cdx_workbench.ps1 -Root <patch> -Json",
+      "status": "OBSERVED",
+      "detail": "historical observations; no FAIL"
+    },
+    {
+      "name": "tools/validate_proj_cdx_operational_chain.ps1 -Root <patch> -ResolverPy <patch>/tools/sdu_chain_resolver.py -Json",
+      "status": "PASS"
+    },
+    {
+      "name": "tools/sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun -Json",
+      "status": "PASS"
+    },
+    {
+      "name": "tools/validate_sdu_dataverse_metadata_wave.ps1 -Root <patch>",
+      "status": "PASS"
+    },
+    {
+      "name": "sensitive scan over candidate files",
+      "status": "PASS",
+      "detail": "7 files scanned; 0 content hits; 0 path hits"
+    }
+  ],
+  "remote_checks": {
+    "status": "RETRY_AFTER_FIRST_PUSH",
+    "first_pushed_commit": "eaed9c0f6a322de0207e1639b5210a85d106b028",
+    "observed": {
+      "build-graph": "success",
+      "quality": "success",
+      "meta-validate": "success",
+      "codeql": "in_progress",
+      "codex-governed": "failure"
+    },
+    "failure_classification": "FAIL_REAL_MINIMAL_PATCH_REQUIRED",
+    "failure_detail": "runtime sentinel output outside repo could not be represented by _relative",
+    "retry_status": "PENDING_AFTER_SECOND_PUSH"
+  },
+  "prohibited_actions": {
+    "merge": false,
+    "approve": false,
+    "resolve_threads": false,
+    "tag": false,
+    "live_write": false,
+    "g11_apply": false,
+    "branch_protection_mutation": false
+  },
+  "rollback": {
+    "integration_ref": "refs/heads/codex/integration-g10-snapshot-20260626",
+    "target_sha": "46ca76cb00029718e64bfc3b8f3d55cad4e26bb9"
+  }
+}

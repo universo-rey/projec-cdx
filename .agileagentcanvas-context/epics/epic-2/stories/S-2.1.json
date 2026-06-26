@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "artifactType": "story",
+    "workflowName": "agileagentcanvas",
+    "projectName": "TaskFlow Pro",
+    "timestamps": {
+      "lastModified": "2026-06-25T05:08:27.694Z",
+      "created": "2026-06-25T05:08:26.675Z"
+    },
+    "status": "in-progress"
+  },
+  "content": {
+    "epicId": "EPIC-2",
+    "epicTitle": "AI Prioritization Engine",
+    "testCases": [
+      "TC-2.1.1",
+      "TC-2.1.2",
+      "TC-2.1.3",
+      "TC-2.1.4-golden-dataset"
+    ],
+    "id": "S-2.1",
+    "title": "AI Priority Scoring Engine",
+    "userStory": {
+      "asA": "Product Manager",
+      "iWant": "tasks to be automatically scored and ranked by priority",
+      "soThat": "the team always works on the most impactful items first"
+    },
+    "acceptanceCriteria": [
+      {
+        "id": "AC-2.1.1",
+        "given": "a workspace has 50+ completed tasks",
+        "when": "the AI model is trained",
+        "then": "new tasks receive a priority score within 2 seconds of creation",
+        "and": []
+      },
+      {
+        "id": "AC-2.1.2",
+        "given": "a task's deadline or dependencies change",
+        "when": "the system recalculates",
+        "then": "the priority score updates within 5 seconds",
+        "and": []
+      },
+      {
+        "id": "AC-2.1.3",
+        "given": "insufficient training data (< 50 tasks)",
+        "when": "the system computes priority",
+        "then": "it falls back to rule-based scoring using deadline, dependency count, and manual priority",
+        "and": []
+      }
+    ],
+    "status": "in-progress",
+    "storyPoints": 13,
+    "priority": "must-have",
+    "implementationDetails": [
+      "Feature extraction pipeline: deadline proximity, dependency count, label embeddings, historical completion rate",
+      "Lightweight gradient-boosted model (XGBoost) trained per-workspace",
+      "OpenAI API for natural language priority inference on task descriptions",
+      "Response caching layer with 5-minute TTL to handle API rate limits"
+    ],
+    "requirementRefs": [
+      "FR-2"
+    ],
+    "notes": "Golden dataset of 200 manually-prioritized tasks available from beta testers.",
+    "dependencies": {
+      "blockedBy": [
+        {
+          "storyId": "S-1.1",
+          "title": "Task CRUD API",
+          "status": "done"
+        }
+      ],
+      "blocks": [
+        {
+          "storyId": "S-2.3",
+          "title": "AI Sprint Planning"
+        }
+      ],
+      "relatedStories": [
+        "S-2.2",
+        "S-3.1"
+      ]
+    },
+    "assignee": "Dr. Priya Sharma",
+    "_sourceEpicId": "EPIC-2"
+  }
+}

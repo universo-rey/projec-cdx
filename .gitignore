@@ -12,11 +12,28 @@ workbooks/_backups/
 workbooks/~$*.xlsx
 operativa/PAC_*_HUBDESARROLLO_*.txt
 operativa/backup-*.reg
+operativa/sentinel/SENTINEL_REPORT.json
+operativa/sentinel/DRIFT_LOG.json
+.tmp_sdu_org_total/
+work/
 
 # Local workspace tooling overlays.
 .opencode
 .agent/
 .bookmarks/
+.cursor/
 .github/agents/
 .github/skills/
 .vscode/
+
+# Local cabina runtime surface. It may contain machine-specific runners,
+# evidence, profiles, backups, and operator state; repo canon lives outside it.
+.cabina/
+.cabina/runtime/event-bus/
+
+# Generated local suite/graph artifacts. Keep canonical outputs tracked by path;
+# only ignore transient CEO suite and graphify work products.
+outputs/ceo-suite*/
+graphify-out/
+.bmad-backup/
+cache/

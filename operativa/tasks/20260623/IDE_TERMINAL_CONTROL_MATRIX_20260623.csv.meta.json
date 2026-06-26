@@ -1,0 +1,26 @@
+{
+  "artifact_id": "operativa/tasks/20260623/IDE_TERMINAL_CONTROL_MATRIX_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "IDE_TERMINAL_CONTROL"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/IDE_TERMINAL_CONTROL_MATRIX_20260623.csv",
+  "etiquetas": [
+    "vscode-insiders",
+    "terminal-governance",
+    "local-only",
+    "productiva"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/READBACK_IDE_TERMINAL_CONTROL_20260623.md",
+    "tools/ceo-ide-terminal-status.ps1",
+    "tools/ceo-ide-terminal-enter.ps1"
+  ],
+  "descripcion": "Matriz minima del carril IDE_TERMINAL_CONTROL para fijar terminal gobernada de VS Code Insiders."
+}

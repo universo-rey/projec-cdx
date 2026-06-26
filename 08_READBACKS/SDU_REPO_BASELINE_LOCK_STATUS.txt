@@ -1,0 +1,174 @@
+SDU_REPO_BASELINE_LOCK_STATUS
+generatedAt=2026-06-25T22:27:35.4172257-03:00
+repo=C:/Users/enzo1/PROJEC CDX
+branch=codex/m365-escribania-dataverse-restore
+head=4e64c7fcb127bfd453715d5ca7478dbb711e2890
+
+## git status --short --branch
+## codex/m365-escribania-dataverse-restore
+A  08_READBACKS/20260625_004013_SDU_G5_SHAREPOINTSITE_CREATE.md
+A  08_READBACKS/20260625_004552_SDU_G5_2_DOCUMENTLOCATION_CREATE.md
+A  08_READBACKS/20260625_005426_SDU_G5_2B_DOCUMENTLOCATION_RELATIVEURL_ONLY.md
+A  08_READBACKS/20260625_005722_SDU_G5_2B_DOCUMENTLOCATION_RELATIVEURL_ONLY.md
+A  08_READBACKS/20260625_010242_SDU_G5_2C_DOCUMENTLOCATION_POSTVERIFY_DIAGNOSTIC.md
+A  08_READBACKS/20260625_011725_SDU_G5_2D_WATCHDOG_PATCH.md
+A  08_READBACKS/20260625_013651_SDU_G6_2_DOMAIN_ENTITY_VALIDATION.md
+A  08_READBACKS/20260625_014520_SDU_G6_3_AUTOMATED_DOCUMENTLOCATION_FLOW.md
+A  08_READBACKS/20260625_021120_SDU_G6_4_CONTROLLED_LOOP_EXECUTION.md
+A  08_READBACKS/20260625_163800_SDU_G6_5_OPERATIONALIZATION.md
+ M README_SUITE.md
+ M SYSTEM_NERVOUS_INDEX.json
+ M VERSION_STATE.json
+ M contracts/action-registry.json
+ M contracts/environment-registry.json
+ M contracts/live-action.schema.json
+ M contracts/live-operation-state.schema.json
+A  docs/watchdogs/SDU_G6_DOCUMENTLOCATION_FLOW_BLUEPRINT.md
+A  operativa/evidence-curated/document_location_apply_preview.json
+A  operativa/evidence-curated/m365-escribania-dataverse-restore-readback.md
+ M tests/run-authorization-tests.ps1
+ M tests/run-live-authorization-tests.ps1
+ M tests/run-live-policy-block-tests.ps1
+ M tests/run-live-preflight-tests.ps1
+ M tools/ceo-active-governance.ps1
+ M tools/ceo-live-audit.ps1
+ M tools/ceo-live-owner-gate.ps1
+ M tools/ceo-live-rollback.ps1
+ M tools/ceo-suite-common.ps1
+ M tools/ceo-trace-dashboard.ps1
+ M tools/ceo-validate-event.ps1
+AM tools/run-documentlocation-loop.ps1
+?? .agents/
+?? .agileagentcanvas-context/
+?? .codex/backups/
+?? .codex/logs/
+?? .codex/readbacks/
+?? .github/copilot-instructions.md
+?? 08_READBACKS/20260625_000033_SDU_SHAREPOINT_LINK_WATCHDOG_L6_READBACK.md
+?? 08_READBACKS/20260625_001436_SDU_SHAREPOINT_LINK_WATCHDOG_L6_AUTH_RUN_READBACK.md
+?? 08_READBACKS/20260625_170732_SDU_G6_CERTIFICATION.md
+?? 08_READBACKS/20260625_173245_SDU_G7_EXPEDIENTE_CREATE.md
+?? 08_READBACKS/20260625_174110_SDU_G8_1_DUAL_MODE.md
+?? 08_READBACKS/20260625_175240_SDU_G8_2_RUNTIME_SWITCH.md
+?? 08_READBACKS/20260625_180650_SDU_G8_3_ADX_CREATE_DISABLED.md
+?? 08_READBACKS/20260625_182016_SDU_G8_4_HISTORICAL_MIGRATION.md
+?? 08_READBACKS/20260625_182615_SDU_G8_5_FINAL_NORMALIZATION.md
+?? 08_READBACKS/20260625_202938_SDU_RUNTIME_FRICTION_HARDENING.md
+?? 08_READBACKS/SDU_AGENT_CANVAS.md
+?? 08_READBACKS/SDU_BOOT_UNIFICATION.md
+?? 08_READBACKS/SDU_ENVIRONMENT_CANONICALIZATION.md
+?? 08_READBACKS/SDU_FULL_PACKAGE_READY.md
+?? 08_READBACKS/SDU_GOVERNANCE_REFINEMENT.md
+?? 08_READBACKS/SDU_NOC_ALERT_PATCH.md
+?? 08_READBACKS/SDU_NOC_INTELLIGENCE.md
+?? 08_READBACKS/SDU_NOC_REFINEMENT.md
+?? 08_READBACKS/SDU_NOC_SCREEN_MODE.md
+?? 08_READBACKS/SDU_NOC_WEB.md
+?? PATH_CANONICAL.json
+?? baseline.extensions.json
+?? contracts/live-authorization-formal.schema.json
+?? contracts/live-execution-real.schema.json
+?? docs/SDU_FINAL_PACKAGE/
+?? docs/watchdogs/SDU_SHAREPOINT_LINK_WATCHDOG_L6.md
+?? operativa/accountability/
+?? operativa/tasks/20260623-221904/
+?? operativa/tasks/20260623-224243/
+?? tests/live-g6-test-helpers.ps1
+?? tests/run-accountability-tests.ps1
+?? tests/run-audit-formal-tests.ps1
+?? tests/run-formal-authorization-tests.ps1
+?? tests/run-live-execution-mocked.ps1
+?? tests/run-live-session-tests.ps1
+?? tests/run-multi-actor-tests.ps1
+?? tests/run-rollback-real-mock.ps1
+?? tmp-owner-action-layer/
+?? tools/ceo-jsonschema-validate.py
+?? tools/ceo-live-authorize-formal.ps1
+?? tools/ceo-live-executor-real.ps1
+?? tools/ceo-live-guardrails-strict.ps1
+?? tools/ceo-live-session.ps1
+?? web/
+
+## git status --porcelain=v1
+A  08_READBACKS/20260625_004013_SDU_G5_SHAREPOINTSITE_CREATE.md
+A  08_READBACKS/20260625_004552_SDU_G5_2_DOCUMENTLOCATION_CREATE.md
+A  08_READBACKS/20260625_005426_SDU_G5_2B_DOCUMENTLOCATION_RELATIVEURL_ONLY.md
+A  08_READBACKS/20260625_005722_SDU_G5_2B_DOCUMENTLOCATION_RELATIVEURL_ONLY.md
+A  08_READBACKS/20260625_010242_SDU_G5_2C_DOCUMENTLOCATION_POSTVERIFY_DIAGNOSTIC.md
+A  08_READBACKS/20260625_011725_SDU_G5_2D_WATCHDOG_PATCH.md
+A  08_READBACKS/20260625_013651_SDU_G6_2_DOMAIN_ENTITY_VALIDATION.md
+A  08_READBACKS/20260625_014520_SDU_G6_3_AUTOMATED_DOCUMENTLOCATION_FLOW.md
+A  08_READBACKS/20260625_021120_SDU_G6_4_CONTROLLED_LOOP_EXECUTION.md
+A  08_READBACKS/20260625_163800_SDU_G6_5_OPERATIONALIZATION.md
+ M README_SUITE.md
+ M SYSTEM_NERVOUS_INDEX.json
+ M VERSION_STATE.json
+ M contracts/action-registry.json
+ M contracts/environment-registry.json
+ M contracts/live-action.schema.json
+ M contracts/live-operation-state.schema.json
+A  docs/watchdogs/SDU_G6_DOCUMENTLOCATION_FLOW_BLUEPRINT.md
+A  operativa/evidence-curated/document_location_apply_preview.json
+A  operativa/evidence-curated/m365-escribania-dataverse-restore-readback.md
+ M tests/run-authorization-tests.ps1
+ M tests/run-live-authorization-tests.ps1
+ M tests/run-live-policy-block-tests.ps1
+ M tests/run-live-preflight-tests.ps1
+ M tools/ceo-active-governance.ps1
+ M tools/ceo-live-audit.ps1
+ M tools/ceo-live-owner-gate.ps1
+ M tools/ceo-live-rollback.ps1
+ M tools/ceo-suite-common.ps1
+ M tools/ceo-trace-dashboard.ps1
+ M tools/ceo-validate-event.ps1
+AM tools/run-documentlocation-loop.ps1
+?? .agents/
+?? .agileagentcanvas-context/
+?? .codex/backups/
+?? .codex/logs/
+?? .codex/readbacks/
+?? .github/copilot-instructions.md
+?? 08_READBACKS/20260625_000033_SDU_SHAREPOINT_LINK_WATCHDOG_L6_READBACK.md
+?? 08_READBACKS/20260625_001436_SDU_SHAREPOINT_LINK_WATCHDOG_L6_AUTH_RUN_READBACK.md
+?? 08_READBACKS/20260625_170732_SDU_G6_CERTIFICATION.md
+?? 08_READBACKS/20260625_173245_SDU_G7_EXPEDIENTE_CREATE.md
+?? 08_READBACKS/20260625_174110_SDU_G8_1_DUAL_MODE.md
+?? 08_READBACKS/20260625_175240_SDU_G8_2_RUNTIME_SWITCH.md
+?? 08_READBACKS/20260625_180650_SDU_G8_3_ADX_CREATE_DISABLED.md
+?? 08_READBACKS/20260625_182016_SDU_G8_4_HISTORICAL_MIGRATION.md
+?? 08_READBACKS/20260625_182615_SDU_G8_5_FINAL_NORMALIZATION.md
+?? 08_READBACKS/20260625_202938_SDU_RUNTIME_FRICTION_HARDENING.md
+?? 08_READBACKS/SDU_AGENT_CANVAS.md
+?? 08_READBACKS/SDU_BOOT_UNIFICATION.md
+?? 08_READBACKS/SDU_ENVIRONMENT_CANONICALIZATION.md
+?? 08_READBACKS/SDU_FULL_PACKAGE_READY.md
+?? 08_READBACKS/SDU_GOVERNANCE_REFINEMENT.md
+?? 08_READBACKS/SDU_NOC_ALERT_PATCH.md
+?? 08_READBACKS/SDU_NOC_INTELLIGENCE.md
+?? 08_READBACKS/SDU_NOC_REFINEMENT.md
+?? 08_READBACKS/SDU_NOC_SCREEN_MODE.md
+?? 08_READBACKS/SDU_NOC_WEB.md
+?? PATH_CANONICAL.json
+?? baseline.extensions.json
+?? contracts/live-authorization-formal.schema.json
+?? contracts/live-execution-real.schema.json
+?? docs/SDU_FINAL_PACKAGE/
+?? docs/watchdogs/SDU_SHAREPOINT_LINK_WATCHDOG_L6.md
+?? operativa/accountability/
+?? operativa/tasks/20260623-221904/
+?? operativa/tasks/20260623-224243/
+?? tests/live-g6-test-helpers.ps1
+?? tests/run-accountability-tests.ps1
+?? tests/run-audit-formal-tests.ps1
+?? tests/run-formal-authorization-tests.ps1
+?? tests/run-live-execution-mocked.ps1
+?? tests/run-live-session-tests.ps1
+?? tests/run-multi-actor-tests.ps1
+?? tests/run-rollback-real-mock.ps1
+?? tmp-owner-action-layer/
+?? tools/ceo-jsonschema-validate.py
+?? tools/ceo-live-authorize-formal.ps1
+?? tools/ceo-live-executor-real.ps1
+?? tools/ceo-live-guardrails-strict.ps1
+?? tools/ceo-live-session.ps1
+?? web/

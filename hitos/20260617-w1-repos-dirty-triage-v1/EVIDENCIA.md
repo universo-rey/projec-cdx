@@ -2,7 +2,7 @@
 
 ## Entradas
 
-- `operativa/READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md`
+- `operativa/archive/legacy-root/20260617/READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md`
 - `inventarios/WORKBENCH_COMPLETION_GAPS_20260617.csv`
 - `C:/Users/enzo1/Documents/GitHub`
 
@@ -10,7 +10,7 @@
 
 - `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`
 - `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.json`
-- `operativa/READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md`
+- `operativa/archive/legacy-root/20260617/READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md`
 - `hitos/20260617-w1-repos-dirty-triage-v1`
 
 ## Comandos Read-Only

@@ -1,22 +1,36 @@
 # PROJEC CDX Corto
 
-Entrada rapida del workbench local.
+Entrada rapida del workspace canonico.
 
-Identidad operativa: `CEO`. Perfil fisico y rutas tecnicas: `C:/Users/enzo1`.
-
-## Arranque
-
-```powershell
-pwsh -NoProfile -File ".\tools\codex-cloud-live.ps1"
+```text
+workspace: C:\CEO\project-cdx
+alias fisico: C:\Users\enzo1\PROJEC CDX
+estado: CABINA_FRONTDOOR_CONVERGED_LOCAL_ONLY
+version: v0.6.0-rc1
 ```
 
-## Gate
+## Entrar
 
-- `metadata-only`
-- la `.venv` del root es la base preferida
+- [README.md](README.md)
+- [MAPA_MAESTRO.md](MAPA_MAESTRO.md)
+- [MAPA_CAPAS.md](MAPA_CAPAS.md)
 
-## Detalle
+## Estado
 
-- [README.md](C:/Users/enzo1/PROJEC%20CDX/README.md)
-- [README_ARRANQUE_CODEX_CLOUD.md](C:/Users/enzo1/PROJEC%20CDX/README_ARRANQUE_CODEX_CLOUD.md)
-- [Setup Apertura Codex UI](C:/Users/enzo1/PROJEC%20CDX/operativa/SETUP_APERTURA_CODEX_UI.md)
+- [operativa/CURRENT.md](operativa/CURRENT.md)
+- [operativa/NEXT.md](operativa/NEXT.md)
+- [operativa/TRACE.md](operativa/TRACE.md)
+
+## Cabina
+
+- [.cabina/organizacion-total](.cabina/organizacion-total)
+- [.cabina/organizacion-total/organismo-vivo/README.md](.cabina/organizacion-total/organismo-vivo/README.md)
+- [.cabina/organizacion-total/vscode-insiders-profiles/README.md](.cabina/organizacion-total/vscode-insiders-profiles/README.md)
+
+## Regla
+
+```text
+Una raiz viva.
+No SDU_RUNTIME_ROOT paralelo.
+No tratar el alias fisico como segundo workspace.
+```

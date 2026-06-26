@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/live-authorization-formal.schema.json",
+  "title": "CEO G6 Formal Live Authorization",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "authorization_id",
+    "live_action_id",
+    "session_id",
+    "authorized",
+    "decision",
+    "live_real_enabled",
+    "external_write_enabled",
+    "required_roles",
+    "approved_roles",
+    "missing_roles",
+    "requires_rollback",
+    "requires_audit",
+    "evidence_path",
+    "timestamp"
+  ],
+  "properties": {
+    "authorization_id": { "type": "string", "minLength": 1 },
+    "live_action_id": { "type": "string", "minLength": 1 },
+    "session_id": { "type": "string" },
+    "authorized": { "type": "boolean" },
+    "decision": { "type": "string", "enum": ["ALLOW_LIVE_REAL_FORMAL", "BLOCK"] },
+    "live_real_enabled": { "type": "boolean" },
+    "external_write_enabled": { "type": "boolean", "const": false },
+    "required_roles": { "type": "array", "items": { "type": "string" } },
+    "approved_roles": { "type": "array", "items": { "type": "string" } },
+    "missing_roles": { "type": "array", "items": { "type": "string" } },
+    "requires_rollback": { "type": "boolean", "const": true },
+    "requires_audit": { "type": "boolean", "const": true },
+    "evidence_path": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" }
+  }
+}

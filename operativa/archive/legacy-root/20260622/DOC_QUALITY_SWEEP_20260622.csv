@@ -1,0 +1,12 @@
+term,count,file_count,examples,decision,status
+canonica,104,54,dataverse/ACTA_CORTE_EJECUTORA_20260615.md;dataverse/GATE.md;dataverse/MAPA_AGENTES_SDU.md,do_not_mass_edit_historical_evidence,CLOSED_LOCAL_WITH_WARNINGS
+reconciliacion,11,8,operativa/archive/legacy-root/20260622/READBACK_BOUNDARY_MATRIX_20260622.md;operativa/archive/legacy-root/20260622/READBACK_EMAIL_DELTA_TRIAGE_20260622.md,do_not_mass_edit_historical_evidence,CLOSED_LOCAL_WITH_WARNINGS
+adopcion,1,1,operativa/archive/legacy-root/20260616/MANIFIESTO_SDU_ESCRIBANIA_BITSCH_BORRADOR_20260616.md,editorial_followup_only,CLOSED_LOCAL_WITH_WARNINGS
+aprobacion,4,3,dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md;dataverse/REGISTRO_BLOQUEOS.md,editorial_followup_only,CLOSED_LOCAL_WITH_WARNINGS
+cognicion,0,0,,no_action_required,CLOSED_LOCAL
+orquestacion,2,2,operativa/archive/legacy-root/20260615/CODEX_CLOUD_CONTRACT_20260615.md;operativa/archive/legacy-root/20260615/POLITICA_RAMAS_VERSIONADO_20260615.md,editorial_followup_only,CLOSED_LOCAL_WITH_WARNINGS
+diseno,1,1,operativa/archive/legacy-root/20260617/VERSIONADO_DOCUMENTAL_LOCAL_20260617.md,editorial_followup_only,CLOSED_LOCAL_WITH_WARNINGS
+limites,3,3,docs/gobernanza/nomenclatura.md;operativa/archive/legacy-root/20260616/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md,editorial_followup_only,CLOSED_LOCAL_WITH_WARNINGS
+sintetica,0,0,,no_action_required,CLOSED_LOCAL
+AgentKit,0,0,,standard_already_agents_sdk,CLOSED_LOCAL
+Agents SDK,7,6,dataverse/MAPA_CONEXIONES_DATAVERSE.md;operativa/archive/legacy-root/20260617/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md,standard_present,CLOSED_LOCAL

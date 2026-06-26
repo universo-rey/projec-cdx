@@ -1,0 +1,3 @@
+"path","git_status","tracked_kind","class","decision","root_bucket","size_bytes","exists","safe_to_ignore","safe_to_version","owner_gate"
+"operativa/tasks/20260623/CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_20260623.csv"," M","tracked","UNKNOWN_REVIEW","OWNER_HOLD_GOVERNED","operativa","0","True","False","False","True"
+"operativa/tasks/20260623/READBACK_CABINA_LOCAL_FILES_RECONCILIATION_AND_NOISE_REDUCTION_G1_20260623.md"," M","tracked","EVIDENCE","VERSIONABLE_READBACK","operativa","3115","True","False","True","False"

@@ -5,12 +5,12 @@
   "source_files": [
     "operativa/CURRENT.md",
     "operativa/NEXT.md",
-    "operativa/BLOCKERS.md",
+    "operativa/archive/legacy-root/undated/BLOCKERS.md",
     "operativa/TRACE.md",
-    "operativa/TODO_20260615.md",
-    "operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md",
-    "operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md",
-    "operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md",
+    "operativa/archive/legacy-root/20260615/TODO_20260615.md",
+    "operativa/archive/legacy-root/20260615/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md",
+    "operativa/archive/legacy-root/20260615/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md",
+    "operativa/archive/legacy-root/20260615/ACTA_REPOS_SURFACE_GITHUB_20260615.md",
     "outputs/live_repo_review_20260615/READBACK.md",
     "dataverse/GATE.md",
     "dataverse/REGISTRO_BLOQUEOS.md",
@@ -19,8 +19,8 @@
     "dataverse/MAPA.md",
     "playbooks/07-dataverse-fronteras.md",
     "hitos/20260615-hilo-origen-v1/README.md",
-    "operativa/MANIFESTS.md",
-    "operativa/RETENCION.md"
+    "operativa/archive/legacy-root/undated/MANIFESTS.md",
+    "operativa/archive/legacy-root/undated/RETENCION.md"
   ],
   "outputs": [
     "workbooks/control_operativo.xlsx",

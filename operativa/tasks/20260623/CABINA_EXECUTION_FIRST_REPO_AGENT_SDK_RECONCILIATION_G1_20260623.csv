@@ -1,0 +1,6 @@
+capability,command,status,evidence,owner_agent,gate_required,next_action
+Cabina Execution Surface,ceo-cabina-exec-status,CABINA_EXECUTION_SURFACE_READY,.cabina/execution-g1/out/cabina-execution-surface.json,THOT_EXECUTION_LEAD,false,run_from_vscode_insiders
+Repo Fleet Discovery,ceo-repo-fleet-scan,REPO_FLEET_DISCOVERY_READY,.cabina/execution-g1/out/repo-fleet-inventory.json,HERMES_REPO_CARTOGRAPHER,false,review_dirty_repos_by_class
+Agent Reconciliation,ceo-agent-reconcile,AGENT_RECONCILIATION_READY,.cabina/execution-g1/out/agent-reconciliation-map.json,SESHAT_AGENT_REGISTRY,false,reconcile_missing_governance_matrices
+SDK Active Use,ceo-sdk-status,SDK_ACTIVE_USE_READY,.cabina/execution-g1/out/sdk-active-status.json,SDK_OPERATOR,false,local_no_api_sdk_smoke
+Dataverse Active Memory,ceo-dataverse-active-memory,DATAVERSE_ACTIVE_MEMORY_READY,.cabina/execution-g1/out/dataverse-active-memory-map.json,DATAVERSE_MEMORY_KEEPER,true,dataverse_canon_name_reconciliation

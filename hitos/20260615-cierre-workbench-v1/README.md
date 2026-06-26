@@ -17,8 +17,8 @@ Versiona el cierre de la ronda de completitud de `PROJEC CDX`.
 - [REGISTRO_HITOS.md](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cierre-workbench-v1/REGISTRO_HITOS.md)
 - [INDICE.csv](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cierre-workbench-v1/INDICE.csv)
 - [EVIDENCIA.md](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-cierre-workbench-v1/EVIDENCIA.md)
-- [Readback de cierre](C:/Users/enzo1/PROJEC%20CDX/operativa/READBACK_CIERRE_20260615.md)
-- [Control total](C:/Users/enzo1/PROJEC%20CDX/operativa/CONTROL_TOTAL_20260615.md)
+- [Readback de cierre](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260615/READBACK_CIERRE_20260615.md)
+- [Control total](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260615/CONTROL_TOTAL_20260615.md)
 
 ## Estado
 

@@ -1,0 +1,27 @@
+{
+  "artifact_id": "operativa/tasks/20260623/IDE_EVIDENCE_TELEMETRY_CONTROL_MATRIX_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "IDE_EVIDENCE_TELEMETRY_CONTROL"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/IDE_EVIDENCE_TELEMETRY_CONTROL_MATRIX_20260623.csv",
+  "etiquetas": [
+    "vscode-insiders",
+    "evidence-capture",
+    "telemetry",
+    "local-only",
+    "productiva"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/READBACK_IDE_EVIDENCE_TELEMETRY_CONTROL_20260623.md",
+    "tools/ceo-ide-evidence-status.ps1",
+    "tools/ceo-ide-telemetry-status.ps1"
+  ],
+  "descripcion": "Matriz minima del carril IDE_EVIDENCE_TELEMETRY_CONTROL para clasificar evidencia y telemetria reutilizable desde VS Code Insiders."
+}

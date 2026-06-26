@@ -1,0 +1,27 @@
+{
+  "artifact_id": "operativa/tasks/20260623/IDE_AGENT_MCP_CONTROL_MATRIX_20260623",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "v0.6.0-rc1",
+  "fecha_evento": "2026-06-23",
+  "autoridad": {
+    "tipo": "sistema",
+    "referencia": "IDE_AGENT_MCP_CONTROL"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/tasks/20260623/IDE_AGENT_MCP_CONTROL_MATRIX_20260623.csv",
+  "etiquetas": [
+    "vscode-insiders",
+    "agent-tool-hub",
+    "mcp",
+    "local-only",
+    "productiva"
+  ],
+  "relacionados": [
+    "operativa/tasks/20260623/READBACK_IDE_AGENT_MCP_CONTROL_20260623.md",
+    "tools/ceo-ide-agent-map.ps1",
+    "tools/ceo-ide-mcp-status.ps1"
+  ],
+  "descripcion": "Matriz minima del carril IDE_AGENT_MCP_CONTROL para mapear agentes, MCP, runners y herramientas desde VS Code Insiders."
+}

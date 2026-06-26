@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ceo://contracts/control-plane-sync.payload.schema.json",
+  "title": "CEO Control Plane Sync Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "syncId",
+    "syncedAt",
+    "status",
+    "canvasRoot",
+    "workspacePath",
+    "snsPath",
+    "workflows",
+    "dependencies",
+    "orchestrationWorkflows",
+    "mappedSurfaces",
+    "recommendation",
+    "sensitiveContentDetected",
+    "liveWrite"
+  ],
+  "properties": {
+    "syncId": { "type": "string", "minLength": 1 },
+    "syncedAt": { "type": "string", "format": "date-time" },
+    "status": { "type": "string", "enum": ["READY", "DEGRADED", "HELD"] },
+    "canvasRoot": { "type": "string", "minLength": 1 },
+    "workspacePath": { "type": "string", "minLength": 1 },
+    "snsPath": { "type": "string", "minLength": 1 },
+    "workflows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "path", "status"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "enum": ["READY", "MISSING", "DEGRADED"] }
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "to", "type", "status"],
+        "properties": {
+          "from": { "type": "string", "minLength": 1 },
+          "to": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "enum": ["READY", "HELD"] }
+        }
+      }
+    },
+    "orchestrationWorkflows": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "mappedSurfaces": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "recommendation": { "type": "string", "minLength": 1 },
+    "sensitiveContentDetected": { "type": "boolean", "enum": [false] },
+    "liveWrite": { "type": "boolean", "enum": [false] }
+  }
+}

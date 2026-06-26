@@ -4,7 +4,7 @@
 
 Delta documental nuevo, archivo nuevo o hito nuevo que debe quedar absorbido por capas.
 
-Se abre desde `operativa/ANCLAS_ON_DEMAND.md` cuando el delta pide el proceso ejecutable.
+Se abre desde `operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md` cuando el delta pide el proceso ejecutable.
 
 ## Pasos
 

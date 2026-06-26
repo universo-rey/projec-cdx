@@ -1,0 +1,8 @@
+"Command","Found","Source","CommandType"
+"codex","True","C:\Users\enzo1\AppData\Local\OpenAI\Codex\bin\8e55c2dd143b6354\codex.exe","Application"
+"python","True","C:\CEO\project-cdx\.venv\Scripts\python.exe","Application"
+"pip","True","C:\CEO\project-cdx\.venv\Scripts\pip.exe","Application"
+"node","True","C:\Users\enzo1\AppData\Local\Microsoft\WinGet\Packages\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\node-v24.17.0-win-x64\node.exe","Application"
+"npm","True","C:\Users\enzo1\AppData\Local\Microsoft\WinGet\Packages\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\node-v24.17.0-win-x64\npm.ps1","ExternalScript"
+"git","True","C:\Program Files\Git\cmd\git.exe","Application"
+"code-insiders","True","C:\Users\enzo1\AppData\Local\Programs\Microsoft VS Code Insiders\bin\code-insiders.cmd","Application"

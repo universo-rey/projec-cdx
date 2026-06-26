@@ -2,8 +2,8 @@
 
 ## Acta
 
-- `operativa/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md`.
-- `operativa/MATRIZ_RAMAS_HISTORICAS_20260615.xlsx`.
+- `operativa/archive/legacy-root/20260615/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md`.
+- `operativa/archive/legacy-root/20260615/MATRIZ_RAMAS_HISTORICAS_20260615.xlsx`.
 - `operativa/TRACE.md`.
 
 ## Indices

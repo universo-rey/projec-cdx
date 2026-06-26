@@ -23,4 +23,4 @@
 - Evidence canonical id: `evidence:sharepoint:corte-agent-index:20260617:v1`.
 - Source id: `4e61a882-786a-f111-ab0e-00224805fc91`.
 - Evidence id: `ecd5578a-786a-f111-ab0e-00224805f8f9`.
-- Evidencia: `operativa/DATAVERSE_PROMOTION_INDICE_CORTE_AGENTES_20260617.json`.
+- Evidencia: `operativa/archive/legacy-root/20260617/DATAVERSE_PROMOTION_INDICE_CORTE_AGENTES_20260617.json`.

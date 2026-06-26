@@ -47,9 +47,9 @@ No aplica a lectura de logs. Si se genera evidencia incorrecta, descartar eviden
 - Sin rerun, push, PR ni workflow dispatch.
 
 ## Evidencia local
-- operativa/READBACK_GATE_0.3.13_CABINA_RUNTIME_CI_TRIAGE_20260622.md
-- operativa/GATE_0.3.13_CABINA_RUNTIME_CI_TRIAGE_MATRIX_20260622.csv
-- operativa/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/READBACK_GATE_0.3.13_CABINA_RUNTIME_CI_TRIAGE_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.13_CABINA_RUNTIME_CI_TRIAGE_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/SDU_0.4.x_REMOTE_PATCH_WAVE_MATRIX_20260622.csv
 
 ## Resultado
 GATE_0.4.12_READY_FOR_REMOTE_LOG_COLLECTION_GATE

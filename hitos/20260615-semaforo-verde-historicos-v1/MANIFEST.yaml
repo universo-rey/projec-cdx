@@ -4,8 +4,8 @@ superficie: PROJEC CDX
 tipo: semaforo_verde_historicos
 estado: GREEN_LOCAL
 fuente:
-  - operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md
-  - operativa/CONTROL_TOTAL_20260615.md
+  - operativa/archive/legacy-root/20260615/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md
+  - operativa/archive/legacy-root/20260615/CONTROL_TOTAL_20260615.md
 salida:
   - hitos/20260615-semaforo-verde-historicos-v1/
 rollback: restaurar el acta y la reclasificacion historica

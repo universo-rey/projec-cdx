@@ -1,0 +1,74 @@
+{
+  "fabric_id": "SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS",
+  "status": "SENIOR_INTEGRATION_FABRIC_STEP2_PACKET_COMMANDS_READY_LOCAL_ONLY",
+  "version": "v0.6.0-rc1",
+  "date": "2026-06-23",
+  "workspace": "C:\\CEO\\project-cdx",
+  "source_index": "operativa\\tasks\\20260623\\SENIOR_INTEGRATION_FABRIC_G1_INDEX_20260623.json",
+  "source_map": "operativa\\tasks\\20260623\\SENIOR_INTEGRATION_FABRIC_G1_MAP_20260623.csv",
+  "packet_matrix": "operativa\\tasks\\20260623\\SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS_20260623.csv",
+  "readback": "operativa\\tasks\\20260623\\READBACK_SENIOR_INTEGRATION_FABRIC_G1_STEP2_PACKET_COMMANDS_20260623.md",
+  "commands": [
+    {
+      "command": "ceo-ide-to-codex-pack",
+      "file": "tools\\ceo-ide-to-codex-pack.ps1",
+      "task": "CEO: IDE to Codex Pack",
+      "contract": "IDE_TO_CODEX",
+      "gate": "AGENT_GATE",
+      "status": "READY_LOCAL_PACKET_ONLY"
+    },
+    {
+      "command": "ceo-github-pr-pack",
+      "file": "tools\\ceo-github-pr-pack.ps1",
+      "task": "CEO: GitHub PR Pack",
+      "contract": "CODEX_TO_GITHUB",
+      "gate": "REMOTE_GATE",
+      "status": "READY_LOCAL_PACKET_ONLY"
+    },
+    {
+      "command": "ceo-dataverse-memory-delta",
+      "file": "tools\\ceo-dataverse-memory-delta.ps1",
+      "task": "CEO: Dataverse Memory Delta",
+      "contract": "GITHUB_TO_DATAVERSE",
+      "gate": "MEMORY_GATE",
+      "status": "READY_METADATA_ONLY"
+    },
+    {
+      "command": "ceo-sharepoint-evidence-pack",
+      "file": "tools\\ceo-sharepoint-evidence-pack.ps1",
+      "task": "CEO: SharePoint Evidence Pack",
+      "contract": "GITHUB_TO_SHAREPOINT",
+      "gate": "GOVERNANCE_GATE",
+      "status": "READY_NO_PUBLISH"
+    },
+    {
+      "command": "ceo-integration-gates-status",
+      "file": "tools\\ceo-integration-gates-status.ps1",
+      "task": "CEO: Integration Gates Status",
+      "contract": "ALL_GATES",
+      "gate": "ANUBIS_GATE",
+      "status": "READY_LOCAL"
+    }
+  ],
+  "tasks": [
+    "CEO: IDE to Codex Pack",
+    "CEO: GitHub PR Pack",
+    "CEO: Dataverse Memory Delta",
+    "CEO: SharePoint Evidence Pack",
+    "CEO: Integration Gates Status",
+    "CEO: Senior Integration Fabric G1 Step2"
+  ],
+  "frontier": {
+    "no_push": true,
+    "no_pr": true,
+    "no_live": true,
+    "no_openai_api_call": true,
+    "no_codex_cloud_execution": true,
+    "no_dataverse_write": true,
+    "no_sharepoint_publish": true,
+    "no_power_platform_mutation": true,
+    "no_teams_post": true,
+    "no_secret_read": true
+  },
+  "next_step": "SENIOR_INTEGRATION_FABRIC_G1_STEP3_OWNER_GATE_DECISIONS"
+}

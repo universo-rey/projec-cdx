@@ -22,8 +22,8 @@ Revertir cambios de checkout/refspec.
 Diff commands ven base y HEAD reales en preflight.
 
 ## Evidencia
-- operativa/GATE_0.3.18_MCP_CODEX_CLOUD_PREFLIGHT_CHECKOUT_PACKET_20260622.md
-- operativa/GATE_0.3.18_MCP_CODEX_CLOUD_PREFLIGHT_CHECKOUT_MATRIX_20260622.csv
+- operativa/archive/legacy-root/20260622/GATE_0.3.18_MCP_CODEX_CLOUD_PREFLIGHT_CHECKOUT_PACKET_20260622.md
+- operativa/archive/legacy-root/20260622/GATE_0.3.18_MCP_CODEX_CLOUD_PREFLIGHT_CHECKOUT_MATRIX_20260622.csv
 
 ## Estado final
 READY_FOR_REMOTE_PATCH_AUTHORIZATION

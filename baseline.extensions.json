@@ -1,0 +1,17 @@
+[
+  "eamodio.gitlens@18.2.0",
+  "esbenp.prettier-vscode@12.4.0",
+  "github.codespaces@1.18.13",
+  "github.vscode-github-actions@0.32.0",
+  "mechatroner.rainbow-csv@3.24.1",
+  "ms-ceintl.vscode-language-pack-es@1.126.2026062218",
+  "ms-python.debugpy@2026.6.0",
+  "ms-python.python@2026.4.0",
+  "ms-python.vscode-pylance@2026.2.1",
+  "ms-python.vscode-python-envs@1.36.0",
+  "ms-vscode-remote.remote-containers@0.461.0",
+  "ms-vscode.powershell@2025.4.0",
+  "msayedshokry.agileagentcanvas@0.5.2",
+  "openai.chatgpt@26.616.81150",
+  "s-kainet.sharepoint-typed-item@0.0.7"
+]
