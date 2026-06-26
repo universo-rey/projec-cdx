@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-23T19:05:57.268452+00:00",
-  "count": 116,
+  "generated_at": "2026-06-26T14:49:17.990347+00:00",
+  "count": 99,
   "items": [
     {
       "artifact_id": "operativa/CURRENT.md",
       "categoria": "operativa",
       "tipo": "reporte",
-      "estado": "en_revision",
+      "estado": "aprobado",
       "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
+      "fecha_evento": "2026-06-26",
       "autoridad": {
         "tipo": "sistema",
         "referencia": "CABINA_GOBIERNO_TOTAL"
@@ -19,16 +19,19 @@
         "current",
         "frontdoor",
         "convergencia",
-        "local-only"
+        "live-total-governed",
+        "production-ready"
       ],
       "relacionados": [
         "README.md",
         "MAPA_MAESTRO.md",
         "MAPA_CAPAS.md",
         "operativa/NEXT.md",
-        "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv"
+        "docs/SDU_FINAL_PACKAGE/SDU_SYSTEM_CERTIFICATION.md",
+        "docs/SDU_FINAL_PACKAGE/SDU_CONTRACT_FORMAL.md",
+        "SDU_STATE_G10.md"
       ],
-      "descripcion": "Estado vivo actual de PROJEC CDX tras convergencia local del frontdoor.",
+      "descripcion": "Estado vivo actual de PROJEC CDX elevado al maximo nivel documental certificado.",
       "metadata_source": "operativa/CURRENT.md",
       "metadata_kind": "front_matter"
     },
@@ -141,9 +144,9 @@
       "artifact_id": "operativa/NEXT.md",
       "categoria": "operativa",
       "tipo": "plan",
-      "estado": "en_revision",
+      "estado": "aprobado",
       "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
+      "fecha_evento": "2026-06-26",
       "autoridad": {
         "tipo": "sistema",
         "referencia": "CABINA_GOBIERNO_TOTAL"
@@ -152,16 +155,17 @@
       "ubicacion_repo": "operativa/NEXT.md",
       "etiquetas": [
         "next",
-        "convergencia",
-        "delegacion",
-        "local-only"
+        "production-ready",
+        "live-total-governed",
+        "next"
       ],
       "relacionados": [
         "operativa/CURRENT.md",
-        "operativa/tasks/20260623/ROOT_GAP_RESOLUTION_DELEGATION_MATRIX_20260623.csv",
-        "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv"
+        "docs/SDU_FINAL_PACKAGE/SDU_OPERATION_PLAYBOOK.md",
+        "docs/SDU_FINAL_PACKAGE/SDU_RISK_MODEL.md",
+        "policy-adjustment-proposal.json"
       ],
-      "descripcion": "Siguiente movimiento vivo para resolver brechas de convergencia de raiz.",
+      "descripcion": "Siguiente movimiento vivo tras elevar el estado al maximo nivel SDU certificado.",
       "metadata_source": "operativa/NEXT.md",
       "metadata_kind": "front_matter"
     },
@@ -2664,167 +2668,29 @@
       "metadata_kind": "front_matter"
     },
     {
-      "artifact_id": "operativa/runtime-events/FINAL_READBACK_LOCAL_RESIDUAL_SURFACES_OWNER_DECISION_G1.md",
+      "artifact_id": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260624_0045.md",
       "categoria": "operativa",
-      "tipo": "readback",
+      "tipo": "acta",
       "estado": "aprobado",
       "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
+      "fecha_evento": "2026-06-24",
       "autoridad": {
         "tipo": "sistema",
         "referencia": "CABINA_GOBIERNO_TOTAL"
       },
       "origen": "GitHub",
-      "ubicacion_repo": "operativa/runtime-events/FINAL_READBACK_LOCAL_RESIDUAL_SURFACES_OWNER_DECISION_G1.md",
-      "etiquetas": [
-        "runtime",
-        "residual",
-        "owner-decision",
-        "readback"
-      ],
-      "relacionados": [
-        "operativa/runtime-events/FINAL_READBACK_LOCAL_RESIDUAL_SURFACES_OWNER_DECISION_G1.json",
-        "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.md",
-        "operativa/runtime-events/LOCAL_RESIDUAL_RETENTION_POLICY_PROPOSAL_20260623.md"
-      ],
-      "descripcion": "Readback final del carril de decision owner para superficies residuales locales.",
-      "metadata_source": "operativa/tasks/20260623/local-residual-surfaces/FINAL_READBACK_LOCAL_RESIDUAL_SURFACES_OWNER_DECISION_G1.md",
-      "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/runtime-events/FINAL_READBACK_RUNTIME_STATE_AND_SNAPSHOT_ALIGNMENT_G1.md",
-      "categoria": "operativa",
-      "tipo": "readback",
-      "estado": "aprobado",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/runtime-events/FINAL_READBACK_RUNTIME_STATE_AND_SNAPSHOT_ALIGNMENT_G1.md",
+      "ubicacion_repo": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260624_0045.md",
       "etiquetas": [
         "runtime",
         "snapshot",
-        "readback"
+        "watchdog"
       ],
       "relacionados": [
-        "VERSION_STATE.json",
-        "index.json",
-        "operativa/archive/legacy-root/undated/index.json",
-        "operativa/HISTORY_RUNTIME_EVOLUTION.md",
-        "operativa/snapshots/SNAPSHOT_INDEX.json",
-        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260623_1246.json"
+        "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260624_0045.json",
+        "operativa/snapshots/SNAPSHOT_INDEX.json"
       ],
-      "descripcion": "Readback final del delta CEO runtime state y alineacion de snapshot con el commit de cabina.",
-      "metadata_source": "operativa/tasks/20260623/local-residual-surfaces/FINAL_READBACK_RUNTIME_STATE_AND_SNAPSHOT_ALIGNMENT_G1.md",
-      "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/runtime-events/LOCAL_RESIDUAL_RETENTION_POLICY_PROPOSAL_20260623.md",
-      "categoria": "operativa",
-      "tipo": "plan",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/runtime-events/LOCAL_RESIDUAL_RETENTION_POLICY_PROPOSAL_20260623.md",
-      "etiquetas": [
-        "runtime",
-        "residual",
-        "retention",
-        "policy"
-      ],
-      "relacionados": [
-        "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.md"
-      ],
-      "descripcion": "Propuesta no aplicada de politica de retencion para superficies residuales locales.",
-      "metadata_source": "operativa/tasks/20260623/local-residual-surfaces/LOCAL_RESIDUAL_RETENTION_POLICY_PROPOSAL_20260623.md",
-      "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623",
-      "categoria": "operativa",
-      "tipo": "matriz",
-      "estado": "aprobado",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.csv",
-      "etiquetas": [
-        "runtime",
-        "residual",
-        "classification",
-        "owner-decision"
-      ],
-      "relacionados": [
-        "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.md",
-        "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.json"
-      ],
-      "descripcion": "Matriz CSV de clasificacion de superficies residuales locales por metadata de ruta, estado Git, extension, tamano y fecha.",
-      "metadata_source": "operativa/tasks/20260623/local-residual-surfaces/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.csv.meta.json",
-      "metadata_kind": "meta_json"
-    },
-    {
-      "artifact_id": "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.md",
-      "categoria": "operativa",
-      "tipo": "reporte",
-      "estado": "aprobado",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.md",
-      "etiquetas": [
-        "runtime",
-        "residual",
-        "classification",
-        "owner-decision"
-      ],
-      "relacionados": [
-        "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.json",
-        "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.csv"
-      ],
-      "descripcion": "Clasificacion gobernada de superficies residuales locales sin aplicar acciones.",
-      "metadata_source": "operativa/tasks/20260623/local-residual-surfaces/LOCAL_RESIDUAL_SURFACES_CLASSIFICATION_20260623.md",
-      "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_PREFLIGHT_20260623.md",
-      "categoria": "operativa",
-      "tipo": "reporte",
-      "estado": "aprobado",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_PREFLIGHT_20260623.md",
-      "etiquetas": [
-        "runtime",
-        "residual",
-        "preflight"
-      ],
-      "relacionados": [
-        "operativa/runtime-events/LOCAL_RESIDUAL_SURFACES_PREFLIGHT_20260623.json",
-        "operativa/runtime-events/FINAL_READBACK_RUNTIME_STATE_AND_SNAPSHOT_ALIGNMENT_G1.md"
-      ],
-      "descripcion": "Preflight del carril local residual surfaces owner decision.",
-      "metadata_source": "operativa/tasks/20260623/local-residual-surfaces/LOCAL_RESIDUAL_SURFACES_PREFLIGHT_20260623.md",
+      "descripcion": "Acta runtime SNAPSHOT_CEORUNTIME_20260624_0045 generada por operacion continua.",
+      "metadata_source": "operativa/runtime-events/ACTA_SNAPSHOT_CEORUNTIME_20260624_0045.md",
       "metadata_kind": "front_matter"
     },
     {
@@ -2878,357 +2744,6 @@
       "descripcion": "Preflight del delta runtime state y alineacion de snapshot con commit cabina.",
       "metadata_source": "operativa/runtime-events/RUNTIME_STATE_DELTA_PREFLIGHT_20260623.md",
       "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
-      "categoria": "operativa",
-      "tipo": "readback",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
-      "etiquetas": [
-        "runtime",
-        "environment",
-        "governance",
-        "local-only"
-      ],
-      "relacionados": [
-        "operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv",
-        "operativa/archive/legacy-root/20260622/RUNTIME_CLI_MATRIX_20260622.csv",
-        "operativa/SDU_RUNTIME_BOUNDARY_MATRIX.json",
-        "VERSION_STATE.json"
-      ],
-      "descripcion": "Contrato local del entorno runtime CEO, entrypoint canonico, snapshot baseline y estrategia de divergencia sin live.",
-      "metadata_source": "operativa/tasks/20260623/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
-      "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623",
-      "categoria": "operativa",
-      "tipo": "matriz",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv",
-      "etiquetas": [
-        "runtime",
-        "environment",
-        "governance",
-        "local-only"
-      ],
-      "relacionados": [
-        "operativa/tasks/20260623/CEO_RUNTIME_ENV_CONTRACT_20260623.md",
-        "operativa/archive/legacy-root/20260622/RUNTIME_CLI_MATRIX_20260622.csv",
-        "operativa/SDU_RUNTIME_BOUNDARY_MATRIX.json",
-        "VERSION_STATE.json"
-      ],
-      "descripcion": "Matriz minima de gobierno para contrato runtime CEO: agentes, tools, runners, recetas y mapping local-only.",
-      "metadata_source": "operativa/tasks/20260623/CEO_RUNTIME_GOVERNANCE_MATRIX_20260623.csv.meta.json",
-      "metadata_kind": "meta_json"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/OPERATIVA_ROOT_ARCHIVE_MANIFEST_20260623",
-      "categoria": "operativa",
-      "tipo": "matriz",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/OPERATIVA_ROOT_ARCHIVE_MANIFEST_20260623.csv",
-      "etiquetas": [
-        "operativa",
-        "archivo",
-        "legacy-root",
-        "clean-root"
-      ],
-      "relacionados": [
-        "operativa/archive/README.md",
-        "operativa/README.md",
-        "operativa/MAPA.md"
-      ],
-      "descripcion": "Manifiesto de archivos historicos reubicados desde raices visibles al archivo por fecha.",
-      "metadata_source": "operativa/tasks/20260623/OPERATIVA_ROOT_ARCHIVE_MANIFEST_20260623.csv.meta.json",
-      "metadata_kind": "meta_json"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/ORGANISMO_VIVO_PACKAGE_ASSIMILATION_MATRIX_20260623",
-      "categoria": "operativa",
-      "tipo": "matriz",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/ORGANISMO_VIVO_PACKAGE_ASSIMILATION_MATRIX_20260623.csv",
-      "etiquetas": [
-        "organismo-vivo",
-        "paquete",
-        "convergencia",
-        "local-only"
-      ],
-      "relacionados": [
-        ".cabina/organizacion-total/organismo-vivo/README.md",
-        "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv",
-        "operativa/tasks/20260623/READBACK_ORGANISMO_VIVO_PACKAGE_ASSIMILATION_20260623.md"
-      ],
-      "descripcion": "Matriz de asimilacion del paquete SDU Organismo Vivo dentro de .cabina sin crear SDU_RUNTIME_ROOT.",
-      "metadata_source": "operativa/tasks/20260623/ORGANISMO_VIVO_PACKAGE_ASSIMILATION_MATRIX_20260623.csv.meta.json",
-      "metadata_kind": "meta_json"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/READBACK_ORGANISMO_VIVO_PACKAGE_ASSIMILATION_20260623.md",
-      "categoria": "operativa",
-      "tipo": "readback",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/READBACK_ORGANISMO_VIVO_PACKAGE_ASSIMILATION_20260623.md",
-      "etiquetas": [
-        "organismo-vivo",
-        "paquete",
-        "convergencia",
-        "local-only"
-      ],
-      "relacionados": [
-        "operativa/tasks/20260623/ORGANISMO_VIVO_PACKAGE_ASSIMILATION_MATRIX_20260623.csv",
-        ".cabina/organizacion-total/organismo-vivo/README.md",
-        "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv"
-      ],
-      "descripcion": "Readback de asimilacion local del paquete SDU Organismo Vivo sin ejecutar scripts ni crear raiz paralela.",
-      "metadata_source": "operativa/tasks/20260623/READBACK_ORGANISMO_VIVO_PACKAGE_ASSIMILATION_20260623.md",
-      "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/READBACK_ROOT_FRONTDOOR_CONVERGENCE_20260623.md",
-      "categoria": "operativa",
-      "tipo": "readback",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/READBACK_ROOT_FRONTDOOR_CONVERGENCE_20260623.md",
-      "etiquetas": [
-        "frontdoor",
-        "convergencia",
-        "raiz",
-        "local-only"
-      ],
-      "relacionados": [
-        "README.md",
-        "MAPA_MAESTRO.md",
-        "MAPA_CAPAS.md",
-        "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv",
-        ".cabina/organizacion-total/organismo-vivo/README.md"
-      ],
-      "descripcion": "Readback de convergencia del frontdoor de PROJEC CDX en README, MAPA_MAESTRO y MAPA_CAPAS.",
-      "metadata_source": "operativa/tasks/20260623/READBACK_ROOT_FRONTDOOR_CONVERGENCE_20260623.md",
-      "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/READBACK_ROOT_SURFACE_CONVERGENCE_TASKS_20260623.md",
-      "categoria": "operativa",
-      "tipo": "readback",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/READBACK_ROOT_SURFACE_CONVERGENCE_TASKS_20260623.md",
-      "etiquetas": [
-        "convergencia",
-        "raiz",
-        "surface-map",
-        "local-only"
-      ],
-      "relacionados": [
-        "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv",
-        "README.md",
-        "MAPA_MAESTRO.md",
-        "MAPA_CAPAS.md",
-        ".cabina/organizacion-total"
-      ],
-      "descripcion": "Readback de preparacion de tareas para converger la raiz de PROJEC CDX sin mover archivos.",
-      "metadata_source": "operativa/tasks/20260623/READBACK_ROOT_SURFACE_CONVERGENCE_TASKS_20260623.md",
-      "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/READBACK_VSCODE_INSIDERS_PROFILE_IMPLEMENTATION_MATRIX_20260623.md",
-      "categoria": "operativa",
-      "tipo": "readback",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/READBACK_VSCODE_INSIDERS_PROFILE_IMPLEMENTATION_MATRIX_20260623.md",
-      "etiquetas": [
-        "vscode-insiders",
-        "perfiles",
-        "mesa-viva",
-        "local-only"
-      ],
-      "relacionados": [
-        "operativa/tasks/20260623/VSCODE_INSIDERS_PROFILE_IMPLEMENTATION_MATRIX_20260623.csv",
-        ".cabina/organizacion-total/.vscode/sdu-organizacion-total.code-workspace",
-        ".cabina/organizacion-total/.vscode/tasks.json"
-      ],
-      "descripcion": "Readback de preparacion de matriz para implementar VS Code Insiders como cabina por perfiles.",
-      "metadata_source": "operativa/tasks/20260623/READBACK_VSCODE_INSIDERS_PROFILE_IMPLEMENTATION_MATRIX_20260623.md",
-      "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/READBACK_VSCODE_INSIDERS_PROFILE_PACKAGE_20260623.md",
-      "categoria": "operativa",
-      "tipo": "readback",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/READBACK_VSCODE_INSIDERS_PROFILE_PACKAGE_20260623.md",
-      "etiquetas": [
-        "vscode-insiders",
-        "perfiles",
-        "lenguaje-generativo",
-        "local-only"
-      ],
-      "relacionados": [
-        "operativa/tasks/20260623/VSCODE_INSIDERS_PROFILE_IMPLEMENTATION_MATRIX_20260623.csv",
-        ".cabina/organizacion-total/vscode-insiders-profiles/README.md",
-        ".cabina/organizacion-total/vscode-insiders-profiles/docs/POLITICA_LENGUAJE_GENERATIVO_GOBERNADO.md"
-      ],
-      "descripcion": "Readback del paquete local para perfil piloto VS Code Insiders SDU-FEDERAL-CONTROL.",
-      "metadata_source": "operativa/tasks/20260623/READBACK_VSCODE_INSIDERS_PROFILE_PACKAGE_20260623.md",
-      "metadata_kind": "front_matter"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/ROOT_GAP_RESOLUTION_DELEGATION_MATRIX_20260623",
-      "categoria": "operativa",
-      "tipo": "matriz",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/ROOT_GAP_RESOLUTION_DELEGATION_MATRIX_20260623.csv",
-      "etiquetas": [
-        "delegacion",
-        "convergencia",
-        "raiz",
-        "local-only"
-      ],
-      "relacionados": [
-        "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv",
-        "operativa/CURRENT.md",
-        "operativa/NEXT.md",
-        ".cabina/organizacion-total/evidence/manifests/20260623/ROOT_RELOCATION_MANIFEST_20260623.csv"
-      ],
-      "descripcion": "Matriz de delegacion para resolver brechas de convergencia sin dejar archivos sueltos.",
-      "metadata_source": "operativa/tasks/20260623/ROOT_GAP_RESOLUTION_DELEGATION_MATRIX_20260623.csv.meta.json",
-      "metadata_kind": "meta_json"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623",
-      "categoria": "operativa",
-      "tipo": "matriz",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv",
-      "etiquetas": [
-        "convergencia",
-        "raiz",
-        "surface-map",
-        "local-only"
-      ],
-      "relacionados": [
-        "README.md",
-        "MAPA_MAESTRO.md",
-        "MAPA_CAPAS.md",
-        ".cabina/organizacion-total",
-        ".cabina/organizacion-total/organismo-vivo/README.md",
-        ".cabina/organizacion-total/evidence/manifests/20260623/ROOT_RELOCATION_MANIFEST_20260623.csv",
-        "operativa/tasks/20260623/ORGANISMO_VIVO_PACKAGE_ASSIMILATION_MATRIX_20260623.csv",
-        "operativa/tasks/20260623/ROOT_GAP_RESOLUTION_DELEGATION_MATRIX_20260623.csv",
-        "operativa/tasks/20260623/READBACK_ROOT_FRONTDOOR_CONVERGENCE_20260623.md",
-        "operativa/tasks/20260623/READBACK_ROOT_SURFACE_CONVERGENCE_TASKS_20260623.md"
-      ],
-      "descripcion": "Matriz de tareas para converger la raiz visible, operativa y runtime sin crear raices paralelas.",
-      "metadata_source": "operativa/tasks/20260623/ROOT_SURFACE_CONVERGENCE_TASKS_20260623.csv.meta.json",
-      "metadata_kind": "meta_json"
-    },
-    {
-      "artifact_id": "operativa/tasks/20260623/VSCODE_INSIDERS_PROFILE_IMPLEMENTATION_MATRIX_20260623",
-      "categoria": "operativa",
-      "tipo": "matriz",
-      "estado": "en_revision",
-      "version": "v0.6.0-rc1",
-      "fecha_evento": "2026-06-23",
-      "autoridad": {
-        "tipo": "sistema",
-        "referencia": "CABINA_GOBIERNO_TOTAL"
-      },
-      "origen": "GitHub",
-      "ubicacion_repo": "operativa/tasks/20260623/VSCODE_INSIDERS_PROFILE_IMPLEMENTATION_MATRIX_20260623.csv",
-      "etiquetas": [
-        "vscode-insiders",
-        "perfiles",
-        "mesa-viva",
-        "local-only"
-      ],
-      "relacionados": [
-        ".cabina/organizacion-total/.vscode/sdu-organizacion-total.code-workspace",
-        ".cabina/organizacion-total/.vscode/tasks.json",
-        ".cabina/organizacion-total/out/CARRIL_5_VSCODE_READBACK.md",
-        ".cabina/organizacion-total/out/VSCODE_NERVOUS_INTERFACE_READBACK.md"
-      ],
-      "descripcion": "Matriz de implementacion de perfiles VS Code Insiders con mesa viva SDU, frontera local y evidencia requerida.",
-      "metadata_source": "operativa/tasks/20260623/VSCODE_INSIDERS_PROFILE_IMPLEMENTATION_MATRIX_20260623.csv.meta.json",
-      "metadata_kind": "meta_json"
     }
   ]
 }
