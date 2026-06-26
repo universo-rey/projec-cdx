@@ -8,24 +8,53 @@
       "created": "2026-06-26T00:00:00-03:00",
       "lastModified": "2026-06-26T00:00:00-03:00"
     },
-    "status": "active"
+    "status": "completed"
   },
   "content": {
-    "id": "SYSTEM_STATE",
-    "name": "SDU System State",
-    "type": "Architecture",
-    "state": {
-      "health": "YELLOW",
-      "sourceHealth": "YELLOW",
-      "score": 68,
-      "risk": "HIGH",
-      "graphOk": true,
-      "locationsReviewed": 15,
-      "generatedAt": "2026-06-25T20:29:08.6813874-03:00"
+    "overview": {
+      "projectName": "SDU Operations Layer",
+      "architectureStyle": "SDU Operational State Layer",
+      "summary": "SDU System State (SYSTEM_STATE) preserves health=YELLOW, sourceHealth=YELLOW, score=68, risk=HIGH, graphOk=True.",
+      "principles": [
+        {
+          "name": "State observation",
+          "description": "{\"health\":\"YELLOW\",\"sourceHealth\":\"YELLOW\",\"score\":68,\"risk\":\"HIGH\",\"graphOk\":true,\"locationsReviewed\":15,\"generatedAt\":\"2026-06-25T20:29:08.6813874-03:00\"}",
+          "rationale": "Risk is high from alert density while health is YELLOW and Graph is stable."
+        },
+        {
+          "name": "NO ACTION REQUIRED",
+          "description": "Original SDU recommendation.",
+          "rationale": "Review WATCHDOG alerts or run check_alert_source through Start Dev if owner wants contextual confirmation."
+        }
+      ]
     },
-    "diagnosis": "Risk is high from alert density while health is YELLOW and Graph is stable.",
-    "recommendation": "NO ACTION REQUIRED",
-    "possibleAction": "Review WATCHDOG alerts or run check_alert_source through Start Dev if owner wants contextual confirmation.",
-    "source": "C:\\CEO\\watchdog\\state\\predictive_score.json"
+    "decisions": [
+      {
+        "id": "SYSTEM_STATE",
+        "title": "SDU System State",
+        "status": "accepted",
+        "context": "Risk is high from alert density while health is YELLOW and Graph is stable.",
+        "decision": "Keep recommendation=NO ACTION REQUIRED for state={\"health\":\"YELLOW\",\"sourceHealth\":\"YELLOW\",\"score\":68,\"risk\":\"HIGH\",\"graphOk\":true,\"locationsReviewed\":15,\"generatedAt\":\"2026-06-25T20:29:08.6813874-03:00\"}.",
+        "rationale": "Review WATCHDOG alerts or run check_alert_source through Start Dev if owner wants contextual confirmation."
+      }
+    ],
+    "implementationNotes": [
+      "Original SDU field id: \"SYSTEM_STATE\"",
+      "Original SDU field name: \"SDU System State\"",
+      "Original SDU field type: \"Architecture\"",
+      "Original SDU field state: {\"health\":\"YELLOW\",\"sourceHealth\":\"YELLOW\",\"score\":68,\"risk\":\"HIGH\",\"graphOk\":true,\"locationsReviewed\":15,\"generatedAt\":\"2026-06-25T20:29:08.6813874-03:00\"}",
+      "Original SDU field diagnosis: \"Risk is high from alert density while health is YELLOW and Graph is stable.\"",
+      "Original SDU field recommendation: \"NO ACTION REQUIRED\"",
+      "Original SDU field possibleAction: \"Review WATCHDOG alerts or run check_alert_source through Start Dev if owner wants contextual confirmation.\"",
+      "Original SDU field source: \"C:\\\\CEO\\\\watchdog\\\\state\\\\predictive_score.json\""
+    ],
+    "references": [
+      {
+        "title": "Predictive score source",
+        "type": "file",
+        "location": "C:\\CEO\\watchdog\\state\\predictive_score.json",
+        "description": "Original SDU source entry."
+      }
+    ]
   }
 }

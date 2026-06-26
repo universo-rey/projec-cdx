@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "decision": "BMAD_PR25_FILE_REFERENCE_PATCH",
+  "pr": 25,
+  "url": "https://github.com/universo-rey/projec-cdx/pull/25",
+  "branch": "codex/version-agile-canvas-bmad-schema-normalization-mainline-20260626",
+  "base": "main",
+  "base_commit": "441e150408c7dc4d27f25028ca27f4b9804645cf",
+  "head_before": "3da4257a7a7bd8f7e551574925c2c227b45acbbe",
+  "generated_at_utc": "2026-06-26T17:00:26.5172838Z",
+  "files_touched": [
+    ".agileagentcanvas-context/sdu/artifacts/sdu-system.json",
+    "operativa/agile-canvas/20260626/BMAD_PR25_FILE_REFERENCE_PATCH_20260626.md",
+    "operativa/agile-canvas/20260626/BMAD_PR25_FILE_REFERENCE_PATCH_20260626.json"
+  ],
+  "corrected_references": [
+    {
+      "field": "content.references[0].location",
+      "before": "../../../SYSTEM_NERVOUS_INDEX.json",
+      "after": "SYSTEM_NERVOUS_INDEX.json",
+      "reason": "Normalize file references to one repo-root-relative base."
+    }
+  ],
+  "normalization_rule": "All content.references entries with type=file use repo-root-relative paths, no absolute paths and no mixed ../ artifact-relative base.",
+  "reference_validation": [
+    {
+      "field": "content.references[0].location",
+      "title": "SYSTEM_NERVOUS_INDEX",
+      "location": "SYSTEM_NERVOUS_INDEX.json",
+      "base": "repo-root-relative",
+      "target_exists_head": true,
+      "target_exists_origin_main": true,
+      "absolute": false,
+      "classification": "FILE_REF_REPO_RELATIVE_VALID"
+    },
+    {
+      "field": "content.references[1].location",
+      "title": "Control plane workspace",
+      "location": "CEO_CONTROL_PLANE.code-workspace",
+      "base": "repo-root-relative",
+      "target_exists_head": true,
+      "target_exists_origin_main": true,
+      "absolute": false,
+      "classification": "FILE_REF_REPO_RELATIVE_VALID"
+    },
+    {
+      "field": "content.references[2].location",
+      "title": "SDU system source",
+      "location": "SYSTEM_NERVOUS_INDEX.json",
+      "base": "repo-root-relative",
+      "target_exists_head": true,
+      "target_exists_origin_main": true,
+      "absolute": false,
+      "classification": "FILE_REF_REPO_RELATIVE_VALID"
+    }
+  ],
+  "validators": [
+    "JSON parse: PASS for patched sdu-system.json, graph-layer.json, system-state.json",
+    "BMAD shape: PASS for metadata, content.overview, content.decisions",
+    "File reference validation: PASS repo-root-relative targets exist in PR head and origin/main",
+    "architecture.schema.json: NOT_FOUND_IN_BRANCH",
+    "schema.json: FOUND",
+    "Sensitive scan: pending post-commit diff validation",
+    "git diff --check: corrected after LF normalization",
+    "Mutation retry: PASS no force push, patch commit applied as fast-forward child"
+  ],
+  "thread": {
+    "path": ".agileagentcanvas-context/sdu/artifacts/sdu-system.json",
+    "line": 67,
+    "topic": "type=file references with inconsistent base",
+    "status": "unresolved_before_patch"
+  },
+  "rollback": {
+    "branch": "codex/version-agile-canvas-bmad-schema-normalization-mainline-20260626",
+    "reset_ref_to": "3da4257a7a7bd8f7e551574925c2c227b45acbbe"
+  },
+  "exclusions": [
+    "graphify-out/**",
+    "graph.json",
+    "GRAPH_REPORT.md",
+    "graph.html",
+    "live",
+    "G11",
+    "tag",
+    "release"
+  ],
+  "live": "not_touched",
+  "g11": "not_touched",
+  "tag": "not_created",
+  "release": "not_created",
+  "commit_parent_actual": "ae78952e896773b3d0082cbf6e4af4e659a65f76",
+  "mutation_retry_note": "First commit-tree produced no file diff because PowerShell split --cacheinfo commas; no history rewrite or force push was used. Real patch is applied as fast-forward child commit."
+}

@@ -8,26 +8,71 @@
       "created": "2026-06-26T00:00:00-03:00",
       "lastModified": "2026-06-26T00:00:00-03:00"
     },
-    "status": "active"
+    "status": "completed"
   },
   "content": {
-    "id": "SDU_SYSTEM",
-    "name": "SDU System",
-    "type": "Architecture",
-    "systemType": "EVENT_DRIVEN_MULTI_AGENT_RUNTIME",
-    "contractSource": {
-      "id": "SYSTEM_NERVOUS_INDEX",
-      "path": "../../../SYSTEM_NERVOUS_INDEX.json",
-      "sourceOfTruth": "SYSTEM_NERVOUS_INDEX"
+    "overview": {
+      "projectName": "SDU Operations Layer",
+      "architectureStyle": "EVENT_DRIVEN_MULTI_AGENT_RUNTIME",
+      "summary": "SDU System (SDU_SYSTEM) preserves the SDU system contract, control plane, event bus, agent model, routing chains and execution boundaries declared by the original artifact.",
+      "principles": [
+        {
+          "name": "Canonical SNS contract",
+          "description": "SNS is the canonical system contract; Canvas, runtime and scripts consume it.",
+          "rationale": "contractSource={\"id\":\"SYSTEM_NERVOUS_INDEX\",\"path\":\"../../../SYSTEM_NERVOUS_INDEX.json\",\"sourceOfTruth\":\"SYSTEM_NERVOUS_INDEX\"}"
+        },
+        {
+          "name": "Fail closed execution",
+          "description": "policy.failClosed=true, liveWrite=false, secretAccess=false",
+          "rationale": "Local execution only unless owner gate explicitly opens a bounded external write."
+        }
+      ]
     },
-    "controlPlane": "CEO_CONTROL_PLANE.code-workspace",
-    "eventBus": "routes[] in SYSTEM_NERVOUS_INDEX.json",
-    "agentModel": "agents[] in SYSTEM_NERVOUS_INDEX.json",
-    "routingChains": "routes[] in SYSTEM_NERVOUS_INDEX.json",
-    "failClosedPolicy": "policy.failClosed=true, liveWrite=false, secretAccess=false",
-    "executionBoundaries": "Local execution only unless owner gate explicitly opens a bounded external write.",
-    "authorityModel": "SNS is the canonical system contract; Canvas, runtime and scripts consume it.",
-    "possibleAction": "Use Ask Agent or Focus Mode to interpret the SNS contract before executing any SDU workflow.",
-    "source": "SYSTEM_NERVOUS_INDEX.json"
+    "decisions": [
+      {
+        "id": "SDU_SYSTEM",
+        "title": "SDU System",
+        "status": "accepted",
+        "context": "contractSource={\"id\":\"SYSTEM_NERVOUS_INDEX\",\"path\":\"../../../SYSTEM_NERVOUS_INDEX.json\",\"sourceOfTruth\":\"SYSTEM_NERVOUS_INDEX\"}; authorityModel=SNS is the canonical system contract; Canvas, runtime and scripts consume it.",
+        "decision": "Use controlPlane=CEO_CONTROL_PLANE.code-workspace; eventBus=routes[] in SYSTEM_NERVOUS_INDEX.json; agentModel=agents[] in SYSTEM_NERVOUS_INDEX.json; routingChains=routes[] in SYSTEM_NERVOUS_INDEX.json.",
+        "rationale": "policy.failClosed=true, liveWrite=false, secretAccess=false; Local execution only unless owner gate explicitly opens a bounded external write.; possibleAction=Use Ask Agent or Focus Mode to interpret the SNS contract before executing any SDU workflow."
+      }
+    ],
+    "implementationNotes": [
+      "Original SDU field id: \"SDU_SYSTEM\"",
+      "Original SDU field name: \"SDU System\"",
+      "Original SDU field type: \"Architecture\"",
+      "Original SDU field systemType: \"EVENT_DRIVEN_MULTI_AGENT_RUNTIME\"",
+      "Original SDU field contractSource: {\"id\":\"SYSTEM_NERVOUS_INDEX\",\"path\":\"../../../SYSTEM_NERVOUS_INDEX.json\",\"sourceOfTruth\":\"SYSTEM_NERVOUS_INDEX\"}",
+      "Original SDU field controlPlane: \"CEO_CONTROL_PLANE.code-workspace\"",
+      "Original SDU field eventBus: \"routes[] in SYSTEM_NERVOUS_INDEX.json\"",
+      "Original SDU field agentModel: \"agents[] in SYSTEM_NERVOUS_INDEX.json\"",
+      "Original SDU field routingChains: \"routes[] in SYSTEM_NERVOUS_INDEX.json\"",
+      "Original SDU field failClosedPolicy: \"policy.failClosed=true, liveWrite=false, secretAccess=false\"",
+      "Original SDU field executionBoundaries: \"Local execution only unless owner gate explicitly opens a bounded external write.\"",
+      "Original SDU field authorityModel: \"SNS is the canonical system contract; Canvas, runtime and scripts consume it.\"",
+      "Original SDU field possibleAction: \"Use Ask Agent or Focus Mode to interpret the SNS contract before executing any SDU workflow.\"",
+      "Original SDU field source: \"SYSTEM_NERVOUS_INDEX.json\""
+    ],
+    "references": [
+      {
+        "title": "SYSTEM_NERVOUS_INDEX",
+        "type": "file",
+        "location": "SYSTEM_NERVOUS_INDEX.json",
+        "description": "sourceOfTruth=SYSTEM_NERVOUS_INDEX"
+      },
+      {
+        "title": "Control plane workspace",
+        "type": "file",
+        "location": "CEO_CONTROL_PLANE.code-workspace",
+        "description": "Original SDU controlPlane entry."
+      },
+      {
+        "title": "SDU system source",
+        "type": "file",
+        "location": "SYSTEM_NERVOUS_INDEX.json",
+        "description": "Original SDU source entry."
+      }
+    ]
   }
 }
