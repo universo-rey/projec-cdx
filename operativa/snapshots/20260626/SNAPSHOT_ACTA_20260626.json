@@ -1,0 +1,250 @@
+{
+  "acta_id": "SNAPSHOT_ACTA_20260626",
+  "schema_version": "1.0",
+  "generated_at_local": "2026-06-26T08:57:35.4105366-03:00",
+  "generated_at_utc": "2026-06-26T11:57:35.4099913Z",
+  "root": "C:\\CEO\\project-cdx",
+  "root_resolved": "C:\\Users\\enzo1\\PROJEC CDX",
+  "live_branch": "codex/live-state-g10-governed-20260626",
+  "live_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "decision": "SNAPSHOT_READY_WITH_CONDITIONS",
+  "mode": "acta_only_no_merge",
+  "agents": [
+    "contracts_agent",
+    "narrador-normativo",
+    "validation_agent"
+  ],
+  "surface": "local_repo_evidence_only_no_live",
+  "live_base_state": {
+    "worktree_clean_before": true,
+    "index_clean_before": true,
+    "live_branch_intact": true,
+    "live_head_intact": true,
+    "note": "Live branch remains intact; this acta evaluates the published candidate package."
+  },
+  "formal_guards": [
+    "NO_PR",
+    "NO_MERGE",
+    "NO_LIVE",
+    "NO_G11_APPLY",
+    "NO_FREEZE_DIRECT_MERGE",
+    "OWNER_GATE_REQUIRED_FOR_NEXT_MUTATION"
+  ],
+  "remote_evidence": [
+    {
+      "artifact": "freeze branch",
+      "ref_type": "branch",
+      "ref": "codex/version-freeze-state-20260626",
+      "expected_commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "remote_commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "match": true,
+      "role": "freeze reference, no direct merge"
+    },
+    {
+      "artifact": "freeze tag",
+      "ref_type": "tag",
+      "ref": "freeze/2026-06-26-g10-reconciled",
+      "expected_commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "remote_commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "match": true,
+      "role": "published freeze tag"
+    },
+    {
+      "artifact": "snapshot decision branch",
+      "ref_type": "branch",
+      "ref": "codex/version-snapshot-decision-20260626",
+      "expected_commit": "18e07a402498e341049804203b378a2bac64bbc5",
+      "remote_commit": "18e07a402498e341049804203b378a2bac64bbc5",
+      "match": true,
+      "role": "versioned retry decision"
+    },
+    {
+      "artifact": "snapshot blocker repair branch",
+      "ref_type": "branch",
+      "ref": "codex/version-snapshot-blocker-repair-20260626",
+      "expected_commit": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+      "remote_commit": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+      "match": true,
+      "role": "conditional repair candidate"
+    },
+    {
+      "artifact": "branch governance matrix branch",
+      "ref_type": "branch",
+      "ref": "codex/version-branch-governance-evidence-20260626",
+      "expected_commit": "309a84c9c1219b04641262c31b71d4c8e254ca0a",
+      "remote_commit": "309a84c9c1219b04641262c31b71d4c8e254ca0a",
+      "match": true,
+      "role": "fan-in and prohibition matrix"
+    },
+    {
+      "artifact": "readbacks branch",
+      "ref_type": "branch",
+      "ref": "codex/version-readbacks-and-sdu-package-20260626",
+      "expected_commit": "e2477509295b672330acec5649108fa942f357ac",
+      "remote_commit": "e2477509295b672330acec5649108fa942f357ac",
+      "match": true,
+      "role": "readback and SDU package evidence"
+    }
+  ],
+  "candidate_package": [
+    "codex/version-snapshot-blocker-repair-20260626",
+    "codex/version-core-g10-20260626",
+    "codex/version-control-plane-canvas-20260626",
+    "codex/version-validator-tooling-20260626",
+    "codex/version-readbacks-and-sdu-package-20260626"
+  ],
+  "referenced_evidence": [
+    "codex/version-total-reconciliation-evidence-20260626",
+    "codex/version-local-reconciliation-evidence-20260626",
+    "codex/version-ceo-watchdog-evidence-20260626",
+    "codex/version-branch-governance-evidence-20260626",
+    "codex/version-snapshot-decision-20260626"
+  ],
+  "not_apply": [
+    "codex/version-g11-review-only-20260626"
+  ],
+  "no_direct_merge": [
+    "codex/version-freeze-state-20260626"
+  ],
+  "conditions": [
+    "PR only with owner gate.",
+    "Merge only with owner gate.",
+    "No mass PR.",
+    "No direct merge into main.",
+    "Workbench OBSERVED is accepted as a condition, not a blocker, while it remains 0 FAIL.",
+    "Snapshot blocker repair must be integrated only by selective review.",
+    "G11 remains review-only.",
+    "Freeze is used as reference/tag, not as integration branch.",
+    "Live write remains disabled unless a specific owner gate authorizes it."
+  ],
+  "validators": {
+    "sync": "PASS",
+    "workbench": "OBSERVED_0_FAIL",
+    "operational_chain": "PASS",
+    "sdu_boot": "PASS",
+    "dataverse_metadata_wave": "PASS",
+    "git_diff_check": "PASS_WITH_NON_BLOCKING_WARNINGS"
+  },
+  "evidence_reads": [
+    {
+      "ref": "codex/version-snapshot-decision-20260626",
+      "path": "operativa/snapshots/20260626/SNAPSHOT_VERSION_DECISION_RETRY_20260626.json",
+      "status": "READ",
+      "decision": "SNAPSHOT_READY_WITH_CONDITIONS"
+    },
+    {
+      "ref": "codex/version-snapshot-decision-20260626",
+      "path": "operativa/snapshots/20260626/SNAPSHOT_VERSION_DECISION_RETRY_20260626.md",
+      "status": "READ"
+    },
+    {
+      "ref": "codex/version-snapshot-decision-20260626",
+      "path": "operativa/policy-review/20260626/WORKBENCH_POLICY_REVIEW_20260626.json",
+      "status": "READ",
+      "decision": "POLICY_PATCH_RECOMMENDED"
+    },
+    {
+      "ref": "codex/version-snapshot-decision-20260626",
+      "path": "operativa/snapshots/20260626/SNAPSHOT_VERSION_DECISION_20260626.json",
+      "status": "READ",
+      "decision": "SNAPSHOT_BLOCKED"
+    },
+    {
+      "ref": "codex/version-snapshot-blocker-repair-20260626",
+      "path": "operativa/repairs/20260626/WORKBENCH_SYNC_POLICY_PATCH_20260626.json",
+      "status": "READ",
+      "decision": "SNAPSHOT_RETRY_ALLOWED_WITH_POLICY_REVIEW"
+    },
+    {
+      "ref": "codex/version-snapshot-blocker-repair-20260626",
+      "path": "operativa/repairs/20260626/MINIMAL_SNAPSHOT_BLOCKER_REPAIR_20260626.json",
+      "status": "READ",
+      "decision": "SNAPSHOT_RETRY_BLOCKED"
+    },
+    {
+      "ref": "codex/version-snapshot-blocker-repair-20260626",
+      "path": "VERSION_STATE.json",
+      "status": "READ",
+      "integrity": "REPAIRED_OWNER_APPLIED"
+    },
+    {
+      "ref": "codex/version-snapshot-blocker-repair-20260626",
+      "path": "tools/validate_proj_cdx_sync.ps1",
+      "status": "READ"
+    },
+    {
+      "ref": "codex/version-snapshot-blocker-repair-20260626",
+      "path": "tools/validate_proj_cdx_workbench.ps1",
+      "status": "READ"
+    },
+    {
+      "ref": "codex/version-branch-governance-evidence-20260626",
+      "path": "operativa/governance/20260626/BRANCH_GOVERNANCE_PR_MATRIX_20260626.json",
+      "status": "READ",
+      "no_pr_masivo": true,
+      "no_merge_directo": true
+    },
+    {
+      "ref": "codex/version-readbacks-and-sdu-package-20260626",
+      "path": "operativa/readbacks/20260626/READBACK_SDU_SYSTEM_REAL_STATE_20260626_POST_REMOTE.json",
+      "status": "READ"
+    },
+    {
+      "ref": "codex/version-freeze-state-20260626",
+      "path": "VERSION_STATE.json",
+      "status": "READ",
+      "integrity": "RECONCILED_OWNER_APPLIED"
+    },
+    {
+      "ref": "codex/version-freeze-state-20260626",
+      "path": "operativa/evidence/version_state/VERSION_STATE_RECON_20260626_070601.json",
+      "status": "READ"
+    }
+  ],
+  "risks": [
+    "workbench OBSERVED pending continuous review",
+    "CRLF/LF warnings are non-blocking but should remain visible",
+    "premature fan-in",
+    "PR without matrix",
+    "applying repair branch without diff review",
+    "accidental live write",
+    "accidental G11 apply"
+  ],
+  "recommended_next_lane": "OWNER_GATE_VERSION_AND_PUSH_SNAPSHOT_ACTA",
+  "after_next_lane": "BRANCH_GOVERNANCE_PR_SELECTIVE_PLAN",
+  "do_not_recommend_now": [
+    "PR"
+  ],
+  "closeout_contract": {
+    "agente": "contracts_agent + narrador-normativo + validation_agent",
+    "orden": "OWNER_GATE_WRITE_SNAPSHOT_ACTA_NO_MERGE",
+    "superficie": "C:\\CEO\\project-cdx local evidence only",
+    "skill": [
+      "no-inference-runtime-write-guard",
+      "repo-agent-tool-governance"
+    ],
+    "receta": "read-only branch evidence + remote ref verification + local acta evidence",
+    "tool": [
+      "git show",
+      "git ls-tree",
+      "git ls-remote",
+      "git diff --check",
+      "ConvertFrom-Json",
+      "apply_patch"
+    ],
+    "estado": "SNAPSHOT_ACTA_WRITTEN_PENDING_VERSION_GATE",
+    "evidencia": [
+      "operativa/snapshots/20260626/SNAPSHOT_ACTA_20260626.md",
+      "operativa/snapshots/20260626/SNAPSHOT_ACTA_20260626.json"
+    ],
+    "validador": "JSON parseable post-write; remote refs match; worktree/index precheck clean",
+    "riesgo_principal": "treating the acta as authorization for PR, merge, or live write without later owner gate",
+    "rollback": "delete only the two acta files before versioning if the owner discards this lane",
+    "stop_condition": "no PR/no merge/no live/no G11 apply without owner gate",
+    "proximos_carriles": [
+      "OWNER_GATE_VERSION_AND_PUSH_SNAPSHOT_ACTA",
+      "BRANCH_GOVERNANCE_PR_SELECTIVE_PLAN"
+    ]
+  },
+  "stop_condition": "no PR/no merge/no live/no G11 apply without owner gate"
+}
