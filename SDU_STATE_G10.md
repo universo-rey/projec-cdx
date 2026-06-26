@@ -1,15 +1,26 @@
 ---
 artifact_id: SDU_STATE_G10.md
+categoria: operativa
+tipo: readback
 estado: aprobado
-modo: LOCAL_GIT_HYGIENE_NO_RUNTIME_MUTATION
+version: g10-20260626
 fecha_evento: '2026-06-26'
 autoridad:
-  tipo: repo_hygiene
+  tipo: sistema
   referencia: SDU_REPO_HYGIENE_G10
 origen: GitHub
 ubicacion_repo: SDU_STATE_G10.md
+etiquetas:
+  - sdu
+  - g10
+  - repo-hygiene
+  - canon-boundary
+relacionados:
+  - SYSTEM_NERVOUS_INDEX.json
+  - SDU_SYSTEM_CONTRACT.md
+  - MAPA_MAESTRO.md
+descripcion: Estado gobernado G10 de frontera canonica del repo y separacion de artefactos experimentales sin mutacion runtime.
 ---
-
 # SDU State G10
 
 Estado: REPO_CANONICAL_BOUNDARY_ESTABLISHED

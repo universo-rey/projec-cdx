@@ -4,6 +4,7 @@ from urllib.parse import urlparse
 import datetime as _dt
 import json
 import os
+import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,6 +13,35 @@ CATALOG_PATH = ROOT / "config" / "actions_catalog.json"
 LOG_PATH = ROOT / "logs" / "action_execution.jsonl"
 STATE_PATH = ROOT / "state" / "predictive_score.json"
 RECOMMENDED_PATH = ROOT / "outbox" / "recommended_actions.json"
+ACTION_ID_PATTERN = re.compile(r"^[a-z][a-z0-9_]{2,63}$")
+
+OWNER_ACTIONS = {
+    "check_alert_source": {
+        "action_id": "check_alert_source",
+        "label": "Revisar origen de alertas",
+        "risk": "LOW",
+        "script_name": "check-alert-source.ps1",
+    },
+    "evaluate_cleanup": {
+        "action_id": "evaluate_cleanup",
+        "label": "Evaluar limpieza controlada",
+        "risk": "MEDIUM",
+        "script_name": "cleanup-evaluation.ps1",
+    },
+}
+
+ENV_ALLOWLIST = (
+    "COMSPEC",
+    "PATH",
+    "PATHEXT",
+    "POWERSHELL_TELEMETRY_OPTOUT",
+    "PSModulePath",
+    "SystemDrive",
+    "SystemRoot",
+    "TEMP",
+    "TMP",
+    "WINDIR",
+)
 
 
 def now_iso():
@@ -65,6 +95,51 @@ def append_log(entry):
         handle.write(json.dumps(entry, ensure_ascii=False, separators=(",", ":")) + "\n")
 
 
+def safe_message(value):
+    text = str(value).replace("\r", " ").replace("\n", " ").strip()
+    return text[:240] if text else "error"
+
+
+def lookup_owner_action(action_id):
+    if not ACTION_ID_PATTERN.fullmatch(action_id):
+        return None
+    return OWNER_ACTIONS.get(action_id)
+
+
+def resolve_action_script(action):
+    commands_root = COMMANDS_DIR.resolve()
+    script_name = action["script_name"]
+    script = (COMMANDS_DIR / script_name).resolve()
+    try:
+        script.relative_to(commands_root)
+    except ValueError as exc:
+        raise ValueError("script outside commands whitelist") from exc
+    if script.parent != commands_root:
+        raise ValueError("script outside commands whitelist")
+    return script
+
+
+def minimal_env():
+    env = {"NO_COLOR": "1"}
+    for key in ENV_ALLOWLIST:
+        value = os.environ.get(key)
+        if value is not None:
+            env[key] = value
+    return env
+
+
+def process_output_summary(completed):
+    stdout = completed.stdout or ""
+    stderr = completed.stderr or ""
+    return {
+        "returncode": completed.returncode,
+        "stdoutBytes": len(stdout.encode("utf-8", errors="replace")),
+        "stderrBytes": len(stderr.encode("utf-8", errors="replace")),
+        "stdoutPresent": bool(stdout.strip()),
+        "stderrPresent": bool(stderr.strip()),
+    }
+
+
 class OwnerActionHandler(SimpleHTTPRequestHandler):
     server_version = "SDUOwnerActionServer/1.0"
 
@@ -96,46 +171,53 @@ class OwnerActionHandler(SimpleHTTPRequestHandler):
             if length <= 0 or length > 4096:
                 raise ValueError("invalid request length")
             payload = json.loads(self.rfile.read(length).decode("utf-8"))
-            action_id = str(payload.get("actionId", "")).strip()
-            if not action_id:
+            requested_action_id = str(payload.get("actionId", "")).strip()
+            if not requested_action_id:
                 raise ValueError("missing actionId")
 
-            catalog = load_catalog()
-            action = next((item for item in catalog if str(item.get("id")) == action_id), None)
+            action = lookup_owner_action(requested_action_id)
             if not action:
-                self.send_json(404, {"ok": False, "error": "action not found"})
+                self.send_json(404, {"ok": False, "error": "action not allowed"})
                 return
 
-            risk = str(action.get("risk", "LOW")).upper()
+            risk = action["risk"]
             if risk == "HIGH":
                 self.send_json(403, {"ok": False, "error": "high risk actions are disabled"})
                 return
 
-            script = Path(str(action.get("script", ""))).resolve()
-            commands_root = COMMANDS_DIR.resolve()
-            if commands_root != script.parent:
-                self.send_json(403, {"ok": False, "error": "script outside commands whitelist"})
-                return
+            script = resolve_action_script(action)
             if not script.exists():
                 self.send_json(404, {"ok": False, "error": "script missing", "script": str(script)})
                 return
 
             state = pre_state()
+            action_id = action["action_id"]
+            action_label = action["label"]
             args = [
                 "powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(script),
                 "-ActionId", action_id,
-                "-ActionLabel", str(action.get("label", action_id)),
+                "-ActionLabel", action_label,
                 "-Risk", risk,
                 "-ExecutedBy", "OWNER_UI",
                 "-DecisionSource", "MANUAL_CLICK",
                 "-PreStateJson", json.dumps(state, ensure_ascii=False, separators=(",", ":")),
             ]
-            completed = subprocess.run(args, capture_output=True, text=True, timeout=120)
+            completed = subprocess.run(
+                args,
+                capture_output=True,
+                text=True,
+                timeout=120,
+                cwd=str(COMMANDS_DIR.resolve()),
+                env=minimal_env(),
+                shell=False,
+                check=False,
+            )
             result = "SUCCESS" if completed.returncode == 0 else "FAIL"
+            output_summary = process_output_summary(completed)
             if completed.returncode != 0:
                 append_log({
                     "actionId": action_id,
-                    "actionLabel": action.get("label", action_id),
+                    "actionLabel": action_label,
                     "timestamp": timestamp,
                     "executedBy": "OWNER_UI",
                     "decisionSource": "MANUAL_CLICK",
@@ -143,16 +225,15 @@ class OwnerActionHandler(SimpleHTTPRequestHandler):
                     "result": result,
                     "preState": state,
                     "postState": "UNCHANGED",
-                    "error": completed.stderr.strip() or completed.stdout.strip(),
+                    "error": output_summary,
                 })
             self.send_json(200 if completed.returncode == 0 else 500, {
                 "ok": completed.returncode == 0,
                 "actionId": action_id,
-                "actionLabel": action.get("label", action_id),
+                "actionLabel": action_label,
                 "timestamp": timestamp,
                 "result": result,
-                "stdout": completed.stdout.strip(),
-                "stderr": completed.stderr.strip(),
+                "output": output_summary,
             })
         except Exception as exc:
             append_log({
@@ -163,9 +244,9 @@ class OwnerActionHandler(SimpleHTTPRequestHandler):
                 "result": "FAIL",
                 "preState": pre_state(),
                 "postState": "UNCHANGED",
-                "error": str(exc),
+                "error": safe_message(exc),
             })
-            self.send_json(400, {"ok": False, "error": str(exc), "timestamp": timestamp})
+            self.send_json(400, {"ok": False, "error": safe_message(exc), "timestamp": timestamp})
 
 
 if __name__ == "__main__":
