@@ -1,5 +1,6 @@
 param(
   [string]$Root = "C:/Users/enzo1/PROJEC CDX",
+  [string]$RuntimePath = "outputs",
   [switch]$Json
 )
 
@@ -36,6 +37,11 @@ function Test-Link {
   return Test-Path -LiteralPath $decoded
 }
 
+$ResolvedRuntimePath = $RuntimePath -replace '^[\\/]+|[\\/]+$', ''
+if ([string]::IsNullOrWhiteSpace($ResolvedRuntimePath)) {
+  $ResolvedRuntimePath = "outputs"
+}
+
 if (-not (Test-Path -LiteralPath $Root -PathType Container)) {
   Add-Check "root_exists" "FAIL" "No existe la raiz esperada."
 }
@@ -54,9 +60,9 @@ $requiredVisible = @(
   "workbooks\README.md",
   "workbooks\MAPA.md",
   "workbooks\EXCEL_AL_FRENTE.md",
-  "<RUNTIME_PATH>\README.md",
-  "<RUNTIME_PATH>\MAPA.md",
-  "<RUNTIME_PATH>\dataverse_blocker_frontier_20260614\README.md",
+  "$ResolvedRuntimePath\README.md",
+  "$ResolvedRuntimePath\MAPA.md",
+  "$ResolvedRuntimePath\dataverse_blocker_frontier_20260614\README.md",
   "hitos\README.md",
   "hitos\MAPA.md",
   "playbooks\07-dataverse-fronteras.md",
@@ -78,7 +84,7 @@ foreach ($relative in $requiredVisible) {
 $readme = Get-Content -LiteralPath (Join-Path $Root "README.md") -Raw
 $mapa = Get-Content -LiteralPath (Join-Path $Root "MAPA_MAESTRO.md") -Raw
 $excelAlFrente = Get-Content -LiteralPath (Join-Path $Root "workbooks\EXCEL_AL_FRENTE.md") -Raw
-$outputsReadme = Get-Content -LiteralPath (Join-Path $Root "<RUNTIME_PATH>\README.md") -Raw
+$outputsReadme = Get-Content -LiteralPath (Join-Path $Root "$ResolvedRuntimePath\README.md") -Raw
 $hitosReadme = Get-Content -LiteralPath (Join-Path $Root "hitos\README.md") -Raw
 
 foreach ($label in @("tracker.xlsx", "control_operativo.xlsx", "inicio.xlsx")) {
@@ -117,8 +123,8 @@ $linkChecks = @(
   @{ file = "README.md"; pattern = "C:/Users/enzo1/PROJEC%20CDX/workbooks/tracker.xlsx" },
   @{ file = "README.md"; pattern = "C:/Users/enzo1/PROJEC%20CDX/workbooks/control_operativo.xlsx" },
   @{ file = "MAPA_MAESTRO.md"; pattern = "C:/Users/enzo1/PROJEC%20CDX/workbooks/tracker.xlsx" },
-  @{ file = "MAPA_MAESTRO.md"; pattern = "<RUNTIME_PATH>/tracker_general_20260613" },
-  @{ file = "workbooks/EXCEL_AL_FRENTE.md"; pattern = "<RUNTIME_PATH>/tracker_workbook_20260613/tracker_workbook.xlsx" }
+  @{ file = "MAPA_MAESTRO.md"; pattern = "$ResolvedRuntimePath/tracker_general_20260613" },
+  @{ file = "workbooks/EXCEL_AL_FRENTE.md"; pattern = "$ResolvedRuntimePath/tracker_workbook_20260613/tracker_workbook.xlsx" }
 )
 
 foreach ($check in $linkChecks) {
@@ -166,7 +172,7 @@ foreach ($relative in $syncFiles) {
   }
 }
 
-$trackerOutputs = Get-ChildItem -LiteralPath (Join-Path $Root "<RUNTIME_PATH>") -Directory -Filter "tracker*" -ErrorAction SilentlyContinue
+$trackerOutputs = Get-ChildItem -LiteralPath (Join-Path $Root $ResolvedRuntimePath) -Directory -Filter "tracker*" -ErrorAction SilentlyContinue
 if ($trackerOutputs.Count -ge 2) {
   Add-Check "tracker_outputs_count" "PASS" "Existen corridas tracker."
 } else {
