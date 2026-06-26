@@ -1,0 +1,78 @@
+{
+  "artifact_id": "SNAPSHOT_BLOCKER_DIAG_AND_MINIMAL_REPAIR_PLAN_20260626",
+  "generated_at_local": "2026-06-26T08:14:17.9977659-03:00",
+  "generated_at_utc": "2026-06-26T11:14:18.3090960Z",
+  "root": "C:\\CEO\\project-cdx",
+  "live_branch": "codex/live-state-g10-governed-20260626",
+  "live_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "snapshot_decision_publication": {
+    "branch": "codex/version-snapshot-decision-20260626",
+    "commit": "adca9f36797e14752dfec21c22228a9d469a566b",
+    "remote_verified": true
+  },
+  "blocker_classification": [
+    {
+      "id": "VERSION_STATE_LIVE_MISMATCH",
+      "classification": "FAIL_REAL_LIVE_STATE",
+      "evidence": "Live VERSION_STATE.json points to codex/runtime-versioning-snapshots c856fa9b with PENDING_STAGE; freeze branch carries reconciled live state.",
+      "minimal_repair": "Owner-gated selective promotion of reconciled VERSION_STATE and evidence; no direct freeze merge."
+    },
+    {
+      "id": "VALIDATOR_OPERATIONAL_CHAIN_EXACT_ORDER_FAIL",
+      "classification": "FAIL_BY_INVOCATION",
+      "evidence": "Using -Root C:\\CEO\\project-cdx\\tools\\sdu_chain_resolver.py fails; using -Root C:\\CEO\\project-cdx passes.",
+      "minimal_repair": "Correct invocation or add script guard for file-valued Root."
+    },
+    {
+      "id": "VALIDATOR_SYNC_FAIL",
+      "classification": "FAIL_BY_VALIDATOR_IMPLEMENTATION",
+      "evidence": "Script dereferences literal <RUNTIME_PATH> paths; outputs\\README.md exists but <RUNTIME_PATH>\\README.md does not.",
+      "minimal_repair": "Add RuntimePath parameter/default outputs and resolve placeholder before Test-Path/Get-Content."
+    },
+    {
+      "id": "VALIDATOR_WORKBENCH_FAIL",
+      "classification": "FAIL_REAL_POLICY_OR_VALIDATOR_DRIFT",
+      "evidence": "Required file policy includes absent operativa START_HERE/BLOCKERS/MANIFESTS/RETENCION/ACTA plus literal <RUNTIME_PATH>.",
+      "minimal_repair": "Owner decision: update validator policy to current canon or create missing docs only if confirmed as canonical."
+    }
+  ],
+  "passes": [
+    {
+      "id": "SDU_BOOT",
+      "status": "PASS",
+      "command": "tools/sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun -Json"
+    },
+    {
+      "id": "DATAVERSE_METADATA_WAVE",
+      "status": "PASS",
+      "command": "tools/validate_sdu_dataverse_metadata_wave.ps1 -Root C:\\CEO\\project-cdx"
+    },
+    {
+      "id": "GIT_DIFF_CHECK",
+      "status": "PASS",
+      "command": "git diff --check"
+    },
+    {
+      "id": "OPERATIONAL_CHAIN_CORRECT_ROOT",
+      "status": "PASS",
+      "command": "tools/validate_proj_cdx_operational_chain.ps1 -Root C:\\CEO\\project-cdx -Json"
+    }
+  ],
+  "minimal_repair_order": [
+    "VERSION_STATE owner-gated selective reconciliation",
+    "Operational-chain invocation correction or guardrail",
+    "Sync validator RuntimePath placeholder resolver",
+    "Workbench validator policy decision and RuntimePath resolver",
+    "Re-run validators before changing snapshot decision"
+  ],
+  "recommended_next_lane": "OWNER_GATE_MINIMAL_SNAPSHOT_BLOCKER_REPAIR_NO_MERGE",
+  "forbidden_actions": [
+    "PR",
+    "merge",
+    "live",
+    "G11 apply",
+    "secret read",
+    "duplicate canonical docs by inference"
+  ],
+  "stop_condition": "prepare only; no repair applied without owner gate"
+}
