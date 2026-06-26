@@ -1,6 +1,7 @@
 {
   "schemaVersion": "v1.0",
   "sourceOfTruth": "SYSTEM_NERVOUS_INDEX",
+  "systemType": "EVENT_DRIVEN_MULTI_AGENT_RUNTIME",
   "generatedAt": "2026-06-24T22:32:26.7690924Z",
   "repoId": "project-cdx",
   "canonicalRoot": "C:\\CEO\\project-cdx",

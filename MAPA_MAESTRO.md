@@ -17,6 +17,7 @@ politica: una raiz viva, sin SDU_RUNTIME_ROOT paralelo
 
 - Entrada corta: [README.md](README.md)
 - Sistema nervioso: [MAPA_CAPAS.md](MAPA_CAPAS.md)
+- Contrato del sistema: [SDU_SYSTEM_CONTRACT.md](SDU_SYSTEM_CONTRACT.md)
 - Estado actual: [operativa/CURRENT.md](operativa/CURRENT.md)
 - Siguiente delta: [operativa/NEXT.md](operativa/NEXT.md)
 - Trazabilidad: [operativa/TRACE.md](operativa/TRACE.md)
