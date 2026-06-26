@@ -1,0 +1,238 @@
+{
+  "title": "SDU_EXECUTION_POLICY_TUNING_G11",
+  "status": "EXECUTION_POLICY_TUNING_READY_REVIEW_REQUIRED",
+  "mode": "ANALYSIS_POLICY_TUNING_NO_AUTOMATIC_APPLY",
+  "generatedAt": "2026-06-26",
+  "sources": {
+    "shadowRunObservations": "C:\\CEO\\evidence\\g9-stabilization\\shadow-run-observations.jsonl",
+    "decisionTrace": "C:\\CEO\\evidence\\g8-operational\\decision-trace.jsonl",
+    "autoRemediationConfig": "C:\\CEO\\project-cdx\\operativa\\SDU_AUTO_REMEDIATION_CONFIG_20260622.json",
+    "runtimeBoundaryMatrix": "C:\\CEO\\project-cdx\\operativa\\SDU_RUNTIME_BOUNDARY_MATRIX.json",
+    "sentinelConfig": "C:\\CEO\\project-cdx\\operativa\\SDU_SENTINEL_CONFIG_20260622.json",
+    "sentinelState": "C:\\CEO\\project-cdx\\operativa\\SENTINEL_STATE.md"
+  },
+  "summary": {
+    "operativaAutoRemediationEnabled": true,
+    "operativaMode": "LOCAL_ONLY",
+    "operativaRollbackStrategy": "SAFE_LOCAL_ONLY",
+    "operativaMaxActionsPerCycle": 3,
+    "runtimeBoundaryDefaultMode": "NO_EXTERNAL",
+    "shadowObservationCount": 14,
+    "decisionTraceCount": 86,
+    "blockedValidGuardCount": 1,
+    "g9AutoBlockedCount": 29,
+    "suggestedEventCount": 24,
+    "maxBlockCountObserved": 30,
+    "minBlockCountObserved": 28,
+    "failRateObserved": 0,
+    "negativeOverrideCountMax": 0,
+    "autoExecutedCountMax": 1,
+    "autoStableObserved": false,
+    "dominantBlockReason": "MAX_AUTO_PER_SESSION_REACHED",
+    "dominantBlockReasonCount": 30
+  },
+  "operativaBaselineInterpretation": {
+    "status": "AUTOREMEDIATION_ALREADY_ACTIVE_LOCAL_ONLY",
+    "meaning": "The repo already declares local-only autoremediation with safe rollback and max_actions_per_cycle=3. G11 is not an activation proposal; it is a tuning/alignment proposal for the newer G9 auto-session cap.",
+    "hardBoundary": {
+      "defaultExternalPolicy": "NO_EXTERNAL",
+      "noExternalWithoutGate": true,
+      "noImplicitExternalExecution": true,
+      "externalSurfacesRemainBlockedWithoutGate": [
+        "github",
+        "openai",
+        "microsoft",
+        "sharepoint",
+        "dataverse",
+        "power_platform",
+        "codex_cloud"
+      ]
+    }
+  },
+  "blockedValidGuards": [
+    {
+      "timestamp": "2026-06-26T02:07:41.4122040-03:00",
+      "actionId": "CHECK_ALERT_SOURCE",
+      "eventType": "ALERT_RAISED",
+      "reason": "MAX_AUTO_PER_SESSION_REACHED",
+      "autoSessionId": "G9_AUTO_20260626_015304",
+      "autoExecutedInSession": 1,
+      "maxAutoPerSession": 1,
+      "cooldownActive": true,
+      "runtimeMutation": false,
+      "externalWrites": false,
+      "dataverseImpact": false,
+      "sharePointImpact": false,
+      "classification": "TOO_CONSERVATIVE_CANDIDATE",
+      "why": "The guard is valid, but the blocked action is local analysis only, had prior successful execution, and carries no external or runtime write impact."
+    }
+  ],
+  "correctBlocksKeepAsIs": [
+    {
+      "rule": "MAX_AUTO_PER_SESSION_REACHED_GLOBAL_DEFAULT",
+      "classification": "CORRECT_GUARD",
+      "reason": "The global cap remains appropriate for unknown actions, mutating actions, external writes, blank actionId/eventId, Dataverse, SharePoint, scheduler, or runtime mutation."
+    },
+    {
+      "rule": "BLANK_ACTION_OR_EVENT_BLOCK",
+      "classification": "CORRECT_GUARD",
+      "reason": "Observed G9_AUTO_BLOCKED records include empty actionId/eventId; those must remain blocked because target identity is not proven."
+    },
+    {
+      "rule": "AUTO_STABLE_FALSE",
+      "classification": "CORRECT_GUARD",
+      "reason": "Shadow run did not reach AUTO_STABLE; expansion should remain review-gated."
+    }
+  ],
+  "tooConservativeCandidates": [
+    {
+      "actionId": "CHECK_ALERT_SOURCE",
+      "eventType": "ALERT_RAISED",
+      "reason": "MAX_AUTO_PER_SESSION_REACHED",
+      "riskClass": "LOW_LOCAL_ANALYSIS_ONLY",
+      "evidence": {
+        "humanConfirmedExecutions": 2,
+        "autoExecutionsSuccessful": 1,
+        "failRate": 0,
+        "negativeOverrides": 0,
+        "runtimeMutation": false,
+        "externalWrites": false,
+        "dataverseImpact": false,
+        "sharePointImpact": false,
+        "repeatabilityScoreReached": 100,
+        "confidenceGainReached": 100,
+        "autoExecutionConfidenceScoreReached": 70
+      },
+      "candidateDecision": "ALIGN_G9_LOCAL_ONLY_SESSION_CAP_WITH_EXISTING_OPERATIVA_POLICY_IN_STAGED_FORM",
+      "reviewRequired": true
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "G11_OPPORTUNITY_001_LOW_ONLY_EXTRA_SLOT",
+      "description": "Allow one additional auto execution only for CHECK_ALERT_SOURCE when eventType is ALERT_RAISED and the action remains local analysis only.",
+      "conditions": [
+        "actionId == CHECK_ALERT_SOURCE",
+        "eventType == ALERT_RAISED",
+        "runtimeMutation == false",
+        "externalWrites == false",
+        "dataverseImpact == false",
+        "sharePointImpact == false",
+        "failRate == 0",
+        "negativeOverrideCount == 0",
+        "previousAutoExecutionSuccessCount >= 1",
+        "humanConfirmedExecutionCount >= 2",
+        "autoExecutionConfidenceScore >= 70",
+        "eventId is not empty",
+        "actionId is not empty"
+      ],
+      "blockedIf": [
+        "AUTO_STABLE == false and action is not explicitly allowlisted by owner",
+        "eventId is blank",
+        "actionId is blank",
+        "any external write flag is true",
+        "any runtime mutation flag is true",
+        "Dataverse or SharePoint impact is true",
+        "failRate > 0",
+        "negativeOverrideCount > 0"
+      ]
+    },
+    {
+      "id": "G11_OPPORTUNITY_002_COOLDOWN_LOW_NO_WRITE",
+      "description": "Relax cooldown only for LOW_LOCAL_ANALYSIS_ONLY actions when a new eventId arrives and the prior run succeeded.",
+      "conditions": [
+        "same actionId",
+        "different eventId",
+        "prior result == SUCCESS",
+        "no external or runtime impact",
+        "reviewed allowlist contains actionId"
+      ],
+      "suggestedPolicyShape": "cooldown may be bypassed once per session for reviewed low/no-write actions; all other actions keep cooldown."
+    }
+  ],
+  "proposedAdjustments": [
+    {
+      "id": "G11_POLICY_ADJUSTMENT_001",
+      "type": "session_cap_alignment",
+      "current": {
+        "maxAutoPerSession": 1,
+        "scope": "G9 auto session cap"
+      },
+      "proposed": {
+        "globalDefaultMaxAutoPerSession": 1,
+        "operativaMaxActionsPerCycle": 3,
+        "scope": "local_only_allowlisted_actions",
+        "exception": {
+          "actionId": "CHECK_ALERT_SOURCE",
+          "eventType": "ALERT_RAISED",
+          "stagedMaxAutoPerSession": 2,
+          "upperBoundFromOperativa": 3,
+          "requiresOwnerApprovalBeforeApply": true
+        }
+      },
+      "risk": "LOW",
+      "expectedEffect": "Reduce repeated valid blocks for non-mutating alert-source checks while remaining below the existing local-only operativa cap and without opening live writes."
+    },
+    {
+      "id": "G11_POLICY_ADJUSTMENT_002",
+      "type": "stability_threshold_annotation",
+      "current": {
+        "AUTO_STABLE": false,
+        "stableActions": []
+      },
+      "proposed": {
+        "candidateStableAction": "CHECK_ALERT_SOURCE",
+        "status": "CANDIDATE_ONLY",
+        "minimumEvidenceBeforeApply": {
+          "humanConfirmedExecutions": 2,
+          "autoExecutionSuccess": 1,
+          "failRate": 0,
+          "negativeOverrides": 0,
+          "noExternalImpact": true
+        }
+      },
+      "risk": "LOW",
+      "expectedEffect": "Make the stable-action promotion explicit while keeping review required."
+    },
+    {
+      "id": "G11_POLICY_ADJUSTMENT_003",
+      "type": "hard_deny_preservation",
+      "current": {
+        "blankActionOrEvent": "blocked"
+      },
+      "proposed": {
+        "blankActionOrEvent": "continue_blocked",
+        "mutatingActions": "continue_blocked",
+        "externalWrites": "continue_blocked",
+        "runtimeMutation": "continue_blocked"
+      },
+      "risk": "NONE",
+      "expectedEffect": "Avoid over-relaxing the policy while tuning low-risk local analysis."
+    }
+  ],
+  "notRecommended": [
+    {
+      "change": "Raise global maxAutoPerSession above 1",
+      "reason": "Too broad; alignment should apply only to reviewed local-only actions already covered by operativa autoremediation."
+    },
+    {
+      "change": "Disable cooldown globally",
+      "reason": "Too broad; could amplify noise and repeated actions."
+    },
+    {
+      "change": "Promote AUTO_STABLE automatically",
+      "reason": "Shadow observations still show AUTO_STABLE=false."
+    }
+  ],
+  "applicationPolicy": {
+    "applyAutomatically": false,
+    "requiresOwnerReview": true,
+    "requiresExplicitGate": "ALLOW_G11_POLICY_TUNING_APPLY",
+    "writesLive": false,
+    "dataverseTouched": false,
+    "sharePointTouched": false,
+    "runtimeModified": false,
+    "schedulerTouched": false
+  },
+  "decision": "REVIEW_REQUIRED"
+}
