@@ -14,7 +14,8 @@ Usar Agile Agent Canvas: Load Existing Project con:
 ## Contenido
 
 - `project.json`: manifiesto del proyecto SDU en modelo Canvas.
-- `artifacts/`: artefactos SYSTEM_STATE, WATCHDOG, ACTION_ENGINE, GRAPH_LAYER y COMMAND_LAYER.
+- `artifacts/`: artefactos SDU_SYSTEM, SYSTEM_STATE, WATCHDOG, ACTION_ENGINE, GRAPH_LAYER y COMMAND_LAYER.
+- `artifacts/sdu-system.json`: contrato de sistema que apunta a `SYSTEM_NERVOUS_INDEX.json`.
 - `tasks/`: acciones SDU convertidas a artefactos TASK.
 - `relationships.json`: dependencias nativas entre artefactos.
 - `graphify-structure.json`: import Graphify reducido a top nodes, communities y entry points.

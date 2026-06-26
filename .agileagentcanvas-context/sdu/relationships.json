@@ -13,6 +13,12 @@
   "content": {
     "connections": [
       {
+        "from": "SDU_SYSTEM",
+        "to": "SYSTEM_STATE",
+        "relationship": "declares-runtime-contract-for",
+        "critical": true
+      },
+      {
         "from": "SYSTEM_STATE",
         "to": "WATCHDOG",
         "relationship": "observed-by",
@@ -51,8 +57,9 @@
     ],
     "navigation": {
       "focusModeShortcut": "F",
-      "rootNode": "SYSTEM_STATE",
+      "rootNode": "SDU_SYSTEM",
       "treeOrder": [
+        "SDU_SYSTEM",
         "SYSTEM_STATE",
         "WATCHDOG",
         "ACTION_ENGINE",

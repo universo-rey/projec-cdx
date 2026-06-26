@@ -9,6 +9,7 @@ embebido y sin ejecutar acciones.
 
 ## Artefactos
 
+- SDU_SYSTEM: Architecture con SYSTEM_TYPE, control plane, event bus, modelo de agentes, rutas, fail-closed, fronteras y autoridad.
 - SYSTEM_STATE: Architecture con health, score y risk.
 - WATCHDOG: Component con estado y alertas.
 - ACTION_ENGINE: Component con acciones disponibles.
@@ -20,6 +21,7 @@ embebido y sin ejecutar acciones.
 
 ## Relaciones
 
+- SDU_SYSTEM -> SYSTEM_STATE
 - SYSTEM_STATE -> WATCHDOG
 - WATCHDOG -> ACTION_ENGINE
 - ACTION_ENGINE -> COMMAND_LAYER
@@ -38,9 +40,9 @@ Start Dev (rocket) se mapea a comandos SDU mediante
 
 ## Navegacion
 
-Focus Mode (F) usa SYSTEM_STATE como raiz y recorre:
+Focus Mode (F) usa SDU_SYSTEM como raiz y recorre:
 
-SYSTEM_STATE -> WATCHDOG -> ACTION_ENGINE -> COMMAND_LAYER -> GRAPH_LAYER
+SDU_SYSTEM -> SYSTEM_STATE -> WATCHDOG -> ACTION_ENGINE -> COMMAND_LAYER -> GRAPH_LAYER
 
 ## Export
 
