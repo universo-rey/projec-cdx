@@ -130,6 +130,24 @@ def test_runtime_status_outputs_core_fields(tmp_path: Path) -> None:
     assert status["drift_detected"] is False
 
 
+def test_sentinel_report_supports_external_output(monkeypatch, tmp_path: Path) -> None:
+    _seed_repo(tmp_path)
+    cli.save_snapshot(root=tmp_path, version="v0.6.0-rc1")
+    _commit_all(tmp_path, "snapshot")
+    monkeypatch.setattr(
+        cli,
+        "_run",
+        lambda *args, **kwargs: subprocess.CompletedProcess(args[0], 0, "", ""),
+    )
+    output = tmp_path.parent / "runtime-sentinel.json"
+
+    report = cli.build_sentinel_report(root=tmp_path, output=output)
+
+    assert output.exists()
+    assert report["path"] == output.resolve().as_posix()
+    assert _git(tmp_path, "status", "--porcelain").stdout.strip() == ""
+
+
 def test_continuous_cycle_creates_snapshot_and_g7_evidence(tmp_path: Path) -> None:
     _seed_repo(tmp_path)
     result = cli.run_continuous_cycle(

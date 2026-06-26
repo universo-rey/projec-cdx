@@ -117,6 +117,14 @@ def _relative(path: Path, root: Path) -> str:
     return path.resolve().relative_to(root.resolve()).as_posix()
 
 
+def _display_path(path: Path, root: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(root.resolve()).as_posix()
+    except ValueError:
+        return resolved.as_posix()
+
+
 def _safe_version_segment(version: str) -> str:
     return "".join(ch if ch.isalnum() or ch in ".-_" else "_" for ch in version) or DEFAULT_VERSION
 
@@ -765,7 +773,7 @@ def build_sentinel_report(root: Path = ROOT, output: Path | None = None) -> dict
     )
     if report["status"] != "PASS" or report["drift_detected"]:
         _append_drift_log(root, report)
-    report["path"] = _relative(output_path, root)
+    report["path"] = _display_path(output_path, root)
     return report
 
 

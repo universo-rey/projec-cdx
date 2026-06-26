@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-06-26T15:31:30.0000000Z",
+  "generated_at_utc": "2026-06-26T15:40:00.0000000Z",
   "mode": "PATCH_PR24_REVIEW_THREADS",
   "pr": {
     "number": 24,
@@ -71,7 +71,7 @@
     {
       "name": "python -m pytest tests/test_ceo_runtime.py -q --basetemp <external-temp>",
       "status": "PASS",
-      "detail": "10 passed"
+      "detail": "11 passed"
     },
     {
       "name": "tools/validate_proj_cdx_sync.ps1 -Root <patch> -Json",
@@ -101,8 +101,18 @@
     }
   ],
   "remote_checks": {
-    "status": "PENDING_AFTER_PUSH",
-    "reason": "new commit not published yet"
+    "status": "RETRY_AFTER_FIRST_PUSH",
+    "first_pushed_commit": "eaed9c0f6a322de0207e1639b5210a85d106b028",
+    "observed": {
+      "build-graph": "success",
+      "quality": "success",
+      "meta-validate": "success",
+      "codeql": "in_progress",
+      "codex-governed": "failure"
+    },
+    "failure_classification": "FAIL_REAL_MINIMAL_PATCH_REQUIRED",
+    "failure_detail": "runtime sentinel output outside repo could not be represented by _relative",
+    "retry_status": "PENDING_AFTER_SECOND_PUSH"
   },
   "prohibited_actions": {
     "merge": false,

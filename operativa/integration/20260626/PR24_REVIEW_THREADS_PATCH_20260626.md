@@ -24,13 +24,20 @@
 - `python -m tools.build_index` ejecutado dos veces: PASS, idempotente
 - `python -m tools.validate`: PASS
 - `python -m py_compile src\runtime_versioning\cli.py`: PASS
-- `python -m pytest tests\test_ceo_runtime.py -q --basetemp <external-temp>`: PASS, `10 passed`
+- `python -m pytest tests\test_ceo_runtime.py -q --basetemp <external-temp>`: PASS, `11 passed`
 - `tools\validate_proj_cdx_sync.ps1 -Root <patch> -Json`: PASS
 - `tools\validate_proj_cdx_workbench.ps1 -Root <patch> -Json`: OBSERVED, sin FAIL; observaciones historicas/no versionadas
 - `tools\validate_proj_cdx_operational_chain.ps1 -Root <patch> -ResolverPy <patch>\tools\sdu_chain_resolver.py -Json`: PASS
 - `tools\sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun -Json`: PASS
 - `tools\validate_sdu_dataverse_metadata_wave.ps1 -Root <patch>`: PASS
 - Scan sensible de los 7 archivos candidatos: PASS, 0 hits de contenido, 0 hits de path
+
+## Retry remoto
+
+- Primer push: `eaed9c0f6a322de0207e1639b5210a85d106b028`.
+- Resultado remoto parcial: `build-graph`, `quality` y `meta-validate` PASS; `codeql` en progreso; `codex-governed` FAIL en `Runtime sentinel`.
+- Causa: `build_sentinel_report` intentaba convertir un output externo a ruta relativa del repo.
+- Reparacion minima: `report["path"]` usa fallback para rutas externas y se cubre con test.
 
 ## Pendientes
 
