@@ -1,0 +1,481 @@
+{
+  "plan_id": "BRANCH_GOVERNANCE_PR_SELECTIVE_PLAN_20260626",
+  "schema_version": "1.0",
+  "generated_at_local": "2026-06-26T09:08:10.6102968-03:00",
+  "generated_at_utc": "2026-06-26T12:08:10.9041674Z",
+  "root": "C:\\CEO\\project-cdx",
+  "root_resolved": "C:\\Users\\enzo1\\PROJEC CDX",
+  "live_branch": "codex/live-state-g10-governed-20260626",
+  "live_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "mode": "plan_only_no_pr_no_merge",
+  "decision": "PR_SELECTIVE_PLAN_READY",
+  "base_state": {
+    "worktree_clean": true,
+    "index_clean": true,
+    "snapshot_acta_published": true,
+    "snapshot_acta_commit": "ea00fe739644e139b17fc17e55adc5776eb855c3",
+    "snapshot_ready_with_conditions": true,
+    "repair_branch_published": true,
+    "repair_branch_commit": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+    "branch_governance_matrix_published": true,
+    "freeze_branch_verified": true,
+    "freeze_tag_verified": true
+  },
+  "remote_precheck": [
+    {
+      "ref": "codex/version-snapshot-decision-20260626",
+      "expected": "ea00fe739644e139b17fc17e55adc5776eb855c3",
+      "remote": "ea00fe739644e139b17fc17e55adc5776eb855c3",
+      "match": true
+    },
+    {
+      "ref": "codex/version-snapshot-blocker-repair-20260626",
+      "expected": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+      "remote": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+      "match": true
+    },
+    {
+      "ref": "codex/version-freeze-state-20260626",
+      "expected": null,
+      "remote": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "match": true
+    },
+    {
+      "ref": "freeze/2026-06-26-g10-reconciled",
+      "expected": null,
+      "remote": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "match": true
+    },
+    {
+      "ref": "codex/version-readbacks-and-sdu-package-20260626",
+      "expected": null,
+      "remote": "e2477509295b672330acec5649108fa942f357ac",
+      "match": true
+    },
+    {
+      "ref": "codex/version-branch-governance-evidence-20260626",
+      "expected": null,
+      "remote": "309a84c9c1219b04641262c31b71d4c8e254ca0a",
+      "match": true
+    }
+  ],
+  "branches": [
+    {
+      "branch": "codex/version-validator-tooling-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "8af84c81",
+      "remote_head": "8af84c815285253376662b22733c540d2dfa708d",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 2,
+      "changed_files_summary": "M:2",
+      "last_commit_subject": "chore: split validator tooling 20260626",
+      "lane_type": "PR_CANDIDATE_FIRST",
+      "recommended_action": "PR_SELECTIVE_AFTER_OWNER_GATE",
+      "pr_allowed": true,
+      "merge_allowed": false,
+      "target_branch_suggested": "codex/integration-g10-snapshot-20260626",
+      "dependencies": [],
+      "risks": [
+        "validator drift",
+        "policy assumptions"
+      ],
+      "owner_gate_required": true,
+      "notes": "Support validation before core."
+    },
+    {
+      "branch": "codex/version-snapshot-blocker-repair-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "6b796603",
+      "remote_head": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 7,
+      "changed_files_summary": "A:4 M:3",
+      "last_commit_subject": "snapshot(repair): apply workbench sync policy patch 20260626",
+      "lane_type": "PR_CANDIDATE_REPAIR",
+      "recommended_action": "PR_SELECTIVE_AFTER_VALIDATOR_TOOLING",
+      "pr_allowed": true,
+      "merge_allowed": false,
+      "target_branch_suggested": "codex/integration-g10-snapshot-20260626",
+      "dependencies": [
+        "codex/version-validator-tooling-20260626"
+      ],
+      "risks": [
+        "repair applied without diff review",
+        "workbench OBSERVED ignored"
+      ],
+      "owner_gate_required": true,
+      "notes": "Contains VERSION_STATE repair plus sync/workbench policy patch."
+    },
+    {
+      "branch": "codex/version-core-g10-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "63b98344",
+      "remote_head": "63b983447d40442f2cfe214b3d00be53771c5323",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 12,
+      "changed_files_summary": "A:2 M:10",
+      "last_commit_subject": "chore: split core G10 canon 20260626",
+      "lane_type": "PR_CANDIDATE_CORE",
+      "recommended_action": "PR_SELECTIVE_AFTER_REPAIR",
+      "pr_allowed": true,
+      "merge_allowed": false,
+      "target_branch_suggested": "codex/integration-g10-snapshot-20260626",
+      "dependencies": [
+        "codex/version-snapshot-blocker-repair-20260626"
+      ],
+      "risks": [
+        "core fan-in before repair",
+        "canon drift"
+      ],
+      "owner_gate_required": true,
+      "notes": "Core G10 canon and operativa central."
+    },
+    {
+      "branch": "codex/version-control-plane-canvas-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "1ffafe29",
+      "remote_head": "1ffafe291bae5f61e4e29c45db6cc87cce06d3ae",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 6,
+      "changed_files_summary": "A:1 M:5",
+      "last_commit_subject": "chore: split control plane canvas 20260626",
+      "lane_type": "PR_CANDIDATE_CONTROL_PLANE",
+      "recommended_action": "PR_SELECTIVE_AFTER_CORE",
+      "pr_allowed": true,
+      "merge_allowed": false,
+      "target_branch_suggested": "codex/integration-g10-snapshot-20260626",
+      "dependencies": [
+        "codex/version-core-g10-20260626"
+      ],
+      "risks": [
+        "canvas applied before canon"
+      ],
+      "owner_gate_required": true,
+      "notes": "Control plane and AgileAgentCanvas."
+    },
+    {
+      "branch": "codex/version-readbacks-and-sdu-package-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "e2477509",
+      "remote_head": "e2477509295b672330acec5649108fa942f357ac",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 5,
+      "changed_files_summary": "A:4 M:1",
+      "last_commit_subject": "readback(post-remote): record verified remote publication state 20260626",
+      "lane_type": "PR_CANDIDATE_EVIDENCE_PACKAGE",
+      "recommended_action": "PR_SELECTIVE_AFTER_CORE_OR_REFERENCE_ONLY",
+      "pr_allowed": true,
+      "merge_allowed": false,
+      "target_branch_suggested": "codex/integration-g10-snapshot-20260626",
+      "dependencies": [
+        "codex/version-core-g10-20260626"
+      ],
+      "risks": [
+        "evidence treated as runtime",
+        "large readback noise"
+      ],
+      "owner_gate_required": true,
+      "notes": "Decide whether it enters as versioned evidence or remains reference-only."
+    },
+    {
+      "branch": "codex/version-total-reconciliation-evidence-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "68ac60ad",
+      "remote_head": "68ac60ad6d500e066b1b8cb72bff5dd341522554",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 14,
+      "changed_files_summary": "A:14",
+      "last_commit_subject": "docs: split total reconciliation evidence 20260626",
+      "lane_type": "EVIDENCE_REFERENCE_ONLY",
+      "recommended_action": "REFERENCE_ONLY_NO_PR",
+      "pr_allowed": false,
+      "merge_allowed": false,
+      "target_branch_suggested": null,
+      "dependencies": [],
+      "risks": [
+        "evidence-only mixed into runtime"
+      ],
+      "owner_gate_required": true,
+      "notes": "Documentation reference only; do not include automatically."
+    },
+    {
+      "branch": "codex/version-local-reconciliation-evidence-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "82b25d12",
+      "remote_head": "82b25d121d729b42195fb941768998370a02ece8",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 11,
+      "changed_files_summary": "A:11",
+      "last_commit_subject": "docs: split local reconciliation evidence 20260626",
+      "lane_type": "EVIDENCE_REFERENCE_ONLY",
+      "recommended_action": "REFERENCE_ONLY_NO_PR",
+      "pr_allowed": false,
+      "merge_allowed": false,
+      "target_branch_suggested": null,
+      "dependencies": [],
+      "risks": [
+        "very large evidence payload",
+        "noise fan-in"
+      ],
+      "owner_gate_required": true,
+      "notes": "Local evidence only; no runtime."
+    },
+    {
+      "branch": "codex/version-ceo-watchdog-evidence-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "1014aa2b",
+      "remote_head": "1014aa2b90c16c819039c7d37d046ca0976c53af",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 7,
+      "changed_files_summary": "A:7",
+      "last_commit_subject": "docs: split CEO watchdog evidence 20260626",
+      "lane_type": "EVIDENCE_REFERENCE_ONLY",
+      "recommended_action": "REFERENCE_ONLY_NO_PR",
+      "pr_allowed": false,
+      "merge_allowed": false,
+      "target_branch_suggested": null,
+      "dependencies": [],
+      "risks": [
+        "watch/watchdog authority confusion"
+      ],
+      "owner_gate_required": true,
+      "notes": "CEO watch/watchdog evidence only; do not apply."
+    },
+    {
+      "branch": "codex/version-branch-governance-evidence-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "309a84c9",
+      "remote_head": "309a84c9c1219b04641262c31b71d4c8e254ca0a",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 10,
+      "changed_files_summary": "A:10",
+      "last_commit_subject": "docs(governance): add branch PR matrix 20260626",
+      "lane_type": "EVIDENCE_REFERENCE_ONLY",
+      "recommended_action": "REFERENCE_ONLY_NO_PR",
+      "pr_allowed": false,
+      "merge_allowed": false,
+      "target_branch_suggested": null,
+      "dependencies": [],
+      "risks": [
+        "governance evidence merged as runtime"
+      ],
+      "owner_gate_required": true,
+      "notes": "Already fulfills governance matrix function."
+    },
+    {
+      "branch": "codex/version-snapshot-decision-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "ea00fe73",
+      "remote_head": "ea00fe739644e139b17fc17e55adc5776eb855c3",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 10,
+      "changed_files_summary": "A:10",
+      "last_commit_subject": "snapshot(acta): record formal snapshot acta 20260626",
+      "lane_type": "EVIDENCE_REFERENCE_ONLY",
+      "recommended_action": "REFERENCE_ONLY_NO_PR",
+      "pr_allowed": false,
+      "merge_allowed": false,
+      "target_branch_suggested": null,
+      "dependencies": [],
+      "risks": [
+        "snapshot acta treated as runtime integration"
+      ],
+      "owner_gate_required": true,
+      "notes": "Snapshot acta and decisions; no runtime integration."
+    },
+    {
+      "branch": "codex/version-g11-review-only-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "cf2a2cc4",
+      "remote_head": "cf2a2cc4dc49256a8f409374faae2b0068541b0a",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 1,
+      "changed_files_summary": "A:1",
+      "last_commit_subject": "docs: split G11 review-only proposal 20260626",
+      "lane_type": "REVIEW_ONLY",
+      "recommended_action": "REVIEW_ONLY_NO_APPLY",
+      "pr_allowed": false,
+      "merge_allowed": false,
+      "target_branch_suggested": null,
+      "dependencies": [
+        "G11_OWNER_DECISION"
+      ],
+      "risks": [
+        "G11 apply accidental"
+      ],
+      "owner_gate_required": true,
+      "notes": "No apply."
+    },
+    {
+      "branch": "codex/version-freeze-state-20260626",
+      "local_exists": true,
+      "remote_exists": true,
+      "local_head": "0291d185",
+      "remote_head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "local_remote_match": true,
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 2,
+      "changed_files_summary": "A:1 M:1",
+      "last_commit_subject": "freeze(state): VERSION_STATE reconciled + evidence 20260626",
+      "lane_type": "FREEZE_REFERENCE_ONLY",
+      "recommended_action": "FREEZE_REFERENCE_NO_DIRECT_MERGE",
+      "pr_allowed": false,
+      "merge_allowed": false,
+      "target_branch_suggested": null,
+      "dependencies": [
+        "freeze/2026-06-26-g10-reconciled"
+      ],
+      "risks": [
+        "freeze merged instead of referenced"
+      ],
+      "owner_gate_required": true,
+      "notes": "Freeze formalized by tag; no direct merge."
+    }
+  ],
+  "recommended_pr_order": [
+    {
+      "id": "PR-01",
+      "name": "validator tooling",
+      "source": "codex/version-validator-tooling-20260626",
+      "target_suggested": "codex/integration-g10-snapshot-20260626",
+      "condition": "diff review"
+    },
+    {
+      "id": "PR-02",
+      "name": "snapshot blocker repair",
+      "source": "codex/version-snapshot-blocker-repair-20260626",
+      "target_suggested": "codex/integration-g10-snapshot-20260626",
+      "condition": "validate only VERSION_STATE, sync/workbench validators and repair evidence are touched"
+    },
+    {
+      "id": "PR-03",
+      "name": "core G10",
+      "source": "codex/version-core-g10-20260626",
+      "target_suggested": "codex/integration-g10-snapshot-20260626",
+      "condition": "validators after repair"
+    },
+    {
+      "id": "PR-04",
+      "name": "control plane / canvas",
+      "source": "codex/version-control-plane-canvas-20260626",
+      "target_suggested": "codex/integration-g10-snapshot-20260626",
+      "condition": "core accepted"
+    },
+    {
+      "id": "PR-05",
+      "name": "readbacks / sdu package",
+      "source": "codex/version-readbacks-and-sdu-package-20260626",
+      "target_suggested": "codex/integration-g10-snapshot-20260626",
+      "condition": "decide evidence versioning versus reference-only"
+    }
+  ],
+  "not_auto_included": [
+    "evidence-only",
+    "freeze",
+    "G11",
+    "snapshot decision branch"
+  ],
+  "recommended_target_strategy": {
+    "default": "integration_branch_first",
+    "integration_branch": "codex/integration-g10-snapshot-20260626",
+    "main_direct_allowed": false,
+    "main_direct_requires": "explicit later owner gate and PR/merge acta"
+  },
+  "required_validations_per_pr": [
+    "git diff review",
+    "git diff --check",
+    "validate_proj_cdx_sync",
+    "validate_proj_cdx_workbench",
+    "validate_proj_cdx_operational_chain with -ResolverPy",
+    "sdu_boot -NoExternal -DryRun",
+    "dataverse metadata wave local if applicable",
+    "no live",
+    "no G11 apply"
+  ],
+  "published_validator_evidence": {
+    "sync": "PASS",
+    "workbench": "OBSERVED_0_FAIL",
+    "operational_chain": "PASS",
+    "sdu_boot": "PASS",
+    "dataverse_metadata_wave": "PASS",
+    "git_diff_check": "PASS_WITH_NON_BLOCKING_WARNINGS"
+  },
+  "forbidden_actions": [
+    "mass_pr",
+    "direct_merge",
+    "merge_freeze_branch",
+    "g11_apply",
+    "live_mutation",
+    "pr_creation_without_owner_gate",
+    "merge_without_owner_gate"
+  ],
+  "risks": [
+    "fan-in prematuro",
+    "PR contra main sin rama de integracion",
+    "mezclar evidencia-only como runtime",
+    "aplicar G11 accidentalmente",
+    "freeze mergeado en vez de referenciado",
+    "repair branch aplicada sin revisar diff",
+    "workbench OBSERVED ignorado",
+    "live write accidental"
+  ],
+  "recommended_next_lane": "OWNER_GATE_CREATE_INTEGRATION_BRANCH_PLAN_NO_PR",
+  "alternate_next_lane": "OWNER_GATE_PR_01_VALIDATOR_TOOLING_ONLY",
+  "closeout_contract": {
+    "agente": "contracts_agent + validation_agent + narrador-normativo",
+    "orden": "BRANCH_GOVERNANCE_PR_SELECTIVE_PLAN",
+    "superficie": "C:\\CEO\\project-cdx local evidence and remote read-only",
+    "skill": [
+      "no-inference-runtime-write-guard",
+      "repo-agent-tool-governance",
+      "writing-plans"
+    ],
+    "receta": "branch diff inventory + remote HEAD verification + selective PR governance plan",
+    "tool": [
+      "git status",
+      "git diff",
+      "git merge-base",
+      "git log",
+      "git show",
+      "git ls-remote",
+      "ConvertFrom-Json",
+      "apply_patch"
+    ],
+    "estado": "PR_SELECTIVE_PLAN_READY",
+    "evidencia": [
+      "operativa/pr-plans/20260626/BRANCH_GOVERNANCE_PR_SELECTIVE_PLAN_20260626.md",
+      "operativa/pr-plans/20260626/BRANCH_GOVERNANCE_PR_SELECTIVE_PLAN_20260626.json"
+    ],
+    "validador": "JSON parseable post-write; remote heads match; live branch and HEAD unchanged; worktree/index clean before evidence write",
+    "riesgo_principal": "creating PR or merge without per-branch owner gate and without controlled integration branch",
+    "rollback": "delete only the two plan files before versioning if owner discards this lane",
+    "stop_condition": "no PR/no merge/no live/no G11 apply without owner gate",
+    "proximos_carriles": [
+      "OWNER_GATE_CREATE_INTEGRATION_BRANCH_PLAN_NO_PR",
+      "OWNER_GATE_PR_01_VALIDATOR_TOOLING_ONLY"
+    ]
+  },
+  "stop_condition": "no PR/no merge/no live/no G11 apply without owner gate"
+}
