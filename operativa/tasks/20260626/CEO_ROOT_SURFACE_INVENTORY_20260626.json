@@ -1,0 +1,5092 @@
+{
+  "schema_version": "1.0",
+  "mode": "CEO_ROOT_SURFACE_INVENTORY_COMPACT_G1",
+  "generated_at_utc": "2026-06-26T09:20:26Z",
+  "cwd": "C:\\CEO\\project-cdx",
+  "safety": {
+    "execute_scripts": false,
+    "follow_reparse_points": false,
+    "content_secret_read": false,
+    "metadata_first": true
+  },
+  "roots": [
+    {
+      "root": "C:\\CEO",
+      "exists": true,
+      "policy": "root_depth2_no_reparse",
+      "root_last_write": "2026-06-25T22:25:38.9976102-03:00",
+      "top_level_count": 21,
+      "scanned_items": 749,
+      "scanned_dirs": 124,
+      "scanned_files": 625,
+      "scanned_bytes": 197902488,
+      "sensitive_name_signals": [],
+      "extension_top": [
+        {
+          "extension": ".json",
+          "Count": 355
+        },
+        {
+          "extension": ".txt",
+          "Count": 118
+        },
+        {
+          "extension": ".ps1",
+          "Count": 53
+        },
+        {
+          "extension": ".md",
+          "Count": 28
+        },
+        {
+          "extension": ".jsonl",
+          "Count": 21
+        },
+        {
+          "extension": ".csv",
+          "Count": 17
+        },
+        {
+          "extension": ".log",
+          "Count": 12
+        },
+        {
+          "extension": ".html",
+          "Count": 3
+        },
+        {
+          "extension": ".diskpart",
+          "Count": 3
+        },
+        {
+          "extension": ".bak_20260625_204500",
+          "Count": 3
+        },
+        {
+          "extension": ".bak_20260625_202529",
+          "Count": 3
+        },
+        {
+          "extension": ".cmd",
+          "Count": 2
+        },
+        {
+          "extension": ".py",
+          "Count": 1
+        },
+        {
+          "extension": ".css",
+          "Count": 1
+        },
+        {
+          "extension": ".js",
+          "Count": 1
+        },
+        {
+          "extension": ".bak_20260625_202414",
+          "Count": 1
+        },
+        {
+          "extension": ".bak_20260625_202227",
+          "Count": 1
+        },
+        {
+          "extension": ".diff",
+          "Count": 1
+        },
+        {
+          "extension": "<none>",
+          "Count": 1
+        }
+      ],
+      "top_level": [
+        {
+          "Name": ".metadata",
+          "FullName": "C:\\CEO\\.metadata",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T10:08:19.4452588-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": ".tmp",
+          "FullName": "C:\\CEO\\.tmp",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-23T18:09:48.1883518-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "12_ARCHIVE",
+          "FullName": "C:\\CEO\\12_ARCHIVE",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-23T16:43:11.3059573-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "core",
+          "FullName": "C:\\CEO\\core",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-22T02:59:35.8342653-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "docs",
+          "FullName": "C:\\CEO\\docs",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T22:25:39.0057776-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "evidence",
+          "FullName": "C:\\CEO\\evidence",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T02:18:25.689892-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "project-cdx",
+          "FullName": "C:\\CEO\\project-cdx",
+          "Mode": "l----",
+          "Length": null,
+          "LastWriteTime": "2026-06-19T15:04:40.623953-03:00",
+          "Attributes": 1040,
+          "LinkType": "Junction",
+          "Target": "C:\\Users\\enzo1\\PROJEC CDX"
+        },
+        {
+          "Name": "snapshots",
+          "FullName": "C:\\CEO\\snapshots",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-22T03:04:44.701677-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "tools",
+          "FullName": "C:\\CEO\\tools",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T16:50:21.1123435-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "watch",
+          "FullName": "C:\\CEO\\watch",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-22T03:04:45.5265775-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "watchdog",
+          "FullName": "C:\\CEO\\watchdog",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:44:27.0448207-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "windows-terminal",
+          "FullName": "C:\\CEO\\windows-terminal",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-23T16:41:15.0659112-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "worktrees",
+          "FullName": "C:\\CEO\\worktrees",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-22T12:12:15.1415032-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "AGENTS.md",
+          "FullName": "C:\\CEO\\AGENTS.md",
+          "Mode": "-a---",
+          "Length": 1025,
+          "LastWriteTime": "2026-06-19T14:55:26.5005239-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "CodexProfile.ps1",
+          "FullName": "C:\\CEO\\CodexProfile.ps1",
+          "Mode": "-a---",
+          "Length": 259,
+          "LastWriteTime": "2026-06-19T01:58:27.3518966-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "data.json",
+          "FullName": "C:\\CEO\\data.json",
+          "Mode": "-a---",
+          "Length": 115,
+          "LastWriteTime": "2026-06-25T16:52:52.3299077-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "Enter-CEOExclusive.ps1",
+          "FullName": "C:\\CEO\\Enter-CEOExclusive.ps1",
+          "Mode": "-a---",
+          "Length": 954,
+          "LastWriteTime": "2026-06-21T20:08:02.8498629-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "policy.json",
+          "FullName": "C:\\CEO\\policy.json",
+          "Mode": "-a---",
+          "Length": 1770,
+          "LastWriteTime": "2026-06-23T17:00:19.9162779-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "README.md",
+          "FullName": "C:\\CEO\\README.md",
+          "Mode": "-a---",
+          "Length": 1618,
+          "LastWriteTime": "2026-06-19T19:33:20.5613481-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "start-ceo-manual.ps1",
+          "FullName": "C:\\CEO\\start-ceo-manual.ps1",
+          "Mode": "-a---",
+          "Length": 39,
+          "LastWriteTime": "2026-06-25T22:17:26.9563203-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "Start-CEO.ps1",
+          "FullName": "C:\\CEO\\Start-CEO.ps1",
+          "Mode": "-a---",
+          "Length": 1291,
+          "LastWriteTime": "2026-06-22T02:59:37.5063885-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        }
+      ],
+      "capability_signals": [
+        {
+          "Name": "watch",
+          "FullName": "C:\\CEO\\watch",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-22T03:04:45.5265775-03:00"
+        },
+        {
+          "Name": "watchdog",
+          "FullName": "C:\\CEO\\watchdog",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:44:27.0448207-03:00"
+        },
+        {
+          "Name": "AGENTS.md",
+          "FullName": "C:\\CEO\\AGENTS.md",
+          "Mode": "-a---",
+          "Length": 1025,
+          "LastWriteTime": "2026-06-19T14:55:26.5005239-03:00"
+        },
+        {
+          "Name": "08_AGENT_SYSTEMS",
+          "FullName": "C:\\CEO\\12_ARCHIVE\\EMPTY_SCAFFOLD_CLEANUP_20260623_163733\\08_AGENT_SYSTEMS",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-23T04:14:55.9225221-03:00"
+        },
+        {
+          "Name": "70-Watch.ps1",
+          "FullName": "C:\\CEO\\core\\70-Watch.ps1",
+          "Mode": "-a---",
+          "Length": 5361,
+          "LastWriteTime": "2026-06-21T20:48:36.8362551-03:00"
+        },
+        {
+          "Name": "status-alerts.jsonl",
+          "FullName": "C:\\CEO\\evidence\\status-alerts.jsonl",
+          "Mode": "-a---",
+          "Length": 309,
+          "LastWriteTime": "2026-06-25T16:51:28.4982796-03:00"
+        },
+        {
+          "Name": "beta-priority-queue.json",
+          "FullName": "C:\\CEO\\evidence\\g8-operational\\beta-priority-queue.json",
+          "Mode": "-a---",
+          "Length": 16539,
+          "LastWriteTime": "2026-06-26T01:35:34.8898304-03:00"
+        },
+        {
+          "Name": "shadow-run-state.json",
+          "FullName": "C:\\CEO\\evidence\\g9-stabilization\\shadow-run-state.json",
+          "Mode": "-a---",
+          "Length": 1906,
+          "LastWriteTime": "2026-06-26T04:08:36.2495075-03:00"
+        },
+        {
+          "Name": "20260621-205840-post-watch-layer",
+          "FullName": "C:\\CEO\\snapshots\\20260621-205840-post-watch-layer",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T20:58:40.9687747-03:00"
+        },
+        {
+          "Name": "20260621-205918-post-watch-layer",
+          "FullName": "C:\\CEO\\snapshots\\20260621-205918-post-watch-layer",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T20:59:18.4718148-03:00"
+        },
+        {
+          "Name": "files",
+          "FullName": "C:\\CEO\\snapshots\\20260621-205840-post-watch-layer\\files",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T20:58:40.5499865-03:00"
+        },
+        {
+          "Name": "manifest.json",
+          "FullName": "C:\\CEO\\snapshots\\20260621-205840-post-watch-layer\\manifest.json",
+          "Mode": "-a---",
+          "Length": 5211,
+          "LastWriteTime": "2026-06-21T20:58:40.8134404-03:00"
+        },
+        {
+          "Name": "summary.txt",
+          "FullName": "C:\\CEO\\snapshots\\20260621-205840-post-watch-layer\\summary.txt",
+          "Mode": "-a---",
+          "Length": 2176,
+          "LastWriteTime": "2026-06-21T20:58:40.9697785-03:00"
+        },
+        {
+          "Name": "files",
+          "FullName": "C:\\CEO\\snapshots\\20260621-205918-post-watch-layer\\files",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T20:59:18.0419613-03:00"
+        },
+        {
+          "Name": "manifest.json",
+          "FullName": "C:\\CEO\\snapshots\\20260621-205918-post-watch-layer\\manifest.json",
+          "Mode": "-a---",
+          "Length": 5211,
+          "LastWriteTime": "2026-06-21T20:59:18.3142019-03:00"
+        },
+        {
+          "Name": "summary.txt",
+          "FullName": "C:\\CEO\\snapshots\\20260621-205918-post-watch-layer\\summary.txt",
+          "Mode": "-a---",
+          "Length": 2176,
+          "LastWriteTime": "2026-06-21T20:59:18.4718148-03:00"
+        },
+        {
+          "Name": "events",
+          "FullName": "C:\\CEO\\watch\\events",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-23T22:13:24.2062018-03:00"
+        },
+        {
+          "Name": "active-baseline.txt",
+          "FullName": "C:\\CEO\\watch\\active-baseline.txt",
+          "Mode": "-a---",
+          "Length": 43,
+          "LastWriteTime": "2026-06-22T03:04:45.1286866-03:00"
+        },
+        {
+          "Name": "CEO-Watchdog.ps1",
+          "FullName": "C:\\CEO\\watch\\CEO-Watchdog.ps1",
+          "Mode": "-a---",
+          "Length": 6053,
+          "LastWriteTime": "2026-06-21T20:48:35.375393-03:00"
+        },
+        {
+          "Name": "pid.txt",
+          "FullName": "C:\\CEO\\watch\\pid.txt",
+          "Mode": "-a---",
+          "Length": 7,
+          "LastWriteTime": "2026-06-22T03:04:45.5265775-03:00"
+        },
+        {
+          "Name": "mission-multi-20260623-220735.log",
+          "FullName": "C:\\CEO\\watch\\events\\mission-multi-20260623-220735.log",
+          "Mode": "-a---",
+          "Length": 276,
+          "LastWriteTime": "2026-06-23T22:07:35.4646996-03:00"
+        },
+        {
+          "Name": "mission-multi-20260623-221027.log",
+          "FullName": "C:\\CEO\\watch\\events\\mission-multi-20260623-221027.log",
+          "Mode": "-a---",
+          "Length": 32356,
+          "LastWriteTime": "2026-06-23T22:11:45.2503082-03:00"
+        },
+        {
+          "Name": "mission-multi-20260623-221324.log",
+          "FullName": "C:\\CEO\\watch\\events\\mission-multi-20260623-221324.log",
+          "Mode": "-a---",
+          "Length": 32349,
+          "LastWriteTime": "2026-06-23T22:14:03.9041553-03:00"
+        },
+        {
+          "Name": "watch-20260622.jsonl",
+          "FullName": "C:\\CEO\\watch\\events\\watch-20260622.jsonl",
+          "Mode": "-a---",
+          "Length": 184,
+          "LastWriteTime": "2026-06-22T03:04:45.5706866-03:00"
+        },
+        {
+          "Name": "alerts",
+          "FullName": "C:\\CEO\\watchdog\\alerts",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T06:09:51.5066859-03:00"
+        },
+        {
+          "Name": "audit",
+          "FullName": "C:\\CEO\\watchdog\\audit",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-24T13:10:20.5062131-03:00"
+        },
+        {
+          "Name": "commands",
+          "FullName": "C:\\CEO\\watchdog\\commands",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:06:28.4032894-03:00"
+        },
+        {
+          "Name": "config",
+          "FullName": "C:\\CEO\\watchdog\\config",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:33:19.561286-03:00"
+        },
+        {
+          "Name": "evidence",
+          "FullName": "C:\\CEO\\watchdog\\evidence",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:44:27.0433143-03:00"
+        },
+        {
+          "Name": "graphify-out",
+          "FullName": "C:\\CEO\\watchdog\\graphify-out",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:44:27.0448207-03:00"
+        },
+        {
+          "Name": "incidents",
+          "FullName": "C:\\CEO\\watchdog\\incidents",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T04:16:53.436359-03:00"
+        },
+        {
+          "Name": "logs",
+          "FullName": "C:\\CEO\\watchdog\\logs",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:36:54.9523257-03:00"
+        },
+        {
+          "Name": "noc-web",
+          "FullName": "C:\\CEO\\watchdog\\noc-web",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:35:46.0018074-03:00"
+        },
+        {
+          "Name": "outbox",
+          "FullName": "C:\\CEO\\watchdog\\outbox",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T19:18:17.5364749-03:00"
+        },
+        {
+          "Name": "planner-audit",
+          "FullName": "C:\\CEO\\watchdog\\planner-audit",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-24T14:02:35.6096272-03:00"
+        },
+        {
+          "Name": "scheduler",
+          "FullName": "C:\\CEO\\watchdog\\scheduler",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-24T13:02:57.2212471-03:00"
+        },
+        {
+          "Name": "scripts",
+          "FullName": "C:\\CEO\\watchdog\\scripts",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:06:28.404691-03:00"
+        },
+        {
+          "Name": "state",
+          "FullName": "C:\\CEO\\watchdog\\state",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T20:58:06.3726753-03:00"
+        },
+        {
+          "Name": "config.sharepoint-link.json",
+          "FullName": "C:\\CEO\\watchdog\\config.sharepoint-link.json",
+          "Mode": "-a---",
+          "Length": 499,
+          "LastWriteTime": "2026-06-25T18:25:49.1416269-03:00"
+        },
+        {
+          "Name": "config.sharepoint-link.pre-g8_5_20260625_182545.json",
+          "FullName": "C:\\CEO\\watchdog\\config.sharepoint-link.pre-g8_5_20260625_182545.json",
+          "Mode": "-a---",
+          "Length": 479,
+          "LastWriteTime": "2026-06-25T18:25:49.1405929-03:00"
+        },
+        {
+          "Name": "dashboard-advanced.ps1",
+          "FullName": "C:\\CEO\\watchdog\\dashboard-advanced.ps1",
+          "Mode": "-a---",
+          "Length": 6179,
+          "LastWriteTime": "2026-06-23T12:13:40.8448354-03:00"
+        },
+        {
+          "Name": "dashboard.ps1",
+          "FullName": "C:\\CEO\\watchdog\\dashboard.ps1",
+          "Mode": "-a---",
+          "Length": 1588,
+          "LastWriteTime": "2026-06-23T12:07:35.9444741-03:00"
+        },
+        {
+          "Name": "intelligence.ps1",
+          "FullName": "C:\\CEO\\watchdog\\intelligence.ps1",
+          "Mode": "-a---",
+          "Length": 37915,
+          "LastWriteTime": "2026-06-25T20:28:56.5515663-03:00"
+        },
+        {
+          "Name": "intelligence.ps1.bak_20260625_202414",
+          "FullName": "C:\\CEO\\watchdog\\intelligence.ps1.bak_20260625_202414",
+          "Mode": "-a---",
+          "Length": 21209,
+          "LastWriteTime": "2026-06-25T19:11:15.4278477-03:00"
+        },
+        {
+          "Name": "noc-screen.ps1",
+          "FullName": "C:\\CEO\\watchdog\\noc-screen.ps1",
+          "Mode": "-a---",
+          "Length": 18364,
+          "LastWriteTime": "2026-06-25T18:39:55.6551849-03:00"
+        },
+        {
+          "Name": "noclive.ps1",
+          "FullName": "C:\\CEO\\watchdog\\noclive.ps1",
+          "Mode": "-a---",
+          "Length": 41,
+          "LastWriteTime": "2026-06-25T18:39:55.6551849-03:00"
+        },
+        {
+          "Name": "run-documentlocation-loop.pre-g8_2_20260625_174706.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.pre-g8_2_20260625_174706.ps1",
+          "Mode": "-a---",
+          "Length": 19545,
+          "LastWriteTime": "2026-06-25T16:32:18.1134556-03:00"
+        },
+        {
+          "Name": "run-documentlocation-loop.pre-g8_3_20260625_180101.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.pre-g8_3_20260625_180101.ps1",
+          "Mode": "-a---",
+          "Length": 28261,
+          "LastWriteTime": "2026-06-25T17:45:41.8918759-03:00"
+        },
+        {
+          "Name": "run-documentlocation-loop.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.ps1",
+          "Mode": "-a---",
+          "Length": 37581,
+          "LastWriteTime": "2026-06-25T20:22:27.2876524-03:00"
+        },
+        {
+          "Name": "run-documentlocation-loop.ps1.bak_20260625_202227",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.ps1.bak_20260625_202227",
+          "Mode": "-a---",
+          "Length": 29040,
+          "LastWriteTime": "2026-06-25T17:58:51.2983622-03:00"
+        },
+        {
+          "Name": "run-primary.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-primary.ps1",
+          "Mode": "-a---",
+          "Length": 2274,
+          "LastWriteTime": "2026-06-24T13:19:09.9931381-03:00"
+        },
+        {
+          "Name": "run-telemetry.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-telemetry.ps1",
+          "Mode": "-a---",
+          "Length": 1097,
+          "LastWriteTime": "2026-06-24T13:33:50.3153996-03:00"
+        },
+        {
+          "Name": "telemetry.json",
+          "FullName": "C:\\CEO\\watchdog\\telemetry.json",
+          "Mode": "-a---",
+          "Length": 44731,
+          "LastWriteTime": "2026-06-26T06:19:51.7278769-03:00"
+        },
+        {
+          "Name": "telemetry.ps1",
+          "FullName": "C:\\CEO\\watchdog\\telemetry.ps1",
+          "Mode": "-a---",
+          "Length": 6002,
+          "LastWriteTime": "2026-06-25T18:29:25.9314856-03:00"
+        },
+        {
+          "Name": "watchdog-sharepoint-link.ps1",
+          "FullName": "C:\\CEO\\watchdog\\watchdog-sharepoint-link.ps1",
+          "Mode": "-a---",
+          "Length": 26738,
+          "LastWriteTime": "2026-06-25T01:08:31.9177471-03:00"
+        },
+        {
+          "Name": "watchdog.actions.json",
+          "FullName": "C:\\CEO\\watchdog\\watchdog.actions.json",
+          "Mode": "-a---",
+          "Length": 18,
+          "LastWriteTime": "2026-06-26T06:16:55.1303142-03:00"
+        },
+        {
+          "Name": "watchdog.ps1",
+          "FullName": "C:\\CEO\\watchdog\\watchdog.ps1",
+          "Mode": "-a---",
+          "Length": 4532,
+          "LastWriteTime": "2026-06-23T12:00:41.0580511-03:00"
+        },
+        {
+          "Name": "watchdog.seen.txt",
+          "FullName": "C:\\CEO\\watchdog\\watchdog.seen.txt",
+          "Mode": "-a---",
+          "Length": 1027,
+          "LastWriteTime": "2026-06-26T04:16:53.4580149-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_153453_6360.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_153453_6360.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-25T15:34:53.9933131-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_154450_15660.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_154450_15660.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T15:44:50.0776083-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_155450_14860.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_155450_14860.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T15:54:50.5109181-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_160450_19024.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_160450_19024.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T16:04:50.0940079-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_161449_22220.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_161449_22220.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T16:14:49.6169907-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_162514_10020.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_162514_10020.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T16:25:15.2938556-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_163449_15536.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_163449_15536.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T16:34:49.2512163-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_164449_8672.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_164449_8672.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-25T16:44:49.7285489-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_165449_21276.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_165449_21276.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T16:54:49.7058134-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_170449_3356.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_170449_3356.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T17:04:49.8978157-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_171449_4976.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_171449_4976.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-25T17:14:49.1294961-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_172449_12600.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_172449_12600.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T17:24:49.1487208-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_173450_3292.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_173450_3292.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T17:34:50.1891431-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_174449_21684.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_174449_21684.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T17:44:49.4186438-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_175449_2272.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_175449_2272.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T17:54:49.9663425-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_180449_21368.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_180449_21368.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T18:04:49.2946083-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_181449_4268.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_181449_4268.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-25T18:14:49.3467551-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_182449_8564.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_182449_8564.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T18:24:49.4899968-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_183038_6780.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_183038_6780.json",
+          "Mode": "-a---",
+          "Length": 449,
+          "LastWriteTime": "2026-06-25T18:30:38.2013229-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_183450_11716.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_183450_11716.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T18:34:50.2797051-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_184450_13304.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_184450_13304.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T18:44:50.1673575-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_185449_9204.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_185449_9204.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T18:54:49.3462719-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_190450_23708.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_190450_23708.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T19:04:50.7610683-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_191449_7520.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_191449_7520.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T19:14:49.1649784-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_192451_16576.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_192451_16576.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T19:24:51.5296757-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_193450_24332.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_193450_24332.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T19:34:50.3973584-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_194450_5596.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_194450_5596.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T19:44:50.1767436-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_195449_3964.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_195449_3964.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T19:54:49.886798-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_200449_14676.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_200449_14676.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T20:04:49.7421761-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_201454_10352.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_201454_10352.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T20:14:54.4227212-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_202449_20964.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_202449_20964.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T20:24:49.2378606-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_203450_20700.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_203450_20700.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T20:34:50.7070038-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_204453_15944.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_204453_15944.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T20:44:53.277766-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_205450_17844.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_205450_17844.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T20:54:50.2397593-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_210452_3080.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_210452_3080.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T21:04:52.1062634-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_211452_18948.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_211452_18948.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T21:14:52.5441192-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_212457_16868.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_212457_16868.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T21:24:58.0220612-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_213513_25224.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_213513_25224.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T21:35:14.1050411-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_214449_12576.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_214449_12576.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T21:44:49.8615621-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_215504_8832.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_215504_8832.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-25T21:55:04.5560704-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_220449_23364.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_220449_23364.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T22:04:49.7862471-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_221451_23004.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_221451_23004.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T22:14:51.7809657-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_222450_5748.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_222450_5748.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T22:24:50.3231242-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_223449_8348.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_223449_8348.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T22:34:49.2194962-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_224450_16628.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_224450_16628.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T22:44:50.473123-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_225513_22580.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_225513_22580.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T22:55:13.4582228-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_230449_22884.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_230449_22884.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T23:04:49.5206095-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_231450_15020.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_231450_15020.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T23:14:50.2525932-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_232451_1808.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_232451_1808.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T23:24:51.8049671-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_233450_24596.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_233450_24596.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T23:34:50.4305768-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_234449_21228.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_234449_21228.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T23:44:49.6741825-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_235451_13744.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_235451_13744.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T23:54:51.163758-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_000449_22236.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_000449_22236.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T00:04:49.3091936-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_001449_26336.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_001449_26336.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-26T00:14:49.9301477-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_002451_21340.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_002451_21340.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T00:24:52.140836-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_003451_2600.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_003451_2600.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T00:34:51.1557376-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_004449_6676.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_004449_6676.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T00:44:49.4527254-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_005449_22200.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_005449_22200.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T00:54:49.4440766-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_010450_13916.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_010450_13916.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T01:04:50.5155647-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_011450_24884.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_011450_24884.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T01:14:50.0927906-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_012456_5396.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_012456_5396.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-26T01:24:56.4554614-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_013449_18852.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_013449_18852.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T01:34:49.1552835-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_014449_24836.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_014449_24836.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T01:44:49.5729955-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_015449_12360.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_015449_12360.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T01:54:49.7426329-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_020452_1624.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_020452_1624.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T02:04:53.0083763-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_021451_12560.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_021451_12560.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T02:14:52.0750201-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_022454_25692.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_022454_25692.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T02:24:54.2884085-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_023449_24564.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_023449_24564.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T02:34:50.0862228-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_024452_15496.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_024452_15496.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T02:44:52.6759634-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_025449_26536.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_025449_26536.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T02:54:49.4221377-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_030449_24660.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_030449_24660.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T03:04:49.1812317-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_031456_23520.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_031456_23520.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T03:14:57.2676628-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_032450_17908.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_032450_17908.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T03:24:50.4455878-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_033449_18488.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_033449_18488.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T03:34:49.8205574-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_034449_5396.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_034449_5396.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-26T03:44:49.3546626-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_034956_27120.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_034956_27120.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T03:49:56.8269736-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_035453_3180.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_035453_3180.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T03:54:54.0170983-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_040450_18252.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_040450_18252.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T04:04:50.7040292-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_041006_1452.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_041006_1452.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-26T04:10:06.4731969-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_041951_14260.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_041951_14260.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-26T04:19:51.732157-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_042951_15156.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_042951_15156.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-26T04:29:52.059277-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_043951_16216.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_043951_16216.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-26T04:39:51.7446962-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_044951_460.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_044951_460.json",
+          "Mode": "-a---",
+          "Length": 332,
+          "LastWriteTime": "2026-06-26T04:49:52.035528-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_045951_20576.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_045951_20576.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T04:59:51.5437022-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_050951_5640.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_050951_5640.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T05:09:51.6836283-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_051951_20180.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_051951_20180.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T05:19:51.7959247-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_052951_484.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_052951_484.json",
+          "Mode": "-a---",
+          "Length": 332,
+          "LastWriteTime": "2026-06-26T05:29:51.5272674-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_053951_7972.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_053951_7972.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T05:39:51.6947432-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_054951_19788.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_054951_19788.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T05:49:51.5977892-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_055951_12800.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_055951_12800.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T05:59:51.7994508-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_060951_19248.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_060951_19248.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T06:09:51.5066859-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_061951_8044.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_061951_8044.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T06:19:51.6865089-03:00"
+        },
+        {
+          "Name": "audit-20260624-131010.json",
+          "FullName": "C:\\CEO\\watchdog\\audit\\audit-20260624-131010.json",
+          "Mode": "-a---",
+          "Length": 641,
+          "LastWriteTime": "2026-06-24T13:10:20.5094148-03:00"
+        },
+        {
+          "Name": "ceo-runtime-diagnose.ps1",
+          "FullName": "C:\\CEO\\watchdog\\commands\\ceo-runtime-diagnose.ps1",
+          "Mode": "-a---",
+          "Length": 2403,
+          "LastWriteTime": "2026-06-26T01:08:19.2378762-03:00"
+        },
+        {
+          "Name": "check-alert-source.ps1",
+          "FullName": "C:\\CEO\\watchdog\\commands\\check-alert-source.ps1",
+          "Mode": "-a---",
+          "Length": 1560,
+          "LastWriteTime": "2026-06-25T21:36:19.5394109-03:00"
+        },
+        {
+          "Name": "cleanup-evaluation.ps1",
+          "FullName": "C:\\CEO\\watchdog\\commands\\cleanup-evaluation.ps1",
+          "Mode": "-a---",
+          "Length": 1713,
+          "LastWriteTime": "2026-06-25T21:36:20.7897432-03:00"
+        },
+        {
+          "Name": "commandA.ps1",
+          "FullName": "C:\\CEO\\watchdog\\commands\\commandA.ps1",
+          "Mode": "-a---",
+          "Length": 624,
+          "LastWriteTime": "2026-06-25T21:18:55.7185007-03:00"
+        },
+        {
+          "Name": "commandC.ps1",
+          "FullName": "C:\\CEO\\watchdog\\commands\\commandC.ps1",
+          "Mode": "-a---",
+          "Length": 624,
+          "LastWriteTime": "2026-06-25T21:18:55.7163587-03:00"
+        },
+        {
+          "Name": "actions_catalog.json",
+          "FullName": "C:\\CEO\\watchdog\\config\\actions_catalog.json",
+          "Mode": "-a---",
+          "Length": 841,
+          "LastWriteTime": "2026-06-25T21:36:15.865916-03:00"
+        },
+        {
+          "Name": "actions_live_catalog.json",
+          "FullName": "C:\\CEO\\watchdog\\config\\actions_live_catalog.json",
+          "Mode": "-a---",
+          "Length": 1365,
+          "LastWriteTime": "2026-06-26T01:08:19.2354272-03:00"
+        },
+        {
+          "Name": "operational_rhythm_g8_beta.json",
+          "FullName": "C:\\CEO\\watchdog\\config\\operational_rhythm_g8_beta.json",
+          "Mode": "-a---",
+          "Length": 819,
+          "LastWriteTime": "2026-06-26T01:35:34.7521948-03:00"
+        },
+        {
+          "Name": "systems.json",
+          "FullName": "C:\\CEO\\watchdog\\config\\systems.json",
+          "Mode": "-a---",
+          "Length": 646,
+          "LastWriteTime": "2026-06-25T19:21:22.2239977-03:00"
+        },
+        {
+          "Name": "canvas_unified_layer.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\canvas_unified_layer.json",
+          "Mode": "-a---",
+          "Length": 2134,
+          "LastWriteTime": "2026-06-25T21:50:26.4746526-03:00"
+        },
+        {
+          "Name": "documentlocation_created_20260625_004552.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_created_20260625_004552.json",
+          "Mode": "-a---",
+          "Length": 2163,
+          "LastWriteTime": "2026-06-25T00:47:32.344647-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020651.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020651.json",
+          "Mode": "-a---",
+          "Length": 4290,
+          "LastWriteTime": "2026-06-25T02:07:02.9098516-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020703.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020703.json",
+          "Mode": "-a---",
+          "Length": 4331,
+          "LastWriteTime": "2026-06-25T02:07:08.6749064-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020708.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020708.json",
+          "Mode": "-a---",
+          "Length": 3235,
+          "LastWriteTime": "2026-06-25T02:07:13.0370577-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020906.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020906.json",
+          "Mode": "-a---",
+          "Length": 5844,
+          "LastWriteTime": "2026-06-25T02:09:35.5593024-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020936.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020936.json",
+          "Mode": "-a---",
+          "Length": 4983,
+          "LastWriteTime": "2026-06-25T02:09:55.691094-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020956.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020956.json",
+          "Mode": "-a---",
+          "Length": 4983,
+          "LastWriteTime": "2026-06-25T02:10:17.166537-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_163629.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_163629.json",
+          "Mode": "-a---",
+          "Length": 5979,
+          "LastWriteTime": "2026-06-25T16:37:05.1823128-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_163705.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_163705.json",
+          "Mode": "-a---",
+          "Length": 5118,
+          "LastWriteTime": "2026-06-25T16:37:22.5354107-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_163722.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_163722.json",
+          "Mode": "-a---",
+          "Length": 5118,
+          "LastWriteTime": "2026-06-25T16:37:40.4803313-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_174732.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_174732.json",
+          "Mode": "-a---",
+          "Length": 7134,
+          "LastWriteTime": "2026-06-25T17:47:58.305655-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_174831.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_174831.json",
+          "Mode": "-a---",
+          "Length": 6137,
+          "LastWriteTime": "2026-06-25T17:49:12.1835839-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_175020.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_175020.json",
+          "Mode": "-a---",
+          "Length": 6061,
+          "LastWriteTime": "2026-06-25T17:50:42.7193075-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_180207.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_180207.json",
+          "Mode": "-a---",
+          "Length": 7273,
+          "LastWriteTime": "2026-06-25T18:02:33.9977228-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_180327.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_180327.json",
+          "Mode": "-a---",
+          "Length": 6276,
+          "LastWriteTime": "2026-06-25T18:03:52.4791896-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_180404.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_180404.json",
+          "Mode": "-a---",
+          "Length": 6206,
+          "LastWriteTime": "2026-06-25T18:04:26.5497552-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_180454.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_180454.json",
+          "Mode": "-a---",
+          "Length": 3403,
+          "LastWriteTime": "2026-06-25T18:04:57.9503315-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_180512.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_180512.json",
+          "Mode": "-a---",
+          "Length": 6276,
+          "LastWriteTime": "2026-06-25T18:05:35.5817346-03:00"
+        },
+        {
+          "Name": "documentlocation_postverify_diagnostic_20260625_010242.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_postverify_diagnostic_20260625_010242.json",
+          "Mode": "-a---",
+          "Length": 48890,
+          "LastWriteTime": "2026-06-25T01:02:55.4249095-03:00"
+        },
+        {
+          "Name": "documentlocation_relativeurl_only_20260625_005426.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_relativeurl_only_20260625_005426.json",
+          "Mode": "-a---",
+          "Length": 4340,
+          "LastWriteTime": "2026-06-25T00:54:36.2757745-03:00"
+        },
+        {
+          "Name": "documentlocation_relativeurl_only_20260625_005722.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_relativeurl_only_20260625_005722.json",
+          "Mode": "-a---",
+          "Length": 8448,
+          "LastWriteTime": "2026-06-25T00:57:38.1502637-03:00"
+        },
+        {
+          "Name": "documentlocation_retrieve_absolute_20260625_004552.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_retrieve_absolute_20260625_004552.json",
+          "Mode": "-a---",
+          "Length": 307,
+          "LastWriteTime": "2026-06-25T00:49:09.6438644-03:00"
+        },
+        {
+          "Name": "g6_flow_execution_20260625_014256.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g6_flow_execution_20260625_014256.json",
+          "Mode": "-a---",
+          "Length": 1599,
+          "LastWriteTime": "2026-06-25T01:42:57.7238755-03:00"
+        },
+        {
+          "Name": "g6_flow_execution_20260625_014358.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g6_flow_execution_20260625_014358.json",
+          "Mode": "-a---",
+          "Length": 4152,
+          "LastWriteTime": "2026-06-25T01:44:25.8649003-03:00"
+        },
+        {
+          "Name": "g6_loop_validation_20260625_020651.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g6_loop_validation_20260625_020651.json",
+          "Mode": "-a---",
+          "Length": 2965,
+          "LastWriteTime": "2026-06-25T02:07:13.1946788-03:00"
+        },
+        {
+          "Name": "g6_loop_validation_20260625_020904.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g6_loop_validation_20260625_020904.json",
+          "Mode": "-a---",
+          "Length": 3583,
+          "LastWriteTime": "2026-06-25T02:10:17.3807855-03:00"
+        },
+        {
+          "Name": "g6_operationalization_20260625_163629.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g6_operationalization_20260625_163629.json",
+          "Mode": "-a---",
+          "Length": 5119,
+          "LastWriteTime": "2026-06-25T16:37:40.6129488-03:00"
+        },
+        {
+          "Name": "g7_documentlocation_completion_20260625_172933.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g7_documentlocation_completion_20260625_172933.json",
+          "Mode": "-a---",
+          "Length": 4419,
+          "LastWriteTime": "2026-06-25T17:29:41.9125018-03:00"
+        },
+        {
+          "Name": "g7_expediente_creation_20260625_171751.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g7_expediente_creation_20260625_171751.json",
+          "Mode": "-a---",
+          "Length": 2253,
+          "LastWriteTime": "2026-06-25T17:17:56.8607399-03:00"
+        },
+        {
+          "Name": "g7_expediente_creation_20260625_172305.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g7_expediente_creation_20260625_172305.json",
+          "Mode": "-a---",
+          "Length": 10647,
+          "LastWriteTime": "2026-06-25T17:24:41.6135582-03:00"
+        },
+        {
+          "Name": "g7_expediente_final_20260625_173242.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g7_expediente_final_20260625_173242.json",
+          "Mode": "-a---",
+          "Length": 2983,
+          "LastWriteTime": "2026-06-25T17:32:42.7862133-03:00"
+        },
+        {
+          "Name": "g8_2_runtime_switch_20260625_175238.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_2_runtime_switch_20260625_175238.json",
+          "Mode": "-a---",
+          "Length": 3467,
+          "LastWriteTime": "2026-06-25T17:52:38.6038735-03:00"
+        },
+        {
+          "Name": "g8_3_adx_creation_disabled_20260625_180649.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_3_adx_creation_disabled_20260625_180649.json",
+          "Mode": "-a---",
+          "Length": 3904,
+          "LastWriteTime": "2026-06-25T18:06:49.6925753-03:00"
+        },
+        {
+          "Name": "g8_4_backreference_metadata_readback_20260625_181339.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_4_backreference_metadata_readback_20260625_181339.json",
+          "Mode": "-a---",
+          "Length": 452,
+          "LastWriteTime": "2026-06-25T18:13:40.2805544-03:00"
+        },
+        {
+          "Name": "g8_4_historical_migration_20260625_181544.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_4_historical_migration_20260625_181544.json",
+          "Mode": "-a---",
+          "Length": 5752,
+          "LastWriteTime": "2026-06-25T18:16:00.6294723-03:00"
+        },
+        {
+          "Name": "g8_4_historical_migration_validation_20260625_182014.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_4_historical_migration_validation_20260625_182014.json",
+          "Mode": "-a---",
+          "Length": 1700,
+          "LastWriteTime": "2026-06-25T18:20:16.6412403-03:00"
+        },
+        {
+          "Name": "g8_4_migration_preflight_20260625_181205.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_4_migration_preflight_20260625_181205.json",
+          "Mode": "-a---",
+          "Length": 2592,
+          "LastWriteTime": "2026-06-25T18:12:08.8548376-03:00"
+        },
+        {
+          "Name": "g8_5_final_normalization_20260625_182545.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_5_final_normalization_20260625_182545.json",
+          "Mode": "-a---",
+          "Length": 2234,
+          "LastWriteTime": "2026-06-25T18:26:15.261252-03:00"
+        },
+        {
+          "Name": "g8_dual_mode_20260625_174034.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_dual_mode_20260625_174034.json",
+          "Mode": "-a---",
+          "Length": 7341,
+          "LastWriteTime": "2026-06-25T17:40:56.9511969-03:00"
+        },
+        {
+          "Name": "governance_refinement.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\governance_refinement.json",
+          "Mode": "-a---",
+          "Length": 3793,
+          "LastWriteTime": "2026-06-25T20:58:40.0874175-03:00"
+        },
+        {
+          "Name": "noc_alert_patch_20260625_183058.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_alert_patch_20260625_183058.json",
+          "Mode": "-a---",
+          "Length": 1635,
+          "LastWriteTime": "2026-06-25T18:30:58.2761877-03:00"
+        },
+        {
+          "Name": "noc_intelligence_upgrade.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_intelligence_upgrade.json",
+          "Mode": "-a---",
+          "Length": 2300,
+          "LastWriteTime": "2026-06-25T19:15:13.1033944-03:00"
+        },
+        {
+          "Name": "noc_refinement.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_refinement.json",
+          "Mode": "-a---",
+          "Length": 2836,
+          "LastWriteTime": "2026-06-25T20:47:03.0724755-03:00"
+        },
+        {
+          "Name": "noc_screen_deploy_20260625.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_screen_deploy_20260625.json",
+          "Mode": "-a---",
+          "Length": 3974,
+          "LastWriteTime": "2026-06-25T18:42:24.7715942-03:00"
+        },
+        {
+          "Name": "noc_web_alignment.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_web_alignment.json",
+          "Mode": "-a---",
+          "Length": 1539,
+          "LastWriteTime": "2026-06-25T18:59:41.6382228-03:00"
+        },
+        {
+          "Name": "noc_web_dashboard_20260625.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_web_dashboard_20260625.json",
+          "Mode": "-a---",
+          "Length": 2412,
+          "LastWriteTime": "2026-06-25T18:55:39.0997089-03:00"
+        },
+        {
+          "Name": "owner_action_advanced_layer.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\owner_action_advanced_layer.json",
+          "Mode": "-a---",
+          "Length": 1046,
+          "LastWriteTime": "2026-06-25T21:36:55.0182244-03:00"
+        },
+        {
+          "Name": "poc_adx_portalcomment_created_20260625_004552.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\poc_adx_portalcomment_created_20260625_004552.json",
+          "Mode": "-a---",
+          "Length": 3470,
+          "LastWriteTime": "2026-06-25T00:46:16.1980693-03:00"
+        },
+        {
+          "Name": "sdu_g5_2_documentlocation_create_20260625_004552.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sdu_g5_2_documentlocation_create_20260625_004552.json",
+          "Mode": "-a---",
+          "Length": 12913,
+          "LastWriteTime": "2026-06-25T00:49:09.6343666-03:00"
+        },
+        {
+          "Name": "sdu_runtime_friction_hardening_20260625_202938.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sdu_runtime_friction_hardening_20260625_202938.json",
+          "Mode": "-a---",
+          "Length": 1850,
+          "LastWriteTime": "2026-06-25T20:29:38.4715035-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_001428.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_001428.json",
+          "Mode": "-a---",
+          "Length": 1026,
+          "LastWriteTime": "2026-06-25T00:14:36.6103151-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_004852.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_004852.json",
+          "Mode": "-a---",
+          "Length": 1026,
+          "LastWriteTime": "2026-06-25T00:48:56.474646-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_005735.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_005735.json",
+          "Mode": "-a---",
+          "Length": 3844,
+          "LastWriteTime": "2026-06-25T00:57:38.0833467-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_010922.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_010922.json",
+          "Mode": "-a---",
+          "Length": 11070,
+          "LastWriteTime": "2026-06-25T01:09:29.6708464-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_014256.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_014256.json",
+          "Mode": "-a---",
+          "Length": 884,
+          "LastWriteTime": "2026-06-25T01:42:57.5842219-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_014359.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_014359.json",
+          "Mode": "-a---",
+          "Length": 11070,
+          "LastWriteTime": "2026-06-25T01:44:05.3435922-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_014418.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_014418.json",
+          "Mode": "-a---",
+          "Length": 21650,
+          "LastWriteTime": "2026-06-25T01:44:25.8028553-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_020919.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_020919.json",
+          "Mode": "-a---",
+          "Length": 53387,
+          "LastWriteTime": "2026-06-25T02:09:35.4464705-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_020943.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_020943.json",
+          "Mode": "-a---",
+          "Length": 53387,
+          "LastWriteTime": "2026-06-25T02:09:55.5526057-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_021004.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_021004.json",
+          "Mode": "-a---",
+          "Length": 53387,
+          "LastWriteTime": "2026-06-25T02:10:17.079169-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_163653.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_163653.json",
+          "Mode": "-a---",
+          "Length": 63966,
+          "LastWriteTime": "2026-06-25T16:37:05.0965449-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_163710.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_163710.json",
+          "Mode": "-a---",
+          "Length": 63966,
+          "LastWriteTime": "2026-06-25T16:37:22.4712618-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_163728.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_163728.json",
+          "Mode": "-a---",
+          "Length": 63966,
+          "LastWriteTime": "2026-06-25T16:37:40.4186348-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_172940.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_172940.json",
+          "Mode": "-a---",
+          "Length": 884,
+          "LastWriteTime": "2026-06-25T17:29:41.8171106-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_173206.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_173206.json",
+          "Mode": "-a---",
+          "Length": 74556,
+          "LastWriteTime": "2026-06-25T17:32:20.0257438-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_174042.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_174042.json",
+          "Mode": "-a---",
+          "Length": 85145,
+          "LastWriteTime": "2026-06-25T17:40:56.8550906-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_174742.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_174742.json",
+          "Mode": "-a---",
+          "Length": 95722,
+          "LastWriteTime": "2026-06-25T17:47:58.232223-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_174837.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_174837.json",
+          "Mode": "-a---",
+          "Length": 95722,
+          "LastWriteTime": "2026-06-25T17:49:12.0920472-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_175026.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_175026.json",
+          "Mode": "-a---",
+          "Length": 95722,
+          "LastWriteTime": "2026-06-25T17:50:42.6337441-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180216.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180216.json",
+          "Mode": "-a---",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:02:33.9132616-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180333.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180333.json",
+          "Mode": "-a---",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:03:52.394471-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180409.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180409.json",
+          "Mode": "-a---",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:04:26.4609931-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180518.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180518.json",
+          "Mode": "-a---",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:05:35.5003503-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_181623.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_181623.json",
+          "Mode": "-a---",
+          "Length": 106373,
+          "LastWriteTime": "2026-06-25T18:16:41.4755-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_181743.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_181743.json",
+          "Mode": "-a---",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:18:08.0876621-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_182549.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_182549.json",
+          "Mode": "-a---",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:26:15.0897875-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_183012.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_183012.json",
+          "Mode": "-a---",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:30:37.6731974-03:00"
+        },
+        {
+          "Name": "sharepointsite_created_20260625_004013.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepointsite_created_20260625_004013.json",
+          "Mode": "-a---",
+          "Length": 5486,
+          "LastWriteTime": "2026-06-25T00:40:21.7263727-03:00"
+        },
+        {
+          "Name": "watchdog_patch_sitecollection_20260625_011725.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\watchdog_patch_sitecollection_20260625_011725.json",
+          "Mode": "-a---",
+          "Length": 8731,
+          "LastWriteTime": "2026-06-25T01:18:46.6085762-03:00"
+        },
+        {
+          "Name": "watchdog-sharepoint-link_before_sitecollection_patch_20260625_010648.ps1",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\watchdog-sharepoint-link_before_sitecollection_patch_20260625_010648.ps1",
+          "Mode": "-a---",
+          "Length": 25105,
+          "LastWriteTime": "2026-06-25T00:14:15.9968351-03:00"
+        },
+        {
+          "Name": "views",
+          "FullName": "C:\\CEO\\watchdog\\graphify-out\\views",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:44:27.108621-03:00"
+        },
+        {
+          "Name": "incident-20260623-110612-999.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260623-110612-999.json",
+          "Mode": "-a---",
+          "Length": 202,
+          "LastWriteTime": "2026-06-23T12:15:53.7428116-03:00"
+        },
+        {
+          "Name": "incident-20260623-110814-999.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260623-110814-999.json",
+          "Mode": "-a---",
+          "Length": 202,
+          "LastWriteTime": "2026-06-23T12:15:53.7450442-03:00"
+        },
+        {
+          "Name": "incident-20260623-143651-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260623-143651-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-23T14:36:53.1513909-03:00"
+        },
+        {
+          "Name": "incident-20260623-143651-1801.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260623-143651-1801.json",
+          "Mode": "-a---",
+          "Length": 1956,
+          "LastWriteTime": "2026-06-23T14:36:53.127455-03:00"
+        },
+        {
+          "Name": "incident-20260623-235652-7031.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260623-235652-7031.json",
+          "Mode": "-a---",
+          "Length": 1036,
+          "LastWriteTime": "2026-06-23T23:56:53.6554903-03:00"
+        },
+        {
+          "Name": "incident-20260624-023652-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260624-023652-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-24T02:36:53.4833751-03:00"
+        },
+        {
+          "Name": "incident-20260624-113653-7031.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260624-113653-7031.json",
+          "Mode": "-a---",
+          "Length": 1036,
+          "LastWriteTime": "2026-06-24T11:36:54.2310237-03:00"
+        },
+        {
+          "Name": "incident-20260624-143658-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260624-143658-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-24T14:36:59.6877742-03:00"
+        }
+      ],
+      "largest_files": [
+        {
+          "Name": "ceo_inventory.csv",
+          "FullName": "C:\\CEO\\.metadata\\audit\\ceo_inventory.csv",
+          "Length": 57437886,
+          "LastWriteTime": "2026-06-19T16:08:02.0036336-03:00"
+        },
+        {
+          "Name": "reduction-execution-plan.json",
+          "FullName": "C:\\CEO\\evidence\\g5-enablement\\reduction-execution-plan.json",
+          "Length": 28494012,
+          "LastWriteTime": "2026-06-26T00:18:53.106053-03:00"
+        },
+        {
+          "Name": "canonical-map.json",
+          "FullName": "C:\\CEO\\evidence\\canonicalization\\canonical-map.json",
+          "Length": 27353570,
+          "LastWriteTime": "2026-06-26T00:08:43.7818098-03:00"
+        },
+        {
+          "Name": "actions-log.json",
+          "FullName": "C:\\CEO\\evidence\\reduction-g4\\actions-log.json",
+          "Length": 25839847,
+          "LastWriteTime": "2026-06-26T00:13:39.2439964-03:00"
+        },
+        {
+          "Name": "identity-map.json",
+          "FullName": "C:\\CEO\\evidence\\identity-resolution\\identity-map.json",
+          "Length": 22546582,
+          "LastWriteTime": "2026-06-26T00:32:56.217196-03:00"
+        },
+        {
+          "Name": "unresolved-identities.json",
+          "FullName": "C:\\CEO\\evidence\\identity-resolution\\unresolved-identities.json",
+          "Length": 6432674,
+          "LastWriteTime": "2026-06-26T00:32:56.4847667-03:00"
+        },
+        {
+          "Name": "canonical-conflicts.json",
+          "FullName": "C:\\CEO\\evidence\\canonicalization\\canonical-conflicts.json",
+          "Length": 5852071,
+          "LastWriteTime": "2026-06-26T00:08:43.866691-03:00"
+        },
+        {
+          "Name": "identity-map.enriched.json",
+          "FullName": "C:\\CEO\\evidence\\identity-enrichment\\identity-map.enriched.json",
+          "Length": 5213876,
+          "LastWriteTime": "2026-06-26T00:41:01.0097374-03:00"
+        },
+        {
+          "Name": "system-nervous-index.expansion.json",
+          "FullName": "C:\\CEO\\evidence\\sns-expansion\\system-nervous-index.expansion.json",
+          "Length": 5093837,
+          "LastWriteTime": "2026-06-25T23:57:39.8965967-03:00"
+        },
+        {
+          "Name": "sns-expansion.json",
+          "FullName": "C:\\CEO\\evidence\\sns-expansion\\sns-expansion.json",
+          "Length": 5093837,
+          "LastWriteTime": "2026-06-25T23:57:39.8817485-03:00"
+        },
+        {
+          "Name": "duplicates-map.json",
+          "FullName": "C:\\CEO\\evidence\\duplication-diagnostic\\duplicates-map.json",
+          "Length": 950664,
+          "LastWriteTime": "2026-06-25T23:47:45.8068494-03:00"
+        },
+        {
+          "Name": "dataverse-inventory.json",
+          "FullName": "C:\\CEO\\evidence\\duplication-diagnostic\\dataverse-inventory.json",
+          "Length": 789885,
+          "LastWriteTime": "2026-06-25T23:47:45.8612712-03:00"
+        },
+        {
+          "Name": "sharepoint_link_events.jsonl",
+          "FullName": "C:\\CEO\\watchdog\\logs\\sharepoint_link_events.jsonl",
+          "Length": 364869,
+          "LastWriteTime": "2026-06-25T18:30:37.6963396-03:00"
+        },
+        {
+          "Name": "processes.csv",
+          "FullName": "C:\\CEO\\.metadata\\audit\\processes.csv",
+          "Length": 278327,
+          "LastWriteTime": "2026-06-19T16:04:51.9650336-03:00"
+        },
+        {
+          "Name": "promoted-identities.json",
+          "FullName": "C:\\CEO\\evidence\\identity-enrichment\\promoted-identities.json",
+          "Length": 221212,
+          "LastWriteTime": "2026-06-26T00:41:01.0147929-03:00"
+        },
+        {
+          "Name": "services.csv",
+          "FullName": "C:\\CEO\\.metadata\\audit\\services.csv",
+          "Length": 170198,
+          "LastWriteTime": "2026-06-19T16:04:29.1443249-03:00"
+        },
+        {
+          "Name": "semantic-normalization-map.json",
+          "FullName": "C:\\CEO\\evidence\\semantic-normalization\\semantic-normalization-map.json",
+          "Length": 169830,
+          "LastWriteTime": "2026-06-26T00:58:04.9192061-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_183012.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_183012.json",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:30:37.6731974-03:00"
+        },
+        {
+          "Name": "sharepoint_link_health.json",
+          "FullName": "C:\\CEO\\watchdog\\logs\\sharepoint_link_health.json",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:30:37.6779065-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_181743.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_181743.json",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:18:08.0876621-03:00"
+        }
+      ]
+    },
+    {
+      "root": "C:\\CEO\\watch",
+      "exists": true,
+      "policy": "watch_full_small",
+      "root_last_write": "2026-06-22T03:04:45.5265775-03:00",
+      "top_level_count": 4,
+      "scanned_items": 8,
+      "scanned_dirs": 1,
+      "scanned_files": 7,
+      "scanned_bytes": 71268,
+      "sensitive_name_signals": [],
+      "extension_top": [
+        {
+          "extension": ".log",
+          "Count": 3
+        },
+        {
+          "extension": ".txt",
+          "Count": 2
+        },
+        {
+          "extension": ".jsonl",
+          "Count": 1
+        },
+        {
+          "extension": ".ps1",
+          "Count": 1
+        }
+      ],
+      "top_level": [
+        {
+          "Name": "events",
+          "FullName": "C:\\CEO\\watch\\events",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-23T22:13:24.2062018-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "active-baseline.txt",
+          "FullName": "C:\\CEO\\watch\\active-baseline.txt",
+          "Mode": "-a---",
+          "Length": 43,
+          "LastWriteTime": "2026-06-22T03:04:45.1286866-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "CEO-Watchdog.ps1",
+          "FullName": "C:\\CEO\\watch\\CEO-Watchdog.ps1",
+          "Mode": "-a---",
+          "Length": 6053,
+          "LastWriteTime": "2026-06-21T20:48:35.375393-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "pid.txt",
+          "FullName": "C:\\CEO\\watch\\pid.txt",
+          "Mode": "-a---",
+          "Length": 7,
+          "LastWriteTime": "2026-06-22T03:04:45.5265775-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        }
+      ],
+      "capability_signals": [
+        {
+          "Name": "events",
+          "FullName": "C:\\CEO\\watch\\events",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-23T22:13:24.2062018-03:00"
+        },
+        {
+          "Name": "active-baseline.txt",
+          "FullName": "C:\\CEO\\watch\\active-baseline.txt",
+          "Mode": "-a---",
+          "Length": 43,
+          "LastWriteTime": "2026-06-22T03:04:45.1286866-03:00"
+        },
+        {
+          "Name": "CEO-Watchdog.ps1",
+          "FullName": "C:\\CEO\\watch\\CEO-Watchdog.ps1",
+          "Mode": "-a---",
+          "Length": 6053,
+          "LastWriteTime": "2026-06-21T20:48:35.375393-03:00"
+        },
+        {
+          "Name": "pid.txt",
+          "FullName": "C:\\CEO\\watch\\pid.txt",
+          "Mode": "-a---",
+          "Length": 7,
+          "LastWriteTime": "2026-06-22T03:04:45.5265775-03:00"
+        },
+        {
+          "Name": "mission-multi-20260623-220735.log",
+          "FullName": "C:\\CEO\\watch\\events\\mission-multi-20260623-220735.log",
+          "Mode": "-a---",
+          "Length": 276,
+          "LastWriteTime": "2026-06-23T22:07:35.4646996-03:00"
+        },
+        {
+          "Name": "mission-multi-20260623-221027.log",
+          "FullName": "C:\\CEO\\watch\\events\\mission-multi-20260623-221027.log",
+          "Mode": "-a---",
+          "Length": 32356,
+          "LastWriteTime": "2026-06-23T22:11:45.2503082-03:00"
+        },
+        {
+          "Name": "mission-multi-20260623-221324.log",
+          "FullName": "C:\\CEO\\watch\\events\\mission-multi-20260623-221324.log",
+          "Mode": "-a---",
+          "Length": 32349,
+          "LastWriteTime": "2026-06-23T22:14:03.9041553-03:00"
+        },
+        {
+          "Name": "watch-20260622.jsonl",
+          "FullName": "C:\\CEO\\watch\\events\\watch-20260622.jsonl",
+          "Mode": "-a---",
+          "Length": 184,
+          "LastWriteTime": "2026-06-22T03:04:45.5706866-03:00"
+        }
+      ],
+      "largest_files": [
+        {
+          "Name": "mission-multi-20260623-221027.log",
+          "FullName": "C:\\CEO\\watch\\events\\mission-multi-20260623-221027.log",
+          "Length": 32356,
+          "LastWriteTime": "2026-06-23T22:11:45.2503082-03:00"
+        },
+        {
+          "Name": "mission-multi-20260623-221324.log",
+          "FullName": "C:\\CEO\\watch\\events\\mission-multi-20260623-221324.log",
+          "Length": 32349,
+          "LastWriteTime": "2026-06-23T22:14:03.9041553-03:00"
+        },
+        {
+          "Name": "CEO-Watchdog.ps1",
+          "FullName": "C:\\CEO\\watch\\CEO-Watchdog.ps1",
+          "Length": 6053,
+          "LastWriteTime": "2026-06-21T20:48:35.375393-03:00"
+        },
+        {
+          "Name": "mission-multi-20260623-220735.log",
+          "FullName": "C:\\CEO\\watch\\events\\mission-multi-20260623-220735.log",
+          "Length": 276,
+          "LastWriteTime": "2026-06-23T22:07:35.4646996-03:00"
+        },
+        {
+          "Name": "watch-20260622.jsonl",
+          "FullName": "C:\\CEO\\watch\\events\\watch-20260622.jsonl",
+          "Length": 184,
+          "LastWriteTime": "2026-06-22T03:04:45.5706866-03:00"
+        },
+        {
+          "Name": "active-baseline.txt",
+          "FullName": "C:\\CEO\\watch\\active-baseline.txt",
+          "Length": 43,
+          "LastWriteTime": "2026-06-22T03:04:45.1286866-03:00"
+        },
+        {
+          "Name": "pid.txt",
+          "FullName": "C:\\CEO\\watch\\pid.txt",
+          "Length": 7,
+          "LastWriteTime": "2026-06-22T03:04:45.5265775-03:00"
+        }
+      ]
+    },
+    {
+      "root": "C:\\CEO\\watchdog",
+      "exists": true,
+      "policy": "watchdog_depth4",
+      "root_last_write": "2026-06-25T21:44:27.0448207-03:00",
+      "top_level_count": 34,
+      "scanned_items": 305,
+      "scanned_dirs": 18,
+      "scanned_files": 287,
+      "scanned_bytes": 3803859,
+      "sensitive_name_signals": [],
+      "extension_top": [
+        {
+          "extension": ".json",
+          "Count": 229
+        },
+        {
+          "extension": ".ps1",
+          "Count": 24
+        },
+        {
+          "extension": ".jsonl",
+          "Count": 14
+        },
+        {
+          "extension": ".bak_20260625_202529",
+          "Count": 3
+        },
+        {
+          "extension": ".bak_20260625_204500",
+          "Count": 3
+        },
+        {
+          "extension": ".html",
+          "Count": 3
+        },
+        {
+          "extension": ".log",
+          "Count": 2
+        },
+        {
+          "extension": ".txt",
+          "Count": 2
+        },
+        {
+          "extension": ".bak_20260625_202227",
+          "Count": 1
+        },
+        {
+          "extension": ".bak_20260625_202414",
+          "Count": 1
+        },
+        {
+          "extension": ".css",
+          "Count": 1
+        },
+        {
+          "extension": ".js",
+          "Count": 1
+        },
+        {
+          "extension": ".md",
+          "Count": 1
+        },
+        {
+          "extension": ".py",
+          "Count": 1
+        },
+        {
+          "extension": ".pyc",
+          "Count": 1
+        }
+      ],
+      "top_level": [
+        {
+          "Name": "alerts",
+          "FullName": "C:\\CEO\\watchdog\\alerts",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T06:19:51.6865089-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "audit",
+          "FullName": "C:\\CEO\\watchdog\\audit",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-24T13:10:20.5062131-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "commands",
+          "FullName": "C:\\CEO\\watchdog\\commands",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:06:28.4032894-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "config",
+          "FullName": "C:\\CEO\\watchdog\\config",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:33:19.561286-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "evidence",
+          "FullName": "C:\\CEO\\watchdog\\evidence",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:44:27.0433143-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "graphify-out",
+          "FullName": "C:\\CEO\\watchdog\\graphify-out",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:44:27.0448207-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "incidents",
+          "FullName": "C:\\CEO\\watchdog\\incidents",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T04:16:53.436359-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "logs",
+          "FullName": "C:\\CEO\\watchdog\\logs",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:36:54.9523257-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "noc-web",
+          "FullName": "C:\\CEO\\watchdog\\noc-web",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:35:46.0018074-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "outbox",
+          "FullName": "C:\\CEO\\watchdog\\outbox",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T19:18:17.5364749-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "planner-audit",
+          "FullName": "C:\\CEO\\watchdog\\planner-audit",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-24T14:02:35.6096272-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "scheduler",
+          "FullName": "C:\\CEO\\watchdog\\scheduler",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-24T13:02:57.2212471-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "scripts",
+          "FullName": "C:\\CEO\\watchdog\\scripts",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:06:28.404691-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "state",
+          "FullName": "C:\\CEO\\watchdog\\state",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T20:58:06.3726753-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "config.sharepoint-link.json",
+          "FullName": "C:\\CEO\\watchdog\\config.sharepoint-link.json",
+          "Mode": "-a---",
+          "Length": 499,
+          "LastWriteTime": "2026-06-25T18:25:49.1416269-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "config.sharepoint-link.pre-g8_5_20260625_182545.json",
+          "FullName": "C:\\CEO\\watchdog\\config.sharepoint-link.pre-g8_5_20260625_182545.json",
+          "Mode": "-a---",
+          "Length": 479,
+          "LastWriteTime": "2026-06-25T18:25:49.1405929-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "dashboard-advanced.ps1",
+          "FullName": "C:\\CEO\\watchdog\\dashboard-advanced.ps1",
+          "Mode": "-a---",
+          "Length": 6179,
+          "LastWriteTime": "2026-06-23T12:13:40.8448354-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "dashboard.ps1",
+          "FullName": "C:\\CEO\\watchdog\\dashboard.ps1",
+          "Mode": "-a---",
+          "Length": 1588,
+          "LastWriteTime": "2026-06-23T12:07:35.9444741-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "intelligence.ps1",
+          "FullName": "C:\\CEO\\watchdog\\intelligence.ps1",
+          "Mode": "-a---",
+          "Length": 37915,
+          "LastWriteTime": "2026-06-25T20:28:56.5515663-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "intelligence.ps1.bak_20260625_202414",
+          "FullName": "C:\\CEO\\watchdog\\intelligence.ps1.bak_20260625_202414",
+          "Mode": "-a---",
+          "Length": 21209,
+          "LastWriteTime": "2026-06-25T19:11:15.4278477-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "noc-screen.ps1",
+          "FullName": "C:\\CEO\\watchdog\\noc-screen.ps1",
+          "Mode": "-a---",
+          "Length": 18364,
+          "LastWriteTime": "2026-06-25T18:39:55.6551849-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "noclive.ps1",
+          "FullName": "C:\\CEO\\watchdog\\noclive.ps1",
+          "Mode": "-a---",
+          "Length": 41,
+          "LastWriteTime": "2026-06-25T18:39:55.6551849-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "run-documentlocation-loop.pre-g8_2_20260625_174706.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.pre-g8_2_20260625_174706.ps1",
+          "Mode": "-a---",
+          "Length": 19545,
+          "LastWriteTime": "2026-06-25T16:32:18.1134556-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "run-documentlocation-loop.pre-g8_3_20260625_180101.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.pre-g8_3_20260625_180101.ps1",
+          "Mode": "-a---",
+          "Length": 28261,
+          "LastWriteTime": "2026-06-25T17:45:41.8918759-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "run-documentlocation-loop.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.ps1",
+          "Mode": "-a---",
+          "Length": 37581,
+          "LastWriteTime": "2026-06-25T20:22:27.2876524-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "run-documentlocation-loop.ps1.bak_20260625_202227",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.ps1.bak_20260625_202227",
+          "Mode": "-a---",
+          "Length": 29040,
+          "LastWriteTime": "2026-06-25T17:58:51.2983622-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "run-primary.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-primary.ps1",
+          "Mode": "-a---",
+          "Length": 2274,
+          "LastWriteTime": "2026-06-24T13:19:09.9931381-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "run-telemetry.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-telemetry.ps1",
+          "Mode": "-a---",
+          "Length": 1097,
+          "LastWriteTime": "2026-06-24T13:33:50.3153996-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "telemetry.json",
+          "FullName": "C:\\CEO\\watchdog\\telemetry.json",
+          "Mode": "-a---",
+          "Length": 44731,
+          "LastWriteTime": "2026-06-26T06:19:51.7278769-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "telemetry.ps1",
+          "FullName": "C:\\CEO\\watchdog\\telemetry.ps1",
+          "Mode": "-a---",
+          "Length": 6002,
+          "LastWriteTime": "2026-06-25T18:29:25.9314856-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "watchdog-sharepoint-link.ps1",
+          "FullName": "C:\\CEO\\watchdog\\watchdog-sharepoint-link.ps1",
+          "Mode": "-a---",
+          "Length": 26738,
+          "LastWriteTime": "2026-06-25T01:08:31.9177471-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "watchdog.actions.json",
+          "FullName": "C:\\CEO\\watchdog\\watchdog.actions.json",
+          "Mode": "-a---",
+          "Length": 18,
+          "LastWriteTime": "2026-06-26T06:16:55.1303142-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "watchdog.ps1",
+          "FullName": "C:\\CEO\\watchdog\\watchdog.ps1",
+          "Mode": "-a---",
+          "Length": 4532,
+          "LastWriteTime": "2026-06-23T12:00:41.0580511-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "watchdog.seen.txt",
+          "FullName": "C:\\CEO\\watchdog\\watchdog.seen.txt",
+          "Mode": "-a---",
+          "Length": 1027,
+          "LastWriteTime": "2026-06-26T04:16:53.4580149-03:00",
+          "Attributes": 32,
+          "LinkType": null,
+          "Target": null
+        }
+      ],
+      "capability_signals": [
+        {
+          "Name": "alerts",
+          "FullName": "C:\\CEO\\watchdog\\alerts",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T06:19:51.6865089-03:00"
+        },
+        {
+          "Name": "audit",
+          "FullName": "C:\\CEO\\watchdog\\audit",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-24T13:10:20.5062131-03:00"
+        },
+        {
+          "Name": "commands",
+          "FullName": "C:\\CEO\\watchdog\\commands",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:06:28.4032894-03:00"
+        },
+        {
+          "Name": "config",
+          "FullName": "C:\\CEO\\watchdog\\config",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:33:19.561286-03:00"
+        },
+        {
+          "Name": "evidence",
+          "FullName": "C:\\CEO\\watchdog\\evidence",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:44:27.0433143-03:00"
+        },
+        {
+          "Name": "graphify-out",
+          "FullName": "C:\\CEO\\watchdog\\graphify-out",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:44:27.0448207-03:00"
+        },
+        {
+          "Name": "incidents",
+          "FullName": "C:\\CEO\\watchdog\\incidents",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T04:16:53.436359-03:00"
+        },
+        {
+          "Name": "logs",
+          "FullName": "C:\\CEO\\watchdog\\logs",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:36:54.9523257-03:00"
+        },
+        {
+          "Name": "noc-web",
+          "FullName": "C:\\CEO\\watchdog\\noc-web",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:35:46.0018074-03:00"
+        },
+        {
+          "Name": "outbox",
+          "FullName": "C:\\CEO\\watchdog\\outbox",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T19:18:17.5364749-03:00"
+        },
+        {
+          "Name": "planner-audit",
+          "FullName": "C:\\CEO\\watchdog\\planner-audit",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-24T14:02:35.6096272-03:00"
+        },
+        {
+          "Name": "scheduler",
+          "FullName": "C:\\CEO\\watchdog\\scheduler",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-24T13:02:57.2212471-03:00"
+        },
+        {
+          "Name": "scripts",
+          "FullName": "C:\\CEO\\watchdog\\scripts",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-26T01:06:28.404691-03:00"
+        },
+        {
+          "Name": "state",
+          "FullName": "C:\\CEO\\watchdog\\state",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T20:58:06.3726753-03:00"
+        },
+        {
+          "Name": "config.sharepoint-link.json",
+          "FullName": "C:\\CEO\\watchdog\\config.sharepoint-link.json",
+          "Mode": "-a---",
+          "Length": 499,
+          "LastWriteTime": "2026-06-25T18:25:49.1416269-03:00"
+        },
+        {
+          "Name": "config.sharepoint-link.pre-g8_5_20260625_182545.json",
+          "FullName": "C:\\CEO\\watchdog\\config.sharepoint-link.pre-g8_5_20260625_182545.json",
+          "Mode": "-a---",
+          "Length": 479,
+          "LastWriteTime": "2026-06-25T18:25:49.1405929-03:00"
+        },
+        {
+          "Name": "dashboard-advanced.ps1",
+          "FullName": "C:\\CEO\\watchdog\\dashboard-advanced.ps1",
+          "Mode": "-a---",
+          "Length": 6179,
+          "LastWriteTime": "2026-06-23T12:13:40.8448354-03:00"
+        },
+        {
+          "Name": "dashboard.ps1",
+          "FullName": "C:\\CEO\\watchdog\\dashboard.ps1",
+          "Mode": "-a---",
+          "Length": 1588,
+          "LastWriteTime": "2026-06-23T12:07:35.9444741-03:00"
+        },
+        {
+          "Name": "intelligence.ps1",
+          "FullName": "C:\\CEO\\watchdog\\intelligence.ps1",
+          "Mode": "-a---",
+          "Length": 37915,
+          "LastWriteTime": "2026-06-25T20:28:56.5515663-03:00"
+        },
+        {
+          "Name": "intelligence.ps1.bak_20260625_202414",
+          "FullName": "C:\\CEO\\watchdog\\intelligence.ps1.bak_20260625_202414",
+          "Mode": "-a---",
+          "Length": 21209,
+          "LastWriteTime": "2026-06-25T19:11:15.4278477-03:00"
+        },
+        {
+          "Name": "noc-screen.ps1",
+          "FullName": "C:\\CEO\\watchdog\\noc-screen.ps1",
+          "Mode": "-a---",
+          "Length": 18364,
+          "LastWriteTime": "2026-06-25T18:39:55.6551849-03:00"
+        },
+        {
+          "Name": "noclive.ps1",
+          "FullName": "C:\\CEO\\watchdog\\noclive.ps1",
+          "Mode": "-a---",
+          "Length": 41,
+          "LastWriteTime": "2026-06-25T18:39:55.6551849-03:00"
+        },
+        {
+          "Name": "run-documentlocation-loop.pre-g8_2_20260625_174706.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.pre-g8_2_20260625_174706.ps1",
+          "Mode": "-a---",
+          "Length": 19545,
+          "LastWriteTime": "2026-06-25T16:32:18.1134556-03:00"
+        },
+        {
+          "Name": "run-documentlocation-loop.pre-g8_3_20260625_180101.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.pre-g8_3_20260625_180101.ps1",
+          "Mode": "-a---",
+          "Length": 28261,
+          "LastWriteTime": "2026-06-25T17:45:41.8918759-03:00"
+        },
+        {
+          "Name": "run-documentlocation-loop.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.ps1",
+          "Mode": "-a---",
+          "Length": 37581,
+          "LastWriteTime": "2026-06-25T20:22:27.2876524-03:00"
+        },
+        {
+          "Name": "run-documentlocation-loop.ps1.bak_20260625_202227",
+          "FullName": "C:\\CEO\\watchdog\\run-documentlocation-loop.ps1.bak_20260625_202227",
+          "Mode": "-a---",
+          "Length": 29040,
+          "LastWriteTime": "2026-06-25T17:58:51.2983622-03:00"
+        },
+        {
+          "Name": "run-primary.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-primary.ps1",
+          "Mode": "-a---",
+          "Length": 2274,
+          "LastWriteTime": "2026-06-24T13:19:09.9931381-03:00"
+        },
+        {
+          "Name": "run-telemetry.ps1",
+          "FullName": "C:\\CEO\\watchdog\\run-telemetry.ps1",
+          "Mode": "-a---",
+          "Length": 1097,
+          "LastWriteTime": "2026-06-24T13:33:50.3153996-03:00"
+        },
+        {
+          "Name": "telemetry.json",
+          "FullName": "C:\\CEO\\watchdog\\telemetry.json",
+          "Mode": "-a---",
+          "Length": 44731,
+          "LastWriteTime": "2026-06-26T06:19:51.7278769-03:00"
+        },
+        {
+          "Name": "telemetry.ps1",
+          "FullName": "C:\\CEO\\watchdog\\telemetry.ps1",
+          "Mode": "-a---",
+          "Length": 6002,
+          "LastWriteTime": "2026-06-25T18:29:25.9314856-03:00"
+        },
+        {
+          "Name": "watchdog-sharepoint-link.ps1",
+          "FullName": "C:\\CEO\\watchdog\\watchdog-sharepoint-link.ps1",
+          "Mode": "-a---",
+          "Length": 26738,
+          "LastWriteTime": "2026-06-25T01:08:31.9177471-03:00"
+        },
+        {
+          "Name": "watchdog.actions.json",
+          "FullName": "C:\\CEO\\watchdog\\watchdog.actions.json",
+          "Mode": "-a---",
+          "Length": 18,
+          "LastWriteTime": "2026-06-26T06:16:55.1303142-03:00"
+        },
+        {
+          "Name": "watchdog.ps1",
+          "FullName": "C:\\CEO\\watchdog\\watchdog.ps1",
+          "Mode": "-a---",
+          "Length": 4532,
+          "LastWriteTime": "2026-06-23T12:00:41.0580511-03:00"
+        },
+        {
+          "Name": "watchdog.seen.txt",
+          "FullName": "C:\\CEO\\watchdog\\watchdog.seen.txt",
+          "Mode": "-a---",
+          "Length": 1027,
+          "LastWriteTime": "2026-06-26T04:16:53.4580149-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_153453_6360.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_153453_6360.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-25T15:34:53.9933131-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_154450_15660.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_154450_15660.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T15:44:50.0776083-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_155450_14860.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_155450_14860.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T15:54:50.5109181-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_160450_19024.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_160450_19024.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T16:04:50.0940079-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_161449_22220.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_161449_22220.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T16:14:49.6169907-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_162514_10020.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_162514_10020.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T16:25:15.2938556-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_163449_15536.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_163449_15536.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T16:34:49.2512163-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_164449_8672.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_164449_8672.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-25T16:44:49.7285489-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_165449_21276.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_165449_21276.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T16:54:49.7058134-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_170449_3356.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_170449_3356.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T17:04:49.8978157-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_171449_4976.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_171449_4976.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-25T17:14:49.1294961-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_172449_12600.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_172449_12600.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T17:24:49.1487208-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_173450_3292.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_173450_3292.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T17:34:50.1891431-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_174449_21684.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_174449_21684.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T17:44:49.4186438-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_175449_2272.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_175449_2272.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T17:54:49.9663425-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_180449_21368.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_180449_21368.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T18:04:49.2946083-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_181449_4268.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_181449_4268.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-25T18:14:49.3467551-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_182449_8564.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_182449_8564.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T18:24:49.4899968-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_183038_6780.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_183038_6780.json",
+          "Mode": "-a---",
+          "Length": 449,
+          "LastWriteTime": "2026-06-25T18:30:38.2013229-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_183450_11716.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_183450_11716.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T18:34:50.2797051-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_184450_13304.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_184450_13304.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T18:44:50.1673575-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_185449_9204.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_185449_9204.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T18:54:49.3462719-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_190450_23708.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_190450_23708.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T19:04:50.7610683-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_191449_7520.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_191449_7520.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T19:14:49.1649784-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_192451_16576.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_192451_16576.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T19:24:51.5296757-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_193450_24332.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_193450_24332.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T19:34:50.3973584-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_194450_5596.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_194450_5596.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T19:44:50.1767436-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_195449_3964.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_195449_3964.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T19:54:49.886798-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_200449_14676.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_200449_14676.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T20:04:49.7421761-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_201454_10352.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_201454_10352.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T20:14:54.4227212-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_202449_20964.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_202449_20964.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T20:24:49.2378606-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_203450_20700.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_203450_20700.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T20:34:50.7070038-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_204453_15944.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_204453_15944.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T20:44:53.277766-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_205450_17844.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_205450_17844.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T20:54:50.2397593-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_210452_3080.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_210452_3080.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T21:04:52.1062634-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_211452_18948.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_211452_18948.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T21:14:52.5441192-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_212457_16868.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_212457_16868.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T21:24:58.0220612-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_213513_25224.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_213513_25224.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T21:35:14.1050411-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_214449_12576.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_214449_12576.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T21:44:49.8615621-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_215504_8832.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_215504_8832.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-25T21:55:04.5560704-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_220449_23364.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_220449_23364.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T22:04:49.7862471-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_221451_23004.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_221451_23004.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T22:14:51.7809657-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_222450_5748.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_222450_5748.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T22:24:50.3231242-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_223449_8348.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_223449_8348.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T22:34:49.2194962-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_224450_16628.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_224450_16628.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T22:44:50.473123-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_225513_22580.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_225513_22580.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T22:55:13.4582228-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_230449_22884.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_230449_22884.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T23:04:49.5206095-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_231450_15020.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_231450_15020.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T23:14:50.2525932-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_232451_1808.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_232451_1808.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-25T23:24:51.8049671-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_233450_24596.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_233450_24596.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T23:34:50.4305768-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_234449_21228.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_234449_21228.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-25T23:44:49.6741825-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260625_235451_13744.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260625_235451_13744.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-25T23:54:51.163758-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_000449_22236.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_000449_22236.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T00:04:49.3091936-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_001449_26336.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_001449_26336.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-26T00:14:49.9301477-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_002451_21340.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_002451_21340.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T00:24:52.140836-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_003451_2600.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_003451_2600.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T00:34:51.1557376-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_004449_6676.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_004449_6676.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T00:44:49.4527254-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_005449_22200.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_005449_22200.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T00:54:49.4440766-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_010450_13916.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_010450_13916.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T01:04:50.5155647-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_011450_24884.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_011450_24884.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T01:14:50.0927906-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_012456_5396.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_012456_5396.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-26T01:24:56.4554614-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_013449_18852.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_013449_18852.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T01:34:49.1552835-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_014449_24836.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_014449_24836.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T01:44:49.5729955-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_015449_12360.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_015449_12360.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T01:54:49.7426329-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_020452_1624.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_020452_1624.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T02:04:53.0083763-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_021451_12560.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_021451_12560.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T02:14:52.0750201-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_022454_25692.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_022454_25692.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T02:24:54.2884085-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_023449_24564.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_023449_24564.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T02:34:50.0862228-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_024452_15496.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_024452_15496.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T02:44:52.6759634-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_025449_26536.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_025449_26536.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T02:54:49.4221377-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_030449_24660.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_030449_24660.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T03:04:49.1812317-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_031456_23520.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_031456_23520.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T03:14:57.2676628-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_032450_17908.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_032450_17908.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T03:24:50.4455878-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_033449_18488.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_033449_18488.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T03:34:49.8205574-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_034449_5396.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_034449_5396.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-26T03:44:49.3546626-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_034956_27120.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_034956_27120.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T03:49:56.8269736-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_035453_3180.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_035453_3180.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T03:54:54.0170983-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_040450_18252.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_040450_18252.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T04:04:50.7040292-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_041006_1452.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_041006_1452.json",
+          "Mode": "-a---",
+          "Length": 334,
+          "LastWriteTime": "2026-06-26T04:10:06.4731969-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_041951_14260.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_041951_14260.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-26T04:19:51.732157-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_042951_15156.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_042951_15156.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-26T04:29:52.059277-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_043951_16216.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_043951_16216.json",
+          "Mode": "-a---",
+          "Length": 336,
+          "LastWriteTime": "2026-06-26T04:39:51.7446962-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_044951_460.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_044951_460.json",
+          "Mode": "-a---",
+          "Length": 332,
+          "LastWriteTime": "2026-06-26T04:49:52.035528-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_045951_20576.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_045951_20576.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T04:59:51.5437022-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_050951_5640.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_050951_5640.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T05:09:51.6836283-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_051951_20180.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_051951_20180.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T05:19:51.7959247-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_052951_484.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_052951_484.json",
+          "Mode": "-a---",
+          "Length": 332,
+          "LastWriteTime": "2026-06-26T05:29:51.5272674-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_053951_7972.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_053951_7972.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T05:39:51.6947432-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_054951_19788.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_054951_19788.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T05:49:51.5977892-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_055951_12800.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_055951_12800.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T05:59:51.7994508-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_060951_19248.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_060951_19248.json",
+          "Mode": "-a---",
+          "Length": 337,
+          "LastWriteTime": "2026-06-26T06:09:51.5066859-03:00"
+        },
+        {
+          "Name": "alert_TRACE_20260626_061951_8044.json",
+          "FullName": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_061951_8044.json",
+          "Mode": "-a---",
+          "Length": 335,
+          "LastWriteTime": "2026-06-26T06:19:51.6865089-03:00"
+        },
+        {
+          "Name": "audit-20260624-131010.json",
+          "FullName": "C:\\CEO\\watchdog\\audit\\audit-20260624-131010.json",
+          "Mode": "-a---",
+          "Length": 641,
+          "LastWriteTime": "2026-06-24T13:10:20.5094148-03:00"
+        },
+        {
+          "Name": "ceo-runtime-diagnose.ps1",
+          "FullName": "C:\\CEO\\watchdog\\commands\\ceo-runtime-diagnose.ps1",
+          "Mode": "-a---",
+          "Length": 2403,
+          "LastWriteTime": "2026-06-26T01:08:19.2378762-03:00"
+        },
+        {
+          "Name": "check-alert-source.ps1",
+          "FullName": "C:\\CEO\\watchdog\\commands\\check-alert-source.ps1",
+          "Mode": "-a---",
+          "Length": 1560,
+          "LastWriteTime": "2026-06-25T21:36:19.5394109-03:00"
+        },
+        {
+          "Name": "cleanup-evaluation.ps1",
+          "FullName": "C:\\CEO\\watchdog\\commands\\cleanup-evaluation.ps1",
+          "Mode": "-a---",
+          "Length": 1713,
+          "LastWriteTime": "2026-06-25T21:36:20.7897432-03:00"
+        },
+        {
+          "Name": "commandA.ps1",
+          "FullName": "C:\\CEO\\watchdog\\commands\\commandA.ps1",
+          "Mode": "-a---",
+          "Length": 624,
+          "LastWriteTime": "2026-06-25T21:18:55.7185007-03:00"
+        },
+        {
+          "Name": "commandC.ps1",
+          "FullName": "C:\\CEO\\watchdog\\commands\\commandC.ps1",
+          "Mode": "-a---",
+          "Length": 624,
+          "LastWriteTime": "2026-06-25T21:18:55.7163587-03:00"
+        },
+        {
+          "Name": "actions_catalog.json",
+          "FullName": "C:\\CEO\\watchdog\\config\\actions_catalog.json",
+          "Mode": "-a---",
+          "Length": 841,
+          "LastWriteTime": "2026-06-25T21:36:15.865916-03:00"
+        },
+        {
+          "Name": "actions_live_catalog.json",
+          "FullName": "C:\\CEO\\watchdog\\config\\actions_live_catalog.json",
+          "Mode": "-a---",
+          "Length": 1365,
+          "LastWriteTime": "2026-06-26T01:08:19.2354272-03:00"
+        },
+        {
+          "Name": "operational_rhythm_g8_beta.json",
+          "FullName": "C:\\CEO\\watchdog\\config\\operational_rhythm_g8_beta.json",
+          "Mode": "-a---",
+          "Length": 819,
+          "LastWriteTime": "2026-06-26T01:35:34.7521948-03:00"
+        },
+        {
+          "Name": "systems.json",
+          "FullName": "C:\\CEO\\watchdog\\config\\systems.json",
+          "Mode": "-a---",
+          "Length": 646,
+          "LastWriteTime": "2026-06-25T19:21:22.2239977-03:00"
+        },
+        {
+          "Name": "canvas_unified_layer.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\canvas_unified_layer.json",
+          "Mode": "-a---",
+          "Length": 2134,
+          "LastWriteTime": "2026-06-25T21:50:26.4746526-03:00"
+        },
+        {
+          "Name": "documentlocation_created_20260625_004552.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_created_20260625_004552.json",
+          "Mode": "-a---",
+          "Length": 2163,
+          "LastWriteTime": "2026-06-25T00:47:32.344647-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020651.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020651.json",
+          "Mode": "-a---",
+          "Length": 4290,
+          "LastWriteTime": "2026-06-25T02:07:02.9098516-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020703.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020703.json",
+          "Mode": "-a---",
+          "Length": 4331,
+          "LastWriteTime": "2026-06-25T02:07:08.6749064-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020708.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020708.json",
+          "Mode": "-a---",
+          "Length": 3235,
+          "LastWriteTime": "2026-06-25T02:07:13.0370577-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020906.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020906.json",
+          "Mode": "-a---",
+          "Length": 5844,
+          "LastWriteTime": "2026-06-25T02:09:35.5593024-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020936.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020936.json",
+          "Mode": "-a---",
+          "Length": 4983,
+          "LastWriteTime": "2026-06-25T02:09:55.691094-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_020956.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_020956.json",
+          "Mode": "-a---",
+          "Length": 4983,
+          "LastWriteTime": "2026-06-25T02:10:17.166537-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_163629.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_163629.json",
+          "Mode": "-a---",
+          "Length": 5979,
+          "LastWriteTime": "2026-06-25T16:37:05.1823128-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_163705.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_163705.json",
+          "Mode": "-a---",
+          "Length": 5118,
+          "LastWriteTime": "2026-06-25T16:37:22.5354107-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_163722.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_163722.json",
+          "Mode": "-a---",
+          "Length": 5118,
+          "LastWriteTime": "2026-06-25T16:37:40.4803313-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_174732.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_174732.json",
+          "Mode": "-a---",
+          "Length": 7134,
+          "LastWriteTime": "2026-06-25T17:47:58.305655-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_174831.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_174831.json",
+          "Mode": "-a---",
+          "Length": 6137,
+          "LastWriteTime": "2026-06-25T17:49:12.1835839-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_175020.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_175020.json",
+          "Mode": "-a---",
+          "Length": 6061,
+          "LastWriteTime": "2026-06-25T17:50:42.7193075-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_180207.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_180207.json",
+          "Mode": "-a---",
+          "Length": 7273,
+          "LastWriteTime": "2026-06-25T18:02:33.9977228-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_180327.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_180327.json",
+          "Mode": "-a---",
+          "Length": 6276,
+          "LastWriteTime": "2026-06-25T18:03:52.4791896-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_180404.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_180404.json",
+          "Mode": "-a---",
+          "Length": 6206,
+          "LastWriteTime": "2026-06-25T18:04:26.5497552-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_180454.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_180454.json",
+          "Mode": "-a---",
+          "Length": 3403,
+          "LastWriteTime": "2026-06-25T18:04:57.9503315-03:00"
+        },
+        {
+          "Name": "documentlocation_loop_run_20260625_180512.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_loop_run_20260625_180512.json",
+          "Mode": "-a---",
+          "Length": 6276,
+          "LastWriteTime": "2026-06-25T18:05:35.5817346-03:00"
+        },
+        {
+          "Name": "documentlocation_postverify_diagnostic_20260625_010242.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_postverify_diagnostic_20260625_010242.json",
+          "Mode": "-a---",
+          "Length": 48890,
+          "LastWriteTime": "2026-06-25T01:02:55.4249095-03:00"
+        },
+        {
+          "Name": "documentlocation_relativeurl_only_20260625_005426.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_relativeurl_only_20260625_005426.json",
+          "Mode": "-a---",
+          "Length": 4340,
+          "LastWriteTime": "2026-06-25T00:54:36.2757745-03:00"
+        },
+        {
+          "Name": "documentlocation_relativeurl_only_20260625_005722.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_relativeurl_only_20260625_005722.json",
+          "Mode": "-a---",
+          "Length": 8448,
+          "LastWriteTime": "2026-06-25T00:57:38.1502637-03:00"
+        },
+        {
+          "Name": "documentlocation_retrieve_absolute_20260625_004552.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\documentlocation_retrieve_absolute_20260625_004552.json",
+          "Mode": "-a---",
+          "Length": 307,
+          "LastWriteTime": "2026-06-25T00:49:09.6438644-03:00"
+        },
+        {
+          "Name": "g6_flow_execution_20260625_014256.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g6_flow_execution_20260625_014256.json",
+          "Mode": "-a---",
+          "Length": 1599,
+          "LastWriteTime": "2026-06-25T01:42:57.7238755-03:00"
+        },
+        {
+          "Name": "g6_flow_execution_20260625_014358.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g6_flow_execution_20260625_014358.json",
+          "Mode": "-a---",
+          "Length": 4152,
+          "LastWriteTime": "2026-06-25T01:44:25.8649003-03:00"
+        },
+        {
+          "Name": "g6_loop_validation_20260625_020651.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g6_loop_validation_20260625_020651.json",
+          "Mode": "-a---",
+          "Length": 2965,
+          "LastWriteTime": "2026-06-25T02:07:13.1946788-03:00"
+        },
+        {
+          "Name": "g6_loop_validation_20260625_020904.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g6_loop_validation_20260625_020904.json",
+          "Mode": "-a---",
+          "Length": 3583,
+          "LastWriteTime": "2026-06-25T02:10:17.3807855-03:00"
+        },
+        {
+          "Name": "g6_operationalization_20260625_163629.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g6_operationalization_20260625_163629.json",
+          "Mode": "-a---",
+          "Length": 5119,
+          "LastWriteTime": "2026-06-25T16:37:40.6129488-03:00"
+        },
+        {
+          "Name": "g7_documentlocation_completion_20260625_172933.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g7_documentlocation_completion_20260625_172933.json",
+          "Mode": "-a---",
+          "Length": 4419,
+          "LastWriteTime": "2026-06-25T17:29:41.9125018-03:00"
+        },
+        {
+          "Name": "g7_expediente_creation_20260625_171751.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g7_expediente_creation_20260625_171751.json",
+          "Mode": "-a---",
+          "Length": 2253,
+          "LastWriteTime": "2026-06-25T17:17:56.8607399-03:00"
+        },
+        {
+          "Name": "g7_expediente_creation_20260625_172305.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g7_expediente_creation_20260625_172305.json",
+          "Mode": "-a---",
+          "Length": 10647,
+          "LastWriteTime": "2026-06-25T17:24:41.6135582-03:00"
+        },
+        {
+          "Name": "g7_expediente_final_20260625_173242.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g7_expediente_final_20260625_173242.json",
+          "Mode": "-a---",
+          "Length": 2983,
+          "LastWriteTime": "2026-06-25T17:32:42.7862133-03:00"
+        },
+        {
+          "Name": "g8_2_runtime_switch_20260625_175238.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_2_runtime_switch_20260625_175238.json",
+          "Mode": "-a---",
+          "Length": 3467,
+          "LastWriteTime": "2026-06-25T17:52:38.6038735-03:00"
+        },
+        {
+          "Name": "g8_3_adx_creation_disabled_20260625_180649.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_3_adx_creation_disabled_20260625_180649.json",
+          "Mode": "-a---",
+          "Length": 3904,
+          "LastWriteTime": "2026-06-25T18:06:49.6925753-03:00"
+        },
+        {
+          "Name": "g8_4_backreference_metadata_readback_20260625_181339.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_4_backreference_metadata_readback_20260625_181339.json",
+          "Mode": "-a---",
+          "Length": 452,
+          "LastWriteTime": "2026-06-25T18:13:40.2805544-03:00"
+        },
+        {
+          "Name": "g8_4_historical_migration_20260625_181544.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_4_historical_migration_20260625_181544.json",
+          "Mode": "-a---",
+          "Length": 5752,
+          "LastWriteTime": "2026-06-25T18:16:00.6294723-03:00"
+        },
+        {
+          "Name": "g8_4_historical_migration_validation_20260625_182014.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_4_historical_migration_validation_20260625_182014.json",
+          "Mode": "-a---",
+          "Length": 1700,
+          "LastWriteTime": "2026-06-25T18:20:16.6412403-03:00"
+        },
+        {
+          "Name": "g8_4_migration_preflight_20260625_181205.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_4_migration_preflight_20260625_181205.json",
+          "Mode": "-a---",
+          "Length": 2592,
+          "LastWriteTime": "2026-06-25T18:12:08.8548376-03:00"
+        },
+        {
+          "Name": "g8_5_final_normalization_20260625_182545.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_5_final_normalization_20260625_182545.json",
+          "Mode": "-a---",
+          "Length": 2234,
+          "LastWriteTime": "2026-06-25T18:26:15.261252-03:00"
+        },
+        {
+          "Name": "g8_dual_mode_20260625_174034.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\g8_dual_mode_20260625_174034.json",
+          "Mode": "-a---",
+          "Length": 7341,
+          "LastWriteTime": "2026-06-25T17:40:56.9511969-03:00"
+        },
+        {
+          "Name": "governance_refinement.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\governance_refinement.json",
+          "Mode": "-a---",
+          "Length": 3793,
+          "LastWriteTime": "2026-06-25T20:58:40.0874175-03:00"
+        },
+        {
+          "Name": "noc_alert_patch_20260625_183058.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_alert_patch_20260625_183058.json",
+          "Mode": "-a---",
+          "Length": 1635,
+          "LastWriteTime": "2026-06-25T18:30:58.2761877-03:00"
+        },
+        {
+          "Name": "noc_intelligence_upgrade.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_intelligence_upgrade.json",
+          "Mode": "-a---",
+          "Length": 2300,
+          "LastWriteTime": "2026-06-25T19:15:13.1033944-03:00"
+        },
+        {
+          "Name": "noc_refinement.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_refinement.json",
+          "Mode": "-a---",
+          "Length": 2836,
+          "LastWriteTime": "2026-06-25T20:47:03.0724755-03:00"
+        },
+        {
+          "Name": "noc_screen_deploy_20260625.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_screen_deploy_20260625.json",
+          "Mode": "-a---",
+          "Length": 3974,
+          "LastWriteTime": "2026-06-25T18:42:24.7715942-03:00"
+        },
+        {
+          "Name": "noc_web_alignment.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_web_alignment.json",
+          "Mode": "-a---",
+          "Length": 1539,
+          "LastWriteTime": "2026-06-25T18:59:41.6382228-03:00"
+        },
+        {
+          "Name": "noc_web_dashboard_20260625.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\noc_web_dashboard_20260625.json",
+          "Mode": "-a---",
+          "Length": 2412,
+          "LastWriteTime": "2026-06-25T18:55:39.0997089-03:00"
+        },
+        {
+          "Name": "owner_action_advanced_layer.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\owner_action_advanced_layer.json",
+          "Mode": "-a---",
+          "Length": 1046,
+          "LastWriteTime": "2026-06-25T21:36:55.0182244-03:00"
+        },
+        {
+          "Name": "poc_adx_portalcomment_created_20260625_004552.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\poc_adx_portalcomment_created_20260625_004552.json",
+          "Mode": "-a---",
+          "Length": 3470,
+          "LastWriteTime": "2026-06-25T00:46:16.1980693-03:00"
+        },
+        {
+          "Name": "sdu_g5_2_documentlocation_create_20260625_004552.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sdu_g5_2_documentlocation_create_20260625_004552.json",
+          "Mode": "-a---",
+          "Length": 12913,
+          "LastWriteTime": "2026-06-25T00:49:09.6343666-03:00"
+        },
+        {
+          "Name": "sdu_runtime_friction_hardening_20260625_202938.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sdu_runtime_friction_hardening_20260625_202938.json",
+          "Mode": "-a---",
+          "Length": 1850,
+          "LastWriteTime": "2026-06-25T20:29:38.4715035-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_001428.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_001428.json",
+          "Mode": "-a---",
+          "Length": 1026,
+          "LastWriteTime": "2026-06-25T00:14:36.6103151-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_004852.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_004852.json",
+          "Mode": "-a---",
+          "Length": 1026,
+          "LastWriteTime": "2026-06-25T00:48:56.474646-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_005735.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_005735.json",
+          "Mode": "-a---",
+          "Length": 3844,
+          "LastWriteTime": "2026-06-25T00:57:38.0833467-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_010922.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_010922.json",
+          "Mode": "-a---",
+          "Length": 11070,
+          "LastWriteTime": "2026-06-25T01:09:29.6708464-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_014256.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_014256.json",
+          "Mode": "-a---",
+          "Length": 884,
+          "LastWriteTime": "2026-06-25T01:42:57.5842219-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_014359.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_014359.json",
+          "Mode": "-a---",
+          "Length": 11070,
+          "LastWriteTime": "2026-06-25T01:44:05.3435922-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_014418.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_014418.json",
+          "Mode": "-a---",
+          "Length": 21650,
+          "LastWriteTime": "2026-06-25T01:44:25.8028553-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_020919.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_020919.json",
+          "Mode": "-a---",
+          "Length": 53387,
+          "LastWriteTime": "2026-06-25T02:09:35.4464705-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_020943.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_020943.json",
+          "Mode": "-a---",
+          "Length": 53387,
+          "LastWriteTime": "2026-06-25T02:09:55.5526057-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_021004.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_021004.json",
+          "Mode": "-a---",
+          "Length": 53387,
+          "LastWriteTime": "2026-06-25T02:10:17.079169-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_163653.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_163653.json",
+          "Mode": "-a---",
+          "Length": 63966,
+          "LastWriteTime": "2026-06-25T16:37:05.0965449-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_163710.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_163710.json",
+          "Mode": "-a---",
+          "Length": 63966,
+          "LastWriteTime": "2026-06-25T16:37:22.4712618-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_163728.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_163728.json",
+          "Mode": "-a---",
+          "Length": 63966,
+          "LastWriteTime": "2026-06-25T16:37:40.4186348-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_172940.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_172940.json",
+          "Mode": "-a---",
+          "Length": 884,
+          "LastWriteTime": "2026-06-25T17:29:41.8171106-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_173206.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_173206.json",
+          "Mode": "-a---",
+          "Length": 74556,
+          "LastWriteTime": "2026-06-25T17:32:20.0257438-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_174042.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_174042.json",
+          "Mode": "-a---",
+          "Length": 85145,
+          "LastWriteTime": "2026-06-25T17:40:56.8550906-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_174742.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_174742.json",
+          "Mode": "-a---",
+          "Length": 95722,
+          "LastWriteTime": "2026-06-25T17:47:58.232223-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_174837.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_174837.json",
+          "Mode": "-a---",
+          "Length": 95722,
+          "LastWriteTime": "2026-06-25T17:49:12.0920472-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_175026.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_175026.json",
+          "Mode": "-a---",
+          "Length": 95722,
+          "LastWriteTime": "2026-06-25T17:50:42.6337441-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180216.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180216.json",
+          "Mode": "-a---",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:02:33.9132616-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180333.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180333.json",
+          "Mode": "-a---",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:03:52.394471-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180409.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180409.json",
+          "Mode": "-a---",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:04:26.4609931-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180518.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180518.json",
+          "Mode": "-a---",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:05:35.5003503-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_181623.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_181623.json",
+          "Mode": "-a---",
+          "Length": 106373,
+          "LastWriteTime": "2026-06-25T18:16:41.4755-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_181743.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_181743.json",
+          "Mode": "-a---",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:18:08.0876621-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_182549.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_182549.json",
+          "Mode": "-a---",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:26:15.0897875-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_183012.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_183012.json",
+          "Mode": "-a---",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:30:37.6731974-03:00"
+        },
+        {
+          "Name": "sharepointsite_created_20260625_004013.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepointsite_created_20260625_004013.json",
+          "Mode": "-a---",
+          "Length": 5486,
+          "LastWriteTime": "2026-06-25T00:40:21.7263727-03:00"
+        },
+        {
+          "Name": "watchdog_patch_sitecollection_20260625_011725.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\watchdog_patch_sitecollection_20260625_011725.json",
+          "Mode": "-a---",
+          "Length": 8731,
+          "LastWriteTime": "2026-06-25T01:18:46.6085762-03:00"
+        },
+        {
+          "Name": "watchdog-sharepoint-link_before_sitecollection_patch_20260625_010648.ps1",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\watchdog-sharepoint-link_before_sitecollection_patch_20260625_010648.ps1",
+          "Mode": "-a---",
+          "Length": 25105,
+          "LastWriteTime": "2026-06-25T00:14:15.9968351-03:00"
+        },
+        {
+          "Name": "views",
+          "FullName": "C:\\CEO\\watchdog\\graphify-out\\views",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-25T21:44:27.108621-03:00"
+        },
+        {
+          "Name": "commands.json",
+          "FullName": "C:\\CEO\\watchdog\\graphify-out\\views\\commands.json",
+          "Mode": "-a---",
+          "Length": 25171,
+          "LastWriteTime": "2026-06-25T21:42:14.1181583-03:00"
+        },
+        {
+          "Name": "index.json",
+          "FullName": "C:\\CEO\\watchdog\\graphify-out\\views\\index.json",
+          "Mode": "-a---",
+          "Length": 588,
+          "LastWriteTime": "2026-06-25T21:42:14.1760915-03:00"
+        },
+        {
+          "Name": "noc.json",
+          "FullName": "C:\\CEO\\watchdog\\graphify-out\\views\\noc.json",
+          "Mode": "-a---",
+          "Length": 27374,
+          "LastWriteTime": "2026-06-25T21:42:14.0649338-03:00"
+        },
+        {
+          "Name": "runtime.json",
+          "FullName": "C:\\CEO\\watchdog\\graphify-out\\views\\runtime.json",
+          "Mode": "-a---",
+          "Length": 22471,
+          "LastWriteTime": "2026-06-25T21:42:14.1750756-03:00"
+        },
+        {
+          "Name": "watchdog.json",
+          "FullName": "C:\\CEO\\watchdog\\graphify-out\\views\\watchdog.json",
+          "Mode": "-a---",
+          "Length": 27167,
+          "LastWriteTime": "2026-06-25T21:42:14.0026224-03:00"
+        },
+        {
+          "Name": "incident-20260623-110612-999.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260623-110612-999.json",
+          "Mode": "-a---",
+          "Length": 202,
+          "LastWriteTime": "2026-06-23T12:15:53.7428116-03:00"
+        },
+        {
+          "Name": "incident-20260623-110814-999.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260623-110814-999.json",
+          "Mode": "-a---",
+          "Length": 202,
+          "LastWriteTime": "2026-06-23T12:15:53.7450442-03:00"
+        },
+        {
+          "Name": "incident-20260623-143651-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260623-143651-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-23T14:36:53.1513909-03:00"
+        },
+        {
+          "Name": "incident-20260623-143651-1801.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260623-143651-1801.json",
+          "Mode": "-a---",
+          "Length": 1956,
+          "LastWriteTime": "2026-06-23T14:36:53.127455-03:00"
+        },
+        {
+          "Name": "incident-20260623-235652-7031.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260623-235652-7031.json",
+          "Mode": "-a---",
+          "Length": 1036,
+          "LastWriteTime": "2026-06-23T23:56:53.6554903-03:00"
+        },
+        {
+          "Name": "incident-20260624-023652-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260624-023652-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-24T02:36:53.4833751-03:00"
+        },
+        {
+          "Name": "incident-20260624-113653-7031.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260624-113653-7031.json",
+          "Mode": "-a---",
+          "Length": 1036,
+          "LastWriteTime": "2026-06-24T11:36:54.2310237-03:00"
+        },
+        {
+          "Name": "incident-20260624-143658-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260624-143658-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-24T14:36:59.6877742-03:00"
+        },
+        {
+          "Name": "incident-20260624-193651-3503.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260624-193651-3503.json",
+          "Mode": "-a---",
+          "Length": 878,
+          "LastWriteTime": "2026-06-24T19:36:52.8094705-03:00"
+        },
+        {
+          "Name": "incident-20260625-023652-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260625-023652-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-25T02:36:53.9941729-03:00"
+        },
+        {
+          "Name": "incident-20260625-143652-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260625-143652-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-25T14:36:54.0464086-03:00"
+        },
+        {
+          "Name": "incident-20260625-154151-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260625-154151-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-25T15:41:52.3755173-03:00"
+        },
+        {
+          "Name": "incident-20260625-162657-36.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260625-162657-36.json",
+          "Mode": "-a---",
+          "Length": 828,
+          "LastWriteTime": "2026-06-25T16:26:58.0299307-03:00"
+        },
+        {
+          "Name": "incident-20260625-235154-7031.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260625-235154-7031.json",
+          "Mode": "-a---",
+          "Length": 1036,
+          "LastWriteTime": "2026-06-25T23:51:54.8422189-03:00"
+        },
+        {
+          "Name": "incident-20260626-034152-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260626-034152-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-26T03:41:52.855528-03:00"
+        },
+        {
+          "Name": "incident-20260626-041212-7034.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260626-041212-7034.json",
+          "Mode": "-a---",
+          "Length": 818,
+          "LastWriteTime": "2026-06-26T04:12:16.7362332-03:00"
+        },
+        {
+          "Name": "incident-20260626-041653-1796.json",
+          "FullName": "C:\\CEO\\watchdog\\incidents\\incident-20260626-041653-1796.json",
+          "Mode": "-a---",
+          "Length": 1010,
+          "LastWriteTime": "2026-06-26T04:16:53.4498453-03:00"
+        },
+        {
+          "Name": "action_execution.jsonl",
+          "FullName": "C:\\CEO\\watchdog\\logs\\action_execution.jsonl",
+          "Mode": "-a---",
+          "Length": 8624,
+          "LastWriteTime": "2026-06-26T01:55:15.0072015-03:00"
+        },
+        {
+          "Name": "alert_source_summary.json",
+          "FullName": "C:\\CEO\\watchdog\\logs\\alert_source_summary.json",
+          "Mode": "-a---",
+          "Length": 962,
+          "LastWriteTime": "2026-06-25T20:58:06.3669247-03:00"
+        },
+        {
+          "Name": "alerts_enriched.jsonl",
+          "FullName": "C:\\CEO\\watchdog\\logs\\alerts_enriched.jsonl",
+          "Mode": "-a---",
+          "Length": 16142,
+          "LastWriteTime": "2026-06-25T20:58:06.2750283-03:00"
+        },
+        {
+          "Name": "alerts.jsonl",
+          "FullName": "C:\\CEO\\watchdog\\logs\\alerts.jsonl",
+          "Mode": "-a---",
+          "Length": 96113,
+          "LastWriteTime": "2026-06-26T06:19:51.7061119-03:00"
+        },
+        {
+          "Name": "anomalies.jsonl",
+          "FullName": "C:\\CEO\\watchdog\\logs\\anomalies.jsonl",
+          "Mode": "-a---",
+          "Length": 1212,
+          "LastWriteTime": "2026-06-25T20:29:08.6931603-03:00"
+        },
+        {
+          "Name": "decision_log.jsonl",
+          "FullName": "C:\\CEO\\watchdog\\logs\\decision_log.jsonl",
+          "Mode": "-a---",
+          "Length": 417,
+          "LastWriteTime": "2026-06-25T20:58:06.3965232-03:00"
+        },
+        {
+          "Name": "document_location_apply_preview_g5_2b.json",
+          "FullName": "C:\\CEO\\watchdog\\logs\\document_location_apply_preview_g5_2b.json",
+          "Mode": "-a---",
+          "Length": 3245,
+          "LastWriteTime": "2026-06-25T00:54:36.2682893-03:00"
+        },
+        {
+          "Name": "document_location_apply_result_g5_2b.json",
+          "FullName": "C:\\CEO\\watchdog\\logs\\document_location_apply_result_g5_2b.json",
+          "Mode": "-a---",
+          "Length": 8448,
+          "LastWriteTime": "2026-06-25T00:57:38.1522655-03:00"
+        },
+        {
+          "Name": "documentlocation_postverify_diagnostic.json",
+          "FullName": "C:\\CEO\\watchdog\\logs\\documentlocation_postverify_diagnostic.json",
+          "Mode": "-a---",
+          "Length": 48890,
+          "LastWriteTime": "2026-06-25T01:02:55.4151166-03:00"
+        },
+        {
+          "Name": "fails_index.jsonl",
+          "FullName": "C:\\CEO\\watchdog\\logs\\fails_index.jsonl",
+          "Mode": "-a---",
+          "Length": 416,
+          "LastWriteTime": "2026-06-25T20:27:53.7386513-03:00"
+        }
+      ],
+      "largest_files": [
+        {
+          "Name": "sharepoint_link_events.jsonl",
+          "FullName": "C:\\CEO\\watchdog\\logs\\sharepoint_link_events.jsonl",
+          "Length": 364869,
+          "LastWriteTime": "2026-06-25T18:30:37.6963396-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_183012.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_183012.json",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:30:37.6731974-03:00"
+        },
+        {
+          "Name": "sharepoint_link_last_run.json",
+          "FullName": "C:\\CEO\\watchdog\\state\\sharepoint_link_last_run.json",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:30:37.695339-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_182549.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_182549.json",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:26:15.0897875-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_181743.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_181743.json",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:18:08.0876621-03:00"
+        },
+        {
+          "Name": "sharepoint_link_health.json",
+          "FullName": "C:\\CEO\\watchdog\\logs\\sharepoint_link_health.json",
+          "Length": 159271,
+          "LastWriteTime": "2026-06-25T18:30:37.6779065-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_181623.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_181623.json",
+          "Length": 106373,
+          "LastWriteTime": "2026-06-25T18:16:41.4755-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180518.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180518.json",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:05:35.5003503-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180409.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180409.json",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:04:26.4609931-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180333.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180333.json",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:03:52.394471-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_180216.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_180216.json",
+          "Length": 106301,
+          "LastWriteTime": "2026-06-25T18:02:33.9132616-03:00"
+        },
+        {
+          "Name": "alerts.jsonl",
+          "FullName": "C:\\CEO\\watchdog\\logs\\alerts.jsonl",
+          "Length": 96113,
+          "LastWriteTime": "2026-06-26T06:19:51.7061119-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_175026.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_175026.json",
+          "Length": 95722,
+          "LastWriteTime": "2026-06-25T17:50:42.6337441-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_174837.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_174837.json",
+          "Length": 95722,
+          "LastWriteTime": "2026-06-25T17:49:12.0920472-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_174742.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_174742.json",
+          "Length": 95722,
+          "LastWriteTime": "2026-06-25T17:47:58.232223-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_174042.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_174042.json",
+          "Length": 85145,
+          "LastWriteTime": "2026-06-25T17:40:56.8550906-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_173206.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_173206.json",
+          "Length": 74556,
+          "LastWriteTime": "2026-06-25T17:32:20.0257438-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_163653.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_163653.json",
+          "Length": 63966,
+          "LastWriteTime": "2026-06-25T16:37:05.0965449-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_163710.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_163710.json",
+          "Length": 63966,
+          "LastWriteTime": "2026-06-25T16:37:22.4712618-03:00"
+        },
+        {
+          "Name": "sharepoint_link_watchdog_20260625_163728.json",
+          "FullName": "C:\\CEO\\watchdog\\evidence\\sharepoint_link_watchdog_20260625_163728.json",
+          "Length": 63966,
+          "LastWriteTime": "2026-06-25T16:37:40.4186348-03:00"
+        }
+      ]
+    },
+    {
+      "root": "C:\\CEO\\.metadata",
+      "exists": true,
+      "policy": "metadata_depth4_sensitive_names_excluded",
+      "root_last_write": "2026-06-21T10:08:19.4452588-03:00",
+      "top_level_count": 9,
+      "scanned_items": 300,
+      "scanned_dirs": 62,
+      "scanned_files": 236,
+      "scanned_bytes": 95819690,
+      "sensitive_name_signals": [
+        {
+          "Name": "ChatgptAuthTokensRefreshParams.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\ChatgptAuthTokensRefreshParams.json",
+          "Mode": "-a---",
+          "Length": 971,
+          "LastWriteTime": "2026-05-29T23:20:22.3868877-03:00"
+        },
+        {
+          "Name": "ChatgptAuthTokensRefreshResponse.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\ChatgptAuthTokensRefreshResponse.json",
+          "Mode": "-a---",
+          "Length": 406,
+          "LastWriteTime": "2026-05-29T23:20:22.4000087-03:00"
+        }
+      ],
+      "extension_top": [
+        {
+          "extension": ".json",
+          "Count": 54
+        },
+        {
+          "extension": ".csv",
+          "Count": 49
+        },
+        {
+          "extension": ".xml",
+          "Count": 43
+        },
+        {
+          "extension": ".before",
+          "Count": 18
+        },
+        {
+          "extension": ".log",
+          "Count": 18
+        },
+        {
+          "extension": ".txt",
+          "Count": 16
+        },
+        {
+          "extension": ".md",
+          "Count": 13
+        },
+        {
+          "extension": ".ps1",
+          "Count": 13
+        },
+        {
+          "extension": ".diskpart",
+          "Count": 3
+        },
+        {
+          "extension": ".py",
+          "Count": 3
+        },
+        {
+          "extension": ".out",
+          "Count": 2
+        },
+        {
+          "extension": ".diff",
+          "Count": 1
+        },
+        {
+          "extension": ".toml",
+          "Count": 1
+        },
+        {
+          "extension": ".xlsx",
+          "Count": 1
+        },
+        {
+          "extension": ".yaml",
+          "Count": 1
+        }
+      ],
+      "top_level": [
+        {
+          "Name": "audit",
+          "FullName": "C:\\CEO\\.metadata\\audit",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-19T16:07:30.3444134-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "devcontainers",
+          "FullName": "C:\\CEO\\.metadata\\devcontainers",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T07:00:56.6749908-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "devdrive",
+          "FullName": "C:\\CEO\\.metadata\\devdrive",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T07:25:04.21888-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "env-backups",
+          "FullName": "C:\\CEO\\.metadata\\env-backups",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T04:19:24.5801641-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "incoming",
+          "FullName": "C:\\CEO\\.metadata\\incoming",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T07:35:19.0729508-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "local-cleanup",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T04:48:49.6165849-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "local-config-backups",
+          "FullName": "C:\\CEO\\.metadata\\local-config-backups",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T10:31:23.9666512-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "tooling-fine-config",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T06:37:40.0568257-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        },
+        {
+          "Name": "vscode-insiders",
+          "FullName": "C:\\CEO\\.metadata\\vscode-insiders",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T06:06:06.0207907-03:00",
+          "Attributes": 16,
+          "LinkType": null,
+          "Target": null
+        }
+      ],
+      "capability_signals": [
+        {
+          "Name": "global-state",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp\\global-state",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T04:31:38.4583102-03:00"
+        },
+        {
+          "Name": "probe_agent.xml",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp\\probe_agent.xml",
+          "Mode": "-a---",
+          "Length": 231,
+          "LastWriteTime": "2026-06-13T00:22:32.8650117-03:00"
+        },
+        {
+          "Name": "probe_agentrun.xml",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp\\probe_agentrun.xml",
+          "Mode": "-a---",
+          "Length": 240,
+          "LastWriteTime": "2026-06-13T00:22:32.8660112-03:00"
+        },
+        {
+          "Name": "probe_agentstep.xml",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp\\probe_agentstep.xml",
+          "Mode": "-a---",
+          "Length": 243,
+          "LastWriteTime": "2026-06-13T00:22:32.8650117-03:00"
+        },
+        {
+          "Name": "CommandExecutionRequestApprovalParams.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\CommandExecutionRequestApprovalParams.json",
+          "Mode": "-a---",
+          "Length": 15480,
+          "LastWriteTime": "2026-05-29T23:20:22.378124-03:00"
+        },
+        {
+          "Name": "CommandExecutionRequestApprovalResponse.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\CommandExecutionRequestApprovalResponse.json",
+          "Mode": "-a---",
+          "Length": 3202,
+          "LastWriteTime": "2026-05-29T23:20:22.3919217-03:00"
+        },
+        {
+          "Name": "ExecCommandApprovalParams.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\ExecCommandApprovalParams.json",
+          "Mode": "-a---",
+          "Length": 3768,
+          "LastWriteTime": "2026-05-29T23:20:22.3919217-03:00"
+        },
+        {
+          "Name": "ExecCommandApprovalResponse.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\ExecCommandApprovalResponse.json",
+          "Mode": "-a---",
+          "Length": 3590,
+          "LastWriteTime": "2026-05-29T23:20:22.4045818-03:00"
+        },
+        {
+          "Name": "subagent-driven-development__SKILL.md.before",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\WAVE_3_SKILLS_DUPLICATE_ROUTING_20260621-042753\\subagent-driven-development__SKILL.md.before",
+          "Mode": "-a---",
+          "Length": 12551,
+          "LastWriteTime": "2026-06-11T16:09:03.4874365-03:00"
+        },
+        {
+          "Name": "tcu-agent-eval-harness__SKILL.md.before",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\WAVE_3_SKILLS_DUPLICATE_ROUTING_20260621-042753\\tcu-agent-eval-harness__SKILL.md.before",
+          "Mode": "-a---",
+          "Length": 965,
+          "LastWriteTime": "2026-06-11T16:09:03.4884421-03:00"
+        },
+        {
+          "Name": "C__Users_enzo1_AppData_Local_Packages_Microsoft.WindowsTerminal_8wekyb3d8bbwe_LocalState_settings.json",
+          "FullName": "C:\\CEO\\.metadata\\local-config-backups\\20260621-100819\\C__Users_enzo1_AppData_Local_Packages_Microsoft.WindowsTerminal_8wekyb3d8bbwe_LocalState_settings.json",
+          "Mode": "-a---",
+          "Length": 2043,
+          "LastWriteTime": "2026-06-21T04:43:03.3087337-03:00"
+        },
+        {
+          "Name": ".agents",
+          "FullName": "C:\\CEO\\.metadata\\local-config-backups\\20260621-101605-pathslash-local-docs-skills\\Users\\enzo1\\.agents",
+          "Mode": "d----",
+          "Length": null,
+          "LastWriteTime": "2026-06-21T10:16:06.3439942-03:00"
+        },
+        {
+          "Name": "05B_SERVICING_STATE.json",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-running-expanded-20260621-063429\\05B_SERVICING_STATE.json",
+          "Mode": "-a---",
+          "Length": 0,
+          "LastWriteTime": "2026-06-21T06:35:25.4752862-03:00"
+        },
+        {
+          "Name": "07_DOCKER_SERVICE_STATE.json",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-running-expanded-20260621-063429\\07_DOCKER_SERVICE_STATE.json",
+          "Mode": "-a---",
+          "Length": 0,
+          "LastWriteTime": "2026-06-21T06:35:25.529537-03:00"
+        },
+        {
+          "Name": "10_STARTUP_COMMANDS.csv",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-running-expanded-20260621-063429\\10_STARTUP_COMMANDS.csv",
+          "Mode": "-a---",
+          "Length": 1308,
+          "LastWriteTime": "2026-06-21T06:37:20.5856036-03:00"
+        },
+        {
+          "Name": "05_SERVICING_FAST_STATE.json",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-tuning-expanded-20260621-063740\\05_SERVICING_FAST_STATE.json",
+          "Mode": "-a---",
+          "Length": 145,
+          "LastWriteTime": "2026-06-21T06:40:59.2071232-03:00"
+        },
+        {
+          "Name": "FINE_TUNING_STATE.json",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-tuning-expanded-20260621-063740\\FINE_TUNING_STATE.json",
+          "Mode": "-a---",
+          "Length": 64460,
+          "LastWriteTime": "2026-06-21T06:43:34.7625635-03:00"
+        },
+        {
+          "Name": "FINE_TUNING_STATE.md",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-tuning-expanded-20260621-063740\\FINE_TUNING_STATE.md",
+          "Mode": "-a---",
+          "Length": 1733,
+          "LastWriteTime": "2026-06-21T06:43:34.7637691-03:00"
+        },
+        {
+          "Name": "FINE_TUNING_STATE.yaml",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-tuning-expanded-20260621-063740\\FINE_TUNING_STATE.yaml",
+          "Mode": "-a---",
+          "Length": 5279,
+          "LastWriteTime": "2026-06-21T06:43:34.7625635-03:00"
+        }
+      ],
+      "largest_files": [
+        {
+          "Name": "ceo_inventory.csv",
+          "FullName": "C:\\CEO\\.metadata\\audit\\ceo_inventory.csv",
+          "Length": 57437886,
+          "LastWriteTime": "2026-06-19T16:08:02.0036336-03:00"
+        },
+        {
+          "Name": "robocopy-Documents-20260618-143044.log",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\logs\\robocopy-Documents-20260618-143044.log",
+          "Length": 34498458,
+          "LastWriteTime": "2026-06-18T14:35:05.052266-03:00"
+        },
+        {
+          "Name": "codex_app_server_protocol.schemas.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\codex_app_server_protocol.schemas.json",
+          "Length": 568621,
+          "LastWriteTime": "2026-05-29T23:20:22.8127432-03:00"
+        },
+        {
+          "Name": "robocopy-Downloads-20260618-143505.log",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\logs\\robocopy-Downloads-20260618-143505.log",
+          "Length": 484915,
+          "LastWriteTime": "2026-06-18T14:35:46.7296096-03:00"
+        },
+        {
+          "Name": "codex_app_server_protocol.v2.schemas.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\codex_app_server_protocol.v2.schemas.json",
+          "Length": 479873,
+          "LastWriteTime": "2026-05-29T23:20:22.8214859-03:00"
+        },
+        {
+          "Name": "processes.csv",
+          "FullName": "C:\\CEO\\.metadata\\audit\\processes.csv",
+          "Length": 278327,
+          "LastWriteTime": "2026-06-19T16:04:51.9650336-03:00"
+        },
+        {
+          "Name": "SKILLS_INDEX.csv.before",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\WAVE_4_SKILLS_INDEX_REFRESH_20260621-042938\\SKILLS_INDEX.csv.before",
+          "Length": 245890,
+          "LastWriteTime": "2026-06-18T08:18:03.1176893-03:00"
+        },
+        {
+          "Name": "SKILLS_INDEX.csv.before",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\WAVE_4B_SKILLS_INDEX_FILESYSTEM_20260621-043048\\SKILLS_INDEX.csv.before",
+          "Length": 230966,
+          "LastWriteTime": "2026-06-21T04:29:42.2000501-03:00"
+        },
+        {
+          "Name": "ClientRequest.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\ClientRequest.json",
+          "Length": 188146,
+          "LastWriteTime": "2026-05-29T23:20:22.008057-03:00"
+        },
+        {
+          "Name": "services.csv",
+          "FullName": "C:\\CEO\\.metadata\\audit\\services.csv",
+          "Length": 170198,
+          "LastWriteTime": "2026-06-19T16:04:29.1443249-03:00"
+        },
+        {
+          "Name": "ServerNotification.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\ServerNotification.json",
+          "Length": 156036,
+          "LastWriteTime": "2026-05-29T23:20:22.0400846-03:00"
+        },
+        {
+          "Name": "scheduled_tasks.csv",
+          "FullName": "C:\\CEO\\.metadata\\audit\\scheduled_tasks.csv",
+          "Length": 116516,
+          "LastWriteTime": "2026-06-19T16:05:28.3970949-03:00"
+        },
+        {
+          "Name": "robocopy-Pictures-20260618-143546.log",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\logs\\robocopy-Pictures-20260618-143546.log",
+          "Length": 114555,
+          "LastWriteTime": "2026-06-18T14:35:48.3919674-03:00"
+        },
+        {
+          "Name": "devices.csv",
+          "FullName": "C:\\CEO\\.metadata\\audit\\devices.csv",
+          "Length": 103034,
+          "LastWriteTime": "2026-06-19T16:04:09.8059015-03:00"
+        },
+        {
+          "Name": "FINE_TUNING_STATE.json",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-tuning-expanded-20260621-063740\\FINE_TUNING_STATE.json",
+          "Length": 64460,
+          "LastWriteTime": "2026-06-21T06:43:34.7625635-03:00"
+        },
+        {
+          "Name": "drivers.csv",
+          "FullName": "C:\\CEO\\.metadata\\audit\\drivers.csv",
+          "Length": 64229,
+          "LastWriteTime": "2026-06-19T16:04:12.4869634-03:00"
+        },
+        {
+          "Name": "ServerRequest.json",
+          "FullName": "C:\\CEO\\.metadata\\local-cleanup\\quarantine\\WAVE_5_CACHE_SAFE_20260621-043138\\tmp-appserver-schema\\ServerRequest.json",
+          "Length": 48359,
+          "LastWriteTime": "2026-05-29T23:20:22.018721-03:00"
+        },
+        {
+          "Name": "11_SERVICES_ALL.csv",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-running-expanded-20260621-063429\\11_SERVICES_ALL.csv",
+          "Length": 41227,
+          "LastWriteTime": "2026-06-21T06:37:20.9816715-03:00"
+        },
+        {
+          "Name": "FINE_TUNING_DECISION.xlsx",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-tuning-expanded-20260621-063740\\FINE_TUNING_DECISION.xlsx",
+          "Length": 25100,
+          "LastWriteTime": "2026-06-21T06:43:34.9392905-03:00"
+        },
+        {
+          "Name": "12_PROCESS_DECISION_MATRIX.csv",
+          "FullName": "C:\\CEO\\.metadata\\tooling-fine-config\\fine-running-expanded-20260621-063429\\12_PROCESS_DECISION_MATRIX.csv",
+          "Length": 23905,
+          "LastWriteTime": "2026-06-21T06:37:21.1200956-03:00"
+        }
+      ]
+    }
+  ]
+}
