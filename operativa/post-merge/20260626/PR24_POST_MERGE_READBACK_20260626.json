@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "document_type": "post_merge_readback",
+  "generated_at_utc": "2026-06-26T16:05:41.4086565Z",
+  "decision": "PR24_MERGED_TO_MAIN_NO_LIVE_CONFIRMED",
+  "repository": "universo-rey/projec-cdx",
+  "pull_request": {
+    "number": 24,
+    "url": "https://github.com/universo-rey/projec-cdx/pull/24",
+    "state": "closed",
+    "merged": true,
+    "draft": false,
+    "base": "main",
+    "base_sha_before_merge": "56a4eda1dd36c545c12546bb37fc2046dbb7fb05",
+    "head": "codex/integration-g10-snapshot-20260626",
+    "head_sha": "826f9876449043c2a94b9a82d1e806cfbc72f0b6",
+    "merge_commit_sha": "441e150408c7dc4d27f25028ca27f4b9804645cf",
+    "merged_at_utc": "2026-06-26T15:57:50Z",
+    "merge_method": "squash"
+  },
+  "remote_state": {
+    "main": "441e150408c7dc4d27f25028ca27f4b9804645cf",
+    "integration_branch": "codex/integration-g10-snapshot-20260626",
+    "integration_sha": "826f9876449043c2a94b9a82d1e806cfbc72f0b6",
+    "evidence_branch": "codex/version-snapshot-decision-20260626",
+    "integration_branch_preserved": true,
+    "branch_delete_effective": false
+  },
+  "live_local_state": {
+    "branch": "codex/live-state-g10-governed-20260626",
+    "head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+    "worktree": "clean",
+    "index": "clean",
+    "live_synced_in_this_gate": false
+  },
+  "validations": {
+    "pre_merge_checks": {
+      "build-graph": "success",
+      "quality": "success",
+      "meta-validate": "success",
+      "codex-governed": "success",
+      "codeql": "success"
+    },
+    "review_threads": {
+      "resolved": 5,
+      "total": 5
+    },
+    "approval_review_satisfied": true,
+    "approval_review_satisfied_by": "owner_branch_release_and_successful_merge",
+    "note": "Before owner branch release there was no valid write-access approving review recorded."
+  },
+  "boundaries": {
+    "no_tag_created": true,
+    "no_release_created": true,
+    "no_live": true,
+    "no_g11_apply": true,
+    "no_graph_live": true,
+    "no_sharepoint_live": true,
+    "no_dataverse_live": true,
+    "no_power_platform_live": true,
+    "no_branch_protection_mutation_by_this_gate": true,
+    "no_direct_main_modification_from_local_worktree": true
+  },
+  "rollback": {
+    "main": "revert_by_follow_up_pull_request_if_needed",
+    "live": "no_rollback_required_live_not_touched"
+  },
+  "next_lane": "OWNER_DECISION_POST_MERGE_SYNC_OR_HOLD_NO_LIVE"
+}

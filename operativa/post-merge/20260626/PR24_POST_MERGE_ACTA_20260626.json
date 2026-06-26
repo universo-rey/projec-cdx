@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "document_type": "post_merge_acta",
+  "generated_at_utc": "2026-06-26T16:05:41.4086565Z",
+  "decision": "G10_MERGED_TO_MAIN_NO_LIVE",
+  "repository": "universo-rey/projec-cdx",
+  "state": {
+    "main_contains_g10_by_pr24": true,
+    "main_remote": "441e150408c7dc4d27f25028ca27f4b9804645cf",
+    "pr24_merged": true,
+    "merge_method": "squash",
+    "integration_preserved": true,
+    "integration_branch": "codex/integration-g10-snapshot-20260626",
+    "integration_sha": "826f9876449043c2a94b9a82d1e806cfbc72f0b6",
+    "live_frozen": true,
+    "live_branch": "codex/live-state-g10-governed-20260626",
+    "live_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+    "production_activation": false,
+    "g11_apply": false,
+    "tag_created": false,
+    "release_created": false
+  },
+  "integrated_scope": [
+    "PR01 validator tooling",
+    "PR02 snapshot blocker repair / policy",
+    "PR03 core G10",
+    "PR03 workbench link fix",
+    "PR04 Agile Agent Canvas / control-plane context",
+    "Recurrent blocker normalization",
+    "Local absolute link family repair",
+    "Bus/actions/contracts/canvas integrated",
+    "Watchdog/telemetry/NOC declared or partial as non-blocking later debt"
+  ],
+  "open_conditions": [
+    "decide_post_merge_live_state_sync_or_hold",
+    "decide_tag_or_release_later_if_applicable",
+    "decide_extended_post_merge_validation_if_applicable",
+    "decide_branch_retention_or_cleanup_later"
+  ],
+  "boundaries": {
+    "no_live": true,
+    "no_g11": true,
+    "no_tag": true,
+    "no_release": true,
+    "no_graph_live": true,
+    "no_sharepoint_live": true,
+    "no_dataverse_live": true,
+    "no_power_platform_live": true
+  },
+  "rollback": {
+    "main": "revert_by_follow_up_pull_request_if_needed",
+    "live": "no_rollback_required_live_not_touched"
+  },
+  "next_lane_recommended": "OWNER_DECISION_POST_MERGE_SYNC_OR_HOLD_NO_LIVE"
+}
