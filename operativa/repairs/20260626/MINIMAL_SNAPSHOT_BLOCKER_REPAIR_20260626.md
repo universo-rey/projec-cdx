@@ -120,4 +120,3 @@ Subdecision necesaria:
 | `rollback` | restaurar solo `VERSION_STATE.json` y `tools/validate_proj_cdx_sync.ps1` despues de preservar la rama de repair; eliminar solo evidencia repair versionada |
 | `stop_condition` | `no PR/no merge/no live/no snapshot retry hasta owner gate` |
 | `proximos_carriles` | `WORKBENCH_POLICY_REVIEW_OWNER_GATE` |
-
