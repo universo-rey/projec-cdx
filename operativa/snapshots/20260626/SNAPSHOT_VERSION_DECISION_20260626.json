@@ -1,0 +1,304 @@
+{
+  "decision_id": "SNAPSHOT_VERSION_DECISION_20260626",
+  "generated_at_local": "2026-06-26T08:08:02.7538855-03:00",
+  "generated_at_utc": "2026-06-26T11:08:02.7831553Z",
+  "root": "C:\\CEO\\project-cdx",
+  "root_resolved_git": "C:/Users/enzo1/PROJEC CDX",
+  "live_branch": "codex/live-state-g10-governed-20260626",
+  "live_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "decision": "SNAPSHOT_BLOCKED",
+  "conditions": [
+    "VERSION_STATE_LIVE_MISMATCH",
+    "VALIDATOR_WORKBENCH_FAIL",
+    "VALIDATOR_SYNC_FAIL",
+    "VALIDATOR_OPERATIONAL_CHAIN_EXACT_ORDER_FAIL",
+    "NO_PR_DIRECTO",
+    "NO_MERGE_DIRECTO",
+    "NO_G11_APPLY",
+    "OWNER_GATE_REQUIRED_FOR_ANY_NEXT_MUTATION"
+  ],
+  "verified": {
+    "worktree_clean": true,
+    "index_clean": true,
+    "version_state_exists": true,
+    "version_state_match_current_branch_head": "MISMATCH",
+    "freeze_remote_verified": true,
+    "freeze_tag_remote_verified": true,
+    "readback_remote_verified": true,
+    "branch_governance_matrix_remote_verified": true,
+    "no_pr": true,
+    "no_merge": true,
+    "no_live": true
+  },
+  "version_state": {
+    "branch": "codex/runtime-versioning-snapshots",
+    "commit": "c856fa9b",
+    "generated_at_utc": "2026-06-24T17:37:11Z",
+    "integrity": "PENDING_STAGE",
+    "match": "MISMATCH"
+  },
+  "remote_refs": {
+    "freeze_branch": {
+      "branch": "codex/version-freeze-state-20260626",
+      "remote_head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "verified": true
+    },
+    "freeze_tag": {
+      "tag": "freeze/2026-06-26-g10-reconciled",
+      "remote_head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "verified": true
+    },
+    "readback_branch": {
+      "branch": "codex/version-readbacks-and-sdu-package-20260626",
+      "remote_head": "e2477509295b672330acec5649108fa942f357ac",
+      "verified": true
+    },
+    "branch_governance_matrix_branch": {
+      "branch": "codex/version-branch-governance-evidence-20260626",
+      "remote_head": "309a84c9c1219b04641262c31b71d4c8e254ca0a",
+      "verified": true
+    }
+  },
+  "branches": [
+    {
+      "branch": "codex/version-core-g10-20260626",
+      "local_head": "63b983447d40442f2cfe214b3d00be53771c5323",
+      "remote_head": "63b983447d40442f2cfe214b3d00be53771c5323",
+      "local_remote_match": true,
+      "lane_type": "MERGE_CANDIDATE",
+      "suggested_decision_from_matrix": "OWNER_GATE_REQUIRED",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "snapshot_role": "CORE_CANDIDATE"
+    },
+    {
+      "branch": "codex/version-control-plane-canvas-20260626",
+      "local_head": "1ffafe291bae5f61e4e29c45db6cc87cce06d3ae",
+      "remote_head": "1ffafe291bae5f61e4e29c45db6cc87cce06d3ae",
+      "local_remote_match": true,
+      "lane_type": "MERGE_CANDIDATE_DEPENDS_CORE",
+      "suggested_decision_from_matrix": "DEPENDS_CORE_AND_OWNER_GATE",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "snapshot_role": "CONTROL_PLANE_CANDIDATE"
+    },
+    {
+      "branch": "codex/version-validator-tooling-20260626",
+      "local_head": "8af84c815285253376662b22733c540d2dfa708d",
+      "remote_head": "8af84c815285253376662b22733c540d2dfa708d",
+      "local_remote_match": true,
+      "lane_type": "MERGE_CANDIDATE_SUPPORT",
+      "suggested_decision_from_matrix": "OWNER_GATE_REQUIRED",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "snapshot_role": "VALIDATION_SUPPORT"
+    },
+    {
+      "branch": "codex/version-readbacks-and-sdu-package-20260626",
+      "local_head": "e2477509295b672330acec5649108fa942f357ac",
+      "remote_head": "e2477509295b672330acec5649108fa942f357ac",
+      "local_remote_match": true,
+      "lane_type": "MERGE_CANDIDATE_EVIDENCE_PACKAGE",
+      "suggested_decision_from_matrix": "AFTER_CORE_AND_OWNER_GATE",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "snapshot_role": "EVIDENCE_PACKAGE"
+    },
+    {
+      "branch": "codex/version-total-reconciliation-evidence-20260626",
+      "local_head": "68ac60ad6d500e066b1b8cb72bff5dd341522554",
+      "remote_head": "68ac60ad6d500e066b1b8cb72bff5dd341522554",
+      "local_remote_match": true,
+      "lane_type": "EVIDENCE_ONLY",
+      "suggested_decision_from_matrix": "REFERENCE_ONLY",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "snapshot_role": "EVIDENCE_REFERENCE"
+    },
+    {
+      "branch": "codex/version-local-reconciliation-evidence-20260626",
+      "local_head": "82b25d121d729b42195fb941768998370a02ece8",
+      "remote_head": "82b25d121d729b42195fb941768998370a02ece8",
+      "local_remote_match": true,
+      "lane_type": "EVIDENCE_ONLY",
+      "suggested_decision_from_matrix": "REFERENCE_ONLY",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "snapshot_role": "EVIDENCE_REFERENCE"
+    },
+    {
+      "branch": "codex/version-ceo-watchdog-evidence-20260626",
+      "local_head": "1014aa2b90c16c819039c7d37d046ca0976c53af",
+      "remote_head": "1014aa2b90c16c819039c7d37d046ca0976c53af",
+      "local_remote_match": true,
+      "lane_type": "EVIDENCE_ONLY",
+      "suggested_decision_from_matrix": "REFERENCE_ONLY",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "snapshot_role": "EVIDENCE_REFERENCE"
+    },
+    {
+      "branch": "codex/version-branch-governance-evidence-20260626",
+      "local_head": "309a84c9c1219b04641262c31b71d4c8e254ca0a",
+      "remote_head": "309a84c9c1219b04641262c31b71d4c8e254ca0a",
+      "local_remote_match": true,
+      "lane_type": "EVIDENCE_ONLY",
+      "suggested_decision_from_matrix": "REFERENCE_ONLY",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "snapshot_role": "EVIDENCE_REFERENCE"
+    },
+    {
+      "branch": "codex/version-g11-review-only-20260626",
+      "local_head": "cf2a2cc4dc49256a8f409374faae2b0068541b0a",
+      "remote_head": "cf2a2cc4dc49256a8f409374faae2b0068541b0a",
+      "local_remote_match": true,
+      "lane_type": "REVIEW_ONLY",
+      "suggested_decision_from_matrix": "NO_APPLY",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "snapshot_role": "REVIEW_ONLY"
+    },
+    {
+      "branch": "codex/version-freeze-state-20260626",
+      "local_head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "remote_head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "local_remote_match": true,
+      "lane_type": "FREEZE_REFERENCE",
+      "suggested_decision_from_matrix": "NO_DIRECT_MERGE",
+      "pr_allowed_now": false,
+      "merge_allowed_now": false,
+      "snapshot_role": "FREEZE_REFERENCE"
+    }
+  ],
+  "snapshot_roles": [
+    {
+      "role": "CORE_CANDIDATE",
+      "branches": [
+        "codex/version-core-g10-20260626"
+      ]
+    },
+    {
+      "role": "CONTROL_PLANE_CANDIDATE",
+      "branches": [
+        "codex/version-control-plane-canvas-20260626"
+      ]
+    },
+    {
+      "role": "VALIDATION_SUPPORT",
+      "branches": [
+        "codex/version-validator-tooling-20260626"
+      ]
+    },
+    {
+      "role": "EVIDENCE_PACKAGE",
+      "branches": [
+        "codex/version-readbacks-and-sdu-package-20260626"
+      ]
+    },
+    {
+      "role": "EVIDENCE_REFERENCE",
+      "branches": [
+        "codex/version-total-reconciliation-evidence-20260626",
+        "codex/version-local-reconciliation-evidence-20260626",
+        "codex/version-ceo-watchdog-evidence-20260626",
+        "codex/version-branch-governance-evidence-20260626"
+      ]
+    },
+    {
+      "role": "REVIEW_ONLY",
+      "branches": [
+        "codex/version-g11-review-only-20260626"
+      ]
+    },
+    {
+      "role": "FREEZE_REFERENCE",
+      "branches": [
+        "codex/version-freeze-state-20260626"
+      ]
+    }
+  ],
+  "validators": [
+    {
+      "name": "tools/validate_proj_cdx_workbench.ps1 -Root C:\\CEO\\project-cdx -Json",
+      "exists": true,
+      "status": "FAIL",
+      "critical_for_snapshot": true,
+      "summary": "Missing required local governance files and broken/placeholder paths reported; rerun outside sandbox still FAIL."
+    },
+    {
+      "name": "tools/validate_proj_cdx_sync.ps1 -Root C:\\CEO\\project-cdx -Json",
+      "exists": true,
+      "status": "FAIL",
+      "critical_for_snapshot": true,
+      "summary": "Cannot find C:\\CEO\\project-cdx\\<RUNTIME_PATH>\\README.md."
+    },
+    {
+      "name": "tools/validate_proj_cdx_operational_chain.ps1 -Root C:\\CEO\\project-cdx\\tools\\sdu_chain_resolver.py -Json",
+      "exists": true,
+      "status": "FAIL",
+      "critical_for_snapshot": true,
+      "summary": "Exact ordered invocation treats resolver path as root and reports missing chain artifacts."
+    },
+    {
+      "name": "tools/validate_sdu_dataverse_metadata_wave.ps1 -Root C:\\CEO\\project-cdx",
+      "exists": true,
+      "status": "PASS",
+      "critical_for_snapshot": false,
+      "summary": "STATUS: PASS; metadata-only prepared; matrix rows 65."
+    },
+    {
+      "name": "tools/sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun -Json",
+      "exists": true,
+      "status": "PASS",
+      "critical_for_snapshot": false,
+      "summary": "No external, dry-run; chain PASS; 6 profiles; 128 skills inventory; 17 recipes."
+    },
+    {
+      "name": "git diff --check",
+      "exists": true,
+      "status": "PASS",
+      "critical_for_snapshot": false,
+      "summary": "No whitespace/error output."
+    }
+  ],
+  "risks": [
+    "fan-in prematuro sin owner gate",
+    "PR contra main sin snapshot aprobado",
+    "freeze usado como rama de integracion en vez de referencia",
+    "evidence-only tratado como runtime",
+    "G11 aplicado sin gate",
+    "validadores OBSERVED o FAIL no contextualizados",
+    "CRLF/LF como warning no bloqueante si aparece",
+    "VERSION_STATE vivo desalineado usado como verdad actual",
+    "ramas publicadas interpretadas como autorizacion automatica de merge"
+  ],
+  "forbidden_actions": [
+    "direct_merge",
+    "mass_pr",
+    "g11_apply",
+    "live_mutation",
+    "freeze_direct_merge",
+    "checkout",
+    "switch",
+    "fetch",
+    "pull",
+    "push",
+    "pr",
+    "merge",
+    "rebase",
+    "reset",
+    "clean",
+    "restore",
+    "commit",
+    "tag",
+    "workflow_dispatch",
+    "microsoft_graph",
+    "sharepoint_live",
+    "dataverse_live",
+    "power_platform_live",
+    "secrets"
+  ],
+  "recommended_next_lane": "SNAPSHOT_BLOCKER_REPAIR_READONLY_DIAG",
+  "stop_condition": "no PR/no merge/no live/no G11 apply without owner gate"
+}
