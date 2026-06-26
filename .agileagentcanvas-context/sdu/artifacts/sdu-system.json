@@ -58,7 +58,7 @@
       {
         "title": "SYSTEM_NERVOUS_INDEX",
         "type": "file",
-        "location": "../../../SYSTEM_NERVOUS_INDEX.json",
+        "location": "SYSTEM_NERVOUS_INDEX.json",
         "description": "sourceOfTruth=SYSTEM_NERVOUS_INDEX"
       },
       {
