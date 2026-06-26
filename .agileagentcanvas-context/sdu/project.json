@@ -13,11 +13,12 @@
   },
   "content": {
     "name": "SDU Operations Layer",
-    "description": "Native Agile Agent Canvas representation of SDU system state, watchdog, action engine, graph layer, command layer and traceability.",
+    "description": "Native Agile Agent Canvas representation of SDU as an event-driven multi-agent runtime declared by SYSTEM_NERVOUS_INDEX.json, including system state, watchdog, action engine, graph layer, command layer and traceability.",
     "loadExistingProjectEntry": true,
     "noHtmlEmbedding": true,
     "sourcePolicy": {
       "readOnlySources": [
+        "C:\\CEO\\project-cdx\\SYSTEM_NERVOUS_INDEX.json",
         "C:\\CEO\\watchdog\\state\\predictive_score.json",
         "C:\\CEO\\watchdog\\state\\g6_loop_last.json",
         "C:\\CEO\\watchdog\\outbox\\recommended_actions.json",
@@ -29,6 +30,7 @@
       "runtimeExecution": false
     },
     "artifacts": [
+      "artifacts/sdu-system.json",
       "artifacts/system-state.json",
       "artifacts/watchdog.json",
       "artifacts/action-engine.json",

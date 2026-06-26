@@ -13,6 +13,7 @@
   "content": {
     "project": "../project.json",
     "artifacts": [
+      "../artifacts/sdu-system.json",
       "../artifacts/system-state.json",
       "../artifacts/watchdog.json",
       "../artifacts/action-engine.json",
@@ -27,6 +28,7 @@
     "workflowMap": "../workflows/start-dev-command-map.json",
     "institutionalTraceability": {
       "modelContainsSdu": true,
+      "systemContractDeclared": true,
       "dependencyNavigation": true,
       "actionsVisibleAsArtifacts": true,
       "systemStructureRepresented": true,
