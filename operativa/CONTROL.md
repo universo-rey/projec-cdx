@@ -4,15 +4,15 @@ Estado compacto para continuar sin arrastrar historico pesado.
 
 ## Desde Aca Se Controla Todo
 - Identidad operativa: `CEO`; perfil fisico/ruta tecnica: `C:/Users/enzo1`.
-- Estado vivo: [CURRENT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CURRENT.md)
-- Siguiente paso: [NEXT.md](C:/Users/enzo1/PROJEC%20CDX/operativa/NEXT.md)
-- Trazabilidad: [TRACE.md](C:/Users/enzo1/PROJEC%20CDX/operativa/TRACE.md)
-- Certificacion SDU: [SDU_SYSTEM_CERTIFICATION.md](C:/Users/enzo1/PROJEC%20CDX/docs/SDU_FINAL_PACKAGE/SDU_SYSTEM_CERTIFICATION.md)
-- Contrato SDU: [SDU_CONTRACT_FORMAL.md](C:/Users/enzo1/PROJEC%20CDX/docs/SDU_FINAL_PACKAGE/SDU_CONTRACT_FORMAL.md)
+- Estado vivo: [CURRENT.md](CURRENT.md)
+- Siguiente paso: [NEXT.md](NEXT.md)
+- Trazabilidad: [TRACE.md](TRACE.md)
+- Certificacion SDU: [SDU_SYSTEM_CERTIFICATION.md](../docs/SDU_FINAL_PACKAGE/SDU_SYSTEM_CERTIFICATION.md)
+- Contrato SDU: [SDU_CONTRACT_FORMAL.md](../docs/SDU_FINAL_PACKAGE/SDU_CONTRACT_FORMAL.md)
 - Estado G10: [SDU_STATE_G10.md](../SDU_STATE_G10.md)
-- Evidencia corta: [READBACK_CIERRE_PESO_REDUCIDO_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260617/READBACK_CIERRE_PESO_REDUCIDO_20260617.md)
-- Workbook vigente: [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx)
-- Hitos: [INDICE_MAESTRO.md](C:/Users/enzo1/PROJEC%20CDX/hitos/INDICE_MAESTRO.md)
+- Evidencia corta: [READBACK_CIERRE_PESO_REDUCIDO_20260617.md](archive/legacy-root/20260617/READBACK_CIERRE_PESO_REDUCIDO_20260617.md)
+- Workbook vigente: [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](../workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx)
+- Hitos: [INDICE_MAESTRO.md](../hitos/INDICE_MAESTRO.md)
 
 ## Regla Atomica
 Una sola unidad activa por vez:

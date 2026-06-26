@@ -1,8 +1,8 @@
 # Despierta Traza del Flujo
 
 ## Fuente Maestra
-- La traza historica completa vive en [CRONOLOGIA_MAESTRA_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260617/CRONOLOGIA_MAESTRA_20260617.md).
-- La fuente rectora actual del maximo nivel alcanzado vive en [SDU_SYSTEM_CERTIFICATION.md](C:/Users/enzo1/PROJEC%20CDX/docs/SDU_FINAL_PACKAGE/SDU_SYSTEM_CERTIFICATION.md).
+- La traza historica completa vive en [CRONOLOGIA_MAESTRA_20260617.md](archive/legacy-root/20260617/CRONOLOGIA_MAESTRA_20260617.md).
+- La fuente rectora actual del maximo nivel alcanzado vive en [SDU_SYSTEM_CERTIFICATION.md](../docs/SDU_FINAL_PACKAGE/SDU_SYSTEM_CERTIFICATION.md).
 
 ## Cadena Actual
 - Fuente: `docs/SDU_FINAL_PACKAGE/*` + `08_READBACKS/20260625_182615_SDU_G8_5_FINAL_NORMALIZATION.md` + `SDU_STATE_G10.md`.
