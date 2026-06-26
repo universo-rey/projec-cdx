@@ -1,0 +1,245 @@
+{
+  "plan_id": "INTEGRATION_BRANCH_PLAN_20260626",
+  "schema_version": "1.0",
+  "generated_at_local": "2026-06-26T09:17:39.0324554-03:00",
+  "generated_at_utc": "2026-06-26T12:17:39.0497331Z",
+  "root": "C:\\CEO\\project-cdx",
+  "root_resolved": "C:\\Users\\enzo1\\PROJEC CDX",
+  "live_branch": "codex/live-state-g10-governed-20260626",
+  "live_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "mode": "plan_only_no_branch_no_pr_no_merge",
+  "decision": "INTEGRATION_BRANCH_PLAN_READY",
+  "proposed_integration_branch": "codex/integration-g10-snapshot-20260626",
+  "proposed_branch_status": {
+    "local": "INTEGRATION_BRANCH_NOT_FOUND_LOCAL",
+    "remote": "INTEGRATION_BRANCH_NOT_FOUND_REMOTE",
+    "planned_only": true
+  },
+  "recommended_base": "codex/live-state-g10-governed-20260626",
+  "alternative_base": "origin/main",
+  "recommended_base_decision": "CREATE_FROM_LIVE_BRANCH",
+  "base_options": {
+    "option_a_live": {
+      "base": "codex/live-state-g10-governed-20260626",
+      "head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "advantage": "Preserves exact governed live state.",
+      "risk": "Requires later PR path toward main.",
+      "recommended": true
+    },
+    "option_b_main": {
+      "base": "origin/main",
+      "remote_head": "56a4eda1dd36c545c12546bb37fc2046dbb7fb05",
+      "local_main_observed": "93dedd16",
+      "local_main_merge_base_with_live": "93dedd165a9a5e987cfd452e0fc700580a02566d",
+      "advantage": "More direct path to main.",
+      "risk": "Requires stronger divergence control and explicit later owner gate.",
+      "recommended": false
+    }
+  },
+  "verified_state": {
+    "worktree_clean": true,
+    "index_clean": true,
+    "snapshot_acta_published": true,
+    "snapshot_acta_commit": "ea00fe739644e139b17fc17e55adc5776eb855c3",
+    "pr_selective_plan_published": true,
+    "pr_selective_plan_commit": "0ba11767aa5101013c523f24a0c3bc2d15eedf4c",
+    "repair_branch_published": true,
+    "repair_branch_commit": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+    "freeze_branch_verified": true,
+    "freeze_tag_verified": true
+  },
+  "remote_evidence": [
+    {
+      "ref": "codex/integration-g10-snapshot-20260626",
+      "remote": null,
+      "exists": false,
+      "classification": "INTEGRATION_BRANCH_NOT_FOUND_REMOTE"
+    },
+    {
+      "ref": "codex/version-snapshot-decision-20260626",
+      "expected": "ea00fe739644e139b17fc17e55adc5776eb855c3",
+      "remote": "ea00fe739644e139b17fc17e55adc5776eb855c3",
+      "match": true
+    },
+    {
+      "ref": "codex/version-branch-governance-evidence-20260626",
+      "expected": "0ba11767aa5101013c523f24a0c3bc2d15eedf4c",
+      "remote": "0ba11767aa5101013c523f24a0c3bc2d15eedf4c",
+      "match": true
+    },
+    {
+      "ref": "codex/version-snapshot-blocker-repair-20260626",
+      "expected": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+      "remote": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+      "match": true
+    },
+    {
+      "ref": "codex/version-validator-tooling-20260626",
+      "remote": "8af84c815285253376662b22733c540d2dfa708d",
+      "exists": true
+    },
+    {
+      "ref": "codex/version-core-g10-20260626",
+      "remote": "63b983447d40442f2cfe214b3d00be53771c5323",
+      "exists": true
+    },
+    {
+      "ref": "codex/version-control-plane-canvas-20260626",
+      "remote": "1ffafe291bae5f61e4e29c45db6cc87cce06d3ae",
+      "exists": true
+    },
+    {
+      "ref": "codex/version-readbacks-and-sdu-package-20260626",
+      "remote": "e2477509295b672330acec5649108fa942f357ac",
+      "exists": true
+    },
+    {
+      "ref": "codex/version-freeze-state-20260626",
+      "remote": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "exists": true
+    },
+    {
+      "ref": "freeze/2026-06-26-g10-reconciled",
+      "remote": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "exists": true
+    },
+    {
+      "ref": "main",
+      "remote": "56a4eda1dd36c545c12546bb37fc2046dbb7fb05",
+      "exists": true
+    }
+  ],
+  "recommended_order": [
+    "codex/version-validator-tooling-20260626",
+    "codex/version-snapshot-blocker-repair-20260626",
+    "codex/version-core-g10-20260626",
+    "codex/version-control-plane-canvas-20260626",
+    "codex/version-readbacks-and-sdu-package-20260626"
+  ],
+  "integration_steps": [
+    {
+      "step": 1,
+      "name": "validator tooling",
+      "source": "codex/version-validator-tooling-20260626",
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 2,
+      "changed_files_summary": "M:2",
+      "mode": "future_owner_gate_required"
+    },
+    {
+      "step": 2,
+      "name": "snapshot blocker repair",
+      "source": "codex/version-snapshot-blocker-repair-20260626",
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 7,
+      "changed_files_summary": "A:4 M:3",
+      "mode": "future_owner_gate_required"
+    },
+    {
+      "step": 3,
+      "name": "core G10",
+      "source": "codex/version-core-g10-20260626",
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 12,
+      "changed_files_summary": "A:2 M:10",
+      "mode": "future_owner_gate_required"
+    },
+    {
+      "step": 4,
+      "name": "control plane canvas",
+      "source": "codex/version-control-plane-canvas-20260626",
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 6,
+      "changed_files_summary": "A:1 M:5",
+      "mode": "future_owner_gate_required"
+    },
+    {
+      "step": 5,
+      "name": "readbacks / sdu package",
+      "source": "codex/version-readbacks-and-sdu-package-20260626",
+      "merge_base_with_live": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+      "changed_files_count": 5,
+      "changed_files_summary": "A:4 M:1",
+      "mode": "future_owner_gate_required_or_reference_only"
+    }
+  ],
+  "excluded_from_merge": [
+    "codex/version-total-reconciliation-evidence-20260626",
+    "codex/version-local-reconciliation-evidence-20260626",
+    "codex/version-ceo-watchdog-evidence-20260626",
+    "codex/version-branch-governance-evidence-20260626",
+    "codex/version-snapshot-decision-20260626",
+    "codex/version-g11-review-only-20260626",
+    "codex/version-freeze-state-20260626"
+  ],
+  "required_validations_after_each_future_step": [
+    "git diff --check",
+    "tools/validate_proj_cdx_sync.ps1 -Root C:\\CEO\\project-cdx -Json",
+    "tools/validate_proj_cdx_workbench.ps1 -Root C:\\CEO\\project-cdx -Json",
+    "tools/validate_proj_cdx_operational_chain.ps1 -Root C:\\CEO\\project-cdx -ResolverPy C:\\CEO\\project-cdx\\tools\\sdu_chain_resolver.py -Json",
+    "tools/sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun -Json",
+    "tools/validate_sdu_dataverse_metadata_wave.ps1 -Root C:\\CEO\\project-cdx"
+  ],
+  "published_validator_evidence": {
+    "sync": "PASS",
+    "workbench": "OBSERVED_0_FAIL",
+    "operational_chain": "PASS",
+    "sdu_boot": "PASS",
+    "dataverse_metadata_wave": "PASS",
+    "git_diff_check": "PASS_WITH_NON_BLOCKING_WARNINGS"
+  },
+  "forbidden_actions": [
+    "create_branch",
+    "create_pr",
+    "merge",
+    "live_mutation",
+    "g11_apply",
+    "merge_freeze_branch",
+    "integrate_branches_without_owner_gate"
+  ],
+  "risks": [
+    "crear rama de integracion desde base incorrecta",
+    "integrar repair sin validator tooling",
+    "integrar core antes de repair",
+    "mezclar evidence-only como runtime",
+    "aplicar G11 por accidente",
+    "mergear freeze",
+    "PR contra main sin validar rama de integracion",
+    "live write accidental"
+  ],
+  "recommended_next_lane": "OWNER_GATE_CREATE_INTEGRATION_BRANCH_NO_MERGE",
+  "closeout_contract": {
+    "agente": "contracts_agent + validation_agent + narrador-normativo",
+    "orden": "OWNER_GATE_CREATE_INTEGRATION_BRANCH_PLAN_NO_PR",
+    "superficie": "C:\\CEO\\project-cdx local evidence and remote read-only",
+    "skill": [
+      "no-inference-runtime-write-guard",
+      "repo-agent-tool-governance",
+      "writing-plans"
+    ],
+    "receta": "remote evidence verification + base selection + integration branch plan",
+    "tool": [
+      "git status",
+      "git diff",
+      "git merge-base",
+      "git log",
+      "git show",
+      "git ls-remote",
+      "ConvertFrom-Json",
+      "apply_patch"
+    ],
+    "estado": "INTEGRATION_BRANCH_PLAN_READY",
+    "evidencia": [
+      "operativa/integration/20260626/INTEGRATION_BRANCH_PLAN_20260626.md",
+      "operativa/integration/20260626/INTEGRATION_BRANCH_PLAN_20260626.json"
+    ],
+    "validador": "JSON parseable post-write; remote refs match; integration branch absent local/remote; live branch and HEAD unchanged",
+    "riesgo_principal": "creating branch or integrating candidate branches without a later owner gate while losing the live baseline",
+    "rollback": "delete only the two plan files before versioning if owner discards this lane",
+    "stop_condition": "no branch/no PR/no merge/no live/no G11 apply without owner gate",
+    "proximos_carriles": [
+      "OWNER_GATE_CREATE_INTEGRATION_BRANCH_NO_MERGE"
+    ]
+  },
+  "stop_condition": "no branch/no PR/no merge/no live/no G11 apply without owner gate"
+}
