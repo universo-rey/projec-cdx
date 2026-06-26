@@ -1,0 +1,242 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "SNAPSHOT_VERSION_DECISION_RETRY_20260626",
+  "mode": "SNAPSHOT_VERSION_DECISION_RETRY_OWNER_ONLY",
+  "generated_at_local": "2026-06-26T08:47:14.1297424-03:00",
+  "generated_at_utc": "2026-06-26T11:47:17.4363800Z",
+  "root": "C:\\CEO\\project-cdx",
+  "agents": [
+    "contracts_agent",
+    "narrador-normativo",
+    "diagnostic_agent",
+    "validation_agent"
+  ],
+  "live": {
+    "branch": "codex/live-state-g10-governed-20260626",
+    "head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+    "worktree_clean_before": true,
+    "index_clean_before": true,
+    "version_state_observed": {
+      "branch": "codex/runtime-versioning-snapshots",
+      "commit": "c856fa9b",
+      "dirty": true,
+      "delta_count": 56,
+      "integrity": "PENDING_STAGE",
+      "generated_at_utc": "2026-06-24T17:37:11Z"
+    },
+    "version_state_live_mismatch_is_blocker": false,
+    "version_state_live_mismatch_reason": "Repair is preserved in the candidate branch; live was intentionally not mutated in this order."
+  },
+  "decision": "SNAPSHOT_READY_WITH_CONDITIONS",
+  "status": "READY_FOR_OWNER_GATE_VERSIONING",
+  "summary": "The snapshot retry can be versioned as a governed decision. It does not apply the repair to live and does not authorize PR, merge, tag, or external live writes.",
+  "remote_verification": {
+    "status": "PASS",
+    "method": "git ls-remote read-only",
+    "refs": [
+      {
+        "ref": "refs/heads/codex/version-snapshot-blocker-repair-20260626",
+        "head": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+        "expected_match": true
+      },
+      {
+        "ref": "refs/heads/codex/version-snapshot-decision-20260626",
+        "head": "d71757b4fe3611fe8201434eec190905325b7038",
+        "expected_match": true
+      },
+      {
+        "ref": "refs/heads/codex/version-branch-governance-evidence-20260626",
+        "head": "309a84c9c1219b04641262c31b71d4c8e254ca0a",
+        "expected_match": true
+      },
+      {
+        "ref": "refs/heads/codex/version-readbacks-and-sdu-package-20260626",
+        "head": "e2477509295b672330acec5649108fa942f357ac",
+        "expected_match": true
+      },
+      {
+        "ref": "refs/heads/codex/version-freeze-state-20260626",
+        "head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+        "expected_match": true
+      },
+      {
+        "ref": "refs/tags/freeze/2026-06-26-g10-reconciled",
+        "head": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+        "expected_match": true
+      }
+    ]
+  },
+  "evidence_read": [
+    {
+      "branch": "codex/version-snapshot-blocker-repair-20260626",
+      "commit": "6b796603e14f6d053d133ec214dc0c5a219e8f8a",
+      "artifacts": [
+        {
+          "path": "VERSION_STATE.json",
+          "result": {
+            "branch": "codex/live-state-g10-governed-20260626",
+            "commit": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+            "dirty": false,
+            "status_count": 0,
+            "delta_count": 0,
+            "integrity": "REPAIRED_OWNER_APPLIED"
+          }
+        },
+        {
+          "path": "operativa/repairs/20260626/WORKBENCH_SYNC_POLICY_PATCH_20260626.json",
+          "result": {
+            "decision": "SNAPSHOT_RETRY_ALLOWED_WITH_POLICY_REVIEW",
+            "recommended_next_lane": "SNAPSHOT_VERSION_DECISION_RETRY_OWNER_ONLY",
+            "validators": [
+              {
+                "name": "tools/validate_proj_cdx_sync.ps1",
+                "status": "PASS",
+                "summary": "49 PASS, 0 FAIL, placeholder resolved and mixed link policy accepted."
+              },
+              {
+                "name": "tools/validate_proj_cdx_workbench.ps1",
+                "status": "OBSERVED",
+                "summary": "1103 PASS, 68 OBSERVED, 0 FAIL; legacy/docs/gaps remain observed only."
+              },
+              {
+                "name": "tools/validate_proj_cdx_operational_chain.ps1",
+                "status": "PASS",
+                "summary": "41 PASS."
+              },
+              {
+                "name": "tools/sdu_boot.ps1",
+                "status": "PASS",
+                "summary": "39 PASS; NoExternal/DryRun preserved."
+              },
+              {
+                "name": "tools/validate_sdu_dataverse_metadata_wave.ps1",
+                "status": "PASS",
+                "summary": "STATUS: PASS; 65 matrix rows."
+              },
+              {
+                "name": "git diff --check",
+                "status": "PASS",
+                "summary": "No whitespace errors; LF/CRLF warnings non-blocking."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "branch": "codex/version-snapshot-decision-20260626",
+      "commit": "d71757b4fe3611fe8201434eec190905325b7038",
+      "result": "Historic SNAPSHOT_BLOCKED evidence retained as pre-repair baseline."
+    },
+    {
+      "branch": "codex/version-branch-governance-evidence-20260626",
+      "commit": "309a84c9c1219b04641262c31b71d4c8e254ca0a",
+      "result": {
+        "NO_MERGE_DIRECTO": true,
+        "NO_PR_MASIVO": true,
+        "FAN_IN_SOLO_CON_MATRIZ": true,
+        "OWNER_GATE_REQUIRED_FOR_PR": true,
+        "OWNER_GATE_REQUIRED_FOR_MERGE": true,
+        "G11_REVIEW_ONLY_NO_APPLY": true,
+        "PR_CREATION_NOT_AUTHORIZED": true,
+        "MERGE_NOT_AUTHORIZED": true
+      }
+    },
+    {
+      "branch": "codex/version-readbacks-and-sdu-package-20260626",
+      "commit": "e2477509295b672330acec5649108fa942f357ac",
+      "result": "Readback and SDU package retained as state evidence."
+    },
+    {
+      "branch": "codex/version-freeze-state-20260626",
+      "commit": "0291d185fc27de7e6d7c4b86a4614de2e182705f",
+      "result": "Freeze state is a reference only, not a direct merge source."
+    }
+  ],
+  "blocker_reconciliation": [
+    {
+      "blocker": "VERSION_STATE_LIVE_MISMATCH",
+      "classification": "RESOLVED_IN_CANDIDATE_NOT_APPLIED_TO_LIVE",
+      "retry_blocker": false
+    },
+    {
+      "blocker": "VALIDATOR_SYNC_FAIL",
+      "classification": "PASS_AFTER_POLICY_PATCH",
+      "retry_blocker": false
+    },
+    {
+      "blocker": "VALIDATOR_WORKBENCH_FAIL",
+      "classification": "OBSERVED_0_FAIL_AFTER_POLICY_PATCH",
+      "retry_blocker": false
+    },
+    {
+      "blocker": "VALIDATOR_OPERATIONAL_CHAIN_EXACT_ORDER_FAIL",
+      "classification": "PASS_AFTER_REPAIR",
+      "retry_blocker": false
+    },
+    {
+      "blocker": "FAIL_BY_INVOCATION_OR_POLICY",
+      "classification": "SEPARATED_FROM_REAL_FAIL",
+      "retry_blocker": false
+    }
+  ],
+  "snapshot_package": {
+    "include_as_conditional_candidate": [
+      "codex/version-snapshot-blocker-repair-20260626",
+      "codex/version-core-g10-20260626",
+      "codex/version-control-plane-canvas-20260626",
+      "codex/version-validator-tooling-20260626",
+      "codex/version-readbacks-and-sdu-package-20260626"
+    ],
+    "reference_as_evidence": [
+      "codex/version-total-reconciliation-evidence-20260626",
+      "codex/version-local-reconciliation-evidence-20260626",
+      "codex/version-ceo-watchdog-evidence-20260626",
+      "codex/version-branch-governance-evidence-20260626",
+      "codex/version-snapshot-decision-20260626"
+    ],
+    "do_not_apply": [
+      "codex/version-g11-review-only-20260626"
+    ],
+    "no_direct_merge": [
+      "codex/version-freeze-state-20260626"
+    ]
+  },
+  "conditions": [
+    "Owner gate is required before PR or merge.",
+    "No mass PR.",
+    "No direct merge into live.",
+    "Freeze branch and freeze tag are reference only.",
+    "G11 remains REVIEW_ONLY and must not be applied.",
+    "Workbench OBSERVED does not authorize mass documentation creation or mass link normalization.",
+    "The candidate repair is not applied to live until a later explicit owner gate."
+  ],
+  "forbidden_actions": [
+    "checkout",
+    "switch",
+    "fetch",
+    "pull",
+    "push",
+    "PR",
+    "merge",
+    "rebase",
+    "reset",
+    "clean",
+    "restore",
+    "commit",
+    "tag",
+    "live",
+    "Graph",
+    "SharePoint",
+    "Dataverse",
+    "Power Platform",
+    "secret_read"
+  ],
+  "recommended_next_lane": "OWNER_GATE_VERSION_SNAPSHOT_RETRY_DECISION_NO_CHECKOUT",
+  "stop_condition": "OWNER_GATE_REQUIRED_BEFORE_PR_OR_MERGE",
+  "postcheck_expected_dirty": [
+    "?? operativa/snapshots/20260626/SNAPSHOT_VERSION_DECISION_RETRY_20260626.md",
+    "?? operativa/snapshots/20260626/SNAPSHOT_VERSION_DECISION_RETRY_20260626.json"
+  ],
+  "success_state": "SNAPSHOT_VERSION_DECISION_RETRY_WRITTEN"
+}
