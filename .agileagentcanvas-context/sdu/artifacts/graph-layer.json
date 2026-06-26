@@ -8,21 +8,77 @@
       "created": "2026-06-26T00:00:00-03:00",
       "lastModified": "2026-06-26T00:00:00-03:00"
     },
-    "status": "active"
+    "status": "completed"
   },
   "content": {
-    "id": "GRAPH_LAYER",
-    "name": "Graphify Structure Layer",
-    "type": "Architecture",
-    "performancePolicy": "NO_FULL_GRAPH_LOAD",
-    "sourceViews": [
-      "C:\\CEO\\watchdog\\graphify-out\\views\\watchdog.json",
-      "C:\\CEO\\watchdog\\graphify-out\\views\\noc.json",
-      "C:\\CEO\\watchdog\\graphify-out\\views\\commands.json",
-      "C:\\CEO\\watchdog\\graphify-out\\views\\runtime.json"
+    "overview": {
+      "projectName": "SDU Operations Layer",
+      "architectureStyle": "SDU Graphify Structure Layer",
+      "summary": "Graphify Structure Layer (GRAPH_LAYER) preserves Graphify as preprocessed top nodes, communities and entry points with performancePolicy=NO_FULL_GRAPH_LOAD.",
+      "principles": [
+        {
+          "name": "NO_FULL_GRAPH_LOAD",
+          "description": "Original SDU performancePolicy.",
+          "rationale": "Graphify is imported as preprocessed top nodes, communities and entry points."
+        },
+        {
+          "name": "Focus Mode dependency inspection",
+          "description": "Use Focus Mode (F) on any SDU artifact to inspect dependency tree.",
+          "rationale": "structureIndex=../graphify-structure.json"
+        }
+      ]
+    },
+    "decisions": [
+      {
+        "id": "GRAPH_LAYER",
+        "title": "Graphify Structure Layer",
+        "status": "accepted",
+        "context": "Graphify is imported as preprocessed top nodes, communities and entry points.",
+        "decision": "Use Graphify sourceViews=[\"C:\\\\CEO\\\\watchdog\\\\graphify-out\\\\views\\\\watchdog.json\",\"C:\\\\CEO\\\\watchdog\\\\graphify-out\\\\views\\\\noc.json\",\"C:\\\\CEO\\\\watchdog\\\\graphify-out\\\\views\\\\commands.json\",\"C:\\\\CEO\\\\watchdog\\\\graphify-out\\\\views\\\\runtime.json\"] and structureIndex=../graphify-structure.json without full graph load.",
+        "rationale": "Use Focus Mode (F) on any SDU artifact to inspect dependency tree."
+      }
     ],
-    "context": "Graphify is imported as preprocessed top nodes, communities and entry points.",
-    "possibleAction": "Use Focus Mode (F) on any SDU artifact to inspect dependency tree.",
-    "structureIndex": "../graphify-structure.json"
+    "implementationNotes": [
+      "Original SDU field id: \"GRAPH_LAYER\"",
+      "Original SDU field name: \"Graphify Structure Layer\"",
+      "Original SDU field type: \"Architecture\"",
+      "Original SDU field performancePolicy: \"NO_FULL_GRAPH_LOAD\"",
+      "Original SDU field sourceViews: [\"C:\\\\CEO\\\\watchdog\\\\graphify-out\\\\views\\\\watchdog.json\",\"C:\\\\CEO\\\\watchdog\\\\graphify-out\\\\views\\\\noc.json\",\"C:\\\\CEO\\\\watchdog\\\\graphify-out\\\\views\\\\commands.json\",\"C:\\\\CEO\\\\watchdog\\\\graphify-out\\\\views\\\\runtime.json\"]",
+      "Original SDU field context: \"Graphify is imported as preprocessed top nodes, communities and entry points.\"",
+      "Original SDU field possibleAction: \"Use Focus Mode (F) on any SDU artifact to inspect dependency tree.\"",
+      "Original SDU field structureIndex: \"../graphify-structure.json\""
+    ],
+    "references": [
+      {
+        "title": "Graphify source view 1",
+        "type": "file",
+        "location": "C:\\CEO\\watchdog\\graphify-out\\views\\watchdog.json",
+        "description": "Original SDU sourceViews entry."
+      },
+      {
+        "title": "Graphify source view 2",
+        "type": "file",
+        "location": "C:\\CEO\\watchdog\\graphify-out\\views\\noc.json",
+        "description": "Original SDU sourceViews entry."
+      },
+      {
+        "title": "Graphify source view 3",
+        "type": "file",
+        "location": "C:\\CEO\\watchdog\\graphify-out\\views\\commands.json",
+        "description": "Original SDU sourceViews entry."
+      },
+      {
+        "title": "Graphify source view 4",
+        "type": "file",
+        "location": "C:\\CEO\\watchdog\\graphify-out\\views\\runtime.json",
+        "description": "Original SDU sourceViews entry."
+      },
+      {
+        "title": "Graphify structure index",
+        "type": "file",
+        "location": "../graphify-structure.json",
+        "description": "Original SDU structureIndex entry."
+      }
+    ]
   }
 }

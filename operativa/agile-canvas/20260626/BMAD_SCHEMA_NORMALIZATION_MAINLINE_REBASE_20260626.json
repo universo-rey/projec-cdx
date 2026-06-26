@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "decision": "BMAD_SCHEMA_NORMALIZATION_MAINLINE_REBASE",
+  "generated_at_utc": "2026-06-26T16:39:57.5401499Z",
+  "base": {
+    "remote": "origin",
+    "branch": "main",
+    "commit": "441e150408c7dc4d27f25028ca27f4b9804645cf"
+  },
+  "source_bmad": {
+    "branch": "codex/version-agile-canvas-bmad-schema-normalization-20260626",
+    "commit": "ba79c48f02c7e418bcd66f88e8e9728a69f22ab6"
+  },
+  "target": {
+    "branch": "codex/version-agile-canvas-bmad-schema-normalization-mainline-20260626"
+  },
+  "artifacts_applied": [
+    {
+      "path": ".agileagentcanvas-context/sdu/artifacts/graph-layer.json",
+      "source": "ba79c48f02c7e418bcd66f88e8e9728a69f22ab6",
+      "blob": "dc585f863dacab0b65250f91c091d7c553a7226a"
+    },
+    {
+      "path": ".agileagentcanvas-context/sdu/artifacts/sdu-system.json",
+      "source": "ba79c48f02c7e418bcd66f88e8e9728a69f22ab6",
+      "blob": "c696685e99017774c4303db8fa3b9e79acaf9ca5"
+    },
+    {
+      "path": ".agileagentcanvas-context/sdu/artifacts/system-state.json",
+      "source": "ba79c48f02c7e418bcd66f88e8e9728a69f22ab6",
+      "blob": "8067dcb1449d972e61c54195c0b6cb4fd47e22dc"
+    }
+  ],
+  "graphify": {
+    "classification": "GRAPHIFY_LOCAL_GENERATED_DO_NOT_VERSION",
+    "review_required": "GRAPHIFY_REVIEW_REQUIRED_NON_IDEMPOTENT",
+    "versioned": false
+  },
+  "boundaries": {
+    "live": false,
+    "g11": false,
+    "tag": false,
+    "release": false,
+    "pr": false,
+    "graphify_out": false
+  }
+}
