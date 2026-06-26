@@ -1,0 +1,182 @@
+{
+  "review_id": "WORKBENCH_POLICY_REVIEW_20260626",
+  "generated_at_local": "2026-06-26T08:29:22.0645348-03:00",
+  "generated_at_utc": "2026-06-26T11:29:22.2689086Z",
+  "root": "C:\\CEO\\project-cdx",
+  "resolved_root": "C:/Users/enzo1/PROJEC CDX",
+  "live_branch": "codex/live-state-g10-governed-20260626",
+  "live_head": "e9fcd7e949ebe2ed024d6bdd2cb6945d95f34b11",
+  "mode": "review_only",
+  "surface": "repo-local-policy-review",
+  "base_state": {
+    "worktree_clean_before_evidence": true,
+    "index_clean_before_evidence": true,
+    "minimal_repair_published": "true_by_input_and_local_ref",
+    "snapshot_retry_blocked": true,
+    "note": "No checkout, fetch, push, PR, merge, tag or live action was performed."
+  },
+  "validators": [
+    {
+      "name": "tools/validate_proj_cdx_workbench.ps1",
+      "command": "tools/validate_proj_cdx_workbench.ps1 -Root C:\\CEO\\project-cdx -Json",
+      "status": "FAIL",
+      "classification": "REVIEW_REQUIRED",
+      "summary": "Fails on hardcoded required files, literal <RUNTIME_PATH> dataverse path, and legacy local links. Visible dirs without README/MAPA are OBSERVED."
+    },
+    {
+      "name": "tools/validate_proj_cdx_sync.ps1",
+      "command": "tools/validate_proj_cdx_sync.ps1 -Root C:\\CEO\\project-cdx -Json",
+      "status": "ERROR",
+      "classification": "IMPLEMENTATION_ARTIFACT",
+      "summary": "Live branch still dereferences literal <RUNTIME_PATH>\\README.md. Repair branch resolves placeholder; remaining post-repair blocker is absolute-link policy."
+    },
+    {
+      "name": "tools/validate_proj_cdx_operational_chain.ps1",
+      "command": "tools/validate_proj_cdx_operational_chain.ps1 -Root C:\\CEO\\project-cdx -ResolverPy C:\\CEO\\project-cdx\\tools\\sdu_chain_resolver.py -Json",
+      "status": "PASS",
+      "classification": "PASS",
+      "summary": "41 checks PASS; no external; dry-run; .env.local not read."
+    },
+    {
+      "name": "tools/sdu_boot.ps1",
+      "command": "tools/sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun -Json",
+      "status": "PASS",
+      "classification": "PASS",
+      "summary": "6 profiles; 128 skills; 17 recipes."
+    },
+    {
+      "name": "tools/validate_sdu_dataverse_metadata_wave.ps1",
+      "command": "tools/validate_sdu_dataverse_metadata_wave.ps1 -Root C:\\CEO\\project-cdx",
+      "status": "PASS",
+      "classification": "PASS",
+      "summary": "STATUS: PASS; 65 metadata matrix rows."
+    },
+    {
+      "name": "git diff --check",
+      "command": "git diff --check",
+      "status": "PASS",
+      "classification": "PASS",
+      "summary": "No whitespace errors."
+    },
+    {
+      "name": "repo-agent-tool-governance required matrices",
+      "command": "Get-Content .agents\\codex\\matrices\\*.csv and .agents\\codex\\maps\\SURFACE_BOUNDARY_MAP.csv",
+      "status": "NOT_FOUND",
+      "classification": "NOT_FOUND",
+      "summary": "Required matrices from the skill are not present in this branch."
+    }
+  ],
+  "sync_policy": {
+    "classification": "MIXED_POLICY_REQUIRED",
+    "recommended_policy": "MIXED_POLICY_INTERNAL_ABSOLUTE_ALLOWED",
+    "repair_required": true,
+    "rule_detected": "Current linkChecks require literal absolute workbook URLs in root README/MAPA, while existing root docs use valid relative repo-local links.",
+    "observed_examples": [
+      "README.md -> workbooks/control_operativo.xlsx",
+      "README.md -> workbooks/tracker.xlsx",
+      "MAPA_MAESTRO.md -> workbooks/control_operativo.xlsx",
+      "MAPA_MAESTRO.md -> workbooks/tracker.xlsx",
+      "workbooks/EXCEL_AL_FRENTE.md -> C:/Users/enzo1/PROJEC%20CDX/workbooks/tracker.xlsx"
+    ],
+    "policy_decision": "Prefer relative repo-local links; allow internal absolute links only under canonical root or physical alias when the target exists; block or review external/live links."
+  },
+  "workbench_policy": {
+    "classification": "POLICY_TOO_STRICT",
+    "recommended_policy": "ALLOWLIST_GENERATED_AND_EVIDENCE_DIRS",
+    "repair_required": true,
+    "rule_detected": "The validator hardcodes legacy required files and literal <RUNTIME_PATH>; visible dirs without README/MAPA are OBSERVED but generated/cache dirs are still scanned.",
+    "affected_paths": [
+      "operativa\\START_HERE.md",
+      "operativa\\BLOCKERS.md",
+      "operativa\\MANIFESTS.md",
+      "operativa\\RETENCION.md",
+      "operativa\\ACTA_REPOS_SURFACE_GITHUB_20260615.md",
+      "<RUNTIME_PATH>\\dataverse_blocker_frontier_20260614\\README.md",
+      "outputs\\dataverse_blocker_frontier_20260614\\README.md",
+      "dataverse\\MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md"
+    ],
+    "path_classification": {
+      "operativa_missing_hardcoded": "policy_or_legacy_required_review",
+      "runtime_literal": "IMPLEMENTATION_ARTIFACT",
+      "outputs_dataverse_blocker_frontier_20260614": "evidence_generated",
+      "documents_codex_20260614_links": "legacy_external_local_reference",
+      "visible_dirs_without_readme_mapa": "OBSERVED"
+    },
+    "policy_decision": "Do not create mass docs. Resolve RuntimePath, allowlist generated/evidence/cache/transient dirs, and downgrade legacy local links unless owner declares them active."
+  },
+  "minimal_repair_proposal": {
+    "apply_now": false,
+    "files_to_touch": [
+      "tools/validate_proj_cdx_sync.ps1",
+      "tools/validate_proj_cdx_workbench.ps1"
+    ],
+    "preserve": [
+      "VERSION_STATE.json",
+      "README.md",
+      "MAPA_MAESTRO.md",
+      "operativa docs",
+      "workbooks links",
+      "dataverse content"
+    ],
+    "do_not_touch": [
+      "live surfaces",
+      "Graph",
+      "SharePoint",
+      "Dataverse",
+      "Power Platform",
+      "secrets",
+      "PR",
+      "merge",
+      "tag"
+    ],
+    "expected_validators_after_patch": [
+      "sync PASS or governed OBSERVED",
+      "workbench PASS or governed OBSERVED",
+      "operational_chain PASS",
+      "sdu_boot PASS",
+      "metadata_wave PASS",
+      "git diff --check PASS"
+    ],
+    "rollback": "Revert only the two validator policy changes."
+  },
+  "decision": "POLICY_PATCH_RECOMMENDED",
+  "recommended_next_lane": "OWNER_GATE_APPLY_WORKBENCH_SYNC_POLICY_PATCH_NO_MERGE",
+  "forbidden_actions": [
+    "mass_docs_creation",
+    "direct_merge",
+    "mass_pr",
+    "g11_apply",
+    "live_mutation",
+    "cleanup_without_gate"
+  ],
+  "closeout_contract": {
+    "agente": "contracts_agent + validation_agent + diagnostic_agent + narrador-normativo",
+    "orden": "WORKBENCH_POLICY_REVIEW_OWNER_GATE",
+    "superficie": "C:\\CEO\\project-cdx",
+    "skill": [
+      "no-inference-runtime-write-guard",
+      "repo-agent-tool-governance"
+    ],
+    "receta": "review-only policy diagnosis + no-repair evidence",
+    "tool": [
+      "Get-Content",
+      "Test-Path",
+      "Select-String",
+      "git show",
+      "local validators"
+    ],
+    "estado": "WORKBENCH_POLICY_REVIEW_WRITTEN",
+    "evidencia": [
+      "operativa/policy-review/20260626/WORKBENCH_POLICY_REVIEW_20260626.md",
+      "operativa/policy-review/20260626/WORKBENCH_POLICY_REVIEW_20260626.json"
+    ],
+    "validador": "operational_chain PASS; sdu_boot PASS; metadata_wave PASS; diff-check PASS; sync implementation artifact in live and review-required post-repair; workbench review-required",
+    "riesgo_principal": "snapshot retry before validator policy patch",
+    "rollback": "delete only policy-review evidence if owner discards this review",
+    "stop_condition": "no mutation without owner gate",
+    "proximos_carriles": [
+      "OWNER_GATE_APPLY_WORKBENCH_SYNC_POLICY_PATCH_NO_MERGE"
+    ]
+  },
+  "stop_condition": "no mutation without owner gate"
+}
