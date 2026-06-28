@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>SDU NOC</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app" class="dashboard">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand__mark">NOC</div>
+        <div>
+          <div class="brand__title">SDU NOC</div>
+          <div class="brand__subtitle">Consola operativa</div>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav" aria-label="Navegación">
+        <button class="nav-item is-active" type="button" data-target="overview">Resumen</button>
+        <button class="nav-item" type="button" data-target="statusPanel">Estado</button>
+        <button class="nav-item" type="button" data-target="alertsPanel">Alertas</button>
+        <button class="nav-item" type="button" data-target="suggestionsPanel">Sugerencias</button>
+      </nav>
+
+      <div class="sidebar__tools">
+        <button class="btn btn--primary" id="refreshBtn" type="button">⟳ Refresh</button>
+        <label class="toggle" for="autoToggle">
+          <input id="autoToggle" type="checkbox" checked>
+          <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+          <span class="toggle__label">Auto refresh</span>
+        </label>
+        <div class="source-card">
+          <div class="source-card__label">Fuente</div>
+          <code id="sourcePath">/noc/noc-state.json</code>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar__copy">
+          <div class="eyebrow">Operational console</div>
+          <h1>SDU NOC</h1>
+          <p>Panel operativo en vivo sobre el estado canónico verificado.</p>
+        </div>
+        <div class="topbar__meta">
+          <div class="live-pill" id="liveState">LIVE</div>
+          <div class="timestamp" id="lastUpdated">--</div>
+        </div>
+      </header>
+
+      <section id="overview" class="panel panel--hero">
+        <div class="panel__head">
+          <h2>Tarjetas métricas</h2>
+          <span class="panel__tag">Live summary</span>
+        </div>
+        <div id="metrics" class="metrics"></div>
+      </section>
+
+      <div class="dashboard-grid">
+        <section id="statusPanel" class="panel">
+          <div class="panel__head">
+            <h2>Estado general</h2>
+            <span class="panel__tag" id="statusTag">LIVE</span>
+          </div>
+          <div id="statusCard" class="status-card"></div>
+        </section>
+
+        <section id="alertsPanel" class="panel">
+          <div class="panel__head">
+            <h2>Alertas activas</h2>
+            <span class="panel__tag" id="alertsCount">0</span>
+          </div>
+          <div id="alertsList" class="stack"></div>
+        </section>
+      </div>
+
+      <section id="suggestionsPanel" class="panel">
+        <div class="panel__head">
+          <h2>Sugerencias</h2>
+          <span class="panel__tag" id="suggestionsCount">0</span>
+        </div>
+        <div id="suggestionsList" class="stack"></div>
+      </section>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
