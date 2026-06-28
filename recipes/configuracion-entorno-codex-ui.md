@@ -24,11 +24,11 @@ En esta superficie local los paths son de Windows normalizados con `/`:
 
 - `Nombre`: `PROJEC CDX`
 - `Agente`: `EATOMIC`
-- `Directorio del espacio de trabajo`: `C:/Users/enzo1/PROJEC CDX`
+- `Directorio del espacio de trabajo`: `C:/CEO/project-cdx`
 - `Variables de entorno del script de instalación`:
   - `CODEX_RUNTIME_SURFACE`: `local-desktop`
-  - `CODEX_SOURCE_TREE_PATH`: `C:/Users/enzo1/PROJEC CDX`
-  - `CODEX_WORKTREE_PATH`: `C:/Users/enzo1/PROJEC CDX`
+  - `CODEX_SOURCE_TREE_PATH`: `C:/CEO/project-cdx`
+  - `CODEX_WORKTREE_PATH`: `C:/CEO/project-cdx`
 - `Script de configuración`:
 
 ```powershell
@@ -69,7 +69,7 @@ Notas:
 
 1. Confirmar la raiz canonica de repos `C:/Users/enzo1/Documents/GitHub`.
 2. Confirmar el repo canonico de Cabina `C:/Users/enzo1/Documents/GitHub/cabina-universal-d`.
-3. Confirmar el workbench/metadata root `C:/Users/enzo1/PROJEC CDX`.
+3. Confirmar el workbench/metadata root `C:/CEO/project-cdx`.
 4. Abrir la UI de Codex sobre la raiz correcta o sobre el workspace correcto, segun el carril activo.
 5. Confirmar que la UI muestre la configuracion del proyecto y que lea la capa local desde `.codex/config.toml`.
 6. Verificar que las variables de entorno de control queden presentes:
@@ -81,10 +81,10 @@ Notas:
    - `CODEX_CLOUD_PROFILE=projec-cdx`
    - `CODEX_REPOS_ROOT=C:/Users/enzo1/Documents/GitHub`
    - `CODEX_CABINA_REPO_ROOT=C:/Users/enzo1/Documents/GitHub/cabina-universal-d`
-   - `CODEX_WORKBENCH_ROOT=C:/Users/enzo1/PROJEC CDX`
+   - `CODEX_WORKBENCH_ROOT=C:/CEO/project-cdx`
    - `CODEX_CLOUD_REPO_ROOT=C:/Users/enzo1/Documents/GitHub/cabina-universal-d`
-   - `CODEX_CLOUD_METADATA_ROOT=C:/Users/enzo1/PROJEC CDX`
-   - `CODEX_CLOUD_WORKTREE=C:/Users/enzo1/PROJEC CDX`
+   - `CODEX_CLOUD_METADATA_ROOT=C:/CEO/project-cdx`
+   - `CODEX_CLOUD_WORKTREE=C:/CEO/project-cdx`
    - `CODEX_CLOUD_BRANCH=codex/consume-bound-workbook-next-delta`
 7. Si la UI sigue mostrando otro contexto, cerrar y reabrir el proyecto correcto antes de seguir.
 8. Verificar humo en la raiz:

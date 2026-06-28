@@ -12,7 +12,7 @@ Aplicar cuando una evidencia local pueda confundirse con estado live o ejecucion
 
 - `dataverse/MAPA.md`
 - `dataverse/GATE.md`
-- `operativa/archive/legacy-root/20260615/CONTROL_TOTAL_20260615.md`
+- `operativa/CONTROL_TOTAL_20260615.md`
 
 ## Salida
 

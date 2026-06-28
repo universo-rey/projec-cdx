@@ -6,7 +6,7 @@ Pedido de limpieza, compactacion, mover o borrar.
 
 ## Pasos
 
-1. Leer `operativa/archive/legacy-root/undated/RETENCION.md`.
+1. Leer `operativa/RETENCION.md`.
 2. Separar frente, evidencia, historico y excluido.
 3. Declarar ruta exacta.
 4. Declarar rollback.

@@ -20,7 +20,7 @@ Bundle corto que reúne el perfil Windows ya normalizado como canon reusable.
 - [patrones/normalizacion-perfil-windows.md](C:/Users/enzo1/PROJEC%20CDX/patrones/normalizacion-perfil-windows.md)
 - [patrones/perfil-windows-junctions-compatibilidad.md](C:/Users/enzo1/PROJEC%20CDX/patrones/perfil-windows-junctions-compatibilidad.md)
 - [patrones/perfil-windows-snapshots-gmt.md](C:/Users/enzo1/PROJEC%20CDX/patrones/perfil-windows-snapshots-gmt.md)
-- [operativa/archive/legacy-root/undated/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/undated/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md)
+- [operativa/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md)
 - [hitos/20260616-normalizacion-perfil-windows-v1/README.md](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-normalizacion-perfil-windows-v1/README.md)
 - [hitos/20260616-normalizacion-perfil-windows-v1/READBACK.md](C:/Users/enzo1/PROJEC%20CDX/hitos/20260616-normalizacion-perfil-windows-v1/READBACK.md)
 

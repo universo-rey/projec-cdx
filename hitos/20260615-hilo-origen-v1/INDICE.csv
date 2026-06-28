@@ -1,7 +1,7 @@
 orden,tipo,estado,evidencia
 1,handoff_pesado,closed,"hitos/20260614-hilo-anterior-v1/README.md; hitos/20260614-hilo-anterior-v1/HANDOFF_THREAD_HEAVY_20260614.md"
 2,repos_vivos,closed,"hitos/20260614-hitos-otros-repos-v1/README.md"
-3,workbench_local,closed,"hitos/20260615-cierre-workbench-v1/EVIDENCIA.md; operativa/archive/legacy-root/20260615/CONTROL_TOTAL_20260615.md"
+3,workbench_local,closed,"hitos/20260615-cierre-workbench-v1/EVIDENCIA.md; operativa/CONTROL_TOTAL_20260615.md"
 4,patrones_procesos,closed,"hitos/20260615-patrones-procesos-v1/EVIDENCIA.md; patrones/INDICE_PATRONES.md; procesos/INDICE_PROCESOS.md"
 5,sincronizacion_dataverse,closed,"hitos/20260615-sincronizacion-tiempo-real-v1/EVIDENCIA.md; dataverse/READBACK_EXCEL_BLOCKER_FRONTIER.md"
 6,dataverse_live,closed,"pac auth list; pac env who; pac solution list; pac env fetch"

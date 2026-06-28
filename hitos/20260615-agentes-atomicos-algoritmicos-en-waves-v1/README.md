@@ -4,13 +4,13 @@ Versiona la wave reusable para delegar trabajo en waves cortas con agentes atomi
 
 ## Alcance
 
-- `operativa/archive/legacy-root/undated/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md`.
+- `operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md`.
 - `recipes/agentes-atomicos-algoritmicos-en-waves.md`.
 - `procesos/agentes-atomicos-algoritmicos-en-waves.md`.
-- `operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md`.
+- `operativa/ANCLAS_ON_DEMAND.md`.
 - `operativa/CURRENT.md`.
 - `operativa/TRACE.md`.
-- `operativa/archive/legacy-root/20260615/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md`.
+- `operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md`.
 - `recipes/README.md`, `recipes/MAPA.md`.
 - `procesos/README.md`, `procesos/MAPA.md`, `procesos/INDICE_PROCESOS.md`.
 

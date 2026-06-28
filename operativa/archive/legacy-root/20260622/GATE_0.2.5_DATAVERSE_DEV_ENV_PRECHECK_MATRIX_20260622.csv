@@ -1,4 +1,0 @@
-repo,target_environment,check,observed_issue,required_hardening,live_required,owner_required,rollback_required,postcheck_required,decision
-cabina-universal-d,Dataverse DEV/HUBDesarrollo,pac auth active environment,precheck can pass against the wrong active environment,check exact environment identity before ready,false,true,true,true,BLOCKED_WITH_GATE_PACKET
-cabina-universal-d,Dataverse DEV/HUBDesarrollo,dry-run import readiness,dry-run can require DEV readiness even with apply false,block ready until target DEV readiness is evidenced,false,true,true,true,BLOCKED_WITH_GATE_PACKET
-cabina-universal-d,Dataverse DEV/HUBDesarrollo,no apply boundary,apply false must stay non-mutating,require explicit owner apply gate before any live change,false,true,true,true,BLOCKED_WITH_GATE_PACKET

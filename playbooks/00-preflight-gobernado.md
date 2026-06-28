@@ -17,7 +17,7 @@ Validacion minima antes de tocar cualquier archivo o superficie de `PROJEC CDX`.
 3. `operativa/CONTROL.md`
 4. `operativa/CURRENT.md`
 5. `operativa/NEXT.md`
-6. `operativa/archive/legacy-root/undated/BLOCKERS.md`
+6. `operativa/BLOCKERS.md`
 7. `dataverse/GATE.md` si aparece Dataverse, Power Platform, Power Automate, Microsoft live o ambiente.
 
 ## Gate

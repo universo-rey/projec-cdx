@@ -1,4 +1,0 @@
-validator,declared_coverage,actual_invocation,missing_in,required_change,decision
-vsi_memory_log_no_ps_validator,declared,unknown,ci_suite,wire validator into CI/suite real,READY_FOR_REMOTE_REPO_PATCH_GATE
-no_ps_policy,declared,unknown,local_test_suite,add executable invocation and failing fixture,READY_FOR_REMOTE_REPO_PATCH_GATE
-memory_log_policy,declared,unknown,manifest_or_runner,register runner path and expected output,READY_FOR_REMOTE_REPO_PATCH_GATE

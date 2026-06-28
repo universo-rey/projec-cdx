@@ -15,8 +15,8 @@ Cierre de los hilos A/B de la mesa `5+1` mediante canonizacion minima en dos PRs
 
 ## Evidencia
 
-- `operativa/archive/legacy-root/20260617/READBACK_AB_CANON_CONTEXT_CLOSE_DECISION_20260617.md`
-- `operativa/archive/legacy-root/20260617/AB_CANON_CONTEXT_PR_MATRIX_20260617.csv`
+- `operativa/READBACK_AB_CANON_CONTEXT_CLOSE_DECISION_20260617.md`
+- `operativa/AB_CANON_CONTEXT_PR_MATRIX_20260617.csv`
 - `READBACK.md`
 - `EVIDENCIA.md`
 - `MANIFEST.yaml`

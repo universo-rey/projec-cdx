@@ -1,8 +1,8 @@
 [CmdletBinding(SupportsShouldProcess = $true)]
 param(
     [string]$Root = 'C:\Users\enzo1\.codex',
-    [string]$PlanPath = 'C:/Users/enzo1/PROJEC CDX/CODEX_ROOT_MOVE_PLAN.json',
-    [string]$ResultsPath = 'C:/Users/enzo1/PROJEC CDX/CODEX_ROOT_MOVE_RESULTS.json'
+    [string]$PlanPath = 'C:/CEO/project-cdx/CODEX_ROOT_MOVE_PLAN.json',
+    [string]$ResultsPath = 'C:/CEO/project-cdx/CODEX_ROOT_MOVE_RESULTS.json'
 )
 
 $ErrorActionPreference = 'Stop'

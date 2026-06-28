@@ -1,5 +1,5 @@
 item,tipo,estado,evidencia
-acta,readback,GREEN_LOCAL,operativa/archive/legacy-root/20260615/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md
-matriz_excel,workbook,GREEN_LOCAL,operativa/archive/legacy-root/20260615/MATRIZ_RAMAS_HISTORICAS_20260615.xlsx
+acta,readback,GREEN_LOCAL,operativa/ACTA_ARCHIVO_RAMAS_HISTORICAS_20260615.md
+matriz_excel,workbook,GREEN_LOCAL,operativa/MATRIZ_RAMAS_HISTORICAS_20260615.xlsx
 trace,indice,GREEN_LOCAL,operativa/TRACE.md
 hitos_indice,indice,GREEN_LOCAL,hitos/INDICE_MAESTRO.md

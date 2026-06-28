@@ -1,4 +1,0 @@
-repo,label,description,color,allowed_action,blocked_actions,pre_state_required,rollback_action,postcheck,decision
-universo-rey/projec-cdx,dependencies,PRs de dependencias,0366d6,create_or_verify_label,"push|pr|merge|code_edit|workflow_dispatch|secret_print",capture_existing_label_if_any,delete_if_created_or_restore_if_modified,verify_label_exists,AUTHORIZED
-universo-rey/projec-cdx,python,Dependencias Python,3572A5,create_or_verify_label,"push|pr|merge|code_edit|workflow_dispatch|secret_print",capture_existing_label_if_any,delete_if_created_or_restore_if_modified,verify_label_exists,AUTHORIZED
-universo-rey/projec-cdx,github-actions,Dependencias GitHub Actions,2088FF,create_or_verify_label,"push|pr|merge|code_edit|workflow_dispatch|secret_print",capture_existing_label_if_any,delete_if_created_or_restore_if_modified,verify_label_exists,AUTHORIZED

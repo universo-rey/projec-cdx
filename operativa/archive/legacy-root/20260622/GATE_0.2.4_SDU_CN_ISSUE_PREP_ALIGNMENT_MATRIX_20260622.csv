@@ -1,4 +1,0 @@
-target_repo,target_file,required_change,reason,remote_write_required,owner_required,rollback_required,postcheck_required,decision
-SeshatSgin/seshat-bootstrap-sdu-cn,.github/ISSUE_TEMPLATE/sdu_cn_controlled_issue.yml,add surface field,template requires Superficie afectada,true,true,true,true,REQUIRES_GITHUB_WRITE_GATE
-SeshatSgin/seshat-bootstrap-sdu-cn,matrices/sdu_cn/SDU_CN_TOOL_AUTHORIZATION_MATRIX.csv,set cn_preparar_issue_github requires_gate yes,protocol requires gate,true,true,true,true,REQUIRES_GITHUB_WRITE_GATE
-SeshatSgin/seshat-bootstrap-sdu-cn,router/crosswalk matrices,register SDU_CN_GITHUB_ISSUE_PREPARATION gate,gate missing from router/crosswalk,true,true,true,true,REQUIRES_GITHUB_WRITE_GATE

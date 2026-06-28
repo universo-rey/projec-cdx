@@ -1,6 +1,5 @@
 param(
-  [string]$Root = "C:/Users/enzo1/PROJEC CDX",
-  [string]$RuntimePath = "outputs",
+  [string]$Root = "C:/CEO/project-cdx",
   [switch]$Json
 )
 
@@ -31,41 +30,7 @@ function Add-Check {
   }
 }
 
-$ResolvedRuntimePath = $RuntimePath -replace '^[\\/]+|[\\/]+$', ''
-if ([string]::IsNullOrWhiteSpace($ResolvedRuntimePath)) {
-  $ResolvedRuntimePath = "outputs"
-}
-
-$ExcludedWorkbenchDirs = @(
-  "node_modules",
-  ".git",
-  ".cache",
-  ".codex",
-  ".venv",
-  ".pytest_cache",
-  ".ruff_cache",
-  ".venv_clean",
-  ".venv_test",
-  "graphify-out",
-  "tmp-owner-action-layer"
-)
-
-$ObservedIfMissing = @(
-  "operativa\START_HERE.md",
-  "operativa\BLOCKERS.md",
-  "operativa\MANIFESTS.md",
-  "operativa\RETENCION.md",
-  "operativa\ACTA_REPOS_SURFACE_GITHUB_20260615.md"
-)
-
-function Test-LegacyLocalLink {
-  param([string]$RawPath)
-  return (
-    $RawPath -match '^C:/Users/enzo1/Documents/Codex/' -or
-    $RawPath -match '^C:/Users/enzo1/Documents/CodexLocal/' -or
-    $RawPath -eq 'C:/Users/enzo1/Documents/README.md'
-  )
-}
+$ExcludedWorkbenchDirs = @("node_modules", ".git", ".cache", ".codex", ".venv")
 
 function Get-WorkbenchFiles {
   param(
@@ -116,7 +81,7 @@ $requiredFiles = @(
   "dataverse\README.md",
   "dataverse\MAPA.md",
   "dataverse\PLAN_SEGUNDA_PASADA.md",
-  "$ResolvedRuntimePath\dataverse_blocker_frontier_20260614\README.md",
+  "outputs\dataverse_blocker_frontier_20260614\README.md",
   "workbooks\EXCEL_AL_FRENTE.md",
   "tools\validate_proj_cdx_workbench.ps1"
 )
@@ -125,8 +90,6 @@ foreach ($relative in $requiredFiles) {
   $path = Join-Path $Root $relative
   if (Test-Path -LiteralPath $path -PathType Leaf) {
     Add-Check "required_file:$relative" "PASS" "OK"
-  } elseif ($relative -in $ObservedIfMissing) {
-    Add-Check "required_file:$relative" "OBSERVED" "Requerido historico ausente; requiere decision documental explicita."
   } else {
     Add-Check "required_file:$relative" "FAIL" "Falta archivo requerido."
   }
@@ -160,8 +123,6 @@ foreach ($file in $markdownFiles) {
     $decoded = [uri]::UnescapeDataString($raw).Replace("/", "\")
     if (Test-Path -LiteralPath $decoded) {
       Add-Check "link:$($file.Name)" "PASS" $raw
-    } elseif (Test-LegacyLocalLink -RawPath $raw) {
-      Add-Check "link:$($file.Name)" "OBSERVED" "Link legacy local no activo: $raw"
     } else {
       Add-Check "link:$($file.Name)" "FAIL" "Link roto: $raw"
     }
@@ -219,7 +180,7 @@ $dataverseRequiredFiles = @(
   "dataverse\MAPA.md",
   "dataverse\GATE.md",
   "dataverse\PLAN_SEGUNDA_PASADA.md",
-  "$ResolvedRuntimePath\dataverse_blocker_frontier_20260614\README.md"
+  "outputs\dataverse_blocker_frontier_20260614\README.md"
 )
 foreach ($relative in $dataverseRequiredFiles) {
   $path = Join-Path $Root $relative

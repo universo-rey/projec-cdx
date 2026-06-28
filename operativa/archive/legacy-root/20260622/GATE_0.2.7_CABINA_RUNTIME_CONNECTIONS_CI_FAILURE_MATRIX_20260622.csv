@@ -1,4 +1,0 @@
-email_subject,workflow_name,job_name,reported_status,repo,likely_surface,requires_remote_logs,requires_github_gate,decision
-PR run failed SDU Agent Runtime Connections Validation,SDU Agent Runtime Connections Validation,unknown,failed,cabina-universal-d,runtime connections,true,true,NEEDS_REMOTE_WORKFLOW_LOGS
-Search found 25 emails,SDU Agent Runtime Connections Validation,unknown,repeated failure,cabina-universal-d,GitHub Actions,true,true,UNKNOWN_CI_FAILURE
-email rescan CI signal,SDU Agent Runtime Connections Validation,metadata or connection job,failed,cabina-universal-d,validator path drift,true,true,LIKELY_VALIDATOR_DRIFT

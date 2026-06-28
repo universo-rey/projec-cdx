@@ -12,8 +12,8 @@ Se verificaron ambas superficies raiz, se confirmo `codex-root` limpio y se cerr
 
 ## Salida
 
-- Readback operativo en `operativa/archive/legacy-root/20260617/READBACK_ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.md`.
-- Matriz corta en `operativa/archive/legacy-root/20260617/ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.csv`.
+- Readback operativo en `operativa/READBACK_ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.md`.
+- Matriz corta en `operativa/ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.csv`.
 - Hito versionado en `hitos/20260617-root-repos-agents-codex-review-v1`.
 
 ## Validacion

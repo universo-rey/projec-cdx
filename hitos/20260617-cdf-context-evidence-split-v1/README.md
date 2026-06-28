@@ -6,8 +6,8 @@ Se resolvio `HILO_E_CDF_SOLUCIONES` como delta scoped en `cdf-soluciones`, con r
 
 ## Evidencia
 
-- `operativa/archive/legacy-root/20260617/READBACK_CDF_CONTEXT_EVIDENCE_SPLIT_20260617.md`
-- `operativa/archive/legacy-root/20260617/CDF_CONTEXT_EVIDENCE_SPLIT_20260617.csv`
+- `operativa/READBACK_CDF_CONTEXT_EVIDENCE_SPLIT_20260617.md`
+- `operativa/CDF_CONTEXT_EVIDENCE_SPLIT_20260617.csv`
 - `C:/Users/enzo1/Documents/GitHub/cdf-soluciones`
 - `https://github.com/SeshatSgin/cdf-soluciones/pull/28`
 

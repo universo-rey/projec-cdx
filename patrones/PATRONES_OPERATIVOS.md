@@ -51,8 +51,8 @@
 ## P-007 - Retencion Gobernada
 
 - Senal: se pide compactar, limpiar, mover o borrar.
-- Accion: aplicar `operativa/archive/legacy-root/undated/RETENCION.md` y exigir orden explicita.
-- Fuente: `operativa/archive/legacy-root/undated/RETENCION.md`, `outputs/RETENCION.md`.
+- Accion: aplicar `operativa/RETENCION.md` y exigir orden explicita.
+- Fuente: `operativa/RETENCION.md`, `outputs/RETENCION.md`.
 - Salida: evidencia preservada o movimiento con rollback.
 - Stop condition: `unexpected_external_write`.
 
@@ -76,7 +76,7 @@
 
 - Senal: control total devuelve `YELLOW` sin rojos.
 - Accion: registrar como guardrail, no como bloqueo, si la accion recomendada es preventiva.
-- Fuente: `operativa/archive/legacy-root/20260615/CONTROL_TOTAL_20260615.md`.
+- Fuente: `operativa/CONTROL_TOTAL_20260615.md`.
 - Salida: semaforo honesto: `GREEN_LOCAL / GREEN_OPERABLE`.
 - Stop condition: `red_check_present`.
 

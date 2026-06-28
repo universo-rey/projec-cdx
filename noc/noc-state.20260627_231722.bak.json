@@ -1,0 +1,252 @@
+﻿{
+    "schema_version":  1,
+    "artifact":  "noc-state",
+    "generated_at":  "2026-06-27T22:28:44.1398644-03:00",
+    "mode":  "HYBRID_SOURCE",
+    "status":  "NOC_OPERATIONAL",
+    "sources":  {
+                    "snapshot_local":  "C:\\CEO\\project-cdx\\inventarios\\expediente_state_preprod.jsonl",
+                    "hybrid_state":  "C:\\CEO\\project-cdx\\inventarios\\PLANNER_HYBRID_READBACK_STATE_20260627.json",
+                    "bus":  "C:\\CEO\\watchdog\\bus\\sdu-event-bus.jsonl",
+                    "sharepoint_site":  "https://escribaniabitsch.sharepoint.com/sites/sistema",
+                    "sharepoint_roots":  [
+                                             "EXPEDIENTES",
+                                             "SDU"
+                                         ],
+                    "graph_auth":  "C:\\CEO\\project-cdx\\inventarios\\PLANNER_GRAPH_AUTH_RECOVERY_20260627.json"
+                },
+    "health":  {
+                   "score":  68,
+                   "status":  "YELLOW",
+                   "trend":  "STABLE",
+                   "risk":  "HIGH"
+               },
+    "governance":  {
+                       "multirepo":  {
+                                         "readiness":  "READY",
+                                         "validation":  {
+                                                            "status":  "PASS",
+                                                            "decision":  "PASS",
+                                                            "expected_total":  5,
+                                                            "detected_total":  5,
+                                                            "found":  5,
+                                                            "possible_active_matches":  0,
+                                                            "historical_only":  false,
+                                                            "not_materialized":  true
+                                                        }
+                                     },
+                       "root_junction_hygiene":  {
+                                                     "status":  "PASS",
+                                                     "note":  "NOC wired to hybrid readback and watchdog bus"
+                                                 }
+                   },
+    "last_run":  {
+                     "mode":  "WATCHDOG_RUN",
+                     "timestamp":  "2026-06-27T22:28:13.1514692-03:00",
+                     "duration_ms":  null,
+                     "run_id":  null,
+                     "auto_action_enabled":  false
+                 },
+    "last_alert":  {
+                       "severity":  "HIGH",
+                       "mode":  "LOG_ONLY",
+                       "timestamp":  "2026-06-27T22:28:13.1514692-03:00",
+                       "traceId":  null,
+                       "currentTraceId":  null
+                   },
+    "last_change":  {
+                        "action":  "BUS_EVENT",
+                        "result":  "STABLE",
+                        "timestamp":  "2026-06-27T22:28:13.1514692-03:00",
+                        "path":  "C:\\CEO\\watchdog\\bus\\sdu-event-bus.jsonl"
+                    },
+    "agent":  {
+                  "status":  {
+                                 "all":  [
+                                             {
+                                                 "name":  "planner",
+                                                 "status":  "TRUSTED"
+                                             },
+                                             {
+                                                 "name":  "teams",
+                                                 "status":  "TRUSTED"
+                                             },
+                                             {
+                                                 "name":  "sharepoint",
+                                                 "status":  "PARTIAL"
+                                             },
+                                             {
+                                                 "name":  "watchdog",
+                                                 "status":  "ACTIVE"
+                                             }
+                                         ]
+                             }
+              },
+    "noc":  {
+                "total_expedientes":  5,
+                "expedientes_ok":  5,
+                "expedientes_con_error":  0,
+                "sin_carpeta":  0,
+                "sin_responsable":  0,
+                "inconsistentes":  0,
+                "alertas_activas":  93,
+                "ultimo_evento_tipo":  "WATCHDOG_ALERT",
+                "estado_general":  "STABLE",
+                "summary":  "5 expedientes observados, 0 en estado critico, 0 sin carpeta, 0 sin responsable",
+                "critical_expedientes":  [
+
+                                         ],
+                "duplicate_candidates":  0,
+                "readback":  {
+                                 "plannerTask":  "TRUSTED",
+                                 "Teams_history":  "TRUSTED",
+                                 "Details":  "PARTIAL",
+                                 "READBACK_UNTRUSTED":  false,
+                                 "READBACK_PARTIAL_DETAILS":  true
+                             },
+                "sharepoint_surface":  {
+                                           "site":  "https://escribaniabitsch.sharepoint.com/sites/sistema",
+                                           "roots":  [
+                                                         "EXPEDIENTES",
+                                                         "SDU"
+                                                     ],
+                                           "live_write_applied":  true,
+                                           "live_write_scope":  "root folders only"
+                                       },
+                "teams_activity":  {
+                                       "count":  0
+                                   },
+                "entrypoint_observability":  {
+                                                 "available":  true,
+                                                 "current_cwd":  "C:/CEO/project-cdx",
+                                                 "canonical_root":  "C:/CEO/project-cdx",
+                                                 "status":  "CANONICAL",
+                                                 "status_label":  "CWD canonico",
+                                                 "last_event_timestamp":  "2026-06-27T22:28:42.0265064-03:00",
+                                                 "recent_correction":  false,
+                                                 "recent_events":  [
+                                                                       {
+                                                                           "timestamp":  "2026-06-27T22:28:42.0265064-03:00",
+                                                                           "reason":  "legacy-or-noncanonical-cwd",
+                                                                           "before_path":  "C:\\Users\\enzo1\\PROJEC CDX",
+                                                                           "after_path":  "C:/CEO/project-cdx",
+                                                                           "canonical_root":  "C:/CEO/project-cdx",
+                                                                           "source":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222842.md",
+                                                                           "source_file":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222842.md",
+                                                                           "source_name":  "entry-20260627_222842.md",
+                                                                           "severity":  "CANONICAL"
+                                                                       },
+                                                                       {
+                                                                           "timestamp":  "2026-06-27T22:28:42.0265064-03:00",
+                                                                           "reason":  "legacy-or-noncanonical-cwd",
+                                                                           "before_path":  "C:\\Users\\enzo1\\PROJEC CDX",
+                                                                           "after_path":  "C:/CEO/project-cdx",
+                                                                           "canonical_root":  "C:/CEO/project-cdx",
+                                                                           "user":  "enzo1",
+                                                                           "computer":  null,
+                                                                           "source_file":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222842.json",
+                                                                           "source_name":  "entry-20260627_222842.json",
+                                                                           "severity":  "CANONICAL"
+                                                                       },
+                                                                       {
+                                                                           "timestamp":  "2026-06-27T22:28:29.4259771-03:00",
+                                                                           "reason":  "legacy-or-noncanonical-cwd",
+                                                                           "before_path":  "C:\\Users\\enzo1\\PROJEC CDX",
+                                                                           "after_path":  "C:/CEO/project-cdx",
+                                                                           "canonical_root":  "C:/CEO/project-cdx",
+                                                                           "source":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222829.md",
+                                                                           "source_file":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222829.md",
+                                                                           "source_name":  "entry-20260627_222829.md",
+                                                                           "severity":  "CANONICAL"
+                                                                       },
+                                                                       {
+                                                                           "timestamp":  "2026-06-27T22:28:29.4259771-03:00",
+                                                                           "reason":  "legacy-or-noncanonical-cwd",
+                                                                           "before_path":  "C:\\Users\\enzo1\\PROJEC CDX",
+                                                                           "after_path":  "C:/CEO/project-cdx",
+                                                                           "canonical_root":  "C:/CEO/project-cdx",
+                                                                           "user":  "enzo1",
+                                                                           "computer":  null,
+                                                                           "source_file":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222829.json",
+                                                                           "source_name":  "entry-20260627_222829.json",
+                                                                           "severity":  "CANONICAL"
+                                                                       },
+                                                                       {
+                                                                           "timestamp":  "2026-06-27T22:28:18.6685284-03:00",
+                                                                           "reason":  "legacy-or-noncanonical-cwd",
+                                                                           "before_path":  "C:\\Users\\enzo1\\PROJEC CDX",
+                                                                           "after_path":  "C:/CEO/project-cdx",
+                                                                           "canonical_root":  "C:/CEO/project-cdx",
+                                                                           "source":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222818.md",
+                                                                           "source_file":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222818.md",
+                                                                           "source_name":  "entry-20260627_222818.md",
+                                                                           "severity":  "CANONICAL"
+                                                                       },
+                                                                       {
+                                                                           "timestamp":  "2026-06-27T22:28:18.6685284-03:00",
+                                                                           "reason":  "legacy-or-noncanonical-cwd",
+                                                                           "before_path":  "C:\\Users\\enzo1\\PROJEC CDX",
+                                                                           "after_path":  "C:/CEO/project-cdx",
+                                                                           "canonical_root":  "C:/CEO/project-cdx",
+                                                                           "user":  "enzo1",
+                                                                           "computer":  null,
+                                                                           "source_file":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222818.json",
+                                                                           "source_name":  "entry-20260627_222818.json",
+                                                                           "severity":  "CANONICAL"
+                                                                       },
+                                                                       {
+                                                                           "timestamp":  "2026-06-27T22:28:09.3793784-03:00",
+                                                                           "reason":  "legacy-or-noncanonical-cwd",
+                                                                           "before_path":  "C:\\Users\\enzo1\\PROJEC CDX",
+                                                                           "after_path":  "C:/CEO/project-cdx",
+                                                                           "canonical_root":  "C:/CEO/project-cdx",
+                                                                           "source":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222809.md",
+                                                                           "source_file":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222809.md",
+                                                                           "source_name":  "entry-20260627_222809.md",
+                                                                           "severity":  "CANONICAL"
+                                                                       },
+                                                                       {
+                                                                           "timestamp":  "2026-06-27T22:28:09.3793784-03:00",
+                                                                           "reason":  "legacy-or-noncanonical-cwd",
+                                                                           "before_path":  "C:\\Users\\enzo1\\PROJEC CDX",
+                                                                           "after_path":  "C:/CEO/project-cdx",
+                                                                           "canonical_root":  "C:/CEO/project-cdx",
+                                                                           "user":  "enzo1",
+                                                                           "computer":  null,
+                                                                           "source_file":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222809.json",
+                                                                           "source_name":  "entry-20260627_222809.json",
+                                                                           "severity":  "CANONICAL"
+                                                                       },
+                                                                       {
+                                                                           "timestamp":  "2026-06-27T22:27:22.5191569-03:00",
+                                                                           "reason":  "legacy-or-noncanonical-cwd",
+                                                                           "before_path":  "C:\\Users\\enzo1\\PROJEC CDX",
+                                                                           "after_path":  "C:/CEO/project-cdx",
+                                                                           "canonical_root":  "C:/CEO/project-cdx",
+                                                                           "source":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222722.md",
+                                                                           "source_file":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222722.md",
+                                                                           "source_name":  "entry-20260627_222722.md",
+                                                                           "severity":  "CANONICAL"
+                                                                       },
+                                                                       {
+                                                                           "timestamp":  "2026-06-27T22:27:22.5191569-03:00",
+                                                                           "reason":  "legacy-or-noncanonical-cwd",
+                                                                           "before_path":  "C:\\Users\\enzo1\\PROJEC CDX",
+                                                                           "after_path":  "C:/CEO/project-cdx",
+                                                                           "canonical_root":  "C:/CEO/project-cdx",
+                                                                           "user":  "enzo1",
+                                                                           "computer":  null,
+                                                                           "source_file":  "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_222722.json",
+                                                                           "source_name":  "entry-20260627_222722.json",
+                                                                           "severity":  "CANONICAL"
+                                                                       }
+                                                                   ],
+                                                 "source":  "C:\\CEO\\watchdog\\entry"
+                                             }
+            },
+    "bus":  {
+                "visible_events":  200,
+                "visible_alerts":  93,
+                "latest_event_type":  "WATCHDOG_ALERT"
+            }
+}

@@ -1,0 +1,1 @@
+{"timestamp":"2026-06-27T12:01:24Z","scope":"system_bootstrap","system_mode":"PRE_PRODUCTION","readback_strategy":"HYBRID","expediente_id":null,"task_id":null,"estado":"BOOTSTRAP","actividad":"SharePoint root scaffold created","fuentes":["SharePoint"],"consistency_score":1,"hash_estado":"bootstrap-pending"}

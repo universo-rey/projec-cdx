@@ -24,6 +24,5 @@ Material largo, glosario y documentos migrados desde la antigua carpeta de refer
 ## Entradas
 
 - [Glosario](glosario.md)
-- [Semantic layer repo-local](semantic-layer.md)
 - [Referencia del workspace](README.reference.md)
 - [Referencia de agentes](AGENTS.reference.md)

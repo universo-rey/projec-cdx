@@ -1,0 +1,97 @@
+schema_version: 2
+runner_cell:
+  min_agents_required: 3
+  preferred_agents:
+    - agent_id: SESHAT
+      role: ROUTER_CANONICO
+      required: true
+      fallback_roles:
+        - router
+        - clasificador
+        - memoria
+        - canon
+      responsibilities:
+        - enrutar solicitud
+        - clasificar universo
+        - preservar fuente canónica
+        - producir readback semántico
+      outputs:
+        - semantic_classification
+        - canonical_mapping
+        - manual_review_candidates
+
+    - agent_id: THOT
+      role: ARQUITECTO_TECNICO
+      required: true
+      fallback_roles:
+        - arquitectura
+        - configuración
+        - variables
+        - superficies
+      responsibilities:
+        - mapear superficies
+        - leer configuración
+        - validar registries
+        - proponer rules.v2
+      outputs:
+        - configuration_findings
+        - registry_gaps
+        - rules_candidates
+
+    - agent_id: ANUBIS
+      role: GUARD_GATE
+      required: true
+      fallback_roles:
+        - gate
+        - seguridad
+        - rollback
+        - permisos
+      responsibilities:
+        - bloquear operaciones no autorizadas
+        - validar sensibilidad
+        - impedir overwrite/delete
+        - exigir rollback y postcheck
+      outputs:
+        - gate_decision
+        - blocked_actions
+        - risk_flags
+
+    - agent_id: MAAT
+      role: EVIDENCIA_AUDITORIA
+      required: false
+      fallback_roles:
+        - evidencia
+        - auditoría
+        - cumplimiento
+      responsibilities:
+        - registrar evidencia
+        - generar manifiestos
+        - validar trazabilidad
+      outputs:
+        - evidence_manifest
+        - audit_report
+        - hash_register
+
+    - agent_id: HORUS
+      role: OBSERVABILIDAD_DRIFT
+      required: false
+      fallback_roles:
+        - riesgo
+        - drift
+        - observabilidad
+        - sentinel
+      responsibilities:
+        - detectar drift
+        - detectar duplicados
+        - detectar ruido
+        - clasificar warnings
+      outputs:
+        - drift_report
+        - risk_register
+        - conflict_report
+selection_policy:
+  prefer_existing_registry_agents: true
+  create_stub_only_if_missing: true
+  minimum_selected: 3
+  ideal_selected: 5
+  never_create_productive_agent: true

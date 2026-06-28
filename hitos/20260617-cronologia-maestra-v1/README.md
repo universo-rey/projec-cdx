@@ -5,7 +5,7 @@ Hito atomico para consolidar la cronologia distribuida de `PROJEC CDX` en una pu
 ## Alcance
 
 - Superficie: `C:/Users/enzo1/PROJEC CDX`
-- Archivo maestro: `operativa/archive/legacy-root/20260617/CRONOLOGIA_MAESTRA_20260617.md`
+- Archivo maestro: `operativa/CRONOLOGIA_MAESTRA_20260617.md`
 - Traza actualizada: `operativa/TRACE.md`
 - Rango historico: `2026-06-01` a `2026-06-17`
 

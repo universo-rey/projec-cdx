@@ -156,7 +156,7 @@ else {
 }
 
 $sourcePatchBody = @{
-    mon_source_path       = "PROJEC CDX/operativa/archive/legacy-root/20260617/READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md"
+    mon_source_path       = "PROJEC CDX/operativa/READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md"
     mon_source_hash       = $sourceHash
     mon_source_system     = "SHAREPOINT_SESHATHUB_DOCUMENT_ATOM"
     mon_tenant_scope      = "escribaniabitsch.sharepoint.com"

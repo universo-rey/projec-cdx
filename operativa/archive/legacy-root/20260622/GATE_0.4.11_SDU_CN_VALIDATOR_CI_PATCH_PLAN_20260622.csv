@@ -1,5 +1,0 @@
-gate_id,target_repo,artifact,issue,required_change,rollback_required,postcheck_required,decision
-0.4.11,SeshatSgin/seshat-bootstrap-sdu-cn,manifests,live-activation validator not registered,register validator in canonical manifests,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
-0.4.11,SeshatSgin/seshat-bootstrap-sdu-cn,ci/validate_repo.ps1,validator not invoked by validation script,wire live-activation validator into validate_repo.ps1,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
-0.4.11,SeshatSgin/seshat-bootstrap-sdu-cn,.github/workflows/validate.yml,workflow can pass without live-activation validator,ensure validate.yml executes the validator chain,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
-0.4.11,SeshatSgin/seshat-bootstrap-sdu-cn,governed artifacts,governed artifacts can be omitted while validation passes,fail validation when governed artifacts are omitted,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION

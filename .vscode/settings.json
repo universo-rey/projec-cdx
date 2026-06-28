@@ -1,0 +1,65 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python.defaultInterpreterPath": "C:/Users/enzo1/AppData/Local/Python/bin/python.exe",
+    "agileagentcanvas.graphify.pythonPath": "C:/Users/enzo1/AppData/Local/Python/bin/python.exe",
+    "agileagentcanvas.codeburn.path": "C:/Users/enzo1/AppData/Local/Microsoft/WinGet/Packages/OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe/node-v24.17.0-win-x64/codeburn.cmd",
+    "terminal.integrated.cwd": "C:/CEO/project-cdx",
+    "terminal.integrated.defaultProfile.windows": "CEO PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "CEO PowerShell": {
+            "path": "C:/Program Files/PowerShell/7/pwsh.exe",
+            "args": [
+                "-NoLogo",
+                "-NoProfile",
+                "-NoExit",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "C:/CEO/Start-CEO.ps1"
+            ],
+            "env": {
+                "CEO_WORKSPACE": "C:/CEO/project-cdx",
+                "CODEX_PROJECT_ROOT": "C:/CEO/project-cdx",
+                "CODEX_WORKBENCH_ROOT": "C:/CEO/project-cdx",
+                "CEO_RUNTIME_MODE": "GOVERNED",
+                "CEO_TERMINAL_PROFILE": "CEO PowerShell"
+            }
+        }
+    },
+    "search.exclude": {
+        "**/.git": true,
+        "**/.venv": true,
+        "**/node_modules": true,
+        "**/.cache": true,
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/graphify-out/**": true,
+        "**/_archive_noise/**": true,
+        "**/AppData/**": true,
+        "**/site-packages/**": true,
+        "**/Python*/**": true,
+        "outputs/**": true,
+        "**/operativa/archive": true,
+        "**/work/backups": true
+    },
+    "files.exclude": {
+        "outputs/**": true,
+        "_archive_noise/**": true
+    },
+    "files.watcherExclude": {
+        "**/.git/**": true,
+        "**/.venv/**": true,
+        "**/node_modules/**": true,
+        "**/.cache/**": true,
+        "**/.pytest_cache/**": true,
+        "**/.ruff_cache/**": true,
+        "**/graphify-out/**": true,
+        "**/_archive_noise/**": true,
+        "**/AppData/**": true,
+        "**/site-packages/**": true,
+        "**/Python*/**": true,
+        "outputs/**": true,
+        "**/operativa/archive/**": true,
+        "**/work/backups/**": true
+    }
+}

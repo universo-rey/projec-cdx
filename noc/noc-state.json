@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "artifact": "noc-state",
+  "generated_at": "2026-06-27T23:17:23.5566435-03:00",
+  "mode": "HYBRID_SOURCE",
+  "status": "NOC_OPERATIONAL",
+  "sources": {
+    "snapshot_local": "C:\\CEO\\project-cdx\\inventarios\\expediente_state_preprod.jsonl",
+    "hybrid_state": "C:\\CEO\\project-cdx\\inventarios\\PLANNER_HYBRID_READBACK_STATE_20260627.json",
+    "bus": "C:\\CEO\\watchdog\\bus\\sdu-event-bus.jsonl",
+    "sharepoint_site": "https://escribaniabitsch.sharepoint.com/sites/sistema",
+    "sharepoint_roots": [
+      "EXPEDIENTES",
+      "SDU"
+    ],
+    "graph_auth": "C:\\CEO\\project-cdx\\inventarios\\PLANNER_GRAPH_AUTH_RECOVERY_20260627.json"
+  },
+  "health": {
+    "score": 68,
+    "status": "YELLOW",
+    "trend": "STABLE",
+    "risk": "HIGH"
+  },
+  "governance": {
+    "multirepo": {
+      "readiness": "READY",
+      "validation": {
+        "status": "PASS",
+        "decision": "PASS",
+        "expected_total": 5,
+        "detected_total": 5,
+        "found": 5,
+        "possible_active_matches": 0,
+        "historical_only": false,
+        "not_materialized": true
+      }
+    },
+    "root_junction_hygiene": {
+      "status": "PASS",
+      "note": "NOC wired to hybrid readback and watchdog bus"
+    }
+  },
+  "last_run": {
+    "mode": "WATCHDOG_RUN",
+    "timestamp": "06/27/2026 23:08:12",
+    "duration_ms": null,
+    "run_id": null,
+    "auto_action_enabled": false
+  },
+  "last_alert": {
+    "severity": "HIGH",
+    "mode": "LOG_ONLY",
+    "timestamp": "06/27/2026 23:08:12",
+    "traceId": null,
+    "currentTraceId": null
+  },
+  "last_change": {
+    "action": "BUS_EVENT",
+    "result": "STABLE",
+    "timestamp": "06/27/2026 23:08:12",
+    "path": "C:\\CEO\\watchdog\\bus\\sdu-event-bus.jsonl"
+  },
+  "agent": {
+    "status": {
+      "all": [
+        {
+          "name": "planner",
+          "status": "TRUSTED"
+        },
+        {
+          "name": "teams",
+          "status": "TRUSTED"
+        },
+        {
+          "name": "sharepoint",
+          "status": "PARTIAL"
+        },
+        {
+          "name": "watchdog",
+          "status": "ACTIVE"
+        }
+      ]
+    }
+  },
+  "noc": {
+    "total_expedientes": 5,
+    "expedientes_ok": 5,
+    "expedientes_con_error": 0,
+    "sin_carpeta": 0,
+    "sin_responsable": 0,
+    "inconsistentes": 0,
+    "alertas_activas": 94,
+    "ultimo_evento_tipo": "WATCHDOG_ALERT",
+    "estado_general": "STABLE",
+    "summary": "5 expedientes observados, 0 en estado critico, 0 sin carpeta, 0 sin responsable",
+    "critical_expedientes": [],
+    "duplicate_candidates": 0,
+    "readback": {
+      "plannerTask": "TRUSTED",
+      "Teams_history": "TRUSTED",
+      "Details": "PARTIAL",
+      "READBACK_UNTRUSTED": false,
+      "READBACK_PARTIAL_DETAILS": true
+    },
+    "sharepoint_surface": {
+      "site": "https://escribaniabitsch.sharepoint.com/sites/sistema",
+      "roots": [
+        "EXPEDIENTES",
+        "SDU"
+      ],
+      "live_write_applied": true,
+      "live_write_scope": "root folders only"
+    },
+    "teams_activity": {
+      "count": 0
+    },
+    "entrypoint_observability": {
+      "available": true,
+      "current_cwd": "C:/CEO/project-cdx",
+      "canonical_root": "C:/CEO/project-cdx",
+      "status": "CANONICAL",
+      "status_label": "CWD canonico",
+      "last_event_timestamp": "2026-06-27T23:17:21.8490705-03:00",
+      "recent_correction": false,
+      "recent_events": [
+        {
+          "timestamp": "2026-06-27T23:17:21.8490705-03:00",
+          "reason": "legacy-or-noncanonical-cwd",
+          "before_path": "C:\\Users\\enzo1\\PROJEC CDX",
+          "after_path": "C:/CEO/project-cdx",
+          "canonical_root": "C:/CEO/project-cdx",
+          "source": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231721.md",
+          "source_file": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231721.md",
+          "source_name": "entry-20260627_231721.md",
+          "severity": "CANONICAL"
+        },
+        {
+          "timestamp": "2026-06-27T23:16:44.2515821-03:00",
+          "reason": "legacy-or-noncanonical-cwd",
+          "before_path": "C:\\Users\\enzo1\\PROJEC CDX",
+          "after_path": "C:/CEO/project-cdx",
+          "canonical_root": "C:/CEO/project-cdx",
+          "source": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231644.md",
+          "source_file": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231644.md",
+          "source_name": "entry-20260627_231644.md",
+          "severity": "CANONICAL"
+        },
+        {
+          "timestamp": "2026-06-27T23:16:34.3990882-03:00",
+          "reason": "legacy-or-noncanonical-cwd",
+          "before_path": "C:\\Users\\enzo1\\PROJEC CDX",
+          "after_path": "C:/CEO/project-cdx",
+          "canonical_root": "C:/CEO/project-cdx",
+          "source": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231634.md",
+          "source_file": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231634.md",
+          "source_name": "entry-20260627_231634.md",
+          "severity": "CANONICAL"
+        },
+        {
+          "timestamp": "2026-06-27T23:14:04.1805551-03:00",
+          "reason": "legacy-or-noncanonical-cwd",
+          "before_path": "C:\\Users\\enzo1\\PROJEC CDX",
+          "after_path": "C:/CEO/project-cdx",
+          "canonical_root": "C:/CEO/project-cdx",
+          "source": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231404.md",
+          "source_file": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231404.md",
+          "source_name": "entry-20260627_231404.md",
+          "severity": "CANONICAL"
+        },
+        {
+          "timestamp": "2026-06-27T23:12:22.5040774-03:00",
+          "reason": "legacy-or-noncanonical-cwd",
+          "before_path": "C:\\Users\\enzo1\\PROJEC CDX",
+          "after_path": "C:/CEO/project-cdx",
+          "canonical_root": "C:/CEO/project-cdx",
+          "source": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231222.md",
+          "source_file": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231222.md",
+          "source_name": "entry-20260627_231222.md",
+          "severity": "CANONICAL"
+        },
+        {
+          "timestamp": "2026-06-27T23:12:12.4048104-03:00",
+          "reason": "legacy-or-noncanonical-cwd",
+          "before_path": "C:\\Users\\enzo1\\PROJEC CDX",
+          "after_path": "C:/CEO/project-cdx",
+          "canonical_root": "C:/CEO/project-cdx",
+          "source": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231212.md",
+          "source_file": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231212.md",
+          "source_name": "entry-20260627_231212.md",
+          "severity": "CANONICAL"
+        },
+        {
+          "timestamp": "2026-06-27T23:12:05.2896246-03:00",
+          "reason": "legacy-or-noncanonical-cwd",
+          "before_path": "C:\\Users\\enzo1\\PROJEC CDX",
+          "after_path": "C:/CEO/project-cdx",
+          "canonical_root": "C:/CEO/project-cdx",
+          "source": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231205.md",
+          "source_file": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231205.md",
+          "source_name": "entry-20260627_231205.md",
+          "severity": "CANONICAL"
+        },
+        {
+          "timestamp": "2026-06-27T23:11:57.0012613-03:00",
+          "reason": "legacy-or-noncanonical-cwd",
+          "before_path": "C:\\Users\\enzo1\\PROJEC CDX",
+          "after_path": "C:/CEO/project-cdx",
+          "canonical_root": "C:/CEO/project-cdx",
+          "source": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231157.md",
+          "source_file": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231157.md",
+          "source_name": "entry-20260627_231157.md",
+          "severity": "CANONICAL"
+        },
+        {
+          "timestamp": "2026-06-27T23:11:56.9622168-03:00",
+          "reason": "legacy-or-noncanonical-cwd",
+          "before_path": "C:\\Users\\enzo1\\PROJEC CDX",
+          "after_path": "C:/CEO/project-cdx",
+          "canonical_root": "C:/CEO/project-cdx",
+          "source": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231156.md",
+          "source_file": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231156.md",
+          "source_name": "entry-20260627_231156.md",
+          "severity": "CANONICAL"
+        },
+        {
+          "timestamp": "2026-06-27T23:11:49.2603784-03:00",
+          "reason": "legacy-or-noncanonical-cwd",
+          "before_path": "C:\\Users\\enzo1\\PROJEC CDX",
+          "after_path": "C:/CEO/project-cdx",
+          "canonical_root": "C:/CEO/project-cdx",
+          "source": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231149.md",
+          "source_file": "C:\\CEO\\watchdog\\entry\\2026\\06\\27\\entry-20260627_231149.md",
+          "source_name": "entry-20260627_231149.md",
+          "severity": "CANONICAL"
+        }
+      ],
+      "source": "C:\\CEO\\watchdog\\entry"
+    }
+  },
+  "bus": {
+    "visible_events": 200,
+    "visible_alerts": 94,
+    "latest_event_type": "WATCHDOG_ALERT"
+  }
+}

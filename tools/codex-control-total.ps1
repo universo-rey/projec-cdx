@@ -325,7 +325,7 @@ function Test-PowerShellLayer {
     }
 
     if (-not $SkipProfileTest) {
-        $testScript = 'C:/Users/enzo1/PROJEC CDX/tools/test_codex_powershell_layout.ps1'
+        $testScript = 'C:/CEO/project-cdx/tools/test_codex_powershell_layout.ps1'
         if (Test-Path -LiteralPath $testScript) {
             $result = Invoke-ReadOnlyCommand -FilePath 'pwsh' -Arguments @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', $testScript) -TimeoutSeconds 15
             if ($result.exitCode -eq 0 -and $result.stdout -match 'LAYOUT_OK') {

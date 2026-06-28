@@ -1,7 +1,0 @@
-{
-  "eventType": "RUNTIME_DRIFT",
-  "allowed": true,
-  "action": "dispatch",
-  "requiresApproval": false,
-  "reason": "runtime drift is local-only and non-sensitive"
-}

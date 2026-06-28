@@ -39,6 +39,9 @@ El inventario debe mostrar fase, impulso y estado terminal de la superficie que 
 - `SKILLS_UNIFIED_TABLE.csv`
 - `SKILLS_UNIFIED_TABLE.md`
 - `AGENTES_SKILLS_RECETAS_20260616.md`
+- `PLANNER_HYBRID_READBACK_STATE_20260627.json`
+- `PLANNER_SHAREPOINT_SDU_PREPROD_READBACK_20260627.md`
+- `expediente_state_preprod.jsonl`
 - `PATRONES_A_SKILLS_20260615.md`
 - `HILOS_A_CANON_20260615.md`
 - `TEMAS_RELACIONES_20260615.md`
@@ -60,6 +63,9 @@ El inventario debe mostrar fase, impulso y estado terminal de la superficie que 
 - `CODEX_ROOT_INVENTORY.*` resume principalmente la raiz global `.codex`, fuera del workspace `PROJEC CDX`.
 - La tabla unificada de skills consolida el catalogo local.
 - `AGENTES_SKILLS_RECETAS_20260616.md` cruza agentes, skills y recetas visibles en una sola superficie.
+- `PLANNER_HYBRID_READBACK_STATE_20260627.json` consolida el estado hibrido Planner/Teams/Outlook/SharePoint y el bus SDU.
+- `PLANNER_SHAREPOINT_SDU_PREPROD_READBACK_20260627.md` cierra el readback de preproduccion con evidencia viva.
+- `expediente_state_preprod.jsonl` siembra el snapshot bootstrap del expediente preprod.
 - `PATRONES_A_SKILLS_20260615.md` cruza patrones probados con skills existentes y marca huecos reales.
 - `HILOS_A_CANON_20260615.md` cruza hilos versionados con skills, recetas y patrones reutilizables.
 - `TEMAS_RELACIONES_20260615.md` agrupa la raiz por temas y relaciones para navegar mas rapido.

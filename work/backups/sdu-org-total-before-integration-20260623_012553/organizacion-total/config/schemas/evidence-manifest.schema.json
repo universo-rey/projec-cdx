@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SDU Evidence Manifest",
+  "type": "object",
+  "required": [
+    "manifest_id",
+    "runner_id",
+    "generated_at",
+    "mode",
+    "outputs",
+    "hashes",
+    "policy"
+  ],
+  "properties": {
+    "manifest_id": {
+      "type": "string"
+    },
+    "runner_id": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "outputs": {
+      "type": "object"
+    },
+    "hashes": {
+      "type": "object"
+    },
+    "policy": {
+      "type": "object"
+    },
+    "counts": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

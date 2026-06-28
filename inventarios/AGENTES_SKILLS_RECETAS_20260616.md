@@ -4,16 +4,16 @@ Mapa corto de conexiones visibles entre agentes, skills, recetas y procesos de `
 
 ## Fuente
 
-- [Mapa de agentes SDU](../dataverse/MAPA_AGENTES_SDU.md)
-- [Tabla unificada de skills](../inventarios/SKILLS_UNIFIED_TABLE.md)
-- [Indice de recetas](../recipes/INDICE_RECETAS.md)
-- [Mapa de recetas](../recipes/MAPA.md)
-- [Matriz skills tools recetas](../operativa/archive/legacy-root/20260615/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md)
-- [Patrones a skills](../inventarios/PATRONES_A_SKILLS_20260615.md)
+- [Mapa de agentes SDU](C:/Users/enzo1/PROJEC%20CDX/dataverse/MAPA_AGENTES_SDU.md)
+- [Tabla unificada de skills](C:/Users/enzo1/PROJEC%20CDX/inventarios/SKILLS_UNIFIED_TABLE.md)
+- [Indice de recetas](C:/Users/enzo1/PROJEC%20CDX/recipes/INDICE_RECETAS.md)
+- [Mapa de recetas](C:/Users/enzo1/PROJEC%20CDX/recipes/MAPA.md)
+- [Matriz skills tools recetas](C:/Users/enzo1/PROJEC%20CDX/operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md)
+- [Patrones a skills](C:/Users/enzo1/PROJEC%20CDX/inventarios/PATRONES_A_SKILLS_20260615.md)
 
 ## Roster SDU Confirmado
 
-Los canonical IDs de agente estan confirmados; los cruces agente -> skill/receta de la seccion siguiente son conexiones operativas inferidas desde la evidencia local, no enlaces runtime directos.
+Los canonical IDs de agente estan confirmados; los cruces agente -> skill/receta del bloque siguiente son conexiones operativas inferidas desde la evidencia local, no enlaces runtime directos.
 
 | Agente | Canonical ID | Conexion operativa |
 | --- | --- | --- |
@@ -21,7 +21,7 @@ Los canonical IDs de agente estan confirmados; los cruces agente -> skill/receta
 | `thot-tecnico` | `sdu.agent.thot_tecnico.runtime_actions` | Ordenar el esquema y convertir la orden en movimiento util. |
 | `anubis-gate` | `sdu.agent.anubis_gate.runtime_actions` | Marcar frontera, gate y stop condition. |
 | `maat-cumplimiento` | `sdu.agent.maat_cumplimiento.runtime_actions` | Cuidar coherencia, RACI y condicion de cierre. |
-| `horus-riesgo` | `sdu.agent.horus_riesgo.runtime_actions` | Ordenar senal no vigente, exposicion, rollback y postcheck. |
+| `horus-riesgo` | `sdu.agent.horus_riesgo.runtime_actions` | Señalar ruido, exposicion, rollback y postcheck. |
 | `narrador-normativo` | `sdu.agent.narrador_normativo.runtime_actions` | Dar la voz final del readback y del siguiente paso. |
 
 ## Puentes De Capas
@@ -39,11 +39,11 @@ Los canonical IDs de agente estan confirmados; los cruces agente -> skill/receta
 
 | Agente | Skilles de gobierno | Recetas o procesos visibles |
 | --- | --- | --- |
-| `seshat-normativa` | `projec-cdx-semantic-layer`, `dataverse-rehidratacion`, `cierre-wave-documental`, `codex-surface-map` | `recipes/dataverse-rehidratacion.md`, `procesos/dataverse-rehidratacion.md` |
+| `seshat-normativa` | `dataverse-rehidratacion`, `cierre-wave-documental`, `codex-surface-map` | `recipes/dataverse-rehidratacion.md`, `procesos/dataverse-rehidratacion.md` |
 | `thot-tecnico` | `cabina-agent-delegation`, `matrix-recipe-skill-sync` | `recipes/agentes-atomicos-algoritmicos-en-waves.md`, `procesos/agentes-atomicos-algoritmicos-en-waves.md` |
 | `anubis-gate` | `no-inference-runtime-write-guard`, `matrix-recipe-skill-sync` | `recipes/dataverse-rehidratacion.md`, `procesos/dataverse-rehidratacion.md` |
 | `maat-cumplimiento` | `governed-readback-closeout`, `cierre-wave-documental` | `recipes/cierre-wave-documental.md`, `procesos/cierre-wave-documental.md` |
-| `horus-riesgo` | `parallel-agentic-repo-audit`, `security-ownership-map`, `cabina-lane-selector`, `rey-modo-fronteras-continuidad`, `no-inference-runtime-write-guard`, `governed-readback-closeout` | `recipes/microsoft-live-read-preliminar.md`, `recipes/cierre-wave-documental.md`, `procesos/cierre-wave-documental.md` |
+| `horus-riesgo` | `no-inference-runtime-write-guard`, `governed-readback-closeout` | `recipes/cierre-wave-documental.md`, `procesos/cierre-wave-documental.md` |
 | `narrador-normativo` | `cabina-continuity-readback`, `governed-readback-closeout` | `recipes/cierre-wave-documental.md`, `procesos/cierre-wave-documental.md` |
 
 ## Lectura Operativa

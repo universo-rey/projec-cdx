@@ -15,9 +15,9 @@ agents_fan_in:
   - cdf.evidence_validator
   - cdf.solution_architect
 evidence:
-  - operativa/archive/legacy-root/20260617/READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md
-  - operativa/archive/legacy-root/20260617/READBACK_DATAVERSE_POINTER_INDICE_CORTE_AGENTES_20260617.md
-  - operativa/archive/legacy-root/20260617/DATAVERSE_PROMOTION_INDICE_CORTE_AGENTES_20260617.json
+  - operativa/READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md
+  - operativa/READBACK_DATAVERSE_POINTER_INDICE_CORTE_AGENTES_20260617.md
+  - operativa/DATAVERSE_PROMOTION_INDICE_CORTE_AGENTES_20260617.json
   - C:/Users/enzo1/Documents/GitHub/cdf-soluciones/03_OPERACION/SESHAT_RESTO_CORTE_DELEGATION/INDICE_CORTE_AGENTES_20260617.md
 rollback: hitos/20260617-lane-b-corte-agent-index-dataverse-pointer-v1/ROLLBACK.md
 postcheck: hitos/20260617-lane-b-corte-agent-index-dataverse-pointer-v1/POSTCHECK.md

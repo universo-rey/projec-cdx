@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).parents[2]
 FRONTEND_DIR = ROOT / "launch-desk" / "frontend"
 DEFAULT_MODEL = os.environ.get("LAUNCH_DESK_MODEL", "gpt-5.5")
 MODEL_PROFILES = {

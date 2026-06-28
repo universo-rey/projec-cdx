@@ -7,6 +7,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -21,8 +22,14 @@ try:
 except ModuleNotFoundError:  # pragma: no cover - Python <3.11 fallback
     import tomli as tomllib
 
+PROJECT_ROOT = Path(__file__).parents[1]
+SRC_ROOT = PROJECT_ROOT / "src"
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
 
-ROOT = Path(r"C:\Users\enzo1\PROJEC CDX")
+from metadata.path_policy import canonical_path, is_windows_old_path  # noqa: E402,I001
+
+ROOT = Path("C:/CEO/project-cdx")
 CODEX_ROOT = Path(r"C:\Users\enzo1\.codex")
 AGENTS_ROOT = Path(r"C:\Users\enzo1\.agents")
 WORKBOOK = ROOT / "workbooks" / "CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx"
@@ -38,6 +45,20 @@ EVIDENCE_LOG = Path(
     r"C:\Users\enzo1\CodexLocal\OPTIMIZACION_PC"
     r"\D_DRIVE_RECOVERY_20260617_210929\diskpart_attach_readonly.log"
 )
+
+
+def normalize_extended_path(value: str | None) -> str:
+    if not value:
+        return ""
+    return canonical_path(value) or ""
+
+
+def path_key(value: str | Path | None) -> str:
+    if value is None:
+        return ""
+    return canonical_path(value) or ""
+
+
 GITHUB_ROOT = Path(r"C:\Users\enzo1\Documents\GitHub")
 HOME_CODEX_LOCAL = Path(r"C:\Users\enzo1\CodexLocal")
 DOCUMENTS_CODEX_LOCAL = Path(r"C:\Users\enzo1\Documents\CodexLocal")
@@ -192,11 +213,6 @@ def sanitize_prompt_text(text: str) -> tuple[str, int]:
     return sanitized, redactions
 
 
-def sanitize_exception_text(exc: BaseException) -> str:
-    sanitized, _ = sanitize_prompt_text(str(exc).strip())
-    return sanitized or "Error local no detallado."
-
-
 def chunk_text(text: str, size: int = PROMPT_CHUNK_SIZE) -> list[str]:
     return [text[i : i + size] for i in range(0, len(text), size)] or [""]
 
@@ -229,7 +245,7 @@ def command_text(args: list[str], timeout: int = 25) -> tuple[int, str, str]:
         result = subprocess.run(args, capture_output=True, text=True, timeout=timeout)
         return result.returncode, result.stdout.strip(), result.stderr.strip()
     except Exception as exc:
-        return 1, "", sanitize_exception_text(exc)
+        return 1, "", str(exc)
 
 
 def repo_slug_from_remote(remote: str) -> str:
@@ -262,7 +278,7 @@ def repo_row(path: Path, source: str, note: str) -> list:
     exists = path.exists()
     git_root = git_value(path, ["rev-parse", "--show-toplevel"]) if exists else ""
     is_git = bool(git_root)
-    git_path = Path(git_root) if git_root else path
+    git_path = Path(canonical_path(git_root)) if git_root else path
     remote = git_value(git_path, ["remote", "get-url", "origin"]) if is_git else ""
     branch = git_value(git_path, ["branch", "--show-current"]) if is_git else ""
     head = git_value(git_path, ["rev-parse", "--short", "HEAD"]) if is_git else ""
@@ -307,7 +323,9 @@ def discover_repositories(projects: list[str]) -> list[list]:
     seen = set()
     rows = []
     for path, source, note in candidates:
-        key = os.path.normcase(os.path.abspath(str(path)))
+        if is_windows_old_path(path):
+            continue
+        key = path_key(path)
         if key in seen:
             continue
         seen.add(key)
@@ -322,7 +340,9 @@ def unique_repo_contexts(repo_rows: list[list]) -> list[dict[str, str]]:
         git_root = str(row[5] or "")
         if not git_root or git_root == "N/D":
             continue
-        key = os.path.normcase(os.path.abspath(git_root))
+        if is_windows_old_path(git_root):
+            continue
+        key = path_key(git_root)
         if key in seen:
             continue
         seen.add(key)
@@ -467,16 +487,14 @@ def discover_branch_organization_rows() -> list[list]:
                 branch_worktrees[branch_name] = current_worktree
 
     rows: list[list] = []
-    root_abs = os.path.normcase(os.path.abspath(str(ROOT)))
+    root_abs = path_key(ROOT)
     for line in branch_ref_output.splitlines():
         parts = line.split("|")
         if len(parts) < 4:
             continue
         branch_name, commit, committed_at, upstream = parts[:4]
         branch_worktree = branch_worktrees.get(branch_name, "")
-        branch_worktree_norm = (
-            os.path.normcase(os.path.abspath(branch_worktree)) if branch_worktree else ""
-        )
+        branch_worktree_norm = path_key(branch_worktree)
         is_current = branch_name == current_branch
         is_root_worktree = branch_worktree_norm == root_abs
         actual = "SI" if is_current or is_root_worktree else "NO"
@@ -720,7 +738,7 @@ def read_json_obj(path: Path):
     if not path.exists():
         return None
     try:
-        return json.loads(path.read_text(encoding="utf-8-sig"))
+        return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return None
 
@@ -728,10 +746,10 @@ def read_json_obj(path: Path):
 def path_from_cell(value: str) -> Path | None:
     if not value:
         return None
-    candidate = value.strip().strip('"')
+    candidate = canonical_path(value) or ""
     if "|" in candidate:
         candidate = candidate.split("|", 1)[0].strip()
-    if re.match(r"^[A-Za-z]:[\\/]", candidate):
+    if candidate and not is_windows_old_path(candidate):
         return Path(candidate.replace("/", "\\"))
     return None
 
@@ -810,22 +828,22 @@ def file_modified(path: Path | None) -> str:
 
 def file_label(path: Path) -> str:
     try:
-        resolved = path.resolve()
+        candidate = canonical_path(path) or ""
     except Exception:
-        resolved = path
+        candidate = ""
     prefixes = [
-        (ROOT, "PROJEC_CDX"),
-        (CODEX_ROOT, "CODEX_ROOT"),
-        (AGENTS_ROOT, "AGENTS_ROOT"),
-        (GITHUB_ROOT, "GITHUB_ROOT"),
-        (Path(r"D:\\"), "D_ROOT"),
+        (canonical_path(ROOT) or "", "PROJEC_CDX"),
+        (canonical_path(CODEX_ROOT) or "", "CODEX_ROOT"),
+        (canonical_path(AGENTS_ROOT) or "", "AGENTS_ROOT"),
+        (canonical_path(GITHUB_ROOT) or "", "GITHUB_ROOT"),
+        (canonical_path(Path(r"D:\\")) or "", "D_ROOT"),
     ]
     for root, label in prefixes:
-        try:
-            if resolved == root.resolve() or root.resolve() in resolved.parents:
-                return label
-        except Exception:
+        if not root:
             continue
+        prefix = root.rstrip("/")
+        if candidate == prefix or candidate.startswith(f"{prefix}/"):
+            return label
     return "LOCAL"
 
 
@@ -1097,8 +1115,8 @@ def discover_skill_rows() -> list[list]:
     seen_paths: set[str] = set()
     for row in read_csv_dicts(SKILLS_UNIFIED_TABLE):
         source_path = row.get("SourcePath", "")
-        if source_path:
-            seen_paths.add(os.path.normcase(os.path.abspath(source_path)))
+        if source_path and not is_windows_old_path(source_path):
+            seen_paths.add(path_key(source_path))
         rows.append(
             [
                 row.get("RootLabel"),
@@ -1124,7 +1142,9 @@ def discover_skill_rows() -> list[list]:
         if not root.exists():
             continue
         for path in sorted(root.rglob("SKILL.md"), key=lambda item: str(item).lower()):
-            key = os.path.normcase(os.path.abspath(str(path)))
+            if is_windows_old_path(path):
+                continue
+            key = path_key(path)
             if key in seen_paths:
                 continue
             seen_paths.add(key)
@@ -1158,7 +1178,9 @@ def discover_recipe_rows() -> list[list]:
         for row in read_csv_dicts(index_path):
             raw_path = row.get("path", "")
             recipe_path = path_from_cell(raw_path) or (index_path.parent / raw_path)
-            key = os.path.normcase(os.path.abspath(str(recipe_path)))
+            if is_windows_old_path(recipe_path):
+                continue
+            key = path_key(recipe_path)
             seen.add(key)
             rows.append(
                 [
@@ -1184,7 +1206,9 @@ def discover_recipe_rows() -> list[list]:
         if not root.exists():
             continue
         for path in sorted(root.glob("*.md"), key=lambda item: item.name.lower()):
-            key = os.path.normcase(os.path.abspath(str(path)))
+            if is_windows_old_path(path):
+                continue
+            key = path_key(path)
             if key in seen:
                 continue
             seen.add(key)
@@ -1221,7 +1245,9 @@ def discover_tool_rows(config: dict) -> list[list]:
         for path in sorted(root.rglob("*"), key=lambda item: str(item).lower()):
             if not path.is_file() or path.suffix.lower() not in allowed_suffixes:
                 continue
-            key = os.path.normcase(os.path.abspath(str(path)))
+            if is_windows_old_path(path):
+                continue
+            key = path_key(path)
             if key in seen:
                 continue
             seen.add(key)
@@ -1569,7 +1595,7 @@ def load_json_file(path: Path) -> dict:
     if not path.exists():
         return {}
     try:
-        return json.loads(path.read_text(encoding="utf-8-sig"))
+        return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return {}
 
@@ -2145,7 +2171,7 @@ def discover_d_indexes_rows() -> list[list]:
                 ]
             ):
                 continue
-            key = os.path.normcase(os.path.abspath(str(path)))
+            key = path_key(path)
             if key in seen:
                 continue
             seen.add(key)
@@ -2363,9 +2389,7 @@ def discover_d_validator_rows() -> list[list]:
         raw_path = row.get("path_or_command", "")
         path = path_from_cell(raw_path)
         if path:
-            linked_by_path.setdefault(os.path.normcase(os.path.abspath(str(path))), []).append(
-                tool_id
-            )
+            linked_by_path.setdefault(path_key(path), []).append(tool_id)
     rows: list[list] = []
     tools_dir = D_CODEX_ROOT / "tools"
     if tools_dir.exists():
@@ -2380,7 +2404,7 @@ def discover_d_validator_rows() -> list[list]:
                 ".mjs",
             }:
                 continue
-            linked = linked_by_path.get(os.path.normcase(os.path.abspath(str(path))), [])
+            linked = linked_by_path.get(path_key(path), [])
             kind = (
                 "validator"
                 if "validate" in path.name.lower()
@@ -2769,7 +2793,7 @@ def d_candidate_artifacts() -> list[Path]:
                 for part in ["\\.git\\", "\\node_modules\\", "\\.venv\\", "\\__pycache__\\"]
             ):
                 continue
-            key = os.path.normcase(os.path.abspath(str(path)))
+            key = path_key(path)
             if key in seen:
                 continue
             seen.add(key)
@@ -2990,7 +3014,7 @@ def discover_d_domain_matrix_rows() -> list[list]:
 def discover_d_coverage_audit_rows() -> list[list]:
     rows: list[list] = []
     directly_modeled = {
-        os.path.normcase(os.path.abspath(str(path)))
+        path_key(path)
         for path in [
             D_MATRIX_INDEX,
             D_RECIPE_INDEX,
@@ -3014,7 +3038,7 @@ def discover_d_coverage_audit_rows() -> list[list]:
     }
     for path in d_candidate_artifacts():
         artifact_type, domain, recommended_sheet, priority = classify_d_artifact(path)
-        key = os.path.normcase(os.path.abspath(str(path)))
+        key = path_key(path)
         matched_by_path = "SI" if key in directly_modeled else "NO"
         matched_by_file = (
             "SI"

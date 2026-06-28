@@ -4,9 +4,9 @@ superficie: PROJEC CDX
 tipo: pr_cierre_atomico
 estado: GREEN_LOCAL
 fuente:
-  - operativa/archive/legacy-root/20260615/READBACK_CIERRE_20260615.md
-  - operativa/archive/legacy-root/20260615/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md
-  - operativa/archive/legacy-root/20260615/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md
+  - operativa/READBACK_CIERRE_20260615.md
+  - operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md
+  - operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md
 salida:
   - hitos/20260615-pr-cierre-atomico-v1/
 rollback: remover la carpeta versionada y revertir el cierre documental

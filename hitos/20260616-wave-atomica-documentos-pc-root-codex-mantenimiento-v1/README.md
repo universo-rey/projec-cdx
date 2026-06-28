@@ -11,8 +11,8 @@ Versiona la secuencia reusable de tres waves para reconocer, transformar y regis
 - `inventarios/CUMPLIMIENTO_SURFACE_MAP_20260616.csv`
 - `inventarios/07_SHAREPOINT_POWER_PLATFORM_SGIN_SURFACE_MAP_20260616.md`
 - `inventarios/07_SHAREPOINT_POWER_PLATFORM_SGIN_SURFACE_MAP_20260616.csv`
-- `operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md`
-- `operativa/archive/legacy-root/undated/ANCLA_WAVE_ATOMICA_DOCUMENTOS_PC_ROOT_CODEX.md`
+- `operativa/ANCLAS_ON_DEMAND.md`
+- `operativa/ANCLA_WAVE_ATOMICA_DOCUMENTOS_PC_ROOT_CODEX.md`
 
 ## Estado
 

@@ -4,8 +4,8 @@ superficie: PROJEC CDX
 tipo: cierre_cadena_github_auditar
 estado: GREEN_LOCAL
 fuente:
-  - operativa/archive/legacy-root/20260615/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md
-  - operativa/archive/legacy-root/20260615/READBACK_CIERRE_20260615.md
+  - operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md
+  - operativa/READBACK_CIERRE_20260615.md
 salida:
   - hitos/20260615-cierre-cadena-github-auditar-v1/
 rollback: restaurar el acta y el readback de la ronda

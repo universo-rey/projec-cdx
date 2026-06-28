@@ -1,4 +1,0 @@
-workflow_file,covered_artifact,missing_path_filter,required_path,risk,decision
-cabina-universal-d:.github/workflows/governance.yml,governance canon,governance/**,governance/**,canon_change_without_ci,READY_FOR_REMOTE_REPO_PATCH_GATE
-cabina-universal-d:.github/workflows/governance.yml,canon docs,canon/**,canon/**,unvalidated_canon_drift,READY_FOR_REMOTE_REPO_PATCH_GATE
-cabina-universal-d:.github/workflows/metadata.yml,metadata manifests,manifests/**,manifests/**,manifest_change_without_validation,READY_FOR_REMOTE_REPO_PATCH_GATE

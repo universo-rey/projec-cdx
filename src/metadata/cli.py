@@ -5,15 +5,19 @@ import json
 from collections.abc import Iterable
 from pathlib import Path
 
-from projec_cdx_common.safe_errors import sanitize_exception_message
-
-from .doc_report import build_doc_report
 from .indexer import build_indexes
-from .validator import replace_front_matter, validate_repository
+from .path_policy import normalize_path_value
+from .runtime_checks import check_elevation
+from .validator import (
+    CORE_ONLY_ROOTS,
+    EXTERNAL_METADATA_ROOTS,
+    replace_front_matter,
+    validate_repository,
+)
 
 
 def _repo_root() -> Path:
-    return Path(__file__).resolve().parents[2]
+    return Path(__file__).parents[2]
 
 
 def _schema_path(root: Path) -> Path:
@@ -31,8 +35,64 @@ def _write_live_manifest(path: Path, artifacts: list[str]) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def _run_validate(root: Path, schema: Path) -> int:
-    result = validate_repository(root, schema)
+def _format_scope_path(path: Path) -> str:
+    return f"{path.as_posix().rstrip('/')}/"
+
+
+def _discover_excluded_paths(root: Path, included_roots: list[Path]) -> list[str]:
+    included = {path.as_posix().rstrip("/") for path in included_roots}
+    excluded: list[str] = []
+    for child in sorted(root.iterdir(), key=lambda item: item.name.lower()):
+        if child.name in {".git", ".venv", ".venv_clean", ".venv_test"}:
+            excluded.append(_format_scope_path(child.relative_to(root)))
+            continue
+        if not child.is_dir():
+            continue
+        rel = child.relative_to(root).as_posix()
+        if rel not in included:
+            excluded.append(_format_scope_path(child.relative_to(root)))
+    for root_path in EXTERNAL_METADATA_ROOTS:
+        if _format_scope_path(root_path) not in excluded:
+            excluded.append(_format_scope_path(root_path))
+        if str(root_path) == ".github/skills":
+            nested = _format_scope_path(root_path)
+            if nested not in excluded:
+                excluded.append(nested)
+    return sorted(dict.fromkeys(excluded))
+
+
+def _write_validate_scope(
+    root: Path,
+    included_roots: list[Path],
+    excluded_paths: list[str],
+    ignored_errors: list[str],
+) -> None:
+    payload = {
+        "included_paths": [_format_scope_path(path) for path in included_roots],
+        "excluded_paths": excluded_paths,
+        "ignored_errors": sorted(dict.fromkeys(ignored_errors)),
+    }
+    (root / "validate-scope.json").write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+
+
+def _run_validate(root: Path, schema: Path, core_only: bool) -> int:
+    include_roots = list(CORE_ONLY_ROOTS) if core_only else None
+    result = validate_repository(root, schema, include_roots=include_roots)
+    scope_included = list(CORE_ONLY_ROOTS) if core_only else []
+    if core_only:
+        excluded_paths = _discover_excluded_paths(root, scope_included)
+        ignored_errors = list(result.ignored_errors)
+        ignored_errors.extend(
+            [
+                ".agent/ :: excluded from validation scope",
+                ".cursor/ :: excluded from validation scope",
+                ".github/agents/ :: excluded from validation scope",
+                ".github/skills/ :: excluded from validation scope",
+            ]
+        )
+        _write_validate_scope(root, scope_included, excluded_paths, ignored_errors)
     if result.errors:
         for item in result.errors:
             print(f"{item.source_path} :: {item.field_path} :: {item.message}")
@@ -94,6 +154,7 @@ def _run_promote(root: Path, schema: Path, artifact_id: str, estado: str) -> int
         return 1
 
     metadata = dict(target.metadata)
+    metadata = normalize_path_value(metadata)
     metadata["estado"] = estado
     metadata_source = root / target.source_path
     if target.kind == "front_matter":
@@ -115,23 +176,22 @@ def _run_promote(root: Path, schema: Path, artifact_id: str, estado: str) -> int
     return 0
 
 
-def _run_doc_report(root: Path, schema: Path, json_output: Path, md_output: Path) -> int:
-    try:
-        json_path, md_path = build_doc_report(root, schema, json_output, md_output)
-    except ValueError as exc:
-        print(sanitize_exception_message(exc, fallback="No se pudo generar el reporte documental."))
-        return 1
-    print(f"Reporte JSON generado: {json_path}")
-    print(f"Reporte Markdown generado: {md_path}")
-    return 0
-
-
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="CLI de metadatos PROJEC CDX")
     parser.add_argument("--root", type=Path, default=_repo_root(), help="Raiz del repositorio")
+    parser.add_argument(
+        "--require-elevated",
+        action="store_true",
+        help="Exigir una terminal elevada antes de ejecutar cualquier comando",
+    )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    subparsers.add_parser("validate", help="Validar metadatos contra schema.json")
+    validate_parser = subparsers.add_parser("validate", help="Validar metadatos contra schema.json")
+    validate_parser.add_argument(
+        "--core-only",
+        action="store_true",
+        help="Validar solo src, tests, tools y operativa",
+    )
     subparsers.add_parser("build-index", help="Construir indices index.json")
 
     graph_parser = subparsers.add_parser("graph", help="Exportar grafo de relacionados")
@@ -144,22 +204,6 @@ def build_parser() -> argparse.ArgumentParser:
     promote_parser.add_argument("artifact_id")
     promote_parser.add_argument("estado", choices=["borrador", "en_revision", "aprobado", "live"])
 
-    report_parser = subparsers.add_parser(
-        "doc-report", help="Construir reporte documental JSON + Markdown"
-    )
-    report_parser.add_argument(
-        "--json-output",
-        type=Path,
-        default=Path("outputs/documental/doc-report.json"),
-        help="Salida JSON del reporte documental",
-    )
-    report_parser.add_argument(
-        "--md-output",
-        type=Path,
-        default=Path("outputs/documental/doc-report.md"),
-        help="Salida Markdown del reporte documental",
-    )
-
     return parser
 
 
@@ -167,14 +211,17 @@ def main(argv: Iterable[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(list(argv) if argv is not None else None)
 
-    root = args.root.resolve()
+    if not check_elevation(args.require_elevated, "metadata"):
+        return 2
+
+    root = args.root
     schema = _schema_path(root)
     if not schema.exists():
         print(f"No existe schema.json en {root}")
         return 1
 
     if args.command == "validate":
-        return _run_validate(root, schema)
+        return _run_validate(root, schema, args.core_only)
     if args.command == "build-index":
         return _run_build_index(root, schema)
     if args.command == "graph":
@@ -182,11 +229,5 @@ def main(argv: Iterable[str] | None = None) -> int:
         return _run_graph(root, schema, output, args.format)
     if args.command == "promote":
         return _run_promote(root, schema, args.artifact_id, args.estado)
-    if args.command == "doc-report":
-        json_output = (
-            args.json_output if args.json_output.is_absolute() else root / args.json_output
-        )
-        md_output = args.md_output if args.md_output.is_absolute() else root / args.md_output
-        return _run_doc_report(root, schema, json_output, md_output)
     parser.print_help()
     return 1

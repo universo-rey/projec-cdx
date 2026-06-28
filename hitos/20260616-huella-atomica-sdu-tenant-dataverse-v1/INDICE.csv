@@ -3,6 +3,6 @@ README.md,hito_entrypoint,DELTA_APLICADO,entrada visible del hito
 MANIFEST.yaml,manifest,DELTA_APLICADO,metadatos del write vivo
 READBACK.md,readback,DELTA_APLICADO,fuente proceso salida hito cierre
 EVIDENCIA.md,evidencia,DELTA_APLICADO,postcheck y ids exactos
-../../operativa/archive/legacy-root/20260616/READBACK_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md,readback_operativo,DELTA_APLICADO,promocion viva
-../../operativa/archive/legacy-root/20260616/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json,postcheck,DELTA_APLICADO,conteos por canonical_id
+../../operativa/READBACK_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md,readback_operativo,DELTA_APLICADO,promocion viva
+../../operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json,postcheck,DELTA_APLICADO,conteos por canonical_id
 ../../dataverse/HUELLA_ATOMICA_SDU_OWNER_APPROVED_20260616.md,canon_dataverse,DELTA_APLICADO,huella visible para agentes

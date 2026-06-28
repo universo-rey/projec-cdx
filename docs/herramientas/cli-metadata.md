@@ -21,37 +21,7 @@ descripcion: Guia de uso de la CLI de metadata y comandos relacionados.
 
 Entrada para documentar comandos de validacion, indexacion y grafo de metadata.
 
-## Cadena Canonica
+## Pendiente
 
-```text
-Markdown/YAML front matter -> Python metadata CLI -> JSON index/report -> Markdown/PDF/workbook
-```
-
-La fuente humana vive en Markdown con front matter YAML. La fuente maquina vive
-en JSON. Python ejecuta la validacion, indexacion, grafo, promocion y reporte.
-
-## Comandos Canonicos
-
-```powershell
-python -m tools.validate
-python -m tools.build_index
-cdx graph --output metadata-graph.json --format json
-cdx doc-report --json-output outputs/documental/doc-report.json --md-output outputs/documental/doc-report.md
-```
-
-## Salidas Documentales
-
-- `index.json`: indice raiz de artefactos con metadata valida.
-- `operativa/archive/legacy-root/undated/index.json`: subindice operativo.
-- `metadata-graph.json`: grafo de relaciones entre `artifact_id`.
-- `outputs/documental/doc-report.json`: resumen documental para herramientas visuales.
-- `outputs/documental/doc-report.md`: lectura Markdown del reporte.
-
-## Capa Visual
-
-`matplotlib` y `reportlab` pertenecen a la capa de presentacion. Deben consumir
-JSON validado o indices generados, no inferir canon desde archivos sueltos.
-
-## Workflows Versionados
-
+- Confirmar comandos canonicos actuales.
 - Workflows versionados: [`meta-validate`](../../.github/workflows/meta-validate.yml), [`build-graph`](../../.github/workflows/build-graph.yml) y [`promote`](../../.github/workflows/promote.yml).

@@ -15,11 +15,11 @@ agents_fan_in:
   - horus-riesgo
   - narrador-normativo
 evidence:
-  - operativa/archive/legacy-root/20260617/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md
-  - operativa/archive/legacy-root/20260617/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md
-  - operativa/archive/legacy-root/20260617/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json
-  - operativa/archive/legacy-root/20260617/DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json
-  - operativa/archive/legacy-root/20260617/READBACK_DATAVERSE_POINTER_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md
+  - operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md
+  - operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md
+  - operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json
+  - operativa/DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json
+  - operativa/READBACK_DATAVERSE_POINTER_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md
 rollback: hitos/20260617-binding-ui-seshat-home-atomos-dataverse-pointer-v1/ROLLBACK.md
 postcheck: hitos/20260617-binding-ui-seshat-home-atomos-dataverse-pointer-v1/POSTCHECK.md
 validator:

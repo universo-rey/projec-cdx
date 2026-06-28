@@ -1,8 +1,8 @@
 [CmdletBinding()]
 param(
   [string]$RepoRoot = 'C:/Users/enzo1/Documents/GitHub/cabina-universal-d',
-  [string]$MetadataRoot = 'C:/Users/enzo1/PROJEC CDX',
-  [string]$WorkspaceRoot = (Get-Location).Path,
+  [string]$MetadataRoot = 'C:/CEO/project-cdx',
+  [string]$WorkspaceRoot = 'C:/CEO/project-cdx',
   [string]$ContractPath,
   [string]$RegistryPath,
   [string]$MaintenanceLogPath,
@@ -54,9 +54,9 @@ function ConvertTo-PortableWindowsPath {
 $repoRoot = (Resolve-Path -LiteralPath $RepoRoot).Path
 $metadataRoot = (Resolve-Path -LiteralPath $MetadataRoot).Path
 $workspaceRoot = (Resolve-Path -LiteralPath $WorkspaceRoot).Path
-if (-not $ContractPath) { $ContractPath = Join-Path $metadataRoot 'operativa/archive/legacy-root/20260615/CODEX_CLOUD_CONTRACT_20260615.md' }
+if (-not $ContractPath) { $ContractPath = Join-Path $metadataRoot 'operativa/CODEX_CLOUD_CONTRACT_20260615.md' }
 if (-not $RegistryPath) { $RegistryPath = Join-Path $metadataRoot 'dataverse/REGISTRO_CODEX_CLOUD_20260615.md' }
-if (-not $MaintenanceLogPath) { $MaintenanceLogPath = Join-Path $metadataRoot 'operativa/archive/legacy-root/20260615/CODEX_CLOUD_MAINTENANCE_20260615.md' }
+if (-not $MaintenanceLogPath) { $MaintenanceLogPath = Join-Path $metadataRoot 'operativa/CODEX_CLOUD_MAINTENANCE_20260615.md' }
 
 $repoRootDisplay = ConvertTo-PortableWindowsPath -Path $repoRoot
 $metadataRootDisplay = ConvertTo-PortableWindowsPath -Path $metadataRoot
@@ -178,7 +178,7 @@ $registryTemplate = @'
 
 ## Identidad
 
-- contract: `operativa/archive/legacy-root/20260615/CODEX_CLOUD_CONTRACT_20260615.md`
+- contract: `operativa/CODEX_CLOUD_CONTRACT_20260615.md`
 - bootstrap: `tools/codex-cloud-bootstrap.ps1`
 - maintenance: `tools/codex-cloud-maintenance.ps1`
 - mode: `__MODE__`

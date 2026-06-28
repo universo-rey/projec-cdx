@@ -1,0 +1,2484 @@
+{
+  "communities": {
+    "0": [
+      "agent",
+      "any",
+      "date",
+      "launch_desk_observability",
+      "launch_desk_observability_launchdeskrunhooks",
+      "launch_desk_observability_launchdeskrunhooks_init",
+      "launch_desk_observability_launchdeskrunhooks_log",
+      "launch_desk_observability_launchdeskrunhooks_on_agent_end",
+      "launch_desk_observability_launchdeskrunhooks_on_agent_start",
+      "launch_desk_observability_launchdeskrunhooks_on_llm_end",
+      "launch_desk_observability_launchdeskrunhooks_on_llm_start",
+      "launch_desk_observability_launchdeskrunhooks_on_tool_end",
+      "launch_desk_observability_launchdeskrunhooks_on_tool_start",
+      "launch_desk_service_build_tool_context",
+      "launch_desk_tools",
+      "launch_desk_tools_check_launch_readiness",
+      "launch_desk_tools_check_launch_readiness_data",
+      "launch_desk_tools_contains",
+      "launch_desk_tools_days_until",
+      "launch_desk_tools_draft_channel_copy",
+      "launch_desk_tools_draft_launch_copy_data",
+      "launch_desk_tools_extract_tasks_from_brief",
+      "launch_desk_tools_extract_tasks_from_brief_data",
+      "launch_desk_tools_generate_owner_checklist",
+      "launch_desk_tools_generate_owner_checklist_data",
+      "launch_desk_tools_identify_missing_details",
+      "launch_desk_tools_identify_missing_details_data",
+      "launch_desk_tools_normalize_lines",
+      "launch_desk_tools_rationale_548",
+      "launch_desk_tools_rationale_567",
+      "launch_desk_tools_rationale_586",
+      "launch_desk_tools_rationale_606",
+      "launch_desk_tools_rationale_626",
+      "launch_desk_tools_unique",
+      "metadata_audit_compare",
+      "metadata_audit_compare_build_parser",
+      "metadata_audit_compare_compare_audit_reports",
+      "metadata_audit_compare_count_diff",
+      "metadata_audit_compare_diffrecord",
+      "metadata_audit_compare_fingerprint",
+      "metadata_audit_compare_load_report",
+      "metadata_audit_compare_main",
+      "metadata_audit_compare_normalize",
+      "metadata_audit_compare_section_value",
+      "projec_cdx_cloud_agent",
+      "projec_cdx_cloud_agent_agentrun",
+      "projec_cdx_cloud_agent_align_runtime_context",
+      "projec_cdx_cloud_agent_build_agent",
+      "projec_cdx_cloud_agent_build_sdu_agents",
+      "projec_cdx_cloud_agent_git_context",
+      "projec_cdx_cloud_agent_git_output",
+      "projec_cdx_cloud_agent_rationale_73",
+      "projec_cdx_cloud_agent_run_agent",
+      "projec_cdx_cloud_agent_same_path",
+      "projec_cdx_cloud_agent_smoke_report",
+      "projec_cdx_cloud_cli",
+      "projec_cdx_cloud_cli_build_parser",
+      "projec_cdx_cloud_cli_load_env_file",
+      "projec_cdx_cloud_cli_load_local_env",
+      "projec_cdx_cloud_cli_main",
+      "projec_cdx_cloud_cli_print_json",
+      "projec_cdx_cloud_cli_print_runtime_text",
+      "projec_cdx_cloud_cloud_bridge",
+      "projec_cdx_cloud_cloud_bridge_build_cloud_bridge_agent",
+      "projec_cdx_cloud_cloud_bridge_cloud_bridge_packet",
+      "projec_cdx_cloud_cloud_bridge_git",
+      "projec_cdx_cloud_cloud_bridge_load_cloud_smoke_task",
+      "projec_cdx_cloud_cloud_bridge_local_smoke_report",
+      "projec_cdx_cloud_cloud_bridge_remote_branch_head",
+      "projec_cdx_cloud_cloud_bridge_run",
+      "projec_cdx_cloud_cloud_bridge_run_cloud_bridge_agent",
+      "projec_cdx_cloud_cloud_bridge_write_cloud_bridge_readback",
+      "projec_cdx_cloud_main",
+      "projec_cdx_cloud_runtime",
+      "projec_cdx_cloud_runtime_discover_org_total_runner",
+      "projec_cdx_cloud_runtime_read_json",
+      "projec_cdx_cloud_runtime_read_text",
+      "projec_cdx_cloud_runtime_runtime_sentinel_report",
+      "projec_cdx_cloud_runtime_runtime_status_report",
+      "projec_cdx_cloud_runtime_tail_jsonl",
+      "projec_cdx_cloud_runtime_task_entrypoints",
+      "projec_cdx_cloud_runtime_task_labels",
+      "tests_test_audit_compare",
+      "tests_test_audit_compare_test_compare_audit_reports_detects_elevation_and_env_drift",
+      "tests_test_audit_compare_test_compare_cli_writes_json",
+      "tests_test_launch_desk_tools",
+      "tests_test_launch_desk_tools_test_extract_tasks_and_copy_are_structured",
+      "tests_test_launch_desk_tools_test_identify_missing_details_flags_core_gaps",
+      "tests_test_launch_desk_tools_test_readiness_rubric_scores_a_complete_brief_higher",
+      "tools_compare_sdu_environment_audits"
+    ],
+    "1": [
+      "argumentparser",
+      "baseexception",
+      "basemodel",
+      "fastapi",
+      "launch_desk_agent",
+      "launch_desk_agent_build_launch_desk_agent",
+      "launch_desk_agent_build_launch_prompt",
+      "launch_desk_agent_launchdeskruntimecontext",
+      "launch_desk_cli",
+      "launch_desk_cli_build_parser",
+      "launch_desk_cli_main",
+      "launch_desk_cli_run_backend",
+      "launch_desk_cli_run_dev",
+      "launch_desk_config",
+      "launch_desk_config_api_key_present",
+      "launch_desk_config_load_env_file",
+      "launch_desk_config_load_local_env",
+      "launch_desk_config_model_profile",
+      "launch_desk_config_resolve_model",
+      "launch_desk_frontend_server",
+      "launch_desk_frontend_server_launchdeskfrontendhandler",
+      "launch_desk_frontend_server_launchdeskfrontendhandler_end_headers",
+      "launch_desk_frontend_server_launchdeskfrontendhandler_init",
+      "launch_desk_frontend_server_serve_frontend",
+      "launch_desk_init",
+      "launch_desk_init_rationale_1",
+      "launch_desk_main",
+      "launch_desk_schemas",
+      "launch_desk_schemas_copysuggestion",
+      "launch_desk_schemas_followupquestion",
+      "launch_desk_schemas_launchdeskhistoryitem",
+      "launch_desk_schemas_launchdeskhistoryresponse",
+      "launch_desk_schemas_launchdeskreport",
+      "launch_desk_schemas_launchdeskrequest",
+      "launch_desk_schemas_launchdeskrunrecord",
+      "launch_desk_schemas_launchplanstep",
+      "launch_desk_schemas_launchriskitem",
+      "launch_desk_schemas_ownerchecklistitem",
+      "launch_desk_schemas_readinessrubricitem",
+      "launch_desk_schemas_readinesssummary",
+      "launch_desk_server",
+      "launch_desk_server_create_app",
+      "launch_desk_server_frontend_origins",
+      "launch_desk_service",
+      "launch_desk_service_launchdeskrunresult",
+      "launch_desk_service_map_stream_event",
+      "launch_desk_service_public_error_message",
+      "launch_desk_service_run_launch_desk",
+      "launch_desk_service_serialize_event",
+      "launch_desk_service_stream_launch_desk",
+      "launch_desk_service_tool_name_from_item",
+      "launch_desk_store",
+      "launch_desk_store_ensure_parent",
+      "launch_desk_store_get_cached_run_record",
+      "launch_desk_store_get_history_record",
+      "launch_desk_store_list_history",
+      "launch_desk_store_matches_filters",
+      "launch_desk_store_persist_run_record",
+      "launch_desk_store_read_jsonl",
+      "launch_desk_store_record_search_text",
+      "launch_desk_store_record_to_history_item",
+      "launch_desk_store_render_history_record_markdown",
+      "launch_desk_store_request_cache_key",
+      "launch_desk_tools_build_launch_tools",
+      "simplehttprequesthandler",
+      "tests_test_launch_desk_runtime",
+      "tests_test_launch_desk_runtime_sample_report",
+      "tests_test_launch_desk_runtime_sample_request",
+      "tests_test_launch_desk_runtime_test_history_cache_key_and_lookup",
+      "tests_test_launch_desk_runtime_test_model_profiles_can_be_resolved",
+      "tests_test_launch_desk_runtime_test_non_stream_run_uses_cached_record",
+      "tests_test_launch_desk_runtime_test_public_error_messages_are_actionable",
+      "tests_test_launch_desk_runtime_test_stream_uses_cached_record_without_openai_call",
+      "tests_test_launch_desk_server",
+      "tests_test_launch_desk_server_test_health_endpoint_reports_model_and_key_state",
+      "tests_test_launch_desk_server_test_history_endpoint_lists_saved_runs",
+      "tests_test_launch_desk_server_test_history_filters_and_exports"
+    ],
+    "2": [
+      "tools_update_codex_config_workbook",
+      "tools_update_codex_config_workbook_add_table",
+      "tools_update_codex_config_workbook_as_list",
+      "tools_update_codex_config_workbook_chunk_text",
+      "tools_update_codex_config_workbook_command_text",
+      "tools_update_codex_config_workbook_count_mentions",
+      "tools_update_codex_config_workbook_create_sheet",
+      "tools_update_codex_config_workbook_csv_shape",
+      "tools_update_codex_config_workbook_dir_counts",
+      "tools_update_codex_config_workbook_dir_file_stats",
+      "tools_update_codex_config_workbook_discover_agent_rows",
+      "tools_update_codex_config_workbook_discover_atomic_action_rows",
+      "tools_update_codex_config_workbook_discover_atomic_delta_rows",
+      "tools_update_codex_config_workbook_discover_cloud_environment_rows",
+      "tools_update_codex_config_workbook_discover_connection_rows",
+      "tools_update_codex_config_workbook_discover_d_agent_registry_rows",
+      "tools_update_codex_config_workbook_discover_d_agent_tool_skill_rows",
+      "tools_update_codex_config_workbook_discover_d_domain_matrix_rows",
+      "tools_update_codex_config_workbook_discover_d_governed_asset_rows",
+      "tools_update_codex_config_workbook_discover_d_levels_rows",
+      "tools_update_codex_config_workbook_discover_d_matrix_index_rows",
+      "tools_update_codex_config_workbook_discover_d_order_rows",
+      "tools_update_codex_config_workbook_discover_d_readback_rows",
+      "tools_update_codex_config_workbook_discover_d_recipe_registry_rows",
+      "tools_update_codex_config_workbook_discover_d_registries_ledgers_rows",
+      "tools_update_codex_config_workbook_discover_d_routing_rows",
+      "tools_update_codex_config_workbook_discover_d_skill_registry_rows",
+      "tools_update_codex_config_workbook_discover_d_subskill_rows",
+      "tools_update_codex_config_workbook_discover_d_surface_rows",
+      "tools_update_codex_config_workbook_discover_d_tools_registry_rows",
+      "tools_update_codex_config_workbook_discover_d_validator_rows",
+      "tools_update_codex_config_workbook_discover_d_workbook_gap_rows",
+      "tools_update_codex_config_workbook_discover_d_workpaper_rows",
+      "tools_update_codex_config_workbook_discover_dataverse_source_rows",
+      "tools_update_codex_config_workbook_discover_environment_agent_rows",
+      "tools_update_codex_config_workbook_discover_environment_solution_rows",
+      "tools_update_codex_config_workbook_discover_local_surface_rows",
+      "tools_update_codex_config_workbook_discover_master_atomic_matrix_rows",
+      "tools_update_codex_config_workbook_discover_metadata_hydration_rows",
+      "tools_update_codex_config_workbook_discover_universe_rows",
+      "tools_update_codex_config_workbook_discover_workqueue_rows",
+      "tools_update_codex_config_workbook_discover_workspace_rows",
+      "tools_update_codex_config_workbook_gb",
+      "tools_update_codex_config_workbook_json_size",
+      "tools_update_codex_config_workbook_kb",
+      "tools_update_codex_config_workbook_load_json_file",
+      "tools_update_codex_config_workbook_load_old_decisions",
+      "tools_update_codex_config_workbook_main",
+      "tools_update_codex_config_workbook_path_from_cell",
+      "tools_update_codex_config_workbook_ps_json",
+      "tools_update_codex_config_workbook_read_csv_dicts",
+      "tools_update_codex_config_workbook_read_json_obj",
+      "tools_update_codex_config_workbook_safe",
+      "tools_update_codex_config_workbook_sanitize_prompt_text",
+      "tools_update_codex_config_workbook_sha256",
+      "workbook"
+    ],
+    "3": [
+      "frontend_app",
+      "frontend_app_appendstreamevent",
+      "frontend_app_buildpayload",
+      "frontend_app_cancelrunbutton",
+      "frontend_app_clearnode",
+      "frontend_app_downloadexport",
+      "frontend_app_exportjsonbutton",
+      "frontend_app_exportmarkdownbutton",
+      "frontend_app_fields",
+      "frontend_app_form",
+      "frontend_app_historylist",
+      "frontend_app_historyqueryinput",
+      "frontend_app_historystate",
+      "frontend_app_historyverdictselect",
+      "frontend_app_linelist",
+      "frontend_app_loadhistory",
+      "frontend_app_loadhistoryitem",
+      "frontend_app_loadsamplebutton",
+      "frontend_app_nextweekdate",
+      "frontend_app_readndjsonstream",
+      "frontend_app_refreshhistorybutton",
+      "frontend_app_renderfinalreport",
+      "frontend_app_renderhistoryempty",
+      "frontend_app_renderhistoryitems",
+      "frontend_app_renderkeyvaluesection",
+      "frontend_app_renderlistsection",
+      "frontend_app_renderrecordmarkdown",
+      "frontend_app_renderstreamitem",
+      "frontend_app_resetbutton",
+      "frontend_app_resultbody",
+      "frontend_app_runlaunchplan",
+      "frontend_app_sample",
+      "frontend_app_schedulehistoryreload",
+      "frontend_app_scorebadge",
+      "frontend_app_setpill",
+      "frontend_app_setstatus",
+      "frontend_app_splitmultivalue",
+      "frontend_app_statuscard",
+      "frontend_app_streamlog",
+      "frontend_app_streampill",
+      "frontend_app_syncexportbuttons",
+      "frontend_app_syncrunbuttons"
+    ],
+    "4": [
+      "metadata_indexer",
+      "metadata_indexer_build_indexes",
+      "metadata_indexer_build_items",
+      "metadata_indexer_existing_generated_at",
+      "metadata_indexer_sort_items",
+      "metadata_validator",
+      "metadata_validator_artifact_id_convention_error",
+      "metadata_validator_discover_metadata_records",
+      "metadata_validator_discover_virtualenv_roots",
+      "metadata_validator_dump_front_matter",
+      "metadata_validator_is_ignored",
+      "metadata_validator_is_relative_to",
+      "metadata_validator_is_under_any",
+      "metadata_validator_load_schema",
+      "metadata_validator_metadatarecord",
+      "metadata_validator_parse_front_matter",
+      "metadata_validator_replace_front_matter",
+      "metadata_validator_scan_patterns",
+      "metadata_validator_should_skip",
+      "metadata_validator_strip_dataset_extension",
+      "metadata_validator_validate_repository",
+      "metadata_validator_validationerroritem",
+      "metadata_validator_validationresult",
+      "metadata_validator_validationresult_is_valid",
+      "path",
+      "tests_test_metadata_cli",
+      "tests_test_metadata_cli_seed_repo",
+      "tests_test_metadata_cli_test_build_indexes_generates_root_and_operativa_catalog",
+      "tests_test_metadata_cli_test_build_indexes_is_idempotent_when_metadata_is_unchanged",
+      "tests_test_metadata_cli_test_check_elevation_rejects_when_required",
+      "tests_test_metadata_cli_test_metadata_main_rejects_non_elevated_when_flagged",
+      "tests_test_metadata_cli_test_promote_updates_manifest",
+      "tests_test_metadata_cli_test_root_main_strips_require_elevated_flag",
+      "tests_test_metadata_cli_test_validate_core_only_excludes_external_skill_metadata",
+      "tests_test_metadata_cli_test_validate_repository_detects_duplicate_artifact_id",
+      "tests_test_metadata_cli_test_validate_repository_enforces_dataset_artifact_id_convention",
+      "tests_test_metadata_cli_test_validate_repository_ignores_local_virtualenv_metadata",
+      "tests_test_metadata_cli_test_validate_repository_normalizes_extended_artifact_ids_before_duplicate_check",
+      "tests_test_metadata_cli_test_warn_if_not_elevated_emits_clear_message",
+      "tests_test_metadata_cli_write"
+    ],
+    "5": [
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agent_id_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_items",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_minitems",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_ideal_satisfied_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_properties",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_required",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_minimum_satisfied_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_name_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_notes_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_agent_id",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_agents",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_ideal_satisfied",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_minimum_satisfied",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_name",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_notes",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_responsibilities",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_role",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_runner_id",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_selected_at",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_selection_status",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_source",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_required",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_responsibilities_items",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_responsibilities_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_role_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_runner_id_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_schema",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_selected_at_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_selection_status_enum",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_source_type",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_title",
+      "cabina_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_type"
+    ],
+    "6": [
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agent_id_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_items",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_minitems",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_ideal_satisfied_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_properties",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_required",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_minimum_satisfied_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_name_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_notes_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_agent_id",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_agents",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_ideal_satisfied",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_minimum_satisfied",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_name",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_notes",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_responsibilities",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_role",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_runner_id",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_selected_at",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_selection_status",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_source",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_required",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_responsibilities_items",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_responsibilities_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_role_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_runner_id_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_schema",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_selected_at_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_selection_status_enum",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_source_type",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_title",
+      "cabina_sdu_runtime_root_05_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_type"
+    ],
+    "7": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agent_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_items",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_minitems",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_ideal_satisfied_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_properties",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_required",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_minimum_satisfied_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_name_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_notes_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_agent_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_agents",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_ideal_satisfied",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_minimum_satisfied",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_name",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_notes",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_responsibilities",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_role",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_runner_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_selected_at",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_selection_status",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_source",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_required",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_responsibilities_items",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_responsibilities_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_role_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_runner_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_selected_at_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_selection_status_enum",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_source_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_title",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_type"
+    ],
+    "8": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agent_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_items",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_minitems",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_ideal_satisfied_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_properties",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_required",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_minimum_satisfied_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_name_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_notes_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_agent_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_agents",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_ideal_satisfied",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_minimum_satisfied",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_name",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_notes",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_responsibilities",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_role",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_runner_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_selected_at",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_selection_status",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_source",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_required",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_responsibilities_items",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_responsibilities_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_role_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_runner_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_selected_at_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_selection_status_enum",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_source_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_title",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_type"
+    ],
+    "9": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agent_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_items",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_minitems",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_agents_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_ideal_satisfied_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_properties",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_required",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_items_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_minimum_satisfied_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_name_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_notes_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_agent_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_agents",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_ideal_satisfied",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_minimum_satisfied",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_name",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_notes",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_responsibilities",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_role",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_runner_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_selected_at",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_selection_status",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_properties_source",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_required",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_responsibilities_items",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_responsibilities_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_role_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_runner_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_selected_at_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_selection_status_enum",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_source_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_title",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_selected_agents_schema_json_schemas_selected_agents_schema_type"
+    ],
+    "10": [
+      "scripts_invoke_sdulocalfilesystemorder",
+      "scripts_invoke_sdulocalfilesystemorder_add_root",
+      "scripts_invoke_sdulocalfilesystemorder_convertto_safepath",
+      "scripts_invoke_sdulocalfilesystemorder_convertto_slashpath",
+      "scripts_invoke_sdulocalfilesystemorder_get_canonicaldirectories",
+      "scripts_invoke_sdulocalfilesystemorder_get_destination",
+      "scripts_invoke_sdulocalfilesystemorder_get_functionclass",
+      "scripts_invoke_sdulocalfilesystemorder_get_gitstatusforpath",
+      "scripts_invoke_sdulocalfilesystemorder_get_gitstatusmap",
+      "scripts_invoke_sdulocalfilesystemorder_get_recommendedaction",
+      "scripts_invoke_sdulocalfilesystemorder_get_reporelativepath",
+      "scripts_invoke_sdulocalfilesystemorder_get_rootspecs",
+      "scripts_invoke_sdulocalfilesystemorder_get_scanprofile",
+      "scripts_invoke_sdulocalfilesystemorder_get_sensitivity",
+      "scripts_invoke_sdulocalfilesystemorder_get_universe",
+      "scripts_invoke_sdulocalfilesystemorder_invoke_applysafeorder",
+      "scripts_invoke_sdulocalfilesystemorder_invoke_final",
+      "scripts_invoke_sdulocalfilesystemorder_invoke_foldermap",
+      "scripts_invoke_sdulocalfilesystemorder_invoke_index",
+      "scripts_invoke_sdulocalfilesystemorder_invoke_inventory",
+      "scripts_invoke_sdulocalfilesystemorder_invoke_preflight",
+      "scripts_invoke_sdulocalfilesystemorder_invoke_queues",
+      "scripts_invoke_sdulocalfilesystemorder_invoke_validation",
+      "scripts_invoke_sdulocalfilesystemorder_test_criticalpath",
+      "scripts_invoke_sdulocalfilesystemorder_test_insidecabina",
+      "scripts_invoke_sdulocalfilesystemorder_test_skippath",
+      "scripts_invoke_sdulocalfilesystemorder_write_csvwithheader",
+      "scripts_invoke_sdulocalfilesystemorder_write_jsonfile"
+    ],
+    "11": [
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_counts_type",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_generated_at_type",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_hashes_type",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_items_type",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_manifest_id_type",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_mode_type",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_outputs_type",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_policy_type",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_counts",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_generated_at",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_hashes",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_manifest_id",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_mode",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_outputs",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_policy",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_runner_id",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_warnings",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_required",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_runner_id_type",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_schema",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_title",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_type",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_warnings_items",
+      "cabina_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_warnings_type"
+    ],
+    "12": [
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_counts_type",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_generated_at_type",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_hashes_type",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_items_type",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_manifest_id_type",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_mode_type",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_outputs_type",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_policy_type",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_counts",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_generated_at",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_hashes",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_manifest_id",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_mode",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_outputs",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_policy",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_runner_id",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_warnings",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_required",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_runner_id_type",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_schema",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_title",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_type",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_warnings_items",
+      "cabina_sdu_runtime_root_05_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_warnings_type"
+    ],
+    "13": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_counts_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_generated_at_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_hashes_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_items_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_manifest_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_mode_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_outputs_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_policy_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_counts",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_generated_at",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_hashes",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_manifest_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_mode",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_outputs",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_policy",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_runner_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_warnings",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_required",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_runner_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_title",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_warnings_items",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_warnings_type"
+    ],
+    "14": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_counts_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_generated_at_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_hashes_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_items_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_manifest_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_mode_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_outputs_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_policy_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_counts",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_generated_at",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_hashes",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_manifest_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_mode",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_outputs",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_policy",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_runner_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_warnings",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_required",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_runner_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_title",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_warnings_items",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_warnings_type"
+    ],
+    "15": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_counts_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_generated_at_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_hashes_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_items_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_manifest_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_mode_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_outputs_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_policy_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_counts",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_generated_at",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_hashes",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_manifest_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_mode",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_outputs",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_policy",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_runner_id",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_properties_warnings",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_required",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_runner_id_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_schema",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_title",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_type",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_warnings_items",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_config_schemas_evidence_manifest_schema_json_schemas_evidence_manifest_schema_warnings_type"
+    ],
+    "16": [
+      "main",
+      "main_main",
+      "metadata_cli",
+      "metadata_cli_build_parser",
+      "metadata_cli_discover_excluded_paths",
+      "metadata_cli_format_scope_path",
+      "metadata_cli_load_live_manifest",
+      "metadata_cli_main",
+      "metadata_cli_repo_root",
+      "metadata_cli_run_build_index",
+      "metadata_cli_run_graph",
+      "metadata_cli_run_promote",
+      "metadata_cli_run_validate",
+      "metadata_cli_schema_path",
+      "metadata_cli_write_live_manifest",
+      "metadata_cli_write_validate_scope",
+      "metadata_init",
+      "metadata_runtime_checks",
+      "metadata_runtime_checks_check_elevation",
+      "metadata_runtime_checks_is_elevated_terminal",
+      "metadata_runtime_checks_warn_if_not_elevated",
+      "textio",
+      "tools_build_index",
+      "tools_validate"
+    ],
+    "17": [
+      "tools_build_universe_relationship_audit",
+      "tools_build_universe_relationship_audit_add_codex_inventory",
+      "tools_build_universe_relationship_audit_add_priority_files",
+      "tools_build_universe_relationship_audit_add_row",
+      "tools_build_universe_relationship_audit_add_skills",
+      "tools_build_universe_relationship_audit_add_tree_rows",
+      "tools_build_universe_relationship_audit_autosize",
+      "tools_build_universe_relationship_audit_build_cabina_executive_rows",
+      "tools_build_universe_relationship_audit_build_cabina_rows",
+      "tools_build_universe_relationship_audit_build_rows",
+      "tools_build_universe_relationship_audit_cabina_depth",
+      "tools_build_universe_relationship_audit_classify_file_type",
+      "tools_build_universe_relationship_audit_classify_state",
+      "tools_build_universe_relationship_audit_destination_for_path",
+      "tools_build_universe_relationship_audit_executive_score",
+      "tools_build_universe_relationship_audit_is_executive_row",
+      "tools_build_universe_relationship_audit_main",
+      "tools_build_universe_relationship_audit_norm",
+      "tools_build_universe_relationship_audit_rel",
+      "tools_build_universe_relationship_audit_scan_github_roots",
+      "tools_build_universe_relationship_audit_state_for_status",
+      "tools_build_universe_relationship_audit_write_csv",
+      "tools_build_universe_relationship_audit_write_md",
+      "tools_build_universe_relationship_audit_write_xlsx"
+    ],
+    "18": [
+      "tools_build_control_workbook",
+      "tools_build_control_workbook_alertas",
+      "tools_build_control_workbook_alertrows",
+      "tools_build_control_workbook_alerttablerows",
+      "tools_build_control_workbook_deltas",
+      "tools_build_control_workbook_listas",
+      "tools_build_control_workbook_manifest",
+      "tools_build_control_workbook_oneline",
+      "tools_build_control_workbook_outputdir",
+      "tools_build_control_workbook_readtext",
+      "tools_build_control_workbook_registro",
+      "tools_build_control_workbook_registrorows",
+      "tools_build_control_workbook_resumen",
+      "tools_build_control_workbook_root",
+      "tools_build_control_workbook_scans",
+      "tools_build_control_workbook_sources",
+      "tools_build_control_workbook_stylebody",
+      "tools_build_control_workbook_styleheader",
+      "tools_build_control_workbook_stylepanel",
+      "tools_build_control_workbook_styletitle",
+      "tools_build_control_workbook_todayiso",
+      "tools_build_control_workbook_wb",
+      "tools_build_control_workbook_workbookdir"
+    ],
+    "19": [
+      "control_plane_agile_agent_canvas_map",
+      "control_plane_agile_agent_canvas_map_agents",
+      "control_plane_agile_agent_canvas_map_canvasroot",
+      "control_plane_agile_agent_canvas_map_contracts",
+      "control_plane_agile_agent_canvas_map_demoquarantine",
+      "control_plane_agile_agent_canvas_map_demoquarantine_patternsdetected",
+      "control_plane_agile_agent_canvas_map_demoquarantine_requiredaction",
+      "control_plane_agile_agent_canvas_map_demoquarantine_status",
+      "control_plane_agile_agent_canvas_map_dependencies",
+      "control_plane_agile_agent_canvas_map_mappedsurfaces",
+      "control_plane_agile_agent_canvas_map_orchestrationworkflows",
+      "control_plane_agile_agent_canvas_map_policy",
+      "control_plane_agile_agent_canvas_map_policy_authority",
+      "control_plane_agile_agent_canvas_map_policy_livewrite",
+      "control_plane_agile_agent_canvas_map_policy_secretaccess",
+      "control_plane_agile_agent_canvas_map_routes",
+      "control_plane_agile_agent_canvas_map_schemaversion",
+      "control_plane_agile_agent_canvas_map_snspath",
+      "control_plane_agile_agent_canvas_map_syncedat",
+      "control_plane_agile_agent_canvas_map_workflows",
+      "control_plane_agile_agent_canvas_map_workspacepath"
+    ],
+    "20": [
+      "execution_runtime_real_operation_engine",
+      "execution_runtime_real_operation_engine_append_jsonline",
+      "execution_runtime_real_operation_engine_as_array",
+      "execution_runtime_real_operation_engine_build_cleanuparchiveplan",
+      "execution_runtime_real_operation_engine_build_promotions",
+      "execution_runtime_real_operation_engine_get_autonomousactioncount",
+      "execution_runtime_real_operation_engine_get_nowiso",
+      "execution_runtime_real_operation_engine_get_promotedpatterns",
+      "execution_runtime_real_operation_engine_get_safeid",
+      "execution_runtime_real_operation_engine_get_sha256text",
+      "execution_runtime_real_operation_engine_get_sourcefingerprint",
+      "execution_runtime_real_operation_engine_invoke_realoperationcycle",
+      "execution_runtime_real_operation_engine_read_jsonfile",
+      "execution_runtime_real_operation_engine_test_lockalive",
+      "execution_runtime_real_operation_engine_test_recoveryallowed",
+      "execution_runtime_real_operation_engine_update_kpisnapshot",
+      "execution_runtime_real_operation_engine_update_nocpanel",
+      "execution_runtime_real_operation_engine_write_jsonfile"
+    ],
+    "21": [
+      "tools_update_planner_hybrid_readback",
+      "tools_update_planner_hybrid_readback_acquire_plannerhybridreadguard",
+      "tools_update_planner_hybrid_readback_append_event",
+      "tools_update_planner_hybrid_readback_as_array",
+      "tools_update_planner_hybrid_readback_convert_tomapbytaskid",
+      "tools_update_planner_hybrid_readback_get_activityfortask",
+      "tools_update_planner_hybrid_readback_get_consistencyscore",
+      "tools_update_planner_hybrid_readback_get_jsoncollection",
+      "tools_update_planner_hybrid_readback_get_nowiso",
+      "tools_update_planner_hybrid_readback_get_sha256",
+      "tools_update_planner_hybrid_readback_get_stabletimestampstring",
+      "tools_update_planner_hybrid_readback_read_jsonfile",
+      "tools_update_planner_hybrid_readback_read_jsonlines",
+      "tools_update_planner_hybrid_readback_release_plannerhybridreadguard",
+      "tools_update_planner_hybrid_readback_test_localwritewindow",
+      "tools_update_planner_hybrid_readback_test_processalive",
+      "tools_update_planner_hybrid_readback_write_jsonfile"
+    ],
+    "22": [
+      "evolution_evolution_engine",
+      "evolution_evolution_engine_append_jsonline",
+      "evolution_evolution_engine_as_array",
+      "evolution_evolution_engine_build_cleanupactions",
+      "evolution_evolution_engine_build_learnedpatterns",
+      "evolution_evolution_engine_build_recommendations",
+      "evolution_evolution_engine_build_recoveries",
+      "evolution_evolution_engine_get_eventkey",
+      "evolution_evolution_engine_get_nowiso",
+      "evolution_evolution_engine_invoke_evolutioncycle",
+      "evolution_evolution_engine_read_jsonfile",
+      "evolution_evolution_engine_read_jsonlinestail",
+      "evolution_evolution_engine_test_lockalive",
+      "evolution_evolution_engine_update_intelligencescores",
+      "evolution_evolution_engine_update_nocoverlay",
+      "evolution_evolution_engine_write_jsonfile"
+    ],
+    "23": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_driveid_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_driveid_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_itemid_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_itemid_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_listid_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_listid_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_driveid",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_itemid",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_listid",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_siteurl",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_ubicacion_m365",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_siteurl_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_siteurl_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_ubicacion_m365_additionalproperties",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_ubicacion_m365_properties",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_ubicacion_m365_type"
+    ],
+    "24": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_driveid_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_driveid_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_fileid_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_fileid_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_itemid_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_itemid_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_listid_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_listid_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_driveid",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_fileid",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_itemid",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_listid",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_siteurl",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_siteurl_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_siteurl_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_ubicacion_m365_properties"
+    ],
+    "25": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_driveid_minlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_driveid_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_fileid_minlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_fileid_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_itemid_minlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_itemid_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_listid_minlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_listid_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_driveid",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_fileid",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_itemid",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_listid",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_siteurl",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_siteurl_minlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_siteurl_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_ubicacion_m365_properties"
+    ],
+    "26": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_driveid_minlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_driveid_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_fileid_minlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_fileid_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_itemid_minlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_itemid_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_listid_minlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_listid_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_driveid",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_fileid",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_itemid",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_listid",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_siteurl",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_siteurl_minlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_siteurl_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_ubicacion_m365_properties"
+    ],
+    "27": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_driveid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_driveid_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_fileid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_fileid_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_itemid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_itemid_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_listid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_listid_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_driveid",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_fileid",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_itemid",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_listid",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_siteurl",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_siteurl_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_siteurl_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_ubicacion_m365_properties"
+    ],
+    "28": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_driveid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_driveid_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_fileid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_fileid_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_itemid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_itemid_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_listid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_listid_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_driveid",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_fileid",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_itemid",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_listid",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_siteurl",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_siteurl_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_siteurl_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_ubicacion_m365_properties"
+    ],
+    "29": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_driveid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_driveid_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_fileid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_fileid_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_itemid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_itemid_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_listid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_listid_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_driveid",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_fileid",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_itemid",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_listid",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_siteurl",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_siteurl_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_siteurl_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_ubicacion_m365_properties"
+    ],
+    "30": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_driveid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_driveid_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_fileid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_fileid_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_itemid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_itemid_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_listid_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_listid_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_driveid",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_fileid",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_itemid",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_listid",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_siteurl",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_siteurl_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_siteurl_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_ubicacion_m365_properties"
+    ],
+    "31": [
+      "schema_driveid_minlength",
+      "schema_driveid_type",
+      "schema_fileid_minlength",
+      "schema_fileid_type",
+      "schema_itemid_minlength",
+      "schema_itemid_type",
+      "schema_listid_minlength",
+      "schema_listid_type",
+      "schema_properties_driveid",
+      "schema_properties_fileid",
+      "schema_properties_itemid",
+      "schema_properties_listid",
+      "schema_properties_siteurl",
+      "schema_siteurl_minlength",
+      "schema_siteurl_type",
+      "schema_ubicacion_m365_properties"
+    ],
+    "32": [
+      "actions_shared",
+      "actions_shared_acquire_noclock",
+      "actions_shared_append_jsonlentry",
+      "actions_shared_build_nocstate",
+      "actions_shared_convert_tostringarray",
+      "actions_shared_emit_nocevent",
+      "actions_shared_get_latestbytype",
+      "actions_shared_get_nocpaths",
+      "actions_shared_get_tasktitlemap",
+      "actions_shared_read_jsonlsafe",
+      "actions_shared_read_jsonsafe",
+      "actions_shared_release_noclock",
+      "actions_shared_save_nocstate",
+      "actions_shared_write_jsonfile",
+      "actions_shared_write_nocactiontrace"
+    ],
+    "33": [
+      "metadata_path_policy",
+      "metadata_path_policy_canonical_path",
+      "metadata_path_policy_is_windows_old_path",
+      "metadata_path_policy_looks_like_path_like",
+      "metadata_path_policy_normalize_path",
+      "metadata_path_policy_normalize_path_value",
+      "tests_test_metadata_cli_test_normalize_path_strips_extended_prefix",
+      "tests_test_metadata_cli_test_normalize_path_value_keeps_non_path_text_intact",
+      "tests_test_metadata_cli_test_windows_old_paths_are_excluded_as_historical",
+      "tools_update_codex_config_workbook_discover_repositories",
+      "tools_update_codex_config_workbook_discover_skill_rows",
+      "tools_update_codex_config_workbook_discover_tool_rows",
+      "tools_update_codex_config_workbook_file_label",
+      "tools_update_codex_config_workbook_normalize_extended_path",
+      "tools_update_codex_config_workbook_repo_row"
+    ],
+    "34": [
+      "ceo_config_snapshot_20260623_173300_manifest",
+      "ceo_config_snapshot_20260623_173300_manifest_created_at",
+      "ceo_config_snapshot_20260623_173300_manifest_files",
+      "ceo_config_snapshot_20260623_173300_manifest_no_live",
+      "ceo_config_snapshot_20260623_173300_manifest_no_remote",
+      "ceo_config_snapshot_20260623_173300_manifest_restore_rule",
+      "ceo_config_snapshot_20260623_173300_manifest_scope",
+      "ceo_config_snapshot_20260623_173300_manifest_secret_scan",
+      "ceo_config_snapshot_20260623_173300_manifest_secret_scan_false_positive_names",
+      "ceo_config_snapshot_20260623_173300_manifest_secret_scan_note",
+      "ceo_config_snapshot_20260623_173300_manifest_secret_scan_real_token_patterns",
+      "ceo_config_snapshot_20260623_173300_manifest_snapshot_id",
+      "ceo_config_snapshot_20260623_173300_manifest_source_root",
+      "ceo_config_snapshot_20260623_173300_manifest_target_root"
+    ],
+    "35": [
+      "control_flow_control_flow_engine",
+      "control_flow_control_flow_engine_acquire_controlflowsinglewriter",
+      "control_flow_control_flow_engine_append_jsonline",
+      "control_flow_control_flow_engine_as_array",
+      "control_flow_control_flow_engine_get_nowiso",
+      "control_flow_control_flow_engine_get_safeid",
+      "control_flow_control_flow_engine_invoke_controlflowcycle",
+      "control_flow_control_flow_engine_new_backlogitem",
+      "control_flow_control_flow_engine_new_queueitem",
+      "control_flow_control_flow_engine_read_jsonfile",
+      "control_flow_control_flow_engine_read_jsonlines",
+      "control_flow_control_flow_engine_test_processalive",
+      "control_flow_control_flow_engine_write_jsonfile",
+      "control_flow_control_flow_engine_write_jsonlines"
+    ],
+    "36": [
+      "tools_update_codex_config_workbook_classify_d_artifact",
+      "tools_update_codex_config_workbook_d_candidate_artifacts",
+      "tools_update_codex_config_workbook_discover_d_authority_rows",
+      "tools_update_codex_config_workbook_discover_d_coverage_audit_rows",
+      "tools_update_codex_config_workbook_discover_d_indexes_rows",
+      "tools_update_codex_config_workbook_discover_d_source_ref_rows",
+      "tools_update_codex_config_workbook_discover_recipe_rows",
+      "tools_update_codex_config_workbook_file_modified",
+      "tools_update_codex_config_workbook_first_markdown_heading",
+      "tools_update_codex_config_workbook_first_meaningful_line",
+      "tools_update_codex_config_workbook_parse_md_table",
+      "tools_update_codex_config_workbook_path_key",
+      "tools_update_codex_config_workbook_read_text_sample",
+      "tools_update_codex_config_workbook_skill_metadata"
+    ],
+    "37": [
+      "impact_impact_engine",
+      "impact_impact_engine_append_jsonline",
+      "impact_impact_engine_as_array",
+      "impact_impact_engine_get_decision",
+      "impact_impact_engine_get_governancelevel",
+      "impact_impact_engine_get_impactscore",
+      "impact_impact_engine_get_nowiso",
+      "impact_impact_engine_get_safeid",
+      "impact_impact_engine_new_scorerow",
+      "impact_impact_engine_read_jsonfile",
+      "impact_impact_engine_read_jsonlines",
+      "impact_impact_engine_write_jsonfile",
+      "impact_impact_engine_write_jsonlines"
+    ],
+    "38": [
+      "core_60_versioning",
+      "core_60_versioning_global_ceo_runtime_baseline",
+      "core_60_versioning_global_ceo_runtime_current",
+      "core_60_versioning_global_ceo_runtime_diff",
+      "core_60_versioning_global_ceo_runtime_list",
+      "core_60_versioning_global_ceo_runtime_restore",
+      "core_60_versioning_global_ceo_runtime_save",
+      "core_60_versioning_global_ceo_runtime_show",
+      "core_60_versioning_global_get_ceocommandwheresafe",
+      "core_60_versioning_global_get_ceocorefiles",
+      "core_60_versioning_global_get_ceofilehashsafe",
+      "core_60_versioning_global_get_ceoruntimestate"
+    ],
+    "39": [
+      "core_80_industrialops",
+      "core_80_industrialops_global_ceo_industrial_reset",
+      "core_80_industrialops_global_ceo_industrial_status",
+      "core_80_industrialops_global_ceo_runtime_approve",
+      "core_80_industrialops_global_ceo_watch_clean",
+      "core_80_industrialops_global_ceo_watch_current_log",
+      "core_80_industrialops_global_ceo_watch_drift_current",
+      "core_80_industrialops_global_ceo_watch_reset",
+      "core_80_industrialops_global_ceo_watch_start_single",
+      "core_80_industrialops_global_ceo_zero_drift",
+      "core_80_industrialops_global_get_ceowatchdogprocesses",
+      "core_80_industrialops_global_stop_ceoallwatchdogs"
+    ],
+    "40": [
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common",
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_convertto_sdusafefilename",
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sducommandresolution",
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sdufilehashsafe",
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sdutimestamp",
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_new_sduoutputdirs",
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_read_sdujson",
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_resolve_sdupathtoken",
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_save_sdujson",
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_test_sduexcludedpath",
+      "cabina_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_write_sdulog"
+    ],
+    "41": [
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common_convertto_sdusafefilename",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sducommandresolution",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sdufilehashsafe",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sdutimestamp",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common_new_sduoutputdirs",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common_read_sdujson",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common_resolve_sdupathtoken",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common_save_sdujson",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common_test_sduexcludedpath",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_lib_sduorg_common_ps1_lib_sduorg_common_write_sdulog"
+    ],
+    "42": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_autoridad_additionalproperties",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_autoridad_properties",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_autoridad_required",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_autoridad_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_autoridad",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_referencia",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_tipo",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_referencia_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_referencia_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_tipo_enum",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_tipo_type"
+    ],
+    "43": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_autoridad_additionalproperties",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_autoridad_properties",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_autoridad_required",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_autoridad_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_autoridad",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_referencia",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_tipo",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_referencia_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_referencia_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_tipo_enum",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_tipo_type"
+    ],
+    "44": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_autoridad_additionalproperties",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_autoridad_properties",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_autoridad_required",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_autoridad_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_autoridad",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_referencia",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_tipo",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_referencia_minlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_referencia_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_tipo_enum",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_tipo_type"
+    ],
+    "45": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_autoridad_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_autoridad_properties",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_autoridad_required",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_autoridad_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_autoridad",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_referencia",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_tipo",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_referencia_minlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_referencia_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_tipo_enum",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_tipo_type"
+    ],
+    "46": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_autoridad_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_autoridad_properties",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_autoridad_required",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_autoridad_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_autoridad",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_referencia",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_tipo",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_referencia_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_referencia_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_tipo_enum",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_tipo_type"
+    ],
+    "47": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_autoridad_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_autoridad_properties",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_autoridad_required",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_autoridad_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_autoridad",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_referencia",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_tipo",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_referencia_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_referencia_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_tipo_enum",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_tipo_type"
+    ],
+    "48": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_autoridad_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_autoridad_properties",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_autoridad_required",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_autoridad_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_autoridad",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_referencia",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_tipo",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_referencia_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_referencia_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_tipo_enum",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_tipo_type"
+    ],
+    "49": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_autoridad_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_autoridad_properties",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_autoridad_required",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_autoridad_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_autoridad",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_referencia",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_tipo",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_referencia_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_referencia_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_tipo_enum",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_tipo_type"
+    ],
+    "50": [
+      "schema_autoridad_additionalproperties",
+      "schema_autoridad_properties",
+      "schema_autoridad_required",
+      "schema_autoridad_type",
+      "schema_properties_autoridad",
+      "schema_properties_referencia",
+      "schema_properties_tipo",
+      "schema_referencia_minlength",
+      "schema_referencia_type",
+      "schema_tipo_enum",
+      "schema_tipo_type"
+    ],
+    "51": [
+      "tools_codex_control_total",
+      "tools_codex_control_total_add_check",
+      "tools_codex_control_total_get_codexrootsummary",
+      "tools_codex_control_total_get_gitvalue",
+      "tools_codex_control_total_get_overallstatus",
+      "tools_codex_control_total_invoke_readonlycommand",
+      "tools_codex_control_total_test_codexroot",
+      "tools_codex_control_total_test_guardianlayer",
+      "tools_codex_control_total_test_powershelllayer",
+      "tools_codex_control_total_test_repo",
+      "tools_codex_control_total_test_tool"
+    ],
+    "52": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_convertto_sdusafefilename",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sducommandresolution",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sdufilehashsafe",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sdutimestamp",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_new_sduoutputdirs",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_read_sdujson",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_resolve_sdupathtoken",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_save_sdujson",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_test_sduexcludedpath",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_write_sdulog"
+    ],
+    "53": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_convertto_sdusafefilename",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sducommandresolution",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sdufilehashsafe",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sdutimestamp",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_new_sduoutputdirs",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_read_sdujson",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_resolve_sdupathtoken",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_save_sdujson",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_test_sduexcludedpath",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_lib_sduorg_common_ps1_lib_sduorg_common_write_sdulog"
+    ],
+    "54": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common_convertto_sdusafefilename",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sducommandresolution",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sdufilehashsafe",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common_get_sdutimestamp",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common_new_sduoutputdirs",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common_read_sdujson",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common_resolve_sdupathtoken",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common_save_sdujson",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common_test_sduexcludedpath",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_lib_sduorg_common_ps1_lib_sduorg_common_write_sdulog"
+    ],
+    "55": [
+      "objectives_objective_engine",
+      "objectives_objective_engine_add_dispatchcandidate",
+      "objectives_objective_engine_append_jsonline",
+      "objectives_objective_engine_as_array",
+      "objectives_objective_engine_get_nowiso",
+      "objectives_objective_engine_get_safeid",
+      "objectives_objective_engine_new_objectivedefinition",
+      "objectives_objective_engine_read_jsonfile",
+      "objectives_objective_engine_read_jsonlines",
+      "objectives_objective_engine_write_jsonfile"
+    ],
+    "56": [
+      "planner_planner_engine",
+      "planner_planner_engine_add_execution",
+      "planner_planner_engine_append_jsonline",
+      "planner_planner_engine_as_array",
+      "planner_planner_engine_get_nowiso",
+      "planner_planner_engine_get_safeid",
+      "planner_planner_engine_new_plan",
+      "planner_planner_engine_new_planstep",
+      "planner_planner_engine_read_jsonfile",
+      "planner_planner_engine_write_jsonfile"
+    ],
+    "57": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_etiquetas_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_origen_enum",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_origen_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_etiquetas",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_origen",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_ubicacion_repo",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_ubicacion_repo_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_ubicacion_repo_type"
+    ],
+    "58": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_artifact_id_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_artifact_id_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_etiquetas_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_artifact_id",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_etiquetas",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_version",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_version_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_version_type"
+    ],
+    "59": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_artifact_id_minlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_artifact_id_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_etiquetas_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_artifact_id",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_etiquetas",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_version",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_version_minlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_version_type"
+    ],
+    "60": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_artifact_id_minlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_artifact_id_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_etiquetas_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_artifact_id",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_etiquetas",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_version",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_version_minlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_version_type"
+    ],
+    "61": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_artifact_id_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_artifact_id_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_etiquetas_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_artifact_id",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_etiquetas",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_ubicacion_repo",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_ubicacion_repo_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_ubicacion_repo_type"
+    ],
+    "62": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_artifact_id_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_artifact_id_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_etiquetas_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_artifact_id",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_etiquetas",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_version",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_version_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_version_type"
+    ],
+    "63": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_artifact_id_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_artifact_id_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_etiquetas_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_artifact_id",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_etiquetas",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_ubicacion_repo",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_ubicacion_repo_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_ubicacion_repo_type"
+    ],
+    "64": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_artifact_id_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_artifact_id_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_etiquetas_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_artifact_id",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_etiquetas",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_ubicacion_repo",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_ubicacion_repo_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_ubicacion_repo_type"
+    ],
+    "65": [
+      "schema_artifact_id_minlength",
+      "schema_artifact_id_type",
+      "schema_etiquetas_type",
+      "schema_properties",
+      "schema_properties_artifact_id",
+      "schema_properties_etiquetas",
+      "schema_properties_ubicacion_repo",
+      "schema_ubicacion_repo_minlength",
+      "schema_ubicacion_repo_type"
+    ],
+    "66": [
+      "tools_build_skills_unified_table",
+      "tools_build_skills_unified_table_escape_mdcell",
+      "tools_build_skills_unified_table_get_agentsfamily",
+      "tools_build_skills_unified_table_get_codexfamily",
+      "tools_build_skills_unified_table_get_codexstackmap",
+      "tools_build_skills_unified_table_get_pluginrecords",
+      "tools_build_skills_unified_table_get_shortnote",
+      "tools_build_skills_unified_table_get_skillrecords",
+      "tools_build_skills_unified_table_normalize_text"
+    ],
+    "67": [
+      "core_70_watch",
+      "core_70_watch_global_ceo_watch_baseline",
+      "core_70_watch_global_ceo_watch_current_baseline",
+      "core_70_watch_global_ceo_watch_events",
+      "core_70_watch_global_ceo_watch_log",
+      "core_70_watch_global_ceo_watch_start",
+      "core_70_watch_global_ceo_watch_status",
+      "core_70_watch_global_ceo_watch_stop"
+    ],
+    "68": [
+      "performance_performance_remediation_g1",
+      "performance_performance_remediation_g1_get_dirstats",
+      "performance_performance_remediation_g1_get_nowiso",
+      "performance_performance_remediation_g1_get_topfiles",
+      "performance_performance_remediation_g1_invoke_timedcommand",
+      "performance_performance_remediation_g1_read_jsonifexists",
+      "performance_performance_remediation_g1_write_json",
+      "performance_performance_remediation_g1_write_text"
+    ],
+    "69": [
+      "tools_update_codex_config_workbook_command_json",
+      "tools_update_codex_config_workbook_discover_branch_organization_rows",
+      "tools_update_codex_config_workbook_discover_branch_rows",
+      "tools_update_codex_config_workbook_discover_pr_rows",
+      "tools_update_codex_config_workbook_git_value",
+      "tools_update_codex_config_workbook_parse_ahead_behind",
+      "tools_update_codex_config_workbook_repo_slug_from_remote",
+      "tools_update_codex_config_workbook_unique_repo_contexts"
+    ],
+    "70": [
+      "execution_runtime_real_operation_loop",
+      "execution_runtime_real_operation_loop_append_jsonline",
+      "execution_runtime_real_operation_loop_get_nowiso",
+      "execution_runtime_real_operation_loop_read_jsonfile",
+      "execution_runtime_real_operation_loop_test_lockalive",
+      "execution_runtime_real_operation_loop_write_jsonfile",
+      "execution_runtime_real_operation_loop_write_looplock"
+    ],
+    "71": [
+      "tools_promote_binding_ui_seshat_home_atomos_dataverse",
+      "tools_promote_binding_ui_seshat_home_atomos_dataverse_assert_countsafe",
+      "tools_promote_binding_ui_seshat_home_atomos_dataverse_get_existingbycanonicalid",
+      "tools_promote_binding_ui_seshat_home_atomos_dataverse_get_token",
+      "tools_promote_binding_ui_seshat_home_atomos_dataverse_invoke_dataversejson",
+      "tools_promote_binding_ui_seshat_home_atomos_dataverse_new_hash",
+      "tools_promote_binding_ui_seshat_home_atomos_dataverse_resolve_inputpath"
+    ],
+    "72": [
+      "tools_promote_lane_b_corte_agent_index_dataverse",
+      "tools_promote_lane_b_corte_agent_index_dataverse_assert_countsafe",
+      "tools_promote_lane_b_corte_agent_index_dataverse_get_existingbycanonicalid",
+      "tools_promote_lane_b_corte_agent_index_dataverse_get_token",
+      "tools_promote_lane_b_corte_agent_index_dataverse_invoke_dataversejson",
+      "tools_promote_lane_b_corte_agent_index_dataverse_new_hash",
+      "tools_promote_lane_b_corte_agent_index_dataverse_resolve_inputpath"
+    ],
+    "73": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_additionalproperties",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_required",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_schema",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_title",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_type"
+    ],
+    "74": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_additionalproperties",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_required",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_schema",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_title",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_type"
+    ],
+    "75": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_additionalproperties",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_required",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_schema",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_title",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_type"
+    ],
+    "76": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_required",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_schema",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_title",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_type"
+    ],
+    "77": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_required",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_schema",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_title",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_type"
+    ],
+    "78": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_required",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_schema",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_title",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_type"
+    ],
+    "79": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_required",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_schema",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_title",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_type"
+    ],
+    "80": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_required",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_schema",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_title",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_type"
+    ],
+    "81": [
+      "schema",
+      "schema_additionalproperties",
+      "schema_required",
+      "schema_schema",
+      "schema_title",
+      "schema_type"
+    ],
+    "82": [
+      "tools_build_planner_task_level_snapshot",
+      "tools_build_planner_task_level_snapshot_get_bodytext",
+      "tools_build_planner_task_level_snapshot_get_jsonobjects",
+      "tools_build_planner_task_level_snapshot_get_nowiso",
+      "tools_build_planner_task_level_snapshot_get_planneritemsfromtext",
+      "tools_build_planner_task_level_snapshot_get_sha256"
+    ],
+    "83": [
+      "core_30_ux",
+      "core_30_ux_global_ceo_contract",
+      "core_30_ux_global_ceo_evidence",
+      "core_30_ux_global_ceo_runtime",
+      "core_30_ux_global_prompt"
+    ],
+    "84": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_etiquetas_items",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_items_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_relacionados",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_relacionados_items",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_relacionados_type"
+    ],
+    "85": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_etiquetas_items",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_items_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_relacionados",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_relacionados_items",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_relacionados_type"
+    ],
+    "86": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_etiquetas_items",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_items_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_relacionados",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_relacionados_items",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_relacionados_type"
+    ],
+    "87": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_etiquetas_items",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_items_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_relacionados",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_relacionados_items",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_relacionados_type"
+    ],
+    "88": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_etiquetas_items",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_items_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_relacionados",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_relacionados_items",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_relacionados_type"
+    ],
+    "89": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_etiquetas_items",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_items_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_relacionados",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_relacionados_items",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_relacionados_type"
+    ],
+    "90": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_etiquetas_items",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_items_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_relacionados",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_relacionados_items",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_relacionados_type"
+    ],
+    "91": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_etiquetas_items",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_items_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_relacionados",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_relacionados_items",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_relacionados_type"
+    ],
+    "92": [
+      "schema_etiquetas_items",
+      "schema_items_type",
+      "schema_properties_relacionados",
+      "schema_relacionados_items",
+      "schema_relacionados_type"
+    ],
+    "93": [
+      "tools_build_skills_workbook",
+      "tools_build_skills_workbook_autosize",
+      "tools_build_skills_workbook_build_workbook",
+      "tools_build_skills_workbook_nice_title",
+      "tools_build_skills_workbook_read_rows"
+    ],
+    "94": [
+      "tools_promote_sdu_manifesto_dataverse",
+      "tools_promote_sdu_manifesto_dataverse_get_existingbycanonicalid",
+      "tools_promote_sdu_manifesto_dataverse_get_token",
+      "tools_promote_sdu_manifesto_dataverse_invoke_dataversejson",
+      "tools_promote_sdu_manifesto_dataverse_new_hash"
+    ],
+    "95": [
+      "tools_read_dataverse_rehydration_live",
+      "tools_read_dataverse_rehydration_live_get_bycanonicalid",
+      "tools_read_dataverse_rehydration_live_get_entitymetadata",
+      "tools_read_dataverse_rehydration_live_get_token",
+      "tools_read_dataverse_rehydration_live_invoke_dataverseget"
+    ],
+    "96": [
+      "actions_ceo_runtime_diagnose",
+      "actions_ceo_runtime_diagnose_convert_jsonsafe",
+      "actions_ceo_runtime_diagnose_count_jsonl",
+      "actions_ceo_runtime_diagnose_read_jsonsafe"
+    ],
+    "97": [
+      "core_00_env",
+      "core_00_env_global_get_ceocodexprocesses",
+      "core_00_env_global_get_ceocommandresolution",
+      "core_00_env_global_resolve_ceoexistingdirs"
+    ],
+    "98": [
+      "core_99_lock",
+      "core_99_lock_global_invoke_ceoruntimecheck",
+      "core_99_lock_global_repair_ceopath",
+      "core_99_lock_global_test_ceopathdrift"
+    ],
+    "99": [
+      "cursor_mcp",
+      "cursor_mcp_mcp_server_agent_pipeline",
+      "env_var_agent_pipeline_workspace",
+      "mcp_command_node"
+    ],
+    "100": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_descripcion_maxlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_descripcion_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_descripcion_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_descripcion"
+    ],
+    "101": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_descripcion_maxlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_descripcion_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_descripcion_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_descripcion"
+    ],
+    "102": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_descripcion_maxlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_descripcion_minlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_descripcion_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_descripcion"
+    ],
+    "103": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_descripcion_maxlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_descripcion_minlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_descripcion_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_descripcion"
+    ],
+    "104": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_descripcion_maxlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_descripcion_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_descripcion_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_descripcion"
+    ],
+    "105": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_descripcion_maxlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_descripcion_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_descripcion_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_descripcion"
+    ],
+    "106": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_descripcion_maxlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_descripcion_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_descripcion_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_descripcion"
+    ],
+    "107": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_descripcion_maxlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_descripcion_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_descripcion_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_descripcion"
+    ],
+    "108": [
+      "schema_descripcion_maxlength",
+      "schema_descripcion_minlength",
+      "schema_descripcion_type",
+      "schema_properties_descripcion"
+    ],
+    "109": [
+      "scripts_invoke_sduorgcomparev31sim",
+      "scripts_invoke_sduorgcomparev31sim_count_where",
+      "scripts_invoke_sduorgcomparev31sim_get_summary",
+      "scripts_invoke_sduorgcomparev31sim_import_requiredcsv"
+    ],
+    "110": [
+      "scripts_invoke_sduorgmultipletriagev31",
+      "scripts_invoke_sduorgmultipletriagev31_get_multiplecategory",
+      "scripts_invoke_sduorgmultipletriagev31_get_multiplematches",
+      "scripts_invoke_sduorgmultipletriagev31_get_parentbucket"
+    ],
+    "111": [
+      "tools_build_codex_root_inventory",
+      "tools_build_codex_root_inventory_build_workbook",
+      "tools_build_codex_root_inventory_classify",
+      "tools_build_codex_root_inventory_main"
+    ],
+    "112": [
+      "tools_codex_cloud_bootstrap_convertto_portablewindowspath",
+      "tools_codex_cloud_bootstrap_get_gitvalue",
+      "tools_codex_cloud_bootstrap_ps1_tools_codex_cloud_bootstrap",
+      "tools_codex_cloud_bootstrap_write_atomictextfile"
+    ],
+    "113": [
+      "actions_invoke_noc_action",
+      "actions_invoke_noc_action_build_actionspec",
+      "actions_invoke_noc_action_convert_jsonsafe"
+    ],
+    "114": [
+      "c_users_enzo1_projec_cdx_tools_codex_cloud_maintenance_sh__entry",
+      "tools_codex_cloud_maintenance_check_line",
+      "tools_codex_cloud_maintenance_sh_tools_codex_cloud_maintenance"
+    ],
+    "115": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_artifact_id_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_artifact_id_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_artifact_id"
+    ],
+    "116": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_categoria_enum",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_categoria_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_categoria"
+    ],
+    "117": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_estado_enum",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_estado_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_estado"
+    ],
+    "118": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_fecha_evento_format",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_fecha_evento_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_fecha_evento"
+    ],
+    "119": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_fileid_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_fileid_type",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_fileid"
+    ],
+    "120": [
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_properties_version",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_version_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_generates_r0_repo_schema_json_repo_schema_version_type"
+    ],
+    "121": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_categoria_enum",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_categoria_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_categoria"
+    ],
+    "122": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_estado_enum",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_estado_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_estado"
+    ],
+    "123": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_fecha_evento_format",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_fecha_evento_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_fecha_evento"
+    ],
+    "124": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_origen_enum",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_origen_type",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_origen"
+    ],
+    "125": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_ubicacion_m365",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_ubicacion_m365_additionalproperties",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_ubicacion_m365_type"
+    ],
+    "126": [
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_properties_ubicacion_repo",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_ubicacion_repo_minlength",
+      "pytest_tmp_basetemp_test_build_indexes_is_idempote0_repo_schema_json_repo_schema_ubicacion_repo_type"
+    ],
+    "127": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_categoria_enum",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_categoria_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_categoria"
+    ],
+    "128": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_estado_enum",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_estado_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_estado"
+    ],
+    "129": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_fecha_evento_format",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_fecha_evento_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_fecha_evento"
+    ],
+    "130": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_origen_enum",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_origen_type",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_origen"
+    ],
+    "131": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_ubicacion_m365",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_ubicacion_m365_additionalproperties",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_ubicacion_m365_type"
+    ],
+    "132": [
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_properties_ubicacion_repo",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_ubicacion_repo_minlength",
+      "pytest_tmp_basetemp_test_promote_updates_manifest0_repo_schema_json_repo_schema_ubicacion_repo_type"
+    ],
+    "133": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_categoria_enum",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_categoria_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_categoria"
+    ],
+    "134": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_estado_enum",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_estado_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_estado"
+    ],
+    "135": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_fecha_evento_format",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_fecha_evento_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_fecha_evento"
+    ],
+    "136": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_origen_enum",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_origen_type",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_origen"
+    ],
+    "137": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_ubicacion_m365",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_ubicacion_m365_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_ubicacion_m365_type"
+    ],
+    "138": [
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_properties_ubicacion_repo",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_ubicacion_repo_minlength",
+      "pytest_tmp_basetemp_test_validate_core_only_exclud0_repo_schema_json_repo_schema_ubicacion_repo_type"
+    ],
+    "139": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_categoria_enum",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_categoria_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_categoria"
+    ],
+    "140": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_estado_enum",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_estado_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_estado"
+    ],
+    "141": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_fecha_evento_format",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_fecha_evento_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_fecha_evento"
+    ],
+    "142": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_origen_enum",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_origen_type",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_origen"
+    ],
+    "143": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_ubicacion_m365",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_ubicacion_m365_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_ubicacion_m365_type"
+    ],
+    "144": [
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_properties_version",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_version_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_detec0_repo_schema_json_repo_schema_version_type"
+    ],
+    "145": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_categoria_enum",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_categoria_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_categoria"
+    ],
+    "146": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_estado_enum",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_estado_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_estado"
+    ],
+    "147": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_fecha_evento_format",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_fecha_evento_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_fecha_evento"
+    ],
+    "148": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_origen_enum",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_origen_type",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_origen"
+    ],
+    "149": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_ubicacion_m365",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_ubicacion_m365_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_ubicacion_m365_type"
+    ],
+    "150": [
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_properties_ubicacion_repo",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_ubicacion_repo_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_enfor0_repo_schema_json_repo_schema_ubicacion_repo_type"
+    ],
+    "151": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_categoria_enum",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_categoria_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_categoria"
+    ],
+    "152": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_estado_enum",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_estado_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_estado"
+    ],
+    "153": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_fecha_evento_format",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_fecha_evento_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_fecha_evento"
+    ],
+    "154": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_origen_enum",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_origen_type",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_origen"
+    ],
+    "155": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_ubicacion_m365",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_ubicacion_m365_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_ubicacion_m365_type"
+    ],
+    "156": [
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_properties_version",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_version_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_ignor0_repo_schema_json_repo_schema_version_type"
+    ],
+    "157": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_categoria_enum",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_categoria_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_categoria"
+    ],
+    "158": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_estado_enum",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_estado_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_estado"
+    ],
+    "159": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_fecha_evento_format",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_fecha_evento_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_fecha_evento"
+    ],
+    "160": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_origen_enum",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_origen_type",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_origen"
+    ],
+    "161": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_ubicacion_m365",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_ubicacion_m365_additionalproperties",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_ubicacion_m365_type"
+    ],
+    "162": [
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_properties_version",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_version_minlength",
+      "pytest_tmp_basetemp_test_validate_repository_norma0_repo_schema_json_repo_schema_version_type"
+    ],
+    "163": [
+      "schema_categoria_enum",
+      "schema_categoria_type",
+      "schema_properties_categoria"
+    ],
+    "164": [
+      "schema_estado_enum",
+      "schema_estado_type",
+      "schema_properties_estado"
+    ],
+    "165": [
+      "schema_fecha_evento_format",
+      "schema_fecha_evento_type",
+      "schema_properties_fecha_evento"
+    ],
+    "166": [
+      "schema_origen_enum",
+      "schema_origen_type",
+      "schema_properties_origen"
+    ],
+    "167": [
+      "schema_properties_ubicacion_m365",
+      "schema_ubicacion_m365_additionalproperties",
+      "schema_ubicacion_m365_type"
+    ],
+    "168": [
+      "schema_properties_version",
+      "schema_version_minlength",
+      "schema_version_type"
+    ],
+    "169": [
+      "scripts_01_bootstrap_sdu_runtime_root_governed_integrated",
+      "scripts_01_bootstrap_sdu_runtime_root_governed_integrated_new_dir",
+      "scripts_01_bootstrap_sdu_runtime_root_governed_integrated_write_fileifmissing"
+    ],
+    "170": [
+      "scripts_invoke_sduorgcomparativereportv3",
+      "scripts_invoke_sduorgcomparativereportv3_get_countcsv",
+      "scripts_invoke_sduorgcomparativereportv3_get_countjsonagents"
+    ],
+    "171": [
+      "scripts_invoke_sduorgrefinerulesv3",
+      "scripts_invoke_sduorgrefinerulesv3_add_uniquetokens",
+      "scripts_invoke_sduorgrefinerulesv3_get_reviewcause"
+    ],
+    "172": [
+      "scripts_smoke_launch_desk_stream",
+      "scripts_smoke_launch_desk_stream_main",
+      "scripts_smoke_launch_desk_stream_sample_payload"
+    ],
+    "173": [
+      "tools_codex_cloud_live",
+      "tools_codex_cloud_live_resolve_projectroot",
+      "tools_codex_cloud_live_resolve_pythonexe"
+    ],
+    "174": [
+      "tools_codex_cloud_maintenance_get_gitvalue",
+      "tools_codex_cloud_maintenance_ps1_tools_codex_cloud_maintenance",
+      "tools_codex_cloud_maintenance_write_atomictextfile"
+    ],
+    "175": [
+      "tools_graphify_freeze_guard",
+      "tools_graphify_freeze_guard_get_sha256",
+      "tools_graphify_freeze_guard_read_jsonfile"
+    ],
+    "176": [
+      "tools_validate_proj_cdx_sync",
+      "tools_validate_proj_cdx_sync_add_check",
+      "tools_validate_proj_cdx_sync_test_link"
+    ],
+    "177": [
+      "tools_validate_proj_cdx_workbench",
+      "tools_validate_proj_cdx_workbench_add_check",
+      "tools_validate_proj_cdx_workbench_get_workbenchfiles"
+    ],
+    "178": [
+      "actions_check_alert_source",
+      "actions_check_alert_source_convert_jsonsafe"
+    ],
+    "179": [
+      "c_users_enzo1_projec_cdx_tools_codex_cloud_bootstrap_sh__entry",
+      "tools_codex_cloud_bootstrap_sh_tools_codex_cloud_bootstrap"
+    ],
+    "180": [
+      "c_users_enzo1_projec_cdx_tools_codex_cloud_setup_sh__entry",
+      "tools_codex_cloud_setup"
+    ],
+    "181": [
+      "c_users_enzo1_projec_cdx_tools_codex_cloud_ui_maintenance_noop_sh__entry",
+      "tools_codex_cloud_ui_maintenance_noop"
+    ],
+    "182": [
+      "c_users_enzo1_projec_cdx_tools_codex_cloud_ui_setup_noop_sh__entry",
+      "tools_codex_cloud_ui_setup_noop"
+    ],
+    "183": [
+      "cabina_organizacion_total_scripts_invoke_sduorgclassifymultiagent_ps1_scripts_invoke_sduorgclassifymultiagent",
+      "cabina_organizacion_total_scripts_invoke_sduorgclassifymultiagent_ps1_scripts_invoke_sduorgclassifymultiagent_test_containsanytoken"
+    ],
+    "184": [
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_invoke_sduorgclassifymultiagent_ps1_scripts_invoke_sduorgclassifymultiagent",
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_invoke_sduorgclassifymultiagent_ps1_scripts_invoke_sduorgclassifymultiagent_test_containsanytoken"
+    ],
+    "185": [
+      "ceo_config_snapshot_20260623_173300_enter_ceoexclusive",
+      "ceo_config_snapshot_20260623_173300_enter_ceoexclusive_get_codexprocesses"
+    ],
+    "186": [
+      "core_20_context",
+      "core_20_context_global_ceo_status"
+    ],
+    "187": [
+      "core_40_guard",
+      "core_40_guard_global_assert_ceocontract"
+    ],
+    "188": [
+      "noc_build_noc_state",
+      "noc_build_noc_state_convert_jsonsafe"
+    ],
+    "189": [
+      "projec_cdx_cloud_init",
+      "projec_cdx_cloud_init_rationale_1"
+    ],
+    "190": [
+      "scripts_invoke_sduorganalyzeagentcoverage",
+      "scripts_invoke_sduorganalyzeagentcoverage_get_agentevidence"
+    ],
+    "191": [
+      "tools_codex_environment_setup",
+      "tools_codex_environment_setup_convertto_portablewindowspath"
+    ],
+    "192": [
+      "tools_init",
+      "tools_init_rationale_1"
+    ],
+    "193": [
+      "tools_normalize_codex_surfaces",
+      "tools_normalize_codex_surfaces_write_textfileutf8"
+    ],
+    "194": [
+      "tools_rehome_codex_root_safe",
+      "tools_rehome_codex_root_safe_ensure_directory"
+    ],
+    "195": [
+      "tools_validate_proj_cdx_operational_chain",
+      "tools_validate_proj_cdx_operational_chain_add_check"
+    ],
+    "196": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_invoke_sduorgclassifymultiagent_ps1_scripts_invoke_sduorgclassifymultiagent",
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_invoke_sduorgclassifymultiagent_ps1_scripts_invoke_sduorgclassifymultiagent_test_containsanytoken"
+    ],
+    "197": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_invoke_sduorgclassifymultiagent_ps1_scripts_invoke_sduorgclassifymultiagent",
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_invoke_sduorgclassifymultiagent_ps1_scripts_invoke_sduorgclassifymultiagent_test_containsanytoken"
+    ],
+    "198": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_invoke_sduorgclassifymultiagent_ps1_scripts_invoke_sduorgclassifymultiagent",
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_invoke_sduorgclassifymultiagent_ps1_scripts_invoke_sduorgclassifymultiagent_test_containsanytoken"
+    ],
+    "199": [
+      "actions_auto_fix_safe"
+    ],
+    "200": [
+      "actions_create_expediente"
+    ],
+    "201": [
+      "actions_create_folders"
+    ],
+    "202": [
+      "actions_detect_duplicates"
+    ],
+    "203": [
+      "actions_detect_inconsistencies"
+    ],
+    "204": [
+      "actions_normalize_all"
+    ],
+    "205": [
+      "actions_validate_all"
+    ],
+    "206": [
+      "cabina_organizacion_total_scripts_invoke_sduagentdiscovery_ps1_scripts_invoke_sduagentdiscovery"
+    ],
+    "207": [
+      "cabina_organizacion_total_scripts_invoke_sduorgfulldryrun_ps1_scripts_invoke_sduorgfulldryrun"
+    ],
+    "208": [
+      "cabina_organizacion_total_scripts_invoke_sduorginventory_ps1_scripts_invoke_sduorginventory"
+    ],
+    "209": [
+      "cabina_organizacion_total_scripts_invoke_sduorgplan_ps1_scripts_invoke_sduorgplan"
+    ],
+    "210": [
+      "cabina_organizacion_total_scripts_invoke_sduorgpreflight_ps1_scripts_invoke_sduorgpreflight"
+    ],
+    "211": [
+      "cabina_organizacion_total_scripts_invoke_sduorgreport_ps1_scripts_invoke_sduorgreport"
+    ],
+    "212": [
+      "cabina_organizacion_total_scripts_invoke_sduorgvalidate_ps1_scripts_invoke_sduorgvalidate"
+    ],
+    "213": [
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_invoke_sduagentdiscovery_ps1_scripts_invoke_sduagentdiscovery"
+    ],
+    "214": [
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_invoke_sduorgfulldryrun_ps1_scripts_invoke_sduorgfulldryrun"
+    ],
+    "215": [
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_invoke_sduorginventory_ps1_scripts_invoke_sduorginventory"
+    ],
+    "216": [
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_invoke_sduorgplan_ps1_scripts_invoke_sduorgplan"
+    ],
+    "217": [
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_invoke_sduorgpreflight_ps1_scripts_invoke_sduorgpreflight"
+    ],
+    "218": [
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_invoke_sduorgreport_ps1_scripts_invoke_sduorgreport"
+    ],
+    "219": [
+      "cabina_sdu_runtime_root_06_runtime_execution_surfaces_local_windows_scripts_invoke_sduorgvalidate_ps1_scripts_invoke_sduorgvalidate"
+    ],
+    "220": [
+      "ceo_config_snapshot_20260623_173300_codexprofile"
+    ],
+    "221": [
+      "ceo_config_snapshot_20260623_173300_start_ceo"
+    ],
+    "222": [
+      "core_10_isolation"
+    ],
+    "223": [
+      "core_50_audit"
+    ],
+    "224": [
+      "launchers_open_federal"
+    ],
+    "225": [
+      "pkg_projec_cdx"
+    ],
+    "226": [
+      "restore_restore_ceoconfigsnapshot"
+    ],
+    "227": [
+      "scripts_00_preflight_sdu_package_readonly"
+    ],
+    "228": [
+      "scripts_02_write_sensitive_data_governance"
+    ],
+    "229": [
+      "scripts_03_write_baseline_16_repos_registry"
+    ],
+    "230": [
+      "scripts_04_validate_sdu_runtime_root_package"
+    ],
+    "231": [
+      "scripts_05_git_readback_only"
+    ],
+    "232": [
+      "scripts_invoke_cabinapwsh"
+    ],
+    "233": [
+      "scripts_invoke_sduorgfulldryrunv3"
+    ],
+    "234": [
+      "scripts_test_cabinaexecutiongate"
+    ],
+    "235": [
+      "tools_codex_environment_cleanup"
+    ],
+    "236": [
+      "tools_planner_graph_auth_recovery"
+    ],
+    "237": [
+      "tools_test_codex_powershell_layout"
+    ],
+    "238": [
+      "tools_validate_sdu_dataverse_metadata_wave"
+    ],
+    "239": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_invoke_sduagentdiscovery_ps1_scripts_invoke_sduagentdiscovery"
+    ],
+    "240": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_invoke_sduorgfulldryrun_ps1_scripts_invoke_sduorgfulldryrun"
+    ],
+    "241": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_invoke_sduorginventory_ps1_scripts_invoke_sduorginventory"
+    ],
+    "242": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_invoke_sduorgplan_ps1_scripts_invoke_sduorgplan"
+    ],
+    "243": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_invoke_sduorgpreflight_ps1_scripts_invoke_sduorgpreflight"
+    ],
+    "244": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_invoke_sduorgreport_ps1_scripts_invoke_sduorgreport"
+    ],
+    "245": [
+      "work_backups_sdu_org_total_before_integration_20260623_012542_organizacion_total_scripts_invoke_sduorgvalidate_ps1_scripts_invoke_sduorgvalidate"
+    ],
+    "246": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_invoke_sduagentdiscovery_ps1_scripts_invoke_sduagentdiscovery"
+    ],
+    "247": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_invoke_sduorgfulldryrun_ps1_scripts_invoke_sduorgfulldryrun"
+    ],
+    "248": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_invoke_sduorginventory_ps1_scripts_invoke_sduorginventory"
+    ],
+    "249": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_invoke_sduorgplan_ps1_scripts_invoke_sduorgplan"
+    ],
+    "250": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_invoke_sduorgpreflight_ps1_scripts_invoke_sduorgpreflight"
+    ],
+    "251": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_invoke_sduorgreport_ps1_scripts_invoke_sduorgreport"
+    ],
+    "252": [
+      "work_backups_sdu_org_total_before_integration_20260623_012553_organizacion_total_scripts_invoke_sduorgvalidate_ps1_scripts_invoke_sduorgvalidate"
+    ],
+    "253": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_invoke_sduagentdiscovery_ps1_scripts_invoke_sduagentdiscovery"
+    ],
+    "254": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_invoke_sduorgfulldryrun_ps1_scripts_invoke_sduorgfulldryrun"
+    ],
+    "255": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_invoke_sduorginventory_ps1_scripts_invoke_sduorginventory"
+    ],
+    "256": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_invoke_sduorgplan_ps1_scripts_invoke_sduorgplan"
+    ],
+    "257": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_invoke_sduorgpreflight_ps1_scripts_invoke_sduorgpreflight"
+    ],
+    "258": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_invoke_sduorgreport_ps1_scripts_invoke_sduorgreport"
+    ],
+    "259": [
+      "work_backups_sdu_org_total_before_integration_20260623_012557_scripts_invoke_sduorgvalidate_ps1_scripts_invoke_sduorgvalidate"
+    ]
+  },
+  "cohesion": {},
+  "god_nodes": [
+    {
+      "id": "tools_update_codex_config_workbook_main",
+      "label": "main()",
+      "degree": 59
+    },
+    {
+      "id": "tools_update_codex_config_workbook_read_csv_dicts",
+      "label": "read_csv_dicts()",
+      "degree": 31
+    },
+    {
+      "id": "launch_desk_schemas_launchdeskrequest",
+      "label": "LaunchDeskRequest",
+      "degree": 18
+    },
+    {
+      "id": "metadata_path_policy_canonical_path",
+      "label": "canonical_path()",
+      "degree": 18
+    },
+    {
+      "id": "metadata_validator_validate_repository",
+      "label": "validate_repository()",
+      "degree": 18
+    },
+    {
+      "id": "launch_desk_server_create_app",
+      "label": "create_app()",
+      "degree": 17
+    },
+    {
+      "id": "scripts_invoke_sdulocalfilesystemorder_invoke_inventory",
+      "label": "Invoke-Inventory()",
+      "degree": 15
+    },
+    {
+      "id": "launch_desk_service_stream_launch_desk",
+      "label": "stream_launch_desk()",
+      "degree": 15
+    },
+    {
+      "id": "projec_cdx_cloud_cli_main",
+      "label": "main()",
+      "degree": 15
+    },
+    {
+      "id": "execution_runtime_real_operation_engine_invoke_realoperationcycle",
+      "label": "Invoke-RealOperationCycle()",
+      "degree": 14
+    }
+  ],
+  "surprises": [
+    {
+      "source": "request_cache_key()",
+      "target": "sha256()",
+      "source_files": [
+        "src/launch_desk/store.py",
+        "tools/update_codex_config_workbook.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "_fingerprint()",
+      "target": "sha256()",
+      "source_files": [
+        "src/metadata/audit_compare.py",
+        "tools/update_codex_config_workbook.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "main()",
+      "target": "check_elevation()",
+      "source_files": [
+        "main.py",
+        "src/metadata/runtime_checks.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; peripheral node `main()` unexpectedly reaches hub `check_elevation()`"
+    },
+    {
+      "source": "test_model_profiles_can_be_resolved()",
+      "target": "resolve_model()",
+      "source_files": [
+        "tests/test_launch_desk_runtime.py",
+        "src/launch_desk/config.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; peripheral node `test_model_profiles_can_be_resolved()` unexpectedly reaches hub `resolve_model()`"
+    },
+    {
+      "source": "test_history_endpoint_lists_saved_runs()",
+      "target": "LaunchDeskRequest",
+      "source_files": [
+        "tests/test_launch_desk_server.py",
+        "src/launch_desk/schemas.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    }
+  ]
+}

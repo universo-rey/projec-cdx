@@ -23,4 +23,4 @@
 - Evidence canonical id: `evidence:sharepoint:binding-ui-seshat-home-atomos:20260617:v1`.
 - Source id: `8b5d03ca-976a-f111-ab0e-00224805f8f9`.
 - Evidence id: `5dda6cc7-976a-f111-ab0e-00224805fc91`.
-- Evidencia: `operativa/archive/legacy-root/20260617/DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json`.
+- Evidencia: `operativa/DATAVERSE_PROMOTION_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json`.

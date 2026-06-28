@@ -1,4 +1,0 @@
-gate_id,target_repo,target_commit,registered_files,actual_files,comparison_required,missing_files_action,requires_regeneration,rollback_required,postcheck_required,decision
-0.4.8,universo-rey/cabina-universal-d,target_commit_unknown,change-aware changed_files,git show --name-only,true,record omissions and block PASS,true,true,true,READY_FOR_REMOTE_REGEN_AUTHORIZATION
-0.4.8,universo-rey/cabina-universal-d,PR130,change-aware evidence package,git show --name-only,true,regenerate evidence until arrays match,true,true,true,READY_FOR_REMOTE_REGEN_AUTHORIZATION
-0.4.8,universo-rey/cabina-universal-d,governance baseline,registered evidence index,git show --name-only,true,fail postcheck when registered files are fewer than commit files,true,true,true,READY_FOR_REMOTE_REGEN_AUTHORIZATION

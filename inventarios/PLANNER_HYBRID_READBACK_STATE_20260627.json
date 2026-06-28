@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "artifact": "planner-hybrid-readback-state",
+  "generated_at": "2026-06-27T09:05:13.0246532Z",
+  "status": "SDU_OBSERVABILITY_HARDENED",
+  "global_readback": {
+    "plannerTask": "TRUSTED",
+    "Teams_history": "TRUSTED",
+    "Details": "PARTIAL",
+    "READBACK_UNTRUSTED": false,
+    "READBACK_PARTIAL_DETAILS": true
+  },
+  "thresholds": {
+    "valid_task_min_score": 1,
+    "trusted_task_min_score": 2,
+    "max_score": 3
+  },
+  "sources": {
+    "plannerTask": "Teams connector",
+    "comments_primary": "Teams messages",
+    "fallback_historical": "Outlook notifications",
+    "raw_details": "PARTIAL_RAW_GRAPH_NOT_EXPOSED"
+  },
+  "sharepoint_surface": {
+    "site": "https://escribaniabitsch.sharepoint.com/sites/sistema",
+    "root_scaffold": [
+      "EXPEDIENTES",
+      "SDU"
+    ],
+    "live_write_applied": true,
+    "live_write_scope": "root folders only"
+  },
+  "account_matrix_sources": [
+    {
+      "path": "C:\\Users\\enzo1\\Documents\\GitHub\\cdf-soluciones\\03_OPERACION\\STATE_SEMANTICS_OWNER_IDENTITY_NORMALIZATION\\CDF_OWNER_IDENTITY_NORMALIZATION_MATRIX.csv",
+      "exists": true
+    },
+    {
+      "path": "C:\\Users\\enzo1\\Documents\\GitHub\\cdf-soluciones\\03_OPERACION\\TENANT_DICTAMEN_READINESS\\CDF_TENANT_AGENT_ROLE_ASSIGNMENT_MATRIX.csv",
+      "exists": true
+    },
+    {
+      "path": "C:\\Users\\enzo1\\Documents\\GitHub\\torre-gemela-escribania\\00_CONTEXT\\TGE_CDF_STAFF_TENANT_LIVE_READONLY_PREFLIGHT_REPORT_20260527.md",
+      "exists": true
+    },
+    {
+      "path": "C:\\Users\\enzo1\\Documents\\GitHub\\torre-gemela-escribania\\00_CONTEXT\\MICROSOFT_365_CONNECTION_SURFACE_MATRIX.csv",
+      "exists": true
+    },
+    {
+      "path": "C:\\Users\\enzo1\\Documents\\GitHub\\torre-gemela-escribania\\00_CONTEXT\\PLANNER_ROLE_MATRIX.csv",
+      "exists": true
+    }
+  ],
+  "read_consistency_window": {
+    "safe_to_read": true,
+    "status": "STALE_LOCK_IGNORED",
+    "lock_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\control-flow\\control-flow.lock.json",
+    "writer_process_id": 23084
+  },
+  "read_guard": {
+    "status": "READ_GUARD_ACQUIRED",
+    "mutex_name": "Global\\PROJEC_CDX_PLANNER_HYBRID_READBACK",
+    "lock_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\planner\\planner-hybrid-readback.lock.json",
+    "overlap_blocking": true
+  },
+  "records": {
+    "total": 5,
+    "plannerTask_trusted": 5,
+    "teams_comments_inferred": 2,
+    "guarded_not_missing": 5,
+    "valid_tasks": 5,
+    "trusted_tasks": 5,
+    "false_anomalies": 5,
+    "real_anomalies": 0
+  },
+  "rules": {
+    "rule_1": "NO marcar task como desaparecida si existe en snapshot previo",
+    "rule_2": "NO asumir ausencia de comments",
+    "rule_3": "usar Teams como fuente primaria de comentarios efectivos",
+    "rule_4": "REAL_ANOMALY requiere ausencia en Planner, Teams y snapshot",
+    "rule_5": "read_guard bloquea refresh simultaneo"
+  },
+  "output_jsonl": "C:\\CEO\\project-cdx\\inventarios\\PLANNER_TASK_LEVEL_READBACK_HYBRID_20260627.jsonl",
+  "preprod_bootstrap_snapshot": "C:\\CEO\\project-cdx\\inventarios\\expediente_state_preprod.jsonl",
+  "event_bus": "C:\\CEO\\watchdog\\bus\\sdu-event-bus.jsonl",
+  "events_emitted": [
+    "SDU_PREPROD_STARTED",
+    "SDU_SHAREPOINT_CREATED",
+    "SDU_VALIDATION_OK",
+    "SDU_SNAPSHOT_UPDATED"
+  ],
+  "external_write": false
+}

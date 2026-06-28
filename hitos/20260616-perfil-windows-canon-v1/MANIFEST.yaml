@@ -7,7 +7,7 @@ fuente:
   - patrones/normalizacion-perfil-windows.md
   - patrones/perfil-windows-junctions-compatibilidad.md
   - patrones/perfil-windows-snapshots-gmt.md
-  - operativa/archive/legacy-root/undated/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md
+  - operativa/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md
 salida:
   - hitos/20260616-perfil-windows-canon-v1/
 rollback: remover la carpeta versionada del bundle

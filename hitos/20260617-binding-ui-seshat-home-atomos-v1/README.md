@@ -16,9 +16,9 @@ El archivo enlaza los tres atomos vivos:
 
 ## Evidencia
 
-- `operativa/archive/legacy-root/20260617/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`
-- `operativa/archive/legacy-root/20260617/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`
-- `operativa/archive/legacy-root/20260617/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json`
+- `operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`
+- `operativa/READBACK_BINDING_UI_SESHAT_HOME_ATOMOS_20260617.md`
+- `operativa/BINDING_UI_SESHAT_HOME_ATOMOS_20260617.json`
 - `READBACK.md`
 - `EVIDENCIA.md`
 - `MANIFEST.yaml`

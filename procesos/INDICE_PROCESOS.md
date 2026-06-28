@@ -10,6 +10,7 @@
 - [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md)
 - [promocion-huella-tenant-dataverse.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-huella-tenant-dataverse.md)
 - [promocion-seshat-home-sharepoint.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-seshat-home-sharepoint.md)
+- [planner-sharepoint-sdu-preprod-expediente.md](C:/Users/enzo1/PROJEC%20CDX/procesos/planner-sharepoint-sdu-preprod-expediente.md)
 - [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
 
 | id | proceso | entrada | salida | receta | patron |
@@ -41,6 +42,7 @@
 | PR-025 | SDU Dataverse metadata wave | Evidencia tenant-scoped que debe volverse metadata atomica reusable | [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md) | [recipes/sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/recipes/sdu-dataverse-metadata-wave.md) | [patrones/sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/patrones/sdu-dataverse-metadata-wave.md) |
 | PR-026 | Promocion huella tenant Dataverse | Manifiesto o canon aprobado por owner debe quedar visible para tenant, Dataverse y agentes | [promocion-huella-tenant-dataverse.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-huella-tenant-dataverse.md) | [recipes/promocion-huella-tenant-dataverse.md](C:/Users/enzo1/PROJEC%20CDX/recipes/promocion-huella-tenant-dataverse.md) | [patrones/huella-atomica-owner-approved.md](C:/Users/enzo1/PROJEC%20CDX/patrones/huella-atomica-owner-approved.md) |
 | PR-027 | Promocion Seshat Home SharePoint | SeshatHubRegistroN.8/Home.aspx debe consumir la huella atomica como canon visible | [promocion-seshat-home-sharepoint.md](C:/Users/enzo1/PROJEC%20CDX/procesos/promocion-seshat-home-sharepoint.md) | [recipes/promocion-seshat-home-sharepoint.md](C:/Users/enzo1/PROJEC%20CDX/recipes/promocion-seshat-home-sharepoint.md) | [patrones/seshat-home-canonico.md](C:/Users/enzo1/PROJEC%20CDX/patrones/seshat-home-canonico.md) |
+| PR-028 | Planner SharePoint SDU preprod expediente | Planner, SharePoint y SDU quedan listos para produccion notarial con matrices CDF/TGE | [planner-sharepoint-sdu-preprod-expediente.md](C:/Users/enzo1/PROJEC%20CDX/procesos/planner-sharepoint-sdu-preprod-expediente.md) | [recipes/planner-sharepoint-sdu-preprod-expediente.md](C:/Users/enzo1/PROJEC%20CDX/recipes/planner-sharepoint-sdu-preprod-expediente.md) | - |
 
 ## Regla
 

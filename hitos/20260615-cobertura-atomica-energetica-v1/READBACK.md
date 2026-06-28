@@ -6,8 +6,8 @@ HECHO_VERIFICADO: se introdujo el elemento atomico energetico como contrato visi
 
 ## Sistemas Tocados
 
-- `PROJEC CDX/operativa/archive/legacy-root/20260615/COBERTURA_ATOMICA_ENERGETICA_20260615.md`.
-- `PROJEC CDX/operativa/archive/legacy-root/undated/ANCLA_ENERGIA_ATOMICA.md`.
+- `PROJEC CDX/operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md`.
+- `PROJEC CDX/operativa/ANCLA_ENERGIA_ATOMICA.md`.
 - `PROJEC CDX/atomic/CODEX_ATOMIC_OPERATING_CONTRACT.md`.
 - `PROJEC CDX/atomic/README.md`.
 - `PROJEC CDX/atomic/MAPA.md`.
@@ -19,8 +19,8 @@ HECHO_VERIFICADO: se introdujo el elemento atomico energetico como contrato visi
 - `PROJEC CDX/operativa/MAPA_CORTO.md`.
 - `PROJEC CDX/operativa/CURRENT.md`.
 - `PROJEC CDX/operativa/TRACE.md`.
-- `PROJEC CDX/operativa/archive/legacy-root/20260615/NOMENCLATURA_CADENA_OPERATIVA_20260615.md`.
-- `PROJEC CDX/operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md`.
+- `PROJEC CDX/operativa/NOMENCLATURA_CADENA_OPERATIVA_20260615.md`.
+- `PROJEC CDX/operativa/ANCLAS_ON_DEMAND.md`.
 - `PROJEC CDX/hitos/README.md`.
 - `PROJEC CDX/hitos/MAPA.md`.
 - `PROJEC CDX/hitos/INDICE_MAESTRO.md`.

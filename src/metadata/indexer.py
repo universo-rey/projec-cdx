@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from .path_policy import normalize_path_value
 from .validator import ValidationResult, validate_repository
 
 
@@ -15,7 +16,7 @@ def _sort_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def _build_items(result: ValidationResult) -> list[dict[str, Any]]:
     items: list[dict[str, Any]] = []
     for record in result.records:
-        row = dict(record.metadata)
+        row = normalize_path_value(dict(record.metadata))
         row["metadata_source"] = record.source_path
         row["metadata_kind"] = record.kind
         items.append(row)

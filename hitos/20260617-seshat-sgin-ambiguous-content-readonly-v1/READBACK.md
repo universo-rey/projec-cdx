@@ -12,8 +12,8 @@ Se leyo el contrato del hilo D, se inspeccionaron estados Git, diffs permitidos,
 
 ## Salida
 
-- Clasificacion por archivo y carpeta en `operativa/archive/legacy-root/20260617/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv`.
-- Readback en `operativa/archive/legacy-root/20260617/READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md`.
+- Clasificacion por archivo y carpeta en `operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv`.
+- Readback en `operativa/READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md`.
 
 ## Validacion
 

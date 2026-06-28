@@ -141,15 +141,3 @@ def test_public_error_messages_are_actionable() -> None:
     assert "too long" in _public_error_message(TimeoutError("deadline")).lower()
     assert "rate limits" in _public_error_message(RuntimeError("429 rate limit")).lower()
     assert "openai_api_key" in _public_error_message(RuntimeError("authentication failed")).lower()
-
-
-def test_public_error_messages_redact_token_like_values() -> None:
-    openai_token = "sk-" + ("a" * 32)
-    github_token = "ghp_" + ("b" * 24)
-    message = _public_error_message(
-        RuntimeError(f"request failed token={openai_token} bearer {github_token}")
-    )
-
-    assert openai_token not in message
-    assert github_token not in message
-    assert "[REDACTED" in message

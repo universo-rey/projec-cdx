@@ -1,0 +1,230 @@
+{
+    "schema_version": 1,
+    "generated_at": "2026-06-27T00:00:00Z",
+    "control_plane": {
+        "name": "NOC CORE",
+        "mode": "HYBRID_SOURCE",
+        "contract": "G50",
+        "write_mode": "GUARDED",
+        "single_writer": true,
+        "owner": "CEO"
+    },
+    "surfaces": {
+        "ui": "C:\\CEO\\watchdog\\noc-web",
+        "server": "C:\\CEO\\watchdog\\noc-web\\owner_actions_server.py",
+        "noc_root": "C:\\CEO\\project-cdx\\noc",
+        "actions": "C:\\CEO\\project-cdx\\noc\\actions",
+        "state": "C:\\CEO\\project-cdx\\noc\\noc-state.json",
+        "lock": "C:\\CEO\\project-cdx\\noc\\noc.lock.json",
+        "bus": "C:\\CEO\\watchdog\\bus\\sdu-event-bus.jsonl",
+        "sharepoint": "https://escribaniabitsch.sharepoint.com/sites/sistema",
+        "sdk": "C:\\CEO\\project-cdx\\src\\projec_cdx_cloud",
+        "runner": "C:\\CEO\\project-cdx\\src\\projec_cdx_cloud"
+    },
+    "routes": {
+        "action": "/action/:name",
+        "legacy_execute": null,
+        "legacy_execute_disabled": true,
+        "state": "/core/noc/noc-state.json",
+        "bus": "/watchdog/bus/sdu-event-bus.jsonl"
+    },
+    "truth": {
+        "document_store": "SharePoint",
+        "document_site": "https://escribaniabitsch.sharepoint.com/sites/sistema",
+        "event_bus": "C:\\CEO\\watchdog\\bus\\sdu-event-bus.jsonl",
+        "snapshot": "C:\\CEO\\project-cdx\\noc\\noc-state.json",
+        "planner_readback": "HYBRID_SOURCE"
+    },
+    "legacy": {
+        "commands_dir": "C:\\CEO\\watchdog\\commands",
+        "catalog_path": "C:\\CEO\\watchdog\\config\\actions_live_catalog.json"
+    },
+    "recipes": [
+        {
+            "id": "noc-button-review",
+            "mode": "guided",
+            "threads": 1,
+            "summary": "Load the canonical map, render NOC buttons, and execute via /action/:name.",
+            "steps": [
+                "load_system_map",
+                "render_operational_buttons",
+                "execute_selected_action",
+                "refresh_state_and_bus"
+            ]
+        },
+        {
+            "id": "planner-anomaly-investigation",
+            "mode": "parallel",
+            "threads": 4,
+            "summary": "Correlate Planner readback, Teams activity, Outlook traces, and the SDU snapshot.",
+            "steps": [
+                "read_planner_task",
+                "read_teams_history",
+                "read_outlook_fallback",
+                "read_sdu_snapshot",
+                "fan_in_cross_source_validation"
+            ]
+        },
+        {
+            "id": "noc-noise-reduction",
+            "mode": "guided",
+            "threads": 1,
+            "summary": "Reduce operational noise by validating, normalizing, and safe-fixing the local NOC snapshot without touching SharePoint.",
+            "steps": [
+                "inspect_alert_sources",
+                "validate_all",
+                "normalize_all",
+                "detect_duplicates",
+                "detect_inconsistencies",
+                "auto_fix_safe",
+                "refresh_state"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "id": "CHECK_ALERT_SOURCE",
+            "actionId": "CHECK_ALERT_SOURCE",
+            "label": "Revisar origen de alertas",
+            "type": "analysis",
+            "risk": "LOW",
+            "eventTrigger": "ALERT_RAISED",
+            "script": "check-alert-source.ps1",
+            "description": "Analiza fuentes locales de alertas y registra una lectura informativa.",
+            "expectedImpact": "Esta accion no modifica datos. Se utiliza para evaluar el estado actual del sistema.",
+            "requiresApproval": true,
+            "mutatesData": false,
+            "impactsDataverse": false,
+            "impactsSharePoint": false,
+            "enabled": true
+        },
+        {
+            "id": "RUNTIME_DIAGNOSIS",
+            "actionId": "RUNTIME_DIAGNOSIS",
+            "label": "Diagnostico local de runtime",
+            "type": "diagnostic",
+            "risk": "LOW",
+            "eventTrigger": "RUNTIME_DIAGNOSIS",
+            "script": "ceo-runtime-diagnose.ps1",
+            "description": "Lee telemetria local, score, recomendaciones y volumen de eventos sin modificar datos.",
+            "expectedImpact": "Esta accion no modifica datos ni ejecuta cambios en Dataverse o SharePoint.",
+            "requiresApproval": true,
+            "mutatesData": false,
+            "impactsDataverse": false,
+            "impactsSharePoint": false,
+            "enabled": true
+        },
+        {
+            "id": "CREATE_EXPEDIENTE",
+            "actionId": "CREATE_EXPEDIENTE",
+            "label": "Crear expediente",
+            "type": "control",
+            "risk": "LOW",
+            "eventTrigger": "NOC_ACTION",
+            "script": "create-expediente.ps1",
+            "description": "Prepara el carril local de alta controlada para expedientes del NOC.",
+            "expectedImpact": "Genera el estado local de control y deja evidencia en el bus sin tocar SharePoint.",
+            "requiresApproval": true,
+            "mutatesData": false,
+            "impactsDataverse": false,
+            "impactsSharePoint": false,
+            "enabled": true
+        },
+        {
+            "id": "VALIDATE_ALL",
+            "actionId": "VALIDATE_ALL",
+            "label": "Validar todo",
+            "type": "diagnostic",
+            "risk": "LOW",
+            "eventTrigger": "NOC_ACTION",
+            "script": "validate-all.ps1",
+            "description": "Vuelve a validar el conjunto completo de expedientes y su coherencia cruzada.",
+            "expectedImpact": "Actualiza el snapshot local y emite el resultado de validacion.",
+            "requiresApproval": true,
+            "mutatesData": false,
+            "impactsDataverse": false,
+            "impactsSharePoint": false,
+            "enabled": true
+        },
+        {
+            "id": "NORMALIZE_ALL",
+            "actionId": "NORMALIZE_ALL",
+            "label": "Normalizar todo",
+            "type": "maintenance",
+            "risk": "LOW",
+            "eventTrigger": "NOC_ACTION",
+            "script": "normalize-all.ps1",
+            "description": "Normaliza el snapshot local del NOC y alinea los campos observables.",
+            "expectedImpact": "Deja el estado local listo para lectura estable y auditable.",
+            "requiresApproval": true,
+            "mutatesData": false,
+            "impactsDataverse": false,
+            "impactsSharePoint": false,
+            "enabled": true
+        },
+        {
+            "id": "CREATE_MISSING_FOLDERS",
+            "actionId": "CREATE_MISSING_FOLDERS",
+            "label": "Crear carpetas faltantes",
+            "type": "control",
+            "risk": "LOW",
+            "eventTrigger": "NOC_ACTION",
+            "script": "create-folders.ps1",
+            "description": "Detecta brechas de estructura y prepara la correccion segura del carril.",
+            "expectedImpact": "Emite evidencia de carpeta faltante y deja listo el auto-fix local.",
+            "requiresApproval": true,
+            "mutatesData": false,
+            "impactsDataverse": false,
+            "impactsSharePoint": false,
+            "enabled": true
+        },
+        {
+            "id": "DETECT_DUPLICATES",
+            "actionId": "DETECT_DUPLICATES",
+            "label": "Detectar duplicados",
+            "type": "diagnostic",
+            "risk": "LOW",
+            "eventTrigger": "NOC_ACTION",
+            "script": "detect-duplicates.ps1",
+            "description": "Cruza las fuentes y marca candidatos a duplicado sin borrar nada.",
+            "expectedImpact": "Solo observacion y marcaje de evidencia local.",
+            "requiresApproval": true,
+            "mutatesData": false,
+            "impactsDataverse": false,
+            "impactsSharePoint": false,
+            "enabled": true
+        },
+        {
+            "id": "DETECT_INCONSISTENCIES",
+            "actionId": "DETECT_INCONSISTENCIES",
+            "label": "Detectar inconsistencias",
+            "type": "diagnostic",
+            "risk": "LOW",
+            "eventTrigger": "NOC_ACTION",
+            "script": "detect-inconsistencies.ps1",
+            "description": "Busca desalineaciones entre Planner, Teams, SharePoint y snapshot.",
+            "expectedImpact": "Emite el detalle local de inconsistencias detectadas.",
+            "requiresApproval": true,
+            "mutatesData": false,
+            "impactsDataverse": false,
+            "impactsSharePoint": false,
+            "enabled": true
+        },
+        {
+            "id": "AUTO_FIX_SAFE",
+            "actionId": "AUTO_FIX_SAFE",
+            "label": "Auto fix seguro",
+            "type": "control",
+            "risk": "LOW",
+            "eventTrigger": "NOC_ACTION",
+            "script": "auto-fix-safe.ps1",
+            "description": "Aplica una correccion local segura sobre el snapshot del NOC.",
+            "expectedImpact": "Deja evidencia de correccion segura sin tocar SharePoint ni Dataverse.",
+            "requiresApproval": true,
+            "mutatesData": false,
+            "impactsDataverse": false,
+            "impactsSharePoint": false,
+            "enabled": true
+        }
+    ]
+}

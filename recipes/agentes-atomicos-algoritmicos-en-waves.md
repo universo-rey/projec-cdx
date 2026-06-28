@@ -7,7 +7,7 @@ La receta tambien entrena al carril: cada wave deja una pauta que el siguiente a
 
 Cuando un delta se puede repartir en lanes pequenas y disjuntas, con retorno exacto y fan-in claro.
 
-Se abre desde `operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md` cuando el pedido pide delegacion por waves.
+Se abre desde `operativa/ANCLAS_ON_DEMAND.md` cuando el pedido pide delegacion por waves.
 
 ## Derivación
 
