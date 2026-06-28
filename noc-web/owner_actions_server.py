@@ -5,6 +5,7 @@ import datetime as _dt
 import json
 import os
 import subprocess
+import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 COMMANDS_DIR = ROOT / "commands"
@@ -38,6 +39,21 @@ G8_ALLOWED_FILES = {
     "controlled-auto-execution-g9-postcheck.json",
     "evidence-accumulation-delta.json",
 }
+G8_ALLOWED_PATHS = {
+    "actions-executed.jsonl": G8_EXECUTED_PATH,
+    "actions-suggested.jsonl": G8_SUGGESTED_PATH,
+    "decision-trace.jsonl": G8_TRACE_PATH,
+    "metrics.json": G8_METRICS_PATH,
+    "beta-session.json": G8_DIR / "beta-session.json",
+    "beta-priority-queue.json": G8_DIR / "beta-priority-queue.json",
+    "operational-rhythm-summary.md": G8_DIR / "operational-rhythm-summary.md",
+    "auto-promotable-candidates.json": AUTO_CANDIDATES_PATH,
+    "auto-execution-config.json": G9_CONFIG_PATH,
+    "controlled-auto-execution-g9.json": G9_EVIDENCE_PATH,
+    "controlled-auto-execution-g9-postcheck.json": G8_DIR / "controlled-auto-execution-g9-postcheck.json",
+    "evidence-accumulation-delta.json": G8_DIR / "evidence-accumulation-delta.json",
+}
+ACTION_EXECUTOR_PATH = ROOT / "tools" / "invoke_noc_action.ps1"
 
 
 # CEO_WEB_GLOBAL_BEGIN
@@ -510,9 +526,6 @@ class OwnerActionHandler(SimpleHTTPRequestHandler):
 
     def end_headers(self):
         self.send_header("Cache-Control", "no-store")
-        origin = self.headers.get("Origin")
-        if origin and self.origin_is_local(origin):
-            self.send_header("Access-Control-Allow-Origin", origin)
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type, X-SDU-NOC-Producer")
         super().end_headers()
@@ -662,8 +675,8 @@ class OwnerActionHandler(SimpleHTTPRequestHandler):
         if name not in G8_ALLOWED_FILES:
             self.send_error(404, "Not found")
             return
-        path = G8_DIR / name
-        if not path.exists():
+        path = G8_ALLOWED_PATHS.get(name)
+        if path is None or not path.exists():
             self.send_error(404, "Not found")
             return
         body = path.read_bytes()
@@ -977,16 +990,31 @@ class OwnerActionHandler(SimpleHTTPRequestHandler):
                 return
 
             state = pre_state()
-            args = [
-                "powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(script),
-                "-ActionId", action_id,
-                "-ActionLabel", str(action.get("label", action_id)),
-                "-Risk", str(action.get("risk", "LOW")).upper(),
-                "-ExecutedBy", executed_by,
-                "-DecisionSource", decision_source,
-                "-PreStateJson", json.dumps(state, ensure_ascii=False, separators=(",", ":")),
-            ]
-            completed = subprocess.run(args, capture_output=True, text=True, timeout=120)
+            payload = {
+                "scriptPath": str(script),
+                "actionId": action_id,
+                "actionLabel": str(action.get("label", action_id)),
+                "risk": str(action.get("risk", "LOW")).upper(),
+                "executedBy": executed_by,
+                "decisionSource": decision_source,
+                "preStateJson": json.dumps(state, ensure_ascii=False, separators=(",", ":")),
+            }
+            payload_path = None
+            try:
+                with tempfile.NamedTemporaryFile("w", delete=False, suffix=".json", encoding="utf-8") as tmp:
+                    json.dump(payload, tmp, ensure_ascii=False, separators=(",", ":"))
+                    payload_path = tmp.name
+                args = [
+                    "powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(ACTION_EXECUTOR_PATH),
+                    "-PayloadPath", payload_path,
+                ]
+                completed = subprocess.run(args, capture_output=True, text=True, timeout=120)
+            finally:
+                if payload_path:
+                    try:
+                        os.remove(payload_path)
+                    except OSError:
+                        pass
             result = "SUCCESS" if completed.returncode == 0 else "FAIL"
             execution_entry = {
                 "actionId": action_id,

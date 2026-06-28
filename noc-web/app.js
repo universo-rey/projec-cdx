@@ -1,4 +1,4 @@
-const SOURCE = 'http://127.0.0.1:8080/noc/noc-state.json';
+const SOURCE = '/noc/noc-state.json';
 const REFRESH_MS = 3000;
 const STALE_AFTER_MS = 5000;
 
