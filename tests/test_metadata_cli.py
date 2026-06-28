@@ -4,7 +4,6 @@ import json
 from pathlib import Path
 
 import main as root_main
-
 from metadata import runtime_checks
 from metadata.cli import main as metadata_main
 from metadata.indexer import build_indexes

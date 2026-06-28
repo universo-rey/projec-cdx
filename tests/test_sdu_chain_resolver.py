@@ -4,9 +4,8 @@ import csv
 import json
 from pathlib import Path
 
-from tools.sdu_chain_resolver import build_graph
-
 from projec_cdx_cloud import cli as cloud_cli
+from tools.sdu_chain_resolver import build_graph
 
 
 def _write(path: Path, text: str) -> None:

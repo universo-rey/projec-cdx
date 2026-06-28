@@ -42,7 +42,7 @@ def check_elevation(
     global _WARNED_NON_ELEVATED
     if stream is None:
         stream = sys.stderr
-    if os.name != "nt" or is_elevated_terminal():
+    if is_elevated_terminal():
         return True
 
     if required:

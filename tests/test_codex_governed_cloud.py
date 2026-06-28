@@ -3,9 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from projec_cdx_cloud.governed import GOVERNED_AGENTS, build_governed_cloud_report
-
 from projec_cdx_cloud.cli import main as cloud_main
+from projec_cdx_cloud.governed import GOVERNED_AGENTS, build_governed_cloud_report
 
 
 def test_governed_cloud_report_has_agent_contract() -> None:

@@ -5,6 +5,7 @@ _archive_noise/
 __pycache__/
 .ruff_cache/
 .cache/
+*.egg-info/
 node_modules/
 
 # evitar repos anidados
