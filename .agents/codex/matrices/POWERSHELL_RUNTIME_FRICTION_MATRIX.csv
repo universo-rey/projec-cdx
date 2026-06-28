@@ -1,0 +1,8 @@
+rule_id,surface,pattern,severity,action,replacement,validator,status
+ps1_parse_error,repo_powershell_scripts,PowerShell parser errors,block,fail validator until script parses,System.Management.Automation.Language.Parser,.agents/codex/tools/local_validate_powershell_runtime_friction.ps1,ACTIVE
+bash_heredoc_in_ps1,repo_powershell_scripts,<<,block,do not use Bash heredoc in ps1,PowerShell here-string or external file,.agents/codex/tools/local_validate_powershell_runtime_friction.ps1,ACTIVE
+bash_heredoc_snippet,docs_recipes_readbacks,<<,warn,do not copy Bash heredoc into PowerShell execution,PowerShell here-string piped to node/python or node -e,.agents/codex/tools/local_validate_powershell_runtime_friction.ps1,ACTIVE
+shell_redirection_write,docs_recipes_readbacks,cat >,warn,do not use shell redirection for repo writes,apply_patch for manual edits,.agents/codex/tools/local_validate_powershell_runtime_friction.ps1,ACTIVE
+unix_pipeline_assumption,docs_recipes_readbacks,rg --files | rg,warn,avoid cross-shell native pipeline assumptions,single rg query or assign output before filtering,.agents/codex/tools/local_validate_powershell_runtime_friction.ps1,ACTIVE
+unix_text_tool_assumption,docs_recipes_readbacks,grep|sed|awk,warn,avoid assuming Unix text tools on Windows,rg Select-String Import-Csv ConvertFrom-Json or Node,.agents/codex/tools/local_validate_powershell_runtime_friction.ps1,ACTIVE
+json_processing,github_cli_and_local_json,PowerShell object pipeline for complex JSON,warn,prefer structured JSON saved once and parsed deterministically,gh --json plus ConvertFrom-Json or Node,.agents/codex/tools/local_validate_powershell_runtime_friction.ps1,ACTIVE

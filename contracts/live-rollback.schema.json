@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/live-rollback.schema.json",
+  "title": "CEO G5 Rollback Plan",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["rollback_id", "live_action_id", "required", "strategy", "compensating_action", "validated", "evidence_path"],
+  "properties": {
+    "rollback_id": { "type": "string", "minLength": 1 },
+    "live_action_id": { "type": "string", "minLength": 1 },
+    "required": { "type": "boolean", "const": true },
+    "strategy": { "type": "string", "minLength": 1 },
+    "compensating_action": { "type": "string", "minLength": 1 },
+    "validated": { "type": "boolean" },
+    "evidence_path": { "type": "string", "minLength": 1 }
+  }
+}

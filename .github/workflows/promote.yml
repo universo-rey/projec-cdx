@@ -1,0 +1,129 @@
+name: promote
+
+on:
+  workflow_dispatch:
+    inputs:
+      artifact_id:
+        description: "artifact_id a promover"
+        required: true
+        type: string
+      estado:
+        description: "Estado destino"
+        required: true
+        type: choice
+        options:
+          - borrador
+          - en_revision
+          - aprobado
+          - live
+      owner_gate_id:
+        description: "ID del owner gate aprobado para esta promocion"
+        required: true
+        type: string
+      confirm_owner_gate:
+        description: "Confirmo que existe owner gate con rollback y postcheck"
+        required: true
+        type: boolean
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Enforce owner gate
+        shell: bash
+        env:
+          OWNER_GATE_ID: ${{ inputs.owner_gate_id }}
+          CONFIRM_OWNER_GATE: ${{ inputs.confirm_owner_gate }}
+        run: |
+          if [ "$CONFIRM_OWNER_GATE" != "true" ]; then
+            echo "confirm_owner_gate must be true before promotion"
+            exit 1
+          fi
+          if [ -z "$OWNER_GATE_ID" ]; then
+            echo "owner_gate_id is required before promotion"
+            exit 1
+          fi
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('pyproject.toml') }}
+          restore-keys: |
+            pip-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .[dev] jsonschema pydantic pyyaml
+
+      - name: Promote artifact locally
+        env:
+          ARTIFACT_ID: ${{ inputs.artifact_id }}
+          TARGET_ESTADO: ${{ inputs.estado }}
+        run: |
+          python main.py promote "$ARTIFACT_ID" "$TARGET_ESTADO"
+          python -m tools.build_index
+          python -m tools.validate
+
+      - name: Detect changes
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Prepare branch name
+        if: steps.changes.outputs.changed == 'true'
+        id: branch
+        shell: bash
+        env:
+          ARTIFACT_ID: ${{ inputs.artifact_id }}
+          TARGET_ESTADO: ${{ inputs.estado }}
+        run: |
+          safe_artifact="$(printf '%s' "$ARTIFACT_ID" | sed 's#[^A-Za-z0-9._-]#-#g')"
+          safe_estado="$(printf '%s' "$TARGET_ESTADO" | sed 's#[^A-Za-z0-9._-]#-#g')"
+          safe_artifact="${safe_artifact:-artifact}"
+          safe_estado="${safe_estado:-estado}"
+          echo "name=release/promote-${safe_artifact}-${safe_estado}" >> "$GITHUB_OUTPUT"
+
+      - name: Create promotion PR
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ steps.branch.outputs.name }}
+          base: main
+          delete-branch: true
+          commit-message: "promote: ${{ inputs.artifact_id }} -> ${{ inputs.estado }}"
+          title: "promote: ${{ inputs.artifact_id }} -> ${{ inputs.estado }}"
+          body: |
+            Promocion solicitada por workflow manual.
+
+            - artifact_id: `${{ inputs.artifact_id }}`
+            - estado: `${{ inputs.estado }}`
+            - owner_gate_id: `${{ inputs.owner_gate_id }}`
+            - cambia metadata local, `live-manifest.json` e indices si corresponde
+            - requiere revision normal y `meta-validate / metadata`
+          add-paths: |
+            live-manifest.json
+            index.json
+            operativa/index.json
+            **/*.md
+            **/*.meta.json

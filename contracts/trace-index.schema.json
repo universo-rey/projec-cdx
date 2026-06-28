@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/trace-index.schema.json",
+  "title": "CEO G3 Trace Index",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "index_id",
+    "generated_at",
+    "source_event_store",
+    "events_by_id",
+    "events_by_type",
+    "events_by_status",
+    "events_by_correlation",
+    "events_by_time",
+    "dlq_summary",
+    "policy_summary"
+  ],
+  "properties": {
+    "index_id": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_event_store": { "type": "string", "minLength": 1 },
+    "events_by_id": { "type": "object" },
+    "events_by_type": { "type": "object" },
+    "events_by_status": { "type": "object" },
+    "events_by_correlation": { "type": "object" },
+    "events_by_time": { "type": "array" },
+    "dlq_summary": { "type": "object" },
+    "policy_summary": { "type": "object" }
+  }
+}

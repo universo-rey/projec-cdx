@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ceo://contracts/policy-decision.payload.schema.json",
+  "title": "Policy Decision Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "eventType",
+    "allowed",
+    "action",
+    "requiresApproval",
+    "reason"
+  ],
+  "properties": {
+    "eventType": {
+      "type": "string",
+      "minLength": 1
+    },
+    "allowed": {
+      "type": "boolean"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "dispatch",
+        "alert",
+        "hold",
+        "retry-local",
+        "observe",
+        "recommend"
+      ]
+    },
+    "requiresApproval": {
+      "type": "boolean"
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

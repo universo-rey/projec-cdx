@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SDU Sentinel Config",
+  "type": "object",
+  "required": [
+    "sentinel_id",
+    "mode",
+    "default_external_policy",
+    "baseline_refs",
+    "watched_files",
+    "watched_dirs",
+    "blocked_patterns",
+    "external_surfaces",
+    "required_checks",
+    "actions"
+  ],
+  "properties": {
+    "sentinel_id": { "type": "string" },
+    "mode": { "type": "string" },
+    "default_external_policy": { "type": "string" },
+    "baseline_refs": { "type": "object" },
+    "watched_files": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "watched_dirs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "blocked_patterns": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "external_surfaces": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "required_checks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "actions": { "type": "object" }
+  },
+  "additionalProperties": false
+}

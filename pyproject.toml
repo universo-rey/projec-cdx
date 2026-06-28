@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=82.0.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "projec-cdx"
+version = "0.6.0rc1"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.137.2",
+  "httpx>=0.28.1",
+  "jinja2>=3.1.6",
+  "jsonschema>=4.26.0",
+  "openai-agents>=0.17.5",
+  "pyyaml>=6.0.3",
+  "tzdata>=2025.2; platform_system == 'Windows'",
+  "uvicorn>=0.49.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black>=26.5.1",
+  "matplotlib>=3.10.0",
+  "pytest",
+  "pytest-cov>=7.0.0",
+  "reportlab>=5.0.0",
+  "ruff>=0.14.0",
+]
+agents-sdk = ["openai-agents>=0.17.5"]
+openai-orchestration = ["openai>=2.43.0"]
+reports = [
+  "matplotlib>=3.10.0",
+  "reportlab>=5.0.0",
+]
+
+[project.scripts]
+projec-cdx-cloud = "projec_cdx_cloud.cli:main"
+launch-desk = "launch_desk.cli:main"
+cdx = "metadata.cli:main"
+ceo-runtime-save = "runtime_versioning.cli:save_main"
+ceo-runtime-list = "runtime_versioning.cli:list_main"
+ceo-runtime-restore = "runtime_versioning.cli:restore_main"
+ceo-runtime-sentinel = "runtime_versioning.cli:sentinel_main"
+ceo-runtime-index = "runtime_versioning.cli:index_main"
+ceo-runtime-state = "runtime_versioning.cli:state_main"
+ceo-runtime-status = "runtime_versioning.cli:status_main"
+ceo-runtime-continuous = "runtime_versioning.cli:continuous_main"
+ceo = "runtime_versioning.cli:ceo_main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

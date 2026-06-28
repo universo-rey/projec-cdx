@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/live-audit.schema.json",
+  "title": "CEO G5 Live Audit",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["audit_id", "live_action_id", "closure_valid", "live_real_enabled", "evidence"],
+  "properties": {
+    "audit_id": { "type": "string", "minLength": 1 },
+    "live_action_id": { "type": "string", "minLength": 1 },
+    "closure_valid": { "type": "boolean" },
+    "live_real_enabled": { "type": "boolean", "const": false },
+    "evidence": { "type": "object" }
+  }
+}

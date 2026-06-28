@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/action.schema.json",
+  "title": "CEO G4 Controlled Action",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "action_id",
+    "event_id",
+    "action_type",
+    "risk",
+    "requires_owner_gate",
+    "mode",
+    "policy",
+    "evidence"
+  ],
+  "properties": {
+    "action_id": { "type": "string", "minLength": 1 },
+    "event_id": { "type": "string", "minLength": 1 },
+    "action_type": { "type": "string", "minLength": 1 },
+    "risk": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+    "requires_owner_gate": { "type": "boolean" },
+    "mode": { "type": "string", "enum": ["DRY_RUN", "LOCAL_MANUAL_APPROVAL"] },
+    "policy": { "$ref": "#/$defs/policy" },
+    "evidence": { "$ref": "#/$defs/evidence" }
+  },
+  "$defs": {
+    "policy": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["live_write", "external", "delete", "dry_run_required"],
+      "properties": {
+        "live_write": { "type": "boolean", "const": false },
+        "external": { "type": "boolean", "const": false },
+        "delete": { "type": "boolean", "const": false },
+        "dry_run_required": { "type": "boolean", "const": true }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["required", "path"],
+      "properties": {
+        "required": { "type": "boolean", "const": true },
+        "path": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

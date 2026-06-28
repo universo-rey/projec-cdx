@@ -1,0 +1,49 @@
+{
+  "registry_id": "CEO_G4_ACTION_REGISTRY",
+  "version": "1.0",
+  "default_decision": "DENY",
+  "actions": [
+    {
+      "action_type": "NOOP",
+      "risk": "LOW",
+      "requires_owner_gate": false,
+      "allowed_modes": ["DRY_RUN"],
+      "description": "No operation dry-run action for validation."
+    },
+    {
+      "action_type": "LOCAL_EVIDENCE_WRITE",
+      "risk": "MEDIUM",
+      "requires_owner_gate": false,
+      "allowed_modes": ["DRY_RUN"],
+      "description": "Records local runtime evidence only."
+    },
+    {
+      "action_type": "ACK_LOCAL_ALERT",
+      "risk": "MEDIUM",
+      "requires_owner_gate": false,
+      "allowed_modes": ["DRY_RUN"],
+      "description": "Dry-run acknowledgement of a local alert."
+    },
+    {
+      "action_type": "REPLAY_DRY_RUN",
+      "risk": "HIGH",
+      "requires_owner_gate": true,
+      "allowed_modes": ["DRY_RUN", "LOCAL_MANUAL_APPROVAL"],
+      "description": "Dry-run replay control action."
+    },
+    {
+      "action_type": "POLICY_REVIEW_REQUEST",
+      "risk": "HIGH",
+      "requires_owner_gate": true,
+      "allowed_modes": ["DRY_RUN", "LOCAL_MANUAL_APPROVAL"],
+      "description": "Requests owner review for policy changes without applying them."
+    },
+    {
+      "action_type": "CONTROLLED_LIVE_FORMAL",
+      "risk": "CRITICAL",
+      "requires_owner_gate": true,
+      "allowed_modes": ["LIVE_CONTROLLED_REAL"],
+      "description": "Formal live-controlled action, requiring active live session, three roles, rollback, evidence, strict policy and audit."
+    }
+  ]
+}

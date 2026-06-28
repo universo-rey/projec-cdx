@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ceo://contracts/sanitization-finding.payload.schema.json",
+  "title": "Sanitization Finding Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "findingId",
+    "scanId",
+    "scannedAt",
+    "repoId",
+    "repoPath",
+    "severity",
+    "category",
+    "status",
+    "path",
+    "evidence",
+    "reason",
+    "recommendation",
+    "resolutionStatus",
+    "resolution",
+    "sensitiveContentDetected",
+    "liveWrite"
+  ],
+  "properties": {
+    "findingId": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+    },
+    "scanId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scannedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "repoId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repoPath": {
+      "type": "string",
+      "minLength": 1
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "critical"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "legacy",
+        "duplicate-surface",
+        "generated-output",
+        "governance-gap",
+        "no-finding"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "observed",
+        "held"
+      ]
+    },
+    "path": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recommendation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "resolutionStatus": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "held-for-explicit-delete-gate",
+        "resolved-by-adapter-routing"
+      ]
+    },
+    "resolution": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sensitiveContentDetected": {
+      "type": "boolean",
+      "enum": [
+        false
+      ]
+    },
+    "liveWrite": {
+      "type": "boolean",
+      "enum": [
+        false
+      ]
+    }
+  }
+}

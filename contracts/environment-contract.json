@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "v1.0",
+  "contractId": "ceo-local-environment-contract",
+  "surfaces": [
+    "local",
+    "vsi",
+    "codespaces"
+  ],
+  "requiredVariables": [
+    {
+      "name": "CEO_SUITE_STATE_ROOT",
+      "required": false,
+      "rule": "if present, must resolve inside repo"
+    },
+    {
+      "name": "ACTIVE_GOVERNED_EXECUTION_BY_DEFAULT",
+      "required": false,
+      "rule": "if present, value should be true or ACTIVE_GOVERNED_EXECUTION_BY_DEFAULT"
+    },
+    {
+      "name": "STANDARD_AGENT_CHAIN_ACTIVE",
+      "required": false,
+      "rule": "if present, value should be true or STANDARD_AGENT_CHAIN_ACTIVE"
+    }
+  ],
+  "forbiddenVariables": [
+    "OPENAI_API_KEY",
+    "AZURE_CLIENT_SECRET",
+    "GRAPH_TOKEN",
+    "SHAREPOINT_TOKEN"
+  ],
+  "consistencyRules": [
+    "local and VSI use C:\\CEO\\project-cdx as canonical active entry",
+    "Codespaces may use its mounted workspace root but must keep repo-scoped state",
+    "do not re-anchor CEO_ROOT by inference",
+    "do not read secret values while checking presence"
+  ]
+}

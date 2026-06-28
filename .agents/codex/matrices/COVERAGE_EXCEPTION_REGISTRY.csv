@@ -1,0 +1,2 @@
+exception_id,asset_class,asset_id,reason,coverage_status,owner_agent,validator,next_review
+NONE_CURRENT_20260601,all,none,full scoped set covered by current local governance matrices,no_exception,court.seshat_evidence,tool.local_validate_agent_layer,on_next_repo_agent_tool_change

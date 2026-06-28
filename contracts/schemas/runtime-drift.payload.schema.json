@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ceo://contracts/runtime-drift.payload.schema.json",
+  "title": "Runtime Drift Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "runtimeStatus",
+    "cabinaStatus"
+  ],
+  "properties": {
+    "runtimeStatus": {
+      "type": "string",
+      "enum": [
+        "OK",
+        "DRIFT"
+      ]
+    },
+    "cabinaStatus": {
+      "type": "string",
+      "enum": [
+        "READY",
+        "NOT_READY"
+      ]
+    },
+    "details": {
+      "type": "string"
+    }
+  }
+}
