@@ -9,7 +9,7 @@
 
 ## Postcheck
 
-Archivo: `operativa/archive/legacy-root/20260616/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`
+Archivo: `operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`
 
 - `source_count = 1`
 - `evidence_count = 1`

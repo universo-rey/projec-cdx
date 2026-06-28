@@ -23,7 +23,7 @@ Ejemplos tipicos:
 2. Clasificar la superficie como visible, referencia, on-demand o live.
 3. Mover la procedencia tecnica a la capa de referencia si no debe quedar al frente.
 4. Mantener la raiz visible compacta y sin lenguaje ambiguo de habilitacion.
-5. Abrir accesos solo desde `operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md`.
+5. Abrir accesos solo desde `operativa/ANCLAS_ON_DEMAND.md`.
 6. Escribir la regla explicita: `procedencia/layout only`.
 7. Actualizar los indices visibles y la matriz de capa si cambia una receta o un proceso.
 8. Validar con el validador local.

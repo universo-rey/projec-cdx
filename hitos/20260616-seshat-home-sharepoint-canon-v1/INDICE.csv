@@ -2,5 +2,5 @@ tipo,ruta,estado
 readback,hitos/20260616-seshat-home-sharepoint-canon-v1/READBACK.md,DELTA_APLICADO
 evidencia,hitos/20260616-seshat-home-sharepoint-canon-v1/EVIDENCIA.md,DELTA_APLICADO
 manifest,hitos/20260616-seshat-home-sharepoint-canon-v1/MANIFEST.yaml,DELTA_APLICADO
-huella,operativa/archive/legacy-root/20260616/HUELLA_ATOMICA_SESHAT_HOME_20260616.md,LIVE_SHAREPOINT_FILE_WRITE
-json,operativa/archive/legacy-root/20260616/SHAREPOINT_SESHAT_HOME_PROMOTION_20260616.json,POSTCHECK
+huella,operativa/HUELLA_ATOMICA_SESHAT_HOME_20260616.md,LIVE_SHAREPOINT_FILE_WRITE
+json,operativa/SHAREPOINT_SESHAT_HOME_PROMOTION_20260616.json,POSTCHECK

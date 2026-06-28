@@ -1,0 +1,26 @@
+{
+  "artifact_id": "operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "2026.06.21",
+  "autoridad": {
+    "tipo": "owner",
+    "referencia": "@SeshatSgin"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617.csv",
+  "etiquetas": [
+    "operativa",
+    "matriz",
+    "metadata",
+    "cloud",
+    "dataverse",
+    "preflight"
+  ],
+  "relacionados": [
+    "operativa/MAPA.md"
+  ],
+  "descripcion": "Resultado de preflight cloud Dataverse con trazabilidad parcial.",
+  "fecha_evento": "2026-06-17"
+}

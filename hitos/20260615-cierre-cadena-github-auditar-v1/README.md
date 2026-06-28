@@ -14,8 +14,8 @@ GREEN_LOCAL.
 
 ## Evidencia Principal
 
-- `operativa/archive/legacy-root/20260615/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md`.
-- `operativa/archive/legacy-root/20260615/TODO_20260615.md`.
+- `operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md`.
+- `operativa/TODO_20260615.md`.
 - `workbooks/control_operativo.xlsx`.
 - `inventarios/GITHUB_REPOS_CANONICAL_20260615.csv`.
 - `inventarios/AUDITAR_SURFACE_INDEX_20260615.csv`.

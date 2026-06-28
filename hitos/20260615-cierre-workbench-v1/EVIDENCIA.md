@@ -2,8 +2,8 @@
 
 ## Local
 
-- `operativa/archive/legacy-root/undated/START_HERE.md`
-- `operativa/archive/legacy-root/undated/PROMPT_NUEVO_HILO.md`
+- `operativa/START_HERE.md`
+- `operativa/PROMPT_NUEVO_HILO.md`
 - `playbooks/00-preflight-gobernado.md`
 - `playbooks/04-validar-delta.md`
 - `playbooks/05-promover-aprendizaje.md`
@@ -11,8 +11,8 @@
 - `workbooks/control_operativo.xlsx`
 - `outputs/control_operativo_20260615/control_operativo.xlsx`
 - `outputs/control_operativo_20260615/MANIFEST.json`
-- `operativa/archive/legacy-root/20260615/READBACK_CIERRE_20260615.md`
-- `operativa/archive/legacy-root/20260615/CONTROL_TOTAL_20260615.md`
+- `operativa/READBACK_CIERRE_20260615.md`
+- `operativa/CONTROL_TOTAL_20260615.md`
 
 ## Verificacion Esperada
 

@@ -1,2 +1,0 @@
-gate_id,target_repo,target_branch,target_commit,control_plane_authorization_commit,status,pr_opened,push_executed,live_surface_executed,workflow_dispatch_executed,secret_read,token_printed,validation,rollback,next_action
-0.5.0,universo-rey/cabina-universal-d,codex/sdu-0.5.0-bridge-auth-fail-closed,d676dcb,c11ae07,GATE_0.5.0_REMOTE_PATCH_PREPARED_FOR_PR_OR_BRANCH_READY,false,false,false,false,false,false,PASS_WITH_ROOT_NPM_NOT_AVAILABLE,revert target commit d676dcb,OWNER_DECISION_FOR_PR_OR_MANUAL_PACKET

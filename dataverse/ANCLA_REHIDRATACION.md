@@ -2,7 +2,7 @@
 
 Ancla corta para recuperar contexto Dataverse cuando un hilo se alarga o se pierde continuidad.
 
-Se abre solo desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md) cuando el frente necesita volver a la base Dataverse sin reinventar contexto.
+Se abre solo desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md) cuando el frente necesita volver a la base Dataverse sin reinventar contexto.
 
 ## Orden
 
@@ -12,9 +12,9 @@ Se abre solo desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/a
 4. Leer `dataverse/MAPA.md`.
 5. Leer `dataverse/MATRIZ_CADENA_OPERATIVA_DATAVERSE_20260615.md`.
 6. Leer `dataverse/PLAN_SEGUNDA_PASADA.md`.
-7. Leer `operativa/archive/legacy-root/undated/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md` si la wave se va a repartir en agentes.
+7. Leer `operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md` si la wave se va a repartir en agentes.
 8. Si el delta toca archivo, leer `hitos/INDICE_MAESTRO.md` y `hitos/_archivo/README.md`.
-9. Si el hilo sigue abierto, leer `operativa/TRACE.md` y `operativa/archive/legacy-root/undated/PROMPT_NUEVO_HILO.md`.
+9. Si el hilo sigue abierto, leer `operativa/TRACE.md` y `operativa/PROMPT_NUEVO_HILO.md`.
 
 ## Regla
 

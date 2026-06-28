@@ -11,8 +11,6 @@ from agents import Runner
 from openai.types.responses.response_text_delta_event import ResponseTextDeltaEvent
 from pydantic import ValidationError
 
-from projec_cdx_common.safe_errors import sanitize_exception_message
-
 from .agent import LaunchDeskRuntimeContext, build_launch_desk_agent, build_launch_prompt
 from .config import ENABLE_RESPONSE_CACHE, RUN_TIMEOUT_SECONDS, resolve_model
 from .observability import LaunchDeskRunHooks
@@ -40,7 +38,7 @@ def _serialize_event(event_type: str, **payload: Any) -> str:
 
 
 def _public_error_message(exc: BaseException) -> str:
-    raw = sanitize_exception_message(exc)
+    raw = str(exc).strip()
     lowered = raw.lower()
     if isinstance(exc, TimeoutError) or isinstance(exc, asyncio.TimeoutError):
         return "The launch plan took too long to finish. Try a shorter brief or use a faster model profile."

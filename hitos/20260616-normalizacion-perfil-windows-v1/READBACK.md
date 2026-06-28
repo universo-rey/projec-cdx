@@ -9,9 +9,9 @@ HECHO_VERIFICADO: receta, proceso, patron y entrenamiento quedaron versionados y
 - `PROJEC CDX/patrones/normalizacion-perfil-windows.md`
 - `PROJEC CDX/recipes/normalizacion-perfil-windows.md`
 - `PROJEC CDX/procesos/normalizacion-perfil-windows.md`
-- `PROJEC CDX/operativa/archive/legacy-root/undated/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md`
-- `PROJEC CDX/operativa/archive/legacy-root/undated/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md`
-- `PROJEC CDX/operativa/archive/legacy-root/20260615/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md`
+- `PROJEC CDX/operativa/ENTRENAMIENTO_AGENTES_NORMALIZACION_PERFIL_WINDOWS.md`
+- `PROJEC CDX/operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md`
+- `PROJEC CDX/operativa/MATRIZ_SKILLS_TOOLS_RECETAS_20260615.md`
 
 ## Sistemas No Tocados
 

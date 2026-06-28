@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, Iterable
 
 import yaml
 from jsonschema import Draft202012Validator
+
+from .path_policy import canonical_path, normalize_path_value
 
 IGNORED_PARTS = {
     ".git",
@@ -19,14 +21,13 @@ IGNORED_PARTS = {
     "site-packages",
 }
 IGNORED_ENV_NAMES = {".env", ".venv", "env", "venv"}
-IGNORED_METADATA_PREFIXES = (
-    ".agent/",
-    ".agents/",
-    ".github/agents/",
-    ".github/skills/",
-    "outputs/",
-    "operativa/tasks/",
+EXTERNAL_METADATA_ROOTS = (
+    Path(".agent"),
+    Path(".cursor"),
+    Path(".github/agents"),
+    Path(".github/skills"),
 )
+CORE_ONLY_ROOTS = (Path("src"), Path("tests"), Path("tools"), Path("operativa"))
 
 
 @dataclass(frozen=True)
@@ -47,6 +48,7 @@ class ValidationErrorItem:
 class ValidationResult:
     records: list[MetadataRecord]
     errors: list[ValidationErrorItem]
+    ignored_errors: list[str] = field(default_factory=list)
 
     @property
     def is_valid(self) -> bool:
@@ -61,8 +63,8 @@ def _strip_dataset_extension(path: str) -> str | None:
 
 
 def _artifact_id_convention_error(record: MetadataRecord) -> str | None:
-    artifact_id = record.metadata.get("artifact_id")
-    repo_path = record.metadata.get("ubicacion_repo")
+    artifact_id = canonical_path(record.metadata.get("artifact_id"))
+    repo_path = canonical_path(record.metadata.get("ubicacion_repo"))
     if not isinstance(artifact_id, str) or not isinstance(repo_path, str):
         return None
 
@@ -98,6 +100,10 @@ def _is_relative_to(path: Path, parent: Path) -> bool:
         return False
 
 
+def _is_under_any(path: Path, roots: Iterable[Path]) -> bool:
+    return any(_is_relative_to(path, root) for root in roots)
+
+
 def _discover_virtualenv_roots(root: Path) -> list[Path]:
     roots: list[Path] = []
     for config_path in root.rglob("pyvenv.cfg"):
@@ -109,12 +115,13 @@ def _discover_virtualenv_roots(root: Path) -> list[Path]:
     return roots
 
 
-def _should_skip(path: Path, virtualenv_roots: list[Path]) -> bool:
-    normalized = path.as_posix()
-    return (
-        _is_ignored(path)
-        or any(normalized.startswith(prefix) for prefix in IGNORED_METADATA_PREFIXES)
-        or any(_is_relative_to(path, root) for root in virtualenv_roots)
+def _should_skip(
+    path: Path,
+    virtualenv_roots: list[Path],
+    excluded_roots: Iterable[Path],
+) -> bool:
+    return _is_ignored(path) or _is_under_any(path, virtualenv_roots) or _is_under_any(
+        path, excluded_roots
     )
 
 
@@ -149,47 +156,109 @@ def replace_front_matter(path: Path, metadata: dict[str, Any]) -> None:
     path.write_text(f"{dump_front_matter(metadata)}\n{raw}", encoding="utf-8")
 
 
-def discover_metadata_records(root: Path) -> list[MetadataRecord]:
-    records: list[MetadataRecord] = []
-    virtualenv_roots = _discover_virtualenv_roots(root)
+def _scan_patterns(
+    root: Path,
+    include_roots: Iterable[Path] | None,
+    pattern: str,
+) -> Iterable[Path]:
+    if include_roots:
+        for include_root in include_roots:
+            scan_root = root / include_root
+            if scan_root.exists():
+                yield from scan_root.rglob(pattern)
+        return
+    yield from root.rglob(pattern)
 
-    for md_path in root.rglob("*.md"):
+
+def discover_metadata_records(
+    root: Path,
+    include_roots: Iterable[Path] | None = None,
+) -> tuple[list[MetadataRecord], list[str], list[ValidationErrorItem]]:
+    records: list[MetadataRecord] = []
+    ignored_errors: list[str] = []
+    parse_errors: list[ValidationErrorItem] = []
+    virtualenv_roots = _discover_virtualenv_roots(root)
+    excluded_roots = EXTERNAL_METADATA_ROOTS
+
+    for md_path in _scan_patterns(root, include_roots, "*.md"):
         rel = md_path.relative_to(root)
-        if _should_skip(rel, virtualenv_roots):
+        if _should_skip(rel, virtualenv_roots, excluded_roots):
+            if _is_under_any(rel, excluded_roots):
+                ignored_errors.append(
+                    f"{str(rel).replace('\\', '/')} :: excluded external metadata scope"
+                )
             continue
-        front_matter = parse_front_matter(md_path)
+        try:
+            front_matter = parse_front_matter(md_path)
+        except (ValueError, yaml.YAMLError, UnicodeDecodeError) as exc:
+            parse_errors.append(
+                ValidationErrorItem(
+                    source_path=str(rel).replace("\\", "/"),
+                    message=f"front matter invalido: {exc}",
+                    field_path="<root>",
+                )
+            )
+            continue
         if front_matter:
             records.append(
                 MetadataRecord(
                     source_path=str(rel).replace("\\", "/"),
-                    metadata=front_matter,
+                    metadata=normalize_path_value(front_matter),
                     kind="front_matter",
                 )
             )
 
-    for meta_path in root.rglob("*.meta.json"):
+    for meta_path in _scan_patterns(root, include_roots, "*.meta.json"):
         rel = meta_path.relative_to(root)
-        if _should_skip(rel, virtualenv_roots):
+        if _should_skip(rel, virtualenv_roots, excluded_roots):
+            if _is_under_any(rel, excluded_roots):
+                ignored_errors.append(
+                    f"{str(rel).replace('\\', '/')} :: excluded external metadata scope"
+                )
             continue
-        payload = json.loads(meta_path.read_text(encoding="utf-8"))
+        try:
+            payload = json.loads(meta_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, UnicodeDecodeError) as exc:
+            parse_errors.append(
+                ValidationErrorItem(
+                    source_path=str(rel).replace("\\", "/"),
+                    message=f"json invalido: {exc}",
+                    field_path="<root>",
+                )
+            )
+            continue
         if not isinstance(payload, dict):
-            raise ValueError(f"Metadata file must be an object: {meta_path}")
+            parse_errors.append(
+                ValidationErrorItem(
+                    source_path=str(rel).replace("\\", "/"),
+                    message=f"metadata file must be an object: {meta_path}",
+                    field_path="<root>",
+                )
+            )
+            continue
         records.append(
             MetadataRecord(
                 source_path=str(rel).replace("\\", "/"),
-                metadata=payload,
+                metadata=normalize_path_value(payload),
                 kind="meta_json",
             )
         )
 
-    return records
+    return records, ignored_errors, parse_errors
 
 
-def validate_repository(root: Path, schema_path: Path) -> ValidationResult:
+def validate_repository(
+    root: Path,
+    schema_path: Path,
+    include_roots: Iterable[Path] | None = None,
+) -> ValidationResult:
     schema = load_schema(schema_path)
     validator = Draft202012Validator(schema)
-    records = discover_metadata_records(root)
+    records, ignored_errors, parse_errors = discover_metadata_records(
+        root, include_roots=include_roots
+    )
     errors: list[ValidationErrorItem] = []
+    errors.extend(parse_errors)
 
     seen_artifacts: dict[str, str] = {}
     for record in records:
@@ -202,7 +271,7 @@ def validate_repository(root: Path, schema_path: Path) -> ValidationResult:
                     field_path=field_path,
                 )
             )
-        artifact_id = record.metadata.get("artifact_id")
+        artifact_id = canonical_path(record.metadata.get("artifact_id"))
         if isinstance(artifact_id, str) and artifact_id:
             if artifact_id in seen_artifacts:
                 errors.append(
@@ -225,4 +294,4 @@ def validate_repository(root: Path, schema_path: Path) -> ValidationResult:
                 )
             )
 
-    return ValidationResult(records=records, errors=errors)
+    return ValidationResult(records=records, errors=errors, ignored_errors=ignored_errors)

@@ -1,6 +1,0 @@
-email_subject,workflow,job,failure_duration_if_present,known_issue,likely_related_gate,requires_remote_logs,decision
-PR run failed SDU Agent Runtime Connections Validation,SDU Agent Runtime Connections Validation,unknown,unknown,repeated_runtime_connections_failure,0.3.13,true,NEEDS_REMOTE_WORKFLOW_LOGS
-Search found 25 emails,SDU Agent Runtime Connections Validation,unknown,repeated_signal,ci_failure_from_email_rescan,0.3.13,true,UNKNOWN_CI_FAILURE
-email rescan validator drift,SDU Agent Runtime Connections Validation,validator,unknown,validator_path_or_registration_drift,0.3.10,true,LIKELY_VALIDATOR_DRIFT
-email rescan dataverse precheck,SDU Agent Runtime Connections Validation,dataverse_precheck,unknown,dataverse_dev_precheck_gap,0.3.4,false,COVERED_BY_0.3.4
-email rescan power automate validator,SDU Agent Runtime Connections Validation,power_automate_validator,unknown,validator_missing,0.3.5,false,COVERED_BY_0.3.5

@@ -1,8 +1,0 @@
-{
-  "traceId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
-  "spanId": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
-  "parentSpanId": null,
-  "type": "RUNTIME_DRIFT",
-  "status": "done",
-  "durationMs": 125
-}

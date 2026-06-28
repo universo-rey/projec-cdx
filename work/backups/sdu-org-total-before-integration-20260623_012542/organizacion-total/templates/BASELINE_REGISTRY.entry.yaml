@@ -1,0 +1,15 @@
+schema_version: 1
+baselines:
+  - baseline_id: SDU_ORG_TOTAL_MULTIAGENTE_G1_20260623
+    status: ACTIVE_CANDIDATE
+    owner: Enzo Figueroa
+    runner_id: SDU_ORGANIZACION_TOTAL_MULTIAGENTE_VSCODE_INSIDERS_G1
+    mode: G1_LOCAL_REVERSIBLE_DRYRUN
+    live_policy: NO_LIVE_SIN_GATE
+    outputs:
+      - out/selected-agents.json
+      - out/inventory.csv
+      - out/classification.csv
+      - out/move-plan.csv
+      - out/evidence-manifest.json
+    status_note: baseline vivo de runner; no aplica movimientos reales

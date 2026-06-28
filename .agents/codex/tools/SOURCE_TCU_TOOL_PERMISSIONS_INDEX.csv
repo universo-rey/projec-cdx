@@ -1,7 +1,0 @@
-tool_id,state,can_read,can_write,can_create,can_delete,can_execute_tools,requires_gate,live_execution_allowed,notes
-local_python_validator,REQUESTABLE,true,false,false,false,false,false,false,local validators only
-github_cli,REQUESTABLE,true,true,false,false,false,false,false,PR branch update allowed merge blocked without approval
-openai_api_readonly_inventory,REQUIRES_GATE,true,false,false,false,false,true,false,read-only metadata inventory
-sharepoint_live_write,BLOCKED,false,false,false,false,false,true,false,live write blocked
-power_automate_live_execution,BLOCKED,false,false,false,false,false,true,false,live execution blocked
-dataverse_mvp_dependency,BLOCKED,false,false,false,false,false,true,false,Dataverse deferred

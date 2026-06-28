@@ -1,4 +1,0 @@
-artifact,ready_claim,validator_status,required_change,decision,postcheck
-Power Automate ready readback,ready_signal,NO_DISPONIBLE,DOWNGRADE_READY_TO_BLOCKED,DOWNGRADE_READY_TO_BLOCKED,ready cannot pass without specific validator
-Power Automate validator registry,missing_validator,NO_DISPONIBLE,ADD_VALIDATOR_AND_WIRE,ADD_VALIDATOR_AND_WIRE,validator executable is invoked by postcheck
-Metadata structural parse,partial_evidence,STRUCTURAL_PARSE_ONLY,STRUCTURAL_PARSE_EQUIVALENT_REQUIRED,STRUCTURAL_PARSE_EQUIVALENT_REQUIRED,structural evidence is not runtime flow validation

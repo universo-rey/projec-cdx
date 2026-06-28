@@ -1,0 +1,115 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "SDU Frontdoor: System",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder}/.cabina/SDU_RUNTIME_ROOT/00_START_HERE/SYSTEM_FRONTDOOR.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Frontdoor: Capability",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-Content -LiteralPath '${workspaceFolder}/.cabina/SDU_RUNTIME_ROOT/00_START_HERE/CAPABILITY_FRONTDOOR.md'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Federation: Validate Bindings",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$root='${workspaceFolder}/.cabina/SDU_RUNTIME_ROOT'; $json=@(\"$root/05_CONFIG/federation-bindings.v1.json\",\"$root/10_FEDERATION/SDU_FEDERATED_INTEGRATION_PLAN_20260627.json\"); foreach($f in $json){ Get-Content -LiteralPath $f -Raw | ConvertFrom-Json > $null; Write-Host \"JSON OK: $f\" }; $csv=@(\"$root/10_FEDERATION/SDU_SCRIPT_TOOL_BINDING_20260627.csv\",\"$root/10_FEDERATION/SDU_CABINA_PACKAGE_ADOPTION_MATRIX_20260627.csv\"); foreach($f in $csv){ $rows=Import-Csv -LiteralPath $f; Write-Host \"CSV OK: $($rows.Count) rows: $f\" }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Runtime: Validate Script Gate",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/.cabina/SDU_RUNTIME_ROOT/06_RUNTIME_EXECUTION_SURFACES/LOCAL_WINDOWS/SCRIPTS/Invoke-CabinaPwsh.ps1",
+        "-ScriptPath",
+        "${workspaceFolder}/.cabina/SDU_RUNTIME_ROOT/06_RUNTIME_EXECUTION_SURFACES/LOCAL_WINDOWS/SCRIPTS/Test-CabinaExecutionGate.ps1",
+        "-OperationId",
+        "READ_STATUS",
+        "-Mode",
+        "OBSERVE"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Runtime: Metadata Wave Validate",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/tools/validate_sdu_dataverse_metadata_wave.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NOC: Build State",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/noc/build-noc-state.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU NOC: Runtime Diagnose",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/noc/actions/ceo-runtime-diagnose.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "SDU Control: Local Readback",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "SDU Frontdoor: System",
+        "SDU Frontdoor: Capability",
+        "SDU Federation: Validate Bindings",
+        "SDU Runtime: Validate Script Gate",
+        "SDU Runtime: Metadata Wave Validate",
+        "SDU NOC: Build State"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

@@ -33,7 +33,7 @@ La Corte reviso el plan en modo read-only. Resultado integrado:
 
 El plan es apto para avanzar al scouting read-only de repos dirty, pero no autoriza live write ni cierre total.
 
-Evidencia: `operativa/archive/legacy-root/20260617/READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md`.
+Evidencia: `operativa/READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md`.
 
 ## Ajustes De Revision Aplicados
 

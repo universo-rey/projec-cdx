@@ -1,4 +1,0 @@
-"repo_path","detected_as","git_dir","status","decision","action"
-"C:\CEO\project-cdx","CANONICAL_ENTRYPOINT","root_repo","CLEAN","IN_SCOPE_CONTROL_REPO","continue"
-"C:\Users\enzo1\PROJEC CDX","PHYSICAL_WORKSPACE","root_repo","CLEAN","ALIAS_PHYSICAL_NOT_SECOND_WORKSPACE","do_not_duplicate"
-"nested_repos_under_workspace","NONE_FOUND","none","NO_CHILD_REPO_DIRTY","NO_ACTION_REQUIRED","read_only_completed"

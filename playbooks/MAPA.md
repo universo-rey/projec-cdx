@@ -16,6 +16,7 @@ La cobertura atomica energetica marca fase y siguiente impulso en cada playbook 
 6. `05-promover-aprendizaje.md`
 7. `06-dataverse-gobernado.md`
 8. `07-dataverse-fronteras.md`
+9. `08-planner-graph-auth-recovery.md`
 
 ## Uso
 

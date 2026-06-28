@@ -4,7 +4,7 @@
 
 **Goal:** Prepare a governed atomic wave across the 13 canonical Git repositories so each lane leaves a small reusable atom of energy and knowledge without shared-state interference.
 
-**Architecture:** Use the existing repo matrix as the source of truth, split the work into disjoint lanes by repo family, and keep `PROJEC CDX` as the orchestration hub. Reuse `operativa/archive/legacy-root/undated/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md`, `recipes/agentes-atomicos-algoritmicos-en-waves.md`, and `procesos/agentes-atomicos-algoritmicos-en-waves.md` so each wave is one scope, one owner, one validator, one stop condition.
+**Architecture:** Use the existing repo matrix as the source of truth, split the work into disjoint lanes by repo family, and keep `PROJEC CDX` as the orchestration hub. Reuse `operativa/ANCLA_AGENTES_ATOMICOS_ALGORITMICOS.md`, `recipes/agentes-atomicos-algoritmicos-en-waves.md`, and `procesos/agentes-atomicos-algoritmicos-en-waves.md` so each wave is one scope, one owner, one validator, one stop condition.
 
 **Tech Stack:** Markdown, PowerShell, `rg`, `Get-Content`, `Test-Path`, `apply_patch`, `git`, `parallel-order-governance`, `repo-agent-tool-governance`, `matrix-recipe-skill-sync`, `dispatching-parallel-agents`, `subagent-driven-development`.
 

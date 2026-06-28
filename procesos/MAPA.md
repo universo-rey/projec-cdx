@@ -11,6 +11,7 @@ Vista unica de procesos accionables.
 - [limpieza-pc-local-segura.md](C:/Users/enzo1/PROJEC%20CDX/procesos/limpieza-pc-local-segura.md)
 - [microsoft-live-read-preliminar.md](C:/Users/enzo1/PROJEC%20CDX/procesos/microsoft-live-read-preliminar.md)
 - [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md)
+- [planner-sharepoint-sdu-preprod-expediente.md](C:/Users/enzo1/PROJEC%20CDX/procesos/planner-sharepoint-sdu-preprod-expediente.md)
 - [documentos-canon-atomico](C:/Users/enzo1/.codex/skills/documentos-canon-atomico/SKILL.md)
 
 La wave visible mas reciente queda absorbida en [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
@@ -31,7 +32,7 @@ El proceso de Microsoft live read preliminar queda en [microsoft-live-read-preli
 
 El proceso SDU Dataverse metadata wave queda en [sdu-dataverse-metadata-wave.md](C:/Users/enzo1/PROJEC%20CDX/procesos/sdu-dataverse-metadata-wave.md).
 
-Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md).
+Se usa on-demand desde [ANCLAS_ON_DEMAND.md](C:/Users/enzo1/PROJEC%20CDX/operativa/ANCLAS_ON_DEMAND.md).
 
 ## Piezas
 
@@ -75,3 +76,4 @@ La skill formal asociada queda en [documentos-canon-atomico](C:/Users/enzo1/.cod
 - `limpieza-pc-local-segura.md` gobierna la limpieza local con inventario, gate y evidencia antes de tocar ruido.
 - `microsoft-live-read-preliminar.md` gobierna la lectura Microsoft acotada, con tools read-only y stop conditions antes de cualquier live.
 - `sdu-dataverse-metadata-wave.md` gobierna la hidratacion metadata_only con fan-in, matriz, rollback y postcheck.
+- `planner-sharepoint-sdu-preprod-expediente.md` gobierna la preproduccion notarial Planner + SharePoint + SDU con matrices CDF/TGE.

@@ -1,7 +1,0 @@
-tool_id,status,gate_required,input_allowed,input_blocked,requires_secrets,live_execution_allowed,evidence_required
-local_python_validator,REQUESTABLE,GATE_SDU_PROMPT_INVOCATION_POLICY_PR130,repo files and generated artifacts,secrets live systems,no,false,validator output
-github_cli,REQUESTABLE,GITHUB_GOVERNED,branch PR issue metadata,merge force push protected branch permission changes without approval,no,false,PR URL commit SHA
-openai_api_readonly_inventory,REQUIRES_GATE,OPENAI_API_AGENT_REMOTE_AUDIT_REQUIRED,existing credential and read-only metadata,uploads create update delete tool execution secrets,yes,false,inventory and readback
-sharepoint_live_write,BLOCKED,SHAREPOINT_LIVE_WRITE_GATE_REQUIRED,none in this gate,all live writes,yes,false,blocked readback
-power_automate_live_execution,BLOCKED,POWER_AUTOMATE_LIVE_GATE_REQUIRED,none in this gate,all live executions and mutations,yes,false,blocked readback
-dataverse_mvp_dependency,BLOCKED,DATAVERSE_DEFERRED_GATE_REQUIRED,none for MVP,Dataverse required for MVP,yes,false,deferred gate

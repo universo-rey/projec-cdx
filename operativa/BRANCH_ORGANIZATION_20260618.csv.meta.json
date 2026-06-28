@@ -1,0 +1,25 @@
+{
+  "artifact_id": "operativa/BRANCH_ORGANIZATION_20260618",
+  "categoria": "operativa",
+  "tipo": "matriz",
+  "estado": "en_revision",
+  "version": "2026.06.21",
+  "autoridad": {
+    "tipo": "owner",
+    "referencia": "@SeshatSgin"
+  },
+  "origen": "GitHub",
+  "ubicacion_repo": "operativa/BRANCH_ORGANIZATION_20260618.csv",
+  "etiquetas": [
+    "operativa",
+    "matriz",
+    "metadata",
+    "branches",
+    "organization"
+  ],
+  "relacionados": [
+    "operativa/MAPA.md"
+  ],
+  "descripcion": "Estructura de organizacion de ramas con trazabilidad parcial.",
+  "fecha_evento": "2026-06-18"
+}

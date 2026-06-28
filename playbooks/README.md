@@ -4,7 +4,7 @@ Guias operativas para ejecutar trabajo atomico en `PROJEC CDX`.
 
 La wave visible mas reciente se cierra en [20260615-pr-cierre-atomico-v1](C:/Users/enzo1/PROJEC%20CDX/hitos/20260615-pr-cierre-atomico-v1/README.md).
 
-La cobertura atomica energetica entra por [operativa/archive/legacy-root/20260615/COBERTURA_ATOMICA_ENERGETICA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260615/COBERTURA_ATOMICA_ENERGETICA_20260615.md).
+La cobertura atomica energetica entra por [operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/COBERTURA_ATOMICA_ENERGETICA_20260615.md).
 
 - [MAPA.md](C:/Users/enzo1/PROJEC%20CDX/playbooks/MAPA.md)
 
@@ -18,6 +18,7 @@ La cobertura atomica energetica entra por [operativa/archive/legacy-root/2026061
 - [05-promover-aprendizaje.md](C:/Users/enzo1/PROJEC%20CDX/playbooks/05-promover-aprendizaje.md)
 - [06-dataverse-gobernado.md](C:/Users/enzo1/PROJEC%20CDX/playbooks/06-dataverse-gobernado.md)
 - [07-dataverse-fronteras.md](C:/Users/enzo1/PROJEC%20CDX/playbooks/07-dataverse-fronteras.md)
+- [08-planner-graph-auth-recovery.md](C:/Users/enzo1/PROJEC%20CDX/playbooks/08-planner-graph-auth-recovery.md)
 
 ## Regla
 

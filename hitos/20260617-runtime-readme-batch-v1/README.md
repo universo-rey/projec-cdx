@@ -16,8 +16,8 @@ Lote coordinado de ocho repos con cambio documental README-only para cerrar la r
 
 ## Evidencia
 
-- `operativa/archive/legacy-root/20260617/READBACK_RUNTIME_README_BATCH_20260617.md`
-- `operativa/archive/legacy-root/20260617/RUNTIME_README_BATCH_PR_MATRIX_20260617.csv`
+- `operativa/READBACK_RUNTIME_README_BATCH_20260617.md`
+- `operativa/RUNTIME_README_BATCH_PR_MATRIX_20260617.csv`
 - `READBACK.md`
 - `EVIDENCIA.md`
 - `MANIFEST.yaml`

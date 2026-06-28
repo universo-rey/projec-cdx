@@ -27,8 +27,8 @@ los hilos y agentes consuman la evidencia sin reabrir toda la superficie.
 - `EVIDENCIA.md`
 - `INDICE.csv`
 - `CONSOLIDACION.csv`
-- `operativa/archive/legacy-root/20260617/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`
-- `operativa/archive/legacy-root/20260617/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv`
+- `operativa/READBACK_MICROSOFT_SGIN_HITOS_DOCUMENTAL_20260617.md`
+- `operativa/MICROSOFT_SGIN_HITOS_CONSOLIDATION_20260617.csv`
 
 ## Siguiente Delta
 

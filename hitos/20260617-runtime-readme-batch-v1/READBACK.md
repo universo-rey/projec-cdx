@@ -12,8 +12,8 @@ Se tomo el contrato del hilo C, se verifico que el lote fuera README-only y se c
 
 ## Salida
 
-- Readback operativo en `operativa/archive/legacy-root/20260617/READBACK_RUNTIME_README_BATCH_20260617.md`.
-- Matriz de PRs en `operativa/archive/legacy-root/20260617/RUNTIME_README_BATCH_PR_MATRIX_20260617.csv`.
+- Readback operativo en `operativa/READBACK_RUNTIME_README_BATCH_20260617.md`.
+- Matriz de PRs en `operativa/RUNTIME_README_BATCH_PR_MATRIX_20260617.csv`.
 - Hito versionado en `hitos/20260617-runtime-readme-batch-v1`.
 
 ## Validacion

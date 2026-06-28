@@ -1,4 +1,0 @@
-gate_id,target_repo,validator,declared_coverage,actual_invocation,missing_in,required_change,negative_test,rollback_required,postcheck_required,decision
-0.4.5,universo-rey/cabina-universal-d,scripts/validators/vsi_memory_log_no_ps_validator.py,covered,unknown,workflow_or_ci_suite,wire validator into real workflow or CI suite,non-compliant fixture must fail validator,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
-0.4.5,universo-rey/cabina-universal-d,vsi_memory_log_no_ps,covered,unknown,manifest_or_runner,register executable invocation instead of declarative coverage only,covered without invocation must fail coverage check,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
-0.4.5,universo-rey/cabina-universal-d,memory_log_no_ps_policy,covered,unknown,local_test_suite,add fixture or suite case that proves PS content is rejected,fixture with PS marker must fail,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION

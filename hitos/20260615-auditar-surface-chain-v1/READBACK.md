@@ -29,5 +29,5 @@ GREEN_LOCAL: `Auditar` incorporada como superficie gobernada no Git.
 
 ## Proximo Movimiento
 
-La clasificacion fina quedo registrada en `operativa/archive/legacy-root/20260615/ACTA_AUDITAR_CLASIFICACION_20260615.md`.
+La clasificacion fina quedo registrada en `operativa/ACTA_AUDITAR_CLASIFICACION_20260615.md`.
 Si aparece un hijo nuevo, se reabre solo ese delta y se vuelve a indexar.

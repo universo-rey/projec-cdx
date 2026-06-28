@@ -20,8 +20,8 @@ Entrada corta para volver al carril Dataverse sin recorrer toda la superficie.
 - `MESA_DE_SALIDA_CORTE_EJECUTORA_20260616.md`
 - `ORDEN_LECTURA_CORTE_EJECUTORA_20260616.md`
 - `HUELLA_ATOMICA_SDU_OWNER_APPROVED_20260616.md`
-- `operativa/archive/legacy-root/20260616/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`
-- `operativa/archive/legacy-root/20260617/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`
+- `operativa/DATAVERSE_PROMOTION_MANIFESTO_SDU_20260616.json`
+- `operativa/DATAVERSE_REHIDRATACION_LIVE_READ_20260617.json`
 - `DATAVERSE_OPERATIONAL_CHAIN_SOURCE_MAP.csv`
 - `ANCLA_CIERRE_WAVE.md`
 - `hitos/20260616-sdu-dataverse-metadata-wave-v1`

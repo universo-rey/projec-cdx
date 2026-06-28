@@ -54,9 +54,9 @@ Too much overhead. It would create thread sprawl and make fan-in harder than the
 Inputs:
 
 - `inventarios/W1_REPOS_DIRTY_TRIAGE_20260617.csv`
-- `operativa/archive/legacy-root/20260617/READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md`
-- `operativa/archive/legacy-root/20260617/THREAD_ARCHITECTURE_5_PLUS_1_20260617.md`
-- `operativa/archive/legacy-root/20260617/THREAD_CREATION_QUEUE_5_PLUS_1_20260617.csv`
+- `operativa/READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md`
+- `operativa/THREAD_ARCHITECTURE_5_PLUS_1_20260617.md`
+- `operativa/THREAD_CREATION_QUEUE_5_PLUS_1_20260617.csv`
 - `operativa/thread-packets-20260617/*.md`
 
 Outputs:

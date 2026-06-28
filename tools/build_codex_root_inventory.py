@@ -12,7 +12,7 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.worksheet.table import Table, TableStyleInfo
 
 ROOT = Path(r"C:\Users\enzo1\.codex")
-WORKSPACE = Path(__file__).resolve().parents[1]
+WORKSPACE = Path(__file__).parents[1]
 XLSX_PATH = WORKSPACE / "CODEX_ROOT_INVENTORY.xlsx"
 CSV_PATH = WORKSPACE / "CODEX_ROOT_INVENTORY.csv"
 JSON_PATH = WORKSPACE / "CODEX_ROOT_MOVE_PLAN.json"

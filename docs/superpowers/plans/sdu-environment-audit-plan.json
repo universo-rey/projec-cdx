@@ -1,0 +1,267 @@
+{
+  "domains": [
+    {
+      "id": "powershell_runtime",
+      "name": "PowerShell runtime",
+      "priority": "P0",
+      "objective": "Capture version, profiles, execution policy, modules, aliases and path resolution."
+    },
+    {
+      "id": "terminals",
+      "name": "Terminales activas",
+      "priority": "P0",
+      "objective": "Identify active shell instances, effective PATH, encoding and locale."
+    },
+    {
+      "id": "users_profiles",
+      "name": "Usuarios y perfiles",
+      "priority": "P0",
+      "objective": "Confirm current identity, profile loading and directory permissions."
+    },
+    {
+      "id": "environment_variables",
+      "name": "Variables de entorno",
+      "priority": "P0",
+      "objective": "Audit CODEX_*, PATH, PYTHONPATH and user/system differences."
+    },
+    {
+      "id": "codex_environment",
+      "name": "Entorno Codex",
+      "priority": "P1",
+      "objective": "Inspect .codex, config.toml, sessions, rollouts, MCP and canonical agents."
+    },
+    {
+      "id": "machine_configuration",
+      "name": "Configuracion del equipo",
+      "priority": "P1",
+      "objective": "Record OS, hostname, architecture, timezone and baseline security policy."
+    },
+    {
+      "id": "disks_filesystems",
+      "name": "Discos y sistemas de archivos",
+      "priority": "P1",
+      "objective": "List mounted volumes, free space, file systems and redirected surfaces."
+    },
+    {
+      "id": "scheduled_tasks",
+      "name": "Tareas programadas",
+      "priority": "P2",
+      "objective": "Inventory active tasks and isolate SDU or tooling-related jobs."
+    },
+    {
+      "id": "services",
+      "name": "Servicios del sistema",
+      "priority": "P2",
+      "objective": "Record running services and those that affect local runtime."
+    },
+    {
+      "id": "processes",
+      "name": "Procesos relevantes",
+      "priority": "P2",
+      "objective": "Capture PowerShell, Python, Codex and suspicious or redundant processes."
+    }
+  ],
+  "checks_per_domain": [
+    {
+      "domain": "powershell_runtime",
+      "checks": [
+        "Capture $PSVersionTable, host, and edition.",
+        "Capture execution policy per scope.",
+        "List loaded modules, aliases, and profile files.",
+        "Confirm canonical path resolution behavior."
+      ]
+    },
+    {
+      "domain": "terminals",
+      "checks": [
+        "Enumerate pwsh, powershell, cmd, WindowsTerminal and Code processes.",
+        "Record effective PATH from the active session.",
+        "Capture culture, UI culture and output encoding."
+      ]
+    },
+    {
+      "domain": "users_profiles",
+      "checks": [
+        "Capture current user and security groups.",
+        "List loaded and special user profiles.",
+        "Read ACLs for USERPROFILE and .codex."
+      ]
+    },
+    {
+      "domain": "environment_variables",
+      "checks": [
+        "Export all process environment variables.",
+        "Compare HKCU\\Environment with HKLM system environment.",
+        "Filter CODEX_* and PATH/PYTHONPATH drift."
+      ]
+    },
+    {
+      "domain": "codex_environment",
+      "checks": [
+        "Inspect %USERPROFILE%\\.codex and its top-level nodes.",
+        "Read config.toml and related state files.",
+        "Enumerate sessions, worktrees, agents and plugins.",
+        "Record known MCP or runtime metadata if present locally."
+      ]
+    },
+    {
+      "domain": "machine_configuration",
+      "checks": [
+        "Capture OS, build, architecture and hostname.",
+        "Capture timezone and security policy flags.",
+        "Record whether UAC is enabled and whether the session is elevated."
+      ]
+    },
+    {
+      "domain": "disks_filesystems",
+      "checks": [
+        "List volumes and filesystem types.",
+        "Measure free and total space per filesystem drive.",
+        "Record additional partitions or mounted disks."
+      ]
+    },
+    {
+      "domain": "scheduled_tasks",
+      "checks": [
+        "List all scheduled tasks and current states.",
+        "Filter tasks with SDU, Codex, PowerShell, Python, Node or Git in the name.",
+        "Capture task execution metadata for suspicious or relevant tasks."
+      ]
+    },
+    {
+      "domain": "services",
+      "checks": [
+        "List service name, display name, status and startup mode.",
+        "Correlate services with CIM Win32_Service data.",
+        "Filter services that may affect development or runtime."
+      ]
+    },
+    {
+      "domain": "processes",
+      "checks": [
+        "List all active processes with path and start time.",
+        "Filter PowerShell, Python, Node, Codex, Code and cmd processes.",
+        "Correlate process tree and command line for redundancy or suspicion."
+      ]
+    }
+  ],
+  "tools_to_use": [
+    "PowerShell",
+    "Get-ComputerInfo",
+    "Get-CimInstance",
+    "Get-Process",
+    "Get-Service",
+    "Get-ScheduledTask",
+    "Get-ScheduledTaskInfo",
+    "Get-ChildItem",
+    "Get-ItemProperty",
+    "Get-ExecutionPolicy",
+    "Get-Module",
+    "Get-Alias",
+    "Get-PSDrive",
+    "Get-Volume",
+    "Get-Disk",
+    "Get-Partition",
+    "Select-String",
+    "Resolve-Path",
+    "whoami",
+    "net session",
+    "schtasks.exe",
+    "Get-Acl",
+    "ConvertTo-Json"
+  ],
+  "commands_examples": [
+    {
+      "domain": "powershell_runtime",
+      "commands": [
+        "$PSVersionTable",
+        "Get-ExecutionPolicy -List",
+        "Get-Module | Select-Object Name,Version,Path",
+        "Get-Alias | Sort-Object Name"
+      ]
+    },
+    {
+      "domain": "terminals",
+      "commands": [
+        "Get-Process pwsh,powershell,cmd,WindowsTerminal,Code -ErrorAction SilentlyContinue | Select-Object Name,Id,Path",
+        "$env:Path -split ';' | Where-Object { $_ }",
+        "[pscustomobject]@{ Culture = [System.Globalization.CultureInfo]::CurrentCulture.Name; UICulture = [System.Globalization.CultureInfo]::CurrentUICulture.Name; OutputEncoding = [Console]::OutputEncoding.WebName }"
+      ]
+    },
+    {
+      "domain": "users_profiles",
+      "commands": [
+        "whoami /all",
+        "Get-CimInstance Win32_UserProfile | Select-Object LocalPath,SID,Loaded,Special",
+        "Get-Acl $env:USERPROFILE | Format-List"
+      ]
+    },
+    {
+      "domain": "environment_variables",
+      "commands": [
+        "Get-ChildItem Env: | Sort-Object Name",
+        "Get-ItemProperty 'HKCU:\\Environment' | Format-List",
+        "Get-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment' | Format-List"
+      ]
+    },
+    {
+      "domain": "codex_environment",
+      "commands": [
+        "Get-ChildItem -LiteralPath (Join-Path $env:USERPROFILE '.codex') -Force",
+        "Get-Content -LiteralPath (Join-Path $env:USERPROFILE '.codex\\config.toml')",
+        "Get-ChildItem -LiteralPath (Join-Path $env:USERPROFILE '.codex') -Recurse -Directory | Where-Object { $_.Name -in @('sessions','worktrees','agents','plugins','environment') }"
+      ]
+    },
+    {
+      "domain": "machine_configuration",
+      "commands": [
+        "Get-ComputerInfo | Select-Object WindowsProductName,WindowsVersion,OsHardwareAbstractionLayer",
+        "hostname",
+        "Get-TimeZone | Select-Object Id,DisplayName"
+      ]
+    },
+    {
+      "domain": "disks_filesystems",
+      "commands": [
+        "Get-Volume",
+        "Get-PSDrive -PSProvider FileSystem",
+        "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FileSystem,Size,FreeSpace"
+      ]
+    },
+    {
+      "domain": "scheduled_tasks",
+      "commands": [
+        "Get-ScheduledTask | Select-Object TaskName,TaskPath,State",
+        "Get-ScheduledTask | Where-Object { $_.TaskName -match 'SDU|Codex|PowerShell|Python|Node|Git' }",
+        "schtasks.exe /Query /FO LIST /V"
+      ]
+    },
+    {
+      "domain": "services",
+      "commands": [
+        "Get-Service | Select-Object Name,DisplayName,Status,StartType",
+        "Get-CimInstance Win32_Service | Select-Object Name,State,StartMode,PathName,StartName",
+        "Get-Service | Where-Object { $_.Name -match 'Codex|Python|Node|Git|W32Time|WinRM' }"
+      ]
+    },
+    {
+      "domain": "processes",
+      "commands": [
+        "Get-Process | Select-Object Name,Id,Path",
+        "Get-Process pwsh,powershell,python,node,cmd,Code -ErrorAction SilentlyContinue | Select-Object Name,Id,Path,StartTime",
+        "Get-CimInstance Win32_Process | Select-Object ProcessId,ParentProcessId,Name,ExecutablePath,CommandLine"
+      ]
+    }
+  ],
+  "risk_areas": [
+    "Medium-integrity UAC token that hides the real admin boundary.",
+    "PATH shadowing between user and system scopes.",
+    "Codex cache, session or rollout drift in %USERPROFILE%\\.codex.",
+    "Task Scheduler or service queries returning partial data without elevation.",
+    "Historical surfaces such as Windows.old, backups and caches polluting the scan.",
+    "Missing modules or missing pytest-style tooling in fallback runtimes.",
+    "Profiles or shells not loaded in non-interactive sessions.",
+    "Suspicious redundant processes that look like tooling but are stale.",
+    "rg is not a guaranteed dependency in this shell; prefer PowerShell-native discovery and text search."
+  ]
+}

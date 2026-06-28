@@ -20,7 +20,7 @@ Cruzar los patrones operativos probados con las skills locales ya existentes par
 | P-004 Gate Antes De Live | `dataverse-*`, `sdu-*`, `tcu-gate-api-no-sensible`, `no-inference-runtime-write-guard` | Sin skill nueva | Ya hay carriles por superficie y por frontera. |
 | P-005 Workbook Al Frente | `excel-workbook-builder` | Sin skill nueva | La skill cubre el caso de workbook operativo. |
 | P-006 Hito Versionado | `canon-documental`, `cabina-session-handoff`, `governed-readback-closeout`, `hitos/` | Sin skill nueva | El durable vive mejor como hito versionado, con canon documental de apoyo. |
-| P-007 Retencion Gobernada | `operativa/archive/legacy-root/undated/RETENCION.md`, `no-inference-runtime-write-guard` | Sin skill nueva | Es una politica transversal, no una sola accion. |
+| P-007 Retencion Gobernada | `operativa/RETENCION.md`, `no-inference-runtime-write-guard` | Sin skill nueva | Es una politica transversal, no una sola accion. |
 | P-008 Validador Antes De Cierre | `governed-readback-closeout`, `skill-judge`, validadores locales | Sin skill nueva | El patron ya depende de validacion, no de una skill unica. |
 | P-009 Agente Revisor Read-Only | `parallel-agentic-repo-audit`, `tcu-harness-evals-agentes` | Sin skill nueva | El trabajo paralelo y read-only ya tiene soporte. |
 | P-010 Amarillo Guardrail | `rey-modo-verificacion-previa-cierre`, `operativa/CONTROL_TOTAL_*.md` | Sin skill nueva | Es una lectura de estado, no una capacidad nueva. |

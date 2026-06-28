@@ -1,3 +1,0 @@
-target_file,issue,patch_intent,blocked_action,rollback,postcheck,decision
-cabina-universal-d:dataverse_precheck,active PAC environment may differ from intended DEV,validate exact active environment before apply,dataverse_live_apply,revert precheck patch,precheck fails on wrong environment,READY_FOR_REMOTE_REPO_PATCH_GATE
-cabina-universal-d:dataverse_import_dry_run,dry-run can require DEV readiness even when apply=false,allow dry-run to remain non-mutating without apply readiness,dataverse_live_apply,revert dry-run branch,apply=false does not mutate and reports readiness separately,READY_FOR_REMOTE_REPO_PATCH_GATE

@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-  [string]$SourceTreePath = 'C:/Users/enzo1/PROJEC CDX',
+  [string]$SourceTreePath = 'C:/CEO/project-cdx',
   [string]$WorktreePath = (Get-Location).Path,
   [string]$ReposRoot = 'C:/Users/enzo1/Documents/GitHub',
   [string]$CanonicalRepoRoot = 'C:/Users/enzo1/Documents/GitHub/cabina-universal-d',
@@ -13,7 +13,14 @@ $ErrorActionPreference = 'Stop'
 
 function ConvertTo-PortableWindowsPath {
   param([Parameter(Mandatory = $true)][string]$Path)
-  return $Path.Replace('\', '/')
+  $portable = $Path.Trim()
+  if ($portable.StartsWith('\\?\UNC\')) {
+    $portable = '\\' + $portable.Substring(8)
+  }
+  elseif ($portable.StartsWith('\\?\')) {
+    $portable = $portable.Substring(4)
+  }
+  return $portable.Replace('\', '/')
 }
 
 $sourceRoot = (Resolve-Path -LiteralPath $SourceTreePath).Path

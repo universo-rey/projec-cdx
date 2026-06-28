@@ -1,9 +1,0 @@
-lane_id,lane_name,primary_surface,evidence,status,next_action
-01_RUNTIME,Runtime,C:\CEO,"policy.json; Start-CEO.ps1; Enter-CEOExclusive.ps1; core; venv Python; Node; Codex CLI; Git; gh; pac; pwsh",ACTIVE_LOCAL,"W1 classify PATH short-name gaps without mutating"
-02_IDE_CONTROL_PLANE,IDE Control Plane,VS Code Insiders,"version 1.126.0-insider; 126 extensions; 36 agent/OpenAI; 49 Microsoft/Azure; 20 Python/Data/Docs; 7 GitHub",IDE_CONTROLLED,"Use IDE as command board; do not clean extensions in W0"
-03_CODEX_MEMORY,Codex Memory,C:\Users\enzo1\.codex,"config.toml 1; state files 2; memories files 260; plugins files 2097; worktrees files 16910; cache files 22509; skills files 234; sessions files 682",RUNTIME_MEMORY,"Do not mutate DB/cache; W1 classify overlays"
-04_AGENT_CHAIN,Agent Chain,skills/plugins/recipes,"user skills 82; agents skills 36; plugin skill files 263; recipes files 17",ACTIVE_LOCAL,"Map skills to carriles and gates"
-05_REPOS_SURFACES,Repos and Surfaces,C:\CEO + Documents\GitHub,"project-cdx clean; 18 direct repos observed; 16 clean; cabina-universal-d dirty 21; Sgin dirty 2",GATED_ON_DEMAND,"Do not touch child repos in W0"
-06_SKILLS_RECIPES_PLUGINS,Skills Recipes Plugins,Codex skill/plugin registry,".codex skills; .agents skills; plugin cache; recipes",ACTIVE_LOCAL,"Deduplicate by equivalent before creating anything"
-07_CONNECTORS_ON_DEMAND,Connectors,CLI + VS Code extensions + plugins,"gh present; pac present; Power Platform extension present; Azure MCP extension present; Data Analytics/OpenAI lanes present",GATED_ON_DEMAND,"No live; prepare gate only if owner asks"
-08_METADATA_EVIDENCE,Metadata Evidence,repo metadata files,"schema.json; index.json; live-manifest.json; MAPA_CAPAS.md; MAPA_MAESTRO.md; semantic-layer; inventories; readbacks",ACTIVE_CANON,"Validate before any commit"

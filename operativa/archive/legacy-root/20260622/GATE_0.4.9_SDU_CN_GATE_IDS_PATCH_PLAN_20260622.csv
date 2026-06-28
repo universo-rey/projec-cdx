@@ -1,5 +1,0 @@
-gate_id,target_repo,artifact,issue,canonical_source,required_change,blocked_inference,rollback_required,postcheck_required,decision
-0.4.9,SeshatSgin/seshat-bootstrap-sdu-cn,prompt SDU-CN,prompt gate IDs do not match gates/gates.yaml,gates/gates.yaml,align prompt IDs to canonical gate IDs,true,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
-0.4.9,SeshatSgin/seshat-bootstrap-sdu-cn,manifest,manifest gate IDs may drift from gates/gates.yaml,gates/gates.yaml,align manifest IDs to canonical gate IDs,true,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
-0.4.9,SeshatSgin/seshat-bootstrap-sdu-cn,CI validators,CI may validate non-canonical gate IDs,gates/gates.yaml,fail validation when IDs are missing from gates/gates.yaml,true,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION
-0.4.9,SeshatSgin/seshat-bootstrap-sdu-cn,G16_GITHUB_ISSUE_PREPARATION_REQUIRED vs G27_GITHUB_ISSUE_PREPARATION_REQUIRED,conflicting gate IDs reported,gates/gates.yaml,use only the existing canonical ID from gates/gates.yaml; do not invent or infer,true,true,true,READY_FOR_REMOTE_PATCH_AUTHORIZATION

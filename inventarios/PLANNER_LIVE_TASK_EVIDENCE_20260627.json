@@ -1,0 +1,48 @@
+{
+  "artifact": "planner-live-task-evidence",
+  "captured_at": "2026-06-27T08:56:56Z",
+  "source": "teams-planner-task-management",
+  "external_write": false,
+  "planner_tasks": [
+    {
+      "id": "0l6C2ZvqlE-xUZ2UWZP-tmUABMwW",
+      "title": "Preparar e informar protocolo BBVA al equipo",
+      "plan_id": "0EqWFYecNkqLi4gQti_8TmUAA9vd",
+      "bucket_id": "sbd9sJ_vFE2Bwus9bFp0O2UADJxW",
+      "created_date_time": "2026-04-27T19:07:57.7621494Z",
+      "etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\""
+    },
+    {
+      "id": "7S-NeDwaHE6890dpDOSZF2UAOhqo",
+      "title": "Cesion de derechos - CARRIZO",
+      "plan_id": "0EqWFYecNkqLi4gQti_8TmUAA9vd",
+      "bucket_id": "MQsr3A6-Ike78cbuJrLiN2UAIpJD",
+      "created_date_time": "2026-06-26T22:07:33.8825877Z",
+      "etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAaCc=\""
+    },
+    {
+      "id": "IqIVnt59U0CT109xzewEZmUALbjf",
+      "title": "GUERRERO Alfredo - Aut. Viaje",
+      "plan_id": "0EqWFYecNkqLi4gQti_8TmUAA9vd",
+      "bucket_id": "MQsr3A6-Ike78cbuJrLiN2UAIpJD",
+      "created_date_time": "2026-06-24T19:32:20.8352589Z",
+      "etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBfCc=\""
+    },
+    {
+      "id": "9Jx5hVjp3k2eyD56MYxtRGUADPIG",
+      "title": "BBVA - PASTORIZA - FLORES - Carpeta N A103",
+      "plan_id": "BrccwJEcAU26c7bC4qKL2mUADUWA",
+      "bucket_id": "Y66O3Y-lQ06nETuEeGO-imUAJ_aG",
+      "created_date_time": "2026-02-04T20:09:11.4626758Z",
+      "etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBHYCc=\""
+    },
+    {
+      "id": "y1x7dDJkTEiqGaMSwVaKkmUAMWjW",
+      "title": "Consulta - Escritura traslativa de dominio - Veronica Lisarde",
+      "plan_id": "BrccwJEcAU26c7bC4qKL2mUADUWA",
+      "bucket_id": "CIWQYRwRe0Ki9MNCiLNpa2UAOc6Z",
+      "created_date_time": "2026-06-26T21:51:47.9503721Z",
+      "etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBSCc=\""
+    }
+  ]
+}

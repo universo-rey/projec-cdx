@@ -1,4 +1,0 @@
-subagent_id,alias,role,assigned_lane,lead_agent,status,read_scope,write_scope,validator,stop_condition
-019e8409-f0ec-7ca1-b18c-58bda10bda64,Turing,matrix_parallel_order_reviewer,parallel_readonly_scouts,rey.control_plane_orchestrator,completed,.agents/codex/matrices|.github,read_only,.agents/codex/tools/local_validate_agent_layer.ps1,parallel_lane_without_validator
-019e840a-2c4d-77b1-b2a1-788317b0d628,Ramanujan,skill_recipe_capability_reviewer,parallel_readonly_scouts,court.openai_dispatcher,completed,.agents/codex/skills|.agents/codex/recipes|.agents/codex/tools,read_only,.agents/codex/tools/local_validate_agent_layer.ps1,parallel_lane_without_validator
-019e840a-775f-7d02-9559-4e985818d08a,Averroes,openai_runtime_order_boundary_reviewer,parallel_openai_local_design,court.openai_dispatcher,completed,AGENTS.md|.agents/codex/orders|.agents/codex/recipes,read_only,.agents/codex/tools/local_validate_agent_layer.ps1,openai_api_live_requested_without_order

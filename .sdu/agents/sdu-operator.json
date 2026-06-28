@@ -1,0 +1,23 @@
+{
+  "name": "sdu-operator",
+  "fallback": true,
+  "direct_binding": false,
+  "delegated_binding": true,
+  "authority_level": "DEFAULT_AGENT",
+  "surface": "C:\\CEO\\project-cdx",
+  "required_recipe": "PREFERRED_FOR_MULTI_STEP",
+  "required_tool": "terminal",
+  "allowed_actions": [
+    "route",
+    "resolve",
+    "execute"
+  ],
+  "blocked_actions": [
+    "full_graph_resolution",
+    "recursive_agent_calls",
+    "global_search_first"
+  ],
+  "evidence": "C:\\CEO\\watchdog\\logs\\changes.jsonl",
+  "validator": "C:\\CEO\\governance\\validators\\validate-codex-execution-contract.ps1",
+  "stop_condition": "intent unresolved after max_depth_2"
+}

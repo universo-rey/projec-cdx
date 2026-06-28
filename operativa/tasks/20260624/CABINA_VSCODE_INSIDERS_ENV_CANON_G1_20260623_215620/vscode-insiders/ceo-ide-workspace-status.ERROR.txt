@@ -1,1 +1,0 @@
-ERROR running ceo-ide-workspace-status.ps1 :: The property 'uri' cannot be found on this object. Verify that the property exists.

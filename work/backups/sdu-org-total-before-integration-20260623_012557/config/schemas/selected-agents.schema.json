@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SDU Selected Agents",
+  "type": "object",
+  "required": [
+    "runner_id",
+    "selected_at",
+    "minimum_satisfied",
+    "agents"
+  ],
+  "properties": {
+    "runner_id": {
+      "type": "string"
+    },
+    "selected_at": {
+      "type": "string"
+    },
+    "minimum_satisfied": {
+      "type": "boolean"
+    },
+    "ideal_satisfied": {
+      "type": "boolean"
+    },
+    "agents": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "agent_id",
+          "role",
+          "selection_status",
+          "source"
+        ],
+        "properties": {
+          "agent_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "selection_status": {
+            "enum": [
+              "existing",
+              "stub_required",
+              "mapped_equivalent"
+            ]
+          },
+          "source": {
+            "type": "string"
+          },
+          "responsibilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

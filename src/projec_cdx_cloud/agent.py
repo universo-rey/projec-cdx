@@ -6,8 +6,14 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from metadata.path_policy import canonical_path
+
 DEFAULT_MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.5")
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).parents[2]
+NOC_ROOT = REPO_ROOT / "noc"
+NOC_SYSTEM_MAP = NOC_ROOT / "SYSTEM_MAP.json"
+NOC_STATE = NOC_ROOT / "noc-state.json"
+NOC_LOCK = NOC_ROOT / "noc.lock.json"
 
 SYSTEM_INSTRUCTIONS = (
     "Eres el carril Codex Cloud de PROJEC CDX. "
@@ -101,10 +107,12 @@ def align_runtime_context() -> None:
 
 
 def _same_path(left: str | None, right: str | None) -> bool:
-    if not left or not right:
+    left_normalized = canonical_path(left)
+    right_normalized = canonical_path(right)
+    if not left_normalized or not right_normalized:
         return False
-    normalized_left = left.replace("\\", "/").rstrip("/").lower()
-    normalized_right = right.replace("\\", "/").rstrip("/").lower()
+    normalized_left = left_normalized.replace("\\", "/").rstrip("/").lower()
+    normalized_right = right_normalized.replace("\\", "/").rstrip("/").lower()
     return normalized_left == normalized_right
 
 
@@ -135,8 +143,8 @@ def smoke_report() -> dict[str, Any]:
         agents_version = "missing"
 
     git_root, git_branch = git_context()
-    env_repo_root = os.environ.get("CODEX_CLOUD_REPO_ROOT")
-    env_worktree = os.environ.get("CODEX_CLOUD_WORKTREE")
+    env_repo_root = canonical_path(os.environ.get("CODEX_CLOUD_REPO_ROOT"))
+    env_worktree = canonical_path(os.environ.get("CODEX_CLOUD_WORKTREE"))
     env_branch = os.environ.get("CODEX_CLOUD_BRANCH")
 
     context_drift: list[str] = []
@@ -147,12 +155,15 @@ def smoke_report() -> dict[str, Any]:
     if env_branch and env_branch != git_branch:
         context_drift.append("CODEX_CLOUD_BRANCH differs from git branch")
 
+    repo_root = canonical_path(git_root) or git_root
+    worktree = canonical_path(git_root) or git_root
+
     return {
         "status": "prepared" if not context_drift else "prepared_with_context_drift",
         "context_ok": not context_drift,
         "context_drift": context_drift,
-        "repo_root": git_root,
-        "worktree": git_root,
+        "repo_root": repo_root,
+        "worktree": worktree,
         "branch": git_branch,
         "model": os.environ.get("OPENAI_MODEL", DEFAULT_MODEL),
         "openai_api_key_present": bool(os.environ.get("OPENAI_API_KEY")),
@@ -163,6 +174,14 @@ def smoke_report() -> dict[str, Any]:
         "env_repo_root": env_repo_root,
         "env_worktree": env_worktree,
         "env_branch": env_branch,
+        "noc_alignment": {
+            "system_map_present": NOC_SYSTEM_MAP.exists(),
+            "state_present": NOC_STATE.exists(),
+            "lock_present": NOC_LOCK.exists(),
+            "system_map_path": str(NOC_SYSTEM_MAP),
+            "state_path": str(NOC_STATE),
+            "lock_path": str(NOC_LOCK),
+        },
         "sdu_sdk_agents_defined": len(SDU_AGENT_PROFILES),
         "sdu_sdk_agents": list(SDU_AGENT_PROFILES.keys()),
     }

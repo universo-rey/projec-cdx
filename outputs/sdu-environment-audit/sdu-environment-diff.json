@@ -1,0 +1,327 @@
+{
+  "inputs": {
+    "user_session": "C:\\Users\\enzo1\\PROJEC CDX\\outputs\\sdu-environment-audit\\sdu-environment-audit-medium.json",
+    "elevated_session": "C:\\Users\\enzo1\\PROJEC CDX\\outputs\\sdu-environment-audit\\sdu-environment-audit.json"
+  },
+  "summary": {
+    "baseline_correct": "elevated",
+    "baseline_reason": "The elevated snapshot is more complete for host/system metadata, PATH, tasks, modules, and volume visibility.",
+    "counts": {
+      "user_env_vars": 52,
+      "elevated_env_vars": 66,
+      "codex_left_only": 22,
+      "codex_right_only": 2,
+      "path_left_only": 1,
+      "path_right_only": 12,
+      "path_duplicate_right": 2,
+      "tasks_left": 202,
+      "tasks_right": 291,
+      "tasks_added_in_elevated": 89,
+      "services_state_mismatch": 2,
+      "process_names_left_only": 1,
+      "process_names_right_only": 0
+    }
+  },
+  "canonical_differences": [
+    {
+      "path": "computer.elevated",
+      "type": "privilege_boundary",
+      "impact": "canonical",
+      "left": false,
+      "right": true,
+      "recommended_action": "Tratar la diferencia de elevacion como esperada; no usarla como drift."
+    },
+    {
+      "path": "system.volumes",
+      "type": "elevated_visibility",
+      "impact": "canonical",
+      "left_count": 0,
+      "right_count": 3,
+      "note": "El snapshot user no expone volumenes; el elevated si los enumera.",
+      "recommended_action": "Usar la vista elevada para inventario de volúmenes y permisos."
+    },
+    {
+      "path": "tasks.all",
+      "type": "visibility_subset",
+      "impact": "canonical",
+      "left_count": 202,
+      "right_count": 291,
+      "added_count": 89,
+      "sample_added": [
+        {
+          "TaskName": "AikCertEnrollTask",
+          "TaskPath": "\\Microsoft\\Windows\\CertificateServicesClient\\"
+        },
+        {
+          "TaskName": "CEO_WATCHDOG",
+          "TaskPath": "\\"
+        },
+        {
+          "TaskName": "CEO_WATCHDOG_TELEMETRY",
+          "TaskPath": "\\"
+        },
+        {
+          "TaskName": "Consent Manager Launcher",
+          "TaskPath": "\\HP\\"
+        },
+        {
+          "TaskName": "CryptoPolicyTask",
+          "TaskPath": "\\Microsoft\\Windows\\CertificateServicesClient\\"
+        },
+        {
+          "TaskName": "EDP Policy Manager",
+          "TaskPath": "\\Microsoft\\Windows\\AppID\\"
+        },
+        {
+          "TaskName": "GoogleUpdaterTaskSystem150.0.7863.0{E083533D-6785-459B-8DB7-2BE98E2CC8D6}",
+          "TaskPath": "\\GoogleSystem\\GoogleUpdater\\"
+        },
+        {
+          "TaskName": "HP Support Solutions Framework Report",
+          "TaskPath": "\\Hewlett-Packard\\HP Support Assistant\\"
+        },
+        {
+          "TaskName": "HandleCommand",
+          "TaskPath": "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+        },
+        {
+          "TaskName": "HandleWnsCommand",
+          "TaskPath": "\\Microsoft\\Windows\\DeviceDirectoryClient\\"
+        },
+        {
+          "TaskName": "HiveUploadTask",
+          "TaskPath": "\\Microsoft\\Windows\\User Profile Service\\"
+        },
+        {
+          "TaskName": "InitialConfiguration",
+          "TaskPath": "\\Microsoft\\Windows\\WindowsAI\\Recall\\"
+        }
+      ],
+      "recommended_action": "Considerar las 89 tareas extra como superficie visible ampliada en elevated."
+    },
+    {
+      "path": "processes.all",
+      "type": "runtime_volatility",
+      "impact": "canonical",
+      "left_unique_names": 87,
+      "right_unique_names": 86,
+      "left_only_names": [
+        "backgroundTaskHost"
+      ],
+      "right_only_names": [],
+      "left_paths_nonnull": 87,
+      "right_paths_nonnull": 199,
+      "note": "Los PIDs y parte de los paths son volatiles; la comparacion exacta no debe usarse como drift estructural.",
+      "recommended_action": "Comparar por nombre/familia de proceso, no por PID."
+    }
+  ],
+  "operational_differences": [
+    {
+      "path": "environment.codex",
+      "type": "left_only_vars",
+      "impact": "operational",
+      "count": 22,
+      "names": [
+        "CODEX_CABINA_REPO_ROOT",
+        "CODEX_CLOUD_BRANCH",
+        "CODEX_CLOUD_CONTRACT",
+        "CODEX_CLOUD_DATAVERSE_BLOCKERS",
+        "CODEX_CLOUD_DATAVERSE_GATE",
+        "CODEX_CLOUD_DATAVERSE_PLAN",
+        "CODEX_CLOUD_DATAVERSE_REGISTRY",
+        "CODEX_CLOUD_DATAVERSE_SOURCE_MAP",
+        "CODEX_CLOUD_ENABLED",
+        "CODEX_CLOUD_GATE",
+        "CODEX_CLOUD_MAINTENANCE_LOG",
+        "CODEX_CLOUD_METADATA_ROOT",
+        "CODEX_CLOUD_MODE",
+        "CODEX_CLOUD_PROFILE",
+        "CODEX_CLOUD_REPO_ROOT",
+        "CODEX_CLOUD_WORKTREE",
+        "CODEX_GIT_CMD",
+        "CODEX_POWERSHELL_PROFILE",
+        "CODEX_PWSH_PATH",
+        "CODEX_PYTHON_CMD",
+        "CODEX_REPOS_ROOT",
+        "CODEX_THREAD_ID"
+      ],
+      "recommended_action": "Si este snapshot debe representar el canon local, migrar o eliminar el bloque cloud-only."
+    },
+    {
+      "path": "environment.codex",
+      "type": "right_only_vars",
+      "impact": "operational",
+      "count": 2,
+      "names": [
+        "CODEX_OPERATOR",
+        "CODEX_START_ROOT"
+      ],
+      "recommended_action": "Mantener si la sesion elevada es la referencia local; de lo contrario, consolidar la politica de bootstrap."
+    },
+    {
+      "path": "environment.session",
+      "type": "bootstrap_vars",
+      "impact": "operational",
+      "user_only": [
+        "OPENAI_MODEL",
+        "SHELL"
+      ],
+      "elevated_only": [
+        "CEO_AGENTS_ROOT",
+        "CEO_CHAINS_ROOT",
+        "CEO_DATAVERSE_ROOT",
+        "CEO_INBOX_ROOT",
+        "CEO_M365_ROOT",
+        "CEO_METADATA_ROOT",
+        "CEO_PROJECT_CDX_ROOT",
+        "CEO_PROJECT_ROOT",
+        "CEO_REPOS_ROOT",
+        "CEO_ROOT",
+        "CEO_RUNTIME_ROOT",
+        "CEO_SKILLS_ROOT",
+        "CEO_TOOLS_ROOT",
+        "CEO_WORKTREES_ROOT"
+      ],
+      "recommended_action": "Tratar estas variables como bootstrap de sesion, no como estado canonico del sistema."
+    },
+    {
+      "path": "environment.Path",
+      "type": "path_entries",
+      "impact": "operational",
+      "user_only": [
+        "C:/CEO/project-cdx/.venv/Scripts"
+      ],
+      "elevated_only": [
+        "C:/Program Files/Microsoft SDKs/Azure/CLI2/wbin",
+        "C:/Program Files/dotnet",
+        "C:/CEO/tools/bin",
+        "C:/Users/enzo1/AppData/Local/Microsoft/WindowsApps",
+        "C:/Users/enzo1/.local/bin",
+        "C:/ProgramData/enzo1/GitHubDesktop/bin",
+        "C:/Users/enzo1/AppData/Local/GitHubDesktop/bin",
+        "C:/Users/enzo1/AppData/Local/GitHubCopilotCLI",
+        "C:/Users/enzo1/AppData/Local/Python/bin",
+        "C:/Users/enzo1/.dotnet/tools",
+        "C:/tools/rg/ripgrep-14.1.0-x86_64-pc-windows-msvc",
+        "C:/tools/rg/ripgrep-14.1.0-x86_64-pc-windows-msvc"
+      ],
+      "duplicate_entries": {
+        "user": [
+          {
+            "path": "C:/Program Files/PowerShell/7",
+            "count": 2
+          }
+        ],
+        "elevated": [
+          {
+            "path": "C:/Program Files/PowerShell/7",
+            "count": 2
+          },
+          {
+            "path": "C:/tools/rg/ripgrep-14.1.0-x86_64-pc-windows-msvc",
+            "count": 2
+          }
+        ]
+      },
+      "recommended_action": "Normalizar, deduplicar y reinyectar el PATH canonico antes de comparar o persistir estado."
+    },
+    {
+      "path": "powershell.modules",
+      "type": "module_load_delta",
+      "impact": "operational",
+      "user_only": [],
+      "elevated_only": [
+        "PSReadLine"
+      ],
+      "recommended_action": "PSReadLine aparece solo en elevated; si se quiere equivalencia de shell, cargar el mismo perfil en ambas sesiones."
+    }
+  ],
+  "risk_differences": [
+    {
+      "path": "computer.hostname",
+      "type": "missing_metadata",
+      "impact": "risk",
+      "left": null,
+      "right": "CEO",
+      "recommended_action": "Revisar por que la sesion user no resuelve el hostname; no parece una restriccion de permisos normal."
+    },
+    {
+      "path": "environment.all",
+      "type": "missing_system_vars",
+      "impact": "risk",
+      "count": 22,
+      "names": [
+        "ALLUSERSPROFILE",
+        "COMPUTERNAME",
+        "CommonProgramFiles",
+        "CommonProgramFiles(x86)",
+        "CommonProgramW6432",
+        "DriverData",
+        "LOGONSERVER",
+        "NUMBER_OF_PROCESSORS",
+        "OS",
+        "OnlineServices",
+        "POWERSHELL_DISTRIBUTION_CHANNEL",
+        "POWERSHELL_TELEMETRY_OPTOUT",
+        "PROCESSOR_ARCHITECTURE",
+        "PROCESSOR_IDENTIFIER",
+        "PROCESSOR_LEVEL",
+        "PROCESSOR_REVISION",
+        "PUBLIC",
+        "RegionCode",
+        "SOURCE_TREE_PATH",
+        "USERDOMAIN_ROAMINGPROFILE",
+        "platformcode",
+        "windir"
+      ],
+      "recommended_action": "Si el snapshot user debe ser canonico, corregir la captura para que herede variables de sistema estables."
+    },
+    {
+      "path": "services.gpsvc",
+      "type": "state_mismatch",
+      "impact": "risk",
+      "left_status_code": 1,
+      "left_status": "Stopped",
+      "right_status_code": 4,
+      "right_status": "Running",
+      "recommended_action": "Validar si el cambio de estado es temporal o si existe drift real del servicio."
+    },
+    {
+      "path": "services.wuauserv",
+      "type": "state_mismatch",
+      "impact": "risk",
+      "left_status_code": 1,
+      "left_status": "Stopped",
+      "right_status_code": 4,
+      "right_status": "Running",
+      "recommended_action": "Validar si el cambio de estado es temporal o si existe drift real del servicio."
+    }
+  ],
+  "drift_detected": [
+    {
+      "path": "computer.hostname",
+      "reason": "user snapshot returned null while elevated resolved CEO",
+      "impact": "risk"
+    },
+    {
+      "path": "environment.all",
+      "reason": "user snapshot is missing 22 standard machine/session variables present in elevated",
+      "impact": "risk"
+    },
+    {
+      "path": "services.gpsvc",
+      "reason": "status 1 -> 4 (Stopped -> Running)",
+      "impact": "risk"
+    },
+    {
+      "path": "services.wuauserv",
+      "reason": "status 1 -> 4 (Stopped -> Running)",
+      "impact": "risk"
+    },
+    {
+      "path": "system.drives.FreeSpace",
+      "reason": "free space changed by 9302016 bytes between captures",
+      "impact": "minor"
+    }
+  ]
+}

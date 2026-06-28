@@ -1,0 +1,391 @@
+{
+  "schema": "sdu_pre_reboot_control.v1",
+  "generated_at": "2026-06-27T17:33:53.4552419-03:00",
+  "mode": "READ_ONLY_CONTROL_PLUS_LOCAL_EVIDENCE_WRITE",
+  "root": "C:/CEO/project-cdx",
+  "output": {
+    "json": "C:/CEO/project-cdx/outputs/sdu-pre-reboot-control/sdu-pre-reboot-control-20260627_173353.json",
+    "markdown": "C:/CEO/project-cdx/outputs/sdu-pre-reboot-control/SDU_PRE_REBOOT_CONTROL_20260627_173353.md"
+  },
+  "computer": {
+    "hostname": null,
+    "username": "enzo1",
+    "userprofile": "C:/Users/enzo1",
+    "elevated": false,
+    "whoami": "ceo\\enzo1",
+    "timezone": "Argentina Standard Time"
+  },
+  "powershell": {
+    "version": "7.6.2",
+    "edition": "Core",
+    "execution_policy": [
+      {
+        "Scope": 4,
+        "ExecutionPolicy": 5
+      },
+      {
+        "Scope": 3,
+        "ExecutionPolicy": 5
+      },
+      {
+        "Scope": 0,
+        "ExecutionPolicy": 5
+      },
+      {
+        "Scope": 1,
+        "ExecutionPolicy": 1
+      },
+      {
+        "Scope": 2,
+        "ExecutionPolicy": 1
+      }
+    ]
+  },
+  "commands": [
+    {
+      "name": "pwsh",
+      "available": true,
+      "source": "C:/Program Files/PowerShell/7/pwsh.exe"
+    },
+    {
+      "name": "powershell",
+      "available": true,
+      "source": "C:/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe"
+    },
+    {
+      "name": "git",
+      "available": true,
+      "source": "C:/Program Files/Git/cmd/git.exe"
+    },
+    {
+      "name": "python",
+      "available": true,
+      "source": "C:/Users/enzo1/AppData/Local/Python/bin/python.exe"
+    },
+    {
+      "name": "node",
+      "available": true,
+      "source": "C:/Users/enzo1/AppData/Local/Microsoft/WinGet/Packages/OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe/node-v24.17.0-win-x64/node.exe"
+    },
+    {
+      "name": "code-insiders",
+      "available": true,
+      "source": "C:/Users/enzo1/AppData/Local/Programs/Microsoft VS Code Insiders/bin/code-insiders.cmd"
+    },
+    {
+      "name": "codex",
+      "available": true,
+      "source": "C:/Users/enzo1/AppData/Local/OpenAI/Codex/bin/8e55c2dd143b6354/codex.exe"
+    },
+    {
+      "name": "rg",
+      "available": true,
+      "source": "C:/tools/rg/ripgrep-14.1.0-x86_64-pc-windows-msvc/rg.exe"
+    }
+  ],
+  "environment": [
+    {
+      "name": "CODEX_CABINA_REPO_ROOT",
+      "value": "C:/Users/enzo1/Documents/GitHub/cabina-universal-d",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLI_PATH",
+      "value": "C:/Users/enzo1/AppData/Local/OpenAI/Codex/bin/8e55c2dd143b6354/codex.exe",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_BRANCH",
+      "value": "codex/consume-bound-workbook-next-delta",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_CONTRACT",
+      "value": "C:/CEO/project-cdx/operativa/CODEX_CLOUD_CONTRACT_20260615.md",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_DATAVERSE_BLOCKERS",
+      "value": "C:/CEO/project-cdx/dataverse/REGISTRO_BLOQUEOS.md",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_DATAVERSE_GATE",
+      "value": "C:/CEO/project-cdx/dataverse/GATE.md",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_DATAVERSE_PLAN",
+      "value": "C:/CEO/project-cdx/dataverse/PLAN_SEGUNDA_PASADA.md",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_DATAVERSE_REGISTRY",
+      "value": "C:/CEO/project-cdx/dataverse/REGISTRO_CODEX_CLOUD_20260615.md",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_DATAVERSE_SOURCE_MAP",
+      "value": "C:/CEO/project-cdx/dataverse/MAPA_CONEXIONES_DATAVERSE.md",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_ENABLED",
+      "value": "0",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_GATE",
+      "value": "local-only",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_MAINTENANCE_LOG",
+      "value": "C:/CEO/project-cdx/operativa/CODEX_CLOUD_MAINTENANCE_20260615.md",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_METADATA_ROOT",
+      "value": "C:/CEO/.metadata",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_MODE",
+      "value": "local",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_PROFILE",
+      "value": "projec-cdx",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_REPO_ROOT",
+      "value": "C:/Users/enzo1/Documents/GitHub/cabina-universal-d",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_CLOUD_WORKTREE",
+      "value": "C:/CEO/worktrees",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_GIT_CMD",
+      "value": "C:/Program Files/Git/cmd/git.exe",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_HOME",
+      "value": "C:/Users/enzo1/.codex",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_METADATA_ROOT",
+      "value": "C:/CEO/.metadata",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_PAC_PATH",
+      "value": "C:/CEO/tools/pac/microsoft.powerapps.cli.2.8.1/tools/pac.exe",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_POWERSHELL_PROFILE",
+      "value": "C:/Users/enzo1/.codex/profiles/powershell/CodexProfile.ps1",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_PROJECT_ROOT",
+      "value": "C:/CEO/project-cdx",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_PWSH_PATH",
+      "value": "C:/Program Files/PowerShell/7/pwsh.exe",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_PYTHON_CMD",
+      "value": "C:/CEO/project-cdx/.venv/Scripts/python.exe",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_REPOS_ROOT",
+      "value": "C:/CEO/repos",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_RUNTIME_SURFACE",
+      "value": "local-desktop",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_SOURCE_TREE_PATH",
+      "value": "C:/CEO/repos",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_THREAD_ID",
+      "value": "019f09bf-d264-7a83-91d9-d658e9235840",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_WORKBENCH_ROOT",
+      "value": "C:/CEO/project-cdx",
+      "kind": "value"
+    },
+    {
+      "name": "CODEX_WORKTREE_PATH",
+      "value": "C:/CEO/worktrees",
+      "kind": "value"
+    },
+    {
+      "name": "PATH",
+      "value": [
+        "C:/Program Files/PowerShell/7",
+        "C:/Users/enzo1/.codex/tmp/arg0/codex-arg0O66aTR",
+        "C:/Users/enzo1/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin",
+        "C:/Program Files/Microsoft SDKs/Azure/CLI2/wbin",
+        "C:/WINDOWS/system32",
+        "C:/WINDOWS",
+        "C:/WINDOWS/System32/Wbem",
+        "C:/WINDOWS/System32/WindowsPowerShell/v1.0/",
+        "C:/WINDOWS/System32/OpenSSH/",
+        "C:/Program Files/Git/cmd",
+        "C:/Program Files/PowerShell/7/",
+        "C:/CEO/tools/pac/microsoft.powerapps.cli.2.8.1/tools",
+        "C:/Program Files/dotnet/",
+        "C:/CEO/tools/bin",
+        "C:/Users/enzo1/AppData/Local/OpenAI/Codex/bin/8e55c2dd143b6354",
+        "C:/Users/enzo1/AppData/Local/Microsoft/WinGet/Packages/OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe/node-v24.17.0-win-x64",
+        "C:/Users/enzo1/AppData/Local/Microsoft/WinGet/Links",
+        "C:/Users/enzo1/AppData/Local/Microsoft/WindowsApps",
+        "C:/Users/enzo1/.local/bin",
+        "C:/ProgramData/enzo1/GitHubDesktop/bin",
+        "C:/Users/enzo1/AppData/Local/GitHubDesktop/bin",
+        "C:/Users/enzo1/AppData/Local/GitHubCopilotCLI/",
+        "C:/Users/enzo1/AppData/Local/Programs/Microsoft VS Code Insiders/bin",
+        "C:/Users/enzo1/AppData/Local/Python/bin",
+        "C:/Users/enzo1/.dotnet/tools",
+        "C:/tools/rg/ripgrep-14.1.0-x86_64-pc-windows-msvc",
+        "C:/tools/rg/ripgrep-14.1.0-x86_64-pc-windows-msvc",
+        "C:/Users/enzo1/AppData/Local/OpenAI/Codex/bin/ada252862d154cdd"
+      ],
+      "kind": "path_entries"
+    }
+  ],
+  "paths": {
+    "cwd": "C:/Users/enzo1/PROJEC CDX",
+    "root_exists": true,
+    "ceo_root_exists": true,
+    "legacy_root_exists": true,
+    "workspace_exists": true,
+    "sdu_runtime_root_exists": true
+  },
+  "vscode_insiders": {
+    "command": {
+      "name": "code-insiders",
+      "available": true,
+      "source": "C:/Users/enzo1/AppData/Local/Programs/Microsoft VS Code Insiders/bin/code-insiders.cmd"
+    },
+    "workspace": "C:/CEO/project-cdx/CEO_CONTROL_PLANE.code-workspace",
+    "federal_workspace": "C:/CEO/project-cdx/.cabina/SDU_RUNTIME_ROOT/03_PROVIDERS/VSCODE_INSIDERS/WORKSPACES/SDU-FEDERAL-CONTROL.code-workspace",
+    "json_checks": [
+      {
+        "path": "C:/CEO/project-cdx/CEO_CONTROL_PLANE.code-workspace",
+        "exists": true,
+        "parse_ok": true,
+        "error": null
+      },
+      {
+        "path": "C:/CEO/project-cdx/.cabina/SDU_RUNTIME_ROOT/03_PROVIDERS/VSCODE_INSIDERS/WORKSPACES/SDU-FEDERAL-CONTROL.code-workspace",
+        "exists": true,
+        "parse_ok": true,
+        "error": null
+      },
+      {
+        "path": "C:/CEO/project-cdx/.cabina/SDU_RUNTIME_ROOT/05_CONFIG/federation-bindings.v1.json",
+        "exists": true,
+        "parse_ok": true,
+        "error": null
+      }
+    ]
+  },
+  "federation": {
+    "binding": "C:/CEO/project-cdx/.cabina/SDU_RUNTIME_ROOT/05_CONFIG/federation-bindings.v1.json",
+    "script_tool_binding": "C:/CEO/project-cdx/.cabina/SDU_RUNTIME_ROOT/10_FEDERATION/SDU_SCRIPT_TOOL_BINDING_20260627.csv",
+    "csv_checks": {
+      "path": "C:/CEO/project-cdx/.cabina/SDU_RUNTIME_ROOT/10_FEDERATION/SDU_SCRIPT_TOOL_BINDING_20260627.csv",
+      "exists": true,
+      "rows": 24,
+      "error": null
+    }
+  },
+  "git": {
+    "root_status": "## codex/audit-governance-hardening...origin/codex/audit-governance-hardening [ahead 2]\r\n M .github/workflows/codeql.yml\r\n M AGENTS.md\r\n M MAPA_CAPAS.md\r\n M MAPA_CORTO.md\r\n M README_ARRANQUE_CODEX_CLOUD.md\r\n M README_CORTO.md\r\n M docs/referencia/AGENTS.reference.md\r\n M docs/superpowers/plans/MAPA.md\r\n M docs/superpowers/plans/README.md\r\n M inventarios/INDICE_COMPACTO.md\r\n M inventarios/INDICE_INVENTARIOS.md\r\n M inventarios/MAPA.md\r\n M main.py\r\n M operativa/PROMPT_CIERRE_WAVE.md\r\n M operativa/PROMPT_NUEVO_HILO.md\r\n M operativa/SETUP_APERTURA_CODEX_UI.md\r\n M playbooks/MAPA.md\r\n M playbooks/README.md\r\n M procesos/INDICE_PROCESOS.md\r\n M procesos/MAPA.md\r\n M procesos/README.md\r\n M recipes/INDICE_RECETAS.md\r\n M recipes/MAPA.md\r\n M recipes/README.md\r\n M recipes/configuracion-entorno-codex-ui.md\r\n M src/launch_desk/config.py\r\n M src/metadata/cli.py\r\n M src/metadata/indexer.py\r\n M src/metadata/validator.py\r\n M src/projec_cdx_cloud/agent.py\r\n M src/projec_cdx_cloud/cli.py\r\n M src/projec_cdx_cloud/cloud_bridge.py\r\n M tests/test_metadata_cli.py\r\n M tools/MAPA.md\r\n M tools/README.md\r\n M tools/build_codex_root_inventory.py\r\n M tools/build_index.py\r\n M tools/build_skills_workbook.py\r\n M tools/build_universe_relationship_audit.py\r\n M tools/codex-cloud-bootstrap.ps1\r\n M tools/codex-cloud-maintenance.ps1\r\n M tools/codex-control-total.ps1\r\n M tools/codex-environment-setup.ps1\r\n M tools/rehome_codex_root_safe.ps1\r\n M tools/update_codex_config_workbook.py\r\n M tools/validate.py\r\n M tools/validate_proj_cdx_operational_chain.ps1\r\n M tools/validate_proj_cdx_sync.ps1\r\n M tools/validate_proj_cdx_workbench.ps1\r\n M validate-scope.json\r\n?? .agent/\r\n?? .bmad-backup/\r\n?? .bookmarks/\r\n?? .cabina/.gitignore\r\n?? .cabina/CABINA_OPERATIONAL_STATE.json\r\n?? .cabina/DELTA_OWNER_MATRIX.json\r\n?? .cabina/SDU_RUNTIME_ROOT/\r\n?? .cabina/canon/\r\n?? .cabina/dataverse/\r\n?? .cabina/execution-g1/\r\n?? .cabina/execution-runtime/ADVANCED_COMMANDS_G16_REPORT.json\r\n?? .cabina/execution-runtime/AUTONOMOUS_G10_REPORT.json\r\n?? .cabina/execution-runtime/CABINA_OPERATE_REPORT.json\r\n?? .cabina/execution-runtime/CABINA_OPERATE_STATE.json\r\n?? .cabina/execution-runtime/CABINA_OPERATIONAL_STATE.json\r\n?? .cabina/execution-runtime/CABINA_START_OPERATIONAL_MODE_REPORT.json\r\n?? .cabina/execution-runtime/EXECUTION_DISPATCH_G6_REPORT.json\r\n?? .cabina/execution-runtime/EXECUTION_FABRIC_G2_REPORT.json\r\n?? .cabina/execution-runtime/NOC_G8_REPORT.json\r\n?? .cabina/execution-runtime/NOC_G9_INTELLIGENCE_REPORT.json\r\n?? .cabina/execution-runtime/REAL_OPERATION_G16_REPORT.json\r\n?? .cabina/execution-runtime/SDU_G11_REPORT.json\r\n?? .cabina/execution-runtime/SDU_G12_GOVERNANCE_REPORT.json\r\n?? .cabina/execution-runtime/advanced-commands/\r\n?? .cabina/execution-runtime/agents/\r\n?? .cabina/execution-runtime/autonomous/\r\n?? .cabina/execution-runtime/backlog/\r\n?? .cabina/execution-runtime/cognitive/\r\n?? .cabina/execution-runtime/control-flow/\r\n?? .cabina/execution-runtime/event-bus-proxy.jsonl\r\n?? .cabina/execution-runtime/evolution/\r\n?? .cabina/execution-runtime/execution-bindings.json\r\n?? .cabina/execution-runtime/execution-map.json\r\n?? .cabina/execution-runtime/execution-pipelines.json\r\n?? .cabina/execution-runtime/guardian/\r\n?? .cabina/execution-runtime/hot-adjustments.json\r\n?? .cabina/execution-runtime/impact/\r\n?? .cabina/execution-runtime/intelligence/NOC_G9_INTELLIGENCE_REPORT.json\r\n?? .cabina/execution-runtime/intelligence/intelligence-metrics.json\r\n?? .cabina/execution-runtime/intelligence/intelligence-scores.json\r\n?? .cabina/execution-runtime/intelligence/multi-domain-intelligence.json\r\n?? .cabina/execution-runtime/kpi/\r\n?? .cabina/execution-runtime/learned-patterns.json\r\n?? .cabina/execution-runtime/noc-dispatcher.jsonl\r\n?? .cabina/execution-runtime/noc-panel.json\r\n?? .cabina/execution-runtime/objectives/\r\n?? .cabina/execution-runtime/openai-key-reuse-state.json\r\n?? .cabina/execution-runtime/planner/\r\n?? .cabina/execution-runtime/queue/\r\n?? .cabina/execution-runtime/real-operation-engine.ps1\r\n?? .cabina/execution-runtime/real-operation-loop.lock.json\r\n?? .cabina/execution-runtime/real-operation-loop.ps1\r\n?? .cabina/execution-runtime/real-operation-promotions.json\r\n?? .cabina/execution-runtime/real-operation-state.json\r\n?? .cabina/execution-runtime/real-operation.jsonl\r\n?? .cabina/execution-runtime/system-bootstrap.json\r\n?? .cabina/governance/\r\n?? .cabina/local-reconcile/\r\n?? .cabina/nervous-system/\r\n?? .cabina/organizacion-total/\r\n?? .cabina/performance/\r\n?? .cabina/runtime/\r\n?? .cabina/sdu/SDU_G11_REPORT.json\r\n?? .cabina/sdu/sdu-federation-map.json\r\n?? .cabina/sdu/sdu-governance.json\r\n?? .cabina/tmp_git_delta_raw.txt\r\n?? .codex/config.toml.bak_20260627_150504\r\n?? .codex/config.toml.bak_20260627_151144\r\n?? .cursor/\r\n?? .github/agents/\r\n?? .github/codeql/\r\n?? .github/skills/\r\n?? .graphifyignore\r\n?? .opencode/\r\n?? .pytest_tmp/\r\n?? .sdu/\r\n?? .vscode/\r\n?? CEO_CONTROL_PLANE.code-workspace\r\n?? SDU_AGENT_CLOSEOUT.md\r\n?? SDU_BOOT_ROOT_FIX.md\r\n?? SDU_FRONTDOOR_ACTIVATION_PLAN.md\r\n?? SDU_RUNTIME_ROOT_PROMOTION_EVALUATION.md\r\n?? WEB_DISCOVERY_REPORT.json\r\n?? codex-agent-runtime.json\r\n?? docs/superpowers/plans/SDU_ENV_AUDIT_PLAN.md\r\n?? docs/superpowers/plans/sdu-environment-audit-plan.json\r\n?? inventarios/PLANNER_GRAPH_AUTH_RECOVERY_20260627.json\r\n?? inventarios/PLANNER_HYBRID_READBACK_STATE_20260627.json\r\n?? inventarios/PLANNER_INCIDENT_CASE_AUDIT_20260627.md\r\n?? inventarios/PLANNER_LIVE_TASK_EVIDENCE_20260627.json\r\n?? inventarios/PLANNER_SHAREPOINT_SDU_PREPROD_READBACK_20260627.md\r\n?? inventarios/PLANNER_TASK_LEVEL_READBACK_20260627.jsonl\r\n?? inventarios/PLANNER_TASK_LEVEL_READBACK_HYBRID_20260627.jsonl\r\n?? inventarios/PLANNER_TEAMS_ACTIVITY_EVIDENCE_20260627.json\r\n?? inventarios/expediente_state_preprod.jsonl\r\n?? noc/\r\n?? operativa/sentinel/\r\n?? path-normalization-report.json\r\n?? playbooks/08-planner-graph-auth-recovery.md\r\n?? procesos/planner-sharepoint-sdu-preprod-expediente.md\r\n?? recipes/planner-anomaly-investigation.md\r\n?? recipes/planner-hybrid-readback-stabilization.md\r\n?? recipes/planner-sharepoint-sdu-preprod-expediente.md\r\n?? sdu-agent-closeout-report.json\r\n?? sdu-boot-root-fix-report.json\r\n?? sdu-frontdoor-activation-plan.json\r\n?? sdu-path-policy.json\r\n?? sdu-runtime-root-promotion-evaluation.json\r\n?? src/metadata/audit_compare.py\r\n?? src/metadata/path_policy.py\r\n?? src/metadata/runtime_checks.py\r\n?? src/projec_cdx_cloud/runtime.py\r\n?? tests/test_audit_compare.py\r\n?? tools/build_planner_task_level_snapshot.ps1\r\n?? tools/compare_sdu_environment_audits.py\r\n?? tools/graphify-freeze-guard.ps1\r\n?? tools/planner_graph_auth_recovery.ps1\r\n?? tools/update_planner_hybrid_readback.ps1\r\n?? work/",
+    "cabina_status": "## main\r\n M SDU_RUNTIME_ROOT/00_START_HERE/CAPABILITY_FRONTDOOR.md\r\n M SDU_RUNTIME_ROOT/00_START_HERE/README_ORGANISMO_VIVO.md\r\n M SDU_RUNTIME_ROOT/00_START_HERE/SYSTEM_FRONTDOOR.md\r\n M SDU_RUNTIME_ROOT/03_PROVIDERS/VSCODE_INSIDERS/LAUNCHERS/open-federal.ps1\r\n D SDU_RUNTIME_ROOT/03_PROVIDERS/VSCODE_INSIDERS/README.md\r\n M SDU_RUNTIME_ROOT/03_PROVIDERS/VSCODE_INSIDERS/TASKS/federal.tasks.json\r\n M SDU_RUNTIME_ROOT/03_PROVIDERS/VSCODE_INSIDERS/TASKS/tasks.json\r\n M SDU_RUNTIME_ROOT/03_PROVIDERS/VSCODE_INSIDERS/WORKSPACES/SDU-FEDERAL-CONTROL.code-workspace\r\n M SDU_RUNTIME_ROOT/09_SKILLS_RECIPES_TOOLS/RECIPES_CATALOG_20260623.csv\r\n M SDU_RUNTIME_ROOT/12_CONTROL_PLANE/GOVERNANCE_MATRIX_CROSSWALK_20260623.csv\r\n D SDU_RUNTIME_ROOT/13_EVIDENCE/SNAPSHOTS/CEO_CONFIG_SNAPSHOT_20260623-173300/policy.json\r\n D SDU_RUNTIME_ROOT/99_ARCHIVE/SUPERSEDED_BASELINES/organizacion-total-leftovers-20260623/templates/AGENT_REGISTRY.patch.yaml\r\n?? CABINA_OPERATIONAL_STATE.json\r\n?? DELTA_OWNER_MATRIX.json\r\n?? SDU_RUNTIME_ROOT/05_CONFIG/federation-bindings.v1.json\r\n?? SDU_RUNTIME_ROOT/08_AGENTS/\r\n?? SDU_RUNTIME_ROOT/10_FEDERATION/\r\n?? SDU_RUNTIME_ROOT/13_EVIDENCE/READBACKS/20260624/\r\n?? SDU_RUNTIME_ROOT/13_EVIDENCE/READBACKS/20260626/\r\n?? SDU_RUNTIME_ROOT/13_EVIDENCE/READBACKS/20260627/\r\n?? canon/\r\n?? dataverse/\r\n?? execution-g1/\r\n?? execution-runtime/\r\n?? governance/\r\n?? local-reconcile/\r\n?? nervous-system/\r\n?? organizacion-total/\r\n?? performance/\r\n?? runtime/\r\n?? sdu/\r\n?? tmp_git_delta_raw.txt",
+    "root_toplevel": "C:/Users/enzo1/PROJEC CDX",
+    "cabina_toplevel": "C:/Users/enzo1/PROJEC CDX/.cabina"
+  },
+  "disks": {
+    "DeviceID": "C:",
+    "FileSystem": "NTFS",
+    "Size": 511000440832,
+    "FreeSpace": 148945551360
+  },
+  "processes_relevant": [
+    {
+      "Name": "node",
+      "Id": 15268,
+      "Path": "C:\\Users\\enzo1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\\node-v24.17.0-win-x64\\node.exe",
+      "StartTime": "2026-06-27T12:43:20.0504681-03:00"
+    },
+    {
+      "Name": "node",
+      "Id": 20396,
+      "Path": "C:\\Users\\enzo1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\\node-v24.17.0-win-x64\\node.exe",
+      "StartTime": "2026-06-27T17:07:39.5676886-03:00"
+    },
+    {
+      "Name": "powershell",
+      "Id": 12912,
+      "Path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "StartTime": "2026-06-27T17:33:53.7659478-03:00"
+    },
+    {
+      "Name": "pwsh",
+      "Id": 10256,
+      "Path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "StartTime": "2026-06-27T14:36:17.0735912-03:00"
+    },
+    {
+      "Name": "pwsh",
+      "Id": 11528,
+      "Path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "StartTime": "2026-06-27T17:30:16.3497099-03:00"
+    },
+    {
+      "Name": "pwsh",
+      "Id": 12596,
+      "Path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "StartTime": "2026-06-27T12:43:28.0728959-03:00"
+    },
+    {
+      "Name": "pwsh",
+      "Id": 13668,
+      "Path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "StartTime": "2026-06-27T17:33:52.6801685-03:00"
+    },
+    {
+      "Name": "pwsh",
+      "Id": 14868,
+      "Path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "StartTime": "2026-06-27T13:50:52.7422296-03:00"
+    }
+  ],
+  "validation": {
+    "metadata_wave": "PASS | required:README.md | OK\r\nPASS | required:MANIFEST.yaml | OK\r\nPASS | required:READBACK.md | OK\r\nPASS | required:EVIDENCIA.md | OK\r\nPASS | required:INDICE.csv | OK\r\nPASS | required:METADATA_HYDRATION_MATRIX.csv | OK\r\nPASS | required:METADATA_HYDRATION_MATRIX.json | OK\r\nPASS | required:ROLLBACK.md | OK\r\nPASS | required:POSTCHECK.md | OK\r\nPASS | required:STOP_CONDITIONS.md | OK\r\nPASS | matrix_rows | 65\r\nPASS | matrix_status | METADATA_ONLY_PREPARED\r\nPASS | planner_sanitized | no_plan_title\r\nSTATUS: PASS",
+    "metadata_wave_pass": true
+  },
+  "post_reboot_compare_hint": "Compare this snapshot with a new sdu-pre-reboot-control snapshot after restart; focus on elevated, cwd, PATH, code-insiders, codex, git roots, and validation.metadata_wave_pass."
+}

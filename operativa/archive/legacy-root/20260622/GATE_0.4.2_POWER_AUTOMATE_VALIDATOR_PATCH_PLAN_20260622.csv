@@ -1,4 +1,0 @@
-gate_id,target_repo,target_artifact,ready_claim,validator_status,required_change,decision,rollback_required,postcheck_required,external_live_allowed
-0.4.2,universo-rey/cabina-universal-d,readbacks/runtime/READBACK_DEV_RUNTIME_CONTROLLED_ACTIVATION.md,ready_signal,NO_DISPONIBLE,downgrade ready to blocked unless validator or equivalent exists,DOWNGRADE_READY_TO_BLOCKED,true,true,false
-0.4.2,universo-rey/cabina-universal-d,validation/runtime/*,validator_missing,NO_DISPONIBLE,add and wire Power Automate validator if available,ADD_VALIDATOR_AND_WIRE,true,true,false
-0.4.2,universo-rey/cabina-universal-d,matrices/runtime/*,partial_evidence,STRUCTURAL_PARSE_ONLY,define structural parse equivalent if no executable validator exists,STRUCTURAL_PARSE_EQUIVALENT_REQUIRED,true,true,false

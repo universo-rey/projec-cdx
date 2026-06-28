@@ -1,0 +1,12 @@
+{
+  "timestamp": "20260623_012542",
+  "backup_dir": "C:\\CEO\\project-cdx\\work\\backups\\sdu-org-total-before-integration-20260623_012542",
+  "package_path": "C:\\Users\\enzo1\\Downloads\\SDU_ORG_TOTAL_MULTIAGENTE_VSCODE_INSIDERS_G1_20260623.zip",
+  "source_root": "C:\\CEO\\project-cdx\\SDU_ORG_TOTAL_MULTIAGENTE_VSCODE_INSIDERS_G1_20260623",
+  "total_source_files": 0,
+  "files_copied": 0,
+  "files_skipped": 0,
+  "files_conflicted": 0,
+  "source_dirs": 0,
+  "target_root": "C:\\CEO\\project-cdx\\.cabina\\organizacion-total"
+}

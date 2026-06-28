@@ -1,0 +1,38 @@
+{
+  "folders": [
+    {
+      "name": "SDU_CONTROL_PLANE",
+      "path": "C:/CEO/project-cdx"
+    },
+    {
+      "name": "CEO_RUNTIME",
+      "path": "C:/CEO"
+    },
+    {
+      "name": "ORG_TOTAL_RUNNER",
+      "path": "C:/CEO/project-cdx/.cabina/organizacion-total"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/.venv": true,
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/.cache": true,
+      "**/__pycache__": true
+    },
+    "search.exclude": {
+      "**/.git": true,
+      "**/.venv": true,
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/.cache": true,
+      "**/__pycache__": true
+    },
+    "explorer.compactFolders": false,
+    "files.autoSave": "afterDelay"
+  }
+}

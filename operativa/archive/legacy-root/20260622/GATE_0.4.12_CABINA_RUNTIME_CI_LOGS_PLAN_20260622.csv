@@ -1,5 +1,0 @@
-gate_id,target_repo,workflow,signal_source,issue,required_action,allowed_mapping,blocked_inference,rollback_required,postcheck_required,decision
-0.4.12,universo-rey/cabina-universal-d,SDU Agent Runtime Connections Validation,email snippets,technical logs missing,collect remote workflow logs under owner gate,0.4.0-0.4.8,true,false,true,READY_FOR_REMOTE_LOG_COLLECTION_GATE
-0.4.12,universo-rey/cabina-universal-d,SDU Agent Runtime Connections Validation,remote workflow logs,logs may contain sensitive runtime context,sanitize logs before local evidence,0.4.0-0.4.8,true,false,true,READY_FOR_REMOTE_LOG_COLLECTION_GATE
-0.4.12,universo-rey/cabina-universal-d,SDU Agent Runtime Connections Validation,classified logs,cause may map to existing prepared gates,map only when evidence is sufficient,0.4.0-0.4.8,true,false,true,READY_FOR_REMOTE_LOG_COLLECTION_GATE
-0.4.12,universo-rey/cabina-universal-d,SDU Agent Runtime Connections Validation,insufficient logs,cause remains unknown,keep UNKNOWN_CI_FAILURE or NEEDS_REMOTE_WORKFLOW_LOGS,none,true,false,true,READY_FOR_REMOTE_LOG_COLLECTION_GATE

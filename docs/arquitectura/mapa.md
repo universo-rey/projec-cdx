@@ -33,7 +33,7 @@ Este mapa cose la documentacion visible de `PROJEC CDX` sin duplicar el control 
 |---|---|---|
 | Arquitectura | Mapas, decisiones y estructura documental | [index](index.md) |
 | Gobernanza | Nomenclatura, versionado y calidad | [gobernanza](../gobernanza/index.md) |
-| Operativa | Cronologia, actas, planes y readbacks | [operativa](../operativa/archive/legacy-root/undated/index.md) |
+| Operativa | Cronologia, actas, planes y readbacks | [operativa](../operativa/index.md) |
 | Referencia | Material largo y glosario | [referencia](../referencia/index.md) |
 | Herramientas | CLI, pipelines y validaciones | [herramientas](../herramientas/index.md) |
 | Datos | Matrices, manifiestos y artefactos indexables | [datos](../datos/index.md) |

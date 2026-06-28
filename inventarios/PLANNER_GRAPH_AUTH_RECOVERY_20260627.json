@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "artifact": "planner-graph-auth-recovery",
+  "generated_at": "2026-06-27T08:39:37.5729226Z",
+  "state": {
+    "READBACK_UNTRUSTED": true,
+    "GRAPH_ACCESS": "DEGRADED",
+    "absence_means_absence": false
+  },
+  "tenant_id": "858a0852-44a1-413e-a0fe-f053949797d6",
+  "app_registration": {
+    "client_id": null,
+    "status": "CLIENT_ID_NOT_EXPOSED_LOCAL"
+  },
+  "observed_scopes": [
+    "Chat.Read",
+    "ChannelMessage.Read.All",
+    "email",
+    "Files.Read.All",
+    "Files.ReadWrite.All",
+    "openid",
+    "profile",
+    "Sites.Read.All",
+    "User.Read"
+  ],
+  "required_scopes": [
+    "Tasks.Read",
+    "Tasks.ReadWrite",
+    "Group.Read.All",
+    "Directory.Read.All",
+    "Team.ReadBasic.All"
+  ],
+  "missing_scopes": [
+    "Tasks.Read",
+    "Tasks.ReadWrite",
+    "Group.Read.All",
+    "Directory.Read.All",
+    "Team.ReadBasic.All"
+  ],
+  "consent": {
+    "admin_consent_url": null,
+    "user_consent_url": null,
+    "note": "Provide -ClientId to generate concrete consent URLs for the current app registration."
+  },
+  "delta_validation": [
+    {
+      "delta": 1,
+      "name": "list_plans",
+      "method": "GET",
+      "endpoint": "https://graph.microsoft.com/v1.0/me/planner/plans",
+      "expected": 200,
+      "required_scopes": [
+        "Tasks.Read",
+        "Tasks.ReadWrite"
+      ]
+    },
+    {
+      "delta": 2,
+      "name": "list_tasks_by_plan",
+      "method": "GET",
+      "endpoint": "https://graph.microsoft.com/v1.0/planner/plans/{plan-id}/tasks",
+      "expected": 200,
+      "required_scopes": [
+        "Tasks.Read",
+        "Tasks.ReadWrite",
+        "Group.Read.All"
+      ]
+    },
+    {
+      "delta": 3,
+      "name": "get_task",
+      "method": "GET",
+      "endpoint": "https://graph.microsoft.com/v1.0/planner/tasks/{task-id}",
+      "expected": 200,
+      "required_scopes": [
+        "Tasks.Read",
+        "Tasks.ReadWrite"
+      ]
+    },
+    {
+      "delta": 4,
+      "name": "get_task_details",
+      "method": "GET",
+      "endpoint": "https://graph.microsoft.com/v1.0/planner/tasks/{task-id}/details",
+      "expected": 200,
+      "required_scopes": [
+        "Tasks.Read",
+        "Tasks.ReadWrite"
+      ]
+    },
+    {
+      "delta": 5,
+      "name": "list_conversation_posts",
+      "method": "GET",
+      "endpoint": "https://graph.microsoft.com/v1.0/groups/{group-id}/threads/{thread-id}/posts",
+      "expected": 200,
+      "required_scopes": [
+        "Group.Read.All",
+        "Directory.Read.All"
+      ]
+    }
+  ],
+  "safety": {
+    "planner_write_allowed": false,
+    "destructive_actions_allowed": false,
+    "readback_mode": "DELTA_PROGRESSIVE"
+  }
+}

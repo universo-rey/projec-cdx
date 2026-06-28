@@ -1,4 +1,0 @@
-repo,validator,reported_state,gate_state_risk,required_change,requires_remote_write,owner_required,rollback_required,postcheck_required,decision
-cabina-universal-d,power_automate_specific_validator,NO_DISPONIBLE,false_ready_if_ignored,do_not_mark_gate_ready_without validator or owner exception,false,true,true,true,BLOCKED_WITH_GATE_PACKET
-cabina-universal-d,generic_workbench_validate,AVAILABLE,insufficient_surface_specific_evidence,do not substitute generic validator for Power Automate validator,false,true,true,true,BLOCKED_WITH_GATE_PACKET
-cabina-universal-d,power_platform_metadata_parse,STRUCTURAL_PARSE_ONLY,not_live_flow_validation,keep metadata-only evidence separate from flow runtime readiness,false,true,true,true,BLOCKED_WITH_GATE_PACKET

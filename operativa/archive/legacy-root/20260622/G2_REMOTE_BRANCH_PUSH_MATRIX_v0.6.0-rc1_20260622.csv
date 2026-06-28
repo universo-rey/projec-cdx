@@ -1,2 +1,0 @@
-repo,local_branch,remote_branch,local_head,remote_head,tag_local,tag_local_commit,tag_remote,action,status,rollback,postcheck
-universo-rey/projec-cdx,codex/multirepo-alignment-16,codex/v0.6.0-rc1-governed-publication,c5904f6c703a3a3d229040e23b0e87249760ad64,c5904f6c703a3a3d229040e23b0e87249760ad64,v0.6.0-rc1,c818ae3a627db6dd34f5a1bc4579a08431d5c563,NOT_PUBLISHED,push_branch,REMOTE_BRANCH_PRESENT,git push origin --delete codex/v0.6.0-rc1-governed-publication,ls-remote heads confirms branch and gh pr list confirms no PR

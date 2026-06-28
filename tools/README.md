@@ -2,18 +2,19 @@
 
 Scripts locales para generar y normalizar artefactos de este workspace.
 
-La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/Users/enzo1/PROJEC%20CDX/operativa/archive/legacy-root/20260615/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
+La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](C:/CEO/project-cdx/operativa/CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
-- [MAPA.md](C:/Users/enzo1/PROJEC%20CDX/tools/MAPA.md)
+- [MAPA.md](C:/CEO/project-cdx/tools/MAPA.md)
 
 ## Incluye
 
-- [RESOLUCION_TOOLS_20260615.md](C:/Users/enzo1/PROJEC%20CDX/tools/RESOLUCION_TOOLS_20260615.md)
+- [RESOLUCION_TOOLS_20260615.md](C:/CEO/project-cdx/tools/RESOLUCION_TOOLS_20260615.md)
 - `build_codex_root_inventory.py`
 - `build_skills_unified_table.ps1`
 - `build_skills_workbook.py`
 - `build_control_workbook.mjs`
 - `build_universe_relationship_audit.py`
+- `compare_sdu_environment_audits.py`
 - `codex-control-total.ps1`
 - `codex-cloud-bootstrap.ps1`
 - `codex-cloud-setup.sh`
@@ -21,8 +22,6 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - `codex-cloud-maintenance.ps1`
 - `codex-cloud-maintenance.sh`
 - `codex-cloud-live.ps1`
-- `sdu_boot.ps1`
-- `sdu_chain_resolver.py`
 - `normalize_codex_surfaces.ps1`
 - `rehome_codex_root_safe.ps1`
 - `test_codex_powershell_layout.ps1`
@@ -33,6 +32,7 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 ## Uso
 
 - Ejecutar `build_codex_root_inventory.py` para regenerar el inventario estructural de la raiz `.codex`.
+- Ejecutar `compare_sdu_environment_audits.py` para comparar dos snapshots de auditoria SDU en JSON.
 - Ejecutar `codex-control-total.ps1` para una pasada rapida de estado sobre Codex, PowerShell, `.codex`, herramientas y repos principales.
 - Ejecutar `codex-control-total.ps1 -ScanCodexRoot` para contar carpetas, archivos y versiones de `.codex` con una lectura viva.
 - Ejecutar `codex-control-total.ps1 -ScanGitHubRoot` para barrer toda `C:\Users\enzo1\Documents\GitHub` y clasificar tambien carpetas no Git.
@@ -40,7 +40,6 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 - Ejecutar `validate_proj_cdx_workbench.ps1` antes de cerrar un delta.
 - Ejecutar `validate_proj_cdx_sync.ps1` cuando el cambio toque fuentes vivas, outputs, hitos o Dataverse.
 - Ejecutar `validate_proj_cdx_operational_chain.ps1` cuando cambie el indice puente repo-agente-skill-receta-tool-evidencia.
-- Ejecutar `sdu_boot.ps1 -Mode all -Agent All -NoExternal -DryRun` para verificar la cadena local `agent -> skill -> recipe -> tool -> validator -> evidence -> stop_condition`.
 - Ejecutar `codex-cloud-bootstrap.ps1` para dejar declarado el contrato local de Codex Cloud y el registro metadata-only.
 - Ejecutar `codex-cloud-setup.sh` como wrapper minimo y portable para Codex Cloud.
 - Ejecutar `codex-cloud-bootstrap.sh` si queres invocarlo directo sin el wrapper.
@@ -52,35 +51,29 @@ La consolidacion operativa mas reciente queda absorbida en [CONSOLIDACION_OPERAT
 ## Control total rapido
 
 ```powershell
-pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/codex-control-total.ps1"
+pwsh -NoProfile -File "C:/CEO/project-cdx/tools/codex-control-total.ps1"
 ```
 
 Salida auditable:
 
 ```powershell
-pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/codex-control-total.ps1" -Format Json
+pwsh -NoProfile -File "C:/CEO/project-cdx/tools/codex-control-total.ps1" -Format Json
 ```
 
 Pasada extendida de repos:
 
 ```powershell
-pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/codex-control-total.ps1" -Full
+pwsh -NoProfile -File "C:/CEO/project-cdx/tools/codex-control-total.ps1" -Full
 ```
 
 Barrido completo de la raiz GitHub:
 
 ```powershell
-pwsh -NoProfile -File "C:/Users/enzo1/PROJEC CDX/tools/codex-control-total.ps1" -ScanGitHubRoot
+pwsh -NoProfile -File "C:/CEO/project-cdx/tools/codex-control-total.ps1" -ScanGitHubRoot
 ```
 
 Arranque vivo unico:
 
 ```powershell
 pwsh -NoProfile -File "./tools/codex-cloud-live.ps1"
-```
-
-Arranque SDU local seguro:
-
-```powershell
-pwsh -NoProfile -File "./tools/sdu_boot.ps1" -Mode all -Agent All -NoExternal -DryRun
 ```

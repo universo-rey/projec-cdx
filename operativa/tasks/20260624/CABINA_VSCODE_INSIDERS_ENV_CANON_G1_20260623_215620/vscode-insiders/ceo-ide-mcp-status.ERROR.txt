@@ -1,1 +1,0 @@
-ERROR running ceo-ide-mcp-status.ps1 :: The property 'disabled' cannot be found on this object. Verify that the property exists.

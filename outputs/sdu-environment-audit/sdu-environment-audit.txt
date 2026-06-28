@@ -1,0 +1,63 @@
+SDU Environment Audit
+Timestamp: 2026-06-27T14:40:19.3614094-03:00
+Elevated: True
+
+PowerShell:
+
+Name                           Value
+----                           -----
+PSVersion                      7.6.2
+PSEdition                      Core
+GitCommitId                    7.6.2
+OS                             Microsoft Windows 10.0.26300
+Platform                       Win32NT
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
+PSRemotingProtocolVersion      2.4
+SerializationVersion           1.1.0.1
+WSManStackVersion              3.0
+
+
+
+Environment:
+
+Name                   Value
+----                   -----
+CODEX_CLI_PATH         C:\Users\enzo1\AppData\Local\OpenAI\Codex\bin\8e55c2dd143b6354\codex.exe
+CODEX_HOME             C:\Users\enzo1\.codex
+CODEX_METADATA_ROOT    C:\CEO\.metadata
+CODEX_OPERATOR         CEO
+CODEX_PAC_PATH         C:\CEO\tools\pac\microsoft.powerapps.cli.2.8.1\tools\pac.exe
+CODEX_PROJECT_ROOT     C:\CEO\project-cdx
+CODEX_RUNTIME_SURFACE  local-desktop
+CODEX_SOURCE_TREE_PATH C:\CEO\repos
+CODEX_START_ROOT       C:\CEO
+CODEX_WORKBENCH_ROOT   C:\CEO\project-cdx
+CODEX_WORKTREE_PATH    C:\CEO\worktrees
+
+
+
+Tasks:
+
+
+Services:
+
+Name    DisplayName                                       Status StartType
+----    -----------                                       ------ ---------
+W32Time Hora de Windows                                  Stopped    Manual
+WinRM   Administración remota de Windows (WS-Management) Stopped    Manual
+
+
+
+Processes:
+
+Name          Id Path
+----          -- ----                                                                                                   
+node       15268 C:\Users\enzo1\AppData\Local\Microsoft\WinGet\Packages\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8weky…
+powershell 12000 C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe                                              
+pwsh        8988 C:\Program Files\PowerShell\7\pwsh.exe                                                                 
+pwsh       10256 C:\Program Files\PowerShell\7\pwsh.exe                                                                 
+pwsh       12596 C:\Program Files\PowerShell\7\pwsh.exe                                                                 
+pwsh       14868 C:\Program Files\PowerShell\7\pwsh.exe                                                                 
+pwsh       18924 C:\Program Files\PowerShell\7\pwsh.exe                                                                 
+
+

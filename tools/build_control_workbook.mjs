@@ -4,8 +4,7 @@ import { SpreadsheetFile, Workbook } from "@oai/artifact-tool";
 
 const root = process.cwd();
 const workbookDir = path.join(root, "workbooks");
-const runtimeRoot = process.env.SDU_RUNTIME_ROOT || path.join(root, ".runtime");
-const outputDir = path.join(runtimeRoot, "control_operativo_20260615");
+const outputDir = path.join(root, "outputs", "control_operativo_20260615");
 await fs.mkdir(workbookDir, { recursive: true });
 await fs.mkdir(outputDir, { recursive: true });
 
@@ -15,18 +14,6 @@ async function readText(relativePath) {
   } catch {
     return "";
   }
-}
-
-async function readRuntimeText(...parts) {
-  try {
-    return await fs.readFile(path.join(runtimeRoot, ...parts), "utf8");
-  } catch {
-    return "";
-  }
-}
-
-function runtimeRef(...parts) {
-  return ["<RUNTIME_PATH>", ...parts].join("/");
 }
 
 function oneLine(text, fallback) {
@@ -49,7 +36,7 @@ const sources = {
   todo: await readText("operativa/TODO_20260615.md"),
   cierreCadena: await readText("operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md"),
   semaforoHistoricos: await readText("operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md"),
-  liveRepoReview: await readRuntimeText("live_repo_review_20260615", "READBACK.md"),
+  liveRepoReview: await readText("outputs/live_repo_review_20260615/READBACK.md"),
   dataverseGate: await readText("dataverse/GATE.md"),
   dataverseRegister: await readText("dataverse/REGISTRO_BLOQUEOS.md"),
   dataversePlan: await readText("dataverse/PLAN_SEGUNDA_PASADA.md"),
@@ -104,7 +91,7 @@ const deltas = [
     playbook: "04-validar-delta",
     status: "Activo",
     owner: "Codex local",
-    output: `workbooks/control_operativo.xlsx y ${runtimeRef("control_operativo_20260615")}`,
+    output: "workbooks/control_operativo.xlsx y outputs/control_operativo_20260615",
     milestone: "hitos/20260615-cierre-workbench-v1",
     notes: "Incluye Resumen, Registro, Alertas y Listas.",
   },
@@ -174,7 +161,7 @@ const deltas = [
     playbook: "08-github-readonly-cierre",
     status: "Cerrado",
     owner: "Rey repo cartographer",
-    output: `${runtimeRef("live_repo_review_20260615")} y operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md`,
+    output: "outputs/live_repo_review_20260615 y operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md",
     milestone: "hitos/20260615-semaforo-verde-historicos-v1",
     notes: oneLine(sources.liveRepoReview, "13 repos revisados, 4 PRs abiertos observados y 0 writes remotos."),
   },
@@ -203,7 +190,7 @@ const alertRows = [
     surface: "outputs",
     condition: "retention_requires_explicit_order",
     action: "No compactar ni borrar outputs sin orden y manifest.",
-    evidence: runtimeRef("RETENCION.md"),
+    evidence: "outputs/RETENCION.md",
   },
   {
     id: "ALR-004",
@@ -251,7 +238,7 @@ const alertRows = [
     surface: "github",
     condition: "github_write_requires_atomic_order",
     action: "No mergear, comentar, pushear ni modificar PRs sin target exacto, owner, rollback, postcheck y evidencia.",
-    evidence: runtimeRef("live_repo_review_20260615", "READBACK.md"),
+    evidence: "outputs/live_repo_review_20260615/READBACK.md",
   },
 ];
 
@@ -546,7 +533,7 @@ const manifest = {
     "operativa/ACTA_CIERRE_CADENA_GITHUB_AUDITAR_20260615.md",
     "operativa/ACTA_SEMAFORO_VERDE_HISTORICOS_20260615.md",
     "operativa/ACTA_REPOS_SURFACE_GITHUB_20260615.md",
-    runtimeRef("live_repo_review_20260615", "READBACK.md"),
+    "outputs/live_repo_review_20260615/READBACK.md",
     "dataverse/GATE.md",
     "dataverse/REGISTRO_BLOQUEOS.md",
     "dataverse/PLAN_SEGUNDA_PASADA.md",
@@ -559,11 +546,11 @@ const manifest = {
   ],
   outputs: [
     "workbooks/control_operativo.xlsx",
-    runtimeRef("control_operativo_20260615", "control_operativo.xlsx"),
-    runtimeRef("control_operativo_20260615", "resumen.png"),
-    runtimeRef("control_operativo_20260615", "registro.png"),
-    runtimeRef("control_operativo_20260615", "alertas.png"),
-    runtimeRef("control_operativo_20260615", "listas.png"),
+    "outputs/control_operativo_20260615/control_operativo.xlsx",
+    "outputs/control_operativo_20260615/resumen.png",
+    "outputs/control_operativo_20260615/registro.png",
+    "outputs/control_operativo_20260615/alertas.png",
+    "outputs/control_operativo_20260615/listas.png",
   ],
   status: "verified_local_generation",
   live_writes: false,

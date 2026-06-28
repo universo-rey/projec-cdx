@@ -7,8 +7,8 @@ HECHO_VERIFICADO: la secuencia reusable de tres waves quedo versionada con ancla
 ## Sistemas Tocados
 
 - `PROJEC CDX/docs/superpowers/plans/2026-06-16-wave-atomica-documentos-pc-root-codex-mantenimiento.md`.
-- `PROJEC CDX/operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md`.
-- `PROJEC CDX/operativa/archive/legacy-root/undated/ANCLA_WAVE_ATOMICA_DOCUMENTOS_PC_ROOT_CODEX.md`.
+- `PROJEC CDX/operativa/ANCLAS_ON_DEMAND.md`.
+- `PROJEC CDX/operativa/ANCLA_WAVE_ATOMICA_DOCUMENTOS_PC_ROOT_CODEX.md`.
 - `PROJEC CDX/hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1/README.md`.
 - `PROJEC CDX/hitos/20260616-wave-atomica-documentos-pc-root-codex-mantenimiento-v1/READBACK.md`.
 
@@ -29,7 +29,7 @@ HECHO_VERIFICADO: la secuencia reusable de tres waves quedo versionada con ancla
 
 ## Validacion
 
-- La entrada corta queda en `operativa/archive/legacy-root/undated/ANCLAS_ON_DEMAND.md`.
+- La entrada corta queda en `operativa/ANCLAS_ON_DEMAND.md`.
 - La secuencia queda referenciada desde `hitos/README.md`, `hitos/MAPA.md` e `INDICE_MAESTRO`.
 
 ## Rollback

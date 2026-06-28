@@ -9,8 +9,9 @@ from pathlib import Path
 from typing import Any
 
 from .agent import DEFAULT_MODEL, git_context
+from metadata.path_policy import canonical_path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).parents[2]
 DEFAULT_BRANCH = "codex/consume-bound-workbook-next-delta"
 TASK_PATH = ROOT / "operativa" / "CODEX_CLOUD_SMOKE_TASK_20260617.md"
 
@@ -40,13 +41,13 @@ def load_cloud_smoke_task() -> dict[str, Any]:
     if not TASK_PATH.exists():
         return {
             "exists": False,
-            "path": str(TASK_PATH),
+            "path": canonical_path(TASK_PATH) or str(TASK_PATH),
             "content": "",
             "error": "task file missing",
         }
     return {
         "exists": True,
-        "path": str(TASK_PATH),
+        "path": canonical_path(TASK_PATH) or str(TASK_PATH),
         "content": TASK_PATH.read_text(encoding="utf-8"),
         "error": None,
     }
@@ -122,13 +123,13 @@ def cloud_bridge_packet(branch: str = DEFAULT_BRANCH) -> dict[str, Any]:
     return {
         "status": status,
         "created_at": datetime.now(timezone.utc).isoformat(),
-        "repo_root": git_root,
+        "repo_root": canonical_path(git_root) or git_root,
         "local_branch": git_branch,
         "target_branch": branch,
         "remote": remote,
         "task": {
             "exists": task["exists"],
-            "path": task["path"],
+            "path": canonical_path(task["path"]) or task["path"],
             "content_chars": len(task["content"]),
         },
         "smoke": smoke,

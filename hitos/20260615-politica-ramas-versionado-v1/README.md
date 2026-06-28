@@ -4,7 +4,7 @@ Versiona la politica local que fija como se abren, aislan, cierran y absorben lo
 
 ## Alcance
 
-- `operativa/archive/legacy-root/20260615/POLITICA_RAMAS_VERSIONADO_20260615.md`
+- `operativa/POLITICA_RAMAS_VERSIONADO_20260615.md`
 - `hitos/20260615-codex-cloud-scaffold-v1`
 - `operativa/TRACE.md`
 - `operativa/CURRENT.md`

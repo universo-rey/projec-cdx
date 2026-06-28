@@ -10,7 +10,7 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.table import Table, TableStyleInfo
 
-WORKSPACE_ROOT = Path(__file__).resolve().parents[1]
+WORKSPACE_ROOT = Path(__file__).parents[1]
 INVENTORY_ROOT = WORKSPACE_ROOT / "inventarios"
 CSV_PATH = INVENTORY_ROOT / "SKILLS_UNIFIED_TABLE.csv"
 XLSX_PATH = INVENTORY_ROOT / "SKILLS_UNIFIED_TABLE.xlsx"

@@ -12,7 +12,7 @@ Se activo la Corte en modo local/metadata-only para relevar repos y entornos nec
 - `inventarios/WORKBENCH_COMPLETION_REPOS_20260617.csv`
 - `inventarios/WORKBENCH_COMPLETION_ENVIRONMENTS_20260617.csv`
 - `inventarios/WORKBENCH_COMPLETION_GAPS_20260617.csv`
-- `operativa/archive/legacy-root/20260617/READBACK_FAN_IN_CORTE_WORKBENCH_COMPLETION_20260617.md`
+- `operativa/READBACK_FAN_IN_CORTE_WORKBENCH_COMPLETION_20260617.md`
 
 ## Cierre
 

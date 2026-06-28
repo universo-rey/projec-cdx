@@ -1,3 +1,0 @@
-eval_file,harness_file,fixture_path,issue,required_change,decision
-cabina-universal-d:evals/synthetic_runtime_eval.py,cabina-universal-d:tools/synthetic_harness.py,cabina-universal-d:tests/fixtures/sanitized_runtime_event.json,fixture_or_import_path_missing,fix import path and include sanitized fixture reference,READY_FOR_REMOTE_REPO_PATCH_GATE
-cabina-universal-d:evals/local_agent_eval.py,cabina-universal-d:tools/synthetic_harness.py,cabina-universal-d:tests/fixtures/sanitized_agent_event.json,harness cannot run deterministic local eval,add fixture and stable import,READY_FOR_REMOTE_REPO_PATCH_GATE

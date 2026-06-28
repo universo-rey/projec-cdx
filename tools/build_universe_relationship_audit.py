@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import os
+import sys
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
@@ -13,8 +14,15 @@ from openpyxl.formatting.rule import FormulaRule
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.worksheet.table import Table, TableStyleInfo
 
+PROJECT_ROOT = Path(__file__).parents[1]
+SRC_ROOT = PROJECT_ROOT / "src"
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
+
+from metadata.path_policy import canonical_path, is_windows_old_path
+
 HOME = Path(r"C:\Users\enzo1")
-PROJEC = HOME / "PROJEC CDX"
+PROJEC = Path("C:/CEO/project-cdx")
 CODEX = HOME / ".codex"
 AGENTS = HOME / ".agents"
 GITHUB = HOME / "Documents" / "GitHub"
@@ -376,6 +384,8 @@ def scan_github_roots(rows):
     if not GITHUB.exists():
         return
     for repo in sorted([p for p in GITHUB.iterdir() if p.is_dir()]):
+        if is_windows_old_path(repo):
+            continue
         universe = "Documents\\GitHub"
         root_readme = rel(repo / "README.md")
         dependency = rel(PROJEC / "README.md")
@@ -481,6 +491,8 @@ def build_rows():
     for universe, root_path, root_readme, dependency, source, max_depth, max_files in root_specs:
         if not root_path.exists():
             continue
+        if is_windows_old_path(root_path):
+            continue
         add_row(rows, universe, rel(root_path), "root", root_readme, dependency, "activo", source)
         add_tree_rows(
             rows,
@@ -569,7 +581,15 @@ def build_rows():
 
 def cabina_depth(path_value: str) -> int:
     try:
-        return len(Path(path_value).resolve().relative_to(CABINA.resolve()).parts)
+        path = canonical_path(path_value) or ""
+        cabina = canonical_path(CABINA) or ""
+        prefix = cabina.rstrip("/")
+        if path != prefix and not path.startswith(f"{prefix}/"):
+            return 999
+        if path == prefix:
+            return 0
+        suffix = path[len(prefix) :].lstrip("/")
+        return len([part for part in suffix.split("/") if part])
     except Exception:
         return 999
 
