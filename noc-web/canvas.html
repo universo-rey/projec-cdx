@@ -311,7 +311,7 @@
       recommendations: "/outbox/recommended_actions.json",
       anomalies: "/logs/anomalies.jsonl",
       alerts: "/logs/alerts.jsonl",
-      actions: "/config/actions_live_catalog.json",
+      actions: "/core/noc/SYSTEM_MAP.json",
       actionHistory: "/g8/actions-executed.jsonl"
     };
     const GRAPH_VIEWS = ["watchdog", "noc", "commands", "runtime"];
@@ -465,9 +465,9 @@
 
     async function confirmExecution() {
       if (!selectedAction) return;
-      $("actionFeedback").textContent = "Ejecutando desde Canvas via POST /execute...";
+      $("actionFeedback").textContent = "Ejecutando desde Canvas via POST /action/:name...";
       try {
-        const response = await fetch("/execute", {
+        const response = await fetch(`/action/${encodeURIComponent(selectedAction.id)}`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ actionId: selectedAction.id, eventId: stateCache?.recommendations?.eventId || "", confirmationMode: "INDIVIDUAL_MODAL" })
@@ -497,7 +497,7 @@
         readJson(SOURCES.actions)
       ]);
       stateCache = { ...stateCache, score, loop, recommendations, anomalies };
-      actionCatalog = Array.isArray(actions) ? actions : [];
+      actionCatalog = Array.isArray(actions?.actions) ? actions.actions : Array.isArray(actions) ? actions : [];
       renderState();
       renderActions();
       $("refreshState").textContent = "Estado 3s";
