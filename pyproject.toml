@@ -22,7 +22,7 @@ dev = [
   "black>=26.5.1",
   "matplotlib>=3.10.0",
   "pytest",
-  "pytest-cov>=7.0.0",
+  "pytest-cov>=7.1.0",
   "reportlab>=5.0.0",
   "ruff>=0.14.0",
 ]
