@@ -24,7 +24,7 @@ dev = [
   "pytest",
   "pytest-cov>=7.0.0",
   "reportlab>=5.0.0",
-  "ruff>=0.14.0",
+  "ruff>=0.15.20",
 ]
 agents-sdk = ["openai-agents>=0.17.5"]
 openai-orchestration = ["openai>=2.43.0"]
