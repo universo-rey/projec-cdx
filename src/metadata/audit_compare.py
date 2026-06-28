@@ -39,7 +39,9 @@ def _load_report(path: Path) -> dict[str, Any]:
 def _normalize(value: Any) -> Any:
     value = normalize_path_value(value)
     if isinstance(value, dict):
-        return {key: _normalize(item) for key, item in sorted(value.items(), key=lambda pair: pair[0])}
+        return {
+            key: _normalize(item) for key, item in sorted(value.items(), key=lambda pair: pair[0])
+        }
     if isinstance(value, list):
         normalized_items = [_normalize(item) for item in value]
         return sorted(
@@ -91,11 +93,25 @@ def compare_audit_reports(left: dict[str, Any], right: dict[str, Any]) -> dict[s
             continue
         if left_value is None:
             right_only_sections.append(section)
-            differences.append({"section": section, "kind": "missing_left", "left": None, "right": _normalize(right_value)})
+            differences.append(
+                {
+                    "section": section,
+                    "kind": "missing_left",
+                    "left": None,
+                    "right": _normalize(right_value),
+                }
+            )
             continue
         if right_value is None:
             left_only_sections.append(section)
-            differences.append({"section": section, "kind": "missing_right", "left": _normalize(left_value), "right": None})
+            differences.append(
+                {
+                    "section": section,
+                    "kind": "missing_right",
+                    "left": _normalize(left_value),
+                    "right": None,
+                }
+            )
             continue
 
         left_norm = _normalize(left_value)

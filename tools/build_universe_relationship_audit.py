@@ -19,7 +19,7 @@ SRC_ROOT = PROJECT_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
-from metadata.path_policy import canonical_path, is_windows_old_path
+from metadata.path_policy import canonical_path, is_windows_old_path  # noqa: E402
 
 HOME = Path(r"C:\Users\enzo1")
 PROJEC = Path("C:/CEO/project-cdx")

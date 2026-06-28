@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 import yaml
 from jsonschema import Draft202012Validator
@@ -23,9 +24,13 @@ IGNORED_PARTS = {
 IGNORED_ENV_NAMES = {".env", ".venv", "env", "venv"}
 EXTERNAL_METADATA_ROOTS = (
     Path(".agent"),
+    Path(".agents"),
     Path(".cursor"),
     Path(".github/agents"),
     Path(".github/skills"),
+    Path("_archive_noise"),
+    Path("operativa/tasks"),
+    Path("outputs"),
 )
 CORE_ONLY_ROOTS = (Path("src"), Path("tests"), Path("tools"), Path("operativa"))
 
@@ -104,6 +109,10 @@ def _is_under_any(path: Path, roots: Iterable[Path]) -> bool:
     return any(_is_relative_to(path, root) for root in roots)
 
 
+def _display_path(path: Path) -> str:
+    return str(path).replace("\\", "/")
+
+
 def _discover_virtualenv_roots(root: Path) -> list[Path]:
     roots: list[Path] = []
     for config_path in root.rglob("pyvenv.cfg"):
@@ -120,8 +129,10 @@ def _should_skip(
     virtualenv_roots: list[Path],
     excluded_roots: Iterable[Path],
 ) -> bool:
-    return _is_ignored(path) or _is_under_any(path, virtualenv_roots) or _is_under_any(
-        path, excluded_roots
+    return (
+        _is_ignored(path)
+        or _is_under_any(path, virtualenv_roots)
+        or _is_under_any(path, excluded_roots)
     )
 
 
@@ -184,16 +195,14 @@ def discover_metadata_records(
         rel = md_path.relative_to(root)
         if _should_skip(rel, virtualenv_roots, excluded_roots):
             if _is_under_any(rel, excluded_roots):
-                ignored_errors.append(
-                    f"{str(rel).replace('\\', '/')} :: excluded external metadata scope"
-                )
+                ignored_errors.append(f"{_display_path(rel)} :: excluded external metadata scope")
             continue
         try:
             front_matter = parse_front_matter(md_path)
         except (ValueError, yaml.YAMLError, UnicodeDecodeError) as exc:
             parse_errors.append(
                 ValidationErrorItem(
-                    source_path=str(rel).replace("\\", "/"),
+                    source_path=_display_path(rel),
                     message=f"front matter invalido: {exc}",
                     field_path="<root>",
                 )
@@ -202,7 +211,7 @@ def discover_metadata_records(
         if front_matter:
             records.append(
                 MetadataRecord(
-                    source_path=str(rel).replace("\\", "/"),
+                    source_path=_display_path(rel),
                     metadata=normalize_path_value(front_matter),
                     kind="front_matter",
                 )
@@ -212,16 +221,14 @@ def discover_metadata_records(
         rel = meta_path.relative_to(root)
         if _should_skip(rel, virtualenv_roots, excluded_roots):
             if _is_under_any(rel, excluded_roots):
-                ignored_errors.append(
-                    f"{str(rel).replace('\\', '/')} :: excluded external metadata scope"
-                )
+                ignored_errors.append(f"{_display_path(rel)} :: excluded external metadata scope")
             continue
         try:
             payload = json.loads(meta_path.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, UnicodeDecodeError) as exc:
             parse_errors.append(
                 ValidationErrorItem(
-                    source_path=str(rel).replace("\\", "/"),
+                    source_path=_display_path(rel),
                     message=f"json invalido: {exc}",
                     field_path="<root>",
                 )
@@ -230,7 +237,7 @@ def discover_metadata_records(
         if not isinstance(payload, dict):
             parse_errors.append(
                 ValidationErrorItem(
-                    source_path=str(rel).replace("\\", "/"),
+                    source_path=_display_path(rel),
                     message=f"metadata file must be an object: {meta_path}",
                     field_path="<root>",
                 )
@@ -238,7 +245,7 @@ def discover_metadata_records(
             continue
         records.append(
             MetadataRecord(
-                source_path=str(rel).replace("\\", "/"),
+                source_path=_display_path(rel),
                 metadata=normalize_path_value(payload),
                 kind="meta_json",
             )

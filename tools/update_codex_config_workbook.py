@@ -27,8 +27,7 @@ SRC_ROOT = PROJECT_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
-from metadata.path_policy import canonical_path, is_windows_old_path
-
+from metadata.path_policy import canonical_path, is_windows_old_path  # noqa: E402,I001
 
 ROOT = Path("C:/CEO/project-cdx")
 CODEX_ROOT = Path(r"C:\Users\enzo1\.codex")
@@ -58,6 +57,8 @@ def path_key(value: str | Path | None) -> str:
     if value is None:
         return ""
     return canonical_path(value) or ""
+
+
 GITHUB_ROOT = Path(r"C:\Users\enzo1\Documents\GitHub")
 HOME_CODEX_LOCAL = Path(r"C:\Users\enzo1\CodexLocal")
 DOCUMENTS_CODEX_LOCAL = Path(r"C:\Users\enzo1\Documents\CodexLocal")
@@ -2388,9 +2389,7 @@ def discover_d_validator_rows() -> list[list]:
         raw_path = row.get("path_or_command", "")
         path = path_from_cell(raw_path)
         if path:
-            linked_by_path.setdefault(path_key(path), []).append(
-                tool_id
-            )
+            linked_by_path.setdefault(path_key(path), []).append(tool_id)
     rows: list[list] = []
     tools_dir = D_CODEX_ROOT / "tools"
     if tools_dir.exists():

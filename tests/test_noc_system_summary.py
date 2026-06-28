@@ -68,7 +68,9 @@ def test_build_noc_system_summary_uses_error_and_action_tokens() -> None:
     summary = runtime.build_noc_system_summary(sdu_state, noc_state, intelligence_state)
 
     assert summary["status"] == "CRITICAL"
-    assert summary["headline"] == "ERR. Entry: Degraded. Coord: Plan. Repo: Blocked. Drift: Anomaly."
+    assert (
+        summary["headline"] == "ERR. Entry: Degraded. Coord: Plan. Repo: Blocked. Drift: Anomaly."
+    )
 
 
 def test_build_noc_system_summary_elevates_untrusted_readback() -> None:
@@ -108,7 +110,9 @@ def test_latest_intelligence_json_fallback_prefers_latest_file(monkeypatch, tmp_
     latest = tmp_path / "latest.json"
     latest.write_text('{"status":"GREEN","generated_at":"2026-06-27T00:00:00Z"}', encoding="utf-8")
     fallback = tmp_path / "fallback.json"
-    fallback.write_text('{"status":"CRITICAL","generated_at":"2026-06-26T00:00:00Z"}', encoding="utf-8")
+    fallback.write_text(
+        '{"status":"CRITICAL","generated_at":"2026-06-26T00:00:00Z"}', encoding="utf-8"
+    )
 
     payload = runtime._latest_existing_json([Path("missing.json"), latest, fallback])
 

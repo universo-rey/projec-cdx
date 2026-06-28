@@ -8,7 +8,12 @@ from pathlib import Path
 from .indexer import build_indexes
 from .path_policy import normalize_path_value
 from .runtime_checks import check_elevation
-from .validator import CORE_ONLY_ROOTS, EXTERNAL_METADATA_ROOTS, replace_front_matter, validate_repository
+from .validator import (
+    CORE_ONLY_ROOTS,
+    EXTERNAL_METADATA_ROOTS,
+    replace_front_matter,
+    validate_repository,
+)
 
 
 def _repo_root() -> Path:

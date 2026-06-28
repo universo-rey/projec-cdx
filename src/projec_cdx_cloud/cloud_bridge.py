@@ -8,8 +8,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .agent import DEFAULT_MODEL, git_context
 from metadata.path_policy import canonical_path
+
+from .agent import DEFAULT_MODEL, git_context
 
 ROOT = Path(__file__).parents[2]
 DEFAULT_BRANCH = "codex/consume-bound-workbook-next-delta"

@@ -15,7 +15,9 @@ WATCHDOG_ROOT = CEO_ROOT / "watchdog"
 WATCHDOG_CHANGES = WATCHDOG_ROOT / "logs" / "changes.jsonl"
 WATCHDOG_BUS = WATCHDOG_ROOT / "bus" / "sdu-event-bus.jsonl"
 WATCHDOG_STATE = WATCHDOG_ROOT / "state" / "sdu-system-state.json"
-WATCHDOG_BINDING = ROOT / ".cabina" / "execution-runtime" / "logs" / "watchdog-telemetry-binding.json"
+WATCHDOG_BINDING = (
+    ROOT / ".cabina" / "execution-runtime" / "logs" / "watchdog-telemetry-binding.json"
+)
 SYSTEM_BOOTSTRAP = ROOT / ".cabina" / "execution-runtime" / "system-bootstrap.json"
 NOC_ROOT = ROOT / "noc"
 NOC_SYSTEM_MAP = NOC_ROOT / "SYSTEM_MAP.json"
@@ -34,8 +36,16 @@ INTELLIGENCE_FALLBACKS = [
 ORG_TOTAL_DECLARED_ROOT = ROOT / ".cabina" / "organizacion-total"
 ORG_TOTAL_CANDIDATES = [
     ORG_TOTAL_DECLARED_ROOT,
-    ROOT / "work" / "backups" / "sdu-org-total-before-integration-20260623_012542" / "organizacion-total",
-    ROOT / "work" / "backups" / "sdu-org-total-before-integration-20260623_012553" / "organizacion-total",
+    ROOT
+    / "work"
+    / "backups"
+    / "sdu-org-total-before-integration-20260623_012542"
+    / "organizacion-total",
+    ROOT
+    / "work"
+    / "backups"
+    / "sdu-org-total-before-integration-20260623_012553"
+    / "organizacion-total",
 ]
 
 RUNTIME_EVENTS = {
@@ -119,7 +129,12 @@ def _summary_repo_state(multirepo_status: Any, multirepo_decision: str) -> str:
     decision = str(multirepo_decision or "").strip().upper()
     if decision in {"PASS", "OK", "GREEN"} or readiness in {"READY", "PASS", "GREEN"}:
         return "Ready"
-    if decision in {"FAIL", "BLOCK", "BLOCKED", "RED"} or readiness in {"BLOCKED", "DEFERRED", "FAIL", "RED"}:
+    if decision in {"FAIL", "BLOCK", "BLOCKED", "RED"} or readiness in {
+        "BLOCKED",
+        "DEFERRED",
+        "FAIL",
+        "RED",
+    }:
         return "Blocked"
     return "Deferred"
 
@@ -144,7 +159,9 @@ def _summary_readback_state(noc_state: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(readback, dict):
         readback = {}
 
-    graph_access = str(readback.get("GRAPH_ACCESS") or noc_state.get("graph_access") or "").strip().upper()
+    graph_access = (
+        str(readback.get("GRAPH_ACCESS") or noc_state.get("graph_access") or "").strip().upper()
+    )
     absence_means_absence = readback.get("absence_means_absence")
     if absence_means_absence is None:
         absence_means_absence = noc_state.get("absence_means_absence")
@@ -164,7 +181,9 @@ def _summary_readback_state(noc_state: dict[str, Any]) -> dict[str, Any]:
     return {
         "status": status,
         "graph_access": graph_access or "UNKNOWN",
-        "absence_means_absence": absence_means_absence if absence_means_absence is not None else None,
+        "absence_means_absence": (
+            absence_means_absence if absence_means_absence is not None else None
+        ),
         "partial_details": partial_details,
         "untrusted": readback_untrusted,
     }
@@ -188,11 +207,15 @@ def build_noc_system_summary(
     entrypoint_status = str(entrypoint.get("status") or "UNKNOWN").upper()
     entrypoint_cwd = entrypoint.get("current_cwd")
     coordinator_lane = run_info.get("mode") or "unknown"
-    coordinator_state = "action" if str(run_info.get("mode") or "").upper() not in {"", "WATCHDOG_RUN"} else "idle"
+    coordinator_state = (
+        "action" if str(run_info.get("mode") or "").upper() not in {"", "WATCHDOG_RUN"} else "idle"
+    )
     multirepo_status = multirepo.get("readiness") or noc_state.get("estado_general") or "UNKNOWN"
     multirepo_decision = ((multirepo.get("validation") or {}).get("decision")) or "UNKNOWN"
 
-    intelligence_last = intelligence_state.get("generated_at") or intelligence_state.get("last_run_at")
+    intelligence_last = intelligence_state.get("generated_at") or intelligence_state.get(
+        "last_run_at"
+    )
     intelligence_changes = []
     for key in ("alerts_detected", "anomalies_detected", "sync_findings", "domain_alignment"):
         value = intelligence_state.get(key)
@@ -201,27 +224,39 @@ def build_noc_system_summary(
         elif value not in (None, "", 0):
             intelligence_changes.append(f"{key}:{value}")
 
-    sdu_health = (sdu_state.get("health") or {}).get("status") if isinstance(sdu_state.get("health"), dict) else None
-    noc_health = (noc_state.get("health") or {}).get("status") if isinstance(noc_state.get("health"), dict) else None
+    sdu_health = (
+        (sdu_state.get("health") or {}).get("status")
+        if isinstance(sdu_state.get("health"), dict)
+        else None
+    )
+    noc_health = (
+        (noc_state.get("health") or {}).get("status")
+        if isinstance(noc_state.get("health"), dict)
+        else None
+    )
     intelligence_status = str(intelligence_state.get("status") or "").upper()
     overall_rank = max(
         [
             _status_level(str(sdu_health or sdu_state.get("status"))),
             _status_level(str(noc_health or noc_state.get("status"))),
-            2 if intelligence_status in {"CRITICAL", "FAIL"} else 1
-            if intelligence_status in {"WARN", "YELLOW", "DEGRADED"}
-            else 0,
-            2
-            if readback_state["status"] == "UNTRUSTED"
-            else 1
-            if readback_state["status"] in {"PARTIAL", "DEGRADED"}
-            else 0,
+            (
+                2
+                if intelligence_status in {"CRITICAL", "FAIL"}
+                else 1 if intelligence_status in {"WARN", "YELLOW", "DEGRADED"} else 0
+            ),
+            (
+                2
+                if readback_state["status"] == "UNTRUSTED"
+                else 1 if readback_state["status"] in {"PARTIAL", "DEGRADED"} else 0
+            ),
         ]
     )
     overall_status = "CRITICAL" if overall_rank >= 2 else "WARN" if overall_rank == 1 else "GREEN"
 
     entrypoint_fragment = _compact_phrase(entrypoint_status)
-    coordinator_fragment = _compact_phrase(coordinator_lane) if coordinator_state == "action" else "Idle"
+    coordinator_fragment = (
+        _compact_phrase(coordinator_lane) if coordinator_state == "action" else "Idle"
+    )
     multirepo_fragment = _summary_repo_state(multirepo_status, multirepo_decision)
     intelligence_fragment = _summary_drift_state(intelligence_state)
     intelligence_line = (
@@ -229,10 +264,16 @@ def build_noc_system_summary(
         f"{', '.join(intelligence_changes) if intelligence_changes else 'none'}."
     )
     if readback_state["status"] != "TRUSTED":
-        intelligence_line = f"{intelligence_line} Readback {_compact_phrase(readback_state['status'])}."
+        intelligence_line = (
+            f"{intelligence_line} Readback {_compact_phrase(readback_state['status'])}."
+        )
 
     lines = [
-        "SDU operational." if overall_status == "GREEN" else "SDU requires attention." if overall_status == "WARN" else "SDU critical.",
+        (
+            "SDU operational."
+            if overall_status == "GREEN"
+            else "SDU requires attention." if overall_status == "WARN" else "SDU critical."
+        ),
         f"Entrypoint {entrypoint_status.lower()} at {entrypoint_cwd or 'unknown cwd'}.",
         f"Coordinator {coordinator_state} on lane {coordinator_lane}.",
         f"Multirepo {str(multirepo_status).lower()} ({multirepo_decision}).",
@@ -350,14 +391,22 @@ def discover_org_total_runner() -> dict[str, Any]:
     script_names = []
     if scripts_dir and scripts_dir.exists():
         script_names = sorted(
-            [path.name for path in scripts_dir.iterdir() if path.is_file() and path.suffix.lower() == ".ps1"]
+            [
+                path.name
+                for path in scripts_dir.iterdir()
+                if path.is_file() and path.suffix.lower() == ".ps1"
+            ]
         )
 
     docs_dir = selected_root / "docs" if selected_root else None
     doc_names = []
     if docs_dir and docs_dir.exists():
         doc_names = sorted(
-            [path.name for path in docs_dir.iterdir() if path.is_file() and path.suffix.lower() in {".md", ".json", ".yaml", ".yml"}]
+            [
+                path.name
+                for path in docs_dir.iterdir()
+                if path.is_file() and path.suffix.lower() in {".md", ".json", ".yaml", ".yml"}
+            ]
         )
 
     knowledge = _read_text(selected_root / "RUNNER_KNOWLEDGE.md") if selected_root else None
@@ -375,7 +424,9 @@ def discover_org_total_runner() -> dict[str, Any]:
         "no_live": selected_policy.get("no_live") if selected_policy else None,
         "no_push": selected_policy.get("no_push") if selected_policy else None,
         "no_pr": selected_policy.get("no_pr") if selected_policy else None,
-        "apply_requires_explicit_gate": selected_policy.get("apply_requires_explicit_gate") if selected_policy else None,
+        "apply_requires_explicit_gate": (
+            selected_policy.get("apply_requires_explicit_gate") if selected_policy else None
+        ),
         "evidence_mode": selected_policy.get("evidence_mode") if selected_policy else None,
         "declared_runner_root": runner_root_declared,
         "selected_root": str(selected_root) if selected_root else None,
@@ -387,7 +438,11 @@ def discover_org_total_runner() -> dict[str, Any]:
         "doc_names": doc_names,
         "knowledge_present": knowledge is not None,
         "knowledge_excerpt": knowledge.splitlines()[:8] if knowledge else [],
-        "source": "declared_root" if selected_root == ORG_TOTAL_DECLARED_ROOT else "backup_runner" if selected_root else "declared_root_missing",
+        "source": (
+            "declared_root"
+            if selected_root == ORG_TOTAL_DECLARED_ROOT
+            else "backup_runner" if selected_root else "declared_root_missing"
+        ),
     }
 
 
@@ -398,7 +453,9 @@ def runtime_status_report() -> dict[str, Any]:
     binding = _read_json(WATCHDOG_BINDING) or {}
     state = _read_json(WATCHDOG_STATE) or {}
     noc_map = _read_json(NOC_SYSTEM_MAP) or {}
-    noc_summary = build_noc_system_summary(state, _read_json(NOC_STATE) or {}, _latest_existing_json(INTELLIGENCE_FALLBACKS))
+    noc_summary = build_noc_system_summary(
+        state, _read_json(NOC_STATE) or {}, _latest_existing_json(INTELLIGENCE_FALLBACKS)
+    )
 
     code_insiders = shutil.which("code-insiders") is not None
     pwsh = shutil.which("pwsh") is not None or shutil.which("powershell") is not None
@@ -442,7 +499,9 @@ def runtime_status_report() -> dict[str, Any]:
         "watchdog_state": {
             "matrix_loaded": state.get("governance", {}).get("matrix_loaded"),
             "codex_execution_contract": state.get("governance", {}).get("codex_execution_contract"),
-            "multirepo_readiness": state.get("governance", {}).get("multirepo", {}).get("readiness"),
+            "multirepo_readiness": state.get("governance", {})
+            .get("multirepo", {})
+            .get("readiness"),
             "taxonomy_status": state.get("governance", {}).get("taxonomy", {}).get("status"),
         },
         "noc_control_plane": {
@@ -458,7 +517,9 @@ def runtime_status_report() -> dict[str, Any]:
             "recipes_count": len(noc_map.get("recipes") or []),
         },
         "noc_system_summary": noc_summary,
-        "next_safe_task": "SDU: Full DryRun" if org.get("selected_root") else "Resolve ORG_TOTAL_RUNNER root",
+        "next_safe_task": (
+            "SDU: Full DryRun" if org.get("selected_root") else "Resolve ORG_TOTAL_RUNNER root"
+        ),
         "systems_not_touched": [
             "watchdog run-primary",
             "watchdog telemetry writer",
@@ -474,7 +535,9 @@ def runtime_sentinel_report() -> dict[str, Any]:
     binding = _read_json(WATCHDOG_BINDING) or {}
     state = _read_json(WATCHDOG_STATE) or {}
     noc_map = _read_json(NOC_SYSTEM_MAP) or {}
-    noc_summary = build_noc_system_summary(state, _read_json(NOC_STATE) or {}, _latest_existing_json(INTELLIGENCE_FALLBACKS))
+    noc_summary = build_noc_system_summary(
+        state, _read_json(NOC_STATE) or {}, _latest_existing_json(INTELLIGENCE_FALLBACKS)
+    )
 
     changes = _tail_jsonl(WATCHDOG_CHANGES, limit=120)
     bus_events = _tail_jsonl(WATCHDOG_BUS, limit=80)
@@ -513,9 +576,11 @@ def runtime_sentinel_report() -> dict[str, Any]:
     ]
 
     return {
-        "status": "OK"
-        if bootstrap.get("event_bus_active") and binding.get("event_bus_connected")
-        else "DEGRADED",
+        "status": (
+            "OK"
+            if bootstrap.get("event_bus_active") and binding.get("event_bus_connected")
+            else "DEGRADED"
+        ),
         "mode": "READ_ONLY_WRAPPER",
         "wrapper": "runtime.sentinel",
         "created_at": datetime.now(timezone.utc).isoformat(),
@@ -532,7 +597,9 @@ def runtime_sentinel_report() -> dict[str, Any]:
         "watchdog_state": {
             "matrix_loaded": state.get("governance", {}).get("matrix_loaded"),
             "codex_execution_contract": state.get("governance", {}).get("codex_execution_contract"),
-            "multirepo_readiness": state.get("governance", {}).get("multirepo", {}).get("readiness"),
+            "multirepo_readiness": state.get("governance", {})
+            .get("multirepo", {})
+            .get("readiness"),
             "taxonomy_status": state.get("governance", {}).get("taxonomy", {}).get("status"),
         },
         "noc_control_plane": {

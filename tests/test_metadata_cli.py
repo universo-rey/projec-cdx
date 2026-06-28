@@ -4,10 +4,15 @@ import json
 from pathlib import Path
 
 import main as root_main
+
+from metadata import runtime_checks
 from metadata.cli import main as metadata_main
 from metadata.indexer import build_indexes
-from metadata.path_policy import canonical_path, is_windows_old_path, normalize_path, normalize_path_value
-from metadata import runtime_checks
+from metadata.path_policy import (
+    canonical_path,
+    is_windows_old_path,
+    normalize_path_value,
+)
 from metadata.validator import validate_repository
 
 
@@ -68,7 +73,9 @@ contenido
     assert any("duplicado" in item.message for item in result.errors)
 
 
-def test_validate_repository_normalizes_extended_artifact_ids_before_duplicate_check(tmp_path: Path) -> None:
+def test_validate_repository_normalizes_extended_artifact_ids_before_duplicate_check(
+    tmp_path: Path,
+) -> None:
     repo = _seed_repo(tmp_path)
     _write(
         repo / "operativa" / "A.md",
@@ -275,12 +282,17 @@ def test_validate_repository_enforces_dataset_artifact_id_convention(tmp_path: P
 
 
 def test_normalize_path_strips_extended_prefix() -> None:
-    assert canonical_path(r"\\?\C:\Users\enzo1\PROJEC CDX\operativa\MAPA.md") == "C:/Users/enzo1/PROJEC CDX/operativa/MAPA.md"
+    assert (
+        canonical_path(r"\\?\C:\Users\enzo1\PROJEC CDX\operativa\MAPA.md")
+        == "C:/Users/enzo1/PROJEC CDX/operativa/MAPA.md"
+    )
     assert canonical_path(r"\\?\UNC\server\share\file.txt") == "//server/share/file.txt"
 
 
 def test_normalize_path_value_keeps_non_path_text_intact() -> None:
-    assert normalize_path_value({"url": "https://example.com/a/b"}) == {"url": "https://example.com/a/b"}
+    assert normalize_path_value({"url": "https://example.com/a/b"}) == {
+        "url": "https://example.com/a/b"
+    }
     assert normalize_path_value({"repo": r"operativa\MAPA.md"}) == {"repo": "operativa/MAPA.md"}
 
 
@@ -355,7 +367,9 @@ def test_check_elevation_rejects_when_required(monkeypatch, capsys) -> None:
 def test_metadata_main_rejects_non_elevated_when_flagged(monkeypatch) -> None:
     monkeypatch.setattr(runtime_checks, "is_elevated_terminal", lambda: False)
 
-    exit_code = metadata_main(["--root", str(Path(__file__).parents[1]), "--require-elevated", "validate"])
+    exit_code = metadata_main(
+        ["--root", str(Path(__file__).parents[1]), "--require-elevated", "validate"]
+    )
 
     assert exit_code == 2
 
@@ -363,8 +377,12 @@ def test_metadata_main_rejects_non_elevated_when_flagged(monkeypatch) -> None:
 def test_root_main_strips_require_elevated_flag(monkeypatch) -> None:
     calls: dict[str, list[str]] = {}
     monkeypatch.setattr(root_main, "check_elevation", lambda required, context, stream=None: True)
-    monkeypatch.setattr(root_main, "metadata_main", lambda args: calls.__setitem__("metadata", list(args)) or 0)
-    monkeypatch.setattr(root_main, "cloud_main", lambda args: calls.__setitem__("cloud", list(args)) or 0)
+    monkeypatch.setattr(
+        root_main, "metadata_main", lambda args: calls.__setitem__("metadata", list(args)) or 0
+    )
+    monkeypatch.setattr(
+        root_main, "cloud_main", lambda args: calls.__setitem__("cloud", list(args)) or 0
+    )
 
     exit_code = root_main.main(["--require-elevated", "validate", "--root", "C:/tmp/repo"])
 
