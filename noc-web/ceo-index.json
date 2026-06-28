@@ -1,0 +1,3501 @@
+{
+  "generated_at": "2026-06-26T15:28:45.8622030-03:00",
+  "status": "CEO_WEB_INDEX_READY",
+  "server_root": "C:\\CEO",
+  "routes": [
+    {
+      "name": "CORE",
+      "route": "/core/",
+      "path": "C:\\CEO\\project-cdx",
+      "status": "OK"
+    },
+    {
+      "name": "WATCHDOG",
+      "route": "/watchdog/",
+      "path": "C:\\CEO\\watchdog",
+      "status": "OK"
+    },
+    {
+      "name": "RUNTIME",
+      "route": "/runtime/",
+      "path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime",
+      "status": "OK"
+    },
+    {
+      "name": "TOOLS",
+      "route": "/tools/",
+      "path": "C:\\CEO\\project-cdx\\tools",
+      "status": "OK"
+    },
+    {
+      "name": "DOCS",
+      "route": "/docs/",
+      "path": "C:\\CEO",
+      "status": "OK"
+    },
+    {
+      "name": "EVENT_BUS",
+      "route": "/event-bus",
+      "path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\event-bus-proxy.jsonl",
+      "status": "OK"
+    }
+  ],
+  "sections": [
+    {
+      "name": "CORE",
+      "route": "/core/",
+      "root": "C:\\CEO\\project-cdx",
+      "status": "OK",
+      "total_detected": 1388,
+      "files": [
+        {
+          "name": "WEB_DISCOVERY_REPORT.json",
+          "relative_path": "WEB_DISCOVERY_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\WEB_DISCOVERY_REPORT.json",
+          "web_path": "/core/WEB_DISCOVERY_REPORT.json",
+          "type": "json",
+          "length": 2371,
+          "last_write_time": "2026-06-26T15:24:43.5878472-03:00"
+        },
+        {
+          "name": "CABINA_START_OPERATIONAL_MODE_REPORT.json",
+          "relative_path": ".cabina\\execution-runtime\\CABINA_START_OPERATIONAL_MODE_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\CABINA_START_OPERATIONAL_MODE_REPORT.json",
+          "web_path": "/core/.cabina/execution-runtime/CABINA_START_OPERATIONAL_MODE_REPORT.json",
+          "type": "json",
+          "length": 333,
+          "last_write_time": "2026-06-26T15:11:07.7071945-03:00"
+        },
+        {
+          "name": "noc-panel.json",
+          "relative_path": ".cabina\\execution-runtime\\noc-panel.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\noc-panel.json",
+          "web_path": "/core/.cabina/execution-runtime/noc-panel.json",
+          "type": "json",
+          "length": 189949,
+          "last_write_time": "2026-06-26T15:11:07.7066914-03:00"
+        },
+        {
+          "name": "governance-log.jsonl",
+          "relative_path": ".cabina\\governance\\governance-log.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\governance\\governance-log.jsonl",
+          "web_path": "/core/.cabina/governance/governance-log.jsonl",
+          "type": "log",
+          "length": 1601,
+          "last_write_time": "2026-06-26T15:11:07.7008761-03:00"
+        },
+        {
+          "name": "CABINA_OPERATIONAL_STATE.json",
+          "relative_path": ".cabina\\CABINA_OPERATIONAL_STATE.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\CABINA_OPERATIONAL_STATE.json",
+          "web_path": "/core/.cabina/CABINA_OPERATIONAL_STATE.json",
+          "type": "json",
+          "length": 890,
+          "last_write_time": "2026-06-26T15:11:07.6984530-03:00"
+        },
+        {
+          "name": "CABINA_OPERATIONAL_STATE.json",
+          "relative_path": ".cabina\\execution-runtime\\CABINA_OPERATIONAL_STATE.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\CABINA_OPERATIONAL_STATE.json",
+          "web_path": "/core/.cabina/execution-runtime/CABINA_OPERATIONAL_STATE.json",
+          "type": "json",
+          "length": 890,
+          "last_write_time": "2026-06-26T15:11:07.6976044-03:00"
+        },
+        {
+          "name": "SDU_G12_GOVERNANCE_REPORT.json",
+          "relative_path": ".cabina\\execution-runtime\\SDU_G12_GOVERNANCE_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\SDU_G12_GOVERNANCE_REPORT.json",
+          "web_path": "/core/.cabina/execution-runtime/SDU_G12_GOVERNANCE_REPORT.json",
+          "type": "json",
+          "length": 1047,
+          "last_write_time": "2026-06-26T15:08:46.9553098-03:00"
+        },
+        {
+          "name": "SDU_G12_GOVERNANCE_REPORT.json",
+          "relative_path": ".cabina\\governance\\SDU_G12_GOVERNANCE_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\governance\\SDU_G12_GOVERNANCE_REPORT.json",
+          "web_path": "/core/.cabina/governance/SDU_G12_GOVERNANCE_REPORT.json",
+          "type": "json",
+          "length": 1047,
+          "last_write_time": "2026-06-26T15:08:46.9538854-03:00"
+        },
+        {
+          "name": "governance-intervention-rules.json",
+          "relative_path": ".cabina\\governance\\governance-intervention-rules.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\governance\\governance-intervention-rules.json",
+          "web_path": "/core/.cabina/governance/governance-intervention-rules.json",
+          "type": "json",
+          "length": 1645,
+          "last_write_time": "2026-06-26T15:08:46.9450738-03:00"
+        },
+        {
+          "name": "governance-decision-matrix.json",
+          "relative_path": ".cabina\\governance\\governance-decision-matrix.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\governance\\governance-decision-matrix.json",
+          "web_path": "/core/.cabina/governance/governance-decision-matrix.json",
+          "type": "json",
+          "length": 22854,
+          "last_write_time": "2026-06-26T15:08:46.9440704-03:00"
+        },
+        {
+          "name": "governance-levels.json",
+          "relative_path": ".cabina\\governance\\governance-levels.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\governance\\governance-levels.json",
+          "web_path": "/core/.cabina/governance/governance-levels.json",
+          "type": "json",
+          "length": 1000,
+          "last_write_time": "2026-06-26T15:08:46.9429564-03:00"
+        },
+        {
+          "name": "governance-roles.json",
+          "relative_path": ".cabina\\governance\\governance-roles.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\governance\\governance-roles.json",
+          "web_path": "/core/.cabina/governance/governance-roles.json",
+          "type": "json",
+          "length": 1398,
+          "last_write_time": "2026-06-26T15:08:46.9419201-03:00"
+        },
+        {
+          "name": "SDU_G11_REPORT.json",
+          "relative_path": ".cabina\\execution-runtime\\SDU_G11_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\SDU_G11_REPORT.json",
+          "web_path": "/core/.cabina/execution-runtime/SDU_G11_REPORT.json",
+          "type": "json",
+          "length": 1051,
+          "last_write_time": "2026-06-26T15:05:59.7684687-03:00"
+        },
+        {
+          "name": "SDU_G11_REPORT.json",
+          "relative_path": ".cabina\\sdu\\SDU_G11_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\sdu\\SDU_G11_REPORT.json",
+          "web_path": "/core/.cabina/sdu/SDU_G11_REPORT.json",
+          "type": "json",
+          "length": 1051,
+          "last_write_time": "2026-06-26T15:05:59.7670686-03:00"
+        },
+        {
+          "name": "sdu-governance.json",
+          "relative_path": ".cabina\\sdu\\sdu-governance.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\sdu\\sdu-governance.json",
+          "web_path": "/core/.cabina/sdu/sdu-governance.json",
+          "type": "json",
+          "length": 2027,
+          "last_write_time": "2026-06-26T15:05:59.7513285-03:00"
+        },
+        {
+          "name": "sdu-federation-map.json",
+          "relative_path": ".cabina\\sdu\\sdu-federation-map.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\sdu\\sdu-federation-map.json",
+          "web_path": "/core/.cabina/sdu/sdu-federation-map.json",
+          "type": "json",
+          "length": 32483,
+          "last_write_time": "2026-06-26T15:05:59.7513285-03:00"
+        },
+        {
+          "name": "sdu-domains.json",
+          "relative_path": ".cabina\\sdu\\sdu-domains.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\sdu\\sdu-domains.json",
+          "web_path": "/core/.cabina/sdu/sdu-domains.json",
+          "type": "json",
+          "length": 1797,
+          "last_write_time": "2026-06-26T15:05:59.7492963-03:00"
+        },
+        {
+          "name": "event-bus-proxy.jsonl",
+          "relative_path": ".cabina\\execution-runtime\\event-bus-proxy.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\event-bus-proxy.jsonl",
+          "web_path": "/core/.cabina/execution-runtime/event-bus-proxy.jsonl",
+          "type": "log",
+          "length": 35027,
+          "last_write_time": "2026-06-26T15:05:59.7482770-03:00"
+        },
+        {
+          "name": "AUTONOMOUS_G10_REPORT.json",
+          "relative_path": ".cabina\\execution-runtime\\AUTONOMOUS_G10_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\AUTONOMOUS_G10_REPORT.json",
+          "web_path": "/core/.cabina/execution-runtime/AUTONOMOUS_G10_REPORT.json",
+          "type": "json",
+          "length": 828,
+          "last_write_time": "2026-06-26T15:03:37.2634753-03:00"
+        },
+        {
+          "name": "NOC_G9_INTELLIGENCE_REPORT.json",
+          "relative_path": ".cabina\\execution-runtime\\NOC_G9_INTELLIGENCE_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\NOC_G9_INTELLIGENCE_REPORT.json",
+          "web_path": "/core/.cabina/execution-runtime/NOC_G9_INTELLIGENCE_REPORT.json",
+          "type": "json",
+          "length": 844,
+          "last_write_time": "2026-06-26T15:01:19.0992778-03:00"
+        },
+        {
+          "name": "NOC_G8_REPORT.json",
+          "relative_path": ".cabina\\execution-runtime\\NOC_G8_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\NOC_G8_REPORT.json",
+          "web_path": "/core/.cabina/execution-runtime/NOC_G8_REPORT.json",
+          "type": "json",
+          "length": 685,
+          "last_write_time": "2026-06-26T14:58:20.6919104-03:00"
+        },
+        {
+          "name": "noc-dispatcher.jsonl",
+          "relative_path": ".cabina\\execution-runtime\\noc-dispatcher.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\noc-dispatcher.jsonl",
+          "web_path": "/core/.cabina/execution-runtime/noc-dispatcher.jsonl",
+          "type": "log",
+          "length": 51090,
+          "last_write_time": "2026-06-26T14:58:20.6897550-03:00"
+        },
+        {
+          "name": "CABINA_OPERATE_REPORT.json",
+          "relative_path": ".cabina\\execution-runtime\\CABINA_OPERATE_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\CABINA_OPERATE_REPORT.json",
+          "web_path": "/core/.cabina/execution-runtime/CABINA_OPERATE_REPORT.json",
+          "type": "json",
+          "length": 444,
+          "last_write_time": "2026-06-26T14:55:03.3909618-03:00"
+        },
+        {
+          "name": "CABINA_OPERATE_STATE.json",
+          "relative_path": ".cabina\\execution-runtime\\CABINA_OPERATE_STATE.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\CABINA_OPERATE_STATE.json",
+          "web_path": "/core/.cabina/execution-runtime/CABINA_OPERATE_STATE.json",
+          "type": "json",
+          "length": 945,
+          "last_write_time": "2026-06-26T14:55:03.3904526-03:00"
+        },
+        {
+          "name": "hot-adjustments.json",
+          "relative_path": ".cabina\\execution-runtime\\hot-adjustments.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\hot-adjustments.json",
+          "web_path": "/core/.cabina/execution-runtime/hot-adjustments.json",
+          "type": "json",
+          "length": 358,
+          "last_write_time": "2026-06-26T14:55:03.3893807-03:00"
+        },
+        {
+          "name": "EXECUTION_DISPATCH_G6_REPORT.json",
+          "relative_path": ".cabina\\execution-runtime\\EXECUTION_DISPATCH_G6_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\EXECUTION_DISPATCH_G6_REPORT.json",
+          "web_path": "/core/.cabina/execution-runtime/EXECUTION_DISPATCH_G6_REPORT.json",
+          "type": "json",
+          "length": 11154,
+          "last_write_time": "2026-06-26T14:53:00.6337676-03:00"
+        },
+        {
+          "name": "EXECUTION_FABRIC_G2_REPORT.json",
+          "relative_path": ".cabina\\execution-runtime\\EXECUTION_FABRIC_G2_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\EXECUTION_FABRIC_G2_REPORT.json",
+          "web_path": "/core/.cabina/execution-runtime/EXECUTION_FABRIC_G2_REPORT.json",
+          "type": "json",
+          "length": 564,
+          "last_write_time": "2026-06-26T14:50:49.7265127-03:00"
+        },
+        {
+          "name": "execution-bindings.json",
+          "relative_path": ".cabina\\execution-runtime\\execution-bindings.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\execution-bindings.json",
+          "web_path": "/core/.cabina/execution-runtime/execution-bindings.json",
+          "type": "json",
+          "length": 18382,
+          "last_write_time": "2026-06-26T14:50:49.7265127-03:00"
+        },
+        {
+          "name": "execution-pipelines.json",
+          "relative_path": ".cabina\\execution-runtime\\execution-pipelines.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\execution-pipelines.json",
+          "web_path": "/core/.cabina/execution-runtime/execution-pipelines.json",
+          "type": "json",
+          "length": 49475,
+          "last_write_time": "2026-06-26T14:50:49.7252472-03:00"
+        },
+        {
+          "name": "execution-map.json",
+          "relative_path": ".cabina\\execution-runtime\\execution-map.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\execution-map.json",
+          "web_path": "/core/.cabina/execution-runtime/execution-map.json",
+          "type": "json",
+          "length": 12215,
+          "last_write_time": "2026-06-26T14:50:49.7229759-03:00"
+        },
+        {
+          "name": ".graphify_labels.json",
+          "relative_path": "graphify-out\\.graphify_labels.json",
+          "full_path": "C:\\CEO\\project-cdx\\graphify-out\\.graphify_labels.json",
+          "web_path": "/core/graphify-out/.graphify_labels.json",
+          "type": "json",
+          "length": 21988,
+          "last_write_time": "2026-06-26T14:35:32.5104790-03:00"
+        },
+        {
+          "name": "graph.json",
+          "relative_path": "graphify-out\\graph.json",
+          "full_path": "C:\\CEO\\project-cdx\\graphify-out\\graph.json",
+          "web_path": "/core/graphify-out/graph.json",
+          "type": "json",
+          "length": 5668804,
+          "last_write_time": "2026-06-26T14:35:32.5008202-03:00"
+        },
+        {
+          "name": "GRAPH_REPORT.md",
+          "relative_path": "graphify-out\\GRAPH_REPORT.md",
+          "full_path": "C:\\CEO\\project-cdx\\graphify-out\\GRAPH_REPORT.md",
+          "web_path": "/core/graphify-out/GRAPH_REPORT.md",
+          "type": "md",
+          "length": 164555,
+          "last_write_time": "2026-06-26T14:35:32.2181578-03:00"
+        },
+        {
+          "name": "manifest.json",
+          "relative_path": "graphify-out\\manifest.json",
+          "full_path": "C:\\CEO\\project-cdx\\graphify-out\\manifest.json",
+          "web_path": "/core/graphify-out/manifest.json",
+          "type": "json",
+          "length": 496235,
+          "last_write_time": "2026-06-26T14:35:31.7292809-03:00"
+        },
+        {
+          "name": "stat-index.json",
+          "relative_path": "graphify-out\\cache\\stat-index.json",
+          "full_path": "C:\\CEO\\project-cdx\\graphify-out\\cache\\stat-index.json",
+          "web_path": "/core/graphify-out/cache/stat-index.json",
+          "type": "json",
+          "length": 765901,
+          "last_write_time": "2026-06-26T14:31:25.8161832-03:00"
+        },
+        {
+          "name": "MAPA.md",
+          "relative_path": "workbooks\\MAPA.md",
+          "full_path": "C:\\CEO\\project-cdx\\workbooks\\MAPA.md",
+          "web_path": "/core/workbooks/MAPA.md",
+          "type": "md",
+          "length": 1201,
+          "last_write_time": "2026-06-26T14:30:46.6425114-03:00"
+        },
+        {
+          "name": "EXCEL_AL_FRENTE.md",
+          "relative_path": "workbooks\\EXCEL_AL_FRENTE.md",
+          "full_path": "C:\\CEO\\project-cdx\\workbooks\\EXCEL_AL_FRENTE.md",
+          "web_path": "/core/workbooks/EXCEL_AL_FRENTE.md",
+          "type": "md",
+          "length": 1687,
+          "last_write_time": "2026-06-26T14:30:46.6410086-03:00"
+        },
+        {
+          "name": "validate_proj_cdx_workbench.ps1",
+          "relative_path": "tools\\validate_proj_cdx_workbench.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\validate_proj_cdx_workbench.ps1",
+          "web_path": "/core/tools/validate_proj_cdx_workbench.ps1",
+          "type": "tool",
+          "length": 6581,
+          "last_write_time": "2026-06-26T14:30:46.6395117-03:00"
+        },
+        {
+          "name": "validate_proj_cdx_sync.ps1",
+          "relative_path": "tools\\validate_proj_cdx_sync.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\validate_proj_cdx_sync.ps1",
+          "web_path": "/core/tools/validate_proj_cdx_sync.ps1",
+          "type": "tool",
+          "length": 6620,
+          "last_write_time": "2026-06-26T14:30:46.6382103-03:00"
+        },
+        {
+          "name": "validate_proj_cdx_operational_chain.ps1",
+          "relative_path": "tools\\validate_proj_cdx_operational_chain.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\validate_proj_cdx_operational_chain.ps1",
+          "web_path": "/core/tools/validate_proj_cdx_operational_chain.ps1",
+          "type": "tool",
+          "length": 11160,
+          "last_write_time": "2026-06-26T14:30:46.6372066-03:00"
+        },
+        {
+          "name": "update_codex_config_workbook.py",
+          "relative_path": "tools\\update_codex_config_workbook.py",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\update_codex_config_workbook.py",
+          "web_path": "/core/tools/update_codex_config_workbook.py",
+          "type": "tool",
+          "length": 209367,
+          "last_write_time": "2026-06-26T14:30:46.6353231-03:00"
+        },
+        {
+          "name": "promote_sdu_manifesto_dataverse.ps1",
+          "relative_path": "tools\\promote_sdu_manifesto_dataverse.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\promote_sdu_manifesto_dataverse.ps1",
+          "web_path": "/core/tools/promote_sdu_manifesto_dataverse.ps1",
+          "type": "tool",
+          "length": 8275,
+          "last_write_time": "2026-06-26T14:30:46.6325406-03:00"
+        },
+        {
+          "name": "promote_lane_b_corte_agent_index_dataverse.ps1",
+          "relative_path": "tools\\promote_lane_b_corte_agent_index_dataverse.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\promote_lane_b_corte_agent_index_dataverse.ps1",
+          "web_path": "/core/tools/promote_lane_b_corte_agent_index_dataverse.ps1",
+          "type": "tool",
+          "length": 10665,
+          "last_write_time": "2026-06-26T14:30:46.6314694-03:00"
+        },
+        {
+          "name": "promote_binding_ui_seshat_home_atomos_dataverse.ps1",
+          "relative_path": "tools\\promote_binding_ui_seshat_home_atomos_dataverse.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\promote_binding_ui_seshat_home_atomos_dataverse.ps1",
+          "web_path": "/core/tools/promote_binding_ui_seshat_home_atomos_dataverse.ps1",
+          "type": "tool",
+          "length": 10587,
+          "last_write_time": "2026-06-26T14:30:46.6304647-03:00"
+        },
+        {
+          "name": "codex-cloud-maintenance.ps1",
+          "relative_path": "tools\\codex-cloud-maintenance.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\codex-cloud-maintenance.ps1",
+          "web_path": "/core/tools/codex-cloud-maintenance.ps1",
+          "type": "tool",
+          "length": 7287,
+          "last_write_time": "2026-06-26T14:30:46.6291302-03:00"
+        },
+        {
+          "name": "codex-cloud-bootstrap.ps1",
+          "relative_path": "tools\\codex-cloud-bootstrap.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\codex-cloud-bootstrap.ps1",
+          "web_path": "/core/tools/codex-cloud-bootstrap.ps1",
+          "type": "tool",
+          "length": 9751,
+          "last_write_time": "2026-06-26T14:30:46.6280710-03:00"
+        },
+        {
+          "name": "README.md",
+          "relative_path": "tools\\README.md",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\README.md",
+          "web_path": "/core/tools/README.md",
+          "type": "md",
+          "length": 3348,
+          "last_write_time": "2026-06-26T14:30:46.6260596-03:00"
+        },
+        {
+          "name": "test_metadata_cli.py",
+          "relative_path": "tests\\test_metadata_cli.py",
+          "full_path": "C:\\CEO\\project-cdx\\tests\\test_metadata_cli.py",
+          "web_path": "/core/tests/test_metadata_cli.py",
+          "type": "tool",
+          "length": 6418,
+          "last_write_time": "2026-06-26T14:30:46.6233505-03:00"
+        },
+        {
+          "name": "MAPA.md",
+          "relative_path": "tools\\MAPA.md",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\MAPA.md",
+          "web_path": "/core/tools/MAPA.md",
+          "type": "md",
+          "length": 2293,
+          "last_write_time": "2026-06-26T14:30:46.6233505-03:00"
+        },
+        {
+          "name": "test_launch_desk_runtime.py",
+          "relative_path": "tests\\test_launch_desk_runtime.py",
+          "full_path": "C:\\CEO\\project-cdx\\tests\\test_launch_desk_runtime.py",
+          "web_path": "/core/tests/test_launch_desk_runtime.py",
+          "type": "tool",
+          "length": 5001,
+          "last_write_time": "2026-06-26T14:30:46.6221023-03:00"
+        },
+        {
+          "name": "cli.py",
+          "relative_path": "src\\projec_cdx_cloud\\cli.py",
+          "full_path": "C:\\CEO\\project-cdx\\src\\projec_cdx_cloud\\cli.py",
+          "web_path": "/core/src/projec_cdx_cloud/cli.py",
+          "type": "tool",
+          "length": 5403,
+          "last_write_time": "2026-06-26T14:30:46.6210039-03:00"
+        },
+        {
+          "name": "validator.py",
+          "relative_path": "src\\metadata\\validator.py",
+          "full_path": "C:\\CEO\\project-cdx\\src\\metadata\\validator.py",
+          "web_path": "/core/src/metadata/validator.py",
+          "type": "tool",
+          "length": 6835,
+          "last_write_time": "2026-06-26T14:30:46.6194980-03:00"
+        },
+        {
+          "name": "cli.py",
+          "relative_path": "src\\metadata\\cli.py",
+          "full_path": "C:\\CEO\\project-cdx\\src\\metadata\\cli.py",
+          "web_path": "/core/src/metadata/cli.py",
+          "type": "tool",
+          "length": 5726,
+          "last_write_time": "2026-06-26T14:30:46.6184912-03:00"
+        },
+        {
+          "name": "service.py",
+          "relative_path": "src\\launch_desk\\service.py",
+          "full_path": "C:\\CEO\\project-cdx\\src\\launch_desk\\service.py",
+          "web_path": "/core/src/launch_desk/service.py",
+          "type": "tool",
+          "length": 10587,
+          "last_write_time": "2026-06-26T14:30:46.6173430-03:00"
+        },
+        {
+          "name": "procedencia-layout-on-demand.md",
+          "relative_path": "recipes\\procedencia-layout-on-demand.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\procedencia-layout-on-demand.md",
+          "web_path": "/core/recipes/procedencia-layout-on-demand.md",
+          "type": "md",
+          "length": 1444,
+          "last_write_time": "2026-06-26T14:30:46.6163401-03:00"
+        },
+        {
+          "name": "dataverse-rehidratacion.md",
+          "relative_path": "recipes\\dataverse-rehidratacion.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\dataverse-rehidratacion.md",
+          "web_path": "/core/recipes/dataverse-rehidratacion.md",
+          "type": "md",
+          "length": 1317,
+          "last_write_time": "2026-06-26T14:30:46.6153040-03:00"
+        },
+        {
+          "name": "complementos-on-demand.md",
+          "relative_path": "recipes\\complementos-on-demand.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\complementos-on-demand.md",
+          "web_path": "/core/recipes/complementos-on-demand.md",
+          "type": "md",
+          "length": 1102,
+          "last_write_time": "2026-06-26T14:30:46.6123667-03:00"
+        },
+        {
+          "name": "cierre-wave-documental.md",
+          "relative_path": "recipes\\cierre-wave-documental.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\cierre-wave-documental.md",
+          "web_path": "/core/recipes/cierre-wave-documental.md",
+          "type": "md",
+          "length": 1218,
+          "last_write_time": "2026-06-26T14:30:46.6123667-03:00"
+        },
+        {
+          "name": "agentes-atomicos-algoritmicos-en-waves.md",
+          "relative_path": "recipes\\agentes-atomicos-algoritmicos-en-waves.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\agentes-atomicos-algoritmicos-en-waves.md",
+          "web_path": "/core/recipes/agentes-atomicos-algoritmicos-en-waves.md",
+          "type": "md",
+          "length": 1785,
+          "last_write_time": "2026-06-26T14:30:46.6112092-03:00"
+        },
+        {
+          "name": "README.md",
+          "relative_path": "recipes\\README.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\README.md",
+          "web_path": "/core/recipes/README.md",
+          "type": "md",
+          "length": 4321,
+          "last_write_time": "2026-06-26T14:30:46.6101496-03:00"
+        },
+        {
+          "name": "MAPA.md",
+          "relative_path": "recipes\\MAPA.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\MAPA.md",
+          "web_path": "/core/recipes/MAPA.md",
+          "type": "md",
+          "length": 6177,
+          "last_write_time": "2026-06-26T14:30:46.6091306-03:00"
+        },
+        {
+          "name": "retencion-gobernada.md",
+          "relative_path": "procesos\\retencion-gobernada.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\retencion-gobernada.md",
+          "web_path": "/core/procesos/retencion-gobernada.md",
+          "type": "md",
+          "length": 422,
+          "last_write_time": "2026-06-26T14:30:46.6076904-03:00"
+        },
+        {
+          "name": "pyproject.toml",
+          "relative_path": "pyproject.toml",
+          "full_path": "C:\\CEO\\project-cdx\\pyproject.toml",
+          "web_path": "/core/pyproject.toml",
+          "type": "config",
+          "length": 1117,
+          "last_write_time": "2026-06-26T14:30:46.6076904-03:00"
+        },
+        {
+          "name": "promocion-huella-tenant-dataverse.md",
+          "relative_path": "procesos\\promocion-huella-tenant-dataverse.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\promocion-huella-tenant-dataverse.md",
+          "web_path": "/core/procesos/promocion-huella-tenant-dataverse.md",
+          "type": "md",
+          "length": 724,
+          "last_write_time": "2026-06-26T14:30:46.6066884-03:00"
+        },
+        {
+          "name": "procedencia-layout-on-demand.md",
+          "relative_path": "procesos\\procedencia-layout-on-demand.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\procedencia-layout-on-demand.md",
+          "web_path": "/core/procesos/procedencia-layout-on-demand.md",
+          "type": "md",
+          "length": 981,
+          "last_write_time": "2026-06-26T14:30:46.6056850-03:00"
+        },
+        {
+          "name": "dataverse-rehidratacion.md",
+          "relative_path": "procesos\\dataverse-rehidratacion.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\dataverse-rehidratacion.md",
+          "web_path": "/core/procesos/dataverse-rehidratacion.md",
+          "type": "md",
+          "length": 1054,
+          "last_write_time": "2026-06-26T14:30:46.6044812-03:00"
+        },
+        {
+          "name": "complementos-on-demand.md",
+          "relative_path": "procesos\\complementos-on-demand.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\complementos-on-demand.md",
+          "web_path": "/core/procesos/complementos-on-demand.md",
+          "type": "md",
+          "length": 899,
+          "last_write_time": "2026-06-26T14:30:46.6044812-03:00"
+        },
+        {
+          "name": "cierre-wave-documental.md",
+          "relative_path": "procesos\\cierre-wave-documental.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\cierre-wave-documental.md",
+          "web_path": "/core/procesos/cierre-wave-documental.md",
+          "type": "md",
+          "length": 1059,
+          "last_write_time": "2026-06-26T14:30:46.6034623-03:00"
+        },
+        {
+          "name": "agentes-atomicos-algoritmicos-en-waves.md",
+          "relative_path": "procesos\\agentes-atomicos-algoritmicos-en-waves.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\agentes-atomicos-algoritmicos-en-waves.md",
+          "web_path": "/core/procesos/agentes-atomicos-algoritmicos-en-waves.md",
+          "type": "md",
+          "length": 1553,
+          "last_write_time": "2026-06-26T14:30:46.6019582-03:00"
+        },
+        {
+          "name": "PROCESOS_OPERATIVOS.md",
+          "relative_path": "procesos\\PROCESOS_OPERATIVOS.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\PROCESOS_OPERATIVOS.md",
+          "web_path": "/core/procesos/PROCESOS_OPERATIVOS.md",
+          "type": "md",
+          "length": 3521,
+          "last_write_time": "2026-06-26T14:30:46.6008073-03:00"
+        },
+        {
+          "name": "README.md",
+          "relative_path": "procesos\\README.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\README.md",
+          "web_path": "/core/procesos/README.md",
+          "type": "md",
+          "length": 4240,
+          "last_write_time": "2026-06-26T14:30:46.6008073-03:00"
+        },
+        {
+          "name": "MAPA.md",
+          "relative_path": "procesos\\MAPA.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\MAPA.md",
+          "web_path": "/core/procesos/MAPA.md",
+          "type": "md",
+          "length": 5835,
+          "last_write_time": "2026-06-26T14:30:46.5997477-03:00"
+        },
+        {
+          "name": "README.md",
+          "relative_path": "playbooks\\README.md",
+          "full_path": "C:\\CEO\\project-cdx\\playbooks\\README.md",
+          "web_path": "/core/playbooks/README.md",
+          "type": "md",
+          "length": 1285,
+          "last_write_time": "2026-06-26T14:30:46.5985455-03:00"
+        },
+        {
+          "name": "03-cerrar-delta.md",
+          "relative_path": "playbooks\\03-cerrar-delta.md",
+          "full_path": "C:\\CEO\\project-cdx\\playbooks\\03-cerrar-delta.md",
+          "web_path": "/core/playbooks/03-cerrar-delta.md",
+          "type": "md",
+          "length": 529,
+          "last_write_time": "2026-06-26T14:30:46.5971823-03:00"
+        },
+        {
+          "name": "00-preflight-gobernado.md",
+          "relative_path": "playbooks\\00-preflight-gobernado.md",
+          "full_path": "C:\\CEO\\project-cdx\\playbooks\\00-preflight-gobernado.md",
+          "web_path": "/core/playbooks/00-preflight-gobernado.md",
+          "type": "md",
+          "length": 1177,
+          "last_write_time": "2026-06-26T14:30:46.5971823-03:00"
+        },
+        {
+          "name": "trazabilidad-5-campos.md",
+          "relative_path": "patrones\\trazabilidad-5-campos.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\trazabilidad-5-campos.md",
+          "web_path": "/core/patrones/trazabilidad-5-campos.md",
+          "type": "md",
+          "length": 352,
+          "last_write_time": "2026-06-26T14:30:46.5946898-03:00"
+        },
+        {
+          "name": "no-confundir-estados.md",
+          "relative_path": "patrones\\no-confundir-estados.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\no-confundir-estados.md",
+          "web_path": "/core/patrones/no-confundir-estados.md",
+          "type": "md",
+          "length": 525,
+          "last_write_time": "2026-06-26T14:30:46.5946898-03:00"
+        },
+        {
+          "name": "huella-atomica-owner-approved.md",
+          "relative_path": "patrones\\huella-atomica-owner-approved.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\huella-atomica-owner-approved.md",
+          "web_path": "/core/patrones/huella-atomica-owner-approved.md",
+          "type": "md",
+          "length": 987,
+          "last_write_time": "2026-06-26T14:30:46.5936876-03:00"
+        },
+        {
+          "name": "dataverse-rehidratacion.md",
+          "relative_path": "patrones\\dataverse-rehidratacion.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\dataverse-rehidratacion.md",
+          "web_path": "/core/patrones/dataverse-rehidratacion.md",
+          "type": "md",
+          "length": 894,
+          "last_write_time": "2026-06-26T14:30:46.5926706-03:00"
+        },
+        {
+          "name": "PATRONES_OPERATIVOS.md",
+          "relative_path": "patrones\\PATRONES_OPERATIVOS.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\PATRONES_OPERATIVOS.md",
+          "web_path": "/core/patrones/PATRONES_OPERATIVOS.md",
+          "type": "md",
+          "length": 4536,
+          "last_write_time": "2026-06-26T14:30:46.5911667-03:00"
+        }
+      ]
+    },
+    {
+      "name": "WATCHDOG",
+      "route": "/watchdog/",
+      "root": "C:\\CEO\\watchdog",
+      "status": "OK",
+      "total_detected": 325,
+      "files": [
+        {
+          "name": "watchdog.actions.json",
+          "relative_path": "watchdog.actions.json",
+          "full_path": "C:\\CEO\\watchdog\\watchdog.actions.json",
+          "web_path": "/watchdog/watchdog.actions.json",
+          "type": "json",
+          "length": 18,
+          "last_write_time": "2026-06-26T15:26:53.0856390-03:00"
+        },
+        {
+          "name": "telemetry.json",
+          "relative_path": "telemetry.json",
+          "full_path": "C:\\CEO\\watchdog\\telemetry.json",
+          "web_path": "/watchdog/telemetry.json",
+          "type": "json",
+          "length": 33521,
+          "last_write_time": "2026-06-26T15:24:51.5643743-03:00"
+        },
+        {
+          "name": "alerts.jsonl",
+          "relative_path": "logs\\alerts.jsonl",
+          "full_path": "C:\\CEO\\watchdog\\logs\\alerts.jsonl",
+          "web_path": "/watchdog/logs/alerts.jsonl",
+          "type": "log",
+          "length": 114668,
+          "last_write_time": "2026-06-26T15:19:51.9524752-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_151951_2192.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_151951_2192.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_151951_2192.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_151951_2192.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T15:19:51.9405730-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_150953_2020.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_150953_2020.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_150953_2020.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_150953_2020.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T15:09:53.6104562-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_145953_16288.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_145953_16288.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_145953_16288.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_145953_16288.json",
+          "type": "json",
+          "length": 336,
+          "last_write_time": "2026-06-26T14:59:53.3264227-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_144951_12216.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_144951_12216.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_144951_12216.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_144951_12216.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T14:49:51.6426471-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_143952_18176.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_143952_18176.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_143952_18176.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_143952_18176.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T14:39:52.8723147-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_142952_17576.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_142952_17576.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_142952_17576.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_142952_17576.json",
+          "type": "json",
+          "length": 336,
+          "last_write_time": "2026-06-26T14:29:53.0083834-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_141953_19828.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_141953_19828.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_141953_19828.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_141953_19828.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T14:19:54.0038931-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_140952_18328.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_140952_18328.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_140952_18328.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_140952_18328.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T14:09:52.1422632-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_135951_2052.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_135951_2052.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_135951_2052.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_135951_2052.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T13:59:51.9177121-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_134951_11156.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_134951_11156.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_134951_11156.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_134951_11156.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T13:49:51.5694098-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_133951_21056.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_133951_21056.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_133951_21056.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_133951_21056.json",
+          "type": "json",
+          "length": 336,
+          "last_write_time": "2026-06-26T13:39:51.8281578-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_132951_14868.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_132951_14868.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_132951_14868.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_132951_14868.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T13:29:51.8674271-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_131953_480.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_131953_480.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_131953_480.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_131953_480.json",
+          "type": "json",
+          "length": 333,
+          "last_write_time": "2026-06-26T13:19:53.5522159-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_130952_1004.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_130952_1004.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_130952_1004.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_130952_1004.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T13:09:52.1286353-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_125951_2884.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_125951_2884.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_125951_2884.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_125951_2884.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T12:59:51.8002583-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_124952_10496.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_124952_10496.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_124952_10496.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_124952_10496.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T12:49:52.2248504-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_123951_5936.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_123951_5936.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_123951_5936.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_123951_5936.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T12:39:51.7172266-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_122951_22508.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_122951_22508.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_122951_22508.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_122951_22508.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T12:29:51.7780821-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_121951_17144.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_121951_17144.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_121951_17144.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_121951_17144.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T12:19:51.8560428-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_120951_10684.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_120951_10684.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_120951_10684.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_120951_10684.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T12:09:51.7626486-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_115953_21820.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_115953_21820.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_115953_21820.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_115953_21820.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T11:59:53.3855565-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_114951_18564.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_114951_18564.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_114951_18564.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_114951_18564.json",
+          "type": "json",
+          "length": 336,
+          "last_write_time": "2026-06-26T11:49:51.8186870-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_113951_17416.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_113951_17416.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_113951_17416.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_113951_17416.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T11:39:51.7604199-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_112951_4396.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_112951_4396.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_112951_4396.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_112951_4396.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T11:29:51.8116237-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_111955_17120.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_111955_17120.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_111955_17120.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_111955_17120.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T11:19:55.7541183-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_105951_15792.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_105951_15792.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_105951_15792.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_105951_15792.json",
+          "type": "json",
+          "length": 336,
+          "last_write_time": "2026-06-26T10:59:51.6137904-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_104951_20404.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_104951_20404.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_104951_20404.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_104951_20404.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T10:49:51.6342879-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_103952_12692.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_103952_12692.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_103952_12692.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_103952_12692.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T10:39:52.3294695-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_102951_6020.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_102951_6020.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_102951_6020.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_102951_6020.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T10:29:51.5710406-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_100951_7792.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_100951_7792.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_100951_7792.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_100951_7792.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T10:09:51.6709262-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_095951_8140.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_095951_8140.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_095951_8140.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_095951_8140.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T09:59:51.9320642-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_094951_9952.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_094951_9952.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_094951_9952.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_094951_9952.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T09:49:51.7766157-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_093951_18480.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_093951_18480.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_093951_18480.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_093951_18480.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T09:39:51.9651737-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_092951_13704.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_092951_13704.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_092951_13704.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_092951_13704.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T09:29:51.6715283-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_091951_8036.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_091951_8036.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_091951_8036.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_091951_8036.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T09:19:51.8489734-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_090951_2412.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_090951_2412.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_090951_2412.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_090951_2412.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T09:09:51.5948037-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_085951_13472.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_085951_13472.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_085951_13472.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_085951_13472.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T08:59:51.7586401-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_084951_3868.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_084951_3868.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_084951_3868.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_084951_3868.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T08:49:51.7464552-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_083951_5660.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_083951_5660.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_083951_5660.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_083951_5660.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T08:39:51.6038356-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_082951_5224.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_082951_5224.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_082951_5224.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_082951_5224.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T08:29:51.7632964-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_081951_8132.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_081951_8132.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_081951_8132.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_081951_8132.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T08:19:51.7581044-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_080951_20764.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_080951_20764.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_080951_20764.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_080951_20764.json",
+          "type": "json",
+          "length": 336,
+          "last_write_time": "2026-06-26T08:09:51.7978155-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_075951_14868.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_075951_14868.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_075951_14868.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_075951_14868.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T07:59:51.9849404-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_074951_21120.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_074951_21120.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_074951_21120.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_074951_21120.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T07:49:51.6374744-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_073951_5008.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_073951_5008.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_073951_5008.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_073951_5008.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T07:39:51.5842162-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_072951_12048.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_072951_12048.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_072951_12048.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_072951_12048.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T07:29:51.5542131-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_071951_11616.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_071951_11616.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_071951_11616.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_071951_11616.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T07:19:51.6487300-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_070951_2224.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_070951_2224.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_070951_2224.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_070951_2224.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T07:09:51.5469624-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_065951_2324.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_065951_2324.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_065951_2324.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_065951_2324.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T06:59:51.5517033-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_064951_15292.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_064951_15292.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_064951_15292.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_064951_15292.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T06:49:51.6977975-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_063951_19580.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_063951_19580.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_063951_19580.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_063951_19580.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T06:39:51.6152708-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_062951_5900.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_062951_5900.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_062951_5900.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_062951_5900.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T06:29:51.7031189-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_061951_8044.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_061951_8044.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_061951_8044.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_061951_8044.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T06:19:51.6865089-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_060951_19248.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_060951_19248.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_060951_19248.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_060951_19248.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T06:09:51.5066859-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_055951_12800.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_055951_12800.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_055951_12800.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_055951_12800.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T05:59:51.7994508-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_054951_19788.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_054951_19788.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_054951_19788.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_054951_19788.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T05:49:51.5977892-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_053951_7972.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_053951_7972.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_053951_7972.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_053951_7972.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T05:39:51.6947432-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_052951_484.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_052951_484.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_052951_484.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_052951_484.json",
+          "type": "json",
+          "length": 332,
+          "last_write_time": "2026-06-26T05:29:51.5272674-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_051951_20180.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_051951_20180.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_051951_20180.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_051951_20180.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T05:19:51.7959247-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_050951_5640.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_050951_5640.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_050951_5640.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_050951_5640.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T05:09:51.6836283-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_045951_20576.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_045951_20576.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_045951_20576.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_045951_20576.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T04:59:51.5437022-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_044951_460.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_044951_460.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_044951_460.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_044951_460.json",
+          "type": "json",
+          "length": 332,
+          "last_write_time": "2026-06-26T04:49:52.0355280-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_043951_16216.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_043951_16216.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_043951_16216.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_043951_16216.json",
+          "type": "json",
+          "length": 336,
+          "last_write_time": "2026-06-26T04:39:51.7446962-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_042951_15156.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_042951_15156.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_042951_15156.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_042951_15156.json",
+          "type": "json",
+          "length": 336,
+          "last_write_time": "2026-06-26T04:29:52.0592770-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_041951_14260.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_041951_14260.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_041951_14260.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_041951_14260.json",
+          "type": "json",
+          "length": 336,
+          "last_write_time": "2026-06-26T04:19:51.7321570-03:00"
+        },
+        {
+          "name": "watchdog.log",
+          "relative_path": "logs\\watchdog.log",
+          "full_path": "C:\\CEO\\watchdog\\logs\\watchdog.log",
+          "web_path": "/watchdog/logs/watchdog.log",
+          "type": "log",
+          "length": 2772,
+          "last_write_time": "2026-06-26T04:16:53.4631807-03:00"
+        },
+        {
+          "name": "watchdog.seen.txt",
+          "relative_path": "watchdog.seen.txt",
+          "full_path": "C:\\CEO\\watchdog\\watchdog.seen.txt",
+          "web_path": "/watchdog/watchdog.seen.txt",
+          "type": "doc",
+          "length": 1027,
+          "last_write_time": "2026-06-26T04:16:53.4580149-03:00"
+        },
+        {
+          "name": "incident-20260626-041653-1796.json",
+          "relative_path": "incidents\\incident-20260626-041653-1796.json",
+          "full_path": "C:\\CEO\\watchdog\\incidents\\incident-20260626-041653-1796.json",
+          "web_path": "/watchdog/incidents/incident-20260626-041653-1796.json",
+          "type": "json",
+          "length": 1010,
+          "last_write_time": "2026-06-26T04:16:53.4498453-03:00"
+        },
+        {
+          "name": "incident-20260626-041212-7034.json",
+          "relative_path": "incidents\\incident-20260626-041212-7034.json",
+          "full_path": "C:\\CEO\\watchdog\\incidents\\incident-20260626-041212-7034.json",
+          "web_path": "/watchdog/incidents/incident-20260626-041212-7034.json",
+          "type": "json",
+          "length": 818,
+          "last_write_time": "2026-06-26T04:12:16.7362332-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_041006_1452.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_041006_1452.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_041006_1452.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_041006_1452.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T04:10:06.4731969-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_040450_18252.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_040450_18252.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_040450_18252.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_040450_18252.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T04:04:50.7040292-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_035453_3180.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_035453_3180.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_035453_3180.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_035453_3180.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T03:54:54.0170983-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_034956_27120.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_034956_27120.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_034956_27120.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_034956_27120.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T03:49:56.8269736-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_034449_5396.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_034449_5396.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_034449_5396.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_034449_5396.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T03:44:49.3546626-03:00"
+        },
+        {
+          "name": "incident-20260626-034152-1796.json",
+          "relative_path": "incidents\\incident-20260626-034152-1796.json",
+          "full_path": "C:\\CEO\\watchdog\\incidents\\incident-20260626-034152-1796.json",
+          "web_path": "/watchdog/incidents/incident-20260626-034152-1796.json",
+          "type": "json",
+          "length": 1010,
+          "last_write_time": "2026-06-26T03:41:52.8555280-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_033449_18488.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_033449_18488.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_033449_18488.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_033449_18488.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T03:34:49.8205574-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_032450_17908.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_032450_17908.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_032450_17908.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_032450_17908.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T03:24:50.4455878-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_031456_23520.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_031456_23520.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_031456_23520.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_031456_23520.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T03:14:57.2676628-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_030449_24660.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_030449_24660.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_030449_24660.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_030449_24660.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T03:04:49.1812317-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_025449_26536.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_025449_26536.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_025449_26536.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_025449_26536.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T02:54:49.4221377-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_024452_15496.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_024452_15496.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_024452_15496.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_024452_15496.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T02:44:52.6759634-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_023449_24564.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_023449_24564.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_023449_24564.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_023449_24564.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T02:34:50.0862228-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_022454_25692.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_022454_25692.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_022454_25692.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_022454_25692.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T02:24:54.2884085-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_021451_12560.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_021451_12560.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_021451_12560.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_021451_12560.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T02:14:52.0750201-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_020452_1624.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_020452_1624.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_020452_1624.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_020452_1624.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T02:04:53.0083763-03:00"
+        },
+        {
+          "name": "app.js",
+          "relative_path": "noc-web\\app.js",
+          "full_path": "C:\\CEO\\watchdog\\noc-web\\app.js",
+          "web_path": "/watchdog/noc-web/app.js",
+          "type": "tool",
+          "length": 40426,
+          "last_write_time": "2026-06-26T02:02:27.3901596-03:00"
+        },
+        {
+          "name": "owner_actions_server.py",
+          "relative_path": "noc-web\\owner_actions_server.py",
+          "full_path": "C:\\CEO\\watchdog\\noc-web\\owner_actions_server.py",
+          "web_path": "/watchdog/noc-web/owner_actions_server.py",
+          "type": "tool",
+          "length": 34001,
+          "last_write_time": "2026-06-26T01:56:52.4388107-03:00"
+        },
+        {
+          "name": "action_execution.jsonl",
+          "relative_path": "logs\\action_execution.jsonl",
+          "full_path": "C:\\CEO\\watchdog\\logs\\action_execution.jsonl",
+          "web_path": "/watchdog/logs/action_execution.jsonl",
+          "type": "log",
+          "length": 8624,
+          "last_write_time": "2026-06-26T01:55:15.0072015-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_015449_12360.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_015449_12360.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_015449_12360.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_015449_12360.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T01:54:49.7426329-03:00"
+        },
+        {
+          "name": "index.html",
+          "relative_path": "noc-web\\index.html",
+          "full_path": "C:\\CEO\\watchdog\\noc-web\\index.html",
+          "web_path": "/watchdog/noc-web/index.html",
+          "type": "web",
+          "length": 8002,
+          "last_write_time": "2026-06-26T01:53:04.7607853-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_014449_24836.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_014449_24836.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_014449_24836.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_014449_24836.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T01:44:49.5729955-03:00"
+        },
+        {
+          "name": "canvas.html",
+          "relative_path": "noc-web\\canvas.html",
+          "full_path": "C:\\CEO\\watchdog\\noc-web\\canvas.html",
+          "web_path": "/watchdog/noc-web/canvas.html",
+          "type": "web",
+          "length": 23807,
+          "last_write_time": "2026-06-26T01:35:34.9590109-03:00"
+        },
+        {
+          "name": "owner.html",
+          "relative_path": "noc-web\\owner.html",
+          "full_path": "C:\\CEO\\watchdog\\noc-web\\owner.html",
+          "web_path": "/watchdog/noc-web/owner.html",
+          "type": "web",
+          "length": 19144,
+          "last_write_time": "2026-06-26T01:35:34.9577633-03:00"
+        },
+        {
+          "name": "operational_rhythm_g8_beta.json",
+          "relative_path": "config\\operational_rhythm_g8_beta.json",
+          "full_path": "C:\\CEO\\watchdog\\config\\operational_rhythm_g8_beta.json",
+          "web_path": "/watchdog/config/operational_rhythm_g8_beta.json",
+          "type": "json",
+          "length": 819,
+          "last_write_time": "2026-06-26T01:35:34.7521948-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_013449_18852.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_013449_18852.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_013449_18852.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_013449_18852.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T01:34:49.1552835-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_012456_5396.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_012456_5396.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_012456_5396.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_012456_5396.json",
+          "type": "json",
+          "length": 334,
+          "last_write_time": "2026-06-26T01:24:56.4554614-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_011450_24884.json",
+          "relative_path": "alerts\\alert_TRACE_20260626_011450_24884.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_011450_24884.json",
+          "web_path": "/watchdog/alerts/alert_TRACE_20260626_011450_24884.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T01:14:50.0927906-03:00"
+        }
+      ]
+    },
+    {
+      "name": "RUNTIME",
+      "route": "/runtime/",
+      "root": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime",
+      "status": "OK",
+      "total_detected": 71,
+      "files": [
+        {
+          "name": "CABINA_START_OPERATIONAL_MODE_REPORT.json",
+          "relative_path": "CABINA_START_OPERATIONAL_MODE_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\CABINA_START_OPERATIONAL_MODE_REPORT.json",
+          "web_path": "/runtime/CABINA_START_OPERATIONAL_MODE_REPORT.json",
+          "type": "json",
+          "length": 333,
+          "last_write_time": "2026-06-26T15:11:07.7071945-03:00"
+        },
+        {
+          "name": "noc-panel.json",
+          "relative_path": "noc-panel.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\noc-panel.json",
+          "web_path": "/runtime/noc-panel.json",
+          "type": "json",
+          "length": 189949,
+          "last_write_time": "2026-06-26T15:11:07.7066914-03:00"
+        },
+        {
+          "name": "operational-loop.jsonl",
+          "relative_path": "logs\\operational-loop.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\operational-loop.jsonl",
+          "web_path": "/runtime/logs/operational-loop.jsonl",
+          "type": "log",
+          "length": 335,
+          "last_write_time": "2026-06-26T15:11:07.6995864-03:00"
+        },
+        {
+          "name": "CABINA_OPERATIONAL_STATE.json",
+          "relative_path": "CABINA_OPERATIONAL_STATE.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\CABINA_OPERATIONAL_STATE.json",
+          "web_path": "/runtime/CABINA_OPERATIONAL_STATE.json",
+          "type": "json",
+          "length": 890,
+          "last_write_time": "2026-06-26T15:11:07.6976044-03:00"
+        },
+        {
+          "name": "SDU_G12_GOVERNANCE_REPORT.json",
+          "relative_path": "SDU_G12_GOVERNANCE_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\SDU_G12_GOVERNANCE_REPORT.json",
+          "web_path": "/runtime/SDU_G12_GOVERNANCE_REPORT.json",
+          "type": "json",
+          "length": 1047,
+          "last_write_time": "2026-06-26T15:08:46.9553098-03:00"
+        },
+        {
+          "name": "autonomous-rules.json",
+          "relative_path": "autonomous\\autonomous-rules.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\autonomous\\autonomous-rules.json",
+          "web_path": "/runtime/autonomous/autonomous-rules.json",
+          "type": "json",
+          "length": 4941,
+          "last_write_time": "2026-06-26T15:08:46.9464938-03:00"
+        },
+        {
+          "name": "SDU_G11_REPORT.json",
+          "relative_path": "SDU_G11_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\SDU_G11_REPORT.json",
+          "web_path": "/runtime/SDU_G11_REPORT.json",
+          "type": "json",
+          "length": 1051,
+          "last_write_time": "2026-06-26T15:05:59.7684687-03:00"
+        },
+        {
+          "name": "multi-domain-intelligence.json",
+          "relative_path": "intelligence\\multi-domain-intelligence.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\intelligence\\multi-domain-intelligence.json",
+          "web_path": "/runtime/intelligence/multi-domain-intelligence.json",
+          "type": "json",
+          "length": 697,
+          "last_write_time": "2026-06-26T15:05:59.7557679-03:00"
+        },
+        {
+          "name": "event-bus-proxy.jsonl",
+          "relative_path": "event-bus-proxy.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\event-bus-proxy.jsonl",
+          "web_path": "/runtime/event-bus-proxy.jsonl",
+          "type": "log",
+          "length": 35027,
+          "last_write_time": "2026-06-26T15:05:59.7482770-03:00"
+        },
+        {
+          "name": "AUTONOMOUS_G10_REPORT.json",
+          "relative_path": "AUTONOMOUS_G10_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\AUTONOMOUS_G10_REPORT.json",
+          "web_path": "/runtime/AUTONOMOUS_G10_REPORT.json",
+          "type": "json",
+          "length": 828,
+          "last_write_time": "2026-06-26T15:03:37.2634753-03:00"
+        },
+        {
+          "name": "AUTONOMOUS_G10_REPORT.json",
+          "relative_path": "autonomous\\AUTONOMOUS_G10_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\autonomous\\AUTONOMOUS_G10_REPORT.json",
+          "web_path": "/runtime/autonomous/AUTONOMOUS_G10_REPORT.json",
+          "type": "json",
+          "length": 828,
+          "last_write_time": "2026-06-26T15:03:37.2634753-03:00"
+        },
+        {
+          "name": "autonomous-actions.jsonl",
+          "relative_path": "logs\\autonomous-actions.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\autonomous-actions.jsonl",
+          "web_path": "/runtime/logs/autonomous-actions.jsonl",
+          "type": "log",
+          "length": 1034,
+          "last_write_time": "2026-06-26T15:03:37.2585138-03:00"
+        },
+        {
+          "name": "autonomous-engine.jsonl",
+          "relative_path": "autonomous\\autonomous-engine.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\autonomous\\autonomous-engine.jsonl",
+          "web_path": "/runtime/autonomous/autonomous-engine.jsonl",
+          "type": "log",
+          "length": 1034,
+          "last_write_time": "2026-06-26T15:03:37.2585138-03:00"
+        },
+        {
+          "name": "intelligence.jsonl",
+          "relative_path": "logs\\intelligence.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\intelligence.jsonl",
+          "web_path": "/runtime/logs/intelligence.jsonl",
+          "type": "log",
+          "length": 238,
+          "last_write_time": "2026-06-26T15:01:19.1004580-03:00"
+        },
+        {
+          "name": "NOC_G9_INTELLIGENCE_REPORT.json",
+          "relative_path": "NOC_G9_INTELLIGENCE_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\NOC_G9_INTELLIGENCE_REPORT.json",
+          "web_path": "/runtime/NOC_G9_INTELLIGENCE_REPORT.json",
+          "type": "json",
+          "length": 844,
+          "last_write_time": "2026-06-26T15:01:19.0992778-03:00"
+        },
+        {
+          "name": "NOC_G9_INTELLIGENCE_REPORT.json",
+          "relative_path": "intelligence\\NOC_G9_INTELLIGENCE_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\intelligence\\NOC_G9_INTELLIGENCE_REPORT.json",
+          "web_path": "/runtime/intelligence/NOC_G9_INTELLIGENCE_REPORT.json",
+          "type": "json",
+          "length": 844,
+          "last_write_time": "2026-06-26T15:01:19.0982749-03:00"
+        },
+        {
+          "name": "alerts.json",
+          "relative_path": "intelligence\\alerts.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\intelligence\\alerts.json",
+          "web_path": "/runtime/intelligence/alerts.json",
+          "type": "json",
+          "length": 492,
+          "last_write_time": "2026-06-26T15:01:19.0972601-03:00"
+        },
+        {
+          "name": "intelligence-scores.json",
+          "relative_path": "intelligence\\intelligence-scores.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\intelligence\\intelligence-scores.json",
+          "web_path": "/runtime/intelligence/intelligence-scores.json",
+          "type": "json",
+          "length": 13019,
+          "last_write_time": "2026-06-26T15:01:19.0959590-03:00"
+        },
+        {
+          "name": "intelligence-metrics.json",
+          "relative_path": "intelligence\\intelligence-metrics.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\intelligence\\intelligence-metrics.json",
+          "web_path": "/runtime/intelligence/intelligence-metrics.json",
+          "type": "json",
+          "length": 10688,
+          "last_write_time": "2026-06-26T15:01:19.0946729-03:00"
+        },
+        {
+          "name": "noc-actions.jsonl",
+          "relative_path": "logs\\noc-actions.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\noc-actions.jsonl",
+          "web_path": "/runtime/logs/noc-actions.jsonl",
+          "type": "log",
+          "length": 76358,
+          "last_write_time": "2026-06-26T14:58:20.6919104-03:00"
+        },
+        {
+          "name": "NOC_G8_REPORT.json",
+          "relative_path": "NOC_G8_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\NOC_G8_REPORT.json",
+          "web_path": "/runtime/NOC_G8_REPORT.json",
+          "type": "json",
+          "length": 685,
+          "last_write_time": "2026-06-26T14:58:20.6919104-03:00"
+        },
+        {
+          "name": "noc-dispatcher.jsonl",
+          "relative_path": "noc-dispatcher.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\noc-dispatcher.jsonl",
+          "web_path": "/runtime/noc-dispatcher.jsonl",
+          "type": "log",
+          "length": 51090,
+          "last_write_time": "2026-06-26T14:58:20.6897550-03:00"
+        },
+        {
+          "name": "CABINA_OPERATE_REPORT.json",
+          "relative_path": "CABINA_OPERATE_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\CABINA_OPERATE_REPORT.json",
+          "web_path": "/runtime/CABINA_OPERATE_REPORT.json",
+          "type": "json",
+          "length": 444,
+          "last_write_time": "2026-06-26T14:55:03.3909618-03:00"
+        },
+        {
+          "name": "CABINA_OPERATE_STATE.json",
+          "relative_path": "CABINA_OPERATE_STATE.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\CABINA_OPERATE_STATE.json",
+          "web_path": "/runtime/CABINA_OPERATE_STATE.json",
+          "type": "json",
+          "length": 945,
+          "last_write_time": "2026-06-26T14:55:03.3904526-03:00"
+        },
+        {
+          "name": "hot-adjustments.json",
+          "relative_path": "hot-adjustments.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\hot-adjustments.json",
+          "web_path": "/runtime/hot-adjustments.json",
+          "type": "json",
+          "length": 358,
+          "last_write_time": "2026-06-26T14:55:03.3893807-03:00"
+        },
+        {
+          "name": "command-invocations.jsonl",
+          "relative_path": "logs\\command-invocations.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\command-invocations.jsonl",
+          "web_path": "/runtime/logs/command-invocations.jsonl",
+          "type": "log",
+          "length": 22120,
+          "last_write_time": "2026-06-26T14:55:03.3879000-03:00"
+        },
+        {
+          "name": "event-bus-proxy.jsonl",
+          "relative_path": "logs\\event-bus-proxy.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\event-bus-proxy.jsonl",
+          "web_path": "/runtime/logs/event-bus-proxy.jsonl",
+          "type": "log",
+          "length": 24667,
+          "last_write_time": "2026-06-26T14:55:03.3702083-03:00"
+        },
+        {
+          "name": "operate-loop.jsonl",
+          "relative_path": "logs\\operate-loop.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\operate-loop.jsonl",
+          "web_path": "/runtime/logs/operate-loop.jsonl",
+          "type": "log",
+          "length": 17039,
+          "last_write_time": "2026-06-26T14:55:03.3702083-03:00"
+        },
+        {
+          "name": "pipeline-reversal-plan.jsonl",
+          "relative_path": "logs\\pipeline-reversal-plan.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-reversal-plan.jsonl",
+          "web_path": "/runtime/logs/pipeline-reversal-plan.jsonl",
+          "type": "log",
+          "length": 1882,
+          "last_write_time": "2026-06-26T14:55:03.3691312-03:00"
+        },
+        {
+          "name": "pipeline-ignore-rules-candidates.jsonl",
+          "relative_path": "logs\\pipeline-ignore-rules-candidates.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-ignore-rules-candidates.jsonl",
+          "web_path": "/runtime/logs/pipeline-ignore-rules-candidates.jsonl",
+          "type": "log",
+          "length": 1952,
+          "last_write_time": "2026-06-26T14:55:03.3677244-03:00"
+        },
+        {
+          "name": "pipeline-quarantine-candidates.jsonl",
+          "relative_path": "logs\\pipeline-quarantine-candidates.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-quarantine-candidates.jsonl",
+          "web_path": "/runtime/logs/pipeline-quarantine-candidates.jsonl",
+          "type": "log",
+          "length": 1938,
+          "last_write_time": "2026-06-26T14:55:03.3667192-03:00"
+        },
+        {
+          "name": "pipeline-cleanup-dryrun.jsonl",
+          "relative_path": "logs\\pipeline-cleanup-dryrun.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-cleanup-dryrun.jsonl",
+          "web_path": "/runtime/logs/pipeline-cleanup-dryrun.jsonl",
+          "type": "log",
+          "length": 1889,
+          "last_write_time": "2026-06-26T14:55:03.3654571-03:00"
+        },
+        {
+          "name": "pipeline-noise-reduction-without-delete.jsonl",
+          "relative_path": "logs\\pipeline-noise-reduction-without-delete.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-noise-reduction-without-delete.jsonl",
+          "web_path": "/runtime/logs/pipeline-noise-reduction-without-delete.jsonl",
+          "type": "log",
+          "length": 2001,
+          "last_write_time": "2026-06-26T14:55:03.3644529-03:00"
+        },
+        {
+          "name": "pipeline-agent-skill-recipe-sdk-file-reconciliation.jsonl",
+          "relative_path": "logs\\pipeline-agent-skill-recipe-sdk-file-reconciliation.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-agent-skill-recipe-sdk-file-reconciliation.jsonl",
+          "web_path": "/runtime/logs/pipeline-agent-skill-recipe-sdk-file-reconciliation.jsonl",
+          "type": "log",
+          "length": 2085,
+          "last_write_time": "2026-06-26T14:55:03.3624445-03:00"
+        },
+        {
+          "name": "pipeline-repo-boundary-reconciliation.jsonl",
+          "relative_path": "logs\\pipeline-repo-boundary-reconciliation.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-repo-boundary-reconciliation.jsonl",
+          "web_path": "/runtime/logs/pipeline-repo-boundary-reconciliation.jsonl",
+          "type": "log",
+          "length": 1987,
+          "last_write_time": "2026-06-26T14:55:03.3609563-03:00"
+        },
+        {
+          "name": "pipeline-local-file-classification.jsonl",
+          "relative_path": "logs\\pipeline-local-file-classification.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-local-file-classification.jsonl",
+          "web_path": "/runtime/logs/pipeline-local-file-classification.jsonl",
+          "type": "log",
+          "length": 1966,
+          "last_write_time": "2026-06-26T14:55:03.3604517-03:00"
+        },
+        {
+          "name": "pipeline-local-file-inventory.jsonl",
+          "relative_path": "logs\\pipeline-local-file-inventory.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-local-file-inventory.jsonl",
+          "web_path": "/runtime/logs/pipeline-local-file-inventory.jsonl",
+          "type": "log",
+          "length": 1931,
+          "last_write_time": "2026-06-26T14:55:03.3582112-03:00"
+        },
+        {
+          "name": "pipeline-cabina-capability-map.jsonl",
+          "relative_path": "logs\\pipeline-cabina-capability-map.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-cabina-capability-map.jsonl",
+          "web_path": "/runtime/logs/pipeline-cabina-capability-map.jsonl",
+          "type": "log",
+          "length": 1960,
+          "last_write_time": "2026-06-26T14:55:03.3572009-03:00"
+        },
+        {
+          "name": "pipeline-sdk-agent-routes.jsonl",
+          "relative_path": "logs\\pipeline-sdk-agent-routes.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-sdk-agent-routes.jsonl",
+          "web_path": "/runtime/logs/pipeline-sdk-agent-routes.jsonl",
+          "type": "log",
+          "length": 1925,
+          "last_write_time": "2026-06-26T14:55:03.3550006-03:00"
+        },
+        {
+          "name": "pipeline-sdk-active-status.jsonl",
+          "relative_path": "logs\\pipeline-sdk-active-status.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-sdk-active-status.jsonl",
+          "web_path": "/runtime/logs/pipeline-sdk-active-status.jsonl",
+          "type": "log",
+          "length": 1932,
+          "last_write_time": "2026-06-26T14:55:03.3539682-03:00"
+        },
+        {
+          "name": "pipeline-agent-reconciliation.jsonl",
+          "relative_path": "logs\\pipeline-agent-reconciliation.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-agent-reconciliation.jsonl",
+          "web_path": "/runtime/logs/pipeline-agent-reconciliation.jsonl",
+          "type": "log",
+          "length": 1953,
+          "last_write_time": "2026-06-26T14:55:03.3529632-03:00"
+        },
+        {
+          "name": "pipeline-repo-boundary-map.jsonl",
+          "relative_path": "logs\\pipeline-repo-boundary-map.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-repo-boundary-map.jsonl",
+          "web_path": "/runtime/logs/pipeline-repo-boundary-map.jsonl",
+          "type": "log",
+          "length": 1932,
+          "last_write_time": "2026-06-26T14:55:03.3515608-03:00"
+        },
+        {
+          "name": "pipeline-repo-fleet-scan.jsonl",
+          "relative_path": "logs\\pipeline-repo-fleet-scan.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-repo-fleet-scan.jsonl",
+          "web_path": "/runtime/logs/pipeline-repo-fleet-scan.jsonl",
+          "type": "log",
+          "length": 1918,
+          "last_write_time": "2026-06-26T14:55:03.3500459-03:00"
+        },
+        {
+          "name": "pipeline-dataverse-agent-memory-routing.jsonl",
+          "relative_path": "logs\\pipeline-dataverse-agent-memory-routing.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-dataverse-agent-memory-routing.jsonl",
+          "web_path": "/runtime/logs/pipeline-dataverse-agent-memory-routing.jsonl",
+          "type": "log",
+          "length": 1800,
+          "last_write_time": "2026-06-26T14:55:03.3485695-03:00"
+        },
+        {
+          "name": "pipeline-dataverse-canon-delta.jsonl",
+          "relative_path": "logs\\pipeline-dataverse-canon-delta.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-dataverse-canon-delta.jsonl",
+          "web_path": "/runtime/logs/pipeline-dataverse-canon-delta.jsonl",
+          "type": "log",
+          "length": 1737,
+          "last_write_time": "2026-06-26T14:55:03.3470453-03:00"
+        },
+        {
+          "name": "pipeline-dataverse-safe-record-sampling.jsonl",
+          "relative_path": "logs\\pipeline-dataverse-safe-record-sampling.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-dataverse-safe-record-sampling.jsonl",
+          "web_path": "/runtime/logs/pipeline-dataverse-safe-record-sampling.jsonl",
+          "type": "log",
+          "length": 1800,
+          "last_write_time": "2026-06-26T14:55:03.3444554-03:00"
+        },
+        {
+          "name": "pipeline-dataverse-real-schema-map.jsonl",
+          "relative_path": "logs\\pipeline-dataverse-real-schema-map.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-dataverse-real-schema-map.jsonl",
+          "web_path": "/runtime/logs/pipeline-dataverse-real-schema-map.jsonl",
+          "type": "log",
+          "length": 1765,
+          "last_write_time": "2026-06-26T14:55:03.3430585-03:00"
+        },
+        {
+          "name": "pipeline-dataverse-live-inventory.jsonl",
+          "relative_path": "logs\\pipeline-dataverse-live-inventory.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-dataverse-live-inventory.jsonl",
+          "web_path": "/runtime/logs/pipeline-dataverse-live-inventory.jsonl",
+          "type": "log",
+          "length": 1758,
+          "last_write_time": "2026-06-26T14:55:03.3419454-03:00"
+        },
+        {
+          "name": "pipeline-powerplatform-blueprint-with-gate.jsonl",
+          "relative_path": "logs\\pipeline-powerplatform-blueprint-with-gate.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-powerplatform-blueprint-with-gate.jsonl",
+          "web_path": "/runtime/logs/pipeline-powerplatform-blueprint-with-gate.jsonl",
+          "type": "log",
+          "length": 1795,
+          "last_write_time": "2026-06-26T14:55:03.3399209-03:00"
+        },
+        {
+          "name": "pipeline-teams-readback-routing.jsonl",
+          "relative_path": "logs\\pipeline-teams-readback-routing.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-teams-readback-routing.jsonl",
+          "web_path": "/runtime/logs/pipeline-teams-readback-routing.jsonl",
+          "type": "log",
+          "length": 1718,
+          "last_write_time": "2026-06-26T14:55:03.3375437-03:00"
+        },
+        {
+          "name": "pipeline-dataverse-memory-routing.jsonl",
+          "relative_path": "logs\\pipeline-dataverse-memory-routing.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-dataverse-memory-routing.jsonl",
+          "web_path": "/runtime/logs/pipeline-dataverse-memory-routing.jsonl",
+          "type": "log",
+          "length": 1732,
+          "last_write_time": "2026-06-26T14:55:03.3355342-03:00"
+        },
+        {
+          "name": "pipeline-github-sharepoint-evidence-pack.jsonl",
+          "relative_path": "logs\\pipeline-github-sharepoint-evidence-pack.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-github-sharepoint-evidence-pack.jsonl",
+          "web_path": "/runtime/logs/pipeline-github-sharepoint-evidence-pack.jsonl",
+          "type": "log",
+          "length": 1781,
+          "last_write_time": "2026-06-26T14:55:03.3334824-03:00"
+        },
+        {
+          "name": "pipeline-define-system-contracts.jsonl",
+          "relative_path": "logs\\pipeline-define-system-contracts.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-define-system-contracts.jsonl",
+          "web_path": "/runtime/logs/pipeline-define-system-contracts.jsonl",
+          "type": "log",
+          "length": 1725,
+          "last_write_time": "2026-06-26T14:55:03.3324705-03:00"
+        },
+        {
+          "name": "pipeline-build-senior-integration-map.jsonl",
+          "relative_path": "logs\\pipeline-build-senior-integration-map.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-build-senior-integration-map.jsonl",
+          "web_path": "/runtime/logs/pipeline-build-senior-integration-map.jsonl",
+          "type": "log",
+          "length": 1760,
+          "last_write_time": "2026-06-26T14:55:03.3314510-03:00"
+        },
+        {
+          "name": "pipeline-promote-ide-pattern-to-capability.jsonl",
+          "relative_path": "logs\\pipeline-promote-ide-pattern-to-capability.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-promote-ide-pattern-to-capability.jsonl",
+          "web_path": "/runtime/logs/pipeline-promote-ide-pattern-to-capability.jsonl",
+          "type": "log",
+          "length": 1790,
+          "last_write_time": "2026-06-26T14:55:03.3296112-03:00"
+        },
+        {
+          "name": "pipeline-ide-drift-detection.jsonl",
+          "relative_path": "logs\\pipeline-ide-drift-detection.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-ide-drift-detection.jsonl",
+          "web_path": "/runtime/logs/pipeline-ide-drift-detection.jsonl",
+          "type": "log",
+          "length": 1692,
+          "last_write_time": "2026-06-26T14:55:03.3281055-03:00"
+        },
+        {
+          "name": "pipeline-ide-remote-readiness-without-push.jsonl",
+          "relative_path": "logs\\pipeline-ide-remote-readiness-without-push.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-ide-remote-readiness-without-push.jsonl",
+          "web_path": "/runtime/logs/pipeline-ide-remote-readiness-without-push.jsonl",
+          "type": "log",
+          "length": 1790,
+          "last_write_time": "2026-06-26T14:55:03.3267675-03:00"
+        },
+        {
+          "name": "pipeline-capture-ide-operation-evidence.jsonl",
+          "relative_path": "logs\\pipeline-capture-ide-operation-evidence.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-capture-ide-operation-evidence.jsonl",
+          "web_path": "/runtime/logs/pipeline-capture-ide-operation-evidence.jsonl",
+          "type": "log",
+          "length": 1769,
+          "last_write_time": "2026-06-26T14:55:03.3254307-03:00"
+        },
+        {
+          "name": "pipeline-classify-vscode-insiders-extensions.jsonl",
+          "relative_path": "logs\\pipeline-classify-vscode-insiders-extensions.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-classify-vscode-insiders-extensions.jsonl",
+          "web_path": "/runtime/logs/pipeline-classify-vscode-insiders-extensions.jsonl",
+          "type": "log",
+          "length": 1804,
+          "last_write_time": "2026-06-26T14:55:03.3239325-03:00"
+        },
+        {
+          "name": "pipeline-promote-script-to-vscode-task.jsonl",
+          "relative_path": "logs\\pipeline-promote-script-to-vscode-task.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-promote-script-to-vscode-task.jsonl",
+          "web_path": "/runtime/logs/pipeline-promote-script-to-vscode-task.jsonl",
+          "type": "log",
+          "length": 1762,
+          "last_write_time": "2026-06-26T14:55:03.3229301-03:00"
+        },
+        {
+          "name": "pipeline-build-ide-command-surface.jsonl",
+          "relative_path": "logs\\pipeline-build-ide-command-surface.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-build-ide-command-surface.jsonl",
+          "web_path": "/runtime/logs/pipeline-build-ide-command-surface.jsonl",
+          "type": "log",
+          "length": 1734,
+          "last_write_time": "2026-06-26T14:55:03.3208597-03:00"
+        },
+        {
+          "name": "pipeline-repair-ide-terminal-runtime.jsonl",
+          "relative_path": "logs\\pipeline-repair-ide-terminal-runtime.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-repair-ide-terminal-runtime.jsonl",
+          "web_path": "/runtime/logs/pipeline-repair-ide-terminal-runtime.jsonl",
+          "type": "log",
+          "length": 1748,
+          "last_write_time": "2026-06-26T14:55:03.3198428-03:00"
+        },
+        {
+          "name": "pipeline-open-cabina-in-governed-ide.jsonl",
+          "relative_path": "logs\\pipeline-open-cabina-in-governed-ide.jsonl",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\pipeline-open-cabina-in-governed-ide.jsonl",
+          "web_path": "/runtime/logs/pipeline-open-cabina-in-governed-ide.jsonl",
+          "type": "log",
+          "length": 1748,
+          "last_write_time": "2026-06-26T14:55:03.3181802-03:00"
+        },
+        {
+          "name": "dispatch-state.json",
+          "relative_path": "logs\\dispatch-state.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\dispatch-state.json",
+          "web_path": "/runtime/logs/dispatch-state.json",
+          "type": "json",
+          "length": 25332,
+          "last_write_time": "2026-06-26T14:53:00.6347728-03:00"
+        },
+        {
+          "name": "EXECUTION_DISPATCH_G6_REPORT.json",
+          "relative_path": "EXECUTION_DISPATCH_G6_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\EXECUTION_DISPATCH_G6_REPORT.json",
+          "web_path": "/runtime/EXECUTION_DISPATCH_G6_REPORT.json",
+          "type": "json",
+          "length": 11154,
+          "last_write_time": "2026-06-26T14:53:00.6337676-03:00"
+        },
+        {
+          "name": "watchdog-telemetry-binding.json",
+          "relative_path": "logs\\watchdog-telemetry-binding.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\watchdog-telemetry-binding.json",
+          "web_path": "/runtime/logs/watchdog-telemetry-binding.json",
+          "type": "json",
+          "length": 942,
+          "last_write_time": "2026-06-26T14:53:00.6326642-03:00"
+        },
+        {
+          "name": "commands-invocable.json",
+          "relative_path": "logs\\commands-invocable.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\logs\\commands-invocable.json",
+          "web_path": "/runtime/logs/commands-invocable.json",
+          "type": "json",
+          "length": 14023,
+          "last_write_time": "2026-06-26T14:53:00.6314087-03:00"
+        },
+        {
+          "name": "execution-bindings.json",
+          "relative_path": "execution-bindings.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\execution-bindings.json",
+          "web_path": "/runtime/execution-bindings.json",
+          "type": "json",
+          "length": 18382,
+          "last_write_time": "2026-06-26T14:50:49.7265127-03:00"
+        },
+        {
+          "name": "EXECUTION_FABRIC_G2_REPORT.json",
+          "relative_path": "EXECUTION_FABRIC_G2_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\EXECUTION_FABRIC_G2_REPORT.json",
+          "web_path": "/runtime/EXECUTION_FABRIC_G2_REPORT.json",
+          "type": "json",
+          "length": 564,
+          "last_write_time": "2026-06-26T14:50:49.7265127-03:00"
+        },
+        {
+          "name": "execution-pipelines.json",
+          "relative_path": "execution-pipelines.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\execution-pipelines.json",
+          "web_path": "/runtime/execution-pipelines.json",
+          "type": "json",
+          "length": 49475,
+          "last_write_time": "2026-06-26T14:50:49.7252472-03:00"
+        },
+        {
+          "name": "execution-map.json",
+          "relative_path": "execution-map.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\execution-runtime\\execution-map.json",
+          "web_path": "/runtime/execution-map.json",
+          "type": "json",
+          "length": 12215,
+          "last_write_time": "2026-06-26T14:50:49.7229759-03:00"
+        }
+      ]
+    },
+    {
+      "name": "TOOLS",
+      "route": "/tools/",
+      "root": "C:\\CEO\\project-cdx\\tools",
+      "status": "OK",
+      "total_detected": 28,
+      "files": [
+        {
+          "name": "validate_proj_cdx_workbench.ps1",
+          "relative_path": "validate_proj_cdx_workbench.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\validate_proj_cdx_workbench.ps1",
+          "web_path": "/tools/validate_proj_cdx_workbench.ps1",
+          "type": "tool",
+          "length": 6581,
+          "last_write_time": "2026-06-26T14:30:46.6395117-03:00"
+        },
+        {
+          "name": "validate_proj_cdx_sync.ps1",
+          "relative_path": "validate_proj_cdx_sync.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\validate_proj_cdx_sync.ps1",
+          "web_path": "/tools/validate_proj_cdx_sync.ps1",
+          "type": "tool",
+          "length": 6620,
+          "last_write_time": "2026-06-26T14:30:46.6382103-03:00"
+        },
+        {
+          "name": "validate_proj_cdx_operational_chain.ps1",
+          "relative_path": "validate_proj_cdx_operational_chain.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\validate_proj_cdx_operational_chain.ps1",
+          "web_path": "/tools/validate_proj_cdx_operational_chain.ps1",
+          "type": "tool",
+          "length": 11160,
+          "last_write_time": "2026-06-26T14:30:46.6372066-03:00"
+        },
+        {
+          "name": "update_codex_config_workbook.py",
+          "relative_path": "update_codex_config_workbook.py",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\update_codex_config_workbook.py",
+          "web_path": "/tools/update_codex_config_workbook.py",
+          "type": "tool",
+          "length": 209367,
+          "last_write_time": "2026-06-26T14:30:46.6353231-03:00"
+        },
+        {
+          "name": "promote_sdu_manifesto_dataverse.ps1",
+          "relative_path": "promote_sdu_manifesto_dataverse.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\promote_sdu_manifesto_dataverse.ps1",
+          "web_path": "/tools/promote_sdu_manifesto_dataverse.ps1",
+          "type": "tool",
+          "length": 8275,
+          "last_write_time": "2026-06-26T14:30:46.6325406-03:00"
+        },
+        {
+          "name": "promote_lane_b_corte_agent_index_dataverse.ps1",
+          "relative_path": "promote_lane_b_corte_agent_index_dataverse.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\promote_lane_b_corte_agent_index_dataverse.ps1",
+          "web_path": "/tools/promote_lane_b_corte_agent_index_dataverse.ps1",
+          "type": "tool",
+          "length": 10665,
+          "last_write_time": "2026-06-26T14:30:46.6314694-03:00"
+        },
+        {
+          "name": "promote_binding_ui_seshat_home_atomos_dataverse.ps1",
+          "relative_path": "promote_binding_ui_seshat_home_atomos_dataverse.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\promote_binding_ui_seshat_home_atomos_dataverse.ps1",
+          "web_path": "/tools/promote_binding_ui_seshat_home_atomos_dataverse.ps1",
+          "type": "tool",
+          "length": 10587,
+          "last_write_time": "2026-06-26T14:30:46.6304647-03:00"
+        },
+        {
+          "name": "codex-cloud-maintenance.ps1",
+          "relative_path": "codex-cloud-maintenance.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\codex-cloud-maintenance.ps1",
+          "web_path": "/tools/codex-cloud-maintenance.ps1",
+          "type": "tool",
+          "length": 7287,
+          "last_write_time": "2026-06-26T14:30:46.6291302-03:00"
+        },
+        {
+          "name": "codex-cloud-bootstrap.ps1",
+          "relative_path": "codex-cloud-bootstrap.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\codex-cloud-bootstrap.ps1",
+          "web_path": "/tools/codex-cloud-bootstrap.ps1",
+          "type": "tool",
+          "length": 9751,
+          "last_write_time": "2026-06-26T14:30:46.6280710-03:00"
+        },
+        {
+          "name": "README.md",
+          "relative_path": "README.md",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\README.md",
+          "web_path": "/tools/README.md",
+          "type": "md",
+          "length": 3348,
+          "last_write_time": "2026-06-26T14:30:46.6260596-03:00"
+        },
+        {
+          "name": "MAPA.md",
+          "relative_path": "MAPA.md",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\MAPA.md",
+          "web_path": "/tools/MAPA.md",
+          "type": "md",
+          "length": 2293,
+          "last_write_time": "2026-06-26T14:30:46.6233505-03:00"
+        },
+        {
+          "name": "validate.py",
+          "relative_path": "validate.py",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\validate.py",
+          "web_path": "/tools/validate.py",
+          "type": "tool",
+          "length": 340,
+          "last_write_time": "2026-06-21T09:08:16.5682807-03:00"
+        },
+        {
+          "name": "build_universe_relationship_audit.py",
+          "relative_path": "build_universe_relationship_audit.py",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\build_universe_relationship_audit.py",
+          "web_path": "/tools/build_universe_relationship_audit.py",
+          "type": "tool",
+          "length": 38131,
+          "last_write_time": "2026-06-21T09:08:16.5662803-03:00"
+        },
+        {
+          "name": "build_skills_workbook.py",
+          "relative_path": "build_skills_workbook.py",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\build_skills_workbook.py",
+          "web_path": "/tools/build_skills_workbook.py",
+          "type": "tool",
+          "length": 10582,
+          "last_write_time": "2026-06-21T09:08:16.5652802-03:00"
+        },
+        {
+          "name": "build_index.py",
+          "relative_path": "build_index.py",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\build_index.py",
+          "web_path": "/tools/build_index.py",
+          "type": "tool",
+          "length": 343,
+          "last_write_time": "2026-06-21T09:08:16.5652802-03:00"
+        },
+        {
+          "name": "build_codex_root_inventory.py",
+          "relative_path": "build_codex_root_inventory.py",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\build_codex_root_inventory.py",
+          "web_path": "/tools/build_codex_root_inventory.py",
+          "type": "tool",
+          "length": 22849,
+          "last_write_time": "2026-06-21T09:08:16.5642799-03:00"
+        },
+        {
+          "name": "codex-control-total.ps1",
+          "relative_path": "codex-control-total.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\codex-control-total.ps1",
+          "web_path": "/tools/codex-control-total.ps1",
+          "type": "tool",
+          "length": 17229,
+          "last_write_time": "2026-06-21T07:39:34.7461641-03:00"
+        },
+        {
+          "name": "__init__.py",
+          "relative_path": "__init__.py",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\__init__.py",
+          "web_path": "/tools/__init__.py",
+          "type": "tool",
+          "length": 68,
+          "last_write_time": "2026-06-21T07:39:34.7429242-03:00"
+        },
+        {
+          "name": "codex-cloud-live.ps1",
+          "relative_path": "codex-cloud-live.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\codex-cloud-live.ps1",
+          "web_path": "/tools/codex-cloud-live.ps1",
+          "type": "tool",
+          "length": 2598,
+          "last_write_time": "2026-06-18T17:15:41.2109293-03:00"
+        },
+        {
+          "name": "rehome_codex_root_safe.ps1",
+          "relative_path": "rehome_codex_root_safe.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\rehome_codex_root_safe.ps1",
+          "web_path": "/tools/rehome_codex_root_safe.ps1",
+          "type": "tool",
+          "length": 1963,
+          "last_write_time": "2026-06-18T17:07:33.0912401-03:00"
+        },
+        {
+          "name": "normalize_codex_surfaces.ps1",
+          "relative_path": "normalize_codex_surfaces.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\normalize_codex_surfaces.ps1",
+          "web_path": "/tools/normalize_codex_surfaces.ps1",
+          "type": "tool",
+          "length": 2974,
+          "last_write_time": "2026-06-18T17:07:33.0912401-03:00"
+        },
+        {
+          "name": "codex-environment-setup.ps1",
+          "relative_path": "codex-environment-setup.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\codex-environment-setup.ps1",
+          "web_path": "/tools/codex-environment-setup.ps1",
+          "type": "tool",
+          "length": 2436,
+          "last_write_time": "2026-06-18T17:07:33.0901208-03:00"
+        },
+        {
+          "name": "codex-environment-cleanup.ps1",
+          "relative_path": "codex-environment-cleanup.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\codex-environment-cleanup.ps1",
+          "web_path": "/tools/codex-environment-cleanup.ps1",
+          "type": "tool",
+          "length": 767,
+          "last_write_time": "2026-06-18T17:07:33.0901208-03:00"
+        },
+        {
+          "name": "build_skills_unified_table.ps1",
+          "relative_path": "build_skills_unified_table.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\build_skills_unified_table.ps1",
+          "web_path": "/tools/build_skills_unified_table.ps1",
+          "type": "tool",
+          "length": 10159,
+          "last_write_time": "2026-06-18T17:07:33.0848395-03:00"
+        },
+        {
+          "name": "validate_sdu_dataverse_metadata_wave.ps1",
+          "relative_path": "validate_sdu_dataverse_metadata_wave.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\validate_sdu_dataverse_metadata_wave.ps1",
+          "web_path": "/tools/validate_sdu_dataverse_metadata_wave.ps1",
+          "type": "tool",
+          "length": 2023,
+          "last_write_time": "2026-06-18T17:03:43.5977319-03:00"
+        },
+        {
+          "name": "read_dataverse_rehydration_live.ps1",
+          "relative_path": "read_dataverse_rehydration_live.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\read_dataverse_rehydration_live.ps1",
+          "web_path": "/tools/read_dataverse_rehydration_live.ps1",
+          "type": "tool",
+          "length": 8470,
+          "last_write_time": "2026-06-18T17:03:43.5960483-03:00"
+        },
+        {
+          "name": "RESOLUCION_TOOLS_20260615.md",
+          "relative_path": "RESOLUCION_TOOLS_20260615.md",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\RESOLUCION_TOOLS_20260615.md",
+          "web_path": "/tools/RESOLUCION_TOOLS_20260615.md",
+          "type": "md",
+          "length": 1422,
+          "last_write_time": "2026-06-15T02:01:46.7636239-03:00"
+        },
+        {
+          "name": "test_codex_powershell_layout.ps1",
+          "relative_path": "test_codex_powershell_layout.ps1",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\test_codex_powershell_layout.ps1",
+          "web_path": "/tools/test_codex_powershell_layout.ps1",
+          "type": "tool",
+          "length": 1546,
+          "last_write_time": "2026-06-14T00:18:50.3208914-03:00"
+        }
+      ]
+    },
+    {
+      "name": "DOCS",
+      "route": "/docs/",
+      "root": "C:\\CEO",
+      "status": "OK",
+      "total_detected": 999,
+      "files": [
+        {
+          "name": "watchdog.actions.json",
+          "relative_path": "watchdog\\watchdog.actions.json",
+          "full_path": "C:\\CEO\\watchdog\\watchdog.actions.json",
+          "web_path": "/docs/watchdog/watchdog.actions.json",
+          "type": "json",
+          "length": 18,
+          "last_write_time": "2026-06-26T15:26:53.0856390-03:00"
+        },
+        {
+          "name": "telemetry.json",
+          "relative_path": "watchdog\\telemetry.json",
+          "full_path": "C:\\CEO\\watchdog\\telemetry.json",
+          "web_path": "/docs/watchdog/telemetry.json",
+          "type": "json",
+          "length": 33521,
+          "last_write_time": "2026-06-26T15:24:51.5643743-03:00"
+        },
+        {
+          "name": "WEB_DISCOVERY_REPORT.json",
+          "relative_path": "project-cdx\\WEB_DISCOVERY_REPORT.json",
+          "full_path": "C:\\CEO\\project-cdx\\WEB_DISCOVERY_REPORT.json",
+          "web_path": "/docs/project-cdx/WEB_DISCOVERY_REPORT.json",
+          "type": "json",
+          "length": 2371,
+          "last_write_time": "2026-06-26T15:24:43.5878472-03:00"
+        },
+        {
+          "name": "decision-trace.jsonl",
+          "relative_path": "evidence\\g8-operational\\decision-trace.jsonl",
+          "full_path": "C:\\CEO\\evidence\\g8-operational\\decision-trace.jsonl",
+          "web_path": "/docs/evidence/g8-operational/decision-trace.jsonl",
+          "type": "log",
+          "length": 89920,
+          "last_write_time": "2026-06-26T15:23:18.1696820-03:00"
+        },
+        {
+          "name": "alerts.jsonl",
+          "relative_path": "watchdog\\logs\\alerts.jsonl",
+          "full_path": "C:\\CEO\\watchdog\\logs\\alerts.jsonl",
+          "web_path": "/docs/watchdog/logs/alerts.jsonl",
+          "type": "log",
+          "length": 114668,
+          "last_write_time": "2026-06-26T15:19:51.9524752-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_151951_2192.json",
+          "relative_path": "watchdog\\alerts\\alert_TRACE_20260626_151951_2192.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_151951_2192.json",
+          "web_path": "/docs/watchdog/alerts/alert_TRACE_20260626_151951_2192.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T15:19:51.9405730-03:00"
+        },
+        {
+          "name": "CABINA_OPERATIONAL_STATE.json",
+          "relative_path": "project-cdx\\.cabina\\CABINA_OPERATIONAL_STATE.json",
+          "full_path": "C:\\CEO\\project-cdx\\.cabina\\CABINA_OPERATIONAL_STATE.json",
+          "web_path": "/docs/project-cdx/.cabina/CABINA_OPERATIONAL_STATE.json",
+          "type": "json",
+          "length": 890,
+          "last_write_time": "2026-06-26T15:11:07.6984530-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_150953_2020.json",
+          "relative_path": "watchdog\\alerts\\alert_TRACE_20260626_150953_2020.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_150953_2020.json",
+          "web_path": "/docs/watchdog/alerts/alert_TRACE_20260626_150953_2020.json",
+          "type": "json",
+          "length": 335,
+          "last_write_time": "2026-06-26T15:09:53.6104562-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_145953_16288.json",
+          "relative_path": "watchdog\\alerts\\alert_TRACE_20260626_145953_16288.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_145953_16288.json",
+          "web_path": "/docs/watchdog/alerts/alert_TRACE_20260626_145953_16288.json",
+          "type": "json",
+          "length": 336,
+          "last_write_time": "2026-06-26T14:59:53.3264227-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_144951_12216.json",
+          "relative_path": "watchdog\\alerts\\alert_TRACE_20260626_144951_12216.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_144951_12216.json",
+          "web_path": "/docs/watchdog/alerts/alert_TRACE_20260626_144951_12216.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T14:49:51.6426471-03:00"
+        },
+        {
+          "name": "alert_TRACE_20260626_143952_18176.json",
+          "relative_path": "watchdog\\alerts\\alert_TRACE_20260626_143952_18176.json",
+          "full_path": "C:\\CEO\\watchdog\\alerts\\alert_TRACE_20260626_143952_18176.json",
+          "web_path": "/docs/watchdog/alerts/alert_TRACE_20260626_143952_18176.json",
+          "type": "json",
+          "length": 337,
+          "last_write_time": "2026-06-26T14:39:52.8723147-03:00"
+        },
+        {
+          "name": ".graphify_labels.json",
+          "relative_path": "project-cdx\\graphify-out\\.graphify_labels.json",
+          "full_path": "C:\\CEO\\project-cdx\\graphify-out\\.graphify_labels.json",
+          "web_path": "/docs/project-cdx/graphify-out/.graphify_labels.json",
+          "type": "json",
+          "length": 21988,
+          "last_write_time": "2026-06-26T14:35:32.5104790-03:00"
+        },
+        {
+          "name": "graph.json",
+          "relative_path": "project-cdx\\graphify-out\\graph.json",
+          "full_path": "C:\\CEO\\project-cdx\\graphify-out\\graph.json",
+          "web_path": "/docs/project-cdx/graphify-out/graph.json",
+          "type": "json",
+          "length": 5668804,
+          "last_write_time": "2026-06-26T14:35:32.5008202-03:00"
+        },
+        {
+          "name": "GRAPH_REPORT.md",
+          "relative_path": "project-cdx\\graphify-out\\GRAPH_REPORT.md",
+          "full_path": "C:\\CEO\\project-cdx\\graphify-out\\GRAPH_REPORT.md",
+          "web_path": "/docs/project-cdx/graphify-out/GRAPH_REPORT.md",
+          "type": "md",
+          "length": 164555,
+          "last_write_time": "2026-06-26T14:35:32.2181578-03:00"
+        },
+        {
+          "name": "manifest.json",
+          "relative_path": "project-cdx\\graphify-out\\manifest.json",
+          "full_path": "C:\\CEO\\project-cdx\\graphify-out\\manifest.json",
+          "web_path": "/docs/project-cdx/graphify-out/manifest.json",
+          "type": "json",
+          "length": 496235,
+          "last_write_time": "2026-06-26T14:35:31.7292809-03:00"
+        },
+        {
+          "name": "MAPA.md",
+          "relative_path": "project-cdx\\workbooks\\MAPA.md",
+          "full_path": "C:\\CEO\\project-cdx\\workbooks\\MAPA.md",
+          "web_path": "/docs/project-cdx/workbooks/MAPA.md",
+          "type": "md",
+          "length": 1201,
+          "last_write_time": "2026-06-26T14:30:46.6425114-03:00"
+        },
+        {
+          "name": "EXCEL_AL_FRENTE.md",
+          "relative_path": "project-cdx\\workbooks\\EXCEL_AL_FRENTE.md",
+          "full_path": "C:\\CEO\\project-cdx\\workbooks\\EXCEL_AL_FRENTE.md",
+          "web_path": "/docs/project-cdx/workbooks/EXCEL_AL_FRENTE.md",
+          "type": "md",
+          "length": 1687,
+          "last_write_time": "2026-06-26T14:30:46.6410086-03:00"
+        },
+        {
+          "name": "README.md",
+          "relative_path": "project-cdx\\tools\\README.md",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\README.md",
+          "web_path": "/docs/project-cdx/tools/README.md",
+          "type": "md",
+          "length": 3348,
+          "last_write_time": "2026-06-26T14:30:46.6260596-03:00"
+        },
+        {
+          "name": "MAPA.md",
+          "relative_path": "project-cdx\\tools\\MAPA.md",
+          "full_path": "C:\\CEO\\project-cdx\\tools\\MAPA.md",
+          "web_path": "/docs/project-cdx/tools/MAPA.md",
+          "type": "md",
+          "length": 2293,
+          "last_write_time": "2026-06-26T14:30:46.6233505-03:00"
+        },
+        {
+          "name": "procedencia-layout-on-demand.md",
+          "relative_path": "project-cdx\\recipes\\procedencia-layout-on-demand.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\procedencia-layout-on-demand.md",
+          "web_path": "/docs/project-cdx/recipes/procedencia-layout-on-demand.md",
+          "type": "md",
+          "length": 1444,
+          "last_write_time": "2026-06-26T14:30:46.6163401-03:00"
+        },
+        {
+          "name": "dataverse-rehidratacion.md",
+          "relative_path": "project-cdx\\recipes\\dataverse-rehidratacion.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\dataverse-rehidratacion.md",
+          "web_path": "/docs/project-cdx/recipes/dataverse-rehidratacion.md",
+          "type": "md",
+          "length": 1317,
+          "last_write_time": "2026-06-26T14:30:46.6153040-03:00"
+        },
+        {
+          "name": "cierre-wave-documental.md",
+          "relative_path": "project-cdx\\recipes\\cierre-wave-documental.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\cierre-wave-documental.md",
+          "web_path": "/docs/project-cdx/recipes/cierre-wave-documental.md",
+          "type": "md",
+          "length": 1218,
+          "last_write_time": "2026-06-26T14:30:46.6123667-03:00"
+        },
+        {
+          "name": "complementos-on-demand.md",
+          "relative_path": "project-cdx\\recipes\\complementos-on-demand.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\complementos-on-demand.md",
+          "web_path": "/docs/project-cdx/recipes/complementos-on-demand.md",
+          "type": "md",
+          "length": 1102,
+          "last_write_time": "2026-06-26T14:30:46.6123667-03:00"
+        },
+        {
+          "name": "agentes-atomicos-algoritmicos-en-waves.md",
+          "relative_path": "project-cdx\\recipes\\agentes-atomicos-algoritmicos-en-waves.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\agentes-atomicos-algoritmicos-en-waves.md",
+          "web_path": "/docs/project-cdx/recipes/agentes-atomicos-algoritmicos-en-waves.md",
+          "type": "md",
+          "length": 1785,
+          "last_write_time": "2026-06-26T14:30:46.6112092-03:00"
+        },
+        {
+          "name": "README.md",
+          "relative_path": "project-cdx\\recipes\\README.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\README.md",
+          "web_path": "/docs/project-cdx/recipes/README.md",
+          "type": "md",
+          "length": 4321,
+          "last_write_time": "2026-06-26T14:30:46.6101496-03:00"
+        },
+        {
+          "name": "MAPA.md",
+          "relative_path": "project-cdx\\recipes\\MAPA.md",
+          "full_path": "C:\\CEO\\project-cdx\\recipes\\MAPA.md",
+          "web_path": "/docs/project-cdx/recipes/MAPA.md",
+          "type": "md",
+          "length": 6177,
+          "last_write_time": "2026-06-26T14:30:46.6091306-03:00"
+        },
+        {
+          "name": "retencion-gobernada.md",
+          "relative_path": "project-cdx\\procesos\\retencion-gobernada.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\retencion-gobernada.md",
+          "web_path": "/docs/project-cdx/procesos/retencion-gobernada.md",
+          "type": "md",
+          "length": 422,
+          "last_write_time": "2026-06-26T14:30:46.6076904-03:00"
+        },
+        {
+          "name": "promocion-huella-tenant-dataverse.md",
+          "relative_path": "project-cdx\\procesos\\promocion-huella-tenant-dataverse.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\promocion-huella-tenant-dataverse.md",
+          "web_path": "/docs/project-cdx/procesos/promocion-huella-tenant-dataverse.md",
+          "type": "md",
+          "length": 724,
+          "last_write_time": "2026-06-26T14:30:46.6066884-03:00"
+        },
+        {
+          "name": "procedencia-layout-on-demand.md",
+          "relative_path": "project-cdx\\procesos\\procedencia-layout-on-demand.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\procedencia-layout-on-demand.md",
+          "web_path": "/docs/project-cdx/procesos/procedencia-layout-on-demand.md",
+          "type": "md",
+          "length": 981,
+          "last_write_time": "2026-06-26T14:30:46.6056850-03:00"
+        },
+        {
+          "name": "dataverse-rehidratacion.md",
+          "relative_path": "project-cdx\\procesos\\dataverse-rehidratacion.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\dataverse-rehidratacion.md",
+          "web_path": "/docs/project-cdx/procesos/dataverse-rehidratacion.md",
+          "type": "md",
+          "length": 1054,
+          "last_write_time": "2026-06-26T14:30:46.6044812-03:00"
+        },
+        {
+          "name": "complementos-on-demand.md",
+          "relative_path": "project-cdx\\procesos\\complementos-on-demand.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\complementos-on-demand.md",
+          "web_path": "/docs/project-cdx/procesos/complementos-on-demand.md",
+          "type": "md",
+          "length": 899,
+          "last_write_time": "2026-06-26T14:30:46.6044812-03:00"
+        },
+        {
+          "name": "cierre-wave-documental.md",
+          "relative_path": "project-cdx\\procesos\\cierre-wave-documental.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\cierre-wave-documental.md",
+          "web_path": "/docs/project-cdx/procesos/cierre-wave-documental.md",
+          "type": "md",
+          "length": 1059,
+          "last_write_time": "2026-06-26T14:30:46.6034623-03:00"
+        },
+        {
+          "name": "agentes-atomicos-algoritmicos-en-waves.md",
+          "relative_path": "project-cdx\\procesos\\agentes-atomicos-algoritmicos-en-waves.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\agentes-atomicos-algoritmicos-en-waves.md",
+          "web_path": "/docs/project-cdx/procesos/agentes-atomicos-algoritmicos-en-waves.md",
+          "type": "md",
+          "length": 1553,
+          "last_write_time": "2026-06-26T14:30:46.6019582-03:00"
+        },
+        {
+          "name": "README.md",
+          "relative_path": "project-cdx\\procesos\\README.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\README.md",
+          "web_path": "/docs/project-cdx/procesos/README.md",
+          "type": "md",
+          "length": 4240,
+          "last_write_time": "2026-06-26T14:30:46.6008073-03:00"
+        },
+        {
+          "name": "PROCESOS_OPERATIVOS.md",
+          "relative_path": "project-cdx\\procesos\\PROCESOS_OPERATIVOS.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\PROCESOS_OPERATIVOS.md",
+          "web_path": "/docs/project-cdx/procesos/PROCESOS_OPERATIVOS.md",
+          "type": "md",
+          "length": 3521,
+          "last_write_time": "2026-06-26T14:30:46.6008073-03:00"
+        },
+        {
+          "name": "MAPA.md",
+          "relative_path": "project-cdx\\procesos\\MAPA.md",
+          "full_path": "C:\\CEO\\project-cdx\\procesos\\MAPA.md",
+          "web_path": "/docs/project-cdx/procesos/MAPA.md",
+          "type": "md",
+          "length": 5835,
+          "last_write_time": "2026-06-26T14:30:46.5997477-03:00"
+        },
+        {
+          "name": "README.md",
+          "relative_path": "project-cdx\\playbooks\\README.md",
+          "full_path": "C:\\CEO\\project-cdx\\playbooks\\README.md",
+          "web_path": "/docs/project-cdx/playbooks/README.md",
+          "type": "md",
+          "length": 1285,
+          "last_write_time": "2026-06-26T14:30:46.5985455-03:00"
+        },
+        {
+          "name": "03-cerrar-delta.md",
+          "relative_path": "project-cdx\\playbooks\\03-cerrar-delta.md",
+          "full_path": "C:\\CEO\\project-cdx\\playbooks\\03-cerrar-delta.md",
+          "web_path": "/docs/project-cdx/playbooks/03-cerrar-delta.md",
+          "type": "md",
+          "length": 529,
+          "last_write_time": "2026-06-26T14:30:46.5971823-03:00"
+        },
+        {
+          "name": "00-preflight-gobernado.md",
+          "relative_path": "project-cdx\\playbooks\\00-preflight-gobernado.md",
+          "full_path": "C:\\CEO\\project-cdx\\playbooks\\00-preflight-gobernado.md",
+          "web_path": "/docs/project-cdx/playbooks/00-preflight-gobernado.md",
+          "type": "md",
+          "length": 1177,
+          "last_write_time": "2026-06-26T14:30:46.5971823-03:00"
+        },
+        {
+          "name": "no-confundir-estados.md",
+          "relative_path": "project-cdx\\patrones\\no-confundir-estados.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\no-confundir-estados.md",
+          "web_path": "/docs/project-cdx/patrones/no-confundir-estados.md",
+          "type": "md",
+          "length": 525,
+          "last_write_time": "2026-06-26T14:30:46.5946898-03:00"
+        },
+        {
+          "name": "trazabilidad-5-campos.md",
+          "relative_path": "project-cdx\\patrones\\trazabilidad-5-campos.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\trazabilidad-5-campos.md",
+          "web_path": "/docs/project-cdx/patrones/trazabilidad-5-campos.md",
+          "type": "md",
+          "length": 352,
+          "last_write_time": "2026-06-26T14:30:46.5946898-03:00"
+        },
+        {
+          "name": "huella-atomica-owner-approved.md",
+          "relative_path": "project-cdx\\patrones\\huella-atomica-owner-approved.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\huella-atomica-owner-approved.md",
+          "web_path": "/docs/project-cdx/patrones/huella-atomica-owner-approved.md",
+          "type": "md",
+          "length": 987,
+          "last_write_time": "2026-06-26T14:30:46.5936876-03:00"
+        },
+        {
+          "name": "dataverse-rehidratacion.md",
+          "relative_path": "project-cdx\\patrones\\dataverse-rehidratacion.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\dataverse-rehidratacion.md",
+          "web_path": "/docs/project-cdx/patrones/dataverse-rehidratacion.md",
+          "type": "md",
+          "length": 894,
+          "last_write_time": "2026-06-26T14:30:46.5926706-03:00"
+        },
+        {
+          "name": "PATRONES_OPERATIVOS.md",
+          "relative_path": "project-cdx\\patrones\\PATRONES_OPERATIVOS.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\PATRONES_OPERATIVOS.md",
+          "web_path": "/docs/project-cdx/patrones/PATRONES_OPERATIVOS.md",
+          "type": "md",
+          "length": 4536,
+          "last_write_time": "2026-06-26T14:30:46.5911667-03:00"
+        },
+        {
+          "name": "INDICE_PATRONES.md",
+          "relative_path": "project-cdx\\patrones\\INDICE_PATRONES.md",
+          "full_path": "C:\\CEO\\project-cdx\\patrones\\INDICE_PATRONES.md",
+          "web_path": "/docs/project-cdx/patrones/INDICE_PATRONES.md",
+          "type": "md",
+          "length": 8821,
+          "last_write_time": "2026-06-26T14:30:46.5901660-03:00"
+        },
+        {
+          "name": "index.json",
+          "relative_path": "project-cdx\\operativa\\index.json",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\index.json",
+          "web_path": "/docs/project-cdx/operativa/index.json",
+          "type": "json",
+          "length": 21455,
+          "last_write_time": "2026-06-26T14:30:46.5690456-03:00"
+        },
+        {
+          "name": "WORKBOOK_SUPERFICIES_WORKSPACE_20260618.csv",
+          "relative_path": "project-cdx\\operativa\\WORKBOOK_SUPERFICIES_WORKSPACE_20260618.csv",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\WORKBOOK_SUPERFICIES_WORKSPACE_20260618.csv",
+          "web_path": "/docs/project-cdx/operativa/WORKBOOK_SUPERFICIES_WORKSPACE_20260618.csv",
+          "type": "doc",
+          "length": 1199,
+          "last_write_time": "2026-06-26T14:30:46.5677976-03:00"
+        },
+        {
+          "name": "WAVE_ATOMICA_REPOS_20260616.md",
+          "relative_path": "project-cdx\\operativa\\WAVE_ATOMICA_REPOS_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\WAVE_ATOMICA_REPOS_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/WAVE_ATOMICA_REPOS_20260616.md",
+          "type": "md",
+          "length": 9543,
+          "last_write_time": "2026-06-26T14:30:46.5677976-03:00"
+        },
+        {
+          "name": "VERSIONADO_DOCUMENTAL_LOCAL_20260617.md",
+          "relative_path": "project-cdx\\operativa\\VERSIONADO_DOCUMENTAL_LOCAL_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\VERSIONADO_DOCUMENTAL_LOCAL_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/VERSIONADO_DOCUMENTAL_LOCAL_20260617.md",
+          "type": "md",
+          "length": 1030,
+          "last_write_time": "2026-06-26T14:30:46.5667273-03:00"
+        },
+        {
+          "name": "TRACE.md",
+          "relative_path": "project-cdx\\operativa\\TRACE.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\TRACE.md",
+          "web_path": "/docs/project-cdx/operativa/TRACE.md",
+          "type": "md",
+          "length": 1101,
+          "last_write_time": "2026-06-26T14:30:46.5667273-03:00"
+        },
+        {
+          "name": "TODO_20260615.md",
+          "relative_path": "project-cdx\\operativa\\TODO_20260615.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\TODO_20260615.md",
+          "web_path": "/docs/project-cdx/operativa/TODO_20260615.md",
+          "type": "md",
+          "length": 1188,
+          "last_write_time": "2026-06-26T14:30:46.5654619-03:00"
+        },
+        {
+          "name": "THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.csv",
+          "relative_path": "project-cdx\\operativa\\THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.csv",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.csv",
+          "web_path": "/docs/project-cdx/operativa/THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.csv",
+          "type": "doc",
+          "length": 2047,
+          "last_write_time": "2026-06-26T14:30:46.5654619-03:00"
+        },
+        {
+          "name": "THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.csv",
+          "relative_path": "project-cdx\\operativa\\THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.csv",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.csv",
+          "web_path": "/docs/project-cdx/operativa/THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.csv",
+          "type": "doc",
+          "length": 1998,
+          "last_write_time": "2026-06-26T14:30:46.5654619-03:00"
+        },
+        {
+          "name": "THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.csv",
+          "relative_path": "project-cdx\\operativa\\THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.csv",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.csv",
+          "web_path": "/docs/project-cdx/operativa/THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.csv",
+          "type": "doc",
+          "length": 2236,
+          "last_write_time": "2026-06-26T14:30:46.5640328-03:00"
+        },
+        {
+          "name": "THREAD_CREATION_QUEUE_5_PLUS_1_20260617.csv",
+          "relative_path": "project-cdx\\operativa\\THREAD_CREATION_QUEUE_5_PLUS_1_20260617.csv",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\THREAD_CREATION_QUEUE_5_PLUS_1_20260617.csv",
+          "web_path": "/docs/project-cdx/operativa/THREAD_CREATION_QUEUE_5_PLUS_1_20260617.csv",
+          "type": "doc",
+          "length": 2183,
+          "last_write_time": "2026-06-26T14:30:46.5640328-03:00"
+        },
+        {
+          "name": "THREAD_ARCHITECTURE_5_PLUS_1_20260617.md",
+          "relative_path": "project-cdx\\operativa\\THREAD_ARCHITECTURE_5_PLUS_1_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\THREAD_ARCHITECTURE_5_PLUS_1_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/THREAD_ARCHITECTURE_5_PLUS_1_20260617.md",
+          "type": "md",
+          "length": 2147,
+          "last_write_time": "2026-06-26T14:30:46.5630309-03:00"
+        },
+        {
+          "name": "TAXONOMIA_NOMENCLATURA_20260615.md",
+          "relative_path": "project-cdx\\operativa\\TAXONOMIA_NOMENCLATURA_20260615.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\TAXONOMIA_NOMENCLATURA_20260615.md",
+          "web_path": "/docs/project-cdx/operativa/TAXONOMIA_NOMENCLATURA_20260615.md",
+          "type": "md",
+          "length": 3304,
+          "last_write_time": "2026-06-26T14:30:46.5630309-03:00"
+        },
+        {
+          "name": "START_HERE_CIERRE_WAVE.md",
+          "relative_path": "project-cdx\\operativa\\START_HERE_CIERRE_WAVE.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\START_HERE_CIERRE_WAVE.md",
+          "web_path": "/docs/project-cdx/operativa/START_HERE_CIERRE_WAVE.md",
+          "type": "md",
+          "length": 1086,
+          "last_write_time": "2026-06-26T14:30:46.5620275-03:00"
+        },
+        {
+          "name": "START_HERE.md",
+          "relative_path": "project-cdx\\operativa\\START_HERE.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\START_HERE.md",
+          "web_path": "/docs/project-cdx/operativa/START_HERE.md",
+          "type": "md",
+          "length": 1518,
+          "last_write_time": "2026-06-26T14:30:46.5620275-03:00"
+        },
+        {
+          "name": "SHAREPOINT_CORTE_PROPOSITO_PROMOTION_20260616.json",
+          "relative_path": "project-cdx\\operativa\\SHAREPOINT_CORTE_PROPOSITO_PROMOTION_20260616.json",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\SHAREPOINT_CORTE_PROPOSITO_PROMOTION_20260616.json",
+          "web_path": "/docs/project-cdx/operativa/SHAREPOINT_CORTE_PROPOSITO_PROMOTION_20260616.json",
+          "type": "json",
+          "length": 1401,
+          "last_write_time": "2026-06-26T14:30:46.5605958-03:00"
+        },
+        {
+          "name": "SHAREPOINT_SESHAT_HOME_PROMOTION_20260616.json",
+          "relative_path": "project-cdx\\operativa\\SHAREPOINT_SESHAT_HOME_PROMOTION_20260616.json",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\SHAREPOINT_SESHAT_HOME_PROMOTION_20260616.json",
+          "web_path": "/docs/project-cdx/operativa/SHAREPOINT_SESHAT_HOME_PROMOTION_20260616.json",
+          "type": "json",
+          "length": 1810,
+          "last_write_time": "2026-06-26T14:30:46.5605958-03:00"
+        },
+        {
+          "name": "SGIN_GROUP_SITE_DRIVE_PLAN_PROBES_20260616.json",
+          "relative_path": "project-cdx\\operativa\\SGIN_GROUP_SITE_DRIVE_PLAN_PROBES_20260616.json",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\SGIN_GROUP_SITE_DRIVE_PLAN_PROBES_20260616.json",
+          "web_path": "/docs/project-cdx/operativa/SGIN_GROUP_SITE_DRIVE_PLAN_PROBES_20260616.json",
+          "type": "json",
+          "length": 3693,
+          "last_write_time": "2026-06-26T14:30:46.5590919-03:00"
+        },
+        {
+          "name": "SGIN_DRIVE_ROOT_CHILDREN_SUMMARY_20260616.json",
+          "relative_path": "project-cdx\\operativa\\SGIN_DRIVE_ROOT_CHILDREN_SUMMARY_20260616.json",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\SGIN_DRIVE_ROOT_CHILDREN_SUMMARY_20260616.json",
+          "web_path": "/docs/project-cdx/operativa/SGIN_DRIVE_ROOT_CHILDREN_SUMMARY_20260616.json",
+          "type": "json",
+          "length": 515,
+          "last_write_time": "2026-06-26T14:30:46.5590919-03:00"
+        },
+        {
+          "name": "SETUP_APERTURA_CODEX_UI.md",
+          "relative_path": "project-cdx\\operativa\\SETUP_APERTURA_CODEX_UI.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\SETUP_APERTURA_CODEX_UI.md",
+          "web_path": "/docs/project-cdx/operativa/SETUP_APERTURA_CODEX_UI.md",
+          "type": "md",
+          "length": 2541,
+          "last_write_time": "2026-06-26T14:30:46.5590919-03:00"
+        },
+        {
+          "name": "SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv.meta.json",
+          "relative_path": "project-cdx\\operativa\\SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv.meta.json",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv.meta.json",
+          "web_path": "/docs/project-cdx/operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv.meta.json",
+          "type": "json",
+          "length": 682,
+          "last_write_time": "2026-06-26T14:30:46.5577562-03:00"
+        },
+        {
+          "name": "SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv",
+          "relative_path": "project-cdx\\operativa\\SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv",
+          "web_path": "/docs/project-cdx/operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617.csv",
+          "type": "doc",
+          "length": 2311,
+          "last_write_time": "2026-06-26T14:30:46.5577562-03:00"
+        },
+        {
+          "name": "RUNTIME_README_BATCH_PR_MATRIX_20260617.csv",
+          "relative_path": "project-cdx\\operativa\\RUNTIME_README_BATCH_PR_MATRIX_20260617.csv",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\RUNTIME_README_BATCH_PR_MATRIX_20260617.csv",
+          "web_path": "/docs/project-cdx/operativa/RUNTIME_README_BATCH_PR_MATRIX_20260617.csv",
+          "type": "doc",
+          "length": 2750,
+          "last_write_time": "2026-06-26T14:30:46.5567562-03:00"
+        },
+        {
+          "name": "ROOT_SWEEP_RESIDUALS_20260615.md",
+          "relative_path": "project-cdx\\operativa\\ROOT_SWEEP_RESIDUALS_20260615.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\ROOT_SWEEP_RESIDUALS_20260615.md",
+          "web_path": "/docs/project-cdx/operativa/ROOT_SWEEP_RESIDUALS_20260615.md",
+          "type": "md",
+          "length": 821,
+          "last_write_time": "2026-06-26T14:30:46.5567562-03:00"
+        },
+        {
+          "name": "REVISION_AGENTES_LIVE_6_20260616.json",
+          "relative_path": "project-cdx\\operativa\\REVISION_AGENTES_LIVE_6_20260616.json",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\REVISION_AGENTES_LIVE_6_20260616.json",
+          "web_path": "/docs/project-cdx/operativa/REVISION_AGENTES_LIVE_6_20260616.json",
+          "type": "json",
+          "length": 4683,
+          "last_write_time": "2026-06-26T14:30:46.5557557-03:00"
+        },
+        {
+          "name": "ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.csv",
+          "relative_path": "project-cdx\\operativa\\ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.csv",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.csv",
+          "web_path": "/docs/project-cdx/operativa/ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.csv",
+          "type": "doc",
+          "length": 400,
+          "last_write_time": "2026-06-26T14:30:46.5557557-03:00"
+        },
+        {
+          "name": "RETENCION.md",
+          "relative_path": "project-cdx\\operativa\\RETENCION.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\RETENCION.md",
+          "web_path": "/docs/project-cdx/operativa/RETENCION.md",
+          "type": "md",
+          "length": 1533,
+          "last_write_time": "2026-06-26T14:30:46.5547540-03:00"
+        },
+        {
+          "name": "REVISION_AGENTES_LIVE_20260616.json",
+          "relative_path": "project-cdx\\operativa\\REVISION_AGENTES_LIVE_20260616.json",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\REVISION_AGENTES_LIVE_20260616.json",
+          "web_path": "/docs/project-cdx/operativa/REVISION_AGENTES_LIVE_20260616.json",
+          "type": "json",
+          "length": 10697,
+          "last_write_time": "2026-06-26T14:30:46.5547540-03:00"
+        },
+        {
+          "name": "RESPUESTA_CORTA_CORTE_20260616.md",
+          "relative_path": "project-cdx\\operativa\\RESPUESTA_CORTA_CORTE_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\RESPUESTA_CORTA_CORTE_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/RESPUESTA_CORTA_CORTE_20260616.md",
+          "type": "md",
+          "length": 4523,
+          "last_write_time": "2026-06-26T14:30:46.5537513-03:00"
+        },
+        {
+          "name": "RESPUESTA_CORTA_CORTE_20260616.json",
+          "relative_path": "project-cdx\\operativa\\RESPUESTA_CORTA_CORTE_20260616.json",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\RESPUESTA_CORTA_CORTE_20260616.json",
+          "web_path": "/docs/project-cdx/operativa/RESPUESTA_CORTA_CORTE_20260616.json",
+          "type": "json",
+          "length": 5298,
+          "last_write_time": "2026-06-26T14:30:46.5537513-03:00"
+        },
+        {
+          "name": "REPORTE_AGENTES_LIVE_20260616.md",
+          "relative_path": "project-cdx\\operativa\\REPORTE_AGENTES_LIVE_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\REPORTE_AGENTES_LIVE_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/REPORTE_AGENTES_LIVE_20260616.md",
+          "type": "md",
+          "length": 2569,
+          "last_write_time": "2026-06-26T14:30:46.5523885-03:00"
+        },
+        {
+          "name": "README_CORTO.md",
+          "relative_path": "project-cdx\\operativa\\README_CORTO.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\README_CORTO.md",
+          "web_path": "/docs/project-cdx/operativa/README_CORTO.md",
+          "type": "md",
+          "length": 2086,
+          "last_write_time": "2026-06-26T14:30:46.5523885-03:00"
+        },
+        {
+          "name": "REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv",
+          "relative_path": "project-cdx\\operativa\\REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv",
+          "web_path": "/docs/project-cdx/operativa/REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.csv",
+          "type": "doc",
+          "length": 1576,
+          "last_write_time": "2026-06-26T14:30:46.5523885-03:00"
+        },
+        {
+          "name": "README.md",
+          "relative_path": "project-cdx\\operativa\\README.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\README.md",
+          "web_path": "/docs/project-cdx/operativa/README.md",
+          "type": "md",
+          "length": 6320,
+          "last_write_time": "2026-06-26T14:30:46.5513858-03:00"
+        },
+        {
+          "name": "READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_W1_REPOS_DIRTY_TRIAGE_20260617.md",
+          "type": "md",
+          "length": 3318,
+          "last_write_time": "2026-06-26T14:30:46.5498953-03:00"
+        },
+        {
+          "name": "READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_WORKBOOK_SUPERFICIES_WORKSPACE_20260618.md",
+          "type": "md",
+          "length": 1496,
+          "last_write_time": "2026-06-26T14:30:46.5498953-03:00"
+        },
+        {
+          "name": "READBACK_VERSIONADO_CARPETAS_USADAS_20260618.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_VERSIONADO_CARPETAS_USADAS_20260618.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_VERSIONADO_CARPETAS_USADAS_20260618.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_VERSIONADO_CARPETAS_USADAS_20260618.md",
+          "type": "md",
+          "length": 1117,
+          "last_write_time": "2026-06-26T14:30:46.5488923-03:00"
+        },
+        {
+          "name": "READBACK_THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_THREAD_LIVE_DISPATCH_5_PLUS_1_20260617.md",
+          "type": "md",
+          "length": 2648,
+          "last_write_time": "2026-06-26T14:30:46.5488923-03:00"
+        },
+        {
+          "name": "READBACK_THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_THREAD_FAN_IN_FINAL_5_PLUS_1_20260617.md",
+          "type": "md",
+          "length": 2284,
+          "last_write_time": "2026-06-26T14:30:46.5478901-03:00"
+        },
+        {
+          "name": "READBACK_THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_THREAD_FAN_IN_SNAPSHOT_5_PLUS_1_20260617.md",
+          "type": "md",
+          "length": 1727,
+          "last_write_time": "2026-06-26T14:30:46.5478901-03:00"
+        },
+        {
+          "name": "READBACK_SGIN_OWN_GOVERNANCE_LINK_20260616.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_SGIN_OWN_GOVERNANCE_LINK_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_SGIN_OWN_GOVERNANCE_LINK_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_SGIN_OWN_GOVERNANCE_LINK_20260616.md",
+          "type": "md",
+          "length": 1888,
+          "last_write_time": "2026-06-26T14:30:46.5464014-03:00"
+        },
+        {
+          "name": "READBACK_SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_SPGOVERNANCE_COMPONENT_DISAMBIGUATION_20260616.md",
+          "type": "md",
+          "length": 1880,
+          "last_write_time": "2026-06-26T14:30:46.5464014-03:00"
+        },
+        {
+          "name": "READBACK_THREAD_ARCHITECTURE_5_PLUS_1_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_THREAD_ARCHITECTURE_5_PLUS_1_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_THREAD_ARCHITECTURE_5_PLUS_1_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_THREAD_ARCHITECTURE_5_PLUS_1_20260617.md",
+          "type": "md",
+          "length": 1785,
+          "last_write_time": "2026-06-26T14:30:46.5464014-03:00"
+        },
+        {
+          "name": "READBACK_SGIN_COMPONENT_CANDIDATE_COUNT_20260616.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_SGIN_COMPONENT_CANDIDATE_COUNT_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_SGIN_COMPONENT_CANDIDATE_COUNT_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_SGIN_COMPONENT_CANDIDATE_COUNT_20260616.md",
+          "type": "md",
+          "length": 2327,
+          "last_write_time": "2026-06-26T14:30:46.5454009-03:00"
+        },
+        {
+          "name": "READBACK_SGIN_DATAVERSE_POWER_PLATFORM_CROSSWALK_20260616.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_SGIN_DATAVERSE_POWER_PLATFORM_CROSSWALK_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_SGIN_DATAVERSE_POWER_PLATFORM_CROSSWALK_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_SGIN_DATAVERSE_POWER_PLATFORM_CROSSWALK_20260616.md",
+          "type": "md",
+          "length": 3325,
+          "last_write_time": "2026-06-26T14:30:46.5454009-03:00"
+        },
+        {
+          "name": "READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_SGIN_OBSERVED_READ_ONLY_20260616.md",
+          "type": "md",
+          "length": 2711,
+          "last_write_time": "2026-06-26T14:30:46.5454009-03:00"
+        },
+        {
+          "name": "READBACK_RUNTIME_README_BATCH_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_RUNTIME_README_BATCH_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_RUNTIME_README_BATCH_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_RUNTIME_README_BATCH_20260617.md",
+          "type": "md",
+          "length": 2921,
+          "last_write_time": "2026-06-26T14:30:46.5444009-03:00"
+        },
+        {
+          "name": "READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_SESHAT_SGIN_AMBIGUOUS_CONTENT_20260617.md",
+          "type": "md",
+          "length": 3633,
+          "last_write_time": "2026-06-26T14:30:46.5444009-03:00"
+        },
+        {
+          "name": "READBACK_ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_ROOT_REPOS_AGENTS_CODEX_REVIEW_20260617.md",
+          "type": "md",
+          "length": 2699,
+          "last_write_time": "2026-06-26T14:30:46.5434004-03:00"
+        },
+        {
+          "name": "READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_REVISION_CORTE_PLAN_MAESTRO_ATOMICO_20260617.md",
+          "type": "md",
+          "length": 3686,
+          "last_write_time": "2026-06-26T14:30:46.5424005-03:00"
+        },
+        {
+          "name": "READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_REHIDRATACION_DATAVERSE_DESDE_PAQUETES_20260617.md",
+          "type": "md",
+          "length": 3420,
+          "last_write_time": "2026-06-26T14:30:46.5424005-03:00"
+        },
+        {
+          "name": "READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_PUBLICACION_INDICE_CORTE_AGENTES_SHAREPOINT_20260617.md",
+          "type": "md",
+          "length": 1866,
+          "last_write_time": "2026-06-26T14:30:46.5414004-03:00"
+        },
+        {
+          "name": "READBACK_RECONCILIACION_DIA_ANTERIOR_20260618.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_RECONCILIACION_DIA_ANTERIOR_20260618.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_RECONCILIACION_DIA_ANTERIOR_20260618.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_RECONCILIACION_DIA_ANTERIOR_20260618.md",
+          "type": "md",
+          "length": 1544,
+          "last_write_time": "2026-06-26T14:30:46.5414004-03:00"
+        },
+        {
+          "name": "READBACK_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md",
+          "type": "md",
+          "length": 2683,
+          "last_write_time": "2026-06-26T14:30:46.5401633-03:00"
+        },
+        {
+          "name": "READBACK_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md",
+          "type": "md",
+          "length": 1996,
+          "last_write_time": "2026-06-26T14:30:46.5401633-03:00"
+        },
+        {
+          "name": "READBACK_PROMOCION_CORTE_PROPOSITO_SHAREPOINT_20260616.md",
+          "relative_path": "project-cdx\\operativa\\READBACK_PROMOCION_CORTE_PROPOSITO_SHAREPOINT_20260616.md",
+          "full_path": "C:\\CEO\\project-cdx\\operativa\\READBACK_PROMOCION_CORTE_PROPOSITO_SHAREPOINT_20260616.md",
+          "web_path": "/docs/project-cdx/operativa/READBACK_PROMOCION_CORTE_PROPOSITO_SHAREPOINT_20260616.md",
+          "type": "md",
+          "length": 1715,
+          "last_write_time": "2026-06-26T14:30:46.5396603-03:00"
+        }
+      ]
+    }
+  ]
+}
