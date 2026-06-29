@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "global_status": {
+    "status": "WARNING",
+    "label": "NOC_OPERATIONAL",
+    "score": 80,
+    "risk": "HIGH",
+    "trend": "STABLE"
+  },
+  "alerts": [
+    {
+      "id": "watchdog_infrastructure_controlled_high",
+      "type": "WATCHDOG_ALERT",
+      "area": "watchdog",
+      "status": "ACTIVE",
+      "severity": "HIGH",
+      "classification": "controlled_high",
+      "decision": "LOG_ONLY",
+      "count": 487,
+      "source": "watchdog_alerts+watchdog_bus",
+      "latest_timestamp": "06/29/2026 01:33:02",
+      "trace_id": "TRACE_20260629_013302_14480",
+      "note": "Infrastructure alert without operational impact",
+      "escalation": false,
+      "block_operations": false
+    }
+  ],
+  "decisions": [
+    {
+      "id": "watchdog_infrastructure_controlled_high",
+      "event_type": "WATCHDOG_ALERT",
+      "severity": "HIGH",
+      "classification": "controlled_high",
+      "decision": "LOG_ONLY",
+      "escalation": false,
+      "block_operations": false,
+      "reason": "Infrastructure alert without operational impact"
+    },
+    {
+      "id": "risk_policy_controlled_high",
+      "event_type": "WATCHDOG_ALERT",
+      "classification": "controlled_high",
+      "decision": "LOG_ONLY",
+      "count": 270,
+      "escalation": false,
+      "note": "Infrastructure alert without operational impact"
+    }
+  ],
+  "kpis": {
+    "total_expedientes": 5,
+    "expedientes_ok": 5,
+    "expedientes_con_error": 0,
+    "live_alerts_visible": 1,
+    "source_watchdog_alerts": 487,
+    "classified_events": 270,
+    "visible_events": 631,
+    "visible_alerts": 487,
+    "focus_alerts": 0,
+    "monitoring_alerts": 1
+  },
+  "runtime": {
+    "project_root": "C:/CEO/project-cdx",
+    "operational_mode": "active",
+    "trace_mode": "automatic",
+    "swarm_mode": "always_on",
+    "silent_mode": "prohibited",
+    "runtime": "ENFORCED",
+    "watchdog": "ACTIVE",
+    "lifecycle": "READY_PASSIVE",
+    "local_desktop_authority": true,
+    "cloud_gate": "read-observe"
+  },
+  "timeline": [
+    {
+      "timestamp": "2026-06-29T03:52:13.3233097Z",
+      "type": "SDU_RISK_POLICY_DECISION_REGISTERED",
+      "source": "noc/events/log.jsonl",
+      "summary": "270 WATCHDOG_ALERT events classified as controlled_high with LOG_ONLY."
+    },
+    {
+      "timestamp": "2026-06-29T01:34:35.3636369-03:00",
+      "type": "STATE_UPDATED",
+      "source": "noc/operacion-en-vivo.json",
+      "summary": "Live NOC state projected one active monitoring alert and no critical focus alerts."
+    }
+  ],
+  "updated_at": "2026-06-29T03:52:13.3233097Z",
+  "source_summary": {
+    "primary_state": "noc/operacion-en-vivo.json",
+    "legacy_state": "noc/noc-state.json",
+    "event_bus": "noc/events/log.jsonl",
+    "risk_policy_source": ".sdu/risk-policy.json",
+    "classified_events_found": 270,
+    "visible_alerts_found": 487,
+    "expected_270_271_records_found": "270 classified events found; visible alert source currently reports 487 aggregated watchdog alerts, not 271."
+  }
+}

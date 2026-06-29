@@ -22,7 +22,7 @@
         <button class="nav-item is-active" type="button" data-target="overview">Resumen</button>
         <button class="nav-item" type="button" data-target="statusPanel">Estado</button>
         <button class="nav-item" type="button" data-target="alertsPanel">Alertas</button>
-        <button class="nav-item" type="button" data-target="suggestionsPanel">Sugerencias</button>
+        <button class="nav-item" type="button" data-target="suggestionsPanel">Decisiones</button>
       </nav>
 
       <div class="sidebar__tools">
@@ -34,7 +34,7 @@
         </label>
         <div class="source-card">
           <div class="source-card__label">Fuente</div>
-          <code id="sourcePath">/noc/noc-state.json</code>
+          <code id="sourcePath">/state</code>
         </div>
       </div>
     </aside>
@@ -44,7 +44,7 @@
         <div class="topbar__copy">
           <div class="eyebrow">Operational console</div>
           <h1>SDU NOC</h1>
-          <p>Panel operativo en vivo sobre el estado canónico verificado.</p>
+          <p>Panel operativo en vivo sobre el estado NOC normalizado y servido por API local.</p>
         </div>
         <div class="topbar__meta">
           <div class="live-pill" id="liveState">LIVE</div>
@@ -80,7 +80,7 @@
 
       <section id="suggestionsPanel" class="panel">
         <div class="panel__head">
-          <h2>Sugerencias</h2>
+          <h2>Decisiones</h2>
           <span class="panel__tag" id="suggestionsCount">0</span>
         </div>
         <div id="suggestionsList" class="stack"></div>

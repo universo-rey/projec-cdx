@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "name": "noc-visible-execution-state",
+  "required": [
+    "global_status",
+    "alerts",
+    "decisions",
+    "kpis",
+    "runtime",
+    "timeline",
+    "updated_at",
+    "source_summary"
+  ],
+  "fields": {
+    "global_status": {
+      "type": "object",
+      "description": "Executive status for the visible NOC layer.",
+      "required": ["status", "label", "score", "risk", "trend"]
+    },
+    "alerts": {
+      "type": "array",
+      "description": "Current unresolved alerts rendered by the live panel.",
+      "item_required": ["id", "type", "status", "severity", "classification", "decision", "count"]
+    },
+    "decisions": {
+      "type": "array",
+      "description": "Governed decisions projected from existing local state and policy evidence.",
+      "item_required": ["id", "event_type", "classification", "decision"]
+    },
+    "kpis": {
+      "type": "object",
+      "description": "Small numeric facts used by the API and UI cards."
+    },
+    "runtime": {
+      "type": "object",
+      "description": "Local runtime context for visualization only; not governance authority."
+    },
+    "timeline": {
+      "type": "array",
+      "description": "Recent state and decision events suitable for the visible timeline.",
+      "item_required": ["timestamp", "type", "source", "summary"]
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time-or-source-timestamp"
+    },
+    "source_summary": {
+      "type": "object",
+      "description": "Traceability back to the existing source files used to build the state."
+    }
+  },
+  "event_types": [
+    "ALERT_CREATED",
+    "STATE_UPDATED",
+    "DECISION_APPLIED",
+    "ALERT_RESOLVED",
+    "KPI_UPDATED"
+  ]
+}

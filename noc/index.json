@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "canonical_state": "noc/state.json",
+  "schema": "noc/schema.json",
+  "event_bus": {
+    "path": "noc/events/log.jsonl",
+    "mode": "append-only-source-observed",
+    "ui_update_strategy": "polling",
+    "supported_event_types": [
+      "ALERT_CREATED",
+      "STATE_UPDATED",
+      "DECISION_APPLIED",
+      "ALERT_RESOLVED",
+      "KPI_UPDATED"
+    ]
+  },
+  "api": {
+    "script": "tools/noc/noc_api.py",
+    "host": "127.0.0.1",
+    "default_port": 8787,
+    "read_only": true,
+    "endpoints": [
+      "/state",
+      "/alerts",
+      "/kpis",
+      "/decisions"
+    ]
+  },
+  "ui": {
+    "canonical_folder": "noc-web",
+    "entrypoint": "noc-web/index.html",
+    "script": "noc-web/app.js",
+    "refresh_ms": 5000,
+    "data_source": "local API"
+  },
+  "sources": [
+    "noc/operacion-en-vivo.json",
+    "noc/noc-state.json",
+    "noc/events/log.jsonl",
+    ".sdu/risk-policy.json"
+  ],
+  "traceability": {
+    "cloud_gate": "read-observe",
+    "local_desktop_authority": true,
+    "external_writes": false
+  }
+}
