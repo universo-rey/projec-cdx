@@ -7,7 +7,7 @@ name = "projec-cdx"
 version = "0.6.0rc1"
 requires-python = ">=3.10"
 dependencies = [
-  "fastapi>=0.137.2",
+  "fastapi>=0.138.1",
   "httpx>=0.28.1",
   "jinja2>=3.1.6",
   "jsonschema>=4.26.0",
@@ -22,9 +22,9 @@ dev = [
   "black>=26.5.1",
   "matplotlib>=3.10.0",
   "pytest",
-  "pytest-cov>=7.0.0",
+  "pytest-cov>=7.1.0",
   "reportlab>=5.0.0",
-  "ruff>=0.14.0",
+  "ruff>=0.15.20",
 ]
 agents-sdk = ["openai-agents>=0.17.5"]
 openai-orchestration = ["openai>=2.43.0"]
