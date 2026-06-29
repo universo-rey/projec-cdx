@@ -133,3 +133,62 @@ Authoritative NOC paths remain:
   watchdog unless a separate exact order authorizes it.
 - Do not execute live writes outside an approved promotion.
 - Close with evidence, validator and postcheck.
+
+## CEO Codex Operating Gates
+
+All work starts at Gate 0 unless the user explicitly authorizes a higher gate.
+
+- Gate 0: read-only inspection, comparison, triage and reporting.
+- Gate 1: patch only approved local files.
+- Gate 2: stage only approved files.
+- Gate 3: commit only approved staged scope.
+- Gate 4: push branches or open pull requests only by exact order.
+- Gate 5: merge remains owner-gated unless explicitly delegated.
+
+Do not skip gates. If scope changes, stop and report the new required gate.
+
+## Agent Roles
+
+- Auditor: inspect current facts and produce risks, blockers and next actions.
+- Planner: prepare file-by-file plans without editing.
+- Patch executor: edit only approved files and print the resulting diff.
+- Staged reviewer: review only staged changes and approve or block.
+- Commit executor: stage/commit only approved scope.
+- PR executor: create or update PRs only when ordered.
+- Merge auditor: check checks, reviews, threads, protection and owner action.
+- Cloud backlog auditor: use Codex Cloud only for list/status/diff observation.
+- MCP/tooling diagnostician: inspect Doctor, MCP, PATH and tool resolution.
+
+## Artifact Handling
+
+Classify generated artifacts, readbacks, evidence JSONL, coverage, logs, NOC
+monitor output, experimental frontends and local runtime files before staging.
+Default action is defer or ignore unless the user explicitly approves inclusion.
+
+Do not stage generated evidence, reports, caches, logs or deferred experiments
+as part of runtime, source or documentation commits without exact approval.
+
+## Codex Cloud Read-Observe Rules
+
+Codex Cloud is read-observe only. Agents may use Cloud list/status/diff for
+triage, but must not use `codex cloud apply`, execute Cloud tasks, open PRs from
+Cloud output, or mutate any local, remote or external state.
+
+Cloud diffs are source material only. If useful, they must be manually ported
+locally under CEO governance after comparison against current `main`.
+
+## PR Review And Merge Discipline
+
+Before PR work, confirm branch, status, remote and changed files. PRs should
+state the runtime boundary and validation performed. Do not resolve review
+threads, approve, close or merge unless explicitly ordered.
+
+Merge readiness requires clean CI, no blocking reviews, no unresolved required
+threads, correct head/base branches and owner approval.
+
+## MCP And Doctor Diagnostics
+
+For Codex tooling issues, inspect `codex doctor`, `codex mcp get`, effective
+config, PATH and concrete tool paths. `agent-skills`, Node, ripgrep, GitHub CLI,
+Git, PowerShell and Python must resolve deterministically and Doctor should pass
+before declaring the runtime healthy.
