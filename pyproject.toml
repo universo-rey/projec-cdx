@@ -20,7 +20,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
   "black>=26.5.1",
-  "matplotlib>=3.10.0",
+  "matplotlib>=3.10.9",
   "pytest",
   "pytest-cov>=7.1.0",
   "reportlab>=5.0.0",
@@ -29,7 +29,7 @@ dev = [
 agents-sdk = ["openai-agents>=0.17.5"]
 openai-orchestration = ["openai>=2.43.0"]
 reports = [
-  "matplotlib>=3.10.0",
+  "matplotlib>=3.10.9",
   "reportlab>=5.0.0",
 ]
 
