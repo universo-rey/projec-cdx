@@ -5620,14 +5620,14 @@ def main():
         [
             "Archivo",
             "D validator agent",
-            str(d_validator_agent),
-            "PASS" if d_validator_agent.exists() else "MISSING",
+            str(canonical_validator_agent),
+            "PASS" if canonical_validator_agent.exists() else "MISSING",
         ],
         [
             "Archivo",
             "D validator chain",
-            str(d_validator_chain),
-            "PASS" if d_validator_chain.exists() else "MISSING",
+            str(canonical_validator_chain),
+            "PASS" if canonical_validator_chain.exists() else "MISSING",
         ],
         [
             "Directorio",
