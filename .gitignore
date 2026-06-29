@@ -26,5 +26,13 @@ noc-web/sdu-live.js
 noc-web/serve.ps1
 noc-web/styles.css
 
+# Generated test/coverage artifacts
+.coverage
+coverage.xml
+reports/coverage.xml
+
+# Local logs
+*.log
+
 # evitar repos anidados
 **/.git

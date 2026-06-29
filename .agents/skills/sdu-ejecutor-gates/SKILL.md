@@ -32,10 +32,17 @@ closure, or canonical decision packets in the Cabina Universal.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_order_packets.ps1`,
-`D:\.agents\codex\tools\local_validate_operational_chain.ps1`, and any
+Use `C:\CEO\project-cdx\.agents\codex\tools\local_validate_order_packets.ps1`,
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_operational_chain.ps1`, and any
 surface-specific validator.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Gate packet, queue state, validator output, readback, rollback, and postcheck.
@@ -46,3 +53,4 @@ Gate packet, queue state, validator output, readback, rollback, and postcheck.
 - `validator_failed`
 - `target_identity_ambiguous`
 - `human_review_required`
+

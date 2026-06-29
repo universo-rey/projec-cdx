@@ -32,9 +32,16 @@ need persistent `task_plan`, `findings`, and `progress` artifacts.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_agent_workpapers.ps1` or
-`D:\.agents\codex\tools\local_validate_agent_layer.ps1`.
+Use `C:\CEO\project-cdx\.agents\codex\tools\local_validate_agent_workpapers.ps1` or
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_agent_layer.ps1`.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Plan file, findings, progress log, validator result, and readback.
@@ -45,3 +52,4 @@ Plan file, findings, progress log, validator result, and readback.
 - `instruction_precedence_missing`
 - `secret_detected`
 - `rollback_missing`
+

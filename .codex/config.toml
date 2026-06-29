@@ -1,38 +1,117 @@
-# Project-scoped Codex local environment: CEO root is C:/; PROJEC CDX is only a project shortcut.
-# Default runtime surface is local desktop. Cloud metadata paths remain declared
-# for governed handoffs, but they are not the active local identity.
+# Hybrid Codex runtime: CEO governed local desktop + cloud reference
+# Workspace Profile: CEO / project-cdx
+# Active Project: project-cdx
+# Baseline: local governed, cloud read-observe
+
+# ------------------------------------------------------------
+# Codex instruction discovery
+# ------------------------------------------------------------
+
+project_doc_fallback_filenames = ["TEAM_GUIDE.md", ".agents.md", "CODING_GUIDE.md"]
+project_doc_max_bytes = 65536
+
+# ------------------------------------------------------------
+# Shell environment policy
+# ------------------------------------------------------------
 
 [shell_environment_policy]
 inherit = "core"
 
 [shell_environment_policy.set]
-PATH = "C:/Users/enzo1/AppData/Local/Microsoft/WindowsApps;C:/WINDOWS/system32;C:/WINDOWS;C:/WINDOWS/System32/Wbem;C:/WINDOWS/System32/WindowsPowerShell/v1.0/;C:/WINDOWS/System32/OpenSSH/;C:/Program Files/Git/cmd"
-OPENAI_MODEL = "gpt-5.5"
+
+# ------------------------------------------------------------
+# Runtime identity
+# ------------------------------------------------------------
+
+CODEX_OPERATOR = "CEO"
 CODEX_RUNTIME_SURFACE = "local-desktop"
-CODEX_CLOUD_ENABLED = "0"
-CODEX_CLOUD_MODE = "local"
-CODEX_CLOUD_GATE = "local-only"
-CODEX_CLOUD_PROFILE = "projec-cdx"
+CODEX_DESKTOP_MODE = "governed-by-ceo-runtime"
+CODEX_RUNTIME_PROFILE = "ceo-governed-local"
+CODEX_WORKSPACE_PROFILE = "ceo-project-cdx"
+
+# ------------------------------------------------------------
+# Execution authority
+# ------------------------------------------------------------
+
+CODEX_LOCAL_AUTHORITY = "write-execute"
+CODEX_DISABLE_DESKTOP = "0"
+
+CODEX_CLOUD_ENABLED = "1"
+CODEX_CLOUD_MODE = "connected"
+CODEX_CLOUD_GATE = "read-observe"
+CODEX_CLOUD_PROFILE = "project-cdx"
+CODEX_CLOUD_MUTATION_ALLOWED = "0"
+CODEX_CLOUD_LOCAL_PATHS_MODE = "reference-only"
+CODEX_GITHUB_ACTIONS_MODE = "ci-and-manual-owner-gated-promotion"
+
+# ------------------------------------------------------------
+# CEO governed workspace roots
+# ------------------------------------------------------------
+
+CODEX_START_ROOT = "C:/CEO"
+CODEX_PROJECT_ROOT = "C:/CEO/project-cdx"
+CODEX_WORKBENCH_ROOT = "C:/CEO/project-cdx"
+
+CODEX_METADATA_ROOT = "C:/CEO/.metadata"
+CODEX_SOURCE_TREE_PATH = "C:/Users/enzo1/Documents/GitHub"
+CODEX_WORKTREE_PATH = "C:/CEO/worktrees"
+
+# Compatibility aliases
 CODEX_REPOS_ROOT = "C:/Users/enzo1/Documents/GitHub"
-CODEX_CABINA_REPO_ROOT = "C:/Users/enzo1/Documents/GitHub/cabina-universal-d"
-CODEX_START_ROOT = "C:/"
-CODEX_WORKBENCH_ROOT = "C:/"
-CODEX_METADATA_ROOT = "C:/"
-CODEX_PROJECT_ROOT = "C:/Users/enzo1/PROJEC CDX"
-CODEX_CLOUD_REPO_ROOT = "C:/Users/enzo1/Documents/GitHub/cabina-universal-d"
-CODEX_CLOUD_METADATA_ROOT = "C:/"
-CODEX_CLOUD_WORKTREE = "C:/"
-CODEX_CLOUD_BRANCH = "codex/consume-bound-workbook-next-delta"
-CODEX_CLOUD_CONTRACT = "C:/Users/enzo1/PROJEC CDX/operativa/CODEX_CLOUD_CONTRACT_20260615.md"
-CODEX_CLOUD_MAINTENANCE_LOG = "C:/Users/enzo1/PROJEC CDX/operativa/CODEX_CLOUD_MAINTENANCE_20260615.md"
-CODEX_CLOUD_DATAVERSE_REGISTRY = "C:/Users/enzo1/PROJEC CDX/dataverse/REGISTRO_CODEX_CLOUD_20260615.md"
-CODEX_CLOUD_DATAVERSE_GATE = "C:/Users/enzo1/PROJEC CDX/dataverse/GATE.md"
-CODEX_CLOUD_DATAVERSE_BLOCKERS = "C:/Users/enzo1/PROJEC CDX/dataverse/REGISTRO_BLOQUEOS.md"
-CODEX_CLOUD_DATAVERSE_SOURCE_MAP = "C:/Users/enzo1/PROJEC CDX/dataverse/MAPA_CONEXIONES_DATAVERSE.md"
-CODEX_CLOUD_DATAVERSE_PLAN = "C:/Users/enzo1/PROJEC CDX/dataverse/PLAN_SEGUNDA_PASADA.md"
-CODEX_SOURCE_TREE_PATH = "C:/"
-CODEX_WORKTREE_PATH = "C:/"
+CODEX_GITHUB_ROOT = "C:/Users/enzo1/Documents/GitHub"
+
+# ------------------------------------------------------------
+# GitHub / source control
+# ------------------------------------------------------------
+
+CODEX_GITHUB_ENABLED = "1"
+CODEX_GITHUB_PROVIDER = "github"
+CODEX_GITHUB_BRANCH_DEFAULT = "main"
+
+# Retired local suite source root.
+# Do not declare this canonical unless it is intentionally created later.
+CODEX_RETIRED_REPOS_ROOT = "C:/CEO/repos"
+
+# ------------------------------------------------------------
+# Cloud reference metadata
+# ------------------------------------------------------------
+# These values describe intended cloud mapping.
+# They do not grant mutation authority.
+# Cloud must treat Windows absolute paths as local evidence only.
+
+CODEX_CLOUD_REPO_ROOT = "."
+CODEX_CLOUD_WORKTREE = "."
+CODEX_CLOUD_BRANCH = "main"
+
+# ------------------------------------------------------------
+# Microsoft / Power Platform tooling
+# ------------------------------------------------------------
+
+CODEX_MICROSOFT_SUITE_ENABLED = "1"
+CODEX_MICROSOFT_PROFILE = "desktop-suite"
+CODEX_PAC_PATH = "C:/CEO/tools/pac/microsoft.powerapps.cli.2.8.1/tools/pac.exe"
+
+# Optional Office / OneDrive references.
+CODEX_OFFICE_ENABLED = "1"
+CODEX_ONEDRIVE_ENABLED = "1"
+CODEX_DOCUMENTS_ROOT = "C:/Users/enzo1/Documents"
+CODEX_ONEDRIVE_ROOT = "C:/Users/enzo1/OneDrive"
+
+# ------------------------------------------------------------
+# Tool paths
+# ------------------------------------------------------------
+
+CODEX_HOME = "C:/Users/enzo1/.codex"
+CODEX_CLI_PATH = "C:/Users/enzo1/AppData/Local/OpenAI/Codex/bin/8e55c2dd143b6354/codex.exe"
+
 CODEX_POWERSHELL_PROFILE = "C:/Users/enzo1/.codex/profiles/powershell/CodexProfile.ps1"
-CODEX_PWSH_PATH = "C:/Users/enzo1/AppData/Local/Microsoft/WindowsApps/pwsh.exe"
+CODEX_PWSH_PATH = "C:/Program Files/PowerShell/7/pwsh.exe"
+
 CODEX_GIT_CMD = "C:/Program Files/Git/cmd/git.exe"
 CODEX_PYTHON_CMD = "C:/Users/enzo1/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe"
+
+# ------------------------------------------------------------
+# Minimal deterministic PATH
+# ------------------------------------------------------------
+
+PATH = "C:/Program Files/PowerShell/7;C:/Users/enzo1/AppData/Local/Microsoft/WindowsApps;C:/WINDOWS/system32;C:/WINDOWS;C:/WINDOWS/System32/Wbem;C:/WINDOWS/System32/WindowsPowerShell/v1.0/;C:/WINDOWS/System32/OpenSSH/;C:/Program Files/Git/cmd"

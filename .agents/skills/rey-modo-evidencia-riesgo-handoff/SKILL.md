@@ -33,9 +33,16 @@ or continuity package for D-drive cabina work.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_agent_layer.ps1` and the specific
+Use `C:\CEO\project-cdx\.agents\codex\tools\local_validate_agent_layer.ps1` and the specific
 validator for the surface being closed.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Readback, validator output, diff summary, PR or issue metadata, and rollback
@@ -47,3 +54,4 @@ statement when changes were made.
 - `secret_detected`
 - `rollback_missing`
 - `validator_failed`
+

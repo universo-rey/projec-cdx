@@ -32,10 +32,17 @@ order packet, or multi-lane execution design.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_order_packets.ps1`,
-`D:\.agents\codex\tools\local_validate_operational_chain.ps1`, or the
+Use `C:\CEO\project-cdx\.agents\codex\tools\local_validate_order_packets.ps1`,
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_operational_chain.ps1`, or the
 surface-specific validator.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Plan packet, order matrix, rollback, postcheck, validator result, and readback.
@@ -46,3 +53,4 @@ Plan packet, order matrix, rollback, postcheck, validator result, and readback.
 - `operational_chain_missing`
 - `target_identity_ambiguous`
 - `rollback_missing`
+

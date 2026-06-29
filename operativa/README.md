@@ -25,6 +25,14 @@ Carril vivo para organizar el trabajo punta a punta de `PROJEC CDX`.
 
 La consolidacion operativa mas reciente es [CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md](CONSOLIDACION_OPERATIVA_EN_WAVES_20260615.md).
 
+## Release notes 20260629
+
+- SDU promovido institucionalmente de `governed_no_live` a `governed_live_execution`.
+- Metadata activa: `execution_mode=LIVE`, `runtime_mode=OPERATIONAL`, `noc_mode=REALTIME`.
+- El runtime NOC opera en tiempo real desde estado validado; watchdog/NOC se mantienen como evidencia de coherencia.
+- Las decisiones automaticas SDU quedan habilitadas en modo gobernado para acciones locales, controladas y no destructivas.
+- Siguen bloqueados sin aprobacion humana los cambios en repos, SharePoint, Dataverse, Microsoft, OpenAI, cloud y cualquier accion destructiva.
+
 ## Vigencia 20260618
 
 - Estado vigente: `DATAVERSE_LIVE_ROWS_BOUND_TO_WORKBOOK`.

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "description": "SDU risk policy for WATCHDOG_ALERT classification",
+  "rules": [
+    {
+      "id": "infra_controlled_high",
+      "match": {
+        "event_type": "WATCHDOG_ALERT",
+        "category": "infrastructure"
+      },
+      "action": {
+        "classification": "controlled_high",
+        "decision": "LOG_ONLY",
+        "escalation": false,
+        "note": "Infrastructure alert without operational impact"
+      }
+    },
+    {
+      "id": "business_critical",
+      "match": {
+        "event_type": "WATCHDOG_ALERT",
+        "category": "business_impact"
+      },
+      "action": {
+        "classification": "critical",
+        "decision": "ESCALATE",
+        "block_operations": true,
+        "note": "Business impacting alert requires action"
+      }
+    }
+  ]
+}

@@ -35,10 +35,17 @@ evidence publication, site discovery, or Microsoft 365 document surfaces.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_order_packets.ps1`,
-`D:\.agents\codex\tools\local_validate_teams_cross_repo_lane_audit.ps1`, and
-`D:\.agents\codex\tools\local_validate_skill_metadata.ps1`.
+Use `C:\CEO\project-cdx\.agents\codex\tools\local_validate_order_packets.ps1`,
+`C:\CEO\project-cdx\.agents\codex\tools`, and
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_skill_metadata.ps1`.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Site URL, target object, identity, data limit, rollback, postcheck, validator
@@ -50,3 +57,5 @@ output, and readback.
 - `order_packet_missing_required_fields`
 - `regulated_data_boundary_unclear`
 - `secret_detected`
+
+
