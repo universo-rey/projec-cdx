@@ -1,5 +1,11 @@
 # Codex Cloud Maintenance 20260615
 
+> Superseded runtime note: this file records a 2026-06-16 historical
+> `metadata-only` snapshot under `C:\Users\enzo1\PROJEC CDX`. The current CEO
+> runtime target is `CODEX_CLOUD_GATE=read-observe`, project root
+> `C:/CEO/project-cdx`, metadata root `C:/CEO/.metadata`, and cloud local paths
+> are reference-only.
+
 ## Snapshot
 
 - timestamp: 2026-06-16T07:06:48.0112653-03:00

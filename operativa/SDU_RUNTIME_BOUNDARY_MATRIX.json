@@ -1,6 +1,16 @@
 {
   "version": "2026-06-22",
   "default_mode": "NO_EXTERNAL",
+  "runtime_state": {
+    "execution_mode": "LIVE",
+    "runtime_mode": "OPERATIONAL",
+    "noc_mode": "REALTIME",
+    "institutional_state": "governed_live_execution",
+    "previous_institutional_state": "governed_no_live",
+    "scope": "local_controlled_non_destructive",
+    "external_policy": "NO_EXTERNAL",
+    "promoted_at": "2026-06-29T02:25:00-03:00"
+  },
   "description": "Matriz de frontera operativa SDU — baseline v0.1.0",
   "surfaces": [
     {
@@ -40,8 +50,13 @@
     },
     {
       "surface": "codex_cloud",
-      "actions": ["execute", "sync", "remote_mutation"],
-      "policy": "BLOCKED_WITHOUT_GATE"
+      "actions": ["inspect", "summarize", "compare", "report"],
+      "policy": "ALLOWED_READ_OBSERVE"
+    },
+    {
+      "surface": "codex_cloud_mutation",
+      "actions": ["execute", "sync", "remote_mutation", "write", "branch", "pr", "deploy"],
+      "policy": "BLOCKED"
     }
   ],
   "rules": {

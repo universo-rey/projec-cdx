@@ -4,6 +4,60 @@
   "mode": "CONTINUOUS_GOVERNED_OPERATION",
   "root": "C:\\CEO\\project-cdx",
   "operational_mode": "active",
+  "execution_mode": "LIVE",
+  "runtime_mode": "OPERATIONAL",
+  "noc_mode": "REALTIME",
+  "workspace_mode": "suite",
+  "execution_surface": "hybrid",
+  "workspace_orchestration": {
+    "profile": "ceo-project-cdx",
+    "suite_root": "C:\\CEO",
+    "repos_root": "C:\\Users\\enzo1\\Documents\\GitHub",
+    "retired_repos_root": "C:\\CEO\\repos",
+    "metadata_root": "C:\\CEO\\.metadata",
+    "worktree_root": "C:\\CEO\\worktrees",
+    "local_authority": "write_execute",
+    "cloud_gate": "read-observe",
+    "cloud_authority": "read_observe_only",
+    "cloud_local_paths": "reference_only",
+    "github_actions_authority": "ci_and_manual_owner_gated_promotion",
+    "multi_repo_aware": true,
+    "microsoft_suite_integrated": true
+  },
+  "institutional_transition": {
+    "previous_state": "governed_no_live",
+    "new_state": "governed_live_execution",
+    "promoted_at": "2026-06-29T02:25:00-03:00",
+    "evidence": [
+      "C:\\CEO\\watchdog\\state\\sdu-system-state.json",
+      "C:\\CEO\\project-cdx\\noc\\operacion-en-vivo.json",
+      "C:\\CEO\\governance\\reports\\sdu-decision-log.json"
+    ]
+  },
+  "governed_live_execution": {
+    "enabled": true,
+    "automatic_decisions_enabled": true,
+    "action_scope": "controlled_non_destructive",
+    "critical_execution_filter": {
+      "classification": "critical",
+      "decision": "ESCALATE",
+      "requires_new_delta": true
+    },
+    "allowed_actions": [
+      "append_bitacora",
+      "registrar_incidente",
+      "marcar_estado_critical_en_NOC",
+      "generar_tarea_interna_SDU",
+      "activar_flags_de_seguimiento"
+    ],
+    "blocked_actions": [
+      "repo_changes",
+      "sharepoint_actions",
+      "dataverse_actions",
+      "external_actions",
+      "destructive_modifications"
+    ]
+  },
   "trace_mode": "automatic",
   "swarm_mode": "always_on",
   "silent_mode": "prohibited",
@@ -66,6 +120,13 @@
   "noc": {
     "panel_title": "Operación en Vivo",
     "live_state_path": "C:\\CEO\\project-cdx\\noc\\operacion-en-vivo.json",
-    "refresh": "continuous"
+    "refresh": "continuous",
+    "suite_mapping": "project-cdx"
+  },
+  "watchdog": {
+    "mode": "suite-aware",
+    "state_path": "C:\\CEO\\watchdog\\state\\sdu-system-state.json",
+    "bus_path": "C:\\CEO\\watchdog\\bus\\sdu-event-bus.jsonl",
+    "alerts_path": "C:\\CEO\\watchdog\\alerts"
   }
 }
