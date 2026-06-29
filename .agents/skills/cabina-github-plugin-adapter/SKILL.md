@@ -36,10 +36,17 @@ merge, `gh`, or the GitHub plugin.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_github_automation_preflight.ps1`,
-`D:\.agents\codex\tools\local_validate_operational_chain.ps1`, and
-`D:\.agents\codex\tools\local_validate_skill_metadata.ps1`.
+Use `C:\CEO\project-cdx\.agents\codex\tools`,
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_operational_chain.ps1`, and
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_skill_metadata.ps1`.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Repo, branch, PR or issue URL, check status, fixed HEAD when merging,
@@ -51,3 +58,5 @@ validator output, rollback, and readback.
 - `merge_without_approved_precheck`
 - `automated_merge_precheck_failed`
 - `secret_detected`
+
+

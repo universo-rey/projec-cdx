@@ -31,10 +31,17 @@ metadata, or operational equivalences.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_agent_layer.ps1` and the
+Use `C:\CEO\project-cdx\.agents\codex\tools\local_validate_agent_layer.ps1` and the
 surface-specific Microsoft or SharePoint validator when a governed order
 exists.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Equivalence matrix, source inventory, local readback, validator result, and
@@ -46,3 +53,4 @@ rollback or no-write statement.
 - `target_identity_ambiguous`
 - `regulated_data_boundary_unclear`
 - `permission_change_requested_without_order`
+

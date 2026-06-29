@@ -35,10 +35,17 @@ verification, subagents, worktrees, writing skills, or methodology transfer.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_capability_use_hardening.ps1`,
-`D:\.agents\codex\tools\local_validate_parallel_order_governance.ps1`, and
-`D:\.agents\codex\tools\local_validate_skill_metadata.ps1`.
+Use `C:\CEO\project-cdx\.agents\codex\tools`,
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_parallel_order_governance.ps1`, and
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_skill_metadata.ps1`.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Mapped D skill, recipe, tool, lane scope, validator result, and readback.
@@ -49,3 +56,5 @@ Mapped D skill, recipe, tool, lane scope, validator result, and readback.
 - `parallel_lane_without_validator`
 - `instruction_precedence_missing`
 - `secret_detected`
+
+

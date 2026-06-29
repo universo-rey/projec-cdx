@@ -35,10 +35,17 @@ notifications, daily digest, reply drafting, or Planner tasks from Teams.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_teams_governance.ps1`,
-`D:\.agents\codex\tools\local_validate_teams_cross_repo_lane_audit.ps1`, and
-`D:\.agents\codex\tools\local_validate_skill_metadata.ps1`.
+Use `C:\CEO\project-cdx\.agents\codex\tools`,
+`C:\CEO\project-cdx\.agents\codex\tools`, and
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_skill_metadata.ps1`.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Target team/channel/chat, identity, read limit, action, rollback, postcheck,
@@ -50,3 +57,5 @@ connector availability, validator result, and readback.
 - `regulated_data_boundary_unclear`
 - `order_packet_missing_required_fields`
 - `secret_detected`
+
+

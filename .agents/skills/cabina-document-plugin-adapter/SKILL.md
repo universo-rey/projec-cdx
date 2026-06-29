@@ -35,10 +35,17 @@ document evidence.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_document_skill_lane.ps1`,
-`D:\.agents\codex\tools\local_validate_agent_layer.ps1`, and
-`D:\.agents\codex\tools\local_validate_skill_metadata.ps1`.
+Use `C:\CEO\project-cdx\.agents\codex\tools`,
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_agent_layer.ps1`, and
+`C:\CEO\project-cdx\.agents\codex\tools\local_validate_skill_metadata.ps1`.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Selected source files, output path, render/check result, data boundary,
@@ -50,3 +57,5 @@ validator output, and readback.
 - `regulated_data_boundary_unclear`
 - `secret_detected`
 - `microsoft_live_requested_without_governed_order`
+
+

@@ -33,10 +33,17 @@ skill metadata, or deciding whether to keep a skill as adapter-only.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_skill_metadata.ps1`,
-`D:\.agents\codex\tools\local_validate_d_skill_availability_and_issue_pr_friction.ps1`,
-and `D:\.agents\codex\tools\local_validate_agent_layer.ps1`.
+Use `C:\CEO\project-cdx\.agents\codex\tools\local_validate_skill_metadata.ps1`,
+`C:\CEO\project-cdx\.agents\codex\tools`,
+and `C:\CEO\project-cdx\.agents\codex\tools\local_validate_agent_layer.ps1`.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Skill diff, integration decision matrix, metadata matrix, validator result,
@@ -47,3 +54,5 @@ and readback.
 - `duplicate_skill_without_reconciliation`
 - `skill_metadata_missing_or_ambiguous`
 - `d_skill_availability_or_issue_pr_friction_guard_failed`
+
+

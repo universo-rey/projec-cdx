@@ -32,9 +32,16 @@ and preflight harness checks.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_run_repo_alignment_runtime.ps1` or the
+Use `C:\CEO\project-cdx\.agents\codex\tools` or the
 surface-specific local validator.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Manifest, fixture description, trace summary, local result JSON, and readback.
@@ -45,3 +52,5 @@ Manifest, fixture description, trace summary, local result JSON, and readback.
 - `secret_detected`
 - `regulated_data_boundary_unclear`
 - `runtime_evidence_missing`
+
+

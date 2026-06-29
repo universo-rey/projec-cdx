@@ -33,9 +33,16 @@ governed order exists.
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_parallel_order_governance.ps1`
-and `D:\.agents\codex\tools\local_validate_capability_use_hardening.ps1`.
+Use `C:\CEO\project-cdx\.agents\codex\tools\local_validate_parallel_order_governance.ps1`
+and `C:\CEO\project-cdx\.agents\codex\tools`.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Parallel lane matrix, owner/reviewer assignment, validator output, and fan-in
@@ -47,3 +54,5 @@ readback.
 - `parallel_lane_without_validator`
 - `autonomous_agent_order_missing`
 - `capability_use_preflight_missing`
+
+

@@ -34,9 +34,16 @@ Use before adopting capabilities, resolving duplicates, marking
 
 ## Validator
 
-Use `D:\.agents\codex\tools\local_validate_d_skill_availability_and_issue_pr_friction.ps1`
-and `D:\.agents\codex\tools\local_validate_skill_metadata.ps1`.
+Use `C:\CEO\project-cdx\.agents\codex\tools`
+and `C:\CEO\project-cdx\.agents\codex\tools\local_validate_skill_metadata.ps1`.
 
+## Legacy Validator Surface
+
+- legacy_path: true
+- required: false
+- status: deprecated
+- path: `D:\.agents\codex\tools\`
+- canonical_runtime: `C:\CEO\project-cdx\.agents\codex\tools\`
 ## Evidence
 
 Skill catalog rows, D skill folder presence, integration decision matrix, and
@@ -48,3 +55,5 @@ validator output.
 - `duplicate_skill_without_reconciliation`
 - `default_skill_missing`
 - `d_skill_availability_or_issue_pr_friction_guard_failed`
+
+
