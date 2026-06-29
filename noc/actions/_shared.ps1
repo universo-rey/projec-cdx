@@ -100,6 +100,212 @@ function Get-LatestByType {
   return $null
 }
 
+function Get-SduRiskClassification {
+  param([object]$Alert)
+  if ($null -eq $Alert) {
+    return [pscustomobject]@{
+      classification = "unknown"
+      decision = "LOG_ONLY"
+      escalation = $false
+      block_operations = $false
+      note = "No alert payload available"
+    }
+  }
+
+  $category = $null
+  if ($Alert.PSObject.Properties.Name -contains "category") {
+    $category = [string]$Alert.category
+  }
+  if (-not $category -and $Alert.payload -and $Alert.payload.PSObject.Properties.Name -contains "category") {
+    $category = [string]$Alert.payload.category
+  }
+
+  $businessImpact = $false
+  if ($Alert.PSObject.Properties.Name -contains "business_impact") {
+    $businessImpact = [bool]$Alert.business_impact
+  }
+  if (-not $businessImpact -and $Alert.payload -and $Alert.payload.PSObject.Properties.Name -contains "business_impact") {
+    $businessImpact = [bool]$Alert.payload.business_impact
+  }
+
+  if ($category -eq "business_impact" -or $businessImpact) {
+    return [pscustomobject]@{
+      classification = "critical"
+      decision = "ESCALATE"
+      escalation = $true
+      block_operations = $true
+      note = "Business impacting alert requires action"
+    }
+  }
+
+  $payloadNote = if ($Alert.payload -and $Alert.payload.PSObject.Properties.Name -contains "note") { [string]$Alert.payload.note } else { "" }
+  if ($category -eq "infrastructure" -or $payloadNote -match "Legacy SMTP mail disabled") {
+    return [pscustomobject]@{
+      classification = "controlled_high"
+      decision = "LOG_ONLY"
+      escalation = $false
+      block_operations = $false
+      note = "Infrastructure alert without operational impact"
+    }
+  }
+
+  return [pscustomobject]@{
+    classification = "unclassified_high"
+    decision = "LOG_ONLY"
+    escalation = $false
+    block_operations = $false
+    note = "High watchdog alert observed without business impact marker"
+  }
+}
+
+function Build-NocLiveAlerts {
+  param(
+    [object[]]$BusEvents,
+    [object]$Score
+  )
+
+  $watchdogAlerts = @($BusEvents | Where-Object { [string]$_.type -eq "WATCHDOG_ALERT" })
+  if ($watchdogAlerts.Count -eq 0) { return @() }
+
+  $classified = @($watchdogAlerts | ForEach-Object {
+    $classification = Get-SduRiskClassification -Alert $_
+    [pscustomobject]@{
+      event = $_
+      classification = $classification
+    }
+  })
+
+  $controlled = @($classified | Where-Object { $_.classification.classification -eq "controlled_high" })
+  $critical = @($classified | Where-Object { $_.classification.classification -eq "critical" })
+  $other = @($classified | Where-Object { $_.classification.classification -notin @("controlled_high", "critical") })
+  $latest = $watchdogAlerts[$watchdogAlerts.Count - 1]
+  $latestClassification = Get-SduRiskClassification -Alert $latest
+  $predictiveAlerts = if ($Score -and $Score.alerts) { $Score.alerts } else { $null }
+
+  $items = New-Object System.Collections.Generic.List[object]
+  if ($controlled.Count -gt 0) {
+    $items.Add([pscustomobject]@{
+      id = "watchdog_infrastructure_controlled_high"
+      area = "watchdog"
+      status = "ACTIVE"
+      event_type = "WATCHDOG_ALERT"
+      severity = "HIGH"
+      classification = "controlled_high"
+      decision = "LOG_ONLY"
+      escalation = $false
+      block_operations = $false
+      count = $controlled.Count
+      source = "watchdog_bus"
+      predictive_score = if ($predictiveAlerts) {
+        [pscustomobject]@{
+          recent = $predictiveAlerts.recent
+          high = $predictiveAlerts.high
+          medium = $predictiveAlerts.medium
+          low = $predictiveAlerts.low
+        }
+      } else {
+        $null
+      }
+      latest_timestamp = [string]$latest.timestamp
+      traceId = if ($latest.payload) { [string]$latest.payload.traceId } else { $null }
+      currentTraceId = if ($latest.payload) { [string]$latest.payload.currentTraceId } else { $null }
+      mode = "LOG_ONLY"
+      note = $latestClassification.note
+    })
+  }
+  if ($critical.Count -gt 0) {
+    $items.Add([pscustomobject]@{
+      id = "watchdog_business_critical"
+      area = "watchdog"
+      status = "ACTIVE"
+      event_type = "WATCHDOG_ALERT"
+      severity = "HIGH"
+      classification = "critical"
+      decision = "ESCALATE"
+      escalation = $true
+      block_operations = $true
+      count = $critical.Count
+      source = "watchdog_bus"
+      latest_timestamp = [string]$latest.timestamp
+      mode = "ESCALATE"
+      note = "Business impacting alert requires action"
+    })
+  }
+  if ($other.Count -gt 0) {
+    $items.Add([pscustomobject]@{
+      id = "watchdog_high_unclassified"
+      area = "watchdog"
+      status = "ACTIVE"
+      event_type = "WATCHDOG_ALERT"
+      severity = "HIGH"
+      classification = "unclassified_high"
+      decision = "LOG_ONLY"
+      escalation = $false
+      block_operations = $false
+      count = $other.Count
+      source = "watchdog_bus"
+      latest_timestamp = [string]$latest.timestamp
+      mode = "LOG_ONLY"
+      note = "High watchdog alert observed without business impact marker"
+    })
+  }
+  return ,$items.ToArray()
+}
+
+function Build-NocAlertLayers {
+  param(
+    [object[]]$LiveAlerts,
+    [int]$SourceWatchdogAlerts
+  )
+
+  $focus = New-Object System.Collections.Generic.List[object]
+  $monitoring = New-Object System.Collections.Generic.List[object]
+  $historySilenced = 0
+
+  foreach ($alert in @($LiveAlerts)) {
+    if ($null -eq $alert) { continue }
+    $count = 0
+    try { $count = [int]$alert.count } catch { $count = 0 }
+    $isFocus = ([string]$alert.classification -eq "critical") -or ($alert.escalation -eq $true) -or ([string]$alert.id -match "health_state_change")
+
+    if ($isFocus) {
+      $focus.Add([pscustomobject]@{
+        id = [string]$alert.id
+        tipo = [string]$alert.event_type
+        classification = [string]$alert.classification
+        decision = [string]$alert.decision
+        escalation = [bool]$alert.escalation
+        count = $count
+        latest_timestamp = [string]$alert.latest_timestamp
+      })
+      continue
+    }
+
+    $monitoring.Add([pscustomobject]@{
+      id = [string]$alert.id
+      tipo = [string]$alert.event_type
+      classification = [string]$alert.classification
+      decision = [string]$alert.decision
+      count = $count
+      latest_timestamp = [string]$alert.latest_timestamp
+      note = [string]$alert.note
+    })
+    if ($count -gt 1) { $historySilenced += ($count - 1) }
+  }
+
+  return [pscustomobject]@{
+    foco = @($focus.ToArray())
+    monitoreo = @($monitoring.ToArray())
+    historico = [pscustomobject]@{
+      silenciado = $true
+      eventos_repetidos = $historySilenced
+      eventos_fuente = $SourceWatchdogAlerts
+      detalle = "Eventos repetidos y logs tecnicos permanecen en bitacora"
+    }
+    ruido_reducido = $true
+  }
+}
+
 function Get-EntrySeverity {
   param([object]$Event)
   if ($null -eq $Event) { return "UNKNOWN" }
@@ -295,7 +501,7 @@ function Build-NocState {
   $taskRecords = Read-JsonlSafe $paths.TaskReadback
   $teamsEvidence = Read-JsonSafe $paths.TeamsEvidence
   $graphAuth = Read-JsonSafe $paths.GraphAuthRecovery
-  $busEvents = Read-JsonlSafe $paths.Bus -Tail 200
+  $busEvents = Read-JsonlSafe $paths.Bus
   $alerts = Read-JsonlSafe $paths.Alerts -Tail 120
   $taskTitles = Get-TaskTitleMap
   $entry = Read-EntrypointObservability
@@ -403,6 +609,8 @@ function Build-NocState {
   $latestRun = Get-LatestByType $busEvents "WATCHDOG_RUN"
   $latestAlert = Get-LatestByType $busEvents "WATCHDOG_ALERT"
   $alertCount = @($busEvents | Where-Object { [string]$_.type -eq "WATCHDOG_ALERT" }).Count
+  $liveAlerts = Build-NocLiveAlerts -BusEvents $busEvents -Score $score
+  $alertLayers = Build-NocAlertLayers -LiveAlerts $liveAlerts -SourceWatchdogAlerts $alertCount
 
   $healthScore = 0
   $healthStatus = "UNKNOWN"
@@ -450,6 +658,24 @@ function Build-NocState {
 
   $watchdogStatus = if ($latestRun -and $latestRun.payload.healthy -eq $true) { "ACTIVE" } else { "LOG_ONLY" }
   $watchdogLastTimestamp = if ($latestEvent) { "$($latestEvent.timestamp)" } else { $null }
+  if ($liveOperation.PSObject.Properties.Name -contains "alertas_activas") {
+    $liveOperation.alertas_activas = @($liveAlerts)
+  } else {
+    $liveOperation | Add-Member -NotePropertyName alertas_activas -NotePropertyValue @($liveAlerts)
+  }
+  $liveOperation | Add-Member -NotePropertyName capas_alertas -NotePropertyValue $alertLayers -Force
+  $liveOperation | Add-Member -NotePropertyName foco_visible -NotePropertyValue @($alertLayers.foco) -Force
+  $liveOperation | Add-Member -NotePropertyName monitoreo_agregado -NotePropertyValue @($alertLayers.monitoreo) -Force
+  $liveOperation | Add-Member -NotePropertyName historico_silenciado -NotePropertyValue $alertLayers.historico.silenciado -Force
+  $liveOperation | Add-Member -NotePropertyName alert_visibility -NotePropertyValue ([pscustomobject]@{
+    source = "watchdog_bus+predictive_score"
+    visible_count = @($alertLayers.foco).Count + @($alertLayers.monitoreo).Count
+    source_watchdog_alerts = $alertCount
+    decision = "LOG_ONLY"
+    classification = "controlled_high"
+    representation = "layered_focus_monitoring_history"
+    historical_silenced = $alertLayers.historico.silenciado
+  }) -Force
 
   $validationStatus = if ($inconsistentes -eq 0) { "PASS" } else { "FAIL" }
   $readiness = if ($ok -ge $total -and $total -gt 0) { "READY" } else { "ACTION_REQUIRED" }
@@ -616,6 +842,14 @@ function Build-NocState {
     visible_events = $busEvents.Count
     visible_alerts = $alertCount
     latest_event_type = $latestEventType
+  })
+  $compactState | Add-Member -NotePropertyName alert_visibility -NotePropertyValue ([pscustomobject]@{
+    live_alerts_visible = @($alertLayers.foco).Count + @($alertLayers.monitoreo).Count
+    source_watchdog_alerts = $alertCount
+    decision_visible = @($liveAlerts | Where-Object { $_.decision -eq "LOG_ONLY" }).Count -gt 0
+    classification_visible = @($liveAlerts | Where-Object { $_.classification -eq "controlled_high" }).Count -gt 0
+    historico_silenciado = $alertLayers.historico.silenciado
+    ruido_reducido = $alertLayers.ruido_reducido
   })
   if ($lastAction) {
     $compactState | Add-Member -NotePropertyName last_action -NotePropertyValue $lastAction
