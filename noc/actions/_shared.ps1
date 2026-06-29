@@ -158,13 +158,64 @@ function Get-SduRiskClassification {
   }
 }
 
+function Get-SduAlertFieldValue {
+  param(
+    [object]$Alert,
+    [string[]]$Names
+  )
+  foreach ($source in @($Alert, $Alert.payload)) {
+    if ($null -eq $source) { continue }
+    foreach ($name in $Names) {
+      $property = $source.PSObject.Properties[$name]
+      if ($null -ne $property -and $null -ne $property.Value) {
+        return $property.Value
+      }
+    }
+  }
+  return $null
+}
+
+function Test-SduWatchdogAlertResolved {
+  param([object]$Alert)
+  if ($null -eq $Alert) { return $true }
+
+  $resolved = Get-SduAlertFieldValue -Alert $Alert -Names @("resolved")
+  if ($resolved -eq $true) { return $true }
+
+  $active = Get-SduAlertFieldValue -Alert $Alert -Names @("active", "isActive")
+  if ($null -ne $active -and $active -eq $false) { return $true }
+
+  $stateValue = Get-SduAlertFieldValue -Alert $Alert -Names @(
+    "status",
+    "state",
+    "resolution",
+    "changeType",
+    "change_type"
+  )
+  if ($null -eq $stateValue) { return $false }
+
+  $token = ([string]$stateValue).Trim().ToLowerInvariant().Replace("_", "-")
+  return $token -in @(
+    "resolved",
+    "recovered",
+    "recovery",
+    "cleared",
+    "closed",
+    "ok",
+    "healthy",
+    "no-change"
+  )
+}
+
 function Build-NocLiveAlerts {
   param(
     [object[]]$BusEvents,
     [object]$Score
   )
 
-  $watchdogAlerts = @($BusEvents | Where-Object { [string]$_.type -eq "WATCHDOG_ALERT" })
+  $watchdogAlerts = @($BusEvents | Where-Object {
+    [string]$_.type -eq "WATCHDOG_ALERT" -and -not (Test-SduWatchdogAlertResolved -Alert $_)
+  })
   if ($watchdogAlerts.Count -eq 0) { return @() }
 
   $classified = @($watchdogAlerts | ForEach-Object {
