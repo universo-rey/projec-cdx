@@ -7,7 +7,6 @@ import time
 from pathlib import Path
 from urllib.request import urlopen
 
-
 REPO_ROOT = Path(__file__).resolve().parents[2]
 STATE_PATH = REPO_ROOT / "noc" / "state.json"
 SCHEMA_PATH = REPO_ROOT / "noc" / "schema.json"
