@@ -11,7 +11,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 LIVE_STATE_PATH = REPO_ROOT / "noc" / "noc-state.json"
 FALLBACK_STATE_PATH = REPO_ROOT / "noc" / "state.json"
 UI_ROOT = REPO_ROOT / "noc-web"
-LOCAL_ORIGIN_HOSTS = {"127.0.0.1", "localhost"}
+LOCAL_127_ORIGIN = "http://127.0.0.1:8787"
+LOCALHOST_ORIGIN = "http://localhost:8787"
 
 
 def as_list(value: object) -> list:
@@ -168,22 +169,24 @@ def load_state() -> dict:
     return normalize_state(read_state_file(selected_path), selected_path)
 
 
-def local_origin(origin: str | None) -> str | None:
-    if not origin:
-        return None
-    parsed = urlparse(origin)
-    if parsed.scheme in {"http", "https"} and parsed.hostname in LOCAL_ORIGIN_HOSTS:
-        return origin
-    return None
+def is_allowed_origin(origin: str | None) -> bool:
+    return origin in {LOCAL_127_ORIGIN, LOCALHOST_ORIGIN}
+
+
+def send_cors_headers(handler: BaseHTTPRequestHandler) -> None:
+    origin = handler.headers.get("Origin")
+    if origin == LOCAL_127_ORIGIN:
+        handler.send_header("Access-Control-Allow-Origin", LOCAL_127_ORIGIN)
+        handler.send_header("Vary", "Origin")
+    elif origin == LOCALHOST_ORIGIN:
+        handler.send_header("Access-Control-Allow-Origin", LOCALHOST_ORIGIN)
+        handler.send_header("Vary", "Origin")
 
 
 def send_common_headers(handler: BaseHTTPRequestHandler, content_type: str, length: int) -> None:
     handler.send_header("Content-Type", content_type)
     handler.send_header("Cache-Control", "no-store")
-    allowed_origin = local_origin(handler.headers.get("Origin"))
-    if allowed_origin:
-        handler.send_header("Access-Control-Allow-Origin", allowed_origin)
-        handler.send_header("Vary", "Origin")
+    send_cors_headers(handler)
     handler.send_header("Content-Length", str(length))
 
 
@@ -205,16 +208,14 @@ def static_response(handler: BaseHTTPRequestHandler, path: Path, content_type: s
 
 class NocHandler(BaseHTTPRequestHandler):
     def do_OPTIONS(self) -> None:  # noqa: N802 - stdlib handler API
-        allowed_origin = local_origin(self.headers.get("Origin"))
-        if self.headers.get("Origin") and not allowed_origin:
+        origin = self.headers.get("Origin")
+        if origin and not is_allowed_origin(origin):
             self.send_response(HTTPStatus.FORBIDDEN.value)
             self.end_headers()
             return
 
         self.send_response(HTTPStatus.NO_CONTENT.value)
-        if allowed_origin:
-            self.send_header("Access-Control-Allow-Origin", allowed_origin)
-            self.send_header("Vary", "Origin")
+        send_cors_headers(self)
         self.send_header("Access-Control-Allow-Methods", "GET, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
         self.end_headers()
