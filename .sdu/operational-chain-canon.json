@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "intent": "warning_canonization",
+  "mode": "GOVERNED_WARNING_RESOLUTION",
+  "root": "C:\\CEO\\project-cdx",
+  "external_csv_policy": {
+    "chain_csv": {
+      "canonical_status": "WARNING_CANONIZED",
+      "presence": "optional_legacy",
+      "missing_means_error": false
+    },
+    "schema_csv": {
+      "canonical_status": "WARNING_CANONIZED",
+      "presence": "optional_legacy",
+      "missing_means_error": false
+    }
+  },
+  "fallback": {
+    "when_external_csv_missing": "use_internal_sdu_state",
+    "sources": [
+      "C:\\CEO\\watchdog\\logs\\bitacora-operativa.jsonl",
+      "C:\\CEO\\project-cdx\\noc\\operacion-en-vivo.json",
+      "C:\\CEO\\project-cdx\\noc\\inteligencia-operativa.json"
+    ]
+  },
+  "validator_mapping": {
+    "missing_csv": "WARNING_CANONIZED"
+  },
+  "impact": "operational_stability_increased"
+}

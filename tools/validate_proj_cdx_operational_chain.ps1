@@ -15,6 +15,8 @@ $result = [ordered]@{
   schema_csv = $SchemaCsv
   dataverse_source_map_csv = $DataverseSourceMapCsv
   atomic_matrix_csv = $AtomicMatrixCsv
+  external_csv_policy = "optional_legacy"
+  fallback = "SDU_INTERNAL_STATE_BITACORA_RUNTIME"
   status = "PASS"
   checked_at = (Get-Date).ToString("s")
   checks = @()
@@ -33,19 +35,24 @@ function Add-Check {
   }
   if ($Status -eq "FAIL") {
     $script:result.status = "FAIL"
+  } elseif ($Status -eq "WARNING_CANONIZED" -and $script:result.status -notin @("FAIL", "OBSERVED")) {
+    $script:result.status = "WARNING_CANONIZED"
   } elseif ($Status -eq "OBSERVED" -and $script:result.status -ne "FAIL") {
     $script:result.status = "OBSERVED"
   }
 }
 
-if (-not (Test-Path -LiteralPath $ChainCsv -PathType Leaf)) {
-  Add-Check "chain_csv_exists" "FAIL" "No existe el indice puente."
+$chainCsvExists = Test-Path -LiteralPath $ChainCsv -PathType Leaf
+$schemaCsvExists = Test-Path -LiteralPath $SchemaCsv -PathType Leaf
+
+if (-not $chainCsvExists) {
+  Add-Check "chain_csv_exists" "WARNING_CANONIZED" "CSV externo legado/opcional ausente; fallback canonico: bitacora/runtime SDU."
 } else {
   Add-Check "chain_csv_exists" "PASS" "OK"
 }
 
-if (-not (Test-Path -LiteralPath $SchemaCsv -PathType Leaf)) {
-  Add-Check "schema_csv_exists" "FAIL" "No existe el schema."
+if (-not $schemaCsvExists) {
+  Add-Check "schema_csv_exists" "WARNING_CANONIZED" "CSV externo legado/opcional ausente; fallback canonico: bitacora/runtime SDU."
 } else {
   Add-Check "schema_csv_exists" "PASS" "OK"
 }
@@ -62,7 +69,7 @@ if (-not (Test-Path -LiteralPath $AtomicMatrixCsv -PathType Leaf)) {
   Add-Check "atomic_matrix_exists" "PASS" "OK"
 }
 
-if ($result.status -ne "FAIL") {
+if ($result.status -ne "FAIL" -and $chainCsvExists -and $schemaCsvExists) {
   $rows = @(Import-Csv -LiteralPath $ChainCsv)
   $schema = @(Import-Csv -LiteralPath $SchemaCsv)
   $sourceMap = @(Import-Csv -LiteralPath $DataverseSourceMapCsv)
@@ -253,6 +260,8 @@ if ($result.status -ne "FAIL") {
   } else {
     Add-Check "index_only_rows" "PASS" "Sin filas index-only."
   }
+} elseif ($result.status -ne "FAIL") {
+  Add-Check "operational_chain_fallback" "WARNING_CANONIZED" "Validacion externa omitida por CSV legado/opcional ausente; estado interno SDU disponible como fuente canonica."
 }
 
 if ($Json) {

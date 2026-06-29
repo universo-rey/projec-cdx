@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "intent": "operational_mode_activation",
+  "mode": "CONTINUOUS_GOVERNED_OPERATION",
+  "root": "C:\\CEO\\project-cdx",
+  "operational_mode": "active",
+  "trace_mode": "automatic",
+  "swarm_mode": "always_on",
+  "silent_mode": "prohibited",
+  "trace": {
+    "bitacora_path": "C:\\CEO\\watchdog\\logs\\bitacora-operativa.jsonl",
+    "before": [
+      "capture_intent",
+      "run_parallel_threads",
+      "risk_precheck"
+    ],
+    "after": [
+      "append_bitacora",
+      "update_noc_live_panel"
+    ],
+    "required_fields": [
+      "timestamp",
+      "intent",
+      "tipo_operacion",
+      "threads_ejecutados",
+      "resultado",
+      "impacto",
+      "origen"
+    ]
+  },
+  "threads": [
+    {
+      "area": "repos",
+      "agent": "repo-agent",
+      "enabled": true
+    },
+    {
+      "area": "governance",
+      "agent": "governance-agent",
+      "enabled": true
+    },
+    {
+      "area": "ci",
+      "agent": "ci-agent",
+      "enabled": true
+    },
+    {
+      "area": "integrations",
+      "agent": "integration-agent",
+      "enabled": true
+    }
+  ],
+  "parallel_execution": true,
+  "risk_control": {
+    "blocked_state": "REQUIRES_CONFIRMATION",
+    "requires_confirmation_on": [
+      "destructive_operation",
+      "structural_change",
+      "main_impact"
+    ]
+  },
+  "order_grouping": {
+    "simple": "individual",
+    "complex": "sub_threads"
+  },
+  "noc": {
+    "panel_title": "Operación en Vivo",
+    "live_state_path": "C:\\CEO\\project-cdx\\noc\\operacion-en-vivo.json",
+    "refresh": "continuous"
+  }
+}

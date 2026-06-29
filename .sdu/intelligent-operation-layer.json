@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "intent": "intelligent_operation_layer_activation",
+  "mode": "ADAPTIVE_INTELLIGENCE_ACTIVE",
+  "root": "C:\\CEO\\project-cdx",
+  "monitor_mode": "continuous_on_trace",
+  "auto_apply": false,
+  "risk_policy": {
+    "no_destructive_auto_changes": true,
+    "high_impact_requires_confirmation": true
+  },
+  "monitored_surfaces": [
+    "repo",
+    "ci",
+    "runtime",
+    "dependencies",
+    "bitacora"
+  ],
+  "classification": {
+    "CRITICAL": [
+      "ci_failed",
+      "data_loss",
+      "contract_break"
+    ],
+    "WARNING": [
+      "external_missing_csv",
+      "minor_drift",
+      "incomplete_integrations"
+    ],
+    "INFO": [
+      "stable_state",
+      "possible_improvement"
+    ]
+  },
+  "priority_order": [
+    "risk",
+    "impact",
+    "recurrence"
+  ],
+  "noc": {
+    "state_path": "C:\\CEO\\project-cdx\\noc\\inteligencia-operativa.json",
+    "extend_panel": "Operación en Vivo",
+    "fields": [
+      "alertas_activas",
+      "sugerencias_automaticas",
+      "prioridad"
+    ]
+  },
+  "trace": {
+    "bitacora_path": "C:\\CEO\\watchdog\\logs\\bitacora-operativa.jsonl",
+    "event_type": "detected_event",
+    "execution_default": "no_aplicada"
+  }
+}
