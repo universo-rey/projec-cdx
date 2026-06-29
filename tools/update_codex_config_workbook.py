@@ -1235,7 +1235,7 @@ def discover_tool_rows(config: dict) -> list[list]:
         ROOT / "tools",
         AGENTS_ROOT / "scripts",
         CODEX_ROOT / "environment",
-        Path(r"D:\.agents\codex\tools"),
+        Path(r"C:\CEO\project-cdx\.agents\codex\tools"),
     ]
     allowed_suffixes = {".ps1", ".py", ".sh", ".mjs", ".js", ".cmd", ".bat"}
     seen: set[str] = set()
@@ -4202,8 +4202,12 @@ def main():
 
     d_agents = Path(r"D:\AGENTS.md")
     d_manifest = Path(r"D:\MANIFEST.yaml")
-    d_validator_agent = Path(r"D:\.agents\codex\tools\local_validate_agent_layer.ps1")
-    d_validator_chain = Path(r"D:\.agents\codex\tools\local_validate_operational_chain.ps1")
+    canonical_validator_agent = Path(
+        r"C:\CEO\project-cdx\.agents\codex\tools\local_validate_agent_layer.ps1"
+    )
+    canonical_validator_chain = Path(
+        r"C:\CEO\project-cdx\.agents\codex\tools\local_validate_operational_chain.ps1"
+    )
     d_rows = [
         ["status", d_status, "PASS" if d_exists else "FAIL", d_mode_note],
         ["drive", r"D:\\", "PASS" if d_exists else "FAIL", "Letra visible actual."],
@@ -4245,15 +4249,21 @@ def main():
         ],
         [
             "validator.agent_layer",
-            str(d_validator_agent),
-            "PASS" if d_validator_agent.exists() else "MISSING",
-            "Validador local.",
+            str(canonical_validator_agent),
+            "PASS" if canonical_validator_agent.exists() else "MISSING",
+            "Validador local canonico en runtime del workspace.",
         ],
         [
             "validator.operational_chain",
-            str(d_validator_chain),
-            "PASS" if d_validator_chain.exists() else "MISSING",
-            "Validador cadena.",
+            str(canonical_validator_chain),
+            "PASS" if canonical_validator_chain.exists() else "MISSING",
+            "Validador cadena canonico en runtime del workspace.",
+        ],
+        [
+            "validator.legacy_path",
+            r"D:\.agents\codex\tools",
+            "DEPRECATED",
+            "legacy_path=true; required=false; status=deprecated.",
         ],
         [
             "evidence_log",
@@ -5922,3 +5932,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

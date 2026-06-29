@@ -6,6 +6,12 @@ Estado vivo resumido de `PROJEC CDX`.
 - La secuencia completa vive en [CRONOLOGIA_MAESTRA_20260617.md](C:/Users/enzo1/PROJEC%20CDX/operativa/CRONOLOGIA_MAESTRA_20260617.md).
 
 ## Vigente
+- Estado institucional: `governed_live_execution`.
+- Transicion registrada: `governed_no_live` -> `governed_live_execution`.
+- Metadata runtime: `execution_mode=LIVE`, `runtime_mode=OPERATIONAL`, `noc_mode=REALTIME`.
+- Ejecucion automatica: habilitada para decisiones SDU gobernadas; acciones controladas, locales y no destructivas.
+- Limite externo vigente: sin writes automaticos a repos, SharePoint, Dataverse, Microsoft, OpenAI ni servicios externos.
+- Evidencia runtime: `C:\CEO\watchdog\state\sdu-system-state.json`, `C:\CEO\project-cdx\noc\operacion-en-vivo.json`, `C:\CEO\governance\reports\sdu-decision-log.json`.
 - Estado: `WORKBOOK_SURFACES_WORKSPACE_REFRESHED`.
 - Consumidor aplicado: [CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx](C:/Users/enzo1/PROJEC%20CDX/workbooks/CODEX_GLOBAL_STATE_DECISION_WORKBOOK_20260617.xlsx).
 - Hojas nuevas: `Workspace Actual`, `Superficies Locales` y `Ramas Organizadas`.
