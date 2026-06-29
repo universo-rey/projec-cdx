@@ -7,6 +7,24 @@ __pycache__/
 .cache/
 *.egg-info/
 node_modules/
+.agent/
+.github/agents/
+.github/skills/
+.playwright-cli/
+noc/noc-state.json
+noc/operacion-en-vivo.json
+noc/inteligencia-operativa.json
+noc/events/log.jsonl
+noc-web/data/
+noc-web/public/
+noc-web/canvas.html
+noc-web/ceo-index.json
+noc-web/owner.html
+noc-web/owner_actions_server.py
+noc-web/sdu-live.css
+noc-web/sdu-live.js
+noc-web/serve.ps1
+noc-web/styles.css
 
 # evitar repos anidados
 **/.git

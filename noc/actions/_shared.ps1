@@ -6,6 +6,8 @@ function Get-NocPaths {
     NocRoot = Join-Path $root "noc"
     NocState = Join-Path $root "noc\noc-state.json"
     NocLock = Join-Path $root "noc\noc.lock.json"
+    OperationalMode = Join-Path $root ".sdu\operational-mode.json"
+    LiveOperation = Join-Path $root "noc\operacion-en-vivo.json"
     EntryRoot = Join-Path $watchdog "entry"
     PreprodSnapshot = Join-Path $root "inventarios\expediente_state_preprod.jsonl"
     HybridState = Join-Path $root "inventarios\PLANNER_HYBRID_READBACK_STATE_20260627.json"
@@ -24,7 +26,7 @@ function Read-JsonSafe {
   param([string]$Path)
   if (-not (Test-Path -LiteralPath $Path)) { return $null }
   try {
-    $text = Get-Content -LiteralPath $Path -Raw
+    $text = Get-Content -LiteralPath $Path -Raw -Encoding UTF8
     if ([string]::IsNullOrWhiteSpace($text)) { return $null }
     return $text | ConvertFrom-Json
   } catch {
@@ -39,7 +41,11 @@ function Read-JsonlSafe {
   )
   if (-not (Test-Path -LiteralPath $Path)) { return @() }
   try {
-    $lines = if ($Tail -gt 0) { Get-Content -LiteralPath $Path -Tail $Tail } else { Get-Content -LiteralPath $Path }
+    $lines = if ($Tail -gt 0) {
+      Get-Content -LiteralPath $Path -Tail $Tail -Encoding UTF8
+    } else {
+      Get-Content -LiteralPath $Path -Encoding UTF8
+    }
     $items = New-Object System.Collections.Generic.List[object]
     foreach ($line in $lines) {
       if ([string]::IsNullOrWhiteSpace($line)) { continue }
@@ -293,6 +299,33 @@ function Build-NocState {
   $alerts = Read-JsonlSafe $paths.Alerts -Tail 120
   $taskTitles = Get-TaskTitleMap
   $entry = Read-EntrypointObservability
+  $operationalMode = Read-JsonSafe $paths.OperationalMode
+  $liveOperation = Read-JsonSafe $paths.LiveOperation
+  if (-not $liveOperation) {
+    $operationState = if ($operationalMode -and $operationalMode.operational_mode) { [string]$operationalMode.operational_mode } else { "inactive" }
+    $traceState = if ($operationalMode -and $operationalMode.trace_mode) { [string]$operationalMode.trace_mode } else { "manual" }
+    $swarmState = if ($operationalMode -and $operationalMode.swarm_mode) { [string]$operationalMode.swarm_mode } else { "manual" }
+    $liveOperation = [pscustomobject]@{
+      schema_version = 1
+      panel = "Operación en Vivo"
+      generated_at = $null
+      refresh = "continuous"
+      operational_mode = $operationState
+      trace_mode = $traceState
+      swarm_mode = $swarmState
+      silent_mode = "prohibited"
+      ultima_orden = $null
+      estado_sistema = [pscustomobject]@{
+        root = $paths.Root
+        trace = $traceState
+        swarm = $swarmState
+        risk_state = "UNKNOWN"
+        thread_status = [pscustomobject]@{}
+      }
+      threads_activos = @()
+      alertas = @()
+    }
+  }
 
   $total = @($taskRecords).Count
   $trusted = 0
@@ -483,6 +516,8 @@ function Build-NocState {
     sharepoint_site = $sourceSite
     sharepoint_roots = @("EXPEDIENTES", "SDU")
     graph_auth = $paths.GraphAuthRecovery
+    operational_mode = $paths.OperationalMode
+    live_operation = $paths.LiveOperation
   })
   $compactState | Add-Member -NotePropertyName health -NotePropertyValue ([pscustomobject]@{
     score = $healthScore
@@ -529,6 +564,7 @@ function Build-NocState {
     timestamp = $watchdogLastTimestamp
     path = $paths.Bus
   })
+  $compactState | Add-Member -NotePropertyName operation_live -NotePropertyValue $liveOperation
   $compactState | Add-Member -NotePropertyName agent -NotePropertyValue ([pscustomobject]@{
     status = [pscustomobject]@{
       all = @(
@@ -574,6 +610,7 @@ function Build-NocState {
   })
   $nocState | Add-Member -NotePropertyName teams_activity -NotePropertyValue ([pscustomobject]@{ count = 0 })
   $nocState | Add-Member -NotePropertyName entrypoint_observability -NotePropertyValue $entry
+  $nocState | Add-Member -NotePropertyName operacion_en_vivo -NotePropertyValue $liveOperation
   $compactState | Add-Member -NotePropertyName noc -NotePropertyValue $nocState
   $compactState | Add-Member -NotePropertyName bus -NotePropertyValue ([pscustomobject]@{
     visible_events = $busEvents.Count
