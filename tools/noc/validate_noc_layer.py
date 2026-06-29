@@ -5,14 +5,21 @@ import subprocess
 import sys
 import time
 from pathlib import Path
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-STATE_PATH = REPO_ROOT / "noc" / "state.json"
+LIVE_STATE_PATH = REPO_ROOT / "noc" / "noc-state.json"
+FALLBACK_STATE_PATH = REPO_ROOT / "noc" / "state.json"
 SCHEMA_PATH = REPO_ROOT / "noc" / "schema.json"
 INDEX_PATH = REPO_ROOT / "noc" / "index.json"
 APP_PATH = REPO_ROOT / "noc-web" / "app.js"
 API_PATH = REPO_ROOT / "tools" / "noc" / "noc_api.py"
+
+
+def expected_state_path() -> Path:
+    if LIVE_STATE_PATH.exists():
+        return LIVE_STATE_PATH
+    return FALLBACK_STATE_PATH
 
 
 def read_json(path: Path) -> object:
@@ -20,26 +27,23 @@ def read_json(path: Path) -> object:
         return json.load(file)
 
 
-def fetch_json(path: str) -> object:
-    with urlopen(f"http://127.0.0.1:8787{path}", timeout=5) as response:
-        return json.loads(response.read().decode("utf-8"))
+def fetch_json(path: str, origin: str | None = None) -> tuple[object, str | None]:
+    headers = {"Origin": origin} if origin else {}
+    request = Request(f"http://127.0.0.1:8787{path}", headers=headers)
+    with urlopen(request, timeout=5) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+        return payload, response.headers.get("Access-Control-Allow-Origin")
 
 
 def main() -> int:
-    for path in [STATE_PATH, SCHEMA_PATH, INDEX_PATH, APP_PATH, API_PATH]:
+    for path in [expected_state_path(), SCHEMA_PATH, INDEX_PATH, APP_PATH, API_PATH]:
         if not path.exists():
             print(f"missing: {path}")
             return 1
 
-    state = read_json(STATE_PATH)
+    read_json(expected_state_path())
     read_json(SCHEMA_PATH)
     read_json(INDEX_PATH)
-
-    required = ["global_status", "alerts", "decisions", "kpis", "runtime", "timeline", "updated_at", "source_summary"]
-    missing = [field for field in required if field not in state]
-    if missing:
-        print(f"state missing fields: {', '.join(missing)}")
-        return 1
 
     app_text = APP_PATH.read_text(encoding="utf-8")
     for endpoint in ["/state", "/alerts", "/kpis", "/decisions"]:
@@ -61,11 +65,45 @@ def main() -> int:
             "/kpis": dict,
             "/decisions": list,
         }
+        state_payload: dict | None = None
         for endpoint, expected_type in checks.items():
-            payload = fetch_json(endpoint)
+            payload, cors = fetch_json(endpoint, "http://127.0.0.1:8787")
+            if cors == "*":
+                print(f"wildcard CORS returned for {endpoint}")
+                return 1
+            if cors != "http://127.0.0.1:8787":
+                print(f"unexpected CORS origin for {endpoint}: {cors}")
+                return 1
             if not isinstance(payload, expected_type):
                 print(f"unexpected payload type for {endpoint}: {type(payload).__name__}")
                 return 1
+            if endpoint == "/state":
+                state_payload = payload
+
+        if state_payload is None:
+            print("state endpoint did not return payload")
+            return 1
+
+        required = [
+            "global_status",
+            "alerts",
+            "decisions",
+            "kpis",
+            "runtime",
+            "timeline",
+            "updated_at",
+            "source_summary",
+        ]
+        missing = [field for field in required if field not in state_payload]
+        if missing:
+            print(f"state missing fields: {', '.join(missing)}")
+            return 1
+
+        selected = state_payload.get("source_summary", {}).get("selected_state_path")
+        expected_selected = expected_state_path().relative_to(REPO_ROOT).as_posix()
+        if selected != expected_selected:
+            print(f"unexpected selected state path: {selected}; expected {expected_selected}")
+            return 1
     finally:
         process.terminate()
         try:
