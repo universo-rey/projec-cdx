@@ -2,12 +2,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import sdu_noc_mcp_adapter as adapter
 import sys
 from typing import Any
 
 from mcp.server.fastmcp import FastMCP
-
-import sdu_noc_mcp_adapter as adapter
 
 
 SERVER_NAME = "sdu_noc"
