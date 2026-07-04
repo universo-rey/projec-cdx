@@ -30,7 +30,7 @@ def resolve_state_path() -> Path:
 
 
 def read_state_file(path: Path) -> dict:
-    with path.open("r", encoding="utf-8") as state_file:
+    with path.open("r", encoding="utf-8-sig") as state_file:
         state = json.load(state_file)
     if not isinstance(state, dict):
         raise ValueError(f"NOC state must be a JSON object: {path}")
