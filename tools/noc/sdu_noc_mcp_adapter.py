@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import argparse
 import json
-import noc_api
 import sys
 from typing import Any
+
+import noc_api
 
 
 VALID_RESOURCES = {"state", "alerts", "kpis", "decisions"}
