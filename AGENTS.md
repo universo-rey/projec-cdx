@@ -122,7 +122,11 @@ Authoritative NOC paths remain:
 
 - `C:/CEO/project-cdx/noc/noc-state.json`
 - `C:/CEO/project-cdx/noc/operacion-en-vivo.json`
-- `http://localhost:8081`
+- `http://localhost:8082`
+
+`http://localhost:8081` is a legacy/reference-only NOC endpoint unless live
+evidence proves otherwise. The present governed local NOC surface is
+`http://localhost:8082`.
 
 ## Guardrails
 
