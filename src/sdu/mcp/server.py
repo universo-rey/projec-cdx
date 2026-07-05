@@ -7,7 +7,9 @@ from pathlib import Path
 ROOTS = {
     "trace": Path("C:/CEO/sdu-control-plane/10_VALIDATION/TRACE_AUDIT_REGISTER_V52.json"),
     "anchor": Path("C:/CEO/sdu-control-plane/00_STATE/DATAVERSE_ANCHOR_STATE_V50.json"),
-    "write_authority": Path("C:/CEO/sdu-control-plane/19_WRITE_AUTHORITY/WRITE_AUTHORITY_REGISTRY.json"),
+    "write_authority": Path(
+        "C:/CEO/sdu-control-plane/19_WRITE_AUTHORITY/WRITE_AUTHORITY_REGISTRY.json"
+    ),
     "noc": Path("C:/CEO/project-cdx/noc/operacion-en-vivo.json"),
     "bus": Path("C:/CEO/watchdog/bus/sdu-event-bus.jsonl"),
     "skills": Path("C:/CEO/project-cdx/.agents/skills"),
@@ -19,7 +21,10 @@ ROOTS = {
 TOOLS = [
     {"name": "sdu_trace_read", "description": "Read SDU trace register summary"},
     {"name": "sdu_dataverse_anchor_read", "description": "Read SDU Dataverse anchor summary"},
-    {"name": "sdu_write_authority_read", "description": "Read SDU write authority registry summary"},
+    {
+        "name": "sdu_write_authority_read",
+        "description": "Read SDU write authority registry summary",
+    },
     {"name": "sdu_agent_list", "description": "List configured SDU agent TOML files"},
     {"name": "sdu_recipe_list", "description": "List SDU recipe matrix files"},
     {"name": "sdu_skill_list", "description": "List SDU skill directories"},
@@ -122,11 +127,17 @@ def handle(message: dict) -> dict | None:
         return {
             "jsonrpc": "2.0",
             "id": msg_id,
-            "result": {"content": [{"type": "text", "text": json.dumps(result, ensure_ascii=False)}]},
+            "result": {
+                "content": [{"type": "text", "text": json.dumps(result, ensure_ascii=False)}]
+            },
         }
     if method and method.startswith("notifications/"):
         return None
-    return {"jsonrpc": "2.0", "id": msg_id, "error": {"code": -32601, "message": "Method not found"}}
+    return {
+        "jsonrpc": "2.0",
+        "id": msg_id,
+        "error": {"code": -32601, "message": "Method not found"},
+    }
 
 
 def main() -> None:
@@ -137,7 +148,11 @@ def main() -> None:
         try:
             response = handle(json.loads(line))
         except Exception as exc:  # noqa: BLE001 - MCP error envelope
-            response = {"jsonrpc": "2.0", "id": None, "error": {"code": -32000, "message": str(exc)}}
+            response = {
+                "jsonrpc": "2.0",
+                "id": None,
+                "error": {"code": -32000, "message": str(exc)},
+            }
         if response is not None:
             _send(response)
 
