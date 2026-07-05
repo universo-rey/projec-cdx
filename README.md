@@ -67,8 +67,11 @@ C:\CEO\project-cdx\.agents\codex\tools\local_validate_operational_chain.ps1
 El panel NOC se consulta en:
 
 ```text
-http://localhost:8081
+http://localhost:8082
 ```
+
+`http://localhost:8081` is retained only as a legacy/reference endpoint unless
+live evidence proves otherwise.
 
 El panel lee `C:\CEO\project-cdx\noc\operacion-en-vivo.json` y refresca cada 3
 segundos. No duplica estado ni reconstruye datos: muestra la proyeccion actual
