@@ -31,9 +31,7 @@ def _drop_none(values: Mapping[str, Any]) -> dict[str, Any]:
     return {key: value for key, value in values.items() if value is not None}
 
 
-def extract_current_intent_routing(
-    system_state: Mapping[str, Any],
-) -> dict[str, Any]:
+def extract_current_intent_routing(system_state: Mapping[str, Any]) -> dict[str, Any]:
     """Return the current pre-resolved routing projection."""
 
     state = _mapping(system_state)
@@ -60,18 +58,13 @@ def _project_bindings(value: Any) -> list[dict[str, Any]]:
         if not binding:
             continue
 
-        selected = {
-            field: binding.get(field)
-            for field in _BINDING_FIELDS
-        }
+        selected = {field: binding.get(field) for field in _BINDING_FIELDS}
         projected.append(_drop_none(selected))
 
     return projected
 
 
-def _current_operation_context(
-    system_state: Mapping[str, Any],
-) -> dict[str, Any]:
+def _current_operation_context(system_state: Mapping[str, Any]) -> dict[str, Any]:
     state = _mapping(system_state)
     visible = _mapping(state.get("visible_operation"))
     primary = _mapping(visible.get("federated_primary_binding"))
@@ -79,8 +72,7 @@ def _current_operation_context(
     values = {
         "order_id": visible.get("order_id"),
         "correlation_id": (
-            visible.get("correlation_id")
-            or visible.get("visible_correlation_id")
+            visible.get("correlation_id") or visible.get("visible_correlation_id")
         ),
         "parent_correlation_id": visible.get("parent_correlation_id"),
         "child_correlation_id": visible.get("child_correlation_id"),
@@ -88,28 +80,21 @@ def _current_operation_context(
         "system_cursor": visible.get("system_cursor"),
         "business_cursor": visible.get("business_cursor"),
         "next_system_action": (
-            visible.get("next_system_action")
-            or state.get("NEXT_SYSTEM_ACTION")
+            visible.get("next_system_action") or state.get("NEXT_SYSTEM_ACTION")
         ),
         "next_business_action": (
-            visible.get("next_business_action")
-            or state.get("NEXT_BUSINESS_ACTION")
+            visible.get("next_business_action") or state.get("NEXT_BUSINESS_ACTION")
         ),
         "execution_primary": primary.get("execution_primary"),
         "lock_key": primary.get("lock_key"),
-        "fanin_target": (
-            primary.get("fanin_target") or visible.get("return_flow")
-        ),
-        "return_target": (
-            primary.get("return_target") or visible.get("return_flow")
-        ),
+        "fanin_target": primary.get("fanin_target") or visible.get("return_flow"),
+        "return_target": primary.get("return_target") or visible.get("return_flow"),
     }
     return _drop_none(values)
 
 
 def _base_response(
-    requested_intent: str | None,
-    current: Mapping[str, Any],
+    requested_intent: str | None, current: Mapping[str, Any]
 ) -> dict[str, Any]:
     return _drop_none(
         {
@@ -125,9 +110,7 @@ def _base_response(
 
 
 def build_system_intent_response(
-    system_state: Mapping[str, Any],
-    *,
-    requested_intent: str | None = None,
+    system_state: Mapping[str, Any], *, requested_intent: str | None = None
 ) -> dict[str, Any]:
     """Project the current BONTEMPS/V42 route into a web contract.
 
@@ -161,18 +144,14 @@ def build_system_intent_response(
             "route_available": True,
             "functional_profile": routing.get("functional_profile"),
             "primary_profile": routing.get("primary_profile"),
-            "participating_profiles": (
-                routing.get("participating_profiles") or []
-            ),
+            "participating_profiles": routing.get("participating_profiles") or [],
             "participating_profile_bindings": _project_bindings(
                 routing.get("participating_profile_bindings")
             ),
             "participating_technical_profiles": (
                 routing.get("participating_technical_profiles") or []
             ),
-            "participating_workspaces": (
-                routing.get("participating_workspaces") or []
-            ),
+            "participating_workspaces": routing.get("participating_workspaces") or [],
             "composition_mode": routing.get("composition_mode"),
             "conflicts": routing.get("conflicts") or [],
             "technical_profile": routing.get("technical_profile"),
@@ -184,9 +163,7 @@ def build_system_intent_response(
             "intent_semantics": routing.get("intent_semantics"),
             "selection_source": routing.get("selection_source"),
             "launch_allowed": bool(routing.get("launch_allowed")),
-            "external_write_allowed": bool(
-                routing.get("external_write_allowed")
-            ),
+            "external_write_allowed": bool(routing.get("external_write_allowed")),
             "router": routing.get("router"),
             "profile_matrix": routing.get("profile_matrix"),
             "capability_matrix": routing.get("capability_matrix"),
