@@ -71,9 +71,7 @@ def _current_operation_context(system_state: Mapping[str, Any]) -> dict[str, Any
 
     values = {
         "order_id": visible.get("order_id"),
-        "correlation_id": (
-            visible.get("correlation_id") or visible.get("visible_correlation_id")
-        ),
+        "correlation_id": (visible.get("correlation_id") or visible.get("visible_correlation_id")),
         "parent_correlation_id": visible.get("parent_correlation_id"),
         "child_correlation_id": visible.get("child_correlation_id"),
         "projection_run_id": visible.get("projection_run_id"),
@@ -93,9 +91,7 @@ def _current_operation_context(system_state: Mapping[str, Any]) -> dict[str, Any
     return _drop_none(values)
 
 
-def _base_response(
-    requested_intent: str | None, current: Mapping[str, Any]
-) -> dict[str, Any]:
+def _base_response(requested_intent: str | None, current: Mapping[str, Any]) -> dict[str, Any]:
     return _drop_none(
         {
             "schema_version": SCHEMA_VERSION,
