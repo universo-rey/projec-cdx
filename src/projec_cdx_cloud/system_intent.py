@@ -62,7 +62,9 @@ def _project_bindings(value: Any) -> list[dict[str, Any]]:
         binding = _mapping(item)
         if not binding:
             continue
-        projected.append(_drop_none({field: binding.get(field) for field in _BINDING_FIELDS}))
+        projected.append(
+            _drop_none({field: binding.get(field) for field in _BINDING_FIELDS})
+        )
     return projected
 
 
