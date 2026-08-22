@@ -30,7 +30,7 @@ jobs:
         run: ruff check src tests tools
 
       - name: Black
-        run: black --diff --check src tests tools
+        run: black --check src tests tools
 
       - name: Tests with coverage
         run: |
