@@ -122,7 +122,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ steps.branch.outputs.name }}
           base: main
-          delete-branch: true
+          delete-branch: false
           commit-message: "promote: ${{ inputs.artifact_id }} -> ${{ inputs.estado }}"
           title: "promote: ${{ inputs.artifact_id }} -> ${{ inputs.estado }}"
           body: |
