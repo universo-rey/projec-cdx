@@ -6,11 +6,12 @@ HECHO_VERIFICADO: `AUTORIZO_RESOLVER_W1_TGE_GOBERNADA` produjo un fan-in repo-lo
 
 ```text
 OUTCOME=BLOQUEADO_CON_CAUSA_REAL
-MODE=REPO_LOCAL_PREPARE_ONLY
+MODE=DOWNSTREAM_BRANCHES_PUBLISHED_PROJECT_CDX_LOCAL_ONLY
 GITHUB_LIVE_READ=CONFIRMED
 MCP_GITHUB_AVAILABLE=CONFIRMED
-GIT_PUSH_EXECUTED=false
-GITHUB_PR_METADATA_UPDATED=false
+GIT_PUSH_EXECUTED=true_for_TGE_PR81_SESHAT_PR12_COMPLIANCE_PR10
+PROJECT_CDX_PUSH_EXECUTED=false
+GITHUB_PR_METADATA_UPDATED=true_for_PR81_PR12_PR10
 TENANT_WRITES=false
 PLANNER_WRITES=false
 SHAREPOINT_WRITES=false
@@ -24,14 +25,17 @@ MERGES_OR_CLOSES=false
 ## Confirmed
 
 - GitHub vivo al 2026-08-26: `universo-rey/projec-cdx#44`, TGE `#82/#81`, Seshat `#13/#12` y Compliance `#11/#10` siguen abiertos.
-- TGE PR `#81`, Seshat PR `#12` y Compliance PR `#10` siguen mergeables; Seshat `#12` tiene check `validate` en `SUCCESS`; TGE `#81` y Compliance `#10` no exponen checks en el snapshot consultado.
+- TGE PR `#81`, Seshat PR `#12` y Compliance PR `#10` recibieron los commits W1 y siguen `mergeStateStatus=CLEAN`; el snapshot posterior al push no expone checks en ninguno de los tres PR.
+- Commits publicados: TGE `6a903cf8a55d3d83305fc1f28bdf425007d23075`, Seshat `78cb5401ab46fe3f55fd26d948158d0440124280` y Compliance `1dd1c0253f6498409c6a806b3c6736d0a50aa85a`.
+- Los cuerpos de los tres PR fueron actualizados con la reconciliación W1, sus validaciones y la declaración explícita de que no autorizan merge ni cierre del gate.
 - La matriz W1 de `projec-cdx#44` clasifica 14/14 `AUTHORIZATION_REQUIRED`: `HUMAN_RESERVED=1`, `STALE_POLICY_PROJECTION=9`, `UNRESOLVED=4`, `GOVERNED_EXECUTE=0`.
 - Las nueve `STALE_POLICY_PROJECTION` solo admiten tratamiento read-only `TRACE_AND_CONTINUE`; siguen sin `CURRENT_BINDING` materializado.
 - Las cuatro `UNRESOLVED` siguen bloqueadas por `NO_D_RECTOR_ID`: `CODEX_CLOUD-ACTOR-010`, `GITHUB-ACTOR-009`, `MICROSOFT_365-ACTOR-006` y `MICROSOFT_365-ACTOR-008`.
 - `ESCRIBANIA-AUTH-001` queda `HUMAN_RESERVED` para `P031-P034`.
 - Validadores frescos:
-  - `project-cdx` W1: `git diff --check` PASS; `local_validate_agent_layer.ps1 -SkipWorkflowNestedValidators` PASS con 3 warnings esperados; `local_validate_skill_metadata.ps1` PASS; `local_validate_parallel_order_governance.ps1` PASS; `local_validate_operational_chain.ps1` PASS.
-  - Chain propietario `C:/CEO/project-cdx`: `local_validate_capability_use_hardening.ps1` permite read-only; `local_validate_agents_instruction_hierarchy.ps1` PASS.
+  - `project-cdx` W1: `git diff --check` PASS; `local_validate_agent_layer.ps1 -SkipWorkflowNestedValidators` PASS con 3 warnings esperados; `local_validate_skill_metadata.ps1` PASS; `local_validate_parallel_order_governance.ps1` PASS.
+  - Preflight de publicación `project-cdx`: `local_validate_operational_chain.ps1` ERROR por `.github/PULL_REQUEST_TEMPLATE.md` ausente; `local_validate_agents_instruction_hierarchy.ps1` FAIL (12 en el worktree W1 y 9 en el chain distribuido existente). Cinco validadores D fueron encontrados pero quedaron `NOT_APPLICABLE_AS_IS`; el validador de topología quedó `NO_DISPONIBLE`.
+  - Chain propietario `C:/CEO/project-cdx`: `local_validate_capability_use_hardening.ps1` permite read-only.
   - TGE: `python scripts/validators/tge_live_runtime_parallel_canon_validator.py` PASS.
   - Seshat: `ci/validate_repo.ps1` PASS.
   - Compliance: `git diff --check` PASS; validador funcional repo-native `NO_DISPONIBLE`.
@@ -47,7 +51,8 @@ MERGES_OR_CLOSES=false
 - Materializar o retirar por decisión explícita las nueve proyecciones `DERIVED_NOT_IMPORTED`.
 - Registrar decisión humana para `ESCRIBANIA-AUTH-001` / `P031-P034`.
 - Proveer validador repo-native para Compliance o declarar formalmente su reemplazo.
-- Reconciliar el fan-in con `main`, publicar branches y actualizar PRs cuando la preflight de publicación esté habilitada.
+- Resolver la preflight de `project-cdx` antes de publicar su rama local `codex/w1-reconcile-20260826`.
+- Observar checks downstream cuando GitHub los materialice; el snapshot inmediato posterior al push no expone checks.
 - Ejecutar canary end-to-end luego de que `projec-cdx#44` sea admitido.
 
 ## Blocked
@@ -67,7 +72,7 @@ END_TO_END_CANARY_PROVEN=false
 2. Importar o retirar formalmente las nueve `STALE_POLICY_PROJECTION`.
 3. Obtener o registrar la decisión humana para `ESCRIBANIA-AUTH-001`.
 4. Correr nuevamente validadores rectores y downstream.
-5. Publicar ramas, actualizar PRs `#81`, `#12` y `#10`, y esperar checks.
+5. Confirmar checks de PRs `#81`, `#12` y `#10`; las ramas y los cuerpos ya fueron publicados/actualizados.
 6. Ejecutar canary end-to-end.
 7. Entregar fan-in final para decisión humana de merge/cierre.
 
