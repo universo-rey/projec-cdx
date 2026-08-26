@@ -2,106 +2,110 @@
 
 ## Estado
 
-HECHO_VERIFICADO: `projec-cdx #44` permanece abierto. Su comentario de baseline del 2026-08-22 declara 19 items, pero la lectura local acotada del 2026-08-26 contiene 20 items con SHA-256 `8CF83EE9A3CC8942A79514760D63322A2ED8C2B849EE07998A92CF3DDD553FA7`.
+HECHO_VERIFICADO: las 14 filas `AUTHORIZATION_REQUIRED` de `projec-cdx #44` quedaron adjudicadas sin modificar la cola fuente.
 
 ```text
-ISSUE_44_PUBLISHED_TOTAL=19
-CURRENT_LOCAL_TOTAL=20
-CARDINALITY_DRIFT=+1
-CURRENT_LOCAL_COMPLETE=2
-CURRENT_LOCAL_IN_PROGRESS=1
-CURRENT_LOCAL_LOCAL_CONSUMER_REBOUND_POST_03D=1
-CURRENT_LOCAL_AUTHORIZATION_REQUIRED=14
-CURRENT_LOCAL_SUPERSEDED=2
-```
-
-La fila adicional respecto del baseline publicado pertenece a `COMPLETE`: el comentario declara 1 y la cola actual contiene 2. Las otras cardinalidades coinciden.
-
-La adjudicacion read-only de las 14 filas queda materializada en `matrices/W1_ISSUE_44_AUTHORIZATION_ADJUDICATION_20260826.csv`:
-
-```text
+AUTHORIZATION_ROWS=14
+AUTHORIZATION_UNIQUE_IDS=14
+STALE_POLICY_PROJECTION=13
 HUMAN_RESERVED=1
-STALE_POLICY_PROJECTION=9
-UNRESOLVED=4
-GOVERNED_EXECUTE=0
-TRACE_AND_CONTINUE_AS_FINAL_CLASS=0
+UNRESOLVED_OPERATIONAL=0
+CURRENT_BINDING_PROMOTED=0
+RETIRE_AS_STALE=13
+SOURCE_RETIREMENT_PENDING=13
+GATE_STATE=BLOCKED
 ```
 
-`TRACE_AND_CONTINUE` es solamente el tratamiento operativo read-only de las nueve filas `STALE_POLICY_PROJECTION`. No las convierte en `CURRENT_BINDING`.
+Las cuatro filas `NO_D_RECTOR_ID` se clasifican como `STALE_POLICY_PROJECTION / RETIRE_AS_STALE` únicamente porque reúnen simultáneamente `DERIVED_NOT_IMPORTED`, `candidate_count=0` y contradicción interna de tuple. Esta adjudicación elimina el bucket operacional `UNRESOLVED`; no inventa `rector_id`, no crea `CURRENT_BINDING` y no ejecuta el retiro en la cola fuente.
 
 ## Sistemas tocados
 
-- Worktree repo-local `C:/CEO/worktrees/w1-project-cdx-20260826`.
-- Tres artefactos nuevos bajo `.agents/codex/matrices` y `.agents/codex/readbacks`.
+- `C:/CEO/worktrees/w1-project-cdx-20260826/.agents/codex/matrices/W1_ISSUE_44_AUTHORIZATION_ADJUDICATION_20260826.csv`.
+- `C:/CEO/worktrees/w1-project-cdx-20260826/.agents/codex/matrices/W1B_ISSUE_44_EXACTNESS_AND_RETIREMENT_20260826.csv`.
+- `.agents/codex/matrices/W1_ISSUE_44_VALIDATOR_COVERAGE_20260826.csv` y `.agents/codex/matrices/AGENTS_INSTRUCTION_SURFACE_MATRIX.csv`.
+- `.agents/codex/tools/local_validate_agents_instruction_hierarchy.ps1` y `.agents/codex/maps/AGENTS_INSTRUCTION_HIERARCHY.md`.
+- `.github/PULL_REQUEST_TEMPLATE.md`, `.github/ISSUE_TEMPLATE/agent-task.yml` y `.github/ISSUE_TEMPLATE/runtime-approval.yml`.
+- Este readback, `READBACK_W1B_STALE_POLICY_RETIREMENT_PROPOSAL_20260826.md` y el fan-in central `READBACK_W1_TGE_GOVERNADA_FAN_IN_20260826.md`.
+
+Estas superficies pertenecen a carriles W1-B disjuntos: evidencia/adjudicación, preflight/hierarchy y fan-in. Se integran en el mismo worktree para validación conjunta.
 
 ## Sistemas no tocados
 
-- `C:/CEO/sdu-control-plane/SDU_WORK_QUEUE_CURRENT.csv` (solo lectura y hash; cero escritura).
-- NOC, watchdog, localhost y runtime CEO.
-- Tenant, Planner, SharePoint, Power Platform, Graph y produccion.
-- GitHub remoto, issues, PRs, checks, merges, permisos, secretos y ramas remotas.
-- El checkout distribuido `C:/CEO/project-cdx` (solo lectura acotada de candidatos ya existentes; cero escritura).
-- Canon D y sus herramientas (solo registro, metadata y hash; cero escritura).
+- `C:/CEO/sdu-control-plane/SDU_WORK_QUEUE_CURRENT.csv`: solo lectura y hash.
+- D canon, tenant, Planner, SharePoint, Power Platform, Graph, GitHub remoto, producción, permisos y secretos.
+- Ningún commit, push, merge, branch mutation ni cierre institucional.
 
 ## Cambios
 
-- Se clasificaron 14/14 filas con adjudicacion fail-closed, candidate count, binding exacto/propuesto, evidencia, rollback, postcheck y stop condition.
-- Se reconcilio el drift 20-vs-19 sin modificar la cola viva.
-- Se agrego una matriz de cobertura para los 12 validadores exigidos por `#44`.
-- No se copiaron validadores D dentro de `projec-cdx`: cinco fuentes exactas son contratos Cabina D no aplicables tal cual; `local_validate_repo_topology_windows_default.ps1` no fue localizado en el registro D ni en las raices CEO/GitHub conocidas.
-- No se inventaron paths D para forzar verde en jerarquia de instrucciones. El chain local ya existente en `C:/CEO/project-cdx` contiene candidatos no integrados para capability hardening, instruction hierarchy y su mapa; W1 los registra como dependencia distribuida y no los duplica.
+- La matriz de adjudicación contiene 14/14 IDs únicos: 13 stale y 1 reserva humana.
+- Las cuatro filas previamente `UNRESOLVED` conservan `candidate_count=0`, `exact_binding=NONE` y `proposed_binding=NONE`.
+- La matriz W1B registra 13/13 decisiones de retiro, todas `PENDING_SOURCE_OWNER_RETIREMENT`.
+- No se promovió ningún candidato por semejanza semántica.
 
-## Validacion
+## Evidencia y hashes
+
+```text
+SDU_WORK_QUEUE_CURRENT_SHA256=8CF83EE9A3CC8942A79514760D63322A2ED8C2B849EE07998A92CF3DDD553FA7
+AGENT_CATALOG_V46_SHA256=947A02F204422B2A633DE433735EBFF815E7DBE17618E6A9FF27D7AFE36F92C4
+D_DRIVE_FILE_REGISTRY_SHA256=F3E8F750D0A52C2FC5DAADD72A56D9DFDC9CBD10C3AC28340541B8849773BD92
+W1_AUTHORIZATION_ADJUDICATION_SHA256=59F171042077F495C3438D3D85B60F561465C2A4F2E4B524B96881F9FF071714
+W1B_EXACTNESS_RETIREMENT_SHA256=6C9349F1768BEDCEC1ED7F1D4AA294480431DFFA8B5B4FEE8AA3F18DA012A238
+```
+
+## Validación
 
 ```text
 CSV_AUTHORIZATION_ROWS=14
 CSV_AUTHORIZATION_UNIQUE_IDS=14
-HUMAN_RESERVED=1
-STALE_POLICY_PROJECTION=9
-UNRESOLVED=4
-STALE_WITH_TRACE_AND_CONTINUE=9
-UNRESOLVED_NO_D_RECTOR_ID=4
-AUTHORIZATION_CANDIDATE_COUNT_RULE=PASS
-VALIDATOR_COVERAGE_ROWS=12
-AGENT_LAYER_SCOPED=PASS_WITH_3_WARNINGS
-SKILL_METADATA=PASS
-PARALLEL_ORDER_GOVERNANCE=PASS
-OPERATIONAL_CHAIN=PASS
-CAPABILITY_USE_OWNER_CHAIN=PASS_READONLY_ALLOW
-INSTRUCTION_HIERARCHY_OWNER_CHAIN=PASS
-ALL_REPO_LOCAL_APPLICABLE_VALIDATORS=PASS
-D_FEDERAL_ALIGNMENT_VALIDATORS=NOT_RUN_NOT_REPO_LOCAL
+CSV_AUTHORIZATION_STALE=13
+CSV_AUTHORIZATION_HUMAN_RESERVED=1
+CSV_AUTHORIZATION_UNRESOLVED=0
+W1B_RETIREMENT_ROWS=13
+W1B_RETIREMENT_UNIQUE_IDS=13
+W1B_RETIRE_AS_STALE=13
+W1B_SOURCE_RETIREMENT_PENDING=13
+NO_D_RECTOR_ID_ROWS_WITH_CANDIDATE_ZERO=4
+CURRENT_BINDING_PROMOTED=0
+AGENT_LAYER=PASS_ERRORS_0_WARNINGS_3_EXPECTED_NESTED_SKIPS
 ```
 
-Rerun fresco desde las raices correctas:
+Resultados exact-root posteriores a la reparación repo-local:
 
-- `local_validate_operational_chain.ps1` en W1: `PASS`.
-- `local_validate_capability_use_hardening.ps1` en el chain propietario `C:/CEO/project-cdx`: `DECISION=ALLOW_READONLY`.
-- `local_validate_agents_instruction_hierarchy.ps1` en el chain propietario `C:/CEO/project-cdx`: `PASS`.
-
-Estos resultados no convierten el chain propietario en archivos de esta rama W1 ni cierran `#44`; solo eliminan los fallos de validador que provenian de una invocacion fuera de raiz y de evidencia propietaria no rerunneada.
+- `local_validate_operational_chain.ps1`: `PASS`; 12 filas, 14 agentes, 62 skills, 32 recipes, 71 tools, 0 warnings y 0 errores.
+- `local_validate_agents_instruction_hierarchy.ps1`: `PASS`; 8 superficies, raíz exacta W1, 0 warnings y 0 errores.
+- `local_validate_agent_layer.ps1 -SkipWorkflowNestedValidators`: `PASS`; 0 errores, 0 secretos y 3 warnings esperados por validadores nested ejecutados separadamente.
+- `local_validate_skill_metadata.ps1` y `local_validate_parallel_order_governance.ps1`: `PASS`.
+- La preflight repo-local aplicable queda verde. El gate permanece bloqueado exclusivamente por materialización de fuente, reserva humana, cobertura externa pendiente y canary.
 
 ## Riesgos
 
-- Promover las nueve propuestas `DERIVED_NOT_IMPORTED` como bindings actuales produciria un falso verde.
-- Asignar rector ids a las cuatro filas `NO_D_RECTOR_ID` por semejanza semantica contaminaria correlaciones.
-- Copiar validadores Cabina D a este repo sin adaptar contrato y autoridad crearia cobertura aparente, no valida.
-- Integrar o sobrescribir el chain local previo desde esta rama violaria ownership distribuido y continuidad.
+- Confundir retiro adjudicado con retiro materializado en la cola fuente.
+- Convertir un agente candidato por superficie en `CURRENT_BINDING` sin tuple exacto.
+- Declarar PASS usando un resultado ejecutado desde otra raíz o con templates distribuidos ausentes.
+- Tocar artefactos de preflight, templates, validators o fan-in pertenecientes a otros carriles.
 
 ## Rollback
 
-Eliminar solamente estos tres artefactos repo-locales. No hay rollback externo porque no hubo mutaciones externas ni runtime.
+Revertir solamente las tres superficies repo-locales de este carril. La cola fuente no requiere rollback porque no fue modificada. Las 13 decisiones vuelven a su adjudicación anterior hasta que el owner las rematerialice.
+
+## Postcheck
+
+1. Parsear ambos CSV.
+2. Confirmar 14/14 y 13/13 IDs únicos.
+3. Confirmar 13 `STALE_POLICY_PROJECTION`, 1 `HUMAN_RESERVED`, 13 `RETIRE_AS_STALE` y cero `CURRENT_BINDING` promovidos.
+4. Confirmar que `SDU_WORK_QUEUE_CURRENT.csv` conserva SHA-256 `8CF83EE9A3CC8942A79514760D63322A2ED8C2B849EE07998A92CF3DDD553FA7`.
+5. Revisar el diff limitado a las tres rutas owned por W1B.
 
 ## Bloqueadores residuales
 
 ```text
-PRIMARY_BLOCKER=PROJEC_CDX_44_NOT_ADMITTED
-UNRESOLVED_NO_D_RECTOR_ID=4
-CURRENT_BINDING_GAPS_HARD=4
-NON_MATERIALIZED_PROJECTIONS=9
-HUMAN_RESERVED_DECISION=1
-APPLICABLE_VALIDATOR_CHAIN_NOT_GREEN=true
+PRIMARY_BLOCKER=SOURCE_RETIREMENT_NOT_MATERIALIZED
+SOURCE_RETIREMENT_PENDING=13
+OPERATIONAL_CHAIN_EXACT_ROOT=PASS
+INSTRUCTION_HIERARCHY_EXACT_ROOT=PASS
+HUMAN_RESERVED_DECISION=PENDING
 END_TO_END_CANARY_PROVEN=false
+GATE_GREEN=false
 ```
 
 ## Criterio de cierre
@@ -109,41 +113,36 @@ END_TO_END_CANARY_PROVEN=false
 ```text
 GATE_CLOSE =
   AUTHORIZATION_REQUIRED_CLASSIFIED == 14/14
-  AND UNRESOLVED == 0
-  AND CURRENT_BINDING_GAPS == 0
-  AND ACTIVE_POLICY_CONTRADICTIONS == 0
-  AND ACTIVE_AGENT_STOP_CONTRADICTIONS == 0
-  AND UNCLASSIFIED_LEGACY_RULES == 0
-  AND ALL_APPLICABLE_VALIDATORS == PASS
+  AND STALE_SOURCE_RETIREMENT_RECEIPTS == 13/13
+  AND HUMAN_RESERVED_REMAINS_GATED_OR_IS_EXPLICITLY_DECIDED
+  AND CURRENT_BINDING_PROMOTED_BY_INFERENCE == 0
+  AND ALL_APPLICABLE_EXACT_ROOT_VALIDATORS == PASS
   AND DOWNSTREAM_POLICY_RECONCILED == true
   AND END_TO_END_CANARY_PROVEN == true
   AND FAN_IN_EVIDENCE_ACCEPTED == true
   AND HUMAN_MERGE_CLOSE_DECISION == GRANTED
 ```
 
-## Proximos carriles
+## Próximos carriles
 
-1. Integrar o reconciliar, desde su owner, el chain local existente de capability hardening e instruction hierarchy; no recrearlo en W1.
-2. Resolver con evidencia exacta los cuatro `NO_D_RECTOR_ID`.
-3. Materializar o archivar por decision explicita las nueve proyecciones stale.
-4. Proveer un validador de topologia Windows repo-aplicable o declarar formalmente su reemplazo.
-5. Adaptar bajo ownership propio los cinco validadores D solamente si el contrato repo-local queda documentado y probado.
-6. Volver a ejecutar la cadena completa, luego reconciliar los PR downstream y probar el canary.
+1. El owner de la cola fuente materializa el retiro de las 13 proyecciones stale con receipt y postcheck.
+2. Los owners de templates y jerarquía corrigen los baselines exact-root; W1B no invade esas superficies.
+3. Reejecutar la cadena completa y probar el canary antes de solicitar cierre humano.
 
 ## Cadena de capacidad
 
 ```text
-agente=codex.workspace_guardian
-orden=AUTORIZO_RESOLVER_W1_TGE_GOBERNADA
+agente=cdf.evidence_validator
+orden=W1B_EVIDENCE_WRITE
 superficie=C:/CEO/worktrees/w1-project-cdx-20260826
-skill=projec-cdx-semantic-layer|governed-readback-closeout
-receta=repo_local_issue_44_fail_closed_adjudication
-tool=apply_patch|Import-Csv|git_diff_check|repo_local_validators
-estado=PARTIAL_EVIDENCE_READY_GATE_BLOCKED
-evidencia=.agents/codex/matrices/W1_ISSUE_44_AUTHORIZATION_ADJUDICATION_20260826.csv|.agents/codex/matrices/W1_ISSUE_44_VALIDATOR_COVERAGE_20260826.csv
-validador=csv_schema_and_cardinality|local_validate_agent_layer|local_validate_skill_metadata|local_validate_parallel_order_governance
-riesgo=false_green_from_non_materialized_bindings
-rollback=remove_only_three_w1_artifacts
-stop_condition=unresolved_current_binding_or_applicable_validator_not_pass
-proximos_carriles=distributed_chain_integration|four_exact_rector_bindings|validator_ownership|downstream_reconciliation|canary
+skill=no-inference-runtime-write-guard|governed-readback-closeout
+receta=issue_44_exactness_and_stale_source_retirement
+tool=apply_patch|Import-Csv|Get-FileHash|git_diff_check
+estado=EVIDENCE_MATERIALIZED_GATE_BLOCKED
+evidencia=.agents/codex/matrices/W1_ISSUE_44_AUTHORIZATION_ADJUDICATION_20260826.csv|.agents/codex/matrices/W1B_ISSUE_44_EXACTNESS_AND_RETIREMENT_20260826.csv
+validador=csv_14_of_14_unique|retirement_13_of_13_unique|exact_root_validator_readback
+riesgo=false_green_or_inferred_binding
+rollback=revert_only_three_w1b_owned_paths
+stop_condition=candidate_promoted_by_inference|source_queue_mutation|scope_overlap
+proximos_carriles=source_owner_retirement|exact_root_validator_owners|canary|human_gate
 ```

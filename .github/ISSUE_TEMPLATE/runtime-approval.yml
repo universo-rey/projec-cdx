@@ -1,0 +1,62 @@
+name: Runtime approval
+description: Request an exact, bounded runtime action without broad authority.
+title: "[runtime-approval] "
+labels:
+  - runtime-approval
+body:
+  - type: input
+    id: agent
+    attributes:
+      label: agent
+      description: Accountable runtime owner.
+    validations:
+      required: true
+  - type: input
+    id: skill
+    attributes:
+      label: skill
+      description: Skill governing the runtime action.
+    validations:
+      required: true
+  - type: input
+    id: recipe
+    attributes:
+      label: recipe
+      description: Recipe governing the runtime action.
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: tool
+      description: Exact tool and target surface.
+    validations:
+      required: true
+  - type: textarea
+    id: allowed_actions
+    attributes:
+      label: Allowed actions
+      description: Exact actions requested; this does not grant merge, production, permission, or secret access.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: evidence
+      description: Evidence, rollback, and postcheck references.
+    validations:
+      required: true
+  - type: input
+    id: validator
+    attributes:
+      label: validator
+      description: Validator required before execution and closeout.
+    validations:
+      required: true
+  - type: textarea
+    id: stop_condition
+    attributes:
+      label: stop_condition
+      description: Condition that invalidates or stops this approval.
+    validations:
+      required: true

@@ -1,0 +1,55 @@
+name: Agent task
+description: Governed repo-scoped task with an explicit operational chain.
+title: "[agent-task] "
+labels:
+  - agent-task
+body:
+  - type: input
+    id: agent
+    attributes:
+      label: agent
+      description: Owner agent for this repo-scoped task.
+    validations:
+      required: true
+  - type: input
+    id: skill
+    attributes:
+      label: skill
+      description: Skill governing this task.
+    validations:
+      required: true
+  - type: input
+    id: recipe
+    attributes:
+      label: recipe
+      description: Recipe governing this task.
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: tool
+      description: Tool and its allowed surface.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: evidence
+      description: Exact evidence path or readback.
+    validations:
+      required: true
+  - type: input
+    id: validator
+    attributes:
+      label: validator
+      description: Validator required before closeout.
+    validations:
+      required: true
+  - type: textarea
+    id: stop_condition
+    attributes:
+      label: stop_condition
+      description: Condition that stops execution or closeout.
+    validations:
+      required: true

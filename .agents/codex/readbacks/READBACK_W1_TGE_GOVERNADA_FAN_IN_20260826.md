@@ -28,13 +28,13 @@ MERGES_OR_CLOSES=false
 - TGE PR `#81`, Seshat PR `#12` y Compliance PR `#10` recibieron los commits W1 y siguen `mergeStateStatus=CLEAN`; el snapshot posterior al push no expone checks en ninguno de los tres PR.
 - Commits publicados: TGE `6a903cf8a55d3d83305fc1f28bdf425007d23075`, Seshat `78cb5401ab46fe3f55fd26d948158d0440124280` y Compliance `1dd1c0253f6498409c6a806b3c6736d0a50aa85a`.
 - Los cuerpos de los tres PR fueron actualizados con la reconciliación W1, sus validaciones y la declaración explícita de que no autorizan merge ni cierre del gate.
-- La matriz W1 de `projec-cdx#44` clasifica 14/14 `AUTHORIZATION_REQUIRED`: `HUMAN_RESERVED=1`, `STALE_POLICY_PROJECTION=9`, `UNRESOLVED=4`, `GOVERNED_EXECUTE=0`.
-- Las nueve `STALE_POLICY_PROJECTION` solo admiten tratamiento read-only `TRACE_AND_CONTINUE`; siguen sin `CURRENT_BINDING` materializado.
-- Las cuatro `UNRESOLVED` siguen bloqueadas por `NO_D_RECTOR_ID`: `CODEX_CLOUD-ACTOR-010`, `GITHUB-ACTOR-009`, `MICROSOFT_365-ACTOR-006` y `MICROSOFT_365-ACTOR-008`.
+- La matriz W1-B clasifica 14/14 `AUTHORIZATION_REQUIRED`: `HUMAN_RESERVED=1`, `STALE_POLICY_PROJECTION=13`, `UNRESOLVED=0`, `GOVERNED_EXECUTE=0`.
+- Las trece `STALE_POLICY_PROJECTION` quedan `RETIRE_AS_STALE / PENDING_SOURCE_OWNER_RETIREMENT`; la cola viva no fue modificada y ninguna fila recibió un `CURRENT_BINDING` inferido.
+- Las cuatro antiguas `NO_D_RECTOR_ID` conservan `candidate_count=0`, `exact_binding=NONE` y `proposed_binding=NONE`; su resolución es retiro de una tupla legacy cruzada, no promoción de un agente por superficie.
 - `ESCRIBANIA-AUTH-001` queda `HUMAN_RESERVED` para `P031-P034`.
 - Validadores frescos:
   - `project-cdx` W1: `git diff --check` PASS; `local_validate_agent_layer.ps1 -SkipWorkflowNestedValidators` PASS con 3 warnings esperados; `local_validate_skill_metadata.ps1` PASS; `local_validate_parallel_order_governance.ps1` PASS.
-  - Preflight de publicación `project-cdx`: `local_validate_operational_chain.ps1` ERROR por `.github/PULL_REQUEST_TEMPLATE.md` ausente; `local_validate_agents_instruction_hierarchy.ps1` FAIL (12 en el worktree W1 y 9 en el chain distribuido existente). Cinco validadores D fueron encontrados pero quedaron `NOT_APPLICABLE_AS_IS`; el validador de topología quedó `NO_DISPONIBLE`.
+  - Preflight repo-local `project-cdx`: `local_validate_operational_chain.ps1` PASS y `local_validate_agents_instruction_hierarchy.ps1` PASS con raíces exactas; plantillas GitHub y contrato de jerarquía quedaron materializados sin defaults Cabina absolutos.
   - Chain propietario `C:/CEO/project-cdx`: `local_validate_capability_use_hardening.ps1` permite read-only.
   - TGE: `python scripts/validators/tge_live_runtime_parallel_canon_validator.py` PASS.
   - Seshat: `ci/validate_repo.ps1` PASS.
@@ -43,24 +43,23 @@ MERGES_OR_CLOSES=false
 ## Inferred
 
 - Los cambios downstream reducen contradicciones de lectura: TGE no convierte elegibilidad en autoridad; Seshat clasifica reglas legacy sin inferir runtime; Compliance separa control documental, runtime control, historical y human reserved.
-- Esta inferencia no equivale a cierre del gate porque no materializa los cuatro `NO_D_RECTOR_ID` ni importa las nueve proyecciones stale.
+- Esta inferencia no equivale a cierre del gate porque las trece decisiones de retiro todavía no tienen receipt del owner de la cola fuente.
 
 ## Pending
 
-- Resolver exactamente los cuatro `NO_D_RECTOR_ID` con owner, authority, target surface, validator y binding materializado.
-- Materializar o retirar por decisión explícita las nueve proyecciones `DERIVED_NOT_IMPORTED`.
+- Obtener del owner de la cola fuente la materialización y receipts de retiro para las trece proyecciones `DERIVED_NOT_IMPORTED`.
 - Registrar decisión humana para `ESCRIBANIA-AUTH-001` / `P031-P034`.
 - Proveer validador repo-native para Compliance o declarar formalmente su reemplazo.
-- Resolver la preflight de `project-cdx` antes de publicar su rama local `codex/w1-reconcile-20260826`.
+- Completar la cobertura externa de validadores que permanece `NOT_APPLICABLE_AS_IS` o `NO_DISPONIBLE`; no inventar equivalencias repo-locales.
 - Observar checks downstream cuando GitHub los materialice; el snapshot inmediato posterior al push no expone checks.
 - Ejecutar canary end-to-end luego de que `projec-cdx#44` sea admitido.
 
 ## Blocked
 
 ```text
-PRIMARY_BLOCKER=PROJEC_CDX_44_CURRENT_BINDING_NOT_ADMITTED
-CURRENT_BINDING_GAPS_HARD=4
-NON_MATERIALIZED_PROJECTIONS=9
+PRIMARY_BLOCKER=SOURCE_RETIREMENT_NOT_MATERIALIZED
+CURRENT_BINDING_GAPS_HARD=0
+NON_MATERIALIZED_PROJECTIONS=13
 HUMAN_RESERVED_DECISION=1
 COMPLIANCE_REPO_NATIVE_VALIDATOR=NO_DISPONIBLE
 END_TO_END_CANARY_PROVEN=false
@@ -68,8 +67,8 @@ END_TO_END_CANARY_PROVEN=false
 
 ## Path to Ready
 
-1. Resolver las cuatro filas `UNRESOLVED` sin inferencia semántica.
-2. Importar o retirar formalmente las nueve `STALE_POLICY_PROJECTION`.
+1. Materializar por el owner de fuente los trece retiros stale y devolver receipts 13/13.
+2. Verificar que no se promovió ningún binding por inferencia y que la reserva humana quedó intacta.
 3. Obtener o registrar la decisión humana para `ESCRIBANIA-AUTH-001`.
 4. Correr nuevamente validadores rectores y downstream.
 5. Confirmar checks de PRs `#81`, `#12` y `#10`; las ramas y los cuerpos ya fueron publicados/actualizados.
@@ -110,5 +109,5 @@ validador=project_cdx_validators|tge_live_runtime_parallel_canon_validator|sesha
 riesgo=false_green_from_unmaterialized_binding
 rollback=remove_w1_artifacts_and_revert_repo_local_edits_only
 stop_condition=current_binding_not_admitted_or_external_write_requested
-proximos_carriles=resolve_no_d_rector_id|materialize_or_retire_stale_projections|human_reserved_decision|publish_pr_updates|canary
+proximos_carriles=source_owner_retirement|human_reserved_decision|external_validator_coverage|downstream_checks|canary
 ```
