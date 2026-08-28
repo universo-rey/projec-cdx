@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-08-28T23:14:57Z",
-  "total": 1,
+  "generated_at_utc": "2026-08-28T23:44:13Z",
+  "total": 2,
   "snapshots": [
     {
       "snapshot_id": "CEORUNTIME_20260828_2314",
@@ -13,6 +13,17 @@
       "dirty": true,
       "global_hash": "d9dae3665b0e7b8cd846c0c8221a82a0db93832dc068ee61dff1337ef108ffa9",
       "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260828_2314.json"
+    },
+    {
+      "snapshot_id": "CEORUNTIME_20260828_2344",
+      "version": "v0.6.0-rc1",
+      "commit": "152c3b6b0704dab114bd0c731496d444756b4a18",
+      "branch": "codex/w5c-projec14-openai-agents-0176-20260828",
+      "fecha": "2026-08-28T23:44:12Z",
+      "tipo": "pre-merge",
+      "dirty": true,
+      "global_hash": "9d7d66c19f8f0acfb7e676ac172c3bb62e11b1e1dc9298043eb11cc44a3c5f25",
+      "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260828_2344.json"
     }
   ]
 }
