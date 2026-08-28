@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "snapshot_id": "CEORUNTIME_20260828_2314",
+  "version": "v0.6.0-rc1",
+  "event_type": "pre-merge",
+  "created_at_utc": "2026-08-28T23:14:57Z",
+  "repo_root": "C:\\CEO\\worktrees\\w5b-projec-cdx-python-deps-20260828",
+  "git": {
+    "ref": "HEAD",
+    "commit": "e5d9da2d991d9b1667d774857e60ddaeb85488b2",
+    "branch": "codex/w5b-consolidate-python-dependencies-20260828",
+    "tags": [],
+    "dirty": true,
+    "status": [
+      " M pyproject.toml"
+    ]
+  },
+  "structure": {
+    "directories": [
+      ".agents",
+      ".codex",
+      ".github",
+      ".sdu",
+      ".vscode",
+      "atomic",
+      "contracts",
+      "dataverse",
+      "docs",
+      "graphify-out",
+      "hitos",
+      "inventarios",
+      "launch-desk",
+      "noc",
+      "noc-web",
+      "operativa",
+      "outputs",
+      "packages",
+      "patrones",
+      "playbooks",
+      "procesos",
+      "recipes",
+      "src",
+      "tests",
+      "tools",
+      "work",
+      "workbooks"
+    ],
+    "files": [
+      ".gitignore",
+      ".graphifyignore",
+      "AGENTS.md",
+      "CONTRIBUTING.md",
+      "README.md",
+      "index.json",
+      "main.py",
+      "pyproject.toml",
+      "schema.json"
+    ]
+  },
+  "metadata": {
+    "index_sha256": "9eada6d85118b86a057cf457c332e70cfd99af1ebc186222b1631b1e5c454c8e",
+    "live_manifest_sha256": null,
+    "metadata_count": 61,
+    "metadata_keys": [
+      "docs/MAPA.md",
+      "docs/apendices/adr-template.md",
+      "docs/apendices/index.md",
+      "docs/apendices/plantilla-ficha-matriz.md",
+      "docs/apendices/plantilla-operativa.md",
+      "docs/arquitectura/decisiones/index.md",
+      "docs/arquitectura/index.md",
+      "docs/arquitectura/mapa.md",
+      "docs/datos/index.md",
+      "docs/datos/manifiestos/index.md",
+      "docs/datos/matrices/index.md",
+      "docs/gobernanza/calidad.md",
+      "docs/gobernanza/index.md",
+      "docs/gobernanza/nomenclatura.md",
+      "docs/gobernanza/versionado.md",
+      "docs/herramientas/cli-metadata.md",
+      "docs/herramientas/index.md",
+      "docs/herramientas/pipelines/index.md",
+      "docs/index.md",
+      "docs/modelos/index.md",
+      "docs/operativa/actas/index.md",
+      "docs/operativa/cortes/index.md",
+      "docs/operativa/cronologia/cronologia-maestra.md",
+      "docs/operativa/cronologia/index.md",
+      "docs/operativa/index.md",
+      "docs/operativa/planes/index.md",
+      "docs/operativa/procesos/index.md",
+      "docs/operativa/readbacks/index.md",
+      "docs/referencia/AGENTS.reference.md",
+      "docs/referencia/README.reference.md",
+      "docs/referencia/glosario.md",
+      "docs/referencia/index.md",
+      "docs/workbooks/index.md",
+      "operativa/ACTA_CONSTITUTIVA_CIERRE_20260615_20260616.md",
+      "operativa/BRANCH_ORGANIZATION_20260618",
+      "operativa/CLOUD_DATAVERSE_PREFLIGHT_20260617",
+      "operativa/CRONOLOGIA_MAESTRA_20260617.md",
+      "operativa/DATAVERSE_POWER_PLATFORM_LIVE_SUMMARY_20260616",
+      "operativa/MAPA.md",
+      "operativa/MAPA_CORTO.md",
+      "operativa/MATRIZ_PLAN_MAESTRO_ATOMICO_20260617",
+      "operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616",
+      "operativa/MATRIZ_PRELIMINAR_DELTAS_CIERRE_TOTAL_20260616.md",
+      "operativa/MATRIZ_REPOS_GIT_MAIN_ONLY_20260615.md",
+      "operativa/ORDEN_DESPACHO_AGENTES_WAVE_ATOMICA_METADATA_20260616.md",
+      "operativa/ORDEN_PROMOCION_HUELLA_ATOMICA_TENANT_DATAVERSE_20260616.md",
+      "operativa/ORDEN_PROMOCION_SESHAT_HOME_SHAREPOINT_20260616.md",
+      "operativa/PENDIENTES_HOY_20260617.md",
+      "operativa/PLAN_MAESTRO_ATOMICO_TENANT_DATAVERSE_CODEX_CLOUD_20260617.md",
+      "operativa/PLAN_PRELIMINAR_MICROSOFT_LIVE_READ_20260616.md",
+      "operativa/READBACK_CLOUD_DATAVERSE_PREFLIGHT_20260617.md",
+      "operativa/READBACK_CODEX_CLOUD_SDK_LAUNCH_20260617.md",
+      "operativa/READBACK_DATAVERSE_WORKBOOK_BINDING_20260618.md",
+      "operativa/READBACK_MAXIMO_ESTADO_REAL_SUPERFICIES_20260617.md",
+      "operativa/READBACK_MICROSOFT_UNIVERSO_LIVE_20260616.md",
+      "operativa/READBACK_NOC_CONTENCION_20260628.md",
+      "operativa/READBACK_SERVICIOS_PERSISTENTES_20260628.md",
+      "operativa/README.md",
+      "operativa/README_CORTO.md",
+      "operativa/SESHAT_SGIN_AMBIGUOUS_CONTENT_CLASSIFICATION_20260617",
+      "operativa/START_HERE.md"
+    ],
+    "live_artifacts": []
+  },
+  "ci": {
+    "workflow_count": 6,
+    "workflows": [
+      {
+        "path": ".github/workflows/build-graph.yml",
+        "sha256": "f5176bf72513b2eb170f7d9907c34a8de7215a55039b076e65ab27d5388129a2"
+      },
+      {
+        "path": ".github/workflows/codeql.yml",
+        "sha256": "cf34d424e44704e698c255dc25be90f114231b1f381e33baeb297797ffd5413f"
+      },
+      {
+        "path": ".github/workflows/codex-governed.yml",
+        "sha256": "13348df439a0177be49c0fedc3baca5984ec0cb303bb1b11274aee333134f735"
+      },
+      {
+        "path": ".github/workflows/meta-validate.yml",
+        "sha256": "0adc065f4d89fff8c3098c9d73d355db548ddf9b53d643ffed9bebfbf563819c"
+      },
+      {
+        "path": ".github/workflows/promote.yml",
+        "sha256": "ba5bf61382167764398085a69adc765857a09f0b0b91e107da94c7e113f23691"
+      },
+      {
+        "path": ".github/workflows/quality.yml",
+        "sha256": "4c0083ae8e4e498df7beb444aeea63c3e839c0ce5bbd0673166e13a818b8ebe5"
+      }
+    ]
+  },
+  "watched_hashes": {
+    "schema.json": "a4f12be32a968c2238077a9775ff2bd7aa965af9d5422f883bfb47ed14e8f44d",
+    "index.json": "9eada6d85118b86a057cf457c332e70cfd99af1ebc186222b1631b1e5c454c8e",
+    "pyproject.toml": "92b9420891508a139af5798e84711914bd8b48830feb9f2ab46be8071068bcf1",
+    ".github/workflows/build-graph.yml": "f5176bf72513b2eb170f7d9907c34a8de7215a55039b076e65ab27d5388129a2",
+    ".github/workflows/codeql.yml": "cf34d424e44704e698c255dc25be90f114231b1f381e33baeb297797ffd5413f",
+    ".github/workflows/meta-validate.yml": "0adc065f4d89fff8c3098c9d73d355db548ddf9b53d643ffed9bebfbf563819c",
+    ".github/workflows/quality.yml": "4c0083ae8e4e498df7beb444aeea63c3e839c0ce5bbd0673166e13a818b8ebe5"
+  },
+  "tree": {
+    "tracked_file_count": 3293,
+    "tree_hash": "c545972b0f5562582862fbfdb8c80acfd1160671f6f3f562f1d82fed1abaf27c"
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26340-SP0",
+    "python_version": "3.14.6",
+    "python_executable": "C:\\CEO\\.venvs\\sdu-v35\\Scripts\\python.exe",
+    "cwd": "C:\\CEO\\worktrees\\w5b-projec-cdx-python-deps-20260828",
+    "env_keys_present": {
+      "CEO_ROOT": true,
+      "CEO_PROJECT_ROOT": true,
+      "CODEX_HOME": true,
+      "CODEX_START_ROOT": true,
+      "CODEX_PROJECT_ROOT": true,
+      "CODEX_WORKBENCH_ROOT": true,
+      "CODEX_METADATA_ROOT": true,
+      "CODEX_SOURCE_TREE_PATH": true,
+      "CODEX_WORKTREE_PATH": false,
+      "CODEX_PAC_PATH": false
+    }
+  },
+  "agents_active": [
+    "thot-tecnico",
+    "maat-cumplimiento",
+    "horus-riesgo",
+    "anubis-gate",
+    "seshat-normativa",
+    "sentinel-runtime",
+    "narrador-normativo",
+    "EATOMIC"
+  ],
+  "gates": {
+    "merge_requires_snapshot": true,
+    "release_requires_snapshot_and_checks": true,
+    "restore_requires_clean_workspace": true,
+    "live_requires_explicit_gate": true
+  },
+  "restore_policy": {
+    "requires_clean_workspace": true,
+    "requires_explicit_yes": true,
+    "default_mode": "DRY_RUN",
+    "pre_restore_backup": true
+  },
+  "global_hash": "d9dae3665b0e7b8cd846c0c8221a82a0db93832dc068ee61dff1337ef108ffa9"
+}

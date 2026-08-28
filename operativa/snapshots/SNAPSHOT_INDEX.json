@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-28T23:14:57Z",
+  "total": 1,
+  "snapshots": [
+    {
+      "snapshot_id": "CEORUNTIME_20260828_2314",
+      "version": "v0.6.0-rc1",
+      "commit": "e5d9da2d991d9b1667d774857e60ddaeb85488b2",
+      "branch": "codex/w5b-consolidate-python-dependencies-20260828",
+      "fecha": "2026-08-28T23:14:57Z",
+      "tipo": "pre-merge",
+      "dirty": true,
+      "global_hash": "d9dae3665b0e7b8cd846c0c8221a82a0db93832dc068ee61dff1337ef108ffa9",
+      "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260828_2314.json"
+    }
+  ]
+}
