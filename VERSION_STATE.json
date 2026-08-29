@@ -3,14 +3,15 @@
   "mode": "OPERACION_CONTINUA_GOBERNADA",
   "version_actual": "v0.6.0-rc1",
   "baseline_version": "v0.6.0-rc1",
-  "branch": "codex/w5b-consolidate-python-dependencies-20260828",
-  "commit": "e5d9da2d991d9b1667d774857e60ddaeb85488b2",
-  "commits_ahead_baseline": 11,
-  "generated_at_utc": "2026-08-28T23:14:57Z",
+  "branch": "codex/w5c-projec14-openai-agents-0176-20260828",
+  "commit": "152c3b6b0704dab114bd0c731496d444756b4a18",
+  "commits_ahead_baseline": 12,
+  "generated_at_utc": "2026-08-28T23:44:13Z",
   "dirty": true,
   "status": [
+    " M operativa/snapshots/SNAPSHOT_INDEX.json",
     " M pyproject.toml",
-    "?? operativa/snapshots/"
+    "?? operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260828_2344.json"
   ],
   "rules": {
     "merge_to_main": "PATCH",
@@ -51,14 +52,14 @@
     "EATOMIC"
   ],
   "latest_snapshot": {
-    "snapshot_id": "CEORUNTIME_20260828_2314",
+    "snapshot_id": "CEORUNTIME_20260828_2344",
     "version": "v0.6.0-rc1",
-    "commit": "e5d9da2d991d9b1667d774857e60ddaeb85488b2",
-    "branch": "codex/w5b-consolidate-python-dependencies-20260828",
-    "fecha": "2026-08-28T23:14:57Z",
+    "commit": "152c3b6b0704dab114bd0c731496d444756b4a18",
+    "branch": "codex/w5c-projec14-openai-agents-0176-20260828",
+    "fecha": "2026-08-28T23:44:12Z",
     "tipo": "pre-merge",
     "dirty": true,
-    "global_hash": "d9dae3665b0e7b8cd846c0c8221a82a0db93832dc068ee61dff1337ef108ffa9",
-    "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260828_2314.json"
+    "global_hash": "9d7d66c19f8f0acfb7e676ac172c3bb62e11b1e1dc9298043eb11cc44a3c5f25",
+    "path": "operativa/snapshots/v0.6.0-rc1/CEORUNTIME_20260828_2344.json"
   }
 }
