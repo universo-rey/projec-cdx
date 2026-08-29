@@ -134,3 +134,27 @@ def test_top_level_current_route_is_supported_as_non_historical_fallback():
     assert result["route_available"] is True
     assert result["primary_profile"] == "SDU-CODEX-LOCAL"
     assert result["selection_source"] == "V42_EXACT_ROUTE"
+
+
+def test_explicit_empty_visible_route_does_not_reuse_stale_top_level_route():
+    result = build_system_intent_response(
+        {
+            "visible_operation": {
+                "correlation_id": "SYSTEM-SCHEDULED-20260829-CURRENT",
+                "intent_profile_routing": {},
+            },
+            "intent_profile_routing": {
+                "status": "FUNCTIONAL_TECHNICAL_PROFILE_RESOLVED",
+                "primary_profile": "STALE-PROFILE",
+                "selection_source": "PRIOR_V42_ROUTE",
+                "launch_allowed": True,
+                "external_write_allowed": False,
+            },
+        }
+    )
+
+    assert result["route_available"] is False
+    assert result["status"] == "ROUTING_NOT_AVAILABLE"
+    assert result["launch_allowed"] is False
+    assert result["current"]["correlation_id"] == "SYSTEM-SCHEDULED-20260829-CURRENT"
+    assert "primary_profile" not in result

@@ -37,9 +37,8 @@ def extract_current_intent_routing(system_state: Mapping[str, Any]) -> dict[str,
     state = _mapping(system_state)
     visible_operation = _mapping(state.get("visible_operation"))
 
-    routing = _mapping(visible_operation.get("intent_profile_routing"))
-    if routing:
-        return routing
+    if "intent_profile_routing" in visible_operation:
+        return _mapping(visible_operation.get("intent_profile_routing"))
 
     routing = _mapping(state.get("intent_profile_routing"))
     if routing:
