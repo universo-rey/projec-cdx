@@ -14,6 +14,107 @@ $errors = [System.Collections.Generic.List[string]]::new()
 $secretHits = 0
 $derivedDecision = 'INSUFFICIENT_EVIDENCE'
 
+function ConvertTo-StringArray {
+  param([object[]]$Values)
+  [string[]]$result = @($Values | ForEach-Object { [string]$_ })
+  return ,$result
+}
+
+function Add-Error {
+  param([string]$Message)
+  $script:errors.Add($Message)
+}
+
+function Invoke-LocalGitRead {
+  param([string[]]$Arguments)
+  $output = & git -C $RepoRoot @Arguments 2>&1
+  if ($LASTEXITCODE -ne 0) {
+    Add-Error "Local git read failed: git $($Arguments -join ' ')"
+    return $null
+  }
+  return ,(ConvertTo-StringArray -Values $output)
+}
+
+function Normalize-PathToken {
+  param([string]$Value)
+  return (($Value -replace '\\', '/').TrimStart('./'))
+}
+
+function New-OrdinalSet {
+  param([string[]]$Values)
+  $set = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+  foreach ($value in @($Values)) {
+    if (-not [string]::IsNullOrWhiteSpace($value)) {
+      [void]$set.Add((Normalize-PathToken $value))
+    }
+  }
+  return ,$set
+}
+
+function Get-GitBlobSha256 {
+  param(
+    [Parameter(Mandatory)][string]$RepositoryRoot,
+    [Parameter(Mandatory)][string]$CommitSha,
+    [Parameter(Mandatory)][string]$Path
+  )
+
+  $startInfo = [System.Diagnostics.ProcessStartInfo]::new()
+  $startInfo.FileName = 'git'
+  $startInfo.UseShellExecute = $false
+  $startInfo.CreateNoWindow = $true
+  $startInfo.RedirectStandardOutput = $true
+  $startInfo.RedirectStandardError = $true
+  foreach ($argument in @('-C', $RepositoryRoot, 'cat-file', 'blob', "$CommitSha`:$Path")) {
+    [void]$startInfo.ArgumentList.Add($argument)
+  }
+
+  $process = [System.Diagnostics.Process]::new()
+  $process.StartInfo = $startInfo
+  $buffer = [System.IO.MemoryStream]::new()
+  $processStarted = $false
+  try {
+    [void]$process.Start()
+    $processStarted = $true
+    $errorRead = $process.StandardError.ReadToEndAsync()
+    $outputCopy = $process.StandardOutput.BaseStream.CopyToAsync($buffer)
+    $exitWait = $process.WaitForExitAsync()
+    $completion = [System.Threading.Tasks.Task]::WhenAll([System.Threading.Tasks.Task[]]@($outputCopy, $errorRead, $exitWait))
+    if (-not $completion.Wait([TimeSpan]::FromSeconds(15))) {
+      throw "Git blob read timed out for $Path at $CommitSha"
+    }
+    $errorText = $errorRead.GetAwaiter().GetResult()
+    if ($process.ExitCode -ne 0) {
+      throw "Git blob read failed for $Path at $CommitSha`: $($errorText.Trim())"
+    }
+    $sha256 = [System.Security.Cryptography.SHA256]::Create()
+    try {
+      return [Convert]::ToHexString($sha256.ComputeHash($buffer.ToArray()))
+    } finally {
+      $sha256.Dispose()
+    }
+  } finally {
+    if ($processStarted -and -not $process.HasExited) {
+      $process.Kill($true)
+      $process.WaitForExit()
+    }
+    $buffer.Dispose()
+    $process.Dispose()
+  }
+}
+
+function Get-ExpectedHeadFileSha256 {
+  param(
+    [string]$RepositoryRoot,
+    [string]$CommitSha,
+    [string]$Path,
+    [scriptblock]$BlobHashProvider
+  )
+  if ($BlobHashProvider) {
+    return [string](& $BlobHashProvider $RepositoryRoot $CommitSha $Path)
+  }
+  return Get-GitBlobSha256 -RepositoryRoot $RepositoryRoot -CommitSha $CommitSha -Path $Path
+}
+
 if ($SelfTest) {
   $selfErrors = [System.Collections.Generic.List[string]]::new()
   $toolPath = $MyInvocation.MyCommand.Path
@@ -50,6 +151,61 @@ if ($SelfTest) {
     $count = @((Import-Csv -LiteralPath $toolGovernancePath) | Where-Object tool_id -eq 'tool.local_validate_baseline_differential_dependency').Count
     if ($count -ne 1) { $selfErrors.Add("Tool governance count must be 1; found $count") }
   }
+  $syntheticSha = '0123456789abcdef0123456789abcdef01234567'
+  $singleLine = ConvertTo-StringArray -Values @($syntheticSha)
+  if (-not ($singleLine -is [string[]]) -or $singleLine.Count -ne 1 -or $singleLine[0] -ne $syntheticSha) {
+    $selfErrors.Add('Single-line Git output was not preserved as String[1].')
+  }
+  $multipleLines = ConvertTo-StringArray -Values @('first', 'second')
+  if (-not ($multipleLines -is [string[]]) -or $multipleLines.Count -ne 2 -or $multipleLines[0] -ne 'first' -or $multipleLines[1] -ne 'second') {
+    $selfErrors.Add('Multi-line Git output order or cardinality was not preserved.')
+  }
+  $emptyLines = ConvertTo-StringArray -Values @()
+  if (-not ($emptyLines -is [string[]]) -or $emptyLines.Count -ne 0) {
+    $selfErrors.Add('Empty Git output was not preserved as String[0].')
+  }
+  $singleAllowedSet = New-OrdinalSet -Values @('dir/package.json')
+  if (-not ($singleAllowedSet -is [System.Collections.Generic.HashSet[string]]) -or
+      $singleAllowedSet.Count -ne 1 -or
+      -not $singleAllowedSet.Contains('dir/package.json') -or
+      $singleAllowedSet.Contains('package.json') -or
+      $singleAllowedSet.Contains('x/dir/package.json')) {
+    $selfErrors.Add('Single-entry allowlist did not retain exact ordinal HashSet membership.')
+  }
+  $syntheticHeadHash = ('A' * 64)
+  $syntheticWorktreeHash = ('B' * 64)
+  $selectedHash = Get-ExpectedHeadFileSha256 -RepositoryRoot 'unused' -CommitSha $syntheticSha -Path 'dir/package.json' -BlobHashProvider {
+    param($fixtureRoot, $fixtureCommit, $fixturePath)
+    return $syntheticHeadHash
+  }
+  if ($selectedHash -ne $syntheticHeadHash -or $selectedHash -eq $syntheticWorktreeHash) {
+    $selfErrors.Add('Evidence hash selection did not remain bound to the declared HEAD blob.')
+  }
+  $selfRepoResult = @(& git -C $PSScriptRoot rev-parse --show-toplevel 2>$null)
+  $selfHeadResult = @(& git -C $PSScriptRoot rev-parse HEAD 2>$null)
+  if ($selfRepoResult.Count -ne 1 -or $selfHeadResult.Count -ne 1) {
+    $selfErrors.Add('Self-test could not resolve its repository and HEAD.')
+  } else {
+    $selfRepoRoot = [string]$selfRepoResult[0]
+    $selfRelativePath = ([IO.Path]::GetRelativePath($selfRepoRoot, $toolPath) -replace '\\', '/')
+    try {
+      $actualBlobHash = Get-ExpectedHeadFileSha256 -RepositoryRoot $selfRepoRoot -CommitSha ([string]$selfHeadResult[0]) -Path $selfRelativePath
+      if ($actualBlobHash -notmatch '^[0-9A-F]{64}$') {
+        $selfErrors.Add('Actual HEAD blob SHA-256 is not a canonical 64-character hexadecimal value.')
+      }
+      $missingBlobRejected = $false
+      try {
+        [void](Get-ExpectedHeadFileSha256 -RepositoryRoot $selfRepoRoot -CommitSha ([string]$selfHeadResult[0]) -Path '__w5c3_missing_blob_regression__')
+      } catch {
+        $missingBlobRejected = $true
+      }
+      if (-not $missingBlobRejected) {
+        $selfErrors.Add('Missing HEAD blob was not rejected by the binary hash reader.')
+      }
+    } catch {
+      $selfErrors.Add("Actual HEAD blob hash regression failed: $($_.Exception.Message)")
+    }
+  }
   $selfStatus = if ($selfErrors.Count -eq 0) { 'PASS' } else { 'FAIL' }
   [pscustomobject]@{
     status = $selfStatus
@@ -76,37 +232,6 @@ foreach ($required in @(
 }
 if ($ExpectedOriginalPr -lt 1) { $errors.Add('Missing or invalid ExpectedOriginalPr.') }
 if (@($AllowedDependencyPath).Count -eq 0) { $errors.Add('AllowedDependencyPath must contain at least one path.') }
-
-function Add-Error {
-  param([string]$Message)
-  $script:errors.Add($Message)
-}
-
-function Invoke-LocalGitRead {
-  param([string[]]$Arguments)
-  $output = & git -C $RepoRoot @Arguments 2>&1
-  if ($LASTEXITCODE -ne 0) {
-    Add-Error "Local git read failed: git $($Arguments -join ' ')"
-    return $null
-  }
-  return @($output | ForEach-Object { [string]$_ })
-}
-
-function Normalize-PathToken {
-  param([string]$Value)
-  return (($Value -replace '\\', '/').TrimStart('./'))
-}
-
-function New-OrdinalSet {
-  param([string[]]$Values)
-  $set = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
-  foreach ($value in @($Values)) {
-    if (-not [string]::IsNullOrWhiteSpace($value)) {
-      [void]$set.Add((Normalize-PathToken $value))
-    }
-  }
-  return $set
-}
 
 if (-not (Test-Path -LiteralPath $RepoRoot -PathType Container)) {
   Add-Error 'RepoRoot is missing.'
@@ -208,11 +333,13 @@ if ($evidence) {
     if (-not [string]::IsNullOrWhiteSpace($domainHash) -and $domainHash.ToUpperInvariant() -eq $fileHash) {
       Add-Error "Domain global_hash was conflated with file SHA-256 for $path"
     }
-    $localPath = Join-Path $RepoRoot ($path -replace '/', [IO.Path]::DirectorySeparatorChar)
-    if (-not (Test-Path -LiteralPath $localPath -PathType Leaf)) {
-      Add-Error "Hashed file is missing at checked-out head: $path"
-    } elseif ((Get-FileHash -LiteralPath $localPath -Algorithm SHA256).Hash -ne $fileHash) {
-      Add-Error "File SHA-256 mismatch for $path"
+    try {
+      $headBlobHash = Get-ExpectedHeadFileSha256 -RepositoryRoot $RepoRoot -CommitSha $ExpectedHeadSha -Path $path
+      if ($headBlobHash -ne $fileHash) {
+        Add-Error "Committed HEAD blob SHA-256 mismatch for $path"
+      }
+    } catch {
+      Add-Error "Committed HEAD blob is unavailable for $path"
     }
   }
 
