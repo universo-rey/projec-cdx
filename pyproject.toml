@@ -15,7 +15,7 @@ dependencies = [
   "openai-agents>=0.17.6",
   "pyyaml>=6.0.3",
   "tzdata>=2026.2; platform_system == 'Windows'",
-  "uvicorn>=0.50.0",
+  "uvicorn>=0.52.4",
 ]
 
 [project.optional-dependencies]
