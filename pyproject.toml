@@ -24,14 +24,14 @@ dev = [
   "matplotlib>=3.10.9",
   "pytest",
   "pytest-cov>=7.1.0",
-  "reportlab>=5.0.0",
+  "reportlab>=5.0.1",
   "ruff>=0.15.20",
 ]
 agents-sdk = ["openai-agents>=0.17.6"]
 openai-orchestration = ["openai>=2.43.0"]
 reports = [
   "matplotlib>=3.10.9",
-  "reportlab>=5.0.0",
+  "reportlab>=5.0.1",
 ]
 
 [project.scripts]
