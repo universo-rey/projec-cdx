@@ -1,7 +1,7 @@
-# Hybrid Codex runtime: CEO governed local desktop + cloud reference
+# Hybrid Codex runtime: CEO governed desktop + connected cloud reference
 # Workspace Profile: CEO / project-cdx
 # Active Project: project-cdx
-# Baseline: local governed, cloud read-observe
+# Baseline: governed identity and topology; current scope comes from the active envelope/order
 
 # ------------------------------------------------------------
 # Codex instruction discovery
@@ -28,21 +28,20 @@ CODEX_RUNTIME_SURFACE = "local-desktop"
 CODEX_DESKTOP_MODE = "governed-by-ceo-runtime"
 CODEX_RUNTIME_PROFILE = "ceo-governed-local"
 CODEX_WORKSPACE_PROFILE = "ceo-project-cdx"
-
-# ------------------------------------------------------------
-# Execution authority
-# ------------------------------------------------------------
-
-CODEX_LOCAL_AUTHORITY = "write-execute"
 CODEX_DISABLE_DESKTOP = "0"
+
+# ------------------------------------------------------------
+# Runtime availability
+# ------------------------------------------------------------
+# These fields describe available surfaces and topology only.
+# Current authority, scope and action class are resolved from the active
+# SYSTEM_ENVELOPE / governed order / promoted selector / binding.
 
 CODEX_CLOUD_ENABLED = "1"
 CODEX_CLOUD_MODE = "connected"
-CODEX_CLOUD_GATE = "read-observe"
 CODEX_CLOUD_PROFILE = "project-cdx"
-CODEX_CLOUD_MUTATION_ALLOWED = "0"
 CODEX_CLOUD_LOCAL_PATHS_MODE = "reference-only"
-CODEX_GITHUB_ACTIONS_MODE = "ci-and-manual-owner-gated-promotion"
+CODEX_GITHUB_ACTIONS_MODE = "governed-pr-lifecycle"
 
 # ------------------------------------------------------------
 # CEO governed workspace roots
@@ -68,16 +67,13 @@ CODEX_GITHUB_ENABLED = "1"
 CODEX_GITHUB_PROVIDER = "github"
 CODEX_GITHUB_BRANCH_DEFAULT = "main"
 
-# Retired local suite source root.
-# Do not declare this canonical unless it is intentionally created later.
+# Retired suite source root retained only as a topology reference.
 CODEX_RETIRED_REPOS_ROOT = "C:/CEO/repos"
 
 # ------------------------------------------------------------
 # Cloud reference metadata
 # ------------------------------------------------------------
-# These values describe intended cloud mapping.
-# They do not grant mutation authority.
-# Cloud must treat Windows absolute paths as local evidence only.
+# Windows absolute paths remain topology/evidence references for cloud tasks.
 
 CODEX_CLOUD_REPO_ROOT = "."
 CODEX_CLOUD_WORKTREE = "."
@@ -91,7 +87,6 @@ CODEX_MICROSOFT_SUITE_ENABLED = "1"
 CODEX_MICROSOFT_PROFILE = "desktop-suite"
 CODEX_PAC_PATH = "C:/CEO/tools/pac/microsoft.powerapps.cli.2.8.1/tools/pac.exe"
 
-# Optional Office / OneDrive references.
 CODEX_OFFICE_ENABLED = "1"
 CODEX_ONEDRIVE_ENABLED = "1"
 CODEX_DOCUMENTS_ROOT = "C:/Users/enzo1/Documents"
