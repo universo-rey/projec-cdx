@@ -26,8 +26,8 @@ recipe.powershell_runtime_friction_guard,03_CORTE_EJECUTORA,court.thot_schema,.a
 recipe.d_skill_availability_issue_pr_friction_review,03_CORTE_EJECUTORA,court.thot_schema,.agents\codex\recipes\recipe.d_skill_availability_issue_pr_friction_review.md,d_skill_availability_issue_pr_friction_readback
 recipe.one-flow-one-item-runtime-test,01_AUTORIDAD_Y_GATES,court.sdu_gate,.agents\codex\recipes\recipe.one-flow-one-item-runtime-test.md,runtime_safe_state_evidence
 recipe.retrospective-to-skill-propagation,03_CORTE_EJECUTORA,court.seshat_evidence,.agents\codex\recipes\recipe.retrospective-to-skill-propagation.md,retrospective_learning_package
-recipe.backreference-target-mapping-before-write,01_AUTORIDAD_Y_GATES,rey.frontier_guardian,.agents\codex\recipes\recipe.backreference-target-mapping-before-write.md,backreference_target_decision
-recipe.mapping-record-before-target-write,03_CORTE_EJECUTORA,court.seshat_evidence,.agents\codex\recipes\recipe.mapping-record-before-target-write.md,mapping_record_evidence
+recipe.backreference-target-mapping-before-effect,01_AUTORIDAD_Y_GATES,rey.frontier_guardian,.agents\codex\recipes\recipe.backreference-target-mapping-before-effect.md,backreference_target_decision
+recipe.mapping-record-before-target-effect,03_CORTE_EJECUTORA,court.seshat_evidence,.agents\codex\recipes\recipe.mapping-record-before-target-effect.md,mapping_record_evidence
 recipe.vsi_prepared_agent_task_execution,05_SOPORTE_TECNICO,codex.workspace_guardian,.agents\codex\recipes\recipe.vsi_prepared_agent_task_execution.md,vsi_task_execution_readback
 recipe.vsi_live_surface_gate_packet,01_AUTORIDAD_Y_GATES,rey.frontier_guardian,.agents\codex\recipes\recipe.vsi_live_surface_gate_packet.md,vsi_live_gate_packet
 recipe.parallel_tooling_validation_chain,03_CORTE_EJECUTORA,court.thot_schema,.agents\codex\recipes\recipe.parallel_tooling_validation_chain.md,tooling_validation_plan
