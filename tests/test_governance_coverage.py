@@ -141,6 +141,18 @@ class GovernanceCoverageTests(unittest.TestCase):
             )
             self.assertTrue(any("not reachable" in error for error in errors))
 
+    def test_rejects_ci_validator_skipped_by_failed_and_predecessor(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = (
+                "jobs:\n  test:\n    steps:\n      - run: false && python tools/validator.py\n"
+            )
+            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
+            self.assertTrue(any("not reachable" in error for error in errors))
+
     def test_rejects_ci_validator_in_statically_disabled_step(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -241,6 +253,20 @@ class GovernanceCoverageTests(unittest.TestCase):
             )
             self.assertTrue(any("no repo-local caller" in error for error in errors))
 
+    def test_rejects_validator_as_subprocess_data_argument(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            (root / "tools/caller.py").write_text(
+                'import subprocess\nsubprocess.run(["echo", "validator.py"])\n', encoding="utf-8"
+            )
+            errors = validate(
+                root, self._coverage(root, "nested"), _workflow_registry(root, "jobs: {}\n")
+            )
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
     def test_rejects_nested_validator_only_in_powershell_here_string(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -295,6 +321,24 @@ class GovernanceCoverageTests(unittest.TestCase):
                 _csv(coverage, FIELDS, rows)
                 errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
                 self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_unrelated_powershell_object_path_call(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.ps1"
+            validator.parent.mkdir()
+            validator.write_text("Write-Host ok\n", encoding="utf-8")
+            (root / "tools/example.ps1").write_text(
+                '$validator = Join-Path $Root "tools\\validator.ps1"\n'
+                "Write-Host $validator\n& $other.Path\n",
+                encoding="utf-8",
+            )
+            coverage = self._coverage(root, "nested")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = "tools/validator.ps1"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
 
     def test_rejects_validator_path_outside_repository(self):
         with tempfile.TemporaryDirectory() as directory:
