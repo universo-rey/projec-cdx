@@ -131,12 +131,34 @@ class GovernanceCoverageTests(unittest.TestCase):
             validator = root / "tools/validator.py"
             validator.parent.mkdir()
             validator.write_text("print('ok')\n", encoding="utf-8")
-            workflow = "jobs:\n  test:\n    steps:\n      - run: true || python tools/validator.py\n"
+            workflow = (
+                "jobs:\n  test:\n    steps:\n      - run: true || python tools/validator.py\n"
+            )
             errors = validate(
                 root,
                 self._coverage(root, "ci"),
                 _workflow_registry(root, workflow),
             )
+            self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_rejects_ci_validator_in_statically_disabled_step(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = "jobs:\n  test:\n    steps:\n      - if: false\n        run: python tools/validator.py\n"
+            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
+            self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_rejects_validator_as_non_script_python_argument(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = "jobs:\n  test:\n    steps:\n      - run: python tools/other.py tools/validator.py\n"
+            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
             self.assertTrue(any("not reachable" in error for error in errors))
 
     def test_rejects_historical_validator_claiming_current_coverage(self):
@@ -244,6 +266,24 @@ class GovernanceCoverageTests(unittest.TestCase):
             _csv(coverage, FIELDS, rows)
             errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
             self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_powershell_call_only_in_inline_comment_or_string(self):
+        for fake_call in ('Write-Host done # & $validator', 'Write-Host "example: & $validator"'):
+            with tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                validator = root / "tools/validator.ps1"
+                validator.parent.mkdir()
+                validator.write_text("Write-Host ok\n", encoding="utf-8")
+                (root / "tools/example.ps1").write_text(
+                    '$validator = Join-Path $Root "tools\\validator.ps1"\n' + fake_call + "\n",
+                    encoding="utf-8",
+                )
+                coverage = self._coverage(root, "nested")
+                rows = _rows(coverage)
+                rows[0]["required_validator"] = "tools/validator.ps1"
+                _csv(coverage, FIELDS, rows)
+                errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+                self.assertTrue(any("no repo-local caller" in error for error in errors))
 
     def test_rejects_validator_path_outside_repository(self):
         with tempfile.TemporaryDirectory() as directory:
