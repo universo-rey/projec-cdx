@@ -1,7 +1,7 @@
 # Receta Microsoft Live Read Preliminar
 
-Estado: `PREPARED_ONLY`.
-Live Microsoft: `NO_EJECUTADO`.
+Estado: `ACTIVE_GOVERNED_READ`.
+Live Microsoft READ: `HABILITADO_CON_BINDING_ACTUAL_Y_TARGET_EXACTO`.
 Write Microsoft: `ESPERANDO_CIERRE`.
 
 ## Primera Lectura
@@ -18,7 +18,7 @@ Aplica a:
 - SharePoint listas, solo si hay reader nativo real.
 - Teams equipos, canales, mensajes y chats.
 - Planner planes y tareas.
-- Power Platform y Dataverse, solo como metadata/read-only con gate exacto.
+- Power Platform y Dataverse, solo como metadata/read-only con binding vigente y target exacto; no requieren una orden nueva.
 
 ## Frontera
 
