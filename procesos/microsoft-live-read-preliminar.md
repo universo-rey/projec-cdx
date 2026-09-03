@@ -1,13 +1,13 @@
 # Proceso Microsoft Live Read Preliminar
 
-Estado: `PREPARED_ONLY`.
+Estado: `ACTIVE_GOVERNED_READ`.
 
 ## Entrada
 
 - Pedido explicito de pasada Microsoft preliminar.
 - Evidencia local disponible.
-- Gate de no escritura vigente.
-- Target exacto o lista corta de targets candidatos.
+- Capability autenticada, binding vigente y contrato `NO_WRITE`.
+- Target exacto y alcance minimizado; una lista candidata sólo habilita preparación local, no live.
 
 ## Algoritmo
 
@@ -16,7 +16,7 @@ Estado: `PREPARED_ONLY`.
 3. Si el target es SharePoint, iniciar por sitio exacto: `_get_site`, luego `_list_site_drives`, luego `_list_folder_items`.
 4. Si el target es Teams, iniciar por `_list_teams`, luego `_list_channels`, luego mensajes acotados si el canal queda confirmado.
 5. Si el target es Planner, iniciar por grupo/equipo confirmado, luego plan y tareas.
-6. Si el target es Dataverse o Power Platform, mantener `metadata-only` hasta tener environment, org, target, owner, rollback, postcheck y evidencia esperada.
+6. Si el target es Dataverse o Power Platform, ejecutar lectura metadata acotada cuando existan environment, org, target, owner, binding, rollback `N/A_READ_ONLY`, postcheck y evidencia esperada.
 7. Clasificar cada hallazgo como `confirmado`, `probable` o `inferido`.
 8. Registrar readback local y no declarar cierre total.
 
