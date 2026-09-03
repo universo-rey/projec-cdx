@@ -146,6 +146,7 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
             controls = []
             for character in line:
                 if quote:
+                    kept.append(character)
                     if character == quote:
                         quote = None
                     controls.append(" ")
