@@ -80,7 +80,17 @@ def _shell_invokes(commands: str, raw: str) -> bool:
                 # operand, not data passed to another script or ``python -c``.
                 script_index = 1
                 while script_index < len(segment) and segment[script_index] in {
-                    "-B", "-E", "-I", "-O", "-OO", "-P", "-q", "-s", "-S", "-u", "-v",
+                    "-B",
+                    "-E",
+                    "-I",
+                    "-O",
+                    "-OO",
+                    "-P",
+                    "-q",
+                    "-s",
+                    "-S",
+                    "-u",
+                    "-v",
                 }:
                     script_index += 1
                 if (
