@@ -65,7 +65,9 @@ def _shell_invokes(commands: str, raw: str) -> bool:
             if candidate.lstrip("\t").strip() == heredoc_delimiter:
                 heredoc_delimiter = None
             continue
-        if function_depth == 0 and re.match(r"^\s*(?:function\s+)?[A-Za-z_][\w-]*\s*(?:\(\))?\s*\{", candidate):
+        if function_depth == 0 and re.match(
+            r"^\s*(?:function\s+)?[A-Za-z_][\w-]*\s*(?:\(\))?\s*\{", candidate
+        ):
             function_depth = candidate.count("{") - candidate.count("}")
             continue
         if function_depth:
@@ -238,9 +240,7 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
             executable,
             re.IGNORECASE,
         ):
-            if re.search(
-                rf"&\s*\${re.escape(variable)}\b", invocation_text, re.IGNORECASE
-            ):
+            if re.search(rf"&\s*\${re.escape(variable)}\b", invocation_text, re.IGNORECASE):
                 callers.append(path)
                 break
             if re.search(rf"\bPath\s*=\s*\${re.escape(variable)}\b", executable) and re.search(
