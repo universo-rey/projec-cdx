@@ -6,7 +6,6 @@ import argparse
 import csv
 from pathlib import Path, PureWindowsPath
 
-
 EXECUTION_MODES = {"ci", "nested", "manual", "historical"}
 APPROVED_WORKFLOW = "APPROVED_GITHUB_ACTIONS_SURFACE"
 
@@ -72,8 +71,7 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
                     callers = [
                         path
                         for path, text in source_text.items()
-                        if path != raw
-                        and (raw in text or PureWindowsPath(raw).name in text)
+                        if path != raw and (raw in text or PureWindowsPath(raw).name in text)
                     ]
                     if not callers:
                         errors.append(
