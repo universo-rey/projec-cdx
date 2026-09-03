@@ -65,12 +65,19 @@ def _shell_invokes(commands: str, raw: str) -> bool:
                 segments.append((token, []))
             else:
                 segments[-1][1].append(token)
-        for preceding_operator, segment in segments:
+        for segment_index, (preceding_operator, segment) in enumerate(segments):
             if not segment:
                 continue
             # The right-hand side of ``||`` is skipped when the left-hand side
             # succeeds, so its mere presence cannot prove reachability.
             if preceding_operator == "||":
+                continue
+            if (
+                preceding_operator == "&&"
+                and segment_index > 0
+                and segments[segment_index - 1][1]
+                and segments[segment_index - 1][1][0].lower() == "false"
+            ):
                 continue
             executable = PureWindowsPath(segment[0]).name.lower()
             if executable in {"python", "python3"}:
@@ -133,12 +140,19 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
                         ("runpy", "run_path"),
                     }
                 )
-                if execution_api and any(
-                    isinstance(value, str) and (raw in value or basename in value)
-                    for value in (
-                        child.value for child in ast.walk(node) if isinstance(child, ast.Constant)
-                    )
-                ):
+                invoked = False
+                if execution_api and node.args:
+                    try:
+                        command = ast.literal_eval(node.args[0])
+                    except (ValueError, TypeError):
+                        command = None
+                    if isinstance(command, str):
+                        invoked = _shell_invokes(command, raw)
+                    elif isinstance(command, (list, tuple)) and command:
+                        invoked = _shell_invokes(
+                            " ".join(shlex.quote(str(item)) for item in command), raw
+                        )
+                if execution_api and invoked:
                     callers.append(path)
                     break
             continue
@@ -181,9 +195,8 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
             if re.search(rf"&\s*\${re.escape(variable)}\b", invocation_text):
                 callers.append(path)
                 break
-            variable_ref = re.compile(rf"\${re.escape(variable)}\b")
-            if len(variable_ref.findall(executable)) > 1 and re.search(
-                r"&\s*\$\w+\.Path\b", invocation_text
+            if re.search(rf"\bPath\s*=\s*\${re.escape(variable)}\b", executable) and re.search(
+                r"&\s*\$validatorSpec\.Path\b", invocation_text, re.IGNORECASE
             ):
                 callers.append(path)
                 break
