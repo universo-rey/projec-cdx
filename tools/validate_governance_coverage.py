@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import csv
 import re
+import shlex
 from pathlib import Path, PureWindowsPath
 
 import yaml
@@ -14,7 +16,14 @@ APPROVED_WORKFLOW = "APPROVED_GITHUB_ACTIONS_SURFACE"
 
 
 def _path(root: Path, raw: str) -> Path:
-    return root / PureWindowsPath(raw.strip()).as_posix()
+    windows_path = PureWindowsPath(raw.strip())
+    posix_path = Path(windows_path.as_posix())
+    if windows_path.is_absolute() or posix_path.is_absolute() or ".." in posix_path.parts:
+        raise ValueError(f"path escapes repository: {raw}")
+    candidate = (root / posix_path).resolve()
+    if not candidate.is_relative_to(root.resolve()):
+        raise ValueError(f"path escapes repository: {raw}")
+    return candidate
 
 
 def _parts(raw: str) -> list[str]:
@@ -31,22 +40,60 @@ def _workflow_commands(path: Path) -> str:
     )
 
 
+def _shell_invokes(commands: str, raw: str) -> bool:
+    module = raw.removesuffix(".py").replace("/", ".")
+    for line in commands.splitlines():
+        try:
+            tokens = shlex.split(line, comments=True, posix=True)
+        except ValueError:
+            continue
+        segments: list[list[str]] = [[]]
+        for token in tokens:
+            if token in {"&&", "||", ";", "|"}:
+                segments.append([])
+            else:
+                segments[-1].append(token)
+        for segment in segments:
+            if not segment:
+                continue
+            executable = PureWindowsPath(segment[0]).name.lower()
+            if executable in {"python", "python3"}:
+                if len(segment) >= 3 and segment[1] == "-m" and segment[2] == module:
+                    return True
+                if raw in [PureWindowsPath(token).as_posix() for token in segment[1:]]:
+                    return True
+            elif PureWindowsPath(segment[0]).as_posix() == raw:
+                return True
+    return False
+
+
 def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
     basename = PureWindowsPath(raw).name
-    direct = re.compile(
-        rf"(?:^|[;&|]\s*)(?:python(?:3)?|pwsh|powershell|&)\s+[^\n#]*{re.escape(basename)}",
-        re.MULTILINE | re.IGNORECASE,
-    )
     callers: list[str] = []
     for path, text in source_text.items():
         if path == raw:
             continue
+        if raw.endswith(".py") and path.endswith(".py"):
+            try:
+                tree = ast.parse(text)
+            except SyntaxError:
+                continue
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Call) and any(
+                    isinstance(value, str) and (raw in value or basename in value)
+                    for value in (
+                        child.value for child in ast.walk(node) if isinstance(child, ast.Constant)
+                    )
+                ):
+                    callers.append(path)
+                    break
+            continue
+        if not (raw.endswith(".ps1") and path.endswith(".ps1")):
+            continue
+        text = re.sub(r"@['\"](?s:.*?)['\"]@", "", text)
         executable = "\n".join(
             line for line in text.splitlines() if not line.lstrip().startswith("#")
         )
-        if direct.search(executable):
-            callers.append(path)
-            continue
         for variable in re.findall(
             rf"\$(\w+)\s*=\s*Join-Path[^\n#]*{re.escape(basename)}",
             executable,
@@ -72,7 +119,11 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
         for row in csv.DictReader(handle):
             if row["status"] != APPROVED_WORKFLOW:
                 continue
-            workflow = _path(root, row["path"])
+            try:
+                workflow = _path(root, row["path"])
+            except ValueError as exc:
+                errors.append(f"{row['workflow_id']}: {exc}")
+                continue
             if not workflow.is_file():
                 errors.append(f"{row['workflow_id']}: approved workflow is absent: {row['path']}")
             else:
@@ -110,21 +161,28 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
                 if not validators:
                     errors.append(f"{row['artifact_class']}: active row lacks required_validator")
                 for raw in indexes:
-                    if not _path(root, raw).exists():
+                    try:
+                        index = _path(root, raw)
+                    except ValueError as exc:
+                        errors.append(f"{row['artifact_class']}: {exc}")
+                        continue
+                    if not index.exists():
                         errors.append(f"{row['artifact_class']}: active index is absent: {raw}")
             for raw in validators:
-                validator = _path(root, raw)
+                try:
+                    validator = _path(root, raw)
+                except ValueError as exc:
+                    errors.append(f"{row['artifact_class']}: {exc}")
+                    continue
                 if mode != "historical" and not validator.is_file():
                     errors.append(f"{row['artifact_class']}: active validator is absent: {raw}")
                     continue
                 if mode == "historical":
                     continue
-                if mode == "ci" and raw not in workflow_text:
-                    module = raw.removesuffix(".py").replace("/", ".")
-                    if f"python -m {module}" not in workflow_text:
-                        errors.append(
-                            f"{row['artifact_class']}: CI validator is not reachable from an approved workflow: {raw}"
-                        )
+                if mode == "ci" and not _shell_invokes(workflow_text, raw):
+                    errors.append(
+                        f"{row['artifact_class']}: CI validator is not reachable from an approved workflow: {raw}"
+                    )
                 if mode == "nested":
                     callers = _nested_callers(raw, source_text)
                     if not callers:
