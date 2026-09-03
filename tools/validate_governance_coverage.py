@@ -4,7 +4,10 @@ from __future__ import annotations
 
 import argparse
 import csv
+import re
 from pathlib import Path, PureWindowsPath
+
+import yaml
 
 EXECUTION_MODES = {"ci", "nested", "manual", "historical"}
 APPROVED_WORKFLOW = "APPROVED_GITHUB_ACTIONS_SURFACE"
@@ -16,6 +19,49 @@ def _path(root: Path, raw: str) -> Path:
 
 def _parts(raw: str) -> list[str]:
     return [PureWindowsPath(value.strip()).as_posix() for value in raw.split("|") if value.strip()]
+
+
+def _workflow_commands(path: Path) -> str:
+    document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return "\n".join(
+        step["run"]
+        for job in (document.get("jobs") or {}).values()
+        for step in (job.get("steps") or [])
+        if isinstance(step.get("run"), str)
+    )
+
+
+def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
+    basename = PureWindowsPath(raw).name
+    direct = re.compile(
+        rf"(?:^|[;&|]\s*)(?:python(?:3)?|pwsh|powershell|&)\s+[^\n#]*{re.escape(basename)}",
+        re.MULTILINE | re.IGNORECASE,
+    )
+    callers: list[str] = []
+    for path, text in source_text.items():
+        if path == raw:
+            continue
+        executable = "\n".join(
+            line for line in text.splitlines() if not line.lstrip().startswith("#")
+        )
+        if direct.search(executable):
+            callers.append(path)
+            continue
+        for variable in re.findall(
+            rf"\$(\w+)\s*=\s*Join-Path[^\n#]*{re.escape(basename)}",
+            executable,
+            re.IGNORECASE,
+        ):
+            if re.search(rf"&\s*\${re.escape(variable)}\b", executable):
+                callers.append(path)
+                break
+            variable_ref = re.compile(rf"\${re.escape(variable)}\b")
+            if len(variable_ref.findall(executable)) > 1 and re.search(
+                r"&\s*\$\w+\.Path\b", executable
+            ):
+                callers.append(path)
+                break
+    return callers
 
 
 def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
@@ -32,7 +78,7 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
             else:
                 approved_workflows.append(workflow)
 
-    workflow_text = "\n".join(path.read_text(encoding="utf-8") for path in approved_workflows)
+    workflow_text = "\n".join(_workflow_commands(path) for path in approved_workflows)
     source_text: dict[str, str] = {}
     for suffix in ("*.py", "*.ps1"):
         for path in root.rglob(suffix):
@@ -68,11 +114,7 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
                             f"{row['artifact_class']}: CI validator is not reachable from an approved workflow: {raw}"
                         )
                 if mode == "nested":
-                    callers = [
-                        path
-                        for path, text in source_text.items()
-                        if path != raw and (raw in text or PureWindowsPath(raw).name in text)
-                    ]
+                    callers = _nested_callers(raw, source_text)
                     if not callers:
                         errors.append(
                             f"{row['artifact_class']}: nested validator has no repo-local caller: {raw}"

@@ -85,9 +85,26 @@ class GovernanceCoverageTests(unittest.TestCase):
             errors = validate(
                 root,
                 self._coverage(root, "ci"),
-                _workflow_registry(root, "run: python tools/validator.py\n"),
+                _workflow_registry(
+                    root,
+                    "jobs:\n  test:\n    steps:\n      - run: python tools/validator.py\n",
+                ),
             )
             self.assertEqual(errors, [])
+
+    def test_rejects_ci_validator_only_mentioned_outside_run(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = "name: test\njobs:\n  test:\n    steps:\n      - name: tools/validator.py\n        env:\n          VALIDATOR: tools/validator.py\n        run: python -m tools.other\n"
+            errors = validate(
+                root,
+                self._coverage(root, "ci"),
+                _workflow_registry(root, workflow),
+            )
+            self.assertTrue(any("not reachable" in error for error in errors))
 
     def test_rejects_historical_validator_claiming_current_coverage(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -98,6 +115,20 @@ class GovernanceCoverageTests(unittest.TestCase):
             self.assertTrue(
                 any("historical validator cannot claim covered" in error for error in errors)
             )
+
+    def test_rejects_nested_validator_only_mentioned_as_data(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            (root / "tools/catalog.py").write_text('VALIDATOR = "validator.py"\n', encoding="utf-8")
+            errors = validate(
+                root,
+                self._coverage(root, "nested"),
+                _workflow_registry(root, "jobs: {}\n"),
+            )
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
 
 
 if __name__ == "__main__":
