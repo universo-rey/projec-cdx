@@ -59,7 +59,7 @@ def _shell_invokes(commands: str, raw: str) -> bool:
     executable_lines = []
     function_depth = 0
     for candidate in commands.splitlines():
-        if function_depth == 0 and re.match(r"^\\s*(?:function\\s+)?[A-Za-z_][\\w-]*\\s*(?:\\(\\))?\\s*\\{", candidate):
+        if function_depth == 0 and re.match(r"^\s*(?:function\s+)?[A-Za-z_][\w-]*\s*(?:\(\))?\s*\{", candidate):
             function_depth = candidate.count("{") - candidate.count("}")
             continue
         if function_depth:

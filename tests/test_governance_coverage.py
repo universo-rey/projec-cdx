@@ -68,6 +68,19 @@ class GovernanceCoverageTests(unittest.TestCase):
         )
         return coverage
 
+    def test_microsoft_read_recipe_preserves_low_by_default_policy(self):
+        repo = Path(__file__).resolve().parents[1]
+        for relative in (
+            "recipes/microsoft-live-read-preliminar.md",
+            "procesos/microsoft-live-read-preliminar.md",
+        ):
+            text = (repo / relative).read_text(encoding="utf-8")
+            self.assertIn("LOW_BY_DEFAULT", text)
+            self.assertIn("BLOCKED_NOT_EXECUTABLE", text)
+            self.assertIn("sin elevar el tier" if relative.startswith("recipes/") else "conservando el tier", text)
+        recipe = (repo / "recipes/microsoft-live-read-preliminar.md").read_text(encoding="utf-8")
+        self.assertNotIn("live_surface_without_order", recipe)
+
     def test_rejects_ci_validator_present_but_not_reachable(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -363,8 +376,8 @@ class GovernanceCoverageTests(unittest.TestCase):
             root = Path(directory)
             validator = root / "tools/validator.py"
             validator.parent.mkdir()
-            validator.write_text("print('ok')\\n", encoding="utf-8")
-            workflow = "jobs:\\n  test:\\n    steps:\\n      - run: |\\n          helper() {\\n            python tools/validator.py\\n          }\\n"
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = "jobs:\n  test:\n    steps:\n      - run: |\n          helper() {\n            python tools/validator.py\n          }\n"
             errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
             self.assertTrue(any("not reachable" in error for error in errors))
 
@@ -373,12 +386,12 @@ class GovernanceCoverageTests(unittest.TestCase):
             root = Path(directory)
             validator = root / "tools/validator.py"
             validator.parent.mkdir()
-            validator.write_text("print('ok')\\n", encoding="utf-8")
+            validator.write_text("print('ok')\n", encoding="utf-8")
             (root / "tools/caller.py").write_text(
-                'import subprocess\\nsubprocess.run("python tools/validator.py")\\n',
+                'import subprocess\nsubprocess.run("python tools/validator.py")\n',
                 encoding="utf-8",
             )
-            errors = validate(root, self._coverage(root, "nested"), _workflow_registry(root, "jobs: {}\\n"))
+            errors = validate(root, self._coverage(root, "nested"), _workflow_registry(root, "jobs: {}\n"))
             self.assertTrue(any("no repo-local caller" in error for error in errors))
 
     def test_rejects_multiline_powershell_string_as_caller(self):
@@ -386,17 +399,17 @@ class GovernanceCoverageTests(unittest.TestCase):
             root = Path(directory)
             validator = root / "tools/validator.ps1"
             validator.parent.mkdir()
-            validator.write_text("Write-Host ok\\n", encoding="utf-8")
+            validator.write_text("Write-Host ok\n", encoding="utf-8")
             (root / "tools/example.ps1").write_text(
-                '$validator = Join-Path $Root "tools\\\\validator.ps1"\\n'
-                'Write-Host "diagnostic\\n& $validator"\\n',
+                '$validator = Join-Path $Root "tools\\\\validator.ps1"\n'
+                'Write-Host "diagnostic\n& $validator"\n',
                 encoding="utf-8",
             )
             coverage = self._coverage(root, "nested")
             rows = _rows(coverage)
             rows[0]["required_validator"] = "tools/validator.ps1"
             _csv(coverage, FIELDS, rows)
-            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\\n"))
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
             self.assertTrue(any("no repo-local caller" in error for error in errors))
 
     def test_rejects_validator_path_outside_repository(self):

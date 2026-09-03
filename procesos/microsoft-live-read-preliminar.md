@@ -19,6 +19,13 @@ Estado: `ACTIVE_GOVERNED_READ`.
 6. Si el target es Dataverse o Power Platform, ejecutar lectura metadata acotada cuando existan environment, org, target, owner, binding, rollback `N/A_READ_ONLY`, postcheck y evidencia esperada.
 7. Clasificar cada hallazgo como `confirmado`, `probable` o `inferido`.
 8. Registrar readback local y no declarar cierre total.
+9. Si aparece un write necesario, salir de esta receta READ y clasificarlo:
+   `HIGH` sólo ante un trigger positivo objetivo; en cualquier otro caso,
+   `LOW_BY_DEFAULT`. LOW no requiere orden, allowlist ni receipt, pero sólo es
+   ejecutable con capability, binding, target acotado, precheck, rollback o
+   idempotencia, postcheck y evidencia.
+10. Si falta un prerrequisito, devolver `RESOLUTION_REQUIRED` y
+    `BLOCKED_NOT_EXECUTABLE` conservando el tier.
 
 ## Validadores
 
@@ -34,7 +41,7 @@ Estado: `ACTIVE_GOVERNED_READ`.
 | --- | --- |
 | `seshat-normativa` | Canon local, frontera y targets candidatos. |
 | `thot-tecnico` | Orden tecnico de probes y limites. |
-| `anubis-gate` | Permitidos, items en espera de cierre y condiciones de pausa. |
+| `anubis-gate` | Permitidos READ, clasificacion de writes y condiciones de pausa. |
 | `maat-cumplimiento` | Formato de evidencia, RACI y hito sugerido. |
 | `horus-riesgo` | Riesgos, mitigaciones y que no tocar. |
 | `narrador-normativo` | Frase de apertura y cierre verbal. |
@@ -45,5 +52,5 @@ La pasada queda cerrada solo como preliminar si:
 
 - el plan queda versionado;
 - el gate queda visible;
-- las tools de write quedan en espera de cierre explicito;
+- las tools de write quedan fuera de esta receta READ y con tier preservado;
 - el proximo movimiento unico exige target exacto.
