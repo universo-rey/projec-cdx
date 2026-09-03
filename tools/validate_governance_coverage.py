@@ -168,11 +168,16 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
             quote = None
             kept = []
             controls = []
+            escaped = False
             for character in line:
                 if quote:
                     kept.append(character)
-                    if character == quote:
+                    if quote == '"' and character == "`" and not escaped:
+                        escaped = True
+                    elif character == quote and not escaped:
                         quote = None
+                    else:
+                        escaped = False
                     controls.append(" ")
                 elif character in {"'", '"'}:
                     quote = character
