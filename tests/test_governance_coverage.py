@@ -147,8 +147,13 @@ class GovernanceCoverageTests(unittest.TestCase):
             validator = root / "tools/validator.py"
             validator.parent.mkdir()
             validator.write_text("print('ok')\n", encoding="utf-8")
-            workflow = "jobs:\n  test:\n    steps:\n      - if: false\n        run: python tools/validator.py\n"
-            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
+            workflow = (
+                "jobs:\n  test:\n    steps:\n      - if: false\n"
+                "        run: python tools/validator.py\n"
+            )
+            errors = validate(
+                root, self._coverage(root, "ci"), _workflow_registry(root, workflow)
+            )
             self.assertTrue(any("not reachable" in error for error in errors))
 
     def test_rejects_validator_as_non_script_python_argument(self):
@@ -157,8 +162,13 @@ class GovernanceCoverageTests(unittest.TestCase):
             validator = root / "tools/validator.py"
             validator.parent.mkdir()
             validator.write_text("print('ok')\n", encoding="utf-8")
-            workflow = "jobs:\n  test:\n    steps:\n      - run: python tools/other.py tools/validator.py\n"
-            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
+            workflow = (
+                "jobs:\n  test:\n    steps:\n"
+                "      - run: python tools/other.py tools/validator.py\n"
+            )
+            errors = validate(
+                root, self._coverage(root, "ci"), _workflow_registry(root, workflow)
+            )
             self.assertTrue(any("not reachable" in error for error in errors))
 
     def test_rejects_historical_validator_claiming_current_coverage(self):
