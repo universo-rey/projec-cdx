@@ -340,6 +340,24 @@ class GovernanceCoverageTests(unittest.TestCase):
             errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
             self.assertTrue(any("no repo-local caller" in error for error in errors))
 
+    def test_rejects_powershell_call_hidden_after_backtick_escaped_quote(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.ps1"
+            validator.parent.mkdir()
+            validator.write_text("Write-Host ok\\n", encoding="utf-8")
+            (root / "tools/example.ps1").write_text(
+                '$validator = Join-Path $Root "tools\\\\validator.ps1"\\n'
+                'Write-Host "example: `" & $validator"\\n',
+                encoding="utf-8",
+            )
+            coverage = self._coverage(root, "nested")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = "tools/validator.ps1"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\\n"))
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
     def test_rejects_validator_path_outside_repository(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
