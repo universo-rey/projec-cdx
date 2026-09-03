@@ -18,11 +18,7 @@ APPROVED_WORKFLOW = "APPROVED_GITHUB_ACTIONS_SURFACE"
 def _path(root: Path, raw: str) -> Path:
     windows_path = PureWindowsPath(raw.strip())
     posix_path = Path(windows_path.as_posix())
-    if (
-        windows_path.is_absolute()
-        or posix_path.is_absolute()
-        or ".." in posix_path.parts
-    ):
+    if windows_path.is_absolute() or posix_path.is_absolute() or ".." in posix_path.parts:
         raise ValueError(f"path escapes repository: {raw}")
     candidate = (root / posix_path).resolve()
     if not candidate.is_relative_to(root.resolve()):
@@ -31,11 +27,7 @@ def _path(root: Path, raw: str) -> Path:
 
 
 def _parts(raw: str) -> list[str]:
-    return [
-        PureWindowsPath(value.strip()).as_posix()
-        for value in raw.split("|")
-        if value.strip()
-    ]
+    return [PureWindowsPath(value.strip()).as_posix() for value in raw.split("|") if value.strip()]
 
 
 def _workflow_commands(path: Path) -> str:
@@ -144,9 +136,7 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
                 if execution_api and any(
                     isinstance(value, str) and (raw in value or basename in value)
                     for value in (
-                        child.value
-                        for child in ast.walk(node)
-                        if isinstance(child, ast.Constant)
+                        child.value for child in ast.walk(node) if isinstance(child, ast.Constant)
                     )
                 ):
                     callers.append(path)
@@ -214,9 +204,7 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
                 errors.append(f"{row['workflow_id']}: {exc}")
                 continue
             if not workflow.is_file():
-                errors.append(
-                    f"{row['workflow_id']}: approved workflow is absent: {row['path']}"
-                )
+                errors.append(f"{row['workflow_id']}: approved workflow is absent: {row['path']}")
             else:
                 approved_workflows.append(workflow)
 
@@ -237,9 +225,7 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
             mode = row["execution_mode"].strip().lower()
             status = row["coverage_status"].strip().lower()
             if mode not in EXECUTION_MODES:
-                errors.append(
-                    f"{row['artifact_class']}: invalid execution_mode: {mode}"
-                )
+                errors.append(f"{row['artifact_class']}: invalid execution_mode: {mode}")
                 continue
             expected_status = "historical" if mode == "historical" else "covered"
             if status != expected_status:
@@ -256,18 +242,12 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
                     errors.append(f"{row['artifact_class']}: {exc}")
             if mode != "historical":
                 if not indexes:
-                    errors.append(
-                        f"{row['artifact_class']}: active row lacks required_index"
-                    )
+                    errors.append(f"{row['artifact_class']}: active row lacks required_index")
                 if not validators:
-                    errors.append(
-                        f"{row['artifact_class']}: active row lacks required_validator"
-                    )
+                    errors.append(f"{row['artifact_class']}: active row lacks required_validator")
                 for raw, index in valid_indexes:
                     if not index.exists():
-                        errors.append(
-                            f"{row['artifact_class']}: active index is absent: {raw}"
-                        )
+                        errors.append(f"{row['artifact_class']}: active index is absent: {raw}")
             for raw in validators:
                 try:
                     validator = _path(root, raw)
@@ -275,9 +255,7 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
                     errors.append(f"{row['artifact_class']}: {exc}")
                     continue
                 if mode != "historical" and not validator.is_file():
-                    errors.append(
-                        f"{row['artifact_class']}: active validator is absent: {raw}"
-                    )
+                    errors.append(f"{row['artifact_class']}: active validator is absent: {raw}")
                     continue
                 if mode == "historical":
                     continue
