@@ -93,19 +93,31 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
             return ["coverage matrix lacks execution_mode"]
         for row in reader:
             mode = row["execution_mode"].strip().lower()
+            status = row["coverage_status"].strip().lower()
             if mode not in EXECUTION_MODES:
                 errors.append(f"{row['artifact_class']}: invalid execution_mode: {mode}")
                 continue
-            for raw in _parts(row["required_validator"]):
+            expected_status = "historical" if mode == "historical" else "covered"
+            if status != expected_status:
+                errors.append(
+                    f"{row['artifact_class']}: execution_mode={mode} requires coverage_status={expected_status}"
+                )
+            indexes = _parts(row["required_index"])
+            validators = _parts(row["required_validator"])
+            if mode != "historical":
+                if not indexes:
+                    errors.append(f"{row['artifact_class']}: active row lacks required_index")
+                if not validators:
+                    errors.append(f"{row['artifact_class']}: active row lacks required_validator")
+                for raw in indexes:
+                    if not _path(root, raw).exists():
+                        errors.append(f"{row['artifact_class']}: active index is absent: {raw}")
+            for raw in validators:
                 validator = _path(root, raw)
                 if mode != "historical" and not validator.is_file():
                     errors.append(f"{row['artifact_class']}: active validator is absent: {raw}")
                     continue
                 if mode == "historical":
-                    if row["coverage_status"].strip().lower() == "covered":
-                        errors.append(
-                            f"{row['artifact_class']}: historical validator cannot claim covered: {raw}"
-                        )
                     continue
                 if mode == "ci" and raw not in workflow_text:
                     module = raw.removesuffix(".py").replace("/", ".")
