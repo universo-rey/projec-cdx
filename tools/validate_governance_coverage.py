@@ -32,11 +32,22 @@ def _parts(raw: str) -> list[str]:
 
 def _workflow_commands(path: Path) -> str:
     document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    def disabled(value: object) -> bool:
+        if value is False:
+            return True
+        if not isinstance(value, str):
+            return False
+        normalized = re.sub(r"\s+", "", value).lower()
+        return normalized in {"false", "${{false}}"}
+
     return "\n".join(
         step["run"]
         for job in (document.get("jobs") or {}).values()
+        if isinstance(job, dict) and not disabled(job.get("if"))
         for step in (job.get("steps") or [])
-        if isinstance(step.get("run"), str)
+        if isinstance(step, dict)
+        and not disabled(step.get("if"))
+        and isinstance(step.get("run"), str)
     )
 
 
@@ -64,7 +75,18 @@ def _shell_invokes(commands: str, raw: str) -> bool:
             if executable in {"python", "python3"}:
                 if len(segment) >= 3 and segment[1] == "-m" and segment[2] == module:
                     return True
-                if raw in [PureWindowsPath(token).as_posix() for token in segment[1:]]:
+                # For direct execution the validator must be Python's script
+                # operand, not data passed to another script or ``python -c``.
+                script_index = 1
+                while script_index < len(segment) and segment[script_index] in {
+                    "-B", "-E", "-I", "-O", "-OO", "-P", "-q", "-s", "-S", "-u", "-v",
+                }:
+                    script_index += 1
+                if (
+                    script_index < len(segment)
+                    and not segment[script_index].startswith("-")
+                    and PureWindowsPath(segment[script_index]).as_posix() == raw
+                ):
                     return True
             elif PureWindowsPath(segment[0]).as_posix() == raw:
                 return True
@@ -113,20 +135,43 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
             continue
         text = re.sub(r"@['\"](?s:.*?)['\"]@", "", text)
         text = re.sub(r"<\#(?s:.*?)\#>", "", text)
-        executable = "\n".join(
-            line for line in text.splitlines() if not line.lstrip().startswith("#")
-        )
+        executable_lines = []
+        invocation_lines = []
+        for line in text.splitlines():
+            if line.lstrip().startswith("#"):
+                continue
+            quote = None
+            kept = []
+            controls = []
+            for character in line:
+                if quote:
+                    if character == quote:
+                        quote = None
+                    controls.append(" ")
+                elif character in {"'", '"'}:
+                    quote = character
+                    kept.append(character)
+                    controls.append(" ")
+                elif character == "#":
+                    break
+                else:
+                    kept.append(character)
+                    controls.append(character)
+            executable_lines.append("".join(kept))
+            invocation_lines.append("".join(controls))
+        executable = "\n".join(executable_lines)
+        invocation_text = "\n".join(invocation_lines)
         for variable in re.findall(
             rf"\$(\w+)\s*=\s*Join-Path[^\n#]*{re.escape(basename)}",
             executable,
             re.IGNORECASE,
         ):
-            if re.search(rf"&\s*\${re.escape(variable)}\b", executable):
+            if re.search(rf"&\s*\${re.escape(variable)}\b", invocation_text):
                 callers.append(path)
                 break
             variable_ref = re.compile(rf"\${re.escape(variable)}\b")
             if len(variable_ref.findall(executable)) > 1 and re.search(
-                r"&\s*\$\w+\.Path\b", executable
+                r"&\s*\$\w+\.Path\b", invocation_text
             ):
                 callers.append(path)
                 break
