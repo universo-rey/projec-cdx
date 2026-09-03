@@ -12,7 +12,7 @@ dependencies = [
   "jinja2>=3.1.6",
   "jsonschema>=4.26.0",
   "mcp>=1.19.0",
-  "openai-agents>=0.17.6",
+  "openai-agents>=0.22.0",
   "pyyaml>=6.0.3",
   "tzdata>=2026.2; platform_system == 'Windows'",
   "uvicorn>=0.50.0",
@@ -27,7 +27,7 @@ dev = [
   "reportlab>=5.0.1",
   "ruff>=0.15.20",
 ]
-agents-sdk = ["openai-agents>=0.17.6"]
+agents-sdk = ["openai-agents>=0.22.0"]
 openai-orchestration = ["openai>=2.43.0"]
 reports = [
   "matplotlib>=3.10.9",
