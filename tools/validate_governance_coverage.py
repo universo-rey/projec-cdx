@@ -47,14 +47,18 @@ def _shell_invokes(commands: str, raw: str) -> bool:
             tokens = shlex.split(line, comments=True, posix=True)
         except ValueError:
             continue
-        segments: list[list[str]] = [[]]
+        segments: list[tuple[str | None, list[str]]] = [(None, [])]
         for token in tokens:
             if token in {"&&", "||", ";", "|"}:
-                segments.append([])
+                segments.append((token, []))
             else:
-                segments[-1].append(token)
-        for segment in segments:
+                segments[-1][1].append(token)
+        for preceding_operator, segment in segments:
             if not segment:
+                continue
+            # The right-hand side of ``||`` is skipped when the left-hand side
+            # succeeds, so its mere presence cannot prove reachability.
+            if preceding_operator == "||":
                 continue
             executable = PureWindowsPath(segment[0]).name.lower()
             if executable in {"python", "python3"}:
@@ -79,7 +83,24 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
             except SyntaxError:
                 continue
             for node in ast.walk(tree):
-                if isinstance(node, ast.Call) and any(
+                if not isinstance(node, ast.Call):
+                    continue
+                function = node.func
+                execution_api = (
+                    isinstance(function, ast.Attribute)
+                    and isinstance(function.value, ast.Name)
+                    and (function.value.id, function.attr)
+                    in {
+                        ("subprocess", "run"),
+                        ("subprocess", "call"),
+                        ("subprocess", "check_call"),
+                        ("subprocess", "check_output"),
+                        ("subprocess", "Popen"),
+                        ("os", "system"),
+                        ("runpy", "run_path"),
+                    }
+                )
+                if execution_api and any(
                     isinstance(value, str) and (raw in value or basename in value)
                     for value in (
                         child.value for child in ast.walk(node) if isinstance(child, ast.Constant)
@@ -91,6 +112,7 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
         if not (raw.endswith(".ps1") and path.endswith(".ps1")):
             continue
         text = re.sub(r"@['\"](?s:.*?)['\"]@", "", text)
+        text = re.sub(r"<\#(?s:.*?)\#>", "", text)
         executable = "\n".join(
             line for line in text.splitlines() if not line.lstrip().startswith("#")
         )
@@ -155,17 +177,18 @@ def validate(root: Path, coverage: Path, workflows: Path) -> list[str]:
                 )
             indexes = _parts(row["required_index"])
             validators = _parts(row["required_validator"])
+            valid_indexes: list[tuple[str, Path]] = []
+            for raw in indexes:
+                try:
+                    valid_indexes.append((raw, _path(root, raw)))
+                except ValueError as exc:
+                    errors.append(f"{row['artifact_class']}: {exc}")
             if mode != "historical":
                 if not indexes:
                     errors.append(f"{row['artifact_class']}: active row lacks required_index")
                 if not validators:
                     errors.append(f"{row['artifact_class']}: active row lacks required_validator")
-                for raw in indexes:
-                    try:
-                        index = _path(root, raw)
-                    except ValueError as exc:
-                        errors.append(f"{row['artifact_class']}: {exc}")
-                        continue
+                for raw, index in valid_indexes:
                     if not index.exists():
                         errors.append(f"{row['artifact_class']}: active index is absent: {raw}")
             for raw in validators:
