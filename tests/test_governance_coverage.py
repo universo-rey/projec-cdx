@@ -131,7 +131,9 @@ class GovernanceCoverageTests(unittest.TestCase):
             validator = root / "tools/validator.py"
             validator.parent.mkdir()
             validator.write_text("print('ok')\n", encoding="utf-8")
-            workflow = "jobs:\n  test:\n    steps:\n      - run: true || python tools/validator.py\n"
+            workflow = (
+                "jobs:\n  test:\n    steps:\n      - run: true || python tools/validator.py\n"
+            )
             errors = validate(
                 root,
                 self._coverage(root, "ci"),
