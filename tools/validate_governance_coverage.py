@@ -54,7 +54,19 @@ def _workflow_commands(path: Path) -> str:
 
 def _shell_invokes(commands: str, raw: str) -> bool:
     module = raw.removesuffix(".py").replace("/", ".")
-    for line in commands.splitlines():
+    # A declaration does not execute its body. Reject function-contained
+    # commands as proof unless reachability is modeled explicitly elsewhere.
+    executable_lines = []
+    function_depth = 0
+    for candidate in commands.splitlines():
+        if function_depth == 0 and re.match(r"^\\s*(?:function\\s+)?[A-Za-z_][\\w-]*\\s*(?:\\(\\))?\\s*\\{", candidate):
+            function_depth = candidate.count("{") - candidate.count("}")
+            continue
+        if function_depth:
+            function_depth += candidate.count("{") - candidate.count("}")
+            continue
+        executable_lines.append(candidate)
+    for line in executable_lines:
         try:
             tokens = shlex.split(line, comments=True, posix=True)
         except ValueError:
@@ -147,7 +159,20 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
                     except (ValueError, TypeError):
                         command = None
                     if isinstance(command, str):
-                        invoked = _shell_invokes(command, raw)
+                        shell_enabled = any(
+                            keyword.arg == "shell"
+                            and isinstance(keyword.value, ast.Constant)
+                            and keyword.value.value is True
+                            for keyword in node.keywords
+                        )
+                        if isinstance(function.value, ast.Name) and function.value.id == "os":
+                            invoked = _shell_invokes(command, raw)
+                        elif isinstance(function.value, ast.Name) and function.value.id == "runpy":
+                            invoked = PureWindowsPath(command).as_posix() == raw
+                        elif shell_enabled:
+                            invoked = _shell_invokes(command, raw)
+                        else:
+                            invoked = PureWindowsPath(command).as_posix() == raw
                     elif isinstance(command, (list, tuple)) and command:
                         invoked = _shell_invokes(
                             " ".join(shlex.quote(str(item)) for item in command), raw
@@ -162,13 +187,13 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
         text = re.sub(r"<\#(?s:.*?)\#>", "", text)
         executable_lines = []
         invocation_lines = []
+        quote = None
+        escaped = False
         for line in text.splitlines():
             if line.lstrip().startswith("#"):
                 continue
-            quote = None
             kept = []
             controls = []
-            escaped = False
             for character in line:
                 if quote:
                     kept.append(character)
