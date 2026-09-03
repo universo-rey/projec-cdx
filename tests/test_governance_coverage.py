@@ -131,7 +131,9 @@ class GovernanceCoverageTests(unittest.TestCase):
             validator = root / "tools/validator.py"
             validator.parent.mkdir()
             validator.write_text("print('ok')\n", encoding="utf-8")
-            workflow = "jobs:\n  test:\n    steps:\n      - run: true || python tools/validator.py\n"
+            workflow = (
+                "jobs:\n  test:\n    steps:\n      - run: true || python tools/validator.py\n"
+            )
             errors = validate(
                 root,
                 self._coverage(root, "ci"),
@@ -149,9 +151,7 @@ class GovernanceCoverageTests(unittest.TestCase):
                 "jobs:\n  test:\n    steps:\n      - if: false\n"
                 "        run: python tools/validator.py\n"
             )
-            errors = validate(
-                root, self._coverage(root, "ci"), _workflow_registry(root, workflow)
-            )
+            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
             self.assertTrue(any("not reachable" in error for error in errors))
 
     def test_rejects_validator_as_non_script_python_argument(self):
@@ -164,9 +164,7 @@ class GovernanceCoverageTests(unittest.TestCase):
                 "jobs:\n  test:\n    steps:\n"
                 "      - run: python tools/other.py tools/validator.py\n"
             )
-            errors = validate(
-                root, self._coverage(root, "ci"), _workflow_registry(root, workflow)
-            )
+            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
             self.assertTrue(any("not reachable" in error for error in errors))
 
     def test_rejects_historical_validator_claiming_current_coverage(self):
@@ -177,9 +175,7 @@ class GovernanceCoverageTests(unittest.TestCase):
                 self._coverage(root, "historical"),
                 _workflow_registry(root, "run: true\n"),
             )
-            self.assertTrue(
-                any("requires coverage_status=historical" in error for error in errors)
-            )
+            self.assertTrue(any("requires coverage_status=historical" in error for error in errors))
 
     def test_rejects_active_row_without_validator(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -189,9 +185,7 @@ class GovernanceCoverageTests(unittest.TestCase):
             rows[0]["required_validator"] = ""
             _csv(coverage, FIELDS, rows)
             errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
-            self.assertTrue(
-                any("lacks required_validator" in error for error in errors)
-            )
+            self.assertTrue(any("lacks required_validator" in error for error in errors))
 
     def test_rejects_active_row_with_missing_index(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -214,9 +208,7 @@ class GovernanceCoverageTests(unittest.TestCase):
                 self._coverage(root, "manual", "historical"),
                 _workflow_registry(root, "jobs: {}\n"),
             )
-            self.assertTrue(
-                any("requires coverage_status=covered" in error for error in errors)
-            )
+            self.assertTrue(any("requires coverage_status=covered" in error for error in errors))
 
     def test_rejects_nested_validator_only_mentioned_as_data(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -224,9 +216,7 @@ class GovernanceCoverageTests(unittest.TestCase):
             validator = root / "tools/validator.py"
             validator.parent.mkdir()
             validator.write_text("print('ok')\n", encoding="utf-8")
-            (root / "tools/catalog.py").write_text(
-                'VALIDATOR = "validator.py"\n', encoding="utf-8"
-            )
+            (root / "tools/catalog.py").write_text('VALIDATOR = "validator.py"\n', encoding="utf-8")
             errors = validate(
                 root,
                 self._coverage(root, "nested"),
@@ -296,21 +286,15 @@ class GovernanceCoverageTests(unittest.TestCase):
                 validator.parent.mkdir()
                 validator.write_text("Write-Host ok\n", encoding="utf-8")
                 (root / "tools/example.ps1").write_text(
-                    '$validator = Join-Path $Root "tools\\validator.ps1"\n'
-                    + fake_call
-                    + "\n",
+                    '$validator = Join-Path $Root "tools\\validator.ps1"\n' + fake_call + "\n",
                     encoding="utf-8",
                 )
                 coverage = self._coverage(root, "nested")
                 rows = _rows(coverage)
                 rows[0]["required_validator"] = "tools/validator.ps1"
                 _csv(coverage, FIELDS, rows)
-                errors = validate(
-                    root, coverage, _workflow_registry(root, "jobs: {}\n")
-                )
-                self.assertTrue(
-                    any("no repo-local caller" in error for error in errors)
-                )
+                errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+                self.assertTrue(any("no repo-local caller" in error for error in errors))
 
     def test_rejects_validator_path_outside_repository(self):
         with tempfile.TemporaryDirectory() as directory:
