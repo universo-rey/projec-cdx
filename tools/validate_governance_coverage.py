@@ -32,6 +32,7 @@ def _parts(raw: str) -> list[str]:
 
 def _workflow_commands(path: Path) -> str:
     document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+
     def disabled(value: object) -> bool:
         if value is False:
             return True
