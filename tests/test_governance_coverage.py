@@ -26,7 +26,7 @@ def _csv(path: Path, fields: list[str], rows: list[dict[str, str]]) -> None:
 
 def _workflow_registry(root: Path, content: str) -> Path:
     workflow = root / ".github/workflows/approved.yml"
-    workflow.parent.mkdir(parents=True)
+    workflow.parent.mkdir(parents=True, exist_ok=True)
     workflow.write_text(content, encoding="utf-8")
     registry = root / "workflows.csv"
     _csv(
@@ -380,6 +380,44 @@ class GovernanceCoverageTests(unittest.TestCase):
             workflow = "jobs:\n  test:\n    steps:\n      - run: |\n          helper() {\n            python tools/validator.py\n          }\n"
             errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
             self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_rejects_validator_inside_heredoc_or_continued_echo(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            for command in (
+                "cat <<'EOF'\npython tools/validator.py\nEOF\n",
+                "echo diagnostic \\\n  python tools/validator.py\n",
+            ):
+                workflow = "jobs:\n  test:\n    steps:\n      - run: |\n" + "".join(
+                    f"          {line}\n" for line in command.splitlines()
+                )
+                errors = validate(
+                    root,
+                    self._coverage(root, "ci"),
+                    _workflow_registry(root, workflow),
+                )
+                self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_accepts_case_insensitive_powershell_variable_invocation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.ps1"
+            validator.parent.mkdir()
+            validator.write_text("Write-Host ok\n", encoding="utf-8")
+            (root / "tools/caller.ps1").write_text(
+                '$Validator = Join-Path $Root "tools\\validator.ps1"\n'
+                "& $validator\n",
+                encoding="utf-8",
+            )
+            coverage = self._coverage(root, "nested")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = "tools/validator.ps1"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertEqual(errors, [])
 
     def test_rejects_subprocess_string_without_shell(self):
         with tempfile.TemporaryDirectory() as directory:

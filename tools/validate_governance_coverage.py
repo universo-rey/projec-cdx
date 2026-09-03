@@ -56,16 +56,32 @@ def _shell_invokes(commands: str, raw: str) -> bool:
     module = raw.removesuffix(".py").replace("/", ".")
     # A declaration does not execute its body. Reject function-contained
     # commands as proof unless reachability is modeled explicitly elsewhere.
-    executable_lines = []
+    executable_lines: list[str] = []
     function_depth = 0
+    heredoc_delimiter: str | None = None
+    continuation = ""
     for candidate in commands.splitlines():
+        if heredoc_delimiter is not None:
+            if candidate.lstrip("\t").strip() == heredoc_delimiter:
+                heredoc_delimiter = None
+            continue
         if function_depth == 0 and re.match(r"^\s*(?:function\s+)?[A-Za-z_][\w-]*\s*(?:\(\))?\s*\{", candidate):
             function_depth = candidate.count("{") - candidate.count("}")
             continue
         if function_depth:
             function_depth += candidate.count("{") - candidate.count("}")
             continue
-        executable_lines.append(candidate)
+        heredoc = re.search(r"<<-?\s*(['\"]?)([A-Za-z_][A-Za-z0-9_]*)\1", candidate)
+        if heredoc:
+            heredoc_delimiter = heredoc.group(2)
+        current = f"{continuation} {candidate}".strip() if continuation else candidate
+        if current.rstrip().endswith("\\"):
+            continuation = current.rstrip()[:-1]
+            continue
+        executable_lines.append(current)
+        continuation = ""
+    if continuation:
+        executable_lines.append(continuation)
     for line in executable_lines:
         try:
             tokens = shlex.split(line, comments=True, posix=True)
@@ -222,7 +238,9 @@ def _nested_callers(raw: str, source_text: dict[str, str]) -> list[str]:
             executable,
             re.IGNORECASE,
         ):
-            if re.search(rf"&\s*\${re.escape(variable)}\b", invocation_text):
+            if re.search(
+                rf"&\s*\${re.escape(variable)}\b", invocation_text, re.IGNORECASE
+            ):
                 callers.append(path)
                 break
             if re.search(rf"\bPath\s*=\s*\${re.escape(variable)}\b", executable) and re.search(
