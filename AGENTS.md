@@ -7,22 +7,26 @@ This is a local-first hybrid Codex workspace.
 The user works across multiple repositories, Microsoft desktop tooling, Visual
 Studio Insiders, VS Code Insiders, and GitHub-hosted source control.
 
-## Workspace Roots
+## Workspace Paths
 
-- Suite root: `C:/CEO`
+- Local suite path: `C:/CEO` (not a federal authority root)
 - Source tree root: `C:/Users/enzo1/Documents/GitHub`
 - Retired source root: `C:/CEO/repos` (does not currently exist; do not assume it exists)
-- Active project: `C:/CEO/project-cdx`
-- Active repository: `C:/CEO/project-cdx`
+- Active overlay project: `C:/CEO/project-cdx`
+- Active repository for this file: `C:/CEO/project-cdx`
 - Metadata root: `C:/CEO/.metadata`
 - Worktree root: `C:/CEO/worktrees`
 - Workspace profile: `ceo-project-cdx`
 
-`project-cdx` is the active project, not the entire operating universe.
+`project-cdx` is an explicit local overlay/workbench, not the entire operating
+universe, the federal root, the control tower or the global runtime authority.
+Federal coordination and fan-in resolve through `cabina-universal-d`; authority
+and ownership continue to resolve through the applicable canonical registries.
 
 ## Execution Authority
 
-- Local desktop runtime is the authoritative write/execute environment.
+- Local desktop runtime is the write/execute environment for this overlay only;
+  that fact does not grant `project-cdx` federal or cross-repository authority.
 - Codex Cloud may connect only for read-observe workflows.
 - Treat `CODEX_CLOUD_GATE=read-observe` as a hard operational boundary.
 - Codex Cloud must not write files, install dependencies, run migrations, push
@@ -89,9 +93,18 @@ Do not assume Linux-style paths.
 Prefer PowerShell-compatible commands unless the user explicitly requests
 another shell.
 
-SharePoint, Dataverse, Teams, Planner, OneDrive and Power Platform require a
-governed order for writes. Read-only observation still requires exact target
-identity when it affects evidence or decisions.
+SharePoint, Dataverse, Teams, Planner, OneDrive and Power Platform READ is
+direct when an existing capability, binding and exact target are available.
+A known, bounded and reversible write is `LOW_BY_DEFAULT`: it does not require
+an order, allowlist or per-object approval, but it does require exact target,
+precheck, rollback or idempotency, postcheck and evidence. A missing capability,
+binding or target is `RESOLUTION_REQUIRED` / `BLOCKED_NOT_EXECUTABLE` without
+raising the tier. Explicit authorization is required only for a positive HIGH
+trigger such as destructive or irreversible effects, permissions/admin/tenant
+or identity changes, secrets, production activation, unbounded bulk or cost,
+material external communication, or a regulated/professional decision.
+Final KYC/UIF risk classification, suspicious-activity determination/reporting,
+legal qualification, signature and public faith remain human-reserved.
 
 ## Visual Studio Insiders
 
@@ -116,9 +129,9 @@ The SDU runtime is live and suite-aware:
 - `workspace_mode = suite`
 - `execution_surface = hybrid`
 - watchdog: suite-aware
-- NOC: still points to `C:/CEO/project-cdx`
+- NOC: its local overlay instance still points to `C:/CEO/project-cdx`
 
-Authoritative NOC paths remain:
+Local overlay NOC paths remain:
 
 - `C:/CEO/project-cdx/noc/noc-state.json`
 - `C:/CEO/project-cdx/noc/operacion-en-vivo.json`
@@ -135,7 +148,8 @@ evidence proves otherwise. The present governed local NOC surface is
 - Do not rebuild runtime.
 - Do not touch `noc-state.json`, `operacion-en-vivo.json`, `risk-policy` or
   watchdog unless a separate exact order authorizes it.
-- Do not execute live writes outside an approved promotion.
+- Do not execute a HIGH live write outside explicit authorization. READ and
+  eligible LOW writes follow the proportional Microsoft policy above.
 - Close with evidence, validator and postcheck.
 
 ## CEO Codex Operating Gates

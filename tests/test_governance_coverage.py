@@ -1,4 +1,5 @@
 import csv
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -83,6 +84,31 @@ class GovernanceCoverageTests(unittest.TestCase):
             )
         recipe = (repo / "recipes/microsoft-live-read-preliminar.md").read_text(encoding="utf-8")
         self.assertNotIn("live_surface_without_order", recipe)
+
+    def test_active_contracts_preserve_proportional_authority(self):
+        repo = Path(__file__).resolve().parents[1]
+        agents = (repo / "AGENTS.md").read_text(encoding="utf-8")
+        self.assertIn("LOW_BY_DEFAULT", agents)
+        self.assertIn("RESOLUTION_REQUIRED", agents)
+        self.assertIn("Final KYC/UIF risk classification", agents)
+        self.assertNotIn("require a\ngoverned order for writes", agents)
+
+        federation = json.loads((repo / "contracts/federation-map.json").read_text(encoding="utf-8"))
+        self.assertEqual(federation["federationId"], "project-cdx-overlay-view")
+        by_id = {item["repoId"]: item for item in federation["repos"]}
+        overlay = by_id["project-cdx"]
+        self.assertEqual(overlay["role"], "overlay-workbench")
+        self.assertEqual(overlay["runtimePointer"]["mode"], "reference-only")
+        self.assertNotIn("own-canonical-runtime", overlay["governance"]["allowedActions"])
+        self.assertIn("claim-federal-authority", overlay["governance"]["blockedActions"])
+        self.assertNotIn("live-write", overlay["governance"]["blockedActions"])
+        self.assertIn(
+            "high-live-write-without-explicit-auth", overlay["governance"]["blockedActions"]
+        )
+        cabina = by_id["cabina-universal-d"]
+        self.assertEqual(cabina["role"], "federal-control-plane")
+        self.assertEqual(cabina["governance"]["ownerAgent"], "rey.control_plane_orchestrator")
+        self.assertEqual(cabina["governance"]["authorityLevel"], "federal-control-plane-authority")
 
     def test_rejects_ci_validator_present_but_not_reachable(self):
         with tempfile.TemporaryDirectory() as directory:
