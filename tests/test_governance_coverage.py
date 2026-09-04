@@ -93,7 +93,9 @@ class GovernanceCoverageTests(unittest.TestCase):
         self.assertIn("Final KYC/UIF risk classification", agents)
         self.assertNotIn("require a\ngoverned order for writes", agents)
 
-        federation = json.loads((repo / "contracts/federation-map.json").read_text(encoding="utf-8"))
+        federation = json.loads(
+            (repo / "contracts/federation-map.json").read_text(encoding="utf-8")
+        )
         self.assertEqual(federation["federationId"], "project-cdx-overlay-view")
         by_id = {item["repoId"]: item for item in federation["repos"]}
         overlay = by_id["project-cdx"]
