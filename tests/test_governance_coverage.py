@@ -4,8 +4,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.validate_governance_coverage import validate
 from tools.validate_active_surface_contract import validate as validate_active_surfaces
+from tools.validate_governance_coverage import validate
 
 FIELDS = [
     "artifact_class",
@@ -72,7 +72,13 @@ class GovernanceCoverageTests(unittest.TestCase):
 
     def _active_surface_coverage(self, root: Path, **overrides: str) -> Path:
         path = root / "coverage-active.csv"
-        fields = FIELDS + ["lifecycle_state", "promotion_wave", "provider", "provider_version", "superseded_by"]
+        fields = FIELDS + [
+            "lifecycle_state",
+            "promotion_wave",
+            "provider",
+            "provider_version",
+            "superseded_by",
+        ]
         row = {
             "artifact_class": "active_surface",
             "required_index": "contracts/index.json",
@@ -92,7 +98,9 @@ class GovernanceCoverageTests(unittest.TestCase):
         (root / "contracts").mkdir()
         (root / "contracts/index.json").write_text('{"status":"ACTIVE"}\n', encoding="utf-8")
         (root / "contracts/environment-contract.json").write_text(
-            json.dumps({"consistencyRules": ["project-cdx is an overlay and not federal authority"]}),
+            json.dumps(
+                {"consistencyRules": ["project-cdx is an overlay and not federal authority"]}
+            ),
             encoding="utf-8",
         )
         return path
