@@ -32,7 +32,9 @@ def _parseable(path: Path) -> bool:
     if path.suffix.lower() == ".csv":
         with path.open(encoding="utf-8-sig", newline="") as handle:
             reader = csv.reader(handle)
-            return bool(next(reader, [])) and any(any(cell.strip() for cell in row) for row in reader)
+            return bool(next(reader, [])) and any(
+                any(cell.strip() for cell in row) for row in reader
+            )
     if path.suffix.lower() == ".json":
         json.loads(path.read_text(encoding="utf-8"))
     elif path.suffix.lower() in {".yaml", ".yml"}:
@@ -44,7 +46,17 @@ def validate(coverage: Path = COVERAGE, root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     with coverage.open(encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle)
-        required = {"artifact_class", "lifecycle_state", "promotion_wave", "coverage_status", "execution_mode", "required_index", "provider", "provider_version", "superseded_by"}
+        required = {
+            "artifact_class",
+            "lifecycle_state",
+            "promotion_wave",
+            "coverage_status",
+            "execution_mode",
+            "required_index",
+            "provider",
+            "provider_version",
+            "superseded_by",
+        }
         missing = required - set(reader.fieldnames or [])
         if missing:
             return [f"coverage matrix lacks fields: {','.join(sorted(missing))}"]
@@ -58,7 +70,9 @@ def validate(coverage: Path = COVERAGE, root: Path = ROOT) -> list[str]:
                 if status != "covered" or mode == "historical":
                     errors.append(f"{name}: ACTIVE cannot be historical")
                 if promotion_wave == "legacy-recovery" and mode not in ACTIVE_MODES:
-                    errors.append(f"{name}: recovered ACTIVE surface must be reachable through ci|nested")
+                    errors.append(
+                        f"{name}: recovered ACTIVE surface must be reachable through ci|nested"
+                    )
                 if row["superseded_by"].strip():
                     errors.append(f"{name}: ACTIVE cannot declare superseded_by")
                 for raw in _parts(row["required_index"]):
@@ -68,7 +82,13 @@ def validate(coverage: Path = COVERAGE, root: Path = ROOT) -> list[str]:
                             errors.append(f"{name}: active index is absent: {raw}")
                         elif not _parseable(path):
                             errors.append(f"{name}: active index is empty or invalid: {raw}")
-                    except (ValueError, OSError, csv.Error, json.JSONDecodeError, yaml.YAMLError) as exc:
+                    except (
+                        ValueError,
+                        OSError,
+                        csv.Error,
+                        json.JSONDecodeError,
+                        yaml.YAMLError,
+                    ) as exc:
                         errors.append(f"{name}: invalid active index {raw}: {exc}")
             elif lifecycle == "superseded":
                 if mode != "historical" or status != "historical":
@@ -91,7 +111,9 @@ def validate(coverage: Path = COVERAGE, root: Path = ROOT) -> list[str]:
             if provider and not version:
                 errors.append(f"{name}: external provider lacks version")
 
-    environment = json.loads((root / "contracts/environment-contract.json").read_text(encoding="utf-8"))
+    environment = json.loads(
+        (root / "contracts/environment-contract.json").read_text(encoding="utf-8")
+    )
     rules = " ".join(environment.get("consistencyRules", [])).lower()
     if "overlay" not in rules or "not" not in rules or "authority" not in rules:
         errors.append("project-cdx overlay contract must deny federal authority")
