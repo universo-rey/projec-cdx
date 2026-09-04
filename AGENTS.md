@@ -27,12 +27,16 @@ and ownership continue to resolve through the applicable canonical registries.
 
 - Local desktop runtime is the write/execute environment for this overlay only;
   that fact does not grant `project-cdx` federal or cross-repository authority.
-- Codex Cloud may connect only for read-observe workflows.
-- Treat `CODEX_CLOUD_GATE=read-observe` as a hard operational boundary.
-- Codex Cloud must not write files, install dependencies, run migrations, push
-  branches, open pull requests, deploy, or mutate repository, GitHub,
-  Microsoft, Dataverse, SharePoint, Teams, Planner, OneDrive, OpenAI, or other
-  external service state.
+- Codex Cloud is an existing operational execution provider, not an authority
+  source. Use the repo-scoped lane, agent, environment and exact provider
+  contract already registered for the target repository.
+- `CODEX_CLOUD_GATE=read-observe` is historical policy and must not override a
+  current governed lane. Current authorization is resolved by exact target,
+  branch, owner, rollback/idempotency, postcheck and evidence.
+- Cloud execution may write only inside its authorized repo branch and may
+  hand off a validated commit/PR. It must not claim federal authority, merge,
+  mutate unrelated repositories, or cross into Microsoft/production/admin/
+  secrets without the corresponding bounded authority.
 - GitHub Actions are separate from Codex Cloud: CI may execute in workflows;
   promotion remains manual, owner-gated, and evidence-backed.
 
@@ -41,20 +45,13 @@ local tool caches, PAC CLI, NOC files, watchdog files, and localhost endpoints
 are local evidence references only for Codex Cloud. Cloud must use repo-relative
 paths only and must not depend on any local Windows path existing.
 
-## Cloud Restrictions
+## Cloud Operational Boundary
 
-When operating in cloud mode, do not:
-
-- write files;
-- delete files;
-- install dependencies;
-- run migrations;
-- push branches;
-- open pull requests;
-- deploy;
-- mutate repository state.
-
-Cloud mode may only inspect, summarize, compare and report.
+Cloud uses the existing Agents SDK, repo lane and environment bindings. A
+provider entry without an explicit version is invalid. Repo-scoped reversible
+writes are allowed when the current lane authorizes them; destructive,
+cross-repository, production, identity, permission, secret and unbounded
+effects require their own positive authority.
 
 ## Multi-Repository Behavior
 
@@ -186,14 +183,14 @@ Default action is defer or ignore unless the user explicitly approves inclusion.
 Do not stage generated evidence, reports, caches, logs or deferred experiments
 as part of runtime, source or documentation commits without exact approval.
 
-## Codex Cloud Read-Observe Rules
+## Codex Cloud And Agents SDK Rules
 
-Codex Cloud is read-observe only. Agents may use Cloud list/status/diff for
-triage, but must not use `codex cloud apply`, execute Cloud tasks, open PRs from
-Cloud output, or mutate any local, remote or external state.
-
-Cloud diffs are source material only. If useful, they must be manually ported
-locally under CEO governance after comparison against current `main`.
+Codex Cloud tasks, Agents SDK agents, configured environments and repo lanes
+are operational surfaces. They must consume the current registry instead of
+being downgraded to historical because a local-only validator is absent.
+Execution remains bound to the selected repository and branch, with review and
+postcheck before promotion; `project-cdx` remains the workbench/overlay and
+never becomes the federal control plane by implication.
 
 ## PR Review And Merge Discipline
 
