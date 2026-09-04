@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 
 from tools.validate_governance_coverage import validate
+from tools.validate_active_surface_contract import validate as validate_active_surfaces
 
 FIELDS = [
     "artifact_class",
@@ -68,6 +69,67 @@ class GovernanceCoverageTests(unittest.TestCase):
             ],
         )
         return coverage
+
+    def _active_surface_coverage(self, root: Path, **overrides: str) -> Path:
+        path = root / "coverage-active.csv"
+        fields = FIELDS + ["lifecycle_state", "promotion_wave", "provider", "provider_version", "superseded_by"]
+        row = {
+            "artifact_class": "active_surface",
+            "required_index": "contracts/index.json",
+            "required_validator": "tools/validator.py",
+            "owner_agent": "test",
+            "coverage_status": "covered",
+            "execution_mode": "ci",
+            "stop_condition": "surface_invalid",
+            "lifecycle_state": "active",
+            "promotion_wave": "legacy-recovery",
+            "provider": "",
+            "provider_version": "",
+            "superseded_by": "",
+        }
+        row.update(overrides)
+        _csv(path, fields, [row])
+        (root / "contracts").mkdir()
+        (root / "contracts/index.json").write_text('{"status":"ACTIVE"}\n', encoding="utf-8")
+        (root / "contracts/environment-contract.json").write_text(
+            json.dumps({"consistencyRules": ["project-cdx is an overlay and not federal authority"]}),
+            encoding="utf-8",
+        )
+        return path
+
+    def test_active_surface_cannot_be_historical(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._active_surface_coverage(
+                root, execution_mode="historical", coverage_status="historical"
+            )
+            errors = validate_active_surfaces(coverage, root)
+            self.assertTrue(any("ACTIVE cannot be historical" in error for error in errors))
+
+    def test_active_surface_requires_reachable_validator_mode(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._active_surface_coverage(root, execution_mode="manual")
+            errors = validate_active_surfaces(coverage, root)
+            self.assertTrue(any("ci|nested" in error for error in errors))
+
+    def test_overlay_cannot_claim_federal_authority(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._active_surface_coverage(root)
+            (root / "contracts/environment-contract.json").write_text(
+                json.dumps({"consistencyRules": ["project-cdx is federal authority"]}),
+                encoding="utf-8",
+            )
+            errors = validate_active_surfaces(coverage, root)
+            self.assertTrue(any("deny federal authority" in error for error in errors))
+
+    def test_external_provider_requires_version(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._active_surface_coverage(root, provider="codex-cloud")
+            errors = validate_active_surfaces(coverage, root)
+            self.assertTrue(any("external provider lacks version" in error for error in errors))
 
     def test_microsoft_read_recipe_preserves_low_by_default_policy(self):
         repo = Path(__file__).resolve().parents[1]
