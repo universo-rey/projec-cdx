@@ -14,7 +14,7 @@ dependencies = [
   "mcp>=1.19.0",
   "openai-agents>=0.22.0",
   "pyyaml>=6.0.3",
-  "tzdata>=2026.2; platform_system == 'Windows'",
+  "tzdata>=2026.3; platform_system == 'Windows'",
   "uvicorn>=0.52.4",
 ]
 
