@@ -30,7 +30,7 @@
     "SHAREPOINT_TOKEN"
   ],
   "consistencyRules": [
-    "local and VSI use C:\\CEO\\project-cdx as canonical active entry",
+    "local and VSI may use C:\\CEO\\project-cdx as the explicit overlay entry without making it a federal root or global authority",
     "Codespaces may use its mounted workspace root but must keep repo-scoped state",
     "do not re-anchor CEO_ROOT by inference",
     "do not read secret values while checking presence"

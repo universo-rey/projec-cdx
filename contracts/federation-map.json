@@ -1,19 +1,19 @@
 {
-  "schemaVersion": "v1.1",
-  "federationId": "ceo-local-federation",
-  "duplicatePolicy": "C:\\CEO\\project-cdx is the canonical active entry; C:\\Users\\enzo1\\PROJEC CDX is physical alias only; do not create duplicate runtime roots; all federated repos reference C:\\CEO\\project-cdx\\.cabina\\SDU_RUNTIME_ROOT without copying it.",
+  "schemaVersion": "v1.2",
+  "federationId": "project-cdx-overlay-view",
+  "duplicatePolicy": "This map is an overlay-local reference and does not establish federal authority. C:\\CEO\\project-cdx is the active workbench entry; C:\\Users\\enzo1\\PROJEC CDX is its physical alias. Runtime pointers recorded here are local references only. Federal coordination and fan-in resolve through universo-rey/cabina-universal-d and ownership through the applicable canonical registries.",
   "repos": [
     {
       "repoId": "project-cdx",
       "remote": "universo-rey/projec-cdx",
       "canonicalPath": "C:\\CEO\\project-cdx",
       "physicalAlias": "C:\\Users\\enzo1\\PROJEC CDX",
-      "role": "core-governance-runtime",
+      "role": "overlay-workbench",
       "status": "active",
       "alignmentStatus": "aligned",
       "runtimePointer": {
         "canonicalRuntimeRoot": "C:\\CEO\\project-cdx\\.cabina\\SDU_RUNTIME_ROOT",
-        "mode": "owned-runtime",
+        "mode": "reference-only",
         "copyRuntime": false
       },
       "agents": [
@@ -44,24 +44,26 @@
       ],
       "governance": {
         "ownerAgent": "seshat-normativa",
-        "authorityLevel": "core-runtime-authority",
+        "authorityLevel": "overlay-local-reference",
         "surface": "repo-local",
         "allowedActions": [
-          "own-canonical-runtime",
-          "publish-federation-reference",
+          "operate-local-overlay",
+          "publish-overlay-reference",
           "publish-sns-reference"
         ],
         "blockedActions": [
           "copy-runtime-to-federated-repo",
-          "live-write",
+          "high-live-write-without-explicit-auth",
+          "out-of-binding-write",
           "secret-read",
-          "production-mutation"
+          "production-mutation",
+          "claim-federal-authority"
         ],
         "requiredRecipe": "cierre-wave-documental",
         "requiredTool": "manual-map-update",
         "evidence": "contracts\\federation-map.json",
         "validator": "json-parse-lightweight",
-        "stopCondition": "runtime root duplicated or direct SDU_RUNTIME_ROOT recreated"
+        "stopCondition": "project-cdx treated as federal root, control tower or global runtime authority"
       }
     },
     {
@@ -156,9 +158,9 @@
       "repoId": "cabina-universal-d",
       "remote": "universo-rey/cabina-universal-d",
       "canonicalPath": "C:\\Users\\enzo1\\Documents\\GitHub\\cabina-universal-d",
-      "role": "legacy-cabina-control-plane-reference",
-      "status": "reference",
-      "alignmentStatus": "partial",
+      "role": "federal-control-plane",
+      "status": "active",
+      "alignmentStatus": "aligned",
       "runtimePointer": {
         "canonicalRuntimeRoot": "C:\\CEO\\project-cdx\\.cabina\\SDU_RUNTIME_ROOT",
         "mode": "reference-only",
@@ -178,13 +180,13 @@
         ".agents\\codex\\maps"
       ],
       "governance": {
-        "ownerAgent": "seshat-normativa",
-        "authorityLevel": "control-plane-reference",
+        "ownerAgent": "rey.control_plane_orchestrator",
+        "authorityLevel": "federal-control-plane-authority",
         "surface": "related-repo-local",
         "allowedActions": [
+          "coordinate-federal-fan-in",
           "reference-readback",
-          "reference-matrices",
-          "route-to-canonical-runtime"
+          "reference-matrices"
         ],
         "blockedActions": [
           "copy-runtime-to-federated-repo",
@@ -196,7 +198,7 @@
         "requiredTool": "manual-map-update",
         "evidence": "contracts\\federation-map.json",
         "validator": "json-parse-lightweight",
-        "stopCondition": "cabina-universal-d used as active runtime authority"
+        "stopCondition": "federal coordination bypassed or reassigned to an overlay"
       }
     },
     {

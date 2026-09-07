@@ -1,0 +1,577 @@
+import csv
+import json
+import tempfile
+import unittest
+from pathlib import Path
+
+from tools.validate_active_surface_contract import validate as validate_active_surfaces
+from tools.validate_governance_coverage import validate
+
+FIELDS = [
+    "artifact_class",
+    "required_index",
+    "required_validator",
+    "owner_agent",
+    "coverage_status",
+    "execution_mode",
+    "stop_condition",
+]
+
+
+def _csv(path: Path, fields: list[str], rows: list[dict[str, str]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def _workflow_registry(root: Path, content: str) -> Path:
+    workflow = root / ".github/workflows/approved.yml"
+    workflow.parent.mkdir(parents=True, exist_ok=True)
+    workflow.write_text(content, encoding="utf-8")
+    registry = root / "workflows.csv"
+    _csv(
+        registry,
+        ["workflow_id", "path", "status"],
+        [
+            {
+                "workflow_id": "approved",
+                "path": ".github/workflows/approved.yml",
+                "status": "APPROVED_GITHUB_ACTIONS_SURFACE",
+            }
+        ],
+    )
+    return registry
+
+
+def _rows(path: Path) -> list[dict[str, str]]:
+    with path.open(encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+class GovernanceCoverageTests(unittest.TestCase):
+    def _coverage(self, root: Path, mode: str, status: str = "covered") -> Path:
+        coverage = root / "coverage.csv"
+        _csv(
+            coverage,
+            FIELDS,
+            [
+                {
+                    "artifact_class": "critical",
+                    "required_index": "coverage.csv",
+                    "required_validator": "tools/validator.py",
+                    "owner_agent": "test",
+                    "coverage_status": status,
+                    "execution_mode": mode,
+                    "stop_condition": "validator_unreachable",
+                }
+            ],
+        )
+        return coverage
+
+    def _active_surface_coverage(self, root: Path, **overrides: str) -> Path:
+        path = root / "coverage-active.csv"
+        fields = FIELDS + [
+            "lifecycle_state",
+            "promotion_wave",
+            "provider",
+            "provider_version",
+            "superseded_by",
+        ]
+        row = {
+            "artifact_class": "active_surface",
+            "required_index": "contracts/index.json",
+            "required_validator": "tools/validator.py",
+            "owner_agent": "test",
+            "coverage_status": "covered",
+            "execution_mode": "ci",
+            "stop_condition": "surface_invalid",
+            "lifecycle_state": "active",
+            "promotion_wave": "legacy-recovery",
+            "provider": "",
+            "provider_version": "",
+            "superseded_by": "",
+        }
+        row.update(overrides)
+        _csv(path, fields, [row])
+        (root / "contracts").mkdir()
+        (root / "contracts/index.json").write_text('{"status":"ACTIVE"}\n', encoding="utf-8")
+        (root / "contracts/environment-contract.json").write_text(
+            json.dumps(
+                {"consistencyRules": ["project-cdx is an overlay and not federal authority"]}
+            ),
+            encoding="utf-8",
+        )
+        return path
+
+    def test_active_surface_cannot_be_historical(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._active_surface_coverage(
+                root, execution_mode="historical", coverage_status="historical"
+            )
+            errors = validate_active_surfaces(coverage, root)
+            self.assertTrue(any("ACTIVE cannot be historical" in error for error in errors))
+
+    def test_active_surface_requires_reachable_validator_mode(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._active_surface_coverage(root, execution_mode="manual")
+            errors = validate_active_surfaces(coverage, root)
+            self.assertTrue(any("ci|nested" in error for error in errors))
+
+    def test_overlay_cannot_claim_federal_authority(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._active_surface_coverage(root)
+            (root / "contracts/environment-contract.json").write_text(
+                json.dumps({"consistencyRules": ["project-cdx is federal authority"]}),
+                encoding="utf-8",
+            )
+            errors = validate_active_surfaces(coverage, root)
+            self.assertTrue(any("deny federal authority" in error for error in errors))
+
+    def test_external_provider_requires_version(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._active_surface_coverage(root, provider="codex-cloud")
+            errors = validate_active_surfaces(coverage, root)
+            self.assertTrue(any("external provider lacks version" in error for error in errors))
+
+    def test_microsoft_read_recipe_preserves_low_by_default_policy(self):
+        repo = Path(__file__).resolve().parents[1]
+        for relative in (
+            "recipes/microsoft-live-read-preliminar.md",
+            "procesos/microsoft-live-read-preliminar.md",
+        ):
+            text = (repo / relative).read_text(encoding="utf-8")
+            self.assertIn("LOW_BY_DEFAULT", text)
+            self.assertIn("BLOCKED_NOT_EXECUTABLE", text)
+            self.assertIn(
+                "sin elevar el tier" if relative.startswith("recipes/") else "conservando el tier",
+                text,
+            )
+        recipe = (repo / "recipes/microsoft-live-read-preliminar.md").read_text(encoding="utf-8")
+        self.assertNotIn("live_surface_without_order", recipe)
+
+    def test_active_contracts_preserve_proportional_authority(self):
+        repo = Path(__file__).resolve().parents[1]
+        agents = (repo / "AGENTS.md").read_text(encoding="utf-8")
+        self.assertIn("LOW_BY_DEFAULT", agents)
+        self.assertIn("RESOLUTION_REQUIRED", agents)
+        self.assertIn("Final KYC/UIF risk classification", agents)
+        self.assertNotIn("require a\ngoverned order for writes", agents)
+
+        federation = json.loads(
+            (repo / "contracts/federation-map.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(federation["federationId"], "project-cdx-overlay-view")
+        by_id = {item["repoId"]: item for item in federation["repos"]}
+        overlay = by_id["project-cdx"]
+        self.assertEqual(overlay["role"], "overlay-workbench")
+        self.assertEqual(overlay["runtimePointer"]["mode"], "reference-only")
+        self.assertNotIn("own-canonical-runtime", overlay["governance"]["allowedActions"])
+        self.assertIn("claim-federal-authority", overlay["governance"]["blockedActions"])
+        self.assertNotIn("live-write", overlay["governance"]["blockedActions"])
+        self.assertIn(
+            "high-live-write-without-explicit-auth", overlay["governance"]["blockedActions"]
+        )
+        cabina = by_id["cabina-universal-d"]
+        self.assertEqual(cabina["role"], "federal-control-plane")
+        self.assertEqual(cabina["governance"]["ownerAgent"], "rey.control_plane_orchestrator")
+        self.assertEqual(cabina["governance"]["authorityLevel"], "federal-control-plane-authority")
+
+    def test_rejects_ci_validator_present_but_not_reachable(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            errors = validate(
+                root,
+                self._coverage(root, "ci"),
+                _workflow_registry(root, "run: python -m tools.other\n"),
+            )
+            self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_accepts_ci_validator_reachable_from_approved_workflow(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            errors = validate(
+                root,
+                self._coverage(root, "ci"),
+                _workflow_registry(
+                    root,
+                    "jobs:\n  test:\n    steps:\n      - run: python tools/validator.py\n",
+                ),
+            )
+            self.assertEqual(errors, [])
+
+    def test_rejects_ci_validator_only_mentioned_outside_run(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = "name: test\njobs:\n  test:\n    steps:\n      - name: tools/validator.py\n        env:\n          VALIDATOR: tools/validator.py\n        run: python -m tools.other\n"
+            errors = validate(
+                root,
+                self._coverage(root, "ci"),
+                _workflow_registry(root, workflow),
+            )
+            self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_rejects_ci_validator_echoed_or_commented_in_run(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = "jobs:\n  test:\n    steps:\n      - run: |\n          # python tools/validator.py\n          echo tools/validator.py\n"
+            errors = validate(
+                root,
+                self._coverage(root, "ci"),
+                _workflow_registry(root, workflow),
+            )
+            self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_rejects_ci_validator_skipped_by_or_short_circuit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = (
+                "jobs:\n  test:\n    steps:\n      - run: true || python tools/validator.py\n"
+            )
+            errors = validate(
+                root,
+                self._coverage(root, "ci"),
+                _workflow_registry(root, workflow),
+            )
+            self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_rejects_ci_validator_skipped_by_failed_and_predecessor(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = (
+                "jobs:\n  test:\n    steps:\n      - run: false && python tools/validator.py\n"
+            )
+            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
+            self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_rejects_ci_validator_in_statically_disabled_step(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = (
+                "jobs:\n  test:\n    steps:\n      - if: false\n"
+                "        run: python tools/validator.py\n"
+            )
+            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
+            self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_rejects_validator_as_non_script_python_argument(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = (
+                "jobs:\n  test:\n    steps:\n"
+                "      - run: python tools/other.py tools/validator.py\n"
+            )
+            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
+            self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_rejects_historical_validator_claiming_current_coverage(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            errors = validate(
+                root,
+                self._coverage(root, "historical"),
+                _workflow_registry(root, "run: true\n"),
+            )
+            self.assertTrue(any("requires coverage_status=historical" in error for error in errors))
+
+    def test_rejects_active_row_without_validator(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._coverage(root, "manual")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = ""
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertTrue(any("lacks required_validator" in error for error in errors))
+
+    def test_rejects_active_row_with_missing_index(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            coverage = self._coverage(root, "manual")
+            rows = _rows(coverage)
+            rows[0]["required_index"] = "missing.csv"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertTrue(any("active index is absent" in error for error in errors))
+
+    def test_rejects_active_mode_with_historical_status(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            errors = validate(
+                root,
+                self._coverage(root, "manual", "historical"),
+                _workflow_registry(root, "jobs: {}\n"),
+            )
+            self.assertTrue(any("requires coverage_status=covered" in error for error in errors))
+
+    def test_rejects_nested_validator_only_mentioned_as_data(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            (root / "tools/catalog.py").write_text('VALIDATOR = "validator.py"\n', encoding="utf-8")
+            errors = validate(
+                root,
+                self._coverage(root, "nested"),
+                _workflow_registry(root, "jobs: {}\n"),
+            )
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_nested_validator_in_non_execution_python_call(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            (root / "tools/catalog.py").write_text(
+                'print("validator.py")\nPath("validator.py").exists()\n',
+                encoding="utf-8",
+            )
+            errors = validate(
+                root,
+                self._coverage(root, "nested"),
+                _workflow_registry(root, "jobs: {}\n"),
+            )
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_validator_as_subprocess_data_argument(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            (root / "tools/caller.py").write_text(
+                'import subprocess\nsubprocess.run(["echo", "validator.py"])\n', encoding="utf-8"
+            )
+            errors = validate(
+                root, self._coverage(root, "nested"), _workflow_registry(root, "jobs: {}\n")
+            )
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_nested_validator_only_in_powershell_here_string(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.ps1"
+            validator.parent.mkdir()
+            validator.write_text("Write-Host ok\n", encoding="utf-8")
+            (root / "tools/example.ps1").write_text(
+                '@"\n$x = Join-Path $Root "tools\\validator.ps1"\n& $x\n"@\n',
+                encoding="utf-8",
+            )
+            coverage = self._coverage(root, "nested")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = "tools/validator.ps1"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_nested_validator_only_in_powershell_block_comment(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.ps1"
+            validator.parent.mkdir()
+            validator.write_text("Write-Host ok\n", encoding="utf-8")
+            (root / "tools/example.ps1").write_text(
+                '<#\n$x = Join-Path $Root "tools\\validator.ps1"\n& $x\n#>\n',
+                encoding="utf-8",
+            )
+            coverage = self._coverage(root, "nested")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = "tools/validator.ps1"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_powershell_call_only_in_inline_comment_or_string(self):
+        for fake_call in (
+            "Write-Host done # & $validator",
+            'Write-Host "example: & $validator"',
+        ):
+            with tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                validator = root / "tools/validator.ps1"
+                validator.parent.mkdir()
+                validator.write_text("Write-Host ok\n", encoding="utf-8")
+                (root / "tools/example.ps1").write_text(
+                    '$validator = Join-Path $Root "tools\\validator.ps1"\n' + fake_call + "\n",
+                    encoding="utf-8",
+                )
+                coverage = self._coverage(root, "nested")
+                rows = _rows(coverage)
+                rows[0]["required_validator"] = "tools/validator.ps1"
+                _csv(coverage, FIELDS, rows)
+                errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+                self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_unrelated_powershell_object_path_call(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.ps1"
+            validator.parent.mkdir()
+            validator.write_text("Write-Host ok\n", encoding="utf-8")
+            (root / "tools/example.ps1").write_text(
+                '$validator = Join-Path $Root "tools\\validator.ps1"\n'
+                "Write-Host $validator\n& $other.Path\n",
+                encoding="utf-8",
+            )
+            coverage = self._coverage(root, "nested")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = "tools/validator.ps1"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_powershell_call_hidden_after_backtick_escaped_quote(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.ps1"
+            validator.parent.mkdir()
+            validator.write_text("Write-Host ok\n", encoding="utf-8")
+            (root / "tools/example.ps1").write_text(
+                '$validator = Join-Path $Root "tools\\\\validator.ps1"\n'
+                'Write-Host "example: `" & $validator"\n',
+                encoding="utf-8",
+            )
+            coverage = self._coverage(root, "nested")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = "tools/validator.ps1"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_validator_only_inside_uncalled_shell_function(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            workflow = "jobs:\n  test:\n    steps:\n      - run: |\n          helper() {\n            python tools/validator.py\n          }\n"
+            errors = validate(root, self._coverage(root, "ci"), _workflow_registry(root, workflow))
+            self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_rejects_validator_inside_heredoc_or_continued_echo(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            for command in (
+                "cat <<'EOF'\npython tools/validator.py\nEOF\n",
+                "echo diagnostic \\\n  python tools/validator.py\n",
+            ):
+                workflow = "jobs:\n  test:\n    steps:\n      - run: |\n" + "".join(
+                    f"          {line}\n" for line in command.splitlines()
+                )
+                errors = validate(
+                    root,
+                    self._coverage(root, "ci"),
+                    _workflow_registry(root, workflow),
+                )
+                self.assertTrue(any("not reachable" in error for error in errors))
+
+    def test_accepts_case_insensitive_powershell_variable_invocation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.ps1"
+            validator.parent.mkdir()
+            validator.write_text("Write-Host ok\n", encoding="utf-8")
+            (root / "tools/caller.ps1").write_text(
+                '$Validator = Join-Path $Root "tools\\validator.ps1"\n' "& $validator\n",
+                encoding="utf-8",
+            )
+            coverage = self._coverage(root, "nested")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = "tools/validator.ps1"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertEqual(errors, [])
+
+    def test_rejects_subprocess_string_without_shell(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.py"
+            validator.parent.mkdir()
+            validator.write_text("print('ok')\n", encoding="utf-8")
+            (root / "tools/caller.py").write_text(
+                'import subprocess\nsubprocess.run("python tools/validator.py")\n',
+                encoding="utf-8",
+            )
+            errors = validate(
+                root, self._coverage(root, "nested"), _workflow_registry(root, "jobs: {}\n")
+            )
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_multiline_powershell_string_as_caller(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            validator = root / "tools/validator.ps1"
+            validator.parent.mkdir()
+            validator.write_text("Write-Host ok\n", encoding="utf-8")
+            (root / "tools/example.ps1").write_text(
+                '$validator = Join-Path $Root "tools\\\\validator.ps1"\n'
+                'Write-Host "diagnostic\n& $validator"\n',
+                encoding="utf-8",
+            )
+            coverage = self._coverage(root, "nested")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = "tools/validator.ps1"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertTrue(any("no repo-local caller" in error for error in errors))
+
+    def test_rejects_validator_path_outside_repository(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._coverage(root, "manual")
+            rows = _rows(coverage)
+            rows[0]["required_validator"] = "../external.py"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertTrue(any("path escapes repository" in error for error in errors))
+
+    def test_rejects_historical_index_path_outside_repository(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            coverage = self._coverage(root, "historical", "historical")
+            rows = _rows(coverage)
+            rows[0]["required_index"] = "../external.csv"
+            _csv(coverage, FIELDS, rows)
+            errors = validate(root, coverage, _workflow_registry(root, "jobs: {}\n"))
+            self.assertTrue(any("path escapes repository" in error for error in errors))
+
+
+if __name__ == "__main__":
+    unittest.main()

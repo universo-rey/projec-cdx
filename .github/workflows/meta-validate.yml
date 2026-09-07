@@ -37,6 +37,12 @@ jobs:
       - name: Validate metadata
         run: python -m tools.validate
 
+      - name: Validate governance coverage reachability
+        run: python -m tools.validate_governance_coverage
+
+      - name: Validate promoted active surfaces
+        run: python -m tools.validate_active_surface_contract
+
       - name: Build metadata indexes
         run: python -m tools.build_index
 

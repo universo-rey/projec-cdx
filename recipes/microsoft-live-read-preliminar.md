@@ -1,8 +1,9 @@
 # Receta Microsoft Live Read Preliminar
 
-Estado: `PREPARED_ONLY`.
-Live Microsoft: `NO_EJECUTADO`.
-Write Microsoft: `ESPERANDO_CIERRE`.
+Estado: `ACTIVE_GOVERNED_READ`.
+Live Microsoft READ: `HABILITADO_CON_BINDING_ACTUAL_Y_TARGET_EXACTO`.
+Write Microsoft: `LOW_BY_DEFAULT` para acciones conocidas y acotadas sin un
+trigger HIGH objetivo.
 
 ## Primera Lectura
 
@@ -18,7 +19,7 @@ Aplica a:
 - SharePoint listas, solo si hay reader nativo real.
 - Teams equipos, canales, mensajes y chats.
 - Planner planes y tareas.
-- Power Platform y Dataverse, solo como metadata/read-only con gate exacto.
+- Power Platform y Dataverse, solo como metadata/read-only con binding vigente y target exacto; no requieren una orden nueva.
 
 ## Frontera
 
@@ -29,7 +30,19 @@ Permitido:
 - Clasificar la superficie: `native-list`, `document-library`, `file-export`, `teams-read-only`, `planner-read-only`, `dataverse-metadata` o `ambiguous`.
 - Capturar evidencia minima y sanitizada.
 
-En espera de cierre explicito:
+Clasificacion de writes:
+
+- Una mutacion conocida, acotada y reversible es `LOW_BY_DEFAULT`; no necesita
+  orden, allowlist ni receipt.
+- LOW exige capability, binding vigente, target exacto acotado, precheck,
+  rollback o idempotencia, postcheck y evidencia.
+- Si falta uno de esos prerrequisitos: `RESOLUTION_REQUIRED` y
+  `BLOCKED_NOT_EXECUTABLE`, sin elevar el tier.
+- HIGH requiere un trigger positivo: accion destructiva/irreversible,
+  produccion, tenant/identidad/permisos/admin, secretos, datos regulados,
+  comunicacion externa material, volumen/costo abierto o fuera del binding.
+
+Fuera de esta receta READ (clasificar por separado antes de ejecutar):
 
 - Escribir, crear, borrar, mover, subir o editar.
 - Cambiar permisos, columnas, vistas, flows, apps, tareas o mensajes.
@@ -55,7 +68,7 @@ En espera de cierre explicito:
 | --- | --- | --- |
 | `seshat-normativa` | `sdu-sharepoint-context-refresh`, `dataverse-rehidratacion` | Traer canon local, frontera y targets candidatos. |
 | `thot-tecnico` | `sdu-sharepoint-surface-guard` | Diseñar probes minimos y no confundir biblioteca con lista nativa. |
-| `anubis-gate` | `sdu-auditor-sharepoint-vivo`, `no-inference-runtime-write-guard` | Mantener gate, items en espera de cierre y condiciones de pausa. |
+| `anubis-gate` | `sdu-auditor-sharepoint-vivo`, `no-inference-runtime-write-guard` | Separar READ de writes, clasificar triggers HIGH y preservar condiciones de pausa. |
 | `maat-cumplimiento` | `governed-readback-closeout` | Definir formato de evidencia, RACI y condicion de cierre. |
 | `horus-riesgo` | `sdu-sharepoint-surface-guard` | Detectar secretos, entorno equivocado, rollback faltante y postcheck ausente. |
 | `narrador-normativo` | `cabina-continuity-readback` | Redactar readback vivo, breve y gobernado. |
@@ -81,7 +94,7 @@ Teams:
 - `mcp__codex_apps__microsoft_teams._list_planner_plans`
 - `mcp__codex_apps__microsoft_teams._list_planner_tasks`
 
-## Tools En Espera De Cierre En Esta Wave
+## Tools De Write Fuera De Esta Receta READ
 
 - `mcp__codex_apps__microsoft_sharepoint._create_folder`
 - `mcp__codex_apps__microsoft_sharepoint._delete_item`
@@ -103,7 +116,8 @@ Teams:
 
 ## Condiciones De Pausa Y Cierre
 
-- `live_surface_without_order`
+- `binding_or_target_resolution_required`
+- `low_write_requires_separate_execution_recipe`
 - `target_identity_ambiguous`
 - `wrong_environment_or_default`
 - `surface_ambiguous`
