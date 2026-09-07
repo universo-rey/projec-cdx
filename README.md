@@ -12,8 +12,12 @@ destructivas.
 
 ## Runtime Authority Split
 
-- Local desktop is the authoritative CEO governed write/execute surface.
-- Codex Cloud is connected read-observe only.
+- Local desktop is the write/execute surface for this overlay, not federal authority.
+- Codex Cloud is an operational provider when the exact repo lane, environment
+  and versioned provider contract are resolved. It may return a validated
+  repo-scoped commit/PR; it does not acquire tenant or cross-repository authority.
+- `AGENTS.md` governs execution. Historical read-observe labels do not override
+  a currently authorized lane.
 - GitHub Actions may execute CI; manual promotion workflows are owner-gated and
   separate from Codex Cloud.
 - Windows absolute paths in this README are local evidence paths and must not be
@@ -86,13 +90,15 @@ del NOC desde la fuente viva.
 5. Governance registra decisiones, evidencia y trazabilidad.
 6. Las acciones automaticas solo se ejecutan cuando existe delta nuevo con
    clasificacion critica y decision `ESCALATE`.
-7. Cualquier accion externa, destructiva o de alto impacto requiere aprobacion
-   humana.
+7. La condicion externa no eleva el riesgo. Solo los triggers HIGH positivos
+   requieren autorizacion explicita; cada operacion debe cumplir su readiness.
 
 ## Estado LIVE
 
-El modo `LIVE` significa que el runtime operativo esta activo y observado en
-tiempo real. No significa autorizacion abierta para cambios externos.
+El modo `LIVE` describe la configuracion operativa del overlay; este README no
+prueba que el watchdog ni la sesion local esten activos ahora. Verificar el
+estado real solo cuando sea material para la tarea. No concede autoridad
+abierta para cambios externos ni convierte project-cdx en control plane federal.
 
 Permitido en automatico:
 
@@ -102,13 +108,16 @@ Permitido en automatico:
 - generacion de tarea interna SDU.
 - activacion de flags de seguimiento.
 
-Bloqueado sin aprobacion humana:
+Fuera del automatismo anterior, el operador aplica `AGENTS.md` por efecto:
 
-- cambios en repos.
-- acciones en SharePoint.
-- acciones en Dataverse.
-- escrituras Microsoft, OpenAI o cloud.
-- modificaciones destructivas.
+- READ con capability, binding y target exactos no requiere orden.
+- Un write conocido y acotado sin trigger HIGH es LOW por defecto, con precheck,
+  reversa o compensacion, postcheck y evidencia tecnica; no requiere gate universal.
+- Falta de capability, binding o target: `RESOLUTION_REQUIRED`, sin cambiar el tier.
+- Efectos destructivos o irreversibles, permisos/admin, identidad/binding,
+  secretos, activacion productiva y otros triggers HIGH exigen autorizacion explicita.
+
+Esta correccion documental no cambia watchdog, NOC, policy ni sus automatismos.
 
 ## Trazabilidad
 
